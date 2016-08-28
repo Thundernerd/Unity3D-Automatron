@@ -36,6 +36,18 @@ namespace TNRD.Automatron {
             RunOnGUIThread( CreateStyles );
         }
 
+        protected override void OnDestroy() {
+            foreach ( var item in fields ) {
+                if ( item.LineIn != null ) {
+                    item.LineIn.Remove();
+                }
+
+                for ( int i = item.LinesOut.Count - 1; i >= 0; i-- ) {
+                    item.LinesOut[i].Remove();
+                }
+            }
+        }
+
         private void GetFields() {
             var type = GetType();
             var infos = type.GetFields( BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly );
