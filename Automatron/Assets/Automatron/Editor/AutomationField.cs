@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using TNRD.Automatron.Drawers;
 using TNRD.Editor.Core;
-using UnityEditor;
+using TNRD.Editor.Serialization;
 using UnityEngine;
 
 namespace TNRD.Automatron {
@@ -15,8 +15,10 @@ namespace TNRD.Automatron {
         public string ID;
         public readonly string Name;
 
+        [IgnoreSerialization]
         public FieldLine LineIn;
-        public FieldLine LineOut;
+        [IgnoreSerialization]
+        public List<FieldLine> LinesOut = new List<FieldLine>();
 
         // This is for the connection lines
         public Rect Rectangle { get; private set; }
@@ -70,13 +72,12 @@ namespace TNRD.Automatron {
             info.SetValue( parent, value );
 
             if ( GUI.Button( new Rect( rect.x + rect.width, rect.y + rect.height / 2 - 5, 12, 10 ), "", ExtendedGUI.BoxStyle ) ) {
-                if ( LineOut != null ) {
-                    LineOut.Remove();
-                    LineOut = null;
+                var line = FieldLine.HookLineOut( this );
+                if ( LinesOut.Contains( line ) ) {
+                    LinesOut.Remove( line );
                 }
-
-                LineOut = FieldLine.HookLineOut( this );
-                parent.Window.AddControl( LineOut );
+                LinesOut.Add( line );
+                parent.Window.AddControl( line );
             }
 
             if ( GUI.Button( new Rect( rect.x - 12, rect.y + rect.height / 2 - 5, 12, 10 ), "", ExtendedGUI.BoxStyle ) ) {
