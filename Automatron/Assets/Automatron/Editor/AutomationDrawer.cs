@@ -26,7 +26,8 @@ namespace TNRD.Automatron {
         private float lastY = 0;
 
         protected Rect GetControlRect( float height = 16 ) {
-            var rect = new Rect( totalRect.x, lastY, totalRect.width, height );
+            var xoffset = EditorGUI.indentLevel * 4;
+            var rect = new Rect( totalRect.x + xoffset, lastY, totalRect.width - xoffset, height );
             lastY += height + 2;
             return rect;
         }

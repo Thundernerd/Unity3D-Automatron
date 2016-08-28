@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using TNRD.Automatron.Drawers;
+using TNRD.Editor.Core;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,13 +15,20 @@ namespace TNRD.Automatron {
         public string ID;
         public readonly string Name;
 
+        public FieldLine LineIn;
+        public FieldLine LineOut;
+
+        // This is for the connection lines
+        public Rect Rectangle { get; private set; }
+
         private Automation parent;
         private FieldInfo info;
         private AutomationDrawer drawer;
 
-        public AutomationField( Automation parent, FieldInfo info ) {
+        public AutomationField( Automation parent, FieldInfo info, string id ) {
             this.parent = parent;
             this.info = info;
+            this.ID = id;
 
             var fieldType = info.FieldType;
             var drawerType = AutomatronEditor.GetDrawerType( fieldType );
@@ -46,6 +54,8 @@ namespace TNRD.Automatron {
             drawer.Initialize();
 
             Name = Utils.GetPrettyName( info.Name );
+
+            Rectangle = new Rect( parent.Position.x, parent.Position.y, parent.Size.x, drawer.GetFieldHeight() );
         }
 
         public float GetHeight() {
@@ -53,9 +63,31 @@ namespace TNRD.Automatron {
         }
 
         public void OnGUI( Rect rect ) {
+            Rectangle = rect;
+
             object value = info.GetValue( parent );
             drawer.OnGUI( rect, Name, ref value );
             info.SetValue( parent, value );
+
+            if ( GUI.Button( new Rect( rect.x + rect.width, rect.y + rect.height / 2 - 5, 12, 10 ), "", ExtendedGUI.BoxStyle ) ) {
+                if ( LineOut != null ) {
+                    LineOut.Remove();
+                    LineOut = null;
+                }
+
+                LineOut = FieldLine.HookLineOut( this );
+                parent.Window.AddControl( LineOut );
+            }
+
+            if ( GUI.Button( new Rect( rect.x - 12, rect.y + rect.height / 2 - 5, 12, 10 ), "", ExtendedGUI.BoxStyle ) ) {
+                if ( LineIn != null ) {
+                    LineIn.Remove();
+                    LineIn = null;
+                }
+
+                LineIn = FieldLine.HookLineIn( this );
+                parent.Window.AddControl( LineIn );
+            }
         }
     }
 }
