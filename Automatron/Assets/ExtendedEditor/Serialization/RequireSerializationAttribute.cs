@@ -3,5 +3,5 @@
 namespace TNRD.Editor.Serialization {
 
     [AttributeUsage( AttributeTargets.Field | AttributeTargets.Property, Inherited = false, AllowMultiple = false )]
-    sealed class RequireSerializationAttribute : Attribute { }
+    public sealed class RequireSerializationAttribute : Attribute { }
 }
