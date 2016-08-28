@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace TNRD.Editor.Core {
 
-    public class ExtendedControl {
+    public class ExtendedControl : IEquatable<ExtendedControl> {
 
         [IgnoreSerialization]
         public ExtendedWindow Window;
@@ -172,6 +172,24 @@ namespace TNRD.Editor.Core {
         public void RunOnGUIThreadImmediate( Action action ) {
             guiActions.Add( action );
             Window.Editor.Repaint();
+        }
+        
+        public bool Equals( ExtendedControl other ) {
+            if ( (object)other == null ) return false;
+            return ID == other.ID;
+        }
+
+        public override bool Equals( object obj ) {
+            if ( obj == null ) return false;
+            if ( obj is ExtendedControl ) {
+                return Equals( obj as ExtendedControl );
+            } else {
+                return false;
+            }
+        }
+
+        public override int GetHashCode() {
+            return ID.GetHashCode();
         }
     }
 }
