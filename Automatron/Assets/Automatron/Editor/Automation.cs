@@ -1,19 +1,21 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using TNRD.Editor.Core;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using TNRD.Editor;
+using TNRD.Editor.Core;
+using UnityEngine;
 
 namespace TNRD.Automatron {
 
     public class Automation : ExtendedControl {
 
         private List<AutomationField> fields = new List<AutomationField>();
+        private static Automation dragger = null;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
 
             AnchorPoint = EAnchor.TopLeft;
+            SortingOrder = ESortingOrder.Automation;
 
             GetFields();
             UpdateSize();
@@ -42,10 +44,40 @@ namespace TNRD.Automatron {
 
 
         protected override void OnGUI() {
-            base.OnGUI();
             var rect = Rectangle;
-
+            
             GUI.Box( rect, "", ExtendedGUI.DefaultWindowStyle );
+
+            if ( Input.ButtonPressed( EMouseButton.Left ) ) {
+                dragger = null;
+
+                switch ( SortingOrder ) {
+                    case ESortingOrder.Automation:
+                        if ( rect.Contains( Input.MousePosition ) ) {
+                            SortingOrder = ESortingOrder.AutomationSelected;
+                        }
+                        break;
+                    case ESortingOrder.AutomationSelected:
+                        if ( !rect.Contains( Input.MousePosition ) ) {
+                            SortingOrder = ESortingOrder.Automation;
+                        }
+                        break;
+                }
+            }
+
+            if ( Input.ButtonDown( EMouseButton.Left ) ) {
+                if ( dragger == null ) {
+                    var dragRect = new Rect( rect.x, rect.y, rect.width, 16 );
+                    if ( dragRect.Contains( Input.MousePosition ) ) {
+                        dragger = this;
+                        GUIUtility.keyboardControl = 0;
+                    }
+                }
+            }
+
+            if ( dragger == this ) {
+                Position += Input.DragDelta;
+            }
 
             var fieldRect = new Rect( rect.x, rect.y + 18, rect.width, rect.height );
             foreach ( var item in fields ) {
@@ -54,6 +86,7 @@ namespace TNRD.Automatron {
                 item.OnGUI( fieldRect );
                 fieldRect.y += height;
             }
+
             UpdateSize();
         }
     }
