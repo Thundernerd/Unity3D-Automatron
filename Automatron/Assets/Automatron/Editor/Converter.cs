@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Automatron {
+namespace TNRD.Automatron {
 
     public class Converter {
 

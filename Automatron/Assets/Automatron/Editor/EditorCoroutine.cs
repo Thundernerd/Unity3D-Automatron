@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEditor;
 
-namespace Automatron {
+namespace TNRD.Automatron {
 
     public class EditorCoroutine {
 
