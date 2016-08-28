@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 using TNRD.Editor;
 using TNRD.Editor.Core;
@@ -16,6 +17,9 @@ namespace TNRD.Automatron {
 
         private List<AutomationField> fields = new List<AutomationField>();
         private Dictionary<string, AutomationField> sortedFields = new Dictionary<string, AutomationField>();
+
+        public float Progress;
+        public bool ShowCloseButton = true;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
@@ -79,6 +83,12 @@ namespace TNRD.Automatron {
             GUI.Box( rect, "", ExtendedGUI.DefaultWindowStyle );
             GUI.Label( new Rect( rect.x, rect.y, rect.width, 16 ), name, headerStyle );
 
+            if ( ShowCloseButton ) {
+                if ( GUI.Button( new Rect( rect.x + rect.width - 20, rect.y, 20, 16 ), "X", EditorStyles.toolbar ) ) {
+                    Remove();
+                }
+            }
+
             if ( Input.ButtonPressed( EMouseButton.Left ) ) {
                 dragger = null;
 
@@ -127,6 +137,10 @@ namespace TNRD.Automatron {
 
         public AutomationField GetField( string id ) {
             return sortedFields[id];
+        }
+
+        public virtual IEnumerator Execute() {
+            yield break;
         }
     }
 }
