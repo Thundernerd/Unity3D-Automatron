@@ -11,7 +11,7 @@ namespace TNRD.Automatron.Drawers {
             EditorGUI.BeginDisabledGroup( IsReadOnly );
             EditorGUI.HandlePrefixLabel( rect, GetControlRect(), new GUIContent( name ) );
             try {
-                var t = EditorGUI.ObjectField( GetControlRect(), (Object)value, ValueType, true );
+                var t = EditorGUI.ObjectField( GetControlRect(), (Object)value, Type, true );
                 if ( t != null ) {
                     value = t;
                 }

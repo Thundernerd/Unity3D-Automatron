@@ -10,7 +10,7 @@ namespace TNRD.Automatron.Drawers {
             base.OnGUI( rect, name, ref value );
             EditorGUI.BeginDisabledGroup( IsReadOnly );
             EditorGUI.HandlePrefixLabel( rect, GetControlRect(), new GUIContent( name ) );
-            value = EditorGUI.Vector4Field( GetControlRect(), "", (Vector4)value );
+            value = EditorGUI.Vector4Field( new Rect( rect.x, rect.y, rect.width - 1, rect.height ), "", (Vector4)value );
             EditorGUI.EndDisabledGroup();
         }
     }

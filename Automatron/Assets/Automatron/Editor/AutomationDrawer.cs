@@ -10,7 +10,7 @@ namespace TNRD.Automatron {
         public List<object> CustomAttributes = new List<object>();
         public bool IsReadOnly = false;
         public AutomationField Parent;
-        public Type ValueType;
+        public Type Type;
 
         public virtual float GetFieldHeight() {
             return ( EditorGUIUtility.singleLineHeight + 2 ) * 2;
@@ -26,7 +26,7 @@ namespace TNRD.Automatron {
         private float lastY = 0;
 
         protected Rect GetControlRect( float height = 16 ) {
-            var rect = new Rect( totalRect.x, lastY, totalRect.width - 1, height );
+            var rect = new Rect( totalRect.x, lastY, totalRect.width, height );
             lastY += height + 2;
             return rect;
         }

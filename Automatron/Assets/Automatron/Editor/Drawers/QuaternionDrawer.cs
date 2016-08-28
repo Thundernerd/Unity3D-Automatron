@@ -15,7 +15,7 @@ namespace TNRD.Automatron.Drawers {
             var vec = new Vector4( quat.x, quat.y, quat.z, quat.w );
 
             EditorGUI.HandlePrefixLabel( rect, GetControlRect(), new GUIContent( name ) );
-            vec = EditorGUI.Vector4Field( rect, "", vec );
+            vec = EditorGUI.Vector4Field( new Rect( rect.x, rect.y, rect.width - 1, rect.height ), "", vec );
 
             value = new Quaternion( vec.x, vec.y, vec.z, vec.w );
             EditorGUI.EndDisabledGroup();
