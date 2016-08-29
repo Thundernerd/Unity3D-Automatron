@@ -9,6 +9,7 @@ using TNRD.Editor;
 using TNRD.Editor.Utilities;
 using TNRD.Automatron.Automations;
 using TNRD.Editor.Serialization;
+using System.Collections;
 
 namespace TNRD.Automatron {
 
