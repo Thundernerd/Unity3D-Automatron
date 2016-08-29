@@ -90,7 +90,7 @@ namespace TNRD.Automatron {
 
             entryPoint = new QueueStart() {
                 IsInitial = true,
-                Position = WindowRect.center - new Vector2( 375, 75 )
+                Position = WindowRect.center - new Vector2( 75, 50 )
             };
 
             AddControl( entryPoint );
