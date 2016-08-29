@@ -1,10 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections;
 using UnityEditor;
 
 namespace TNRD.Automatron.Automations {
+#pragma warning disable 0649
 
     [Automation( "File/Copy File or Directory" )]
     public class FileCopy : Automation {
@@ -91,4 +89,6 @@ namespace TNRD.Automatron.Automations {
             yield break;
         }
     }
+
+#pragma warning restore 0649
 }
