@@ -61,7 +61,7 @@ namespace TNRD.Automatron.Automations {
         public int Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -73,7 +73,7 @@ namespace TNRD.Automatron.Automations {
 
     [Automation( "Primitives/Int/Create" )]
     class IntCreate : Automation {
-        
+
         public int Value;
 
         public override IEnumerator Execute() {

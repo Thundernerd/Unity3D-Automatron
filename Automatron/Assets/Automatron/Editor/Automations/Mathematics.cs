@@ -12,7 +12,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations {
         public int Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -48,7 +48,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -66,7 +66,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -103,7 +103,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -121,7 +121,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -141,7 +141,7 @@ namespace TNRD.Automatron.Automations {
         public int Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -161,7 +161,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -197,7 +197,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -215,7 +215,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -253,7 +253,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -273,7 +273,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -293,7 +293,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -311,7 +311,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -330,7 +330,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -348,7 +348,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -367,7 +367,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -376,7 +376,7 @@ namespace TNRD.Automatron.Automations {
             yield break;
         }
     }
-    
+
     [Automation( "Math/Max/Int" )]
     class MaxI : Automation {
 
@@ -386,7 +386,7 @@ namespace TNRD.Automatron.Automations {
         public int Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -405,7 +405,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -424,7 +424,7 @@ namespace TNRD.Automatron.Automations {
         public int Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -442,7 +442,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -451,7 +451,7 @@ namespace TNRD.Automatron.Automations {
             yield break;
         }
     }
-    
+
     [Automation( "Math/Sin" )]
     class Sin : Automation {
 
@@ -460,7 +460,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -478,7 +478,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 
@@ -496,7 +496,7 @@ namespace TNRD.Automatron.Automations {
         public float Result;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Result = 0;
         }
 

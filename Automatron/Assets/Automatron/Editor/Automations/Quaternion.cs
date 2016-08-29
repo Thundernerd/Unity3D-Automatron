@@ -6,7 +6,7 @@ namespace TNRD.Automatron.Automations {
 
     [Automation( "Quaternion/Multiply" )]
     class QuaternionMultiplyQ : Automation {
-        
+
         public Quaternion InOut;
         public Quaternion Rhs;
 
@@ -18,14 +18,14 @@ namespace TNRD.Automatron.Automations {
 
     [Automation( "Quaternion/Multiply (V3)" )]
     class QuaternionMultiplyV : Automation {
-        
+
         public Quaternion Rotation;
         public Vector3 Point;
         [ReadOnly]
         public Vector3 Value;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Value = new Vector3();
         }
 
@@ -42,7 +42,7 @@ namespace TNRD.Automatron.Automations {
         public Quaternion Value;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Value = new Quaternion();
         }
 
@@ -59,7 +59,7 @@ namespace TNRD.Automatron.Automations {
         public Quaternion Value;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Value = new Quaternion();
         }
 
@@ -77,7 +77,7 @@ namespace TNRD.Automatron.Automations {
         public Quaternion Value;
 
         public override void Reset() {
-			base.Reset();
+            base.Reset();
             Value = new Quaternion();
         }
 
