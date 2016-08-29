@@ -37,12 +37,12 @@ namespace TNRD.Automatron.Drawers {
         }
 
         private float GetContentHeight() {
-            if ( fold ) return 36;
+            if ( fold ) return 41;
 
             if ( array == null ) {
-                return 36;
+                return 41;
             } else {
-                return Mathf.Max( elementBackgroundHeight * array.Length, 36 );
+                return Mathf.Max( elementBackgroundHeight * array.Length, 41 );
             }
         }
 
