@@ -112,18 +112,26 @@ namespace TNRD.Automatron {
 
             GUI.Box( rect, "", ExtendedGUI.DefaultWindowStyle );
             if ( Progress > 0 ) {
-                GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width * Progress, 16 ), progressTexture );
+                GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width * Progress, 15 ), progressTexture );
             }
             GUI.Label( new Rect( rect.x, rect.y, rect.width, 16 ), name, headerStyle );
 
-            if ( showCloseButton ) {
-                if ( GUI.Button( new Rect( rect.x + rect.width - 20, rect.y, 20, 16 ), "X", EditorStyles.toolbar ) ) {
-                    Remove();
+            if ( showCloseButton && !AutomatronEditor.IsExecuting ) {
+                var cRect = new Rect( rect.x + rect.width - 14, rect.y + 1, 13, 13 );
+                if ( cRect.Contains( Input.MousePosition ) ) {
+                    GUI.DrawTexture( cRect, Assets["crossActive"] );
+
+                    if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                        Remove();
+                        Input.Use();
+                    }
+                } else {
+                    GUI.DrawTexture( cRect, Assets["crossNormal"] );
                 }
             }
 
-            var lArrow = new Rect( rect.x - 16, rect.y, 16, 17 );
-            var rArrow = new Rect( rect.x + rect.width, rect.y, 16, 17 );
+            var lArrow = new Rect( rect.x - 15, rect.y, 15, 15 );
+            var rArrow = new Rect( rect.x + rect.width, rect.y, 15, 15 );
 
             if ( showInArrow ) {
                 GUI.DrawTexture( lArrow, Assets["toparrowleft"] );
@@ -174,7 +182,7 @@ namespace TNRD.Automatron {
 
             if ( Input.ButtonDown( EMouseButton.Left ) ) {
                 if ( dragger == null ) {
-                    var dragRect = new Rect( rect.x, rect.y, rect.width, 16 );
+                    var dragRect = new Rect( rect.x, rect.y, rect.width - 16, 16 );
                     if ( dragRect.Contains( Input.MousePosition ) ) {
                         dragger = this;
                         GUIUtility.keyboardControl = 0;

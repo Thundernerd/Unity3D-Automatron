@@ -64,6 +64,8 @@ namespace TNRD.Automatron {
         }
         #endregion
 
+        public static bool IsExecuting { get; private set; }
+
         [MenuItem( "Window/Automatron" )]
         private static void Init() {
             var wnd = CreateEditor( "Automatron" );
@@ -122,14 +124,18 @@ namespace TNRD.Automatron {
         }
 
         private IEnumerator ExecuteAutomationsAsync( List<Automation> list ) {
+            IsExecuting = true;
+
             foreach ( var item in list ) {
                 item.PrepareForExecute();
                 var routine = item.Execute();
                 while ( routine.MoveNext() ) {
                     yield return routine.Current;
                 }
+                item.Progress = 1;
             }
 
+            IsExecuting = false;
             yield break;
         }
 

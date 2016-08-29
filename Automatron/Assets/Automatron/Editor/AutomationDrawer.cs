@@ -8,7 +8,12 @@ namespace TNRD.Automatron {
     public class AutomationDrawer {
 
         public List<object> CustomAttributes = new List<object>();
-        public bool IsReadOnly = false;
+        public bool IsReadOnly {
+            get {
+                return HasReadOnlyAttribute || AutomatronEditor.IsExecuting;
+            }
+        }
+        public bool HasReadOnlyAttribute = false;
         public AutomationField Parent;
         public Type Type;
 
@@ -18,6 +23,7 @@ namespace TNRD.Automatron {
 
         public virtual void Initialize() { }
         public virtual void OnGUI( Rect rect, string name, ref object value ) {
+
             totalRect = rect;
             lastY = totalRect.y;
         }

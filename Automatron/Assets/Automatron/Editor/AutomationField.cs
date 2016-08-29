@@ -51,7 +51,7 @@ namespace TNRD.Automatron {
 
             drawer = (AutomationDrawer)Activator.CreateInstance( drawerType );
             drawer.CustomAttributes = info.GetCustomAttributes( false ).ToList();
-            drawer.IsReadOnly = info.GetCustomAttributes( typeof( ReadOnlyAttribute ), false ).FirstOrDefault() != null;
+            drawer.HasReadOnlyAttribute = info.GetCustomAttributes( typeof( ReadOnlyAttribute ), false ).FirstOrDefault() != null;
             drawer.Parent = this;
             drawer.Type = fieldType;
             drawer.Initialize();
