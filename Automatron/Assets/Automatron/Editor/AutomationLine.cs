@@ -69,7 +69,7 @@ namespace TNRD.Automatron {
             Left = left;
             Right = right;
 
-            left.LineIn = this;
+            left.LineOut = this;
             Right.LineIn = this;
         }
 
