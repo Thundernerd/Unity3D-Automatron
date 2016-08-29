@@ -11,13 +11,19 @@ namespace TNRD.Automatron.Automations {
 
         private GUIStyle textStyle;
 
-        public QueueStart() : this( true ) {
+        public bool IsInitial { get; set; }
+
+        public QueueStart() {
 
         }
 
-        public QueueStart( bool showCloseButton ) {
-            this.showCloseButton = showCloseButton;
-            showInArrow = showCloseButton;
+        protected override void OnInitialize() {
+            base.OnInitialize();
+
+            if ( IsInitial ) {
+                showCloseButton = false;
+                showInArrow = false;
+            }
         }
 
         protected override void OnInitializeGUI() {
@@ -27,6 +33,10 @@ namespace TNRD.Automatron.Automations {
         protected override void OnAfterSerialize() {
             base.OnAfterSerialize();
             RunOnGUIThread( CreateStyle );
+            if ( IsInitial ) {
+                showCloseButton = false;
+                showInArrow = false;
+            }
         }
 
         private void CreateStyle() {
