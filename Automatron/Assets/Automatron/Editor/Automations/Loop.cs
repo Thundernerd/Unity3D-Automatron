@@ -23,11 +23,16 @@ namespace TNRD.Automatron.Automations {
                 }
 
                 foreach ( var item in LoopList ) {
+                    item.Progress = 0;
+                }
+
+                foreach ( var item in LoopList ) {
                     item.PrepareForExecute();
                     var routine = item.Execute();
                     while ( routine.MoveNext() ) {
                         yield return routine.Current;
                     }
+                    item.Progress = 1;
                 }
 
                 yield return null;
