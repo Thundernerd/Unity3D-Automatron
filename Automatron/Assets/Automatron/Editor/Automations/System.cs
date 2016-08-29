@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "System/Start" )]
+    [Automation( "Utilities/Start" )]
     class QueueStart : Automation {
 
         private GUIStyle textStyle;
@@ -21,8 +21,8 @@ namespace TNRD.Automatron.Automations {
 
             if ( IsInitial ) {
                 showCloseButton = false;
-                showInArrow = false;
             }
+            showInArrow = false;
         }
 
         protected override void OnInitializeGUI() {
@@ -34,8 +34,8 @@ namespace TNRD.Automatron.Automations {
             RunOnGUIThread( CreateStyle );
             if ( IsInitial ) {
                 showCloseButton = false;
-                showInArrow = false;
             }
+            showInArrow = false;
         }
 
         private void CreateStyle() {
