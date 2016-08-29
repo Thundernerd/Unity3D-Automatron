@@ -24,6 +24,9 @@ namespace TNRD.Automatron {
 
         public float Progress;
 
+        public AutomationLine LineIn;
+        public AutomationLine LineOut;
+
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
 
