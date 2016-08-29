@@ -75,6 +75,13 @@ namespace TNRD.Automatron {
         [RequireSerialization]
         private string entryId;
 
+        private GUIContent executeContent;
+        private GUIContent stopContent;
+        private GUIContent trashContent;
+        private GUIContent resetContent;
+
+        private EditorCoroutine executionRoutine = null;
+
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
 
@@ -86,6 +93,7 @@ namespace TNRD.Automatron {
             AddControl( entryPoint );
 
             WindowSettings.IsFullscreen = true;
+
         }
 
         protected override void OnBeforeSerialize() {
@@ -102,9 +110,53 @@ namespace TNRD.Automatron {
             }
 
             WindowSettings.IsFullscreen = true;
+
+        }
+
+        private void CreateIcons() {
+            // Secretly reusing the foldOut
+            executeContent = new GUIContent( Assets["foldOut"], "Execute the automation sequence" );
+            stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
+            resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
+            trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
         }
 
         protected override void OnGUI() {
+            EditorGUILayout.BeginHorizontal( EditorStyles.toolbar );
+            if ( GUILayout.Button( "File", EditorStyles.toolbarButton ) ) {
+
+            }
+
+            GUILayout.Button( "", EditorStyles.toolbarButton );
+
+            if ( Globals.IsExecuting ) {
+                if ( GUILayout.Button( stopContent, EditorStyles.toolbarButton ) ) {
+                    executionRoutine.Stop();
+                    executionRoutine = null;
+                    Globals.IsExecuting = false;
+                }
+            } else {
+                if ( GUILayout.Button( executeContent, EditorStyles.toolbarButton ) ) {
+                    ExecuteAutomations();
+                }
+            }
+
+            if ( GUILayout.Button( resetContent, EditorStyles.toolbarButton ) ) {
+                var fullList = new List<Automation>();
+                entryPoint.GetAutomations( ref fullList );
+
+                foreach ( var item in fullList ) {
+                    item.Reset();
+                }
+            }
+
+            if ( GUILayout.Button( trashContent, EditorStyles.toolbarButton ) ) {
+                
+            }
+
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.EndHorizontal();
+
             if ( Input.ButtonReleased( EMouseButton.Right ) ) {
                 var menu = GenericMenuBuilder.CreateMenu();
                 foreach ( var item in automations ) {
@@ -118,7 +170,7 @@ namespace TNRD.Automatron {
 
         private void ExecuteAutomations() {
             var list = GetAutomations();
-            EditorCoroutine.Start( ExecuteAutomationsAsync( list ) );
+            executionRoutine = EditorCoroutine.Start( ExecuteAutomationsAsync( list ) );
         }
 
         private IEnumerator ExecuteAutomationsAsync( List<Automation> list ) {
@@ -198,6 +250,7 @@ namespace TNRD.Automatron {
                 }
             }
 
+            // Improve this
             throw new Exception( "No loop end found!" );
         }
 
