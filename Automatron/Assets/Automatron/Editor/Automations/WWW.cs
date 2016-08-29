@@ -5,6 +5,7 @@ using System.Linq;
 using System;
 
 namespace TNRD.Automatron.Automations {
+#pragma warning disable 0649
 
     [Automation( "WWW/Audio Clip" )]
     public class WWWAudioClip : Automation {
@@ -103,4 +104,6 @@ namespace TNRD.Automatron.Automations {
             yield break;
         }
     }
+
+#pragma warning restore 0649
 }
