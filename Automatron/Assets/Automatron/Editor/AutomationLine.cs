@@ -109,7 +109,7 @@ namespace TNRD.Automatron {
                 return;
             }
 
-            Left.LineIn = this;
+            Left.LineOut = this;
             Right.LineIn = this;
 
             SortingOrder = ESortingOrder.Line;

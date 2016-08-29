@@ -60,6 +60,16 @@ namespace TNRD.Automatron {
                     item.LinesOut[i].Remove();
                 }
             }
+
+            if ( LineIn != null ) {
+                LineIn.Remove();
+                LineIn = null;
+            }
+
+            if ( LineOut != null ) {
+                LineOut.Remove();
+                LineOut = null;
+            }
         }
 
         private void GetFields() {
@@ -172,6 +182,25 @@ namespace TNRD.Automatron {
             }
 
             UpdateSize();
+        }
+
+        public virtual void GetAutomations( ref List<Automation> automations ) {
+            foreach ( var field in fields ) {
+                if ( field.LineIn != null ) {
+                    var parent = field.LineIn.Left.Parent;
+                    if ( !automations.Contains( parent ) ) {
+                        parent.GetAutomations( ref automations );
+                    }
+                }
+            }
+
+            if ( !automations.Contains( this ) ) {
+                automations.Add( this );
+            }
+
+            if ( LineOut != null ) {
+                LineOut.Right.GetAutomations( ref automations );
+            }
         }
 
         public bool HasField( string id ) {

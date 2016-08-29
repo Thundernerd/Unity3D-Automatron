@@ -14,6 +14,7 @@ namespace TNRD.Automatron {
 
         public string ID;
         public readonly string Name;
+        public Automation Parent { get { return parent; } }
 
         [IgnoreSerialization]
         public FieldLine LineIn;
