@@ -1,4 +1,5 @@
 ﻿using TNRD.Editor.Core;
+using TNRD.Editor.Serialization;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace TNRD.Automatron {
         public Vector2 P1;
         public Vector2 P2;
 
+        [IgnoreSerialization]
         public Color Color = Color.white;
 
         protected override void OnGUI() {
