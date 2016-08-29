@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -53,7 +52,6 @@ namespace TNRD.Automatron.Automations {
             Size.y = 100;
 
             var rect = Rectangle;
-            //rect.position += ( Window as AutomatronEditor ).Camera;
 
             GUI.Label( rect, "Entry Point", textStyle );
         }

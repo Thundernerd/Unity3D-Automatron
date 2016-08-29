@@ -14,6 +14,10 @@ namespace TNRD.Automatron.Automations {
         [IgnoreSerialization]
         public Object Prefab;
 
+        public override void Reset() {
+            Prefab = null;
+        }
+
         public override IEnumerator Execute() {
             Prefab = PrefabUtility.CreateEmptyPrefab( Path );
             yield break;
@@ -30,6 +34,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         [IgnoreSerialization]
         public GameObject Prefab;
+
+        public override void Reset() {
+            Prefab = null;
+        }
 
         public override IEnumerator Execute() {
             Prefab = PrefabUtility.CreatePrefab( Path, GameObject, Options );
@@ -58,6 +66,10 @@ namespace TNRD.Automatron.Automations {
         [IgnoreSerialization]
         public GameObject Root;
 
+        public override void Reset() {
+            Root = null;
+        }
+
         public override IEnumerator Execute() {
             Root = PrefabUtility.FindPrefabRoot( Source );
             yield break;
@@ -72,6 +84,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         [IgnoreSerialization]
         public Object Object;
+
+        public override void Reset() {
+            Object = null;
+        }
 
         public override IEnumerator Execute() {
             Object = PrefabUtility.GetPrefabObject( Target );
@@ -88,6 +104,10 @@ namespace TNRD.Automatron.Automations {
         [IgnoreSerialization]
         public Object Parent;
 
+        public override void Reset() {
+            Parent = null;
+        }
+
         public override IEnumerator Execute() {
             Parent = PrefabUtility.GetPrefabParent( Source );
             yield break;
@@ -101,6 +121,10 @@ namespace TNRD.Automatron.Automations {
         public Object Target;
         [ReadOnly]
         public PrefabType Type;
+
+        public override void Reset() {
+            Type = PrefabType.None;
+        }
 
         public override IEnumerator Execute() {
             Type = PrefabUtility.GetPrefabType( Target );
@@ -117,6 +141,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         [IgnoreSerialization]
         public GameObject gameObject;
+
+        public override void Reset() {
+            gameObject = null;
+        }
 
         public override IEnumerator Execute() {
             gameObject = Object.Instantiate( Original );
@@ -140,14 +168,18 @@ namespace TNRD.Automatron.Automations {
         public Vector3 Scale = Vector3.one;
         [ReadOnly]
         [IgnoreSerialization]
-        public GameObject GameObject;
+        public GameObject gameObject;
+
+        public override void Reset() {
+            gameObject = null;
+        }
 
         public override IEnumerator Execute() {
-            GameObject = (GameObject)Object.Instantiate( Original, position, Quaternion.Euler( Rotation ) );
-            GameObject.transform.localScale = Scale;
+            gameObject = (GameObject)Object.Instantiate( Original, position, Quaternion.Euler( Rotation ) );
+            gameObject.transform.localScale = Scale;
 
             if ( !string.IsNullOrEmpty( Name ) ) {
-                GameObject.name = Name;
+                gameObject.name = Name;
             }
 
             yield break;

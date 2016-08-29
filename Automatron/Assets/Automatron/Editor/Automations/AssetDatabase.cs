@@ -14,6 +14,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public string Result;
 
+        public override void Reset() {
+            Result = "";
+        }
+
         public override IEnumerator Execute() {
             Result = AssetDatabase.AssetPathToGUID( Path );
             yield break;
@@ -28,6 +32,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public bool Result;
 
+        public override void Reset() {
+            Result = false;
+        }
+
         public override IEnumerator Execute() {
             Result = AssetDatabase.CopyAsset( Path, newPath );
             yield break;
@@ -41,6 +49,10 @@ namespace TNRD.Automatron.Automations {
         public string[] searchInFolders;
         [ReadOnly]
         public string[] Result;
+
+        public override void Reset() {
+            Result = new string[0];
+        }
 
         public override IEnumerator Execute() {
             if ( searchInFolders.Length == 0 ) {
@@ -60,6 +72,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public string Result;
 
+        public override void Reset() {
+            Result = "";
+        }
+
         public override IEnumerator Execute() {
             Result = AssetDatabase.GetAssetOrScenePath( Asset );
             yield break;
@@ -74,6 +90,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public string Result;
 
+        public override void Reset() {
+            Result = "";
+        }
+
         public override IEnumerator Execute() {
             Result = AssetDatabase.GetAssetPath( Asset );
             yield break;
@@ -86,6 +106,10 @@ namespace TNRD.Automatron.Automations {
         public string GUID;
         [ReadOnly]
         public string Result;
+
+        public override void Reset() {
+            Result = "";
+        }
 
         public override IEnumerator Execute() {
             Result = AssetDatabase.GUIDToAssetPath( GUID );
@@ -100,6 +124,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         [IgnoreSerialization]
         public Object[] Result;
+
+        public override void Reset() {
+            Result = new Object[0];
+        }
 
         public override IEnumerator Execute() {
             Result = AssetDatabase.LoadAllAssetsAtPath( Path );
@@ -130,6 +158,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public string Result;
 
+        public override void Reset() {
+            Result = "";
+        }
+
         public override IEnumerator Execute() {
             Result = AssetDatabase.MoveAsset( OldPath, NewPath );
             yield break;
@@ -142,6 +174,10 @@ namespace TNRD.Automatron.Automations {
         public string Path;
         [ReadOnly]
         public bool Result;
+
+        public override void Reset() {
+            Result = false;
+        }
 
         public override IEnumerator Execute() {
             Result = AssetDatabase.MoveAssetToTrash( Path );
@@ -167,6 +203,10 @@ namespace TNRD.Automatron.Automations {
         public string NewName;
         [ReadOnly]
         public string Result;
+
+        public override void Reset() {
+            Result = "";
+        }
 
         public override IEnumerator Execute() {
             Result = AssetDatabase.RenameAsset( Path, NewName );

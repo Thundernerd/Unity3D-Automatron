@@ -16,8 +16,6 @@ namespace TNRD.Automatron.Automations {
                 Progress = 1 - (float)( end - EditorApplication.timeSinceStartup ) / Duration;
                 yield return null;
             }
-
-            Debug.Log( "Delay done" );
             yield break;
         }
     }

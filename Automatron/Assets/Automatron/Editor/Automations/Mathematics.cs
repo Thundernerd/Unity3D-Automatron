@@ -11,6 +11,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Abs( Value );
             yield break;
@@ -23,6 +27,10 @@ namespace TNRD.Automatron.Automations {
         public int Value;
         [ReadOnly]
         public int Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Abs( Value );
@@ -37,6 +45,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Acos( Value );
             yield break;
@@ -50,6 +62,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Asin( Value );
             yield break;
@@ -62,6 +78,10 @@ namespace TNRD.Automatron.Automations {
         public float Value;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Atan( Value );
@@ -77,6 +97,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Atan2( Y, X );
             yield break;
@@ -89,6 +113,10 @@ namespace TNRD.Automatron.Automations {
         public float Value;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Ceil( Value );
@@ -105,6 +133,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public int Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Clamp( Value, Min, Max );
             yield break;
@@ -120,6 +152,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Clamp( Value, Min, Max );
             yield break;
@@ -132,6 +168,10 @@ namespace TNRD.Automatron.Automations {
         public float Value;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Clamp01( Value );
@@ -146,6 +186,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Cos( Value );
             yield break;
@@ -159,6 +203,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Exp( Value );
             yield break;
@@ -171,6 +219,10 @@ namespace TNRD.Automatron.Automations {
         public float Value;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Floor( Value );
@@ -187,6 +239,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Lerp( a, b, t );
             yield break;
@@ -201,6 +257,10 @@ namespace TNRD.Automatron.Automations {
         public float t;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.LerpAngle( a, b, t );
@@ -217,6 +277,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.LerpUnclamped( a, b, t );
             yield break;
@@ -229,6 +293,10 @@ namespace TNRD.Automatron.Automations {
         public float f;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Log( f );
@@ -244,6 +312,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Log( f, p );
             yield break;
@@ -257,6 +329,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Log10( f );
             yield break;
@@ -269,10 +345,14 @@ namespace TNRD.Automatron.Automations {
         public float a;
         public float b;
         [ReadOnly]
-        public float result;
+        public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
-            result = Mathf.Max( a, b );
+            Result = Mathf.Max( a, b );
             yield break;
         }
     }
@@ -284,6 +364,10 @@ namespace TNRD.Automatron.Automations {
         public int b;
         [ReadOnly]
         public int Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Max( a, b );
@@ -299,6 +383,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Min( a, b );
             yield break;
@@ -313,6 +401,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public int Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Min( a, b );
             yield break;
@@ -325,6 +417,10 @@ namespace TNRD.Automatron.Automations {
         public float Value;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Round( Value );
@@ -339,6 +435,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Sin( Value );
             yield break;
@@ -352,6 +452,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public float Result;
 
+        public override void Reset() {
+            Result = 0;
+        }
+
         public override IEnumerator Execute() {
             Result = Mathf.Sqrt( Value );
             yield break;
@@ -364,6 +468,10 @@ namespace TNRD.Automatron.Automations {
         public float Value;
         [ReadOnly]
         public float Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
             Result = Mathf.Tan( Value );

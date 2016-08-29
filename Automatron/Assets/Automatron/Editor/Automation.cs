@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace TNRD.Automatron {
 
-    public class Automation : ExtendedControl {
+    public abstract class Automation : ExtendedControl {
 
         private static Automation dragger = null;
 
@@ -235,8 +235,6 @@ namespace TNRD.Automatron {
             }
         }
 
-        public virtual IEnumerator Execute() {
-            yield break;
-        }
+        public abstract IEnumerator Execute();
     }
 }

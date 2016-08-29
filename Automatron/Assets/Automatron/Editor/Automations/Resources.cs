@@ -12,6 +12,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public Object Resource;
 
+        public override void Reset() {
+            Resource = null;
+        }
+
         public override IEnumerator Execute() {
             Resource = Resources.Load( Path );
             yield break;
@@ -24,6 +28,10 @@ namespace TNRD.Automatron.Automations {
         public string[] Paths;
         [ReadOnly]
         public Object[] Resources;
+
+        public override void Reset() {
+            Resources = new Object[0];
+        }
 
         public override IEnumerator Execute() {
             var t = new List<Object>();
@@ -44,6 +52,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public Object[] Resources;
 
+        public override void Reset() {
+            Resources = new Object[0];
+        }
+
         public override IEnumerator Execute() {
             var t = new List<Object>();
             for ( int i = 0; i < Paths.Length; i++ ) {
@@ -62,6 +74,10 @@ namespace TNRD.Automatron.Automations {
         public string Path;
         [ReadOnly]
         public Object[] Resources;
+
+        public override void Reset() {
+            Resources = new Object[0];
+        }
 
         public override IEnumerator Execute() {
             Resources = UnityEngine.Resources.LoadAll( Path );

@@ -55,12 +55,17 @@ namespace TNRD.Automatron.Automations {
     [Automation( "Primitives/Int/Random" )]
     class RandomRangeI : Automation {
 
-        public int Value;
         public int Min;
         public int Max;
+        [ReadOnly]
+        public int Result;
+
+        public override void Reset() {
+            Result = 0;
+        }
 
         public override IEnumerator Execute() {
-            Value = Random.Range( Min, Max );
+            Result = Random.Range( Min, Max );
             yield break;
         }
     }

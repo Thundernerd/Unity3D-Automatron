@@ -21,6 +21,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public bool Result;
 
+        public override void Reset() {
+            Result = false;
+        }
+
         public override IEnumerator Execute() {
             Result = Original.EndsWith( Value );
             yield break;
@@ -36,6 +40,10 @@ namespace TNRD.Automatron.Automations {
         public int Count;
         [ReadOnly]
         public int Index;
+
+        public override void Reset() {
+            Index = 0;
+        }
 
         public override IEnumerator Execute() {
             if ( Count == 0 ) {
@@ -57,6 +65,10 @@ namespace TNRD.Automatron.Automations {
         public int Count;
         [ReadOnly]
         public int Index;
+
+        public override void Reset() {
+            Index = 0;
+        }
 
         public override IEnumerator Execute() {
             if ( Count == 0 ) {

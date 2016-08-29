@@ -24,6 +24,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public Vector3 Value;
 
+        public override void Reset() {
+            Value = new Vector3();
+        }
+
         public override IEnumerator Execute() {
             Value = Rotation * Point;
             yield break;
@@ -35,6 +39,10 @@ namespace TNRD.Automatron.Automations {
 
         [ReadOnly]
         public Quaternion Value;
+
+        public override void Reset() {
+            Value = new Quaternion();
+        }
 
         public override IEnumerator Execute() {
             Value = Random.rotation;
@@ -48,6 +56,10 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public Quaternion Value;
 
+        public override void Reset() {
+            Value = new Quaternion();
+        }
+
         public override IEnumerator Execute() {
             Value = Random.rotationUniform;
             yield break;
@@ -60,6 +72,10 @@ namespace TNRD.Automatron.Automations {
         public Vector3 Euler;
         [ReadOnly]
         public Quaternion Value;
+
+        public override void Reset() {
+            Value = new Quaternion();
+        }
 
         public override IEnumerator Execute() {
             Value = Quaternion.Euler( Euler );
