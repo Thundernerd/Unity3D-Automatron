@@ -27,6 +27,8 @@ namespace TNRD.Automatron {
                        where attributes != null && attributes.Length > 0
                        select new { AutomationType = type, Attributes = attributes.Cast<AutomationAttribute>() };
 
+            mush = mush.OrderBy( m => m.Attributes.ElementAt( 0 ).Name );
+
             foreach ( var item in mush ) {
                 var name = item.Attributes.ElementAt( 0 ).Name;
                 if ( !automations.ContainsKey( name ) ) {
