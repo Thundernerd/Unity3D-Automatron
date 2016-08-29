@@ -115,6 +115,66 @@ namespace TNRD.Automatron {
             Repaint();
         }
 
+        private void ExecuteAutomations() {
+            var list = GetAutomations();
+            EditorCoroutine.Start( ExecuteAutomationsAsync( list ) );
+        }
+
+        private IEnumerator ExecuteAutomationsAsync( List<Automation> list ) {
+            foreach ( var item in list ) {
+                item.PrepareForExecute();
+                var routine = item.Execute();
+                while ( routine.MoveNext() ) {
+                    yield return routine.Current;
+                }
+            }
+
+            yield break;
+        }
+
+        private List<Automation> GetAutomations() {
+            var fullList = new List<Automation>();
+            entryPoint.GetAutomations( ref fullList );
+
+            foreach ( var item in fullList ) {
+                item.Reset();
+            }
+
+            var newList = new List<Automation>();
+            for ( int i = 0; i < fullList.Count; i++ ) {
+                var item = fullList[i];
+
+                newList.Add( item );
+
+                if ( item is LoopableAutomation ) {
+                    i = FixLoops( fullList, i );
+                }
+            }
+
+            return newList;
+        }
+
+        private int FixLoops( List<Automation> list, int index ) {
+            var loopList = new List<Automation>();
+            var loopStart = (LoopableAutomation)list[index];
+
+            for ( int i = index + 1; i < list.Count; i++ ) {
+                var item = list[i];
+                if ( item is LoopableAutomation ) {
+                    loopList.Add( item );
+                    i = FixLoops( list, i );
+                } else if ( item is LoopEnd ) {
+                    loopList.Add( item );
+                    loopStart.LoopList = loopList;
+                    return i;
+                } else {
+                    loopList.Add( item );
+                }
+            }
+
+            throw new Exception( "No loop end found!" );
+        }
+
         private void CreateAutomation( object data ) {
             var mpos = (Vector2)( data as object[] )[0];
             var type = (Type)( data as object[] )[1];
