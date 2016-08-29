@@ -10,6 +10,7 @@ using TNRD.Editor.Utilities;
 using TNRD.Automatron.Automations;
 using TNRD.Editor.Serialization;
 using System.Collections;
+using TNRD.Editor.Windows;
 
 namespace TNRD.Automatron {
 
@@ -94,6 +95,7 @@ namespace TNRD.Automatron {
 
             WindowSettings.IsFullscreen = true;
 
+            CreateIcons();
         }
 
         protected override void OnBeforeSerialize() {
@@ -111,6 +113,7 @@ namespace TNRD.Automatron {
 
             WindowSettings.IsFullscreen = true;
 
+            CreateIcons();
         }
 
         private void CreateIcons() {
@@ -123,10 +126,19 @@ namespace TNRD.Automatron {
 
         protected override void OnGUI() {
             EditorGUILayout.BeginHorizontal( EditorStyles.toolbar );
-            if ( GUILayout.Button( "File", EditorStyles.toolbarButton ) ) {
+            if ( GUILayout.Button( "File", EditorStyles.toolbarDropDown ) ) {
 
             }
 
+            if ( GUILayout.Button( "Automations", EditorStyles.toolbarDropDown ) ) {
+                var menu = GenericMenuBuilder.CreateMenu();
+                foreach ( var item in automations ) {
+                    menu.AddItem( item.Key, false, CreateAutomation, new object[] { Input.MousePosition, item.Value } );
+                }
+                menu.ShowAsContext();
+            }
+
+            // Spacer
             GUILayout.Button( "", EditorStyles.toolbarButton );
 
             if ( Globals.IsExecuting ) {
@@ -142,16 +154,24 @@ namespace TNRD.Automatron {
             }
 
             if ( GUILayout.Button( resetContent, EditorStyles.toolbarButton ) ) {
-                var fullList = new List<Automation>();
-                entryPoint.GetAutomations( ref fullList );
-
-                foreach ( var item in fullList ) {
+                var list = GetAllAutomations();
+                foreach ( var item in list ) {
                     item.Reset();
                 }
             }
 
             if ( GUILayout.Button( trashContent, EditorStyles.toolbarButton ) ) {
-                
+                ShowPopup( new MessageBox( "Watch Out!", "You're about to empty this Automatron...\nAre you sure you want to do this?", EMessageBoxButtons.YesNo, ( EDialogResult result ) => {
+                    if ( result == EDialogResult.Yes ) {
+                        var controls = GetControls<ExtendedControl>();
+                        for ( int i = controls.Count - 1; i >= 0; i-- ) {
+                            var item = controls[i];
+                            if ( item != entryPoint ) {
+                                item.Remove();
+                            }
+                        }
+                    }
+                } ) );
             }
 
             GUILayout.FlexibleSpace();
@@ -169,11 +189,26 @@ namespace TNRD.Automatron {
         }
 
         private void ExecuteAutomations() {
-            var list = GetAutomations();
-            executionRoutine = EditorCoroutine.Start( ExecuteAutomationsAsync( list ) );
+            executionRoutine = EditorCoroutine.Start( ExecuteAutomationsAsync() );
         }
 
-        private IEnumerator ExecuteAutomationsAsync( List<Automation> list ) {
+        private IEnumerator ExecuteAutomationsAsync() {
+            var entries = new List<QueueStart>() {
+                entryPoint
+            };
+
+            var entryPoints = GetControls<QueueStart>();
+            foreach ( var item in entryPoints ) {
+                if ( !entries.Contains( item ) ) {
+                    entries.Add( item );
+                }
+            }
+
+            var list = new List<Automation>();
+            foreach ( var item in entries ) {
+                list.AddRange( GetAutomations( item ) );
+            }
+
             Globals.LastError = null;
             Globals.IsError = false;
             Globals.IsExecuting = true;
@@ -210,26 +245,40 @@ namespace TNRD.Automatron {
             yield break;
         }
 
-        private List<Automation> GetAutomations() {
-            var fullList = new List<Automation>();
-            entryPoint.GetAutomations( ref fullList );
-
-            foreach ( var item in fullList ) {
-                item.Reset();
+        private List<Automation> GetAllAutomations() {
+            var list = new List<Automation>();
+            var entries = GetControls<QueueStart>();
+            foreach ( var item in entries ) {
+                list.AddRange( GetAutomations( item ) );
             }
+            return list;
+        }
 
-            var newList = new List<Automation>();
-            for ( int i = 0; i < fullList.Count; i++ ) {
-                var item = fullList[i];
+        private List<Automation> GetAutomations( Automation start ) {
+            try {
+                var list = new List<Automation>();
+                start.GetAutomations( ref list );
 
-                newList.Add( item );
-
-                if ( item is LoopableAutomation ) {
-                    i = FixLoops( fullList, i );
+                foreach ( var item in list ) {
+                    item.Reset();
                 }
-            }
 
-            return newList;
+                var newList = new List<Automation>();
+                for ( int i = 0; i < list.Count; i++ ) {
+                    var item = list[i];
+
+                    newList.Add( item );
+
+                    if ( item is LoopableAutomation ) {
+                        i = FixLoops( list, i );
+                    }
+                }
+
+                return newList;
+            } catch ( Exception ) {
+                Debug.Log( "OH noe!" );
+                throw;
+            }
         }
 
         private int FixLoops( List<Automation> list, int index ) {
