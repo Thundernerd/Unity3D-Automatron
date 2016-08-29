@@ -138,6 +138,7 @@ namespace TNRD.Automatron {
             entryPoint.GetAutomations( ref fullList );
 
             foreach ( var item in fullList ) {
+                item.Progress = 0;
                 item.Reset();
             }
 
