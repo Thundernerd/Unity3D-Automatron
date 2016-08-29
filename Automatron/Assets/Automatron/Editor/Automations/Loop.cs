@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TNRD.Editor.Serialization;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,10 +11,6 @@ namespace TNRD.Automatron.Automations {
     public abstract class LoopableAutomation : Automation {
 
         public List<Automation> LoopList { get; set; }
-
-        protected override void OnGUI() {
-            base.OnGUI();
-        }
 
         public sealed override IEnumerator Execute() {
             while ( !IsDone() ) {
@@ -101,6 +98,29 @@ namespace TNRD.Automatron.Automations {
 
         public override bool IsDone() {
             return index == GameObjects.Length;
+        }
+    }
+
+    [Automation( "Loop/List" )]
+    class LoopList : LoopableAutomation {
+
+        [ReadOnly]
+        [IgnoreSerialization]
+        public object Result;
+        [IgnoreSerialization]
+        public List<object> Items;
+
+        private int index = 0;
+
+        public override IEnumerator ExecuteLoop() {
+            Result = Items[index];
+            index++;
+            Progress = (float)index / Items.Count;
+            yield break;
+        }
+
+        public override bool IsDone() {
+            return index == Items.Count;
         }
     }
 
