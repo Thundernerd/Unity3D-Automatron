@@ -63,7 +63,12 @@ namespace TNRD.Automatron.Automations {
                     }
 
                     if ( Globals.IsError ) break;
-                    item.Progress = 1;
+
+                    if ( item is LoopEnd ) {
+                        item.Progress = Progress;
+                    } else {
+                        item.Progress = 1;
+                    }
                 }
 
                 yield return null;
@@ -98,6 +103,34 @@ namespace TNRD.Automatron.Automations {
 
         public override bool IsDone() {
             return index == GameObjects.Length;
+        }
+    }
+
+    [Automation( "Loop/Count" )]
+    class LoopInt : LoopableAutomation {
+
+        public int Times;
+        [ReadOnly]
+        [IgnoreSerialization]
+        public int Result;
+
+        private int index = 0;
+
+        public override void Reset() {
+            base.Reset();
+            index = 0;
+            Result = 0;
+        }
+
+        public override IEnumerator ExecuteLoop() {
+            Result = index;
+            index++;
+            Progress = (float)index / Times;
+            yield break;
+        }
+
+        public override bool IsDone() {
+            return index == Times;
         }
     }
 
