@@ -82,24 +82,50 @@ namespace TNRD.Automatron {
             drawer.OnGUI( rect, Name, ref value );
             info.SetValue( parent, value );
 
-            if ( GUI.Button( new Rect( rect.x + rect.width, rect.y + rect.height / 2 - 5, 12, 10 ), "", ExtendedGUI.BoxStyle ) ) {
-                var line = FieldLine.HookLineOut( this );
-                if ( LinesOut.Contains( line ) ) {
-                    LinesOut.Remove( line );
-                }
+            var rightRect = new Rect( rect.x + rect.width, rect.y + rect.height / 2 - 5, 12, 10 );
+            var leftRect = new Rect( rect.x - 12, rect.y + rect.height / 2 - 5, 12, 10 );
 
-                LinesOut.Add( line );
-                parent.Window.AddControl( line );
+            GUI.Box( leftRect, "", ExtendedGUI.BoxStyle );
+            GUI.Box( rightRect, "", ExtendedGUI.BoxStyle );
+
+            var mpos = parent.Input.MousePosition;
+
+            if ( parent.Input.ButtonReleased( Editor.EMouseButton.Left ) ) {
+                if ( leftRect.Contains( mpos ) ) {
+                    if ( LineIn != null ) {
+                        LineIn.Remove();
+                        LineIn = null;
+                    }
+
+                    LineIn = FieldLine.HookLineIn( this );
+                    parent.Window.AddControl( LineIn );
+                    parent.Input.Use();
+                } else if ( rightRect.Contains( mpos ) ) {
+                    var line = FieldLine.HookLineOut( this );
+                    if ( LinesOut.Contains( line ) ) {
+                        LinesOut.Remove( line );
+                    }
+
+                    LinesOut.Add( line );
+                    parent.Window.AddControl( line );
+                    parent.Input.Use();
+                }
             }
 
-            if ( GUI.Button( new Rect( rect.x - 12, rect.y + rect.height / 2 - 5, 12, 10 ), "", ExtendedGUI.BoxStyle ) ) {
-                if ( LineIn != null ) {
-                    LineIn.Remove();
-                    LineIn = null;
+            if ( parent.Input.ButtonReleased( Editor.EMouseButton.Right ) ) {
+                if ( leftRect.Contains( mpos ) ) {
+                    if ( LineIn != null ) {
+                        LineIn.Remove();
+                        LineIn = null;
+                    }
+                    parent.Input.Use();
+                } else if ( rightRect.Contains( mpos ) ) {
+                    for ( int i = LinesOut.Count - 1; i >= 0; i-- ) {
+                        LinesOut[i].Remove();
+                    }
+                    LinesOut.Clear();
+                    parent.Input.Use();
                 }
-
-                LineIn = FieldLine.HookLineIn( this );
-                parent.Window.AddControl( LineIn );
             }
         }
     }

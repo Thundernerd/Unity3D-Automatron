@@ -142,31 +142,54 @@ namespace TNRD.Automatron {
             if ( showInArrow ) {
                 GUI.DrawTexture( lArrow, Assets["toparrowleft"] );
 
-                if ( Input.ButtonReleased( EMouseButton.Left ) && lArrow.Contains( Input.MousePosition ) ) {
-                    if ( LineIn != null ) {
-                        LineIn.Remove();
-                        LineIn = null;
-                    }
+                if ( Input.ButtonReleased( EMouseButton.Left )) {
+                    if ( lArrow.Contains( Input.MousePosition ) ) {
+                        if ( LineIn != null ) {
+                            LineIn.Remove();
+                            LineIn = null;
+                        }
 
-                    LineIn = AutomationLine.HookLineIn( this );
-                    Window.AddControl( LineIn );
-                    Input.Use();
+                        LineIn = AutomationLine.HookLineIn( this );
+                        Window.AddControl( LineIn );
+                        Input.Use();
+                    }
+                } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
+                    if ( lArrow.Contains( Input.MousePosition ) ) {
+                        if ( LineIn != null ) {
+                            LineIn.Remove();
+                            LineIn = null;
+                        }
+
+                        Input.Use();
+                    }
                 }
             }
 
             if ( showOutArrow ) {
                 GUI.DrawTexture( rArrow, Assets["toparrowright"] );
 
-                if ( Input.ButtonReleased( EMouseButton.Left ) && rArrow.Contains( Input.MousePosition ) ) {
-                    if ( LineOut != null ) {
-                        LineOut.Remove();
-                        LineOut = null;
-                    }
+                if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                    if ( rArrow.Contains( Input.MousePosition ) ) {
+                        if ( LineOut != null ) {
+                            LineOut.Remove();
+                            LineOut = null;
+                        }
 
-                    LineOut = AutomationLine.HookLineOut( this );
-                    Window.AddControl( LineOut );
-                    Input.Use();
+                        LineOut = AutomationLine.HookLineOut( this );
+                        Window.AddControl( LineOut );
+                        Input.Use();
+                    }
+                } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
+                    if ( rArrow.Contains( Input.MousePosition ) ) {
+                        if ( LineOut != null ) {
+                            LineOut.Remove();
+                            LineOut = null;
+                        }
+
+                        Input.Use();
+                    }
                 }
+
             }
 
             if ( Input.ButtonPressed( EMouseButton.Left ) ) {
