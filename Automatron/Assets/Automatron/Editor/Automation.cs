@@ -13,6 +13,7 @@ namespace TNRD.Automatron {
 
         private static Automation dragger = null;
 
+        [RequireSerialization]
         private string name;
         private GUIStyle headerStyle;
 
@@ -26,12 +27,15 @@ namespace TNRD.Automatron {
         [RequireSerialization]
         protected bool showInArrow = true;
 
-        private Texture2D progressTexture;
-
+        [IgnoreSerialization]
         public float Progress;
 
+        [IgnoreSerialization]
         public AutomationLine LineIn;
+        [IgnoreSerialization]
         public AutomationLine LineOut;
+
+        private ErrorType errorType = ErrorType.None;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
@@ -46,7 +50,6 @@ namespace TNRD.Automatron {
         }
 
         protected override void OnAfterSerialize() {
-            name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
             GetFields();
             UpdateSize();
             RunOnGUIThread( CreateStyles );
@@ -97,26 +100,26 @@ namespace TNRD.Automatron {
         private void CreateStyles() {
             headerStyle = new GUIStyle( EditorStyles.label );
             headerStyle.alignment = TextAnchor.MiddleCenter;
-
-            var tex = new Texture2D( 1, 1, TextureFormat.RGBA32, false );
-            tex.hideFlags = HideFlags.HideAndDontSave;
-
-            tex.SetPixel( 0, 0, new Color( 0.0235f, 0.3568f, 0.0235f, 0.65f ) );
-            tex.Apply();
-
-            progressTexture = tex;
         }
 
         protected override void OnGUI() {
             var rect = Rectangle;
 
             GUI.Box( rect, "", ExtendedGUI.DefaultWindowStyle );
-            if ( Progress > 0 ) {
-                GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width * Progress, 15 ), progressTexture );
+            if ( Progress > 0 && errorType == ErrorType.None ) {
+                GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width * Progress, 15 ), Assets["progressBar"] );
+            }
+            switch ( errorType ) {
+                case ErrorType.Generic:
+                    GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width, 15 ), Assets["genericException"] );
+                    break;
+                case ErrorType.Arugment:
+                    GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width, 15 ), Assets["argumentException"] );
+                    break;
             }
             GUI.Label( new Rect( rect.x, rect.y, rect.width, 16 ), name, headerStyle );
 
-            if ( showCloseButton && !AutomatronEditor.IsExecuting ) {
+            if ( showCloseButton && !Globals.IsExecuting ) {
                 var cRect = new Rect( rect.x + rect.width - 14, rect.y + 1, 13, 13 );
                 if ( cRect.Contains( Input.MousePosition ) ) {
                     GUI.DrawTexture( cRect, Assets["crossActive"] );
@@ -232,13 +235,31 @@ namespace TNRD.Automatron {
             }
         }
 
-        public virtual void Reset() { }
+        public virtual void Reset() {
+            Progress = 0;
+            errorType = ErrorType.None;
+
+            foreach ( var item in fields ) {
+                if ( item.LineIn != null ) {
+                    item.LineIn.Color = Color.white;
+                }
+            }
+        }
 
         public void PrepareForExecute() {
             foreach ( var item in fields ) {
                 if ( item.LineIn != null ) {
                     var value = item.LineIn.Left.GetValue();
-                    item.SetValue( value );
+                    try {
+                        item.SetValue( value );
+                    } catch ( System.ArgumentException ) {
+                        item.LineIn.Color = new Color( 0.72f, 0.72f, 0.047f, 1 );
+                        errorType = ErrorType.Arugment;
+                        Globals.IsError = true;
+                    } catch ( System.Exception ) {
+                        errorType = ErrorType.Generic;
+                        Globals.IsError = true;
+                    }
                 }
             }
         }

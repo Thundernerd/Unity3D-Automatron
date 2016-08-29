@@ -10,7 +10,7 @@ namespace TNRD.Automatron {
         public List<object> CustomAttributes = new List<object>();
         public bool IsReadOnly {
             get {
-                return HasReadOnlyAttribute || AutomatronEditor.IsExecuting;
+                return HasReadOnlyAttribute || Globals.IsExecuting;
             }
         }
         public bool HasReadOnlyAttribute = false;

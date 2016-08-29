@@ -124,7 +124,8 @@ namespace TNRD.Automatron {
         }
 
         private IEnumerator ExecuteAutomationsAsync( List<Automation> list ) {
-            IsExecuting = true;
+            Globals.IsError = false;
+            Globals.IsExecuting = true;
 
             foreach ( var item in list ) {
                 item.PrepareForExecute();
@@ -133,9 +134,10 @@ namespace TNRD.Automatron {
                     yield return routine.Current;
                 }
                 item.Progress = 1;
+                if ( Globals.IsError ) break;
             }
 
-            IsExecuting = false;
+            Globals.IsExecuting = false;
             yield break;
         }
 

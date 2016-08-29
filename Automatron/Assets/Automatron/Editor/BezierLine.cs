@@ -12,9 +12,14 @@ namespace TNRD.Automatron {
         public Vector2 P1;
         public Vector2 P2;
 
+        public Color Color = Color.white;
+
         protected override void OnGUI() {
             Handles.BeginGUI();
+            var temp = Handles.color;
+            Handles.color = Color;
             Handles.DrawAAPolyLine( GetBezierPoints( Start, End, P1, P2 ) );
+            Handles.color = temp;
             Handles.EndGUI();
         }
 
