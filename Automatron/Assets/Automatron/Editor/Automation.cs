@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using TNRD.Editor;
 using TNRD.Editor.Core;
+using TNRD.Editor.Serialization;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,8 +19,11 @@ namespace TNRD.Automatron {
         private List<AutomationField> fields = new List<AutomationField>();
         private Dictionary<string, AutomationField> sortedFields = new Dictionary<string, AutomationField>();
 
+        [RequireSerialization]
         protected bool showCloseButton = true;
+        [RequireSerialization]
         protected bool showOutArrow = true;
+        [RequireSerialization]
         protected bool showInArrow = true;
 
         public float Progress;
@@ -100,10 +104,32 @@ namespace TNRD.Automatron {
 
             if ( showInArrow ) {
                 GUI.DrawTexture( lArrow, Assets["toparrowleft"] );
+
+                if ( Input.ButtonReleased( EMouseButton.Left ) && lArrow.Contains( Input.MousePosition ) ) {
+                    if ( LineIn != null ) {
+                        LineIn.Remove();
+                        LineIn = null;
+                    }
+
+                    LineIn = AutomationLine.HookLineIn( this );
+                    Window.AddControl( LineIn );
+                    Input.Use();
+                }
             }
 
             if ( showOutArrow ) {
                 GUI.DrawTexture( rArrow, Assets["toparrowright"] );
+
+                if ( Input.ButtonReleased( EMouseButton.Left ) && rArrow.Contains( Input.MousePosition ) ) {
+                    if ( LineOut != null ) {
+                        LineOut.Remove();
+                        LineOut = null;
+                    }
+
+                    LineOut = AutomationLine.HookLineOut( this );
+                    Window.AddControl( LineOut );
+                    Input.Use();
+                }
             }
 
             if ( Input.ButtonPressed( EMouseButton.Left ) ) {

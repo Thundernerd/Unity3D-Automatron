@@ -152,7 +152,7 @@ namespace TNRD.Automatron {
                 var r = Left.Rectangle;
                 Start = r.position;
                 Start.x += r.width + 12;
-                Start.y += r.height / 2;
+                Start.y += 8;
             }
 
             if ( Right == null ) {
@@ -161,7 +161,7 @@ namespace TNRD.Automatron {
                 var r = Right.Rectangle;
                 End = r.position;
                 End.x -= 12;
-                End.y += r.height / 2;
+                End.y += 8;
             }
 
             P1 = Start + p1;

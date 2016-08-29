@@ -76,6 +76,7 @@ namespace TNRD.Automatron {
                 if ( LinesOut.Contains( line ) ) {
                     LinesOut.Remove( line );
                 }
+
                 LinesOut.Add( line );
                 parent.Window.AddControl( line );
             }
