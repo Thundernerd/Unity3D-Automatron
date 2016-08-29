@@ -13,6 +13,7 @@ namespace TNRD.Automatron.Automations {
         public Object Resource;
 
         public override void Reset() {
+			base.Reset();
             Resource = null;
         }
 
@@ -30,6 +31,7 @@ namespace TNRD.Automatron.Automations {
         public Object[] Resources;
 
         public override void Reset() {
+			base.Reset();
             Resources = new Object[0];
         }
 
@@ -53,6 +55,7 @@ namespace TNRD.Automatron.Automations {
         public Object[] Resources;
 
         public override void Reset() {
+			base.Reset();
             Resources = new Object[0];
         }
 
@@ -76,6 +79,7 @@ namespace TNRD.Automatron.Automations {
         public Object[] Resources;
 
         public override void Reset() {
+			base.Reset();
             Resources = new Object[0];
         }
 

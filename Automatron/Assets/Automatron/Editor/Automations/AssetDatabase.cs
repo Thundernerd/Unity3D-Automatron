@@ -15,6 +15,7 @@ namespace TNRD.Automatron.Automations {
         public string Result;
 
         public override void Reset() {
+			base.Reset();
             Result = "";
         }
 
@@ -33,6 +34,7 @@ namespace TNRD.Automatron.Automations {
         public bool Result;
 
         public override void Reset() {
+			base.Reset();
             Result = false;
         }
 
@@ -51,6 +53,7 @@ namespace TNRD.Automatron.Automations {
         public string[] Result;
 
         public override void Reset() {
+			base.Reset();
             Result = new string[0];
         }
 
@@ -73,6 +76,7 @@ namespace TNRD.Automatron.Automations {
         public string Result;
 
         public override void Reset() {
+			base.Reset();
             Result = "";
         }
 
@@ -91,6 +95,7 @@ namespace TNRD.Automatron.Automations {
         public string Result;
 
         public override void Reset() {
+			base.Reset();
             Result = "";
         }
 
@@ -108,6 +113,7 @@ namespace TNRD.Automatron.Automations {
         public string Result;
 
         public override void Reset() {
+			base.Reset();
             Result = "";
         }
 
@@ -126,6 +132,7 @@ namespace TNRD.Automatron.Automations {
         public Object[] Result;
 
         public override void Reset() {
+			base.Reset();
             Result = new Object[0];
         }
 
@@ -159,6 +166,7 @@ namespace TNRD.Automatron.Automations {
         public string Result;
 
         public override void Reset() {
+			base.Reset();
             Result = "";
         }
 
@@ -176,6 +184,7 @@ namespace TNRD.Automatron.Automations {
         public bool Result;
 
         public override void Reset() {
+			base.Reset();
             Result = false;
         }
 
@@ -205,6 +214,7 @@ namespace TNRD.Automatron.Automations {
         public string Result;
 
         public override void Reset() {
+			base.Reset();
             Result = "";
         }
 

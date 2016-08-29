@@ -25,6 +25,7 @@ namespace TNRD.Automatron.Automations {
         public Vector3 Value;
 
         public override void Reset() {
+			base.Reset();
             Value = new Vector3();
         }
 
@@ -41,6 +42,7 @@ namespace TNRD.Automatron.Automations {
         public Quaternion Value;
 
         public override void Reset() {
+			base.Reset();
             Value = new Quaternion();
         }
 
@@ -57,6 +59,7 @@ namespace TNRD.Automatron.Automations {
         public Quaternion Value;
 
         public override void Reset() {
+			base.Reset();
             Value = new Quaternion();
         }
 
@@ -74,6 +77,7 @@ namespace TNRD.Automatron.Automations {
         public Quaternion Value;
 
         public override void Reset() {
+			base.Reset();
             Value = new Quaternion();
         }
 

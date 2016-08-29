@@ -61,6 +61,7 @@ namespace TNRD.Automatron.Automations {
         public int Result;
 
         public override void Reset() {
+			base.Reset();
             Result = 0;
         }
 

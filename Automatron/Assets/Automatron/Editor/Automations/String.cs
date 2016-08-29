@@ -22,6 +22,7 @@ namespace TNRD.Automatron.Automations {
         public bool Result;
 
         public override void Reset() {
+			base.Reset();
             Result = false;
         }
 
@@ -42,6 +43,7 @@ namespace TNRD.Automatron.Automations {
         public int Index;
 
         public override void Reset() {
+			base.Reset();
             Index = 0;
         }
 
@@ -67,6 +69,7 @@ namespace TNRD.Automatron.Automations {
         public int Index;
 
         public override void Reset() {
+			base.Reset();
             Index = 0;
         }
 

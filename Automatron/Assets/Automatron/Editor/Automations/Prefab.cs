@@ -15,6 +15,7 @@ namespace TNRD.Automatron.Automations {
         public Object Prefab;
 
         public override void Reset() {
+			base.Reset();
             Prefab = null;
         }
 
@@ -36,6 +37,7 @@ namespace TNRD.Automatron.Automations {
         public GameObject Prefab;
 
         public override void Reset() {
+			base.Reset();
             Prefab = null;
         }
 
@@ -67,6 +69,7 @@ namespace TNRD.Automatron.Automations {
         public GameObject Root;
 
         public override void Reset() {
+			base.Reset();
             Root = null;
         }
 
@@ -86,6 +89,7 @@ namespace TNRD.Automatron.Automations {
         public Object Object;
 
         public override void Reset() {
+			base.Reset();
             Object = null;
         }
 
@@ -105,6 +109,7 @@ namespace TNRD.Automatron.Automations {
         public Object Parent;
 
         public override void Reset() {
+			base.Reset();
             Parent = null;
         }
 
@@ -123,6 +128,7 @@ namespace TNRD.Automatron.Automations {
         public PrefabType Type;
 
         public override void Reset() {
+			base.Reset();
             Type = PrefabType.None;
         }
 
@@ -143,6 +149,7 @@ namespace TNRD.Automatron.Automations {
         public GameObject gameObject;
 
         public override void Reset() {
+			base.Reset();
             gameObject = null;
         }
 
@@ -171,6 +178,7 @@ namespace TNRD.Automatron.Automations {
         public GameObject gameObject;
 
         public override void Reset() {
+			base.Reset();
             gameObject = null;
         }
 
