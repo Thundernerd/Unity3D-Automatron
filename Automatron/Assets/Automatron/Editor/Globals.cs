@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿using System;
 
 namespace TNRD.Automatron {
 
@@ -6,5 +6,7 @@ namespace TNRD.Automatron {
 
         public static bool IsError;
         public static bool IsExecuting;
+
+        public static Exception LastError;
     }
 }

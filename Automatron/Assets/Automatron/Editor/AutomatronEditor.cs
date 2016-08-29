@@ -122,15 +122,34 @@ namespace TNRD.Automatron {
         }
 
         private IEnumerator ExecuteAutomationsAsync( List<Automation> list ) {
+            Globals.LastError = null;
             Globals.IsError = false;
             Globals.IsExecuting = true;
 
             foreach ( var item in list ) {
                 item.PrepareForExecute();
+                if ( Globals.IsError ) break;
+
                 var routine = item.Execute();
-                while ( routine.MoveNext() ) {
+                while ( true ) {
+                    var moveNext = false;
+
+                    try {
+                        moveNext = routine.MoveNext();
+                    } catch ( Exception ex ) {
+                        Globals.LastError = ex;
+                        Globals.IsError = true;
+                        item.ErrorType = ErrorType.Generic;
+                        break;
+                    }
+
+                    if ( !moveNext ) break;
+
                     yield return routine.Current;
                 }
+
+                if ( Globals.IsError ) break;
+
                 item.Progress = 1;
                 if ( Globals.IsError ) break;
             }

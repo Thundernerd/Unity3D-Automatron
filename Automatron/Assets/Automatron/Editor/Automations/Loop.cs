@@ -18,9 +18,25 @@ namespace TNRD.Automatron.Automations {
         public sealed override IEnumerator Execute() {
             while ( !IsDone() ) {
                 var myRoutine = ExecuteLoop();
-                while ( myRoutine.MoveNext() ) {
+
+                while ( true ) {
+                    var moveNext = false;
+
+                    try {
+                        moveNext = myRoutine.MoveNext();
+                    } catch ( Exception ex ) {
+                        Globals.LastError = ex;
+                        Globals.IsError = true;
+                        ErrorType = ErrorType.Generic;
+                        break;
+                    }
+
+                    if ( !moveNext ) break;
+
                     yield return myRoutine.Current;
                 }
+
+                if ( Globals.IsError ) break;
 
                 foreach ( var item in LoopList ) {
                     item.Progress = 0;
@@ -28,10 +44,28 @@ namespace TNRD.Automatron.Automations {
 
                 foreach ( var item in LoopList ) {
                     item.PrepareForExecute();
+                    if ( Globals.IsError ) break;
+
                     var routine = item.Execute();
-                    while ( routine.MoveNext() ) {
+
+                    while ( true ) {
+                        var moveNext = false;
+
+                        try {
+                            moveNext = routine.MoveNext();
+                        } catch ( Exception ex ) {
+                            Globals.LastError = ex;
+                            Globals.IsError = true;
+                            item.ErrorType = ErrorType.Generic;
+                            break;
+                        }
+
+                        if ( !moveNext ) break;
+
                         yield return routine.Current;
                     }
+
+                    if ( Globals.IsError ) break;
                     item.Progress = 1;
                 }
 
@@ -41,6 +75,33 @@ namespace TNRD.Automatron.Automations {
 
         public abstract IEnumerator ExecuteLoop();
         public abstract bool IsDone();
+    }
+
+    [Automation( "Loop/Game Objects" )]
+    class LoopGameObjects : LoopableAutomation {
+
+        [ReadOnly]
+        public GameObject Result;
+        public GameObject[] GameObjects;
+
+        private int index = 0;
+
+        public override void Reset() {
+            base.Reset();
+            index = 0;
+            Result = null;
+        }
+
+        public override IEnumerator ExecuteLoop() {
+            Result = GameObjects[index];
+            index++;
+            Progress = (float)index / GameObjects.Length;
+            yield break;
+        }
+
+        public override bool IsDone() {
+            return index == GameObjects.Length;
+        }
     }
 
     [Automation( "Loop/End" )]

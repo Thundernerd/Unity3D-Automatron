@@ -23,7 +23,6 @@ namespace TNRD.Automatron {
 
         public virtual void Initialize() { }
         public virtual void OnGUI( Rect rect, string name, ref object value ) {
-
             totalRect = rect;
             lastY = totalRect.y;
         }

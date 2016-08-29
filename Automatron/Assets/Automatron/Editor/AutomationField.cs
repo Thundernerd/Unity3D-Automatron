@@ -40,6 +40,7 @@ namespace TNRD.Automatron {
                 if ( fieldType.IsEnum ) {
                     drawerType = typeof( EnumDrawer );
                 } else if ( fieldType.IsArray || fieldType.GetInterfaces().Contains( typeof( IList ) ) ) {
+                    drawerType = typeof( SystemObjectDrawer );
                     // Set type when I finally made a good list drawer :)
                 } else {
                     var t = typeof( UnityEngine.Object );

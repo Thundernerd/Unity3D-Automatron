@@ -35,7 +35,8 @@ namespace TNRD.Automatron {
         [IgnoreSerialization]
         public AutomationLine LineOut;
 
-        private ErrorType errorType = ErrorType.None;
+        [IgnoreSerialization]
+        public ErrorType ErrorType = ErrorType.None;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
@@ -50,6 +51,7 @@ namespace TNRD.Automatron {
         }
 
         protected override void OnAfterSerialize() {
+            name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
             GetFields();
             UpdateSize();
             RunOnGUIThread( CreateStyles );
@@ -100,16 +102,17 @@ namespace TNRD.Automatron {
         private void CreateStyles() {
             headerStyle = new GUIStyle( EditorStyles.label );
             headerStyle.alignment = TextAnchor.MiddleCenter;
+
         }
 
         protected override void OnGUI() {
             var rect = Rectangle;
 
             GUI.Box( rect, "", ExtendedGUI.DefaultWindowStyle );
-            if ( Progress > 0 && errorType == ErrorType.None ) {
+            if ( Progress > 0 && ErrorType == ErrorType.None ) {
                 GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width * Progress, 15 ), Assets["progressBar"] );
             }
-            switch ( errorType ) {
+            switch ( ErrorType ) {
                 case ErrorType.Generic:
                     GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width, 15 ), Assets["genericException"] );
                     break;
@@ -237,7 +240,7 @@ namespace TNRD.Automatron {
 
         public virtual void Reset() {
             Progress = 0;
-            errorType = ErrorType.None;
+            ErrorType = ErrorType.None;
 
             foreach ( var item in fields ) {
                 if ( item.LineIn != null ) {
@@ -252,12 +255,10 @@ namespace TNRD.Automatron {
                     var value = item.LineIn.Left.GetValue();
                     try {
                         item.SetValue( value );
-                    } catch ( System.ArgumentException ) {
+                    } catch ( System.ArgumentException ex ) {
                         item.LineIn.Color = new Color( 0.72f, 0.72f, 0.047f, 1 );
-                        errorType = ErrorType.Arugment;
-                        Globals.IsError = true;
-                    } catch ( System.Exception ) {
-                        errorType = ErrorType.Generic;
+                        ErrorType = ErrorType.Arugment;
+                        Globals.LastError = ex;
                         Globals.IsError = true;
                     }
                 }
