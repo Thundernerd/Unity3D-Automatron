@@ -106,6 +106,34 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
+    [Automation( "Loop/Strings" )]
+    class LoopString : LoopableAutomation {
+
+        [ReadOnly]
+        public string Result;
+        public string[] Values;
+
+        private int index = 0;
+
+        public override void Reset() {
+            base.Reset();
+            index = 0;
+            Values = new string[0];
+            Result = "";
+        }
+
+        public override IEnumerator ExecuteLoop() {
+            Result = Values[index];
+            index++;
+            Progress = (float)index / Values.Length;
+            yield break;
+        }
+
+        public override bool IsDone() {
+            return index == Values.Length;
+        }
+    }
+
     [Automation( "Loop/Count" )]
     class LoopInt : LoopableAutomation {
 

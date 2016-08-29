@@ -141,20 +141,19 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    //[Automation( "Asset Database/Load Asset at Path" )]
-    //class LoadAssetAtPath : Automation {
+    [Automation( "Asset Database/Load Asset at Path" )]
+    class LoadAssetAtPath : Automation {
 
-    //    public string Path;
-    //    public ComponentType Type;
-    //    [ReadOnly]
-    //    [IgnoreSerialization]
-    //    public Object Result;
+        public string Path;
+        [ReadOnly]
+        [IgnoreSerialization]
+        public Object Result;
 
-    //    public override IEnumerator Execute() {
-    //        Result = AssetDatabase.LoadAssetAtPath( Path, Type.Type );
-    //        yield break;
-    //    }
-    //}
+        public override IEnumerator Execute() {
+            Result = AssetDatabase.LoadAssetAtPath<Object>( Path );
+            yield break;
+        }
+    }
 
     [Automation( "Asset Database/Move Asset" )]
     class MoveAsset : Automation {
