@@ -6,6 +6,7 @@ using System.Reflection;
 using TNRD.Automatron.Drawers;
 using TNRD.Editor.Core;
 using TNRD.Editor.Serialization;
+using UnityEditor;
 using UnityEngine;
 
 namespace TNRD.Automatron {
@@ -58,7 +59,7 @@ namespace TNRD.Automatron {
             drawer.Type = fieldType;
             drawer.Initialize();
 
-            Name = Utils.GetPrettyName( info.Name );
+            Name = ObjectNames.NicifyVariableName( info.Name );
 
             Rectangle = new Rect( parent.Position.x, parent.Position.y, parent.Size.x, drawer.GetFieldHeight() );
         }
