@@ -7,6 +7,8 @@ using System.Linq;
 using TNRD.Automatron.Drawers;
 using TNRD.Editor;
 using TNRD.Editor.Utilities;
+using TNRD.Automatron.Automations;
+using TNRD.Editor.Serialization;
 
 namespace TNRD.Automatron {
 
@@ -68,11 +70,37 @@ namespace TNRD.Automatron {
             wnd.Show( true );
         }
 
+        private QueueStart entryPoint;
+        [RequireSerialization]
+        private string entryId;
+
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
 
-            var start = new Automations.QueueStart( false ) { Position = WindowRect.center - new Vector2( 375, 75 ) };
-            AddControl( start );
+            entryPoint = new QueueStart() {
+                IsInitial = true,
+                Position = WindowRect.center - new Vector2( 375, 75 )
+            };
+
+            AddControl( entryPoint );
+
+            WindowSettings.IsFullscreen = true;
+        }
+
+        protected override void OnBeforeSerialize() {
+            entryId = entryPoint.ID;
+        }
+
+        protected override void OnAfterSerialized() {
+            var entries = GetControls<QueueStart>();
+            foreach ( var item in entries ) {
+                if ( item.ID == entryId ) {
+                    entryPoint = item;
+                    break;
+                }
+            }
+
+            WindowSettings.IsFullscreen = true;
         }
 
         protected override void OnGUI() {
