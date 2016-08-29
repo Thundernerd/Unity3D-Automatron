@@ -26,6 +26,7 @@ namespace TNRD.Automatron.Drawers {
         private int keyboardIndex = -1;
 
         private bool updateValue = false;
+        private bool fold = false;
 
         private IList list;
 
@@ -37,6 +38,8 @@ namespace TNRD.Automatron.Drawers {
         }
 
         private float GetContentHeight() {
+            if ( fold ) return 36;
+
             if ( list == null ) {
                 return 36;
             } else {
@@ -126,12 +129,23 @@ namespace TNRD.Automatron.Drawers {
         public override void OnGUI( Rect rect, string name, ref object value ) {
             base.OnGUI( rect, name, ref value );
 
+            if ( updateValue ) {
+                value = list;
+                updateValue = false;
+            }
+
+            if ( value != list ) {
+                list = (Array)value;
+            }
+
             if ( list == null ) {
                 if ( value == null ) {
                     list = (IList)Activator.CreateInstance( Type );
                 } else {
                     list = (IList)value;
                 }
+
+                updateValue = true;
             }
 
             if ( headerLabelStyle == null ) {
@@ -147,56 +161,75 @@ namespace TNRD.Automatron.Drawers {
             var footerRect = new Rect( rect.x + rect.width - 50, rect.y + 20 + contentHeight, 50, 15 );
             var plusRect = new Rect( footerRect.x, footerRect.y - 2, 25, 13 );
             var minusRect = new Rect( footerRect.x + 23, footerRect.y - 2, 25, 13 );
-
+            var foldRect = new Rect( rect.x + 3, rect.y + 3, 13, 13 );
 
             GUI.Box( headerRect, "", headerStyle );
             GUI.Label( headerRect, name, headerLabelStyle );
+            EditorGUI.EndDisabledGroup();
+
+            if ( fold ) {
+                GUI.DrawTexture( foldRect, Parent.Parent.Assets["foldOut"] );
+            } else {
+                GUI.DrawTexture( foldRect, Parent.Parent.Assets["foldIn"] );
+            }
+
+            var evt = Event.current;
+            if ( evt.isMouse ) {
+                if ( evt.type == EventType.MouseUp && evt.button == 0 ) {
+                    if ( foldRect.Contains( evt.mousePosition ) ) {
+                        fold = !fold;
+                    }
+                }
+            }
+
+            EditorGUI.BeginDisabledGroup( IsReadOnly );
+
             GUI.Box( contentRect, "", backgroundStyle );
 
             var elementBackgroundRect = new Rect( contentRect.x, contentRect.y, contentRect.width, elementBackgroundHeight );
             var elementRect = new Rect( contentRect.x + 6, contentRect.y + 1, contentRect.width - 12, elementHeight );
             var tGotKeyboardIndex = false;
 
-            for ( int i = 0; i < list.Count; i++ ) {
+            if ( !fold ) {
+                for ( int i = 0; i < list.Count; i++ ) {
+                    var selected = i == selectedIndex;
+                    var keyboard = i == keyboardIndex;
 
-                var selected = i == selectedIndex;
-                var keyboard = i == keyboardIndex;
+                    if ( Event.current.type == EventType.Repaint ) {
+                        elementStyle.Draw( elementBackgroundRect, false, false, selected, keyboard );
+                    }
 
-                if ( Event.current.type == EventType.Repaint ) {
-                    elementStyle.Draw( elementBackgroundRect, false, false, selected, keyboard );
-                }
-
-                var evt = Event.current;
-                if ( evt.isMouse ) {
-                    if ( evt.type == EventType.MouseUp && evt.button == 0 ) {
-                        if ( elementRect.Contains( evt.mousePosition ) ) {
-                            selectedIndex = i;
+                    if ( evt.isMouse ) {
+                        if ( evt.type == EventType.MouseUp && evt.button == 0 ) {
+                            if ( elementRect.Contains( evt.mousePosition ) ) {
+                                selectedIndex = i;
+                            }
                         }
                     }
+
+                    var cId = GUIUtility.GetControlID( FocusType.Keyboard ) + 1;
+                    EditorGUI.BeginChangeCheck();
+
+                    var aValue = list[i];
+                    try {
+                        drawElement( ref aValue, elementRect );
+                    } catch ( ExitGUIException ) { }
+                    list[i] = aValue;
+
+                    if ( EditorGUI.EndChangeCheck() ) {
+                        updateValue = true;
+                    }
+
+                    var hId = GUIUtility.keyboardControl;
+
+                    if ( cId == hId ) {
+                        keyboardIndex = i;
+                        tGotKeyboardIndex = true;
+                    }
+
+                    elementBackgroundRect.y += elementBackgroundHeight;
+                    elementRect.y = elementBackgroundRect.y + 1;
                 }
-
-                var cId = GUIUtility.GetControlID( FocusType.Keyboard ) + 1;
-                EditorGUI.BeginChangeCheck();
-
-                var aValue = list[i];
-                try {
-                    drawElement( ref aValue, elementRect );
-                } catch ( ExitGUIException ) { }
-                list[i] = aValue;
-
-                if ( EditorGUI.EndChangeCheck() ) {
-                    updateValue = true;
-                }
-
-                var hId = GUIUtility.keyboardControl;
-
-                if ( cId == hId ) {
-                    keyboardIndex = i;
-                    tGotKeyboardIndex = true;
-                }
-
-                elementBackgroundRect.y += elementBackgroundHeight;
-                elementRect.y = elementBackgroundRect.y + 1;
             }
 
 

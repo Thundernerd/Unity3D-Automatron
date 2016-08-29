@@ -39,9 +39,10 @@ namespace TNRD.Automatron {
             if ( drawerType == typeof( HelpDrawer ) ) {
                 if ( fieldType.IsEnum ) {
                     drawerType = typeof( EnumDrawer );
-                } else if ( fieldType.IsArray || fieldType.GetInterfaces().Contains( typeof( IList ) ) ) {
-                    drawerType = typeof( SystemObjectDrawer );
-                    // Set type when I finally made a good list drawer :)
+                } else if ( fieldType.IsArray ) {
+                    drawerType = typeof( ArrayDrawer );
+                } else if ( fieldType.GetInterfaces().Contains( typeof( IList ) ) ) {
+                    drawerType = typeof( ListDrawer );
                 } else {
                     var t = typeof( UnityEngine.Object );
                     if ( fieldType == t || fieldType.IsSubclassOf( t ) ) {
