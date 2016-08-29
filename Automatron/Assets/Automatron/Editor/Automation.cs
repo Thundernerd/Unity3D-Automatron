@@ -18,8 +18,11 @@ namespace TNRD.Automatron {
         private List<AutomationField> fields = new List<AutomationField>();
         private Dictionary<string, AutomationField> sortedFields = new Dictionary<string, AutomationField>();
 
+        protected bool showCloseButton = true;
+        protected bool showOutArrow = true;
+        protected bool showInArrow = true;
+
         public float Progress;
-        public bool ShowCloseButton = true;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
@@ -83,10 +86,21 @@ namespace TNRD.Automatron {
             GUI.Box( rect, "", ExtendedGUI.DefaultWindowStyle );
             GUI.Label( new Rect( rect.x, rect.y, rect.width, 16 ), name, headerStyle );
 
-            if ( ShowCloseButton ) {
+            if ( showCloseButton ) {
                 if ( GUI.Button( new Rect( rect.x + rect.width - 20, rect.y, 20, 16 ), "X", EditorStyles.toolbar ) ) {
                     Remove();
                 }
+            }
+
+            var lArrow = new Rect( rect.x - 16, rect.y, 16, 17 );
+            var rArrow = new Rect( rect.x + rect.width, rect.y, 16, 17 );
+
+            if ( showInArrow ) {
+                GUI.DrawTexture( lArrow, Assets["toparrowleft"] );
+            }
+
+            if ( showOutArrow ) {
+                GUI.DrawTexture( rArrow, Assets["toparrowright"] );
             }
 
             if ( Input.ButtonPressed( EMouseButton.Left ) ) {

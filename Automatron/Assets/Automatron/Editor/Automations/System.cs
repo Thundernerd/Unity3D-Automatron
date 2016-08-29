@@ -16,7 +16,8 @@ namespace TNRD.Automatron.Automations {
         }
 
         public QueueStart( bool showCloseButton ) {
-            ShowCloseButton = showCloseButton;
+            this.showCloseButton = showCloseButton;
+            showInArrow = showCloseButton;
         }
 
         protected override void OnInitializeGUI() {

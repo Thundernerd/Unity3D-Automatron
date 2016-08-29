@@ -70,6 +70,9 @@ namespace TNRD.Automatron {
 
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
+
+            var start = new Automations.QueueStart( false ) { Position = WindowRect.center - new Vector2( 375, 75 ) };
+            AddControl( start );
         }
 
         protected override void OnGUI() {
