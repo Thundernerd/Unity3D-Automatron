@@ -7,46 +7,54 @@ namespace TNRD.Automatron {
     public class AutomationLine : BezierLine {
 
         public static AutomationLine HookLineIn( Automation auto ) {
-            if ( tempLine == null ) {
+            if ( Globals.TempFieldLine != null ) {
+                Globals.TempFieldLine.Remove();
+                Globals.TempFieldLine = null;
+            }
+
+            if ( Globals.TempAutomationLine == null ) {
                 var f = new AutomationLine();
                 f.Right = auto;
-                tempLine = f;
+                Globals.TempAutomationLine = f;
                 return f;
             } else {
-                if ( tempLine.Right == null && tempLine.Left != auto ) {
-                    var line = new AutomationLine( tempLine.Left, auto );
-                    tempLine.Remove();
-                    tempLine = null;
+                if ( Globals.TempAutomationLine.Right == null && Globals.TempAutomationLine.Left != auto ) {
+                    var line = new AutomationLine( Globals.TempAutomationLine.Left, auto );
+                    Globals.TempAutomationLine.Remove();
+                    Globals.TempAutomationLine = null;
                     return line;
                 } else {
-                    tempLine.Remove();
-                    tempLine = null;
+                    Globals.TempAutomationLine.Remove();
+                    Globals.TempAutomationLine = null;
                     return HookLineIn( auto );
                 }
             }
         }
 
         public static AutomationLine HookLineOut( Automation auto ) {
-            if ( tempLine == null ) {
+            if ( Globals.TempFieldLine != null ) {
+                Globals.TempFieldLine.Remove();
+                Globals.TempFieldLine = null;
+            }
+
+            if ( Globals.TempAutomationLine == null ) {
                 var f = new AutomationLine();
                 f.Left = auto;
-                tempLine = f;
+                Globals.TempAutomationLine = f;
                 return f;
             } else {
-                if ( tempLine.Left == null && tempLine.Right != auto ) {
-                    var line = new AutomationLine( auto, tempLine.Right );
-                    tempLine.Remove();
-                    tempLine = null;
+                if ( Globals.TempAutomationLine.Left == null && Globals.TempAutomationLine.Right != auto ) {
+                    var line = new AutomationLine( auto, Globals.TempAutomationLine.Right );
+                    Globals.TempAutomationLine.Remove();
+                    Globals.TempAutomationLine = null;
                     return line;
                 } else {
-                    tempLine.Remove();
-                    tempLine = null;
+                    Globals.TempAutomationLine.Remove();
+                    Globals.TempAutomationLine = null;
                     return HookLineOut( auto );
                 }
             }
         }
-
-        private static AutomationLine tempLine;
 
         [IgnoreSerialization]
         public Automation Left;
@@ -171,7 +179,7 @@ namespace TNRD.Automatron {
 
             if ( doMouseCheck ) {
                 if ( Left == null || Right == null ) {
-                    tempLine = null;
+                    Globals.TempAutomationLine = null;
                     Remove();
                 }
 

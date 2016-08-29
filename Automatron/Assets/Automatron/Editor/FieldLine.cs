@@ -7,46 +7,54 @@ namespace TNRD.Automatron {
     public class FieldLine : BezierLine {
 
         public static FieldLine HookLineIn( AutomationField field ) {
-            if ( tempLine == null ) {
+            if ( Globals.TempAutomationLine != null ) {
+                Globals.TempAutomationLine.Remove();
+                Globals.TempAutomationLine = null;
+            }
+
+            if ( Globals.TempFieldLine == null ) {
                 var f = new FieldLine();
                 f.Right = field;
-                tempLine = f;
+                Globals.TempFieldLine = f;
                 return f;
             } else {
-                if ( tempLine.Right == null && tempLine.Left != field ) {
-                    var line = new FieldLine( tempLine.Left, field );
-                    tempLine.Remove();
-                    tempLine = null;
+                if ( Globals.TempFieldLine.Right == null && Globals.TempFieldLine.Left != field ) {
+                    var line = new FieldLine( Globals.TempFieldLine.Left, field );
+                    Globals.TempFieldLine.Remove();
+                    Globals.TempFieldLine = null;
                     return line;
                 } else {
-                    tempLine.Remove();
-                    tempLine = null;
+                    Globals.TempFieldLine.Remove();
+                    Globals.TempFieldLine = null;
                     return HookLineIn( field );
                 }
             }
         }
 
         public static FieldLine HookLineOut( AutomationField field ) {
-            if ( tempLine == null ) {
+            if ( Globals.TempAutomationLine != null ) {
+                Globals.TempAutomationLine.Remove();
+                Globals.TempAutomationLine = null;
+            }
+
+            if ( Globals.TempFieldLine == null ) {
                 var f = new FieldLine();
                 f.Left = field;
-                tempLine = f;
+                Globals.TempFieldLine = f;
                 return f;
             } else {
-                if ( tempLine.Left == null && tempLine.Right != field ) {
-                    var line = new FieldLine( field, tempLine.Right );
-                    tempLine.Remove();
-                    tempLine = null;
+                if ( Globals.TempFieldLine.Left == null && Globals.TempFieldLine.Right != field ) {
+                    var line = new FieldLine( field, Globals.TempFieldLine.Right );
+                    Globals.TempFieldLine.Remove();
+                    Globals.TempFieldLine = null;
                     return line;
                 } else {
-                    tempLine.Remove();
-                    tempLine = null;
+                    Globals.TempFieldLine.Remove();
+                    Globals.TempFieldLine = null;
                     return HookLineOut( field );
                 }
             }
         }
-
-        private static FieldLine tempLine;
 
         [IgnoreSerialization]
         public AutomationField Left;
@@ -171,7 +179,7 @@ namespace TNRD.Automatron {
 
             if ( doMouseCheck ) {
                 if ( Left == null || Right == null ) {
-                    tempLine = null;
+                    Globals.TempFieldLine = null;
                     Remove();
                 }
 
