@@ -184,6 +184,14 @@ namespace TNRD.Automatron {
             UpdateSize();
         }
 
+        public bool HasField( string id ) {
+            return sortedFields.ContainsKey( id );
+        }
+
+        public AutomationField GetField( string id ) {
+            return sortedFields[id];
+        }
+
         public virtual void GetAutomations( ref List<Automation> automations ) {
             foreach ( var field in fields ) {
                 if ( field.LineIn != null ) {
@@ -203,12 +211,15 @@ namespace TNRD.Automatron {
             }
         }
 
-        public bool HasField( string id ) {
-            return sortedFields.ContainsKey( id );
-        }
+        public virtual void Reset() { }
 
-        public AutomationField GetField( string id ) {
-            return sortedFields[id];
+        public void PrepareForExecute() {
+            foreach ( var item in fields ) {
+                if ( item.LineIn != null ) {
+                    var value = item.LineIn.Left.GetValue();
+                    item.SetValue( value );
+                }
+            }
         }
 
         public virtual IEnumerator Execute() {

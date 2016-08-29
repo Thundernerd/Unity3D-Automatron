@@ -15,10 +15,26 @@ namespace TNRD.Automatron.Automations {
         }
 
         public sealed override IEnumerator Execute() {
-            yield break;
+            while ( !IsDone() ) {
+                var myRoutine = ExecuteLoop();
+                while ( myRoutine.MoveNext() ) {
+                    yield return myRoutine.Current;
+                }
+
+                foreach ( var item in LoopList ) {
+                    item.PrepareForExecute();
+                    var routine = item.Execute();
+                    while ( routine.MoveNext() ) {
+                        yield return routine.Current;
+                    }
+                }
+
+                yield return null;
+            }
         }
 
         public abstract IEnumerator ExecuteLoop();
+        public abstract bool IsDone();
     }
 
     [Automation( "Loop/End" )]

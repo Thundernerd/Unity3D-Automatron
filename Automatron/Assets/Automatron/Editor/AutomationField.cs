@@ -65,6 +65,14 @@ namespace TNRD.Automatron {
             return drawer.GetFieldHeight();
         }
 
+        public object GetValue() {
+            return info.GetValue( parent );
+        }
+
+        public void SetValue( object value ) {
+            info.SetValue( parent, value );
+        }
+
         public void OnGUI( Rect rect ) {
             Rectangle = rect;
 
