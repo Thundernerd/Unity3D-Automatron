@@ -26,6 +26,8 @@ namespace TNRD.Automatron {
         [RequireSerialization]
         protected bool showInArrow = true;
 
+        private Texture2D progressTexture;
+
         public float Progress;
 
         public AutomationLine LineIn;
@@ -95,12 +97,23 @@ namespace TNRD.Automatron {
         private void CreateStyles() {
             headerStyle = new GUIStyle( EditorStyles.label );
             headerStyle.alignment = TextAnchor.MiddleCenter;
+
+            var tex = new Texture2D( 1, 1, TextureFormat.RGBA32, false );
+            tex.hideFlags = HideFlags.HideAndDontSave;
+
+            tex.SetPixel( 0, 0, new Color( 0.0235f, 0.3568f, 0.0235f, 0.65f ) );
+            tex.Apply();
+
+            progressTexture = tex;
         }
 
         protected override void OnGUI() {
             var rect = Rectangle;
 
             GUI.Box( rect, "", ExtendedGUI.DefaultWindowStyle );
+            if ( Progress > 0 ) {
+                GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width * Progress, 16 ), progressTexture );
+            }
             GUI.Label( new Rect( rect.x, rect.y, rect.width, 16 ), name, headerStyle );
 
             if ( showCloseButton ) {
