@@ -13,6 +13,7 @@ namespace TNRD.Automatron.Drawers {
         private GUIStyle elementStyle;
         private GUIStyle footerStyle;
         private GUIStyle buttonStyle;
+        private GUIStyle hiddenStyle;
         private GUIContent plusButton;
         private GUIContent minusButton;
 
@@ -123,6 +124,10 @@ namespace TNRD.Automatron.Drawers {
 
             try {
                 headerLabelStyle = new GUIStyle( EditorStyles.label ) { alignment = TextAnchor.MiddleCenter };
+                hiddenStyle = new GUIStyle( EditorStyles.label ) {
+                    alignment = TextAnchor.MiddleCenter,
+                    fontStyle = FontStyle.Italic
+                };
             } catch ( Exception ) { }
         }
 
@@ -149,7 +154,7 @@ namespace TNRD.Automatron.Drawers {
                 updateValue = true;
             }
 
-            if ( headerLabelStyle == null ) {
+            if ( headerLabelStyle == null || hiddenStyle == null ) {
                 CreateListStyles();
                 return;
             }
@@ -231,8 +236,9 @@ namespace TNRD.Automatron.Drawers {
                     elementBackgroundRect.y += elementBackgroundHeight;
                     elementRect.y = elementBackgroundRect.y + 1;
                 }
+            } else {
+                GUI.Label( contentRect, string.Format( "{0} item(s) hidden", list.Count ), hiddenStyle );
             }
-
 
             if ( updateValue ) {
                 value = list;
