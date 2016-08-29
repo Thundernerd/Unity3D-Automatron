@@ -64,8 +64,6 @@ namespace TNRD.Automatron {
         }
         #endregion
 
-        public static bool IsExecuting { get; private set; }
-
         [MenuItem( "Window/Automatron" )]
         private static void Init() {
             var wnd = CreateEditor( "Automatron" );
@@ -146,7 +144,6 @@ namespace TNRD.Automatron {
             entryPoint.GetAutomations( ref fullList );
 
             foreach ( var item in fullList ) {
-                item.Progress = 0;
                 item.Reset();
             }
 
