@@ -158,7 +158,7 @@ namespace TNRD.Automatron {
             }
 
             if ( GUILayout.Button( resetContent, EditorStyles.toolbarButton ) ) {
-                var list = GetAllAutomations();
+                var list = GetControls<Automation>();
                 foreach ( var item in list ) {
                     item.Reset();
                 }
@@ -251,15 +251,6 @@ namespace TNRD.Automatron {
 
             Globals.IsExecuting = false;
             yield break;
-        }
-
-        private List<Automation> GetAllAutomations() {
-            var list = new List<Automation>();
-            var entries = GetControls<QueueStart>();
-            foreach ( var item in entries ) {
-                list.AddRange( GetAutomations( item ) );
-            }
-            return list;
         }
 
         private List<Automation> GetAutomations( Automation start ) {
