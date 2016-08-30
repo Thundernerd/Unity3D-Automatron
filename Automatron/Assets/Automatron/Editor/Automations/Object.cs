@@ -18,7 +18,8 @@ namespace TNRD.Automatron.Automations {
 	[Automation( "Object/Find Objects Of Type" )]
 	class ObjectFindObjectsOfType4 : Automation {
 
-		public System.Type type;
+        [TypeLimit( typeof( UnityEngine.Object ) )]
+        public System.Type type;
 		[ReadOnly]
 		public UnityEngine.Object[] Result;
 
@@ -32,6 +33,7 @@ namespace TNRD.Automatron.Automations {
 	[Automation( "Object/Find Object Of Type" )]
 	class ObjectFindObjectOfType10 : Automation {
 
+        [TypeLimit(typeof(UnityEngine.Object))]
 		public System.Type type;
 		[ReadOnly]
 		public UnityEngine.Object Result;

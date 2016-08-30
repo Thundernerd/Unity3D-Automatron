@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TNRD.Automatron {
 
     public static class Globals {
+
+        public static List<Type> Types;
 
         public static Vector2 Camera;
 

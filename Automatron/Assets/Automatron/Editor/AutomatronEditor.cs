@@ -11,6 +11,7 @@ using TNRD.Automatron.Automations;
 using TNRD.Editor.Serialization;
 using System.Collections;
 using TNRD.Editor.Windows;
+using System.Reflection;
 
 namespace TNRD.Automatron {
 
@@ -64,6 +65,28 @@ namespace TNRD.Automatron {
             } else {
                 return typeof( HelpDrawer );
             }
+        }
+        #endregion
+
+        #region Type Loading
+        [InitializeOnLoadMethod]
+        private static void LoadTypes() {
+            Globals.Types = GetAssemblyTypes( 
+                "Assembly-CSharp", 
+                "Assembly-CSharp-Editor", 
+                "UnityEngine", 
+                "UnityEditor" );
+        }
+
+        private static List<Type> GetAssemblyTypes( params string[] names ) {
+            var list = new List<Type>();
+            foreach ( var item in names ) {
+                var assembly = Assembly.Load( item );
+                list.AddRange( assembly.GetTypes()
+                    .Where( t => t.IsPublic )
+                    .Where( t => !t.Name.StartsWith( "<" ) && !t.Name.StartsWith( "$" ) ) );
+            }
+            return list;
         }
         #endregion
 
