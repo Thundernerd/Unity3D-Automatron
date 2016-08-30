@@ -1,108 +1,288 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TNRD.Editor.Serialization;
-using UnityEngine;
+using System.Collections;
 
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "Game Object/Create" )]
-    class CreateGameObject : Automation {
+	[Automation( "Game Object/Transform/Get" )]
+	class GameObjecttransformGet0 : Automation {
 
-        public string Name = "GameObject";
-        public Vector3 position = Vector3.zero;
-        public Vector3 Rotation = Vector3.zero;
-        public Vector3 Scale = Vector3.one;
-        [ReadOnly]
-        [IgnoreSerialization]
-        public GameObject GameObject;
+		public UnityEngine.GameObject Instance;
+		[ReadOnly]
+		public UnityEngine.Transform Result;
 
-        public override IEnumerator Execute() {
-            GameObject = new GameObject( Name );
-            GameObject.transform.position = position;
-            GameObject.transform.rotation = Quaternion.Euler( Rotation );
-            GameObject.transform.localScale = Scale;
-            yield break;
-        }
-    }
+		public override IEnumerator Execute() {
+			Result = Instance.transform;
+			yield break;
+		}
 
-    [Automation( "Game Object/Create Child" )]
-    class CreateChildGameObject : Automation {
+	}
 
-        public GameObject Parent;
-        public string Name = "GameObject";
-        public Vector3 position = Vector3.zero;
-        public Vector3 Rotation = Vector3.zero;
-        public Vector3 Scale = Vector3.one;
-        [ReadOnly]
-        [IgnoreSerialization]
-        public GameObject GameObject;
+	[Automation( "Game Object/Layer/Get" )]
+	class GameObjectlayerGet1 : Automation {
 
-        public override IEnumerator Execute() {
-            GameObject = new GameObject( Name );
-            if ( Parent != null ) {
-                GameObject.transform.SetParent( Parent.transform );
-            }
+		public UnityEngine.GameObject Instance;
+		[ReadOnly]
+		public System.Int32 Result;
 
-            GameObject.transform.position = position;
-            GameObject.transform.rotation = Quaternion.Euler( Rotation );
-            GameObject.transform.localScale = Scale;
-            yield break;
-        }
-    }
+		public override IEnumerator Execute() {
+			Result = Instance.layer;
+			yield break;
+		}
 
-    [Automation( "Game Object/Destroy" )]
-    class DestroyGameObject : Automation {
+	}
 
-        [IgnoreSerialization]
-        public GameObject GameObject;
+	[Automation( "Game Object/Layer/Set" )]
+	class GameObjectlayerSet1 : Automation {
 
-        public override IEnumerator Execute() {
-            Object.DestroyImmediate( GameObject );
-            yield break;
-        }
-    }
+		public UnityEngine.GameObject Instance;
+		public System.Int32 Value;
 
-    [Automation( "Game Object/Destroy Multiple" )]
-    class DestroyGameObjects : Automation {
+		public override IEnumerator Execute() {
+			Instance.layer = Value;
+			yield break;
+		}
 
-        [IgnoreSerialization]
-        public GameObject[] GameObjects;
+	}
 
-        public override IEnumerator Execute() {
-            for ( int i = 0; i < GameObjects.Length; i++ ) {
-                Object.DestroyImmediate( GameObjects[i] );
-                Progress = i / (float)GameObjects.Length;
-                yield return null;
-            }
-            yield break;
-        }
-    }
+	[Automation( "Game Object/Active Self/Get" )]
+	class GameObjectactiveSelfGet2 : Automation {
 
-    [Automation( "Game Object/Create Primitive" )]
-    class CreatePrimitive : Automation {
+		public UnityEngine.GameObject Instance;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public PrimitiveType Type = PrimitiveType.Cube;
-        public string Name = "Primitive GameObject";
-        public Vector3 position = Vector3.zero;
-        public Vector3 Rotation = Vector3.zero;
-        public Vector3 Scale = Vector3.one;
-        [ReadOnly]
-        [IgnoreSerialization]
-        public GameObject Primitive;
+		public override IEnumerator Execute() {
+			Result = Instance.activeSelf;
+			yield break;
+		}
 
-        public override IEnumerator Execute() {
-            Primitive = GameObject.CreatePrimitive( Type );
-            Primitive.name = Name;
-            Primitive.transform.position = position;
-            Primitive.transform.rotation = Quaternion.Euler( Rotation );
-            Primitive.transform.localScale = Scale;
-            yield break;
-        }
-    }
+	}
+
+	[Automation( "Game Object/Active In Hierarchy/Get" )]
+	class GameObjectactiveInHierarchyGet3 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		[ReadOnly]
+		public System.Boolean Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.activeInHierarchy;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Is Static/Get" )]
+	class GameObjectisStaticGet4 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		[ReadOnly]
+		public System.Boolean Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.isStatic;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Is Static/Set" )]
+	class GameObjectisStaticSet4 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		public System.Boolean Value;
+
+		public override IEnumerator Execute() {
+			Instance.isStatic = Value;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Tag/Get" )]
+	class GameObjecttagGet5 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		[ReadOnly]
+		public System.String Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.tag;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Tag/Set" )]
+	class GameObjecttagSet5 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		public System.String Value;
+
+		public override IEnumerator Execute() {
+			Instance.tag = Value;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Scene/Get" )]
+	class GameObjectsceneGet6 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		[ReadOnly]
+		public UnityEngine.SceneManagement.Scene Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.scene;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Create Primitive" )]
+	class GameObjectCreatePrimitive0 : Automation {
+
+		public UnityEngine.PrimitiveType type;
+		[ReadOnly]
+		public UnityEngine.GameObject Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.GameObject.CreatePrimitive(type);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Get Component" )]
+	class GameObjectGetComponent1 : Automation {
+
+		public UnityEngine.GameObject Instance;
+        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public System.Type type;
+		[ReadOnly]
+		public UnityEngine.Component Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.GetComponent(type);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Get Component In Children" )]
+	class GameObjectGetComponentInChildren3 : Automation {
+
+		public UnityEngine.GameObject Instance;
+        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public System.Type type;
+		public System.Boolean includeInactive;
+		[ReadOnly]
+		public UnityEngine.Component Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.GetComponentInChildren(type,includeInactive);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Get Component In Parent" )]
+	class GameObjectGetComponentInParent5 : Automation {
+
+		public UnityEngine.GameObject Instance;
+        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public System.Type type;
+		[ReadOnly]
+		public UnityEngine.Component Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.GetComponentInParent(type);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Get Components" )]
+	class GameObjectGetComponents6 : Automation {
+
+		public UnityEngine.GameObject Instance;
+        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public System.Type type;
+		[ReadOnly]
+		public UnityEngine.Component[] Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.GetComponents(type);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Get Components In Children" )]
+	class GameObjectGetComponentsInChildren9 : Automation {
+
+		public UnityEngine.GameObject Instance;
+        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public System.Type type;
+		public System.Boolean includeInactive;
+		[ReadOnly]
+		public UnityEngine.Component[] Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.GetComponentsInChildren(type,includeInactive);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Get Components In Parent" )]
+	class GameObjectGetComponentsInParent11 : Automation {
+
+		public UnityEngine.GameObject Instance;
+        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public System.Type type;
+		public System.Boolean includeInactive;
+		[ReadOnly]
+		public UnityEngine.Component[] Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.GetComponentsInParent(type,includeInactive);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Set Active" )]
+	class GameObjectSetActive12 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		public System.Boolean value;
+
+		public override IEnumerator Execute() {
+			Instance.SetActive(value);
+			yield break;
+		}
+
+	}
+
+	[Automation( "Game Object/Compare Tag" )]
+	class GameObjectCompareTag13 : Automation {
+
+		public UnityEngine.GameObject Instance;
+		public System.String tag;
+		[ReadOnly]
+		public System.Boolean Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.CompareTag(tag);
+			yield break;
+		}
+
+	}
 
 	[Automation( "Game Object/Find Game Object With Tag" )]
-	class GameObjectFindGameObjectWithTag1 : Automation {
+	class GameObjectFindGameObjectWithTag14 : Automation {
 
 		public System.String tag;
 		[ReadOnly]
@@ -116,7 +296,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Game Object/Find With Tag" )]
-	class GameObjectFindWithTag2 : Automation {
+	class GameObjectFindWithTag15 : Automation {
 
 		public System.String tag;
 		[ReadOnly]
@@ -130,7 +310,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Game Object/Find Game Objects With Tag" )]
-	class GameObjectFindGameObjectsWithTag3 : Automation {
+	class GameObjectFindGameObjectsWithTag16 : Automation {
 
 		public System.String tag;
 		[ReadOnly]
@@ -143,8 +323,24 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
+	[Automation( "Game Object/Add Component" )]
+	class GameObjectAddComponent29 : Automation {
+
+		public UnityEngine.GameObject Instance;
+        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public System.Type componentType;
+		[ReadOnly]
+		public UnityEngine.Component Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.AddComponent(componentType);
+			yield break;
+		}
+
+	}
+
 	[Automation( "Game Object/Find" )]
-	class GameObjectFind4 : Automation {
+	class GameObjectFind30 : Automation {
 
 		public System.String name;
 		[ReadOnly]
@@ -156,6 +352,7 @@ namespace TNRD.Automatron.Automations {
 		}
 
 	}
+
 
 #pragma warning restore 0649
 }
