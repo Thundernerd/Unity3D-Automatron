@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Math Utils/Get Quat Length" )]
+	[Automation( "Mathf/Utilities/Get Quat Length" )]
 	class MathUtilsGetQuatLength0 : Automation {
 
 		public UnityEngine.Quaternion q;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Get Quat Conjugate" )]
+	[Automation( "Mathf/Utilities/Get Quat Conjugate" )]
 	class MathUtilsGetQuatConjugate1 : Automation {
 
 		public UnityEngine.Quaternion q;
@@ -31,7 +31,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Orthogonalize Matrix" )]
+	[Automation( "Mathf/Utilities/Orthogonalize Matrix" )]
 	class MathUtilsOrthogonalizeMatrix2 : Automation {
 
 		public UnityEngine.Matrix4x4 m;
@@ -45,7 +45,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Quaternion Normalize" )]
+	[Automation( "Mathf/Utilities/Quaternion Normalize" )]
 	class MathUtilsQuaternionNormalize3 : Automation {
 
 		public UnityEngine.Quaternion q;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Quaternion From Matrix" )]
+	[Automation( "Mathf/Utilities/Quaternion From Matrix" )]
 	class MathUtilsQuaternionFromMatrix4 : Automation {
 
 		public UnityEngine.Matrix4x4 m;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Get Quat Log" )]
+	[Automation( "Mathf/Utilities/Get Quat Log" )]
 	class MathUtilsGetQuatLog5 : Automation {
 
 		public UnityEngine.Quaternion q;
@@ -85,7 +85,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Get Quat Exp" )]
+	[Automation( "Mathf/Utilities/Get Quat Exp" )]
 	class MathUtilsGetQuatExp6 : Automation {
 
 		public UnityEngine.Quaternion q;
@@ -99,7 +99,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Get Quat Squad" )]
+	[Automation( "Mathf/Utilities/Get Quat Squad" )]
 	class MathUtilsGetQuatSquad7 : Automation {
 
 		public System.Single t;
@@ -117,7 +117,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Get Squad Intermediate" )]
+	[Automation( "Mathf/Utilities/Get Squad Intermediate" )]
 	class MathUtilsGetSquadIntermediate8 : Automation {
 
 		public UnityEngine.Quaternion q0;
@@ -133,7 +133,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Ease" )]
+	[Automation( "Mathf/Utilities/Ease" )]
 	class MathUtilsEase9 : Automation {
 
 		public System.Single t;
@@ -149,7 +149,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Slerp" )]
+	[Automation( "Mathf/Utilities/Slerp" )]
 	class MathUtilsSlerp10 : Automation {
 
 		public UnityEngine.Quaternion p;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Intersect Ray Triangle" )]
+	[Automation( "Mathf/Utilities/Intersect Ray Triangle" )]
 	class MathUtilsIntersectRayTriangle11 : Automation {
 
 		public UnityEngine.Ray ray;
@@ -183,7 +183,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Closest Pt Segment Ray" )]
+	[Automation( "Mathf/Utilities/Closest Pt Segment Ray" )]
 	class MathUtilsClosestPtSegmentRay12 : Automation {
 
 		public UnityEngine.Vector3 p1;
@@ -202,7 +202,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Intersect Ray Sphere" )]
+	[Automation( "Mathf/Utilities/Intersect Ray Sphere" )]
 	class MathUtilsIntersectRaySphere13 : Automation {
 
 		public UnityEngine.Ray ray;
@@ -220,7 +220,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Math Utils/Closest Pt Ray Sphere" )]
+	[Automation( "Mathf/Utilities/Closest Pt Ray Sphere" )]
 	class MathUtilsClosestPtRaySphere14 : Automation {
 
 		public UnityEngine.Ray ray;
