@@ -101,70 +101,61 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Game Object/Find By Name" )]
-    class FindGameObject : Automation {
+	[Automation( "Game Object/Find Game Object With Tag" )]
+	class GameObjectFindGameObjectWithTag1 : Automation {
 
-        public string Name;
-        [ReadOnly]
-        [IgnoreSerialization]
-        public GameObject GameObject;
+		public System.String tag;
+		[ReadOnly]
+		public UnityEngine.GameObject Result;
 
-        public override IEnumerator Execute() {
-            GameObject = GameObject.Find( Name );
-            yield break;
-        }
-    }
+		public override IEnumerator Execute() {
+			Result = UnityEngine.GameObject.FindGameObjectWithTag(tag);
+			yield break;
+		}
 
-    [Automation( "Game Object/Find By Tag" )]
-    class FindGameObjectTag : Automation {
+	}
 
-        public string Tag;
-        [ReadOnly]
-        [IgnoreSerialization]
-        public GameObject GameObject;
+	[Automation( "Game Object/Find With Tag" )]
+	class GameObjectFindWithTag2 : Automation {
 
-        public override IEnumerator Execute() {
-            GameObject = GameObject.FindGameObjectWithTag( Tag );
-            yield break;
-        }
-    }
+		public System.String tag;
+		[ReadOnly]
+		public UnityEngine.GameObject Result;
 
-    [Automation( "Game Object/Find By Tag (Multiple)" )]
-    class FindGameObjectsTag : Automation {
+		public override IEnumerator Execute() {
+			Result = UnityEngine.GameObject.FindWithTag(tag);
+			yield break;
+		}
 
-        public string Tag;
-        [ReadOnly]
-        [IgnoreSerialization]
-        public GameObject[] GameObjects;
+	}
 
-        public override IEnumerator Execute() {
-            if ( string.IsNullOrEmpty( Tag ) ) yield break;
-            GameObjects = GameObject.FindGameObjectsWithTag( Tag );
-            yield break;
-        }
-    }
+	[Automation( "Game Object/Find Game Objects With Tag" )]
+	class GameObjectFindGameObjectsWithTag3 : Automation {
 
-    [Automation( "Game Object/Find By Tags" )]
-    class FindGameObjectsTags : Automation {
+		public System.String tag;
+		[ReadOnly]
+		public UnityEngine.GameObject[] Result;
 
-        public string[] Tags;
-        [ReadOnly]
-        [IgnoreSerialization]
-        public List<GameObject> GameObjects;
+		public override IEnumerator Execute() {
+			Result = UnityEngine.GameObject.FindGameObjectsWithTag(tag);
+			yield break;
+		}
 
-        public override IEnumerator Execute() {
-            GameObjects = new List<GameObject>();
+	}
 
-            for ( int i = 0; i < Tags.Length; i++ ) {
-                var tag = Tags[i];
-                GameObjects.AddRange( GameObject.FindGameObjectsWithTag( tag ) );
-                Progress = i / (float)Tags.Length;
-                yield return null;
-            }
+	[Automation( "Game Object/Find" )]
+	class GameObjectFind4 : Automation {
 
-            yield break;
-        }
-    }
+		public System.String name;
+		[ReadOnly]
+		public UnityEngine.GameObject Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.GameObject.Find(name);
+			yield break;
+		}
+
+	}
 
 #pragma warning restore 0649
 }

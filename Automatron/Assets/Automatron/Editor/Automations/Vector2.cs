@@ -4,6 +4,206 @@ using UnityEngine;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
+    [Automation( "Vector2/Lerp" )]
+    class Vector2Lerp0 : Automation {
+
+        public UnityEngine.Vector2 a;
+        public UnityEngine.Vector2 b;
+        public System.Single t;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Lerp( a, b, t );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Lerp Unclamped" )]
+    class Vector2LerpUnclamped1 : Automation {
+
+        public UnityEngine.Vector2 a;
+        public UnityEngine.Vector2 b;
+        public System.Single t;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.LerpUnclamped( a, b, t );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Move Towards" )]
+    class Vector2MoveTowards2 : Automation {
+
+        public UnityEngine.Vector2 current;
+        public UnityEngine.Vector2 target;
+        public System.Single maxDistanceDelta;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.MoveTowards( current, target, maxDistanceDelta );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Scale" )]
+    class Vector2Scale3 : Automation {
+
+        public UnityEngine.Vector2 a;
+        public UnityEngine.Vector2 b;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Scale( a, b );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Reflect" )]
+    class Vector2Reflect4 : Automation {
+
+        public UnityEngine.Vector2 inDirection;
+        public UnityEngine.Vector2 inNormal;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Reflect( inDirection, inNormal );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Dot" )]
+    class Vector2Dot5 : Automation {
+
+        public UnityEngine.Vector2 lhs;
+        public UnityEngine.Vector2 rhs;
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Dot( lhs, rhs );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Angle" )]
+    class Vector2Angle6 : Automation {
+
+        public UnityEngine.Vector2 from;
+        public UnityEngine.Vector2 to;
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Angle( from, to );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Distance" )]
+    class Vector2Distance7 : Automation {
+
+        public UnityEngine.Vector2 a;
+        public UnityEngine.Vector2 b;
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Distance( a, b );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Clamp Magnitude" )]
+    class Vector2ClampMagnitude8 : Automation {
+
+        public UnityEngine.Vector2 vector;
+        public System.Single maxLength;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.ClampMagnitude( vector, maxLength );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Sqr Magnitude" )]
+    class Vector2SqrMagnitude9 : Automation {
+
+        public UnityEngine.Vector2 a;
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.SqrMagnitude( a );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Min" )]
+    class Vector2Min10 : Automation {
+
+        public UnityEngine.Vector2 lhs;
+        public UnityEngine.Vector2 rhs;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Min( lhs, rhs );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Max" )]
+    class Vector2Max11 : Automation {
+
+        public UnityEngine.Vector2 lhs;
+        public UnityEngine.Vector2 rhs;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.Max( lhs, rhs );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Vector2/Smooth Damp" )]
+    class Vector2SmoothDamp12 : Automation {
+
+        public UnityEngine.Vector2 current;
+        public UnityEngine.Vector2 target;
+        public UnityEngine.Vector2 currentVelocity;
+        public System.Single smoothTime;
+        public System.Single maxSpeed;
+        [ReadOnly]
+        public UnityEngine.Vector2 Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Vector2.SmoothDamp( current, target, ref currentVelocity, smoothTime, maxSpeed );
+            yield break;
+        }
+
+    }
+
     [Automation( "Vector2/Add" )]
     class Vector2Add : Automation {
 
@@ -48,23 +248,6 @@ namespace TNRD.Automatron.Automations {
 
         public override IEnumerator Execute() {
             InOut /= Value;
-            yield break;
-        }
-    }
-
-    [Automation( "Vector2/Random" )]
-    class RandomVector2 : Automation {
-
-        public Vector2 Value;
-        public float XMin;
-        public float XMax;
-        public float YMin;
-        public float YMax;
-
-        public override IEnumerator Execute() {
-            Value = new Vector2(
-                XMin == XMax ? 0 : Random.Range( XMin, XMax ),
-                YMin == YMax ? 0 : Random.Range( YMin, YMax ) );
             yield break;
         }
     }
