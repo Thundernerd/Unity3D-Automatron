@@ -52,17 +52,31 @@ namespace TNRD.Automatron {
             AnchorPoint = EAnchor.TopLeft;
             SortingOrder = ESortingOrder.Automation;
 
-            name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
+            GetName();
             GetFields();
             UpdateSize();
             RunOnGUIThread( CreateStyles );
         }
 
         protected override void OnAfterSerialize() {
-            name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
+            GetName();
             GetFields();
             UpdateSize();
             RunOnGUIThread( CreateStyles );
+        }
+
+        private void GetName() {
+            name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
+            if ( name.Length > 35 ) {
+                var index = name.IndexOf( '/' );
+                if ( index != -1 ) {
+                    name = name.Substring( index + 1 );
+                }
+
+                if ( name.EndsWith( "/Set" ) || name.EndsWith( "/Get" ) ) {
+                    name = name.Substring( 0, name.LastIndexOf( '/' ) );
+                }
+            }
         }
 
         protected override void OnDestroy() {
