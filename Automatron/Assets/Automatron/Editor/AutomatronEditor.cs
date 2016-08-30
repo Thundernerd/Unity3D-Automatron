@@ -96,6 +96,7 @@ namespace TNRD.Automatron {
             AddControl( entryPoint );
 
             WindowSettings.IsFullscreen = true;
+            Globals.Camera = new Vector2();
 
             CreateIcons();
         }
@@ -114,6 +115,7 @@ namespace TNRD.Automatron {
             }
 
             WindowSettings.IsFullscreen = true;
+            Globals.Camera = new Vector2();
 
             CreateIcons();
         }
@@ -185,6 +187,10 @@ namespace TNRD.Automatron {
                     menu.AddItem( item.Key, false, CreateAutomation, new object[] { Input.MousePosition, item.Value } );
                 }
                 menu.ShowAsContext();
+            }
+
+            if ( Input.ButtonDown( EMouseButton.Middle ) ) {
+                Globals.Camera += Input.DragDelta;
             }
 
             Repaint();
@@ -306,7 +312,7 @@ namespace TNRD.Automatron {
         }
 
         private void CreateAutomation( object data ) {
-            var mpos = (Vector2)( data as object[] )[0];
+            var mpos = (Vector2)( data as object[] )[0] - Globals.Camera;
             var type = (Type)( data as object[] )[1];
 
             var instance = (Automation)Activator.CreateInstance( type );

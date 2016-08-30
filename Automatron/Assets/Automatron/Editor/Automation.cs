@@ -13,6 +13,14 @@ namespace TNRD.Automatron {
 
         private static Automation dragger = null;
 
+        new public Rect Rectangle {
+            get {
+                var rect = base.Rectangle;
+                rect.position += Globals.Camera;
+                return rect;
+            }
+        }
+
         [RequireSerialization]
         private string name;
         private GUIStyle headerStyle;
@@ -142,7 +150,7 @@ namespace TNRD.Automatron {
             if ( showInArrow ) {
                 GUI.DrawTexture( lArrow, Assets["toparrowleft"] );
 
-                if ( Input.ButtonReleased( EMouseButton.Left )) {
+                if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     if ( lArrow.Contains( Input.MousePosition ) ) {
                         if ( LineIn != null ) {
                             LineIn.Remove();
@@ -189,7 +197,6 @@ namespace TNRD.Automatron {
                         Input.Use();
                     }
                 }
-
             }
 
             if ( Input.ButtonPressed( EMouseButton.Left ) ) {
@@ -219,6 +226,10 @@ namespace TNRD.Automatron {
                 }
             }
 
+            if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                dragger = null;
+            }
+
             if ( dragger == this ) {
                 Position += Input.DragDelta;
             }
@@ -229,6 +240,14 @@ namespace TNRD.Automatron {
                 fieldRect.height = height;
                 item.OnGUI( fieldRect );
                 fieldRect.y += height;
+            }
+
+            if ( Input.ButtonReleased( EMouseButton.Right ) && rect.Contains( Input.MousePosition ) ) {
+                Input.Use();
+            }
+
+            if ( Input.ButtonDown( EMouseButton.Middle ) && rect.Contains( Input.MousePosition ) ) {
+                Input.Use();
             }
 
             UpdateSize();
