@@ -34,12 +34,34 @@ public class FancyPopup : EditorWindow {
     private class ExecuteElement : Element {
 
         public TreeItem item;
+        public GUIContent content2;
 
         public ExecuteElement( int level, string name, TreeItem item ) {
             this.level = level;
-            // Lol
             this.content = new GUIContent( "    " + name );
+            this.content2 = new GUIContent( "    " + GetClearName( item.name ) );
             this.item = item;
+        }
+
+        private string GetClearName( string name ) {
+            var count = 0;
+            foreach ( var item in name ) {
+                if ( item == '/' )
+                    count++;
+            }
+            if ( count <= 1 ) {
+                return name;
+            }
+            var foundFirst = false;
+            var n = "";
+            for ( int i = name.Length - 1; i >= 0; i-- ) {
+                if ( name[i] == '/' ) {
+                    if ( foundFirst ) break;
+                    else foundFirst = true;
+                }
+                n = n.Insert( 0, name[i].ToString() );
+            }
+            return n;
         }
     }
 
@@ -429,13 +451,24 @@ public class FancyPopup : EditorWindow {
         parent.scroll = GUILayout.BeginScrollView( parent.scroll );
         EditorGUIUtility.SetIconSize( new Vector2( 16, 16 ) );
         List<Element> children;
-        if (hasPreviousSearch) {
-            children = GetChildren(this.tree, parent);
-            foreach (var item in children) {
-                
-            }
+        var hasDouble = false;
+        if ( hasPreviousSearch ) {
+            children = GetChildren( this.tree, parent );
         } else {
             children = GetChildren( tree, parent );
+            if ( hasSearch ) {
+                hasDouble = false;
+                for ( int i = 0; i < children.Count; i++ ) {
+                    var name = children[i].content.text;
+                    for ( int j = i + 1; j < children.Count; j++ ) {
+                        var name2 = children[j].content.text;
+                        if ( name == name2 ) {
+                            hasDouble = true;
+                            break;
+                        }
+                    }
+                }
+            }
         }
         var rect1 = new Rect();
         for ( int index = 0; index < children.Count; index++ ) {
@@ -451,8 +484,11 @@ public class FancyPopup : EditorWindow {
                 rect1 = rect2;
             }
             if ( Event.current.type == EventType.Repaint ) {
-                ( !( e is ExecuteElement ) ? styles.groupButton : styles.componentButton ).Draw( rect2, e.content, false, false, flag, flag );
-                if ( !( e is ExecuteElement ) ) {
+                var isExecuteElement = e is ExecuteElement;
+                if ( isExecuteElement ) {
+                    styles.componentButton.Draw( rect2, hasDouble ? ( e as ExecuteElement ).content2 : e.content, false, false, flag, flag );
+                } else {
+                    styles.groupButton.Draw( rect2, e.content, false, false, flag, flag );
                     var position = new Rect( rect2.x + rect2.width - 13, rect2.y + 4, 13, 13 );
                     styles.rightArrow.Draw( position, false, false, false, false );
                 }
@@ -539,29 +575,29 @@ public class FancyPopup : EditorWindow {
         for ( int i = 0; i < mTree.Length; i++ ) {
             var element = mTree[i];
             // if ( element is ExecuteElement ) { // Uncomment this to only have final elements in search
-                var str = element.name.ToLower().Replace( " ", string.Empty );
-                var flag = true;
-                var flag1 = false;
-                var num = 0;
-                while ( num < strArrays.Length ) {
-                    var str1 = strArrays[num];
-                    if ( !str.Contains( str1 ) ) {
-                        flag = false;
-                        break;
-                    } else {
-                        if ( num == 0 && str.StartsWith( str1 ) ) {
-                            flag1 = true;
-                        }
-                        num++;
+            var str = element.name.ToLower().Replace( " ", string.Empty );
+            var flag = true;
+            var flag1 = false;
+            var num = 0;
+            while ( num < strArrays.Length ) {
+                var str1 = strArrays[num];
+                if ( !str.Contains( str1 ) ) {
+                    flag = false;
+                    break;
+                } else {
+                    if ( num == 0 && str.StartsWith( str1 ) ) {
+                        flag1 = true;
                     }
+                    num++;
                 }
-                if ( flag ) {
-                    if ( !flag1 ) {
-                        elements1.Add( element );
-                    } else {
-                        elements.Add( element );
-                    }
+            }
+            if ( flag ) {
+                if ( !flag1 ) {
+                    elements1.Add( element );
+                } else {
+                    elements.Add( element );
                 }
+            }
             // }
         }
         elements.Sort();
