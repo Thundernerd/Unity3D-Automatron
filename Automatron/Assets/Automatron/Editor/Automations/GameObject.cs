@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Game Object/Transform/Get" )]
+	[Automation( "Game Object/Get Transform" )]
 	class GameObjecttransformGet0 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Layer/Get" )]
+	[Automation( "Game Object/Get Layer" )]
 	class GameObjectlayerGet1 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -31,7 +31,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Layer/Set" )]
+	[Automation( "Game Object/Set Layer" )]
 	class GameObjectlayerSet1 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Active Self/Get" )]
+	[Automation( "Game Object/Get Active Self" )]
 	class GameObjectactiveSelfGet2 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -58,7 +58,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Active In Hierarchy/Get" )]
+	[Automation( "Game Object/Get Active In Hierarchy" )]
 	class GameObjectactiveInHierarchyGet3 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -72,7 +72,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Is Static/Get" )]
+	[Automation( "Game Object/Get Is Static" )]
 	class GameObjectisStaticGet4 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -86,7 +86,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Is Static/Set" )]
+	[Automation( "Game Object/Set Is Static" )]
 	class GameObjectisStaticSet4 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -99,7 +99,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Tag/Get" )]
+	[Automation( "Game Object/Get Tag" )]
 	class GameObjecttagGet5 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -113,7 +113,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Tag/Set" )]
+	[Automation( "Game Object/Set Tag" )]
 	class GameObjecttagSet5 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -126,7 +126,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Scene/Get" )]
+	[Automation( "Game Object/Get Scene" )]
 	class GameObjectsceneGet6 : Automation {
 
 		public UnityEngine.GameObject Instance;
@@ -139,6 +139,51 @@ namespace TNRD.Automatron.Automations {
 		}
 
 	}
+
+ [Automation( "Game Object/Create" )]
+    class CreateGameObject : Automation {
+
+        public string Name = "GameObject";
+        public UnityEngine.Vector3 position = UnityEngine.Vector3.zero;
+        public UnityEngine.Vector3 Rotation = UnityEngine.Vector3.zero;
+        public UnityEngine.Vector3 Scale = UnityEngine.Vector3.one;
+        [ReadOnly]
+        [TNRD.Editor.Serialization.IgnoreSerialization]
+        public UnityEngine.GameObject GameObject;
+
+        public override IEnumerator Execute() {
+            GameObject = new UnityEngine.GameObject( Name );
+            GameObject.transform.position = position;
+            GameObject.transform.rotation = UnityEngine.Quaternion.Euler( Rotation );
+            GameObject.transform.localScale = Scale;
+            yield break;
+        }
+    }
+
+    [Automation( "Game Object/Create Child" )]
+    class CreateChildGameObject : Automation {
+
+        public UnityEngine.GameObject Parent;
+        public string Name = "GameObject";
+        public UnityEngine.Vector3 position = UnityEngine.Vector3.zero;
+        public UnityEngine.Vector3 Rotation = UnityEngine.Vector3.zero;
+        public UnityEngine.Vector3 Scale = UnityEngine.Vector3.one;
+        [ReadOnly]
+        [TNRD.Editor.Serialization.IgnoreSerialization]
+        public UnityEngine.GameObject GameObject;
+
+        public override IEnumerator Execute() {
+            GameObject = new UnityEngine.GameObject( Name );
+            if ( Parent != null ) {
+                GameObject.transform.SetParent( Parent.transform );
+            }
+
+            GameObject.transform.position = position;
+            GameObject.transform.rotation = UnityEngine.Quaternion.Euler( Rotation );
+            GameObject.transform.localScale = Scale;
+            yield break;
+        }
+    }
 
 	[Automation( "Game Object/Create Primitive" )]
 	class GameObjectCreatePrimitive0 : Automation {
