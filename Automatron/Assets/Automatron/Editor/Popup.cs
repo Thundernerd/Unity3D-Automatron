@@ -362,8 +362,8 @@ public class FancyPopup : EditorWindow {
                 var element = e as ExecuteElement;
                 element.item.ExecuteCallback();
                 Close();
-                return;
             }
+            return;
         }
 
         hasPreviousSearch = hasSearch;
@@ -408,19 +408,18 @@ public class FancyPopup : EditorWindow {
                 GoToChild( activeElement, true );
                 evt.Use();
             }
-            if ( !hasSearch ) {
-                if ( evt.keyCode == KeyCode.LeftArrow || evt.keyCode == KeyCode.Backspace ) {
-                    GoToParent();
-                    evt.Use();
-                }
-                if ( evt.keyCode == KeyCode.RightArrow ) {
-                    GoToChild( activeElement, false );
-                    evt.Use();
-                }
-                if ( evt.keyCode == KeyCode.Escape ) {
-                    Close();
-                    evt.Use();
-                }
+
+            if ( evt.keyCode == KeyCode.LeftArrow || evt.keyCode == KeyCode.Backspace ) {
+                GoToParent();
+                evt.Use();
+            }
+            if ( evt.keyCode == KeyCode.RightArrow ) {
+                GoToChild( activeElement, false );
+                evt.Use();
+            }
+            if ( evt.keyCode == KeyCode.Escape ) {
+                Close();
+                evt.Use();
             }
         }
     }
