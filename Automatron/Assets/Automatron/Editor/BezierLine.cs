@@ -25,7 +25,7 @@ namespace TNRD.Automatron {
             Handles.EndGUI();
         }
 
-        private Vector3[] GetBezierPoints( Vector2 start, Vector2 end, Vector2 p1, Vector2 p2, int iterations = 25 ) {
+        protected Vector3[] GetBezierPoints( Vector2 start, Vector2 end, Vector2 p1, Vector2 p2, int iterations = 25 ) {
             var points = new Vector3[iterations + 1];
 
             for ( int i = 0; i <= iterations; i++ ) {

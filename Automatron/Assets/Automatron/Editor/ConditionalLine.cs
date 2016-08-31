@@ -1,98 +1,58 @@
 ﻿using UnityEngine;
 using TNRD.Editor.Serialization;
 using TNRD.Editor;
+using TNRD.Automatron.Automations;
+using UnityEditor;
 
 namespace TNRD.Automatron {
 
-    public class AutomationLine : BezierLine {
+    public class ConditionalLine : AutomationLine {
 
-        public static AutomationLine HookLineIn( Automation auto ) {
+        public static ConditionalLine HookLineOut2( ConditionalAutomation auto ) {
             if ( Globals.TempFieldLine != null ) {
                 Globals.TempFieldLine.Remove();
                 Globals.TempFieldLine = null;
             }
 
             if ( Globals.TempAutomationLine == null ) {
-                var f = new AutomationLine();
-                f.Right = auto;
-                Globals.TempAutomationLine = f;
-                return f;
-            } else {
-                if ( Globals.TempAutomationLine is ConditionalLine ) {
-                    if ( Globals.TempAutomationLine.Right == null && Globals.TempAutomationLine.Left != auto ) {
-                        var line = new ConditionalLine( ( (ConditionalLine)Globals.TempAutomationLine ).Left, auto );
-                        Globals.TempAutomationLine.Remove();
-                        Globals.TempAutomationLine = null;
-                        return line;
-                    }
-                }
-
-                if ( Globals.TempAutomationLine.Right == null && Globals.TempAutomationLine.Left != auto ) {
-                    var line = new AutomationLine( Globals.TempAutomationLine.Left, auto );
-                    Globals.TempAutomationLine.Remove();
-                    Globals.TempAutomationLine = null;
-                    return line;
-                } else {
-                    Globals.TempAutomationLine.Remove();
-                    Globals.TempAutomationLine = null;
-                    return HookLineIn( auto );
-                }
-            }
-        }
-
-        public static AutomationLine HookLineOut( Automation auto ) {
-            if ( Globals.TempFieldLine != null ) {
-                Globals.TempFieldLine.Remove();
-                Globals.TempFieldLine = null;
-            }
-
-            if ( Globals.TempAutomationLine == null ) {
-                var f = new AutomationLine();
+                var f = new ConditionalLine();
                 f.Left = auto;
                 Globals.TempAutomationLine = f;
                 return f;
             } else {
-                if ( Globals.TempAutomationLine is ConditionalLine ) {
-                    Globals.TempAutomationLine.Remove();
-                    Globals.TempAutomationLine = null;
-                    return HookLineOut( auto );
-                }
-
                 if ( Globals.TempAutomationLine.Left == null && Globals.TempAutomationLine.Right != auto ) {
-                    var line = new AutomationLine( auto, Globals.TempAutomationLine.Right );
+                    var line = new ConditionalLine( auto, Globals.TempAutomationLine.Right );
                     Globals.TempAutomationLine.Remove();
                     Globals.TempAutomationLine = null;
                     return line;
                 } else {
                     Globals.TempAutomationLine.Remove();
                     Globals.TempAutomationLine = null;
-                    return HookLineOut( auto );
+                    return HookLineOut2( auto );
                 }
             }
         }
 
         [IgnoreSerialization]
-        public Automation Left;
-        [IgnoreSerialization]
-        public Automation Right;
+        new public ConditionalAutomation Left;
 
         [RequireSerialization]
         private string idLeft;
         [RequireSerialization]
         private string idRight;
 
-        private Vector2 p1 = new Vector2( 50, 0 );
+        private Vector2 p1 = new Vector2( 0, 50 );
         private Vector2 p2 = new Vector2( -50, 0 );
 
         private bool doMouseCheck = false;
 
-        public AutomationLine() { }
+        public ConditionalLine() { }
 
-        public AutomationLine( Automation left, Automation right ) {
+        public ConditionalLine( ConditionalAutomation left, Automation right ) {
             Left = left;
             Right = right;
 
-            left.LineOut = this;
+            left.LineOut2 = this;
             Right.LineIn = this;
         }
 
@@ -110,10 +70,11 @@ namespace TNRD.Automatron {
                 return;
             }
 
+
             var automations = Window.GetControls<Automation>();
             foreach ( var item in automations ) {
                 if ( Left == null && item.ID == idLeft ) {
-                    Left = item;
+                    Left = (ConditionalAutomation)item;
                     continue;
                 }
 
@@ -132,7 +93,7 @@ namespace TNRD.Automatron {
                 return;
             }
 
-            Left.LineOut = this;
+            Left.LineOut2 = this;
             Right.LineIn = this;
 
             SortingOrder = ESortingOrder.Line;
@@ -174,8 +135,8 @@ namespace TNRD.Automatron {
             } else {
                 var r = Left.Rectangle;
                 Start = r.position;
-                Start.x += r.width + 12;
-                Start.y += 8;
+                Start.x += r.width / 2;
+                Start.y += r.height + 15;
             }
 
             if ( Right == null ) {
@@ -187,18 +148,17 @@ namespace TNRD.Automatron {
                 End.y += 8;
             }
 
-            if ( Left == null ) {
-                P2 = End + p2;
-                P1 = mpos - ( mpos - End ).normalized * 50;
-            } else if ( Right == null ) {
-                P1 = Start + p1;
-                P2 = mpos - ( mpos - Start ).normalized * 50;
-            } else {
-                P1 = Start + p1;
-                P2 = End + p2;
-            }
+            P1 = Start + p1;
+            P2 = End + p2;
 
-            base.OnGUI();
+            // Base ONGUI
+            Handles.BeginGUI();
+            var temp = Handles.color;
+            Handles.color = Color;
+            Handles.DrawAAPolyLine( GetBezierPoints( Start, End, P1, P2 ) );
+            Handles.color = temp;
+            Handles.EndGUI();
+            // Base ONGUI
 
             if ( doMouseCheck ) {
                 if ( Left == null || Right == null ) {

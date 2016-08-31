@@ -110,18 +110,23 @@ namespace TNRD.Automatron {
 
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
+            WindowSettings.IsFullscreen = true;
 
             entryPoint = new QueueStart() {
                 IsInitial = true,
-                Position = WindowRect.center - new Vector2( 75, 50 )
+                Position = WindowRect.center
             };
 
             AddControl( entryPoint );
 
-            WindowSettings.IsFullscreen = true;
-            Globals.Camera = new Vector2();
-
             CreateIcons();
+
+            Globals.Camera = new Vector2();
+            Globals.IsError = false;
+            Globals.IsExecuting = false;
+            Globals.LastError = null;
+            Globals.TempAutomationLine = null;
+            Globals.TempFieldLine = null;
         }
 
         protected override void OnBeforeSerialize() {
@@ -194,7 +199,8 @@ namespace TNRD.Automatron {
                             }
                         }
                         entryPoint.Reset();
-                        Globals.Camera = WindowRect.center - entryPoint.Position;
+                        Globals.Camera = new Vector2();
+                        entryPoint.Position = WindowRect.center;
                     }
                 } ) );
             }
@@ -225,7 +231,7 @@ namespace TNRD.Automatron {
 
         private void CreateAutomation( Vector2 mpos, Type type ) {
             var instance = (Automation)Activator.CreateInstance( type );
-            instance.Position = mpos;
+            instance.Position = mpos - Globals.Camera;
 
             AddControl( instance );
         }
@@ -287,7 +293,7 @@ namespace TNRD.Automatron {
             yield break;
         }
 
-        private List<Automation> GetAutomations( Automation start ) {
+        public static List<Automation> GetAutomations( Automation start ) {
             try {
                 var list = new List<Automation>();
                 start.GetAutomations( ref list );
@@ -314,7 +320,7 @@ namespace TNRD.Automatron {
             }
         }
 
-        private int FixLoops( List<Automation> list, int index ) {
+        private static int FixLoops( List<Automation> list, int index ) {
             var loopList = new List<Automation>();
             var loopStart = (LoopableAutomation)list[index];
 

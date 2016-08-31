@@ -25,8 +25,8 @@ namespace TNRD.Automatron {
         private string name;
         private GUIStyle headerStyle;
 
-        private List<AutomationField> fields = new List<AutomationField>();
-        private Dictionary<string, AutomationField> sortedFields = new Dictionary<string, AutomationField>();
+        protected List<AutomationField> fields = new List<AutomationField>();
+        protected Dictionary<string, AutomationField> sortedFields = new Dictionary<string, AutomationField>();
 
         [RequireSerialization]
         protected bool showCloseButton = true;
@@ -157,7 +157,7 @@ namespace TNRD.Automatron {
             var rArrow = new Rect( rect.x + rect.width, rect.y, 15, 15 );
 
             if ( showInArrow ) {
-                GUI.DrawTexture( lArrow, Assets["toparrowleft"] );
+                GUI.DrawTexture( lArrow, Assets["arrowleft"] );
 
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     if ( lArrow.Contains( Input.MousePosition ) ) {
@@ -183,7 +183,7 @@ namespace TNRD.Automatron {
             }
 
             if ( showOutArrow ) {
-                GUI.DrawTexture( rArrow, Assets["toparrowright"] );
+                GUI.DrawTexture( rArrow, Assets["arrowright"] );
 
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     if ( rArrow.Contains( Input.MousePosition ) ) {
