@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
@@ -17,17 +18,20 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Primitives/String/Is Null Or Empty" )]
-    class StringIsNullOrEmpty14 : Automation {
+    class StringIsNullOrEmpty14 : ConditionalAutomation {
 
         public System.String value;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = System.String.IsNullOrEmpty( value );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Primitives/String/Format" )]

@@ -1,20 +1,24 @@
+using System;
 using System.Collections;
 
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
     [Automation( "Asset Database/Contains" )]
-    class AssetDatabaseContains0 : Automation {
+    class AssetDatabaseContains0 : ConditionalAutomation {
 
         public UnityEngine.Object obj;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.Contains( obj );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Create Folder" )]
@@ -33,59 +37,71 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Asset Database/Is Main Asset" )]
-    class AssetDatabaseIsMainAsset3 : Automation {
+    class AssetDatabaseIsMainAsset3 : ConditionalAutomation {
 
         public UnityEngine.Object obj;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsMainAsset( obj );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Is Sub Asset" )]
-    class AssetDatabaseIsSubAsset5 : Automation {
+    class AssetDatabaseIsSubAsset5 : ConditionalAutomation {
 
         public UnityEngine.Object obj;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsSubAsset( obj );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Is Foreign Asset" )]
-    class AssetDatabaseIsForeignAsset7 : Automation {
+    class AssetDatabaseIsForeignAsset7 : ConditionalAutomation {
 
         public UnityEngine.Object obj;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsForeignAsset( obj );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Is Native Asset" )]
-    class AssetDatabaseIsNativeAsset9 : Automation {
+    class AssetDatabaseIsNativeAsset9 : ConditionalAutomation {
 
         public UnityEngine.Object obj;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsNativeAsset( obj );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Generate Unique Asset Path" )]
@@ -170,31 +186,37 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Asset Database/Move Asset To Trash" )]
-    class AssetDatabaseMoveAssetToTrash17 : Automation {
+    class AssetDatabaseMoveAssetToTrash17 : ConditionalAutomation {
 
         public System.String path;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.MoveAssetToTrash( path );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Delete Asset" )]
-    class AssetDatabaseDeleteAsset18 : Automation {
+    class AssetDatabaseDeleteAsset18 : ConditionalAutomation {
 
         public System.String path;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.DeleteAsset( path );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Import Asset" )]
@@ -211,32 +233,38 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Asset Database/Copy Asset" )]
-    class AssetDatabaseCopyAsset21 : Automation {
+    class AssetDatabaseCopyAsset21 : ConditionalAutomation {
 
         public System.String path;
         public System.String newPath;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.CopyAsset( path, newPath );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Write Import Settings If Dirty" )]
-    class AssetDatabaseWriteImportSettingsIfDirty22 : Automation {
+    class AssetDatabaseWriteImportSettingsIfDirty22 : ConditionalAutomation {
 
         public System.String path;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.WriteImportSettingsIfDirty( path );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Get Sub Folders" )]
@@ -254,17 +282,20 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Asset Database/Is Valid Folder" )]
-    class AssetDatabaseIsValidFolder24 : Automation {
+    class AssetDatabaseIsValidFolder24 : ConditionalAutomation {
 
         public System.String path;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsValidFolder( path );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Create Asset" )]
@@ -446,31 +477,37 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Asset Database/Open Asset" )]
-    class AssetDatabaseOpenAsset42 : Automation {
+    class AssetDatabaseOpenAsset42 : ConditionalAutomation {
 
         public UnityEngine.Object target;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.OpenAsset( target );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Open Assets" )]
-    class AssetDatabaseOpenAsset44 : Automation {
+    class AssetDatabaseOpenAsset44 : ConditionalAutomation {
 
         public UnityEngine.Object[] objects;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.OpenAsset( objects );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Asset Path To GUID" )]
@@ -592,18 +629,21 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Asset Database/Remove Asset Bundle Name" )]
-    class AssetDatabaseRemoveAssetBundleName54 : Automation {
+    class AssetDatabaseRemoveAssetBundleName54 : ConditionalAutomation {
 
         public System.String assetBundleName;
         public System.Boolean forceRemove;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.RemoveAssetBundleName( assetBundleName, forceRemove );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Remove Unused Asset Bundle Names" )]
@@ -689,45 +729,54 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Asset Database/Is Open For Edit" )]
-    class AssetDatabaseIsOpenForEdit67 : Automation {
+    class AssetDatabaseIsOpenForEdit67 : ConditionalAutomation {
 
         public UnityEngine.Object assetObject;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsOpenForEdit( assetObject );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Is Open For Edit (path)" )]
-    class AssetDatabaseIsOpenForEdit68 : Automation {
+    class AssetDatabaseIsOpenForEdit68 : ConditionalAutomation {
 
         public System.String assetOrMetaFilePath;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsOpenForEdit( assetOrMetaFilePath );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Is Meta File Open For Edit" )]
-    class AssetDatabaseIsMetaFileOpenForEdit71 : Automation {
+    class AssetDatabaseIsMetaFileOpenForEdit71 : ConditionalAutomation {
 
         public UnityEngine.Object assetObject;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = UnityEditor.AssetDatabase.IsMetaFileOpenForEdit( assetObject );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
     [Automation( "Asset Database/Get Builtin Extra Resource" )]
