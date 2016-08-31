@@ -71,10 +71,10 @@ namespace TNRD.Automatron {
         #region Type Loading
         [InitializeOnLoadMethod]
         private static void LoadTypes() {
-            Globals.Types = GetAssemblyTypes( 
-                "Assembly-CSharp", 
-                "Assembly-CSharp-Editor", 
-                "UnityEngine", 
+            Globals.Types = GetAssemblyTypes(
+                "Assembly-CSharp",
+                "Assembly-CSharp-Editor",
+                "UnityEngine",
                 "UnityEditor" );
         }
 
@@ -205,11 +205,21 @@ namespace TNRD.Automatron {
             EditorGUILayout.EndHorizontal();
 
             if ( Input.ButtonReleased( EMouseButton.Right ) ) {
-                var menu = GenericMenuBuilder.CreateMenu();
+                var pos = Editor.Position + Input.MousePosition;
+                var items = new List<FancyPopup.TreeItem>();
                 foreach ( var item in automations ) {
-                    menu.AddItem( item.Key, false, CreateAutomation, new object[] { Input.MousePosition, item.Value } );
+                    items.Add( new FancyPopup.TreeItem() {
+                        Callback = eCallbak,
+                        Name = "Automations/" + item.Key
+                    } );
                 }
-                menu.ShowAsContext();
+
+                FancyPopup.InitPopup( new Rect( pos, new Vector2( 230, 320 ) ), items.ToArray() );
+                //var menu = GenericMenuBuilder.CreateMenu();
+                //foreach ( var item in automations ) {
+                //    menu.AddItem( item.Key, false, CreateAutomation, new object[] { Input.MousePosition, item.Value } );
+                //}
+                //menu.ShowAsContext();
             }
 
             if ( Input.ButtonDown( EMouseButton.Middle ) ) {
@@ -217,6 +227,10 @@ namespace TNRD.Automatron {
             }
 
             Repaint();
+        }
+
+        private void eCallbak( object data ) {
+            Debug.Log( "Ay" );
         }
 
         private void ExecuteAutomations() {
