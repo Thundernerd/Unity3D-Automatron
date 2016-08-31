@@ -362,6 +362,7 @@ public class FancyPopup : EditorWindow {
                 var element = e as ExecuteElement;
                 element.item.ExecuteCallback();
                 Close();
+                return;
             }
         }
 
@@ -571,10 +572,13 @@ public class FancyPopup : EditorWindow {
         var strArrays = search.ToLower().Split( new char[] { ' ' } );
         var elements = new List<Element>();
         var elements1 = new List<Element>();
+        var gElements = new List<Element>();
+        var gElements2 = new List<Element>();
         var mTree = tree;
         for ( int i = 0; i < mTree.Length; i++ ) {
             var element = mTree[i];
-            // if ( element is ExecuteElement ) { // Uncomment this to only have final elements in search
+            var isExecute = element is ExecuteElement;
+
             var str = element.name.ToLower().Replace( " ", string.Empty );
             var flag = true;
             var flag1 = false;
@@ -593,18 +597,27 @@ public class FancyPopup : EditorWindow {
             }
             if ( flag ) {
                 if ( !flag1 ) {
-                    elements1.Add( element );
+                    if ( isExecute )
+                        elements1.Add( element );
+                    else
+                        gElements2.Add( element );
                 } else {
-                    elements.Add( element );
+                    if ( isExecute )
+                        elements.Add( element );
+                    else
+                        gElements.Add( element );
                 }
             }
-            // }
         }
         elements.Sort();
         elements1.Sort();
+        gElements.Sort();
+        gElements2.Sort();
         var elements2 = new List<Element>() {
             new GroupElement(0,"Search")
         };
+        elements2.AddRange( gElements );
+        elements2.AddRange( gElements2 );
         elements2.AddRange( elements );
         elements2.AddRange( elements1 );
         elements2.Add( tree[mTree.Length - 1] );
