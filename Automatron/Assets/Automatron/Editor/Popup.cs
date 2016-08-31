@@ -172,7 +172,6 @@ public class FancyPopup : EditorWindow {
 
     #region Creation
     public static void ShowAsContext( TreeItem[] items ) {
-        var mpos = Event.current.mousePosition;
         var rect = new Rect( GUIUtility.GUIToScreenPoint( Event.current.mousePosition ), Vector2.zero );
         Event.current.Use();
         var popup = CreateInstance<FancyPopup>();
@@ -333,6 +332,8 @@ public class FancyPopup : EditorWindow {
         return stack[index];
     }
 
+    private bool hasPreviousSearch = false;
+
     private void GoToChild( Element e, bool addIfComponent ) {
         if ( e is ExecuteElement ) {
             if ( addIfComponent ) {
@@ -340,20 +341,25 @@ public class FancyPopup : EditorWindow {
                 element.item.ExecuteCallback();
                 Close();
             }
-        } else if ( !hasSearch ) {
-            lastTime = DateTime.Now.Ticks;
-            if ( animTarget == 0 ) {
-                animTarget = 1;
-            } else if ( anim == 1f ) {
-                anim = 0;
-                stack.Add( (GroupElement)e );
-            }
+        }
+
+        hasPreviousSearch = hasSearch;
+
+        lastTime = DateTime.Now.Ticks;
+        if ( animTarget == 0 ) {
+            animTarget = 1;
+        } else if ( anim == 1f ) {
+            anim = 0;
+            stack.Add( (GroupElement)e );
         }
     }
 
     private void GoToParent() {
         if ( stack.Count <= 1 )
             return;
+        if ( hasPreviousSearch ) {
+            hasPreviousSearch = false;
+        }
         animTarget = 0;
         lastTime = DateTime.Now.Ticks;
     }
@@ -422,7 +428,15 @@ public class FancyPopup : EditorWindow {
     private void ListGUI( Element[] tree, GroupElement parent ) {
         parent.scroll = GUILayout.BeginScrollView( parent.scroll );
         EditorGUIUtility.SetIconSize( new Vector2( 16, 16 ) );
-        var children = GetChildren( tree, parent );
+        List<Element> children;
+        if (hasPreviousSearch) {
+            children = GetChildren(this.tree, parent);
+            foreach (var item in children) {
+                
+            }
+        } else {
+            children = GetChildren( tree, parent );
+        }
         var rect1 = new Rect();
         for ( int index = 0; index < children.Count; index++ ) {
             var e = children[index];
@@ -489,6 +503,7 @@ public class FancyPopup : EditorWindow {
                 delayedSearch = str;
             }
         }
+
         ListGUI( activeTree, anim, GetElementRelative( 0 ), GetElementRelative( -1 ) );
         if ( anim < 1 )
             ListGUI( activeTree, anim + 1, GetElementRelative( -1 ), GetElementRelative( -2 ) );
@@ -523,7 +538,7 @@ public class FancyPopup : EditorWindow {
         var mTree = tree;
         for ( int i = 0; i < mTree.Length; i++ ) {
             var element = mTree[i];
-            if ( element is ExecuteElement ) {
+            // if ( element is ExecuteElement ) { // Uncomment this to only have final elements in search
                 var str = element.name.ToLower().Replace( " ", string.Empty );
                 var flag = true;
                 var flag1 = false;
@@ -547,7 +562,7 @@ public class FancyPopup : EditorWindow {
                         elements.Add( element );
                     }
                 }
-            }
+            // }
         }
         elements.Sort();
         elements1.Sort();
