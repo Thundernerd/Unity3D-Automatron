@@ -158,11 +158,7 @@ namespace TNRD.Automatron {
             }
 
             if ( GUILayout.Button( "Automations", EditorStyles.toolbarDropDown ) ) {
-                var menu = GenericMenuBuilder.CreateMenu();
-                foreach ( var item in automations ) {
-                    menu.AddItem( item.Key, false, CreateAutomation, new object[] { Input.MousePosition, item.Value } );
-                }
-                menu.ShowAsContext();
+                ShowAutomationPopup();
             }
 
             // Spacer
@@ -205,21 +201,7 @@ namespace TNRD.Automatron {
             EditorGUILayout.EndHorizontal();
 
             if ( Input.ButtonReleased( EMouseButton.Right ) ) {
-                var pos = Editor.Position + Input.MousePosition;
-                var items = new List<FancyPopup.TreeItem>();
-                foreach ( var item in automations ) {
-                    items.Add( new FancyPopup.TreeItem() {
-                        Callback = eCallbak,
-                        Name = "Automations/" + item.Key
-                    } );
-                }
-
-                FancyPopup.InitPopup( new Rect( pos, new Vector2( 230, 320 ) ), items.ToArray() );
-                //var menu = GenericMenuBuilder.CreateMenu();
-                //foreach ( var item in automations ) {
-                //    menu.AddItem( item.Key, false, CreateAutomation, new object[] { Input.MousePosition, item.Value } );
-                //}
-                //menu.ShowAsContext();
+                ShowAutomationPopup();
             }
 
             if ( Input.ButtonDown( EMouseButton.Middle ) ) {
@@ -229,8 +211,21 @@ namespace TNRD.Automatron {
             Repaint();
         }
 
-        private void eCallbak( object data ) {
-            Debug.Log( "Ay" );
+        private void ShowAutomationPopup() {
+            var items = new List<FancyPopup.TreeItem>();
+            foreach ( var item in automations ) {
+                items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
+            }
+
+            var pos = new Rect( Event.current.mousePosition, new Vector2( 230, 40 ) );
+            FancyPopup.ShowAsContext( items.ToArray() );
+        }
+
+        private void CreateAutomation( Vector2 mpos, Type type ) {
+            var instance = (Automation)Activator.CreateInstance( type );
+            instance.Position = mpos;
+
+            AddControl( instance );
         }
 
         private void ExecuteAutomations() {

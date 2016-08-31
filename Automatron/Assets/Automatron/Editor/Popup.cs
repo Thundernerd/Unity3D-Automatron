@@ -35,13 +35,13 @@ public class FancyPopup : EditorWindow {
 
     private class ExecuteElement : Element {
 
-        public Action<object> callback;
+        public TreeItem item;
 
-        public ExecuteElement( int level, string name, Action<object> callback ) {
+        public ExecuteElement( int level, string name, TreeItem item ) {
             this.level = level;
             // Lol
             this.content = new GUIContent( "    " + name );
-            this.callback = callback;
+            this.item = item;
         }
     }
 
@@ -73,31 +73,122 @@ public class FancyPopup : EditorWindow {
     }
 
     public class TreeItem {
-        public string Name;
-        public Action<object> Callback;
+        public string name;
+
+        private object data;
+        private Action callback;
+        private Action<object> callback1;
+
+        public TreeItem( string name ) {
+            this.name = name;
+        }
+
+        public TreeItem( string name, Action callback ) {
+            this.name = name;
+            this.callback = callback;
+        }
+
+        public TreeItem( string name, object data, Action<object> callback ) {
+            this.name = name;
+            this.data = data;
+            this.callback1 = callback;
+        }
+
+        public virtual void ExecuteCallback() {
+            if ( callback == null ) {
+                callback1( data );
+            } else {
+                callback();
+            }
+        }
+    }
+
+    public class TreeItem<T> : TreeItem {
+        public T value;
+        public Action<T> callback;
+
+        public TreeItem( string name, T value, Action<T> callback ) : base( name ) {
+            this.value = value;
+            this.callback = callback;
+        }
+
+        public override void ExecuteCallback() {
+            callback( value );
+        }
+    }
+
+    public class TreeItem<T, T2> : TreeItem {
+        public T value;
+        public T2 value2;
+        public Action<T, T2> callback;
+
+        public TreeItem( string name, T value, T2 value2, Action<T, T2> callback ) : base( name ) {
+            this.value = value;
+            this.value2 = value2;
+            this.callback = callback;
+        }
+
+        public override void ExecuteCallback() {
+            callback( value, value2 );
+        }
+    }
+
+    public class TreeItem<T, T2, T3> : TreeItem {
+        public T value;
+        public T2 value2;
+        public T3 value3;
+        public Action<T, T2, T3> callback;
+
+        public TreeItem( string name, T value, T2 value2, T3 value3, Action<T, T2, T3> callback ) : base( name ) {
+            this.value = value;
+            this.value2 = value2;
+            this.value3 = value3;
+            this.callback = callback;
+        }
+
+        public override void ExecuteCallback() {
+            callback( value, value2, value3 );
+        }
+    }
+
+    public class TreeItem<T, T2, T3, T4> : TreeItem {
+        public T value;
+        public T2 value2;
+        public T3 value3;
+        public T4 value4;
+        public Action<T, T2, T3, T4> callback;
+
+        public TreeItem( string name, T value, T2 value2, T3 value3, T4 value4, Action<T, T2, T3, T4> callback ) : base( name ) {
+            this.value = value;
+            this.value2 = value2;
+            this.value3 = value3;
+            this.value4 = value4;
+            this.callback = callback;
+        }
+
+        public override void ExecuteCallback() {
+            callback( value, value2, value3, value4 );
+        }
     }
     #endregion
 
-    #region Other stuff
-    public static void InitPopup( Rect rect, TreeItem[] items ) {
-        FancyPopup popup = CreateInstance<FancyPopup>();
-        popup.position = rect;
-        popup.treeItems = items;
-        popup.wantsMouseMove = true;
-        popup.CreateTree();
-        popup.ShowAsDropDown( rect, rect.size );
-        popup.Focus();
-        popup.Initialize();
+    #region Creation
+    public static void ShowAsContext( TreeItem[] items ) {
+        var mpos = Event.current.mousePosition;
+        var rect = new Rect( GUIUtility.GUIToScreenPoint( Event.current.mousePosition ), Vector2.zero );
+        Event.current.Use();
+        var popup = CreateInstance<FancyPopup>();
+        popup.Init( rect, items );
     }
-
-    private string SearchField( Rect rect, string value ) {
-        return (string)searchField.Invoke( null, new object[] { rect, value } );
+    public static void ShowAsContext( Rect rect, TreeItem[] items ) {
+        rect = new Rect( GUIUtility.GUIToScreenPoint( rect.position ), rect.size );
+        Event.current.Use();
+        var popup = CreateInstance<FancyPopup>();
+        popup.Init( rect, items );
     }
+    #endregion
 
-    private Styles styles;
     private MethodInfo searchField;
-    #endregion
-
     private TreeItem[] treeItems;
 
     private bool dirtyList = true;
@@ -112,6 +203,8 @@ public class FancyPopup : EditorWindow {
     private long lastTime;
     private bool scrollToSelected;
     private string delayedSearch;
+
+    private Styles styles;
 
     private bool hasSearch {
         get {
@@ -147,6 +240,16 @@ public class FancyPopup : EditorWindow {
 
     private bool initializedGUI = false;
 
+    private void Init( Rect rect, TreeItem[] items ) {
+        position = rect;
+        treeItems = items;
+        wantsMouseMove = true;
+        CreateTree();
+        ShowAsDropDown( rect, new Vector2( 230, 320 ) );
+        Focus();
+        Initialize();
+    }
+
     private void Initialize() {
         searchField = typeof( EditorGUI ).GetMethod( "SearchField", BindingFlags.Static | BindingFlags.NonPublic );
     }
@@ -157,9 +260,10 @@ public class FancyPopup : EditorWindow {
 
     private void CreateTree() {
         // Can optimize this
-        var submenus = treeItems.Select( t => t.Name ).ToArray();
-        var submenusCommands = treeItems.Select( t => t.Callback ).ToArray();
-        //
+        // Can hardcode string just for this one :)
+        var submenus = treeItems.Select( t => "Automations/" + t.name ).ToArray();
+        var submenusCommands = treeItems.ToArray();
+
         var list1 = new List<string>();
         var list2 = new List<Element>();
         for ( int index = 0; index < submenus.Length; index++ ) {
@@ -240,8 +344,8 @@ public class FancyPopup : EditorWindow {
     private void GoToChild( Element e, bool addIfComponent ) {
         if ( e is ExecuteElement ) {
             if ( addIfComponent ) {
-                var el = e as ExecuteElement;
-                el.callback( null );
+                var element = e as ExecuteElement;
+                element.item.ExecuteCallback();
                 Close();
             }
         } else if ( !hasSearch ) {
@@ -470,57 +574,8 @@ public class FancyPopup : EditorWindow {
             activeParent.selectedIndex = 0;
         }
     }
+
+    private string SearchField( Rect rect, string value ) {
+        return (string)searchField.Invoke( null, new object[] { rect, value } );
+    }
 }
-
-//public class Popup : ExtendedControl {
-
-//    private Styles styles;
-//    private MethodInfo searchField;
-
-//    protected override void OnInitialize() {
-//        AnchorPoint = TNRD.Editor.EAnchor.MiddleCenter;
-//        Position = Window.WindowRect.center;
-//        Size = new Vector2( 230, 320 );
-//        GetMethod();
-//    }
-
-//    protected override void OnInitializeGUI() {
-//        styles = new Styles();
-//    }
-
-//    protected override void OnAfterSerialize() {
-//        RunOnGUIThread( () => {
-//            styles = new Styles();
-//        } );
-
-//        GetMethod();
-//    }
-
-//    private void GetMethod() {
-//        searchField = typeof( EditorGUI ).GetMethod( "SearchField", BindingFlags.Static | BindingFlags.NonPublic );
-//    }
-
-//    protected override void OnGUI() {
-//        var wRect = Rectangle;
-
-
-//        GUILayout.BeginArea( wRect );
-//        //GUI.Box( new Rect( 0, 0, wRect.width, wRect.height ), GUIContent.none, );
-//        GUI.Label( new Rect( 0, 0, wRect.width, wRect.height ), GUIContent.none, styles.background );
-//        GUILayout.Space( 7 );
-
-//        var rect = GUILayoutUtility.GetRect( 10, 20 );
-//        rect.x += 8f;
-//        rect.width -= 16f;
-//        EditorGUI.BeginDisabledGroup( false );
-//        var searchString = (string)searchField.Invoke( null, new object[] { rect, "" } );
-//        rect = GUILayoutUtility.GetRect( 10, 25 );
-//        GUI.Label( rect, "Search", styles.header );
-//        //EditorGUI.SearchField()
-//        EditorGUI.EndDisabledGroup();
-
-//        GUILayout.EndArea();
-//    }
-
-
-//}
