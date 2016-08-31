@@ -242,13 +242,13 @@ public class FancyPopup : EditorWindow {
     private void Init( Rect rect, TreeItem[] items ) {
         position = rect;
         treeItems = items;
+        treePaths = items.Select( t => "Automations/" + t.name ).ToArray();
         wantsMouseMove = true;
         CreateTree();
         ShowAsDropDown( rect, new Vector2( 230, 320 ) );
         Focus();
 
         searchField = typeof( EditorGUI ).GetMethod( "SearchField", BindingFlags.Static | BindingFlags.NonPublic );
-        treePaths = treeItems.Select( t => "Automations/" + t.name ).ToArray();
     }
 
     private void InitializeGUI() {

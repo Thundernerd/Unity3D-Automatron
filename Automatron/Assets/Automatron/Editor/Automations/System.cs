@@ -23,6 +23,7 @@ namespace TNRD.Automatron.Automations {
                 showCloseButton = false;
             }
             showInArrow = false;
+            AnchorPoint = Editor.EAnchor.MiddleCenter;
         }
 
         protected override void OnInitializeGUI() {
@@ -36,6 +37,7 @@ namespace TNRD.Automatron.Automations {
                 showCloseButton = false;
             }
             showInArrow = false;
+            AnchorPoint = Editor.EAnchor.MiddleCenter;
         }
 
         private void CreateStyle() {

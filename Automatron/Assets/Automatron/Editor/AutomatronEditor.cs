@@ -193,6 +193,8 @@ namespace TNRD.Automatron {
                                 item.Remove();
                             }
                         }
+                        entryPoint.Reset();
+                        Globals.Camera = WindowRect.center - entryPoint.Position;
                     }
                 } ) );
             }
