@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/Sketch Up Importer/Latitude/Get" )]
+	[Automation( "Importers/Sketch Up Importer/Get Latitude" )]
 	class SketchUpImporterlatitudeGet0 : Automation {
 
 		public UnityEditor.SketchUpImporter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Sketch Up Importer/Longitude/Get" )]
+	[Automation( "Importers/Sketch Up Importer/Get Longitude" )]
 	class SketchUpImporterlongitudeGet1 : Automation {
 
 		public UnityEditor.SketchUpImporter Instance;
@@ -31,7 +31,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Sketch Up Importer/North Correction/Get" )]
+	[Automation( "Importers/Sketch Up Importer/Get North Correction" )]
 	class SketchUpImporternorthCorrectionGet2 : Automation {
 
 		public UnityEditor.SketchUpImporter Instance;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/Plugin Importer/Is Native Plugin/Get" )]
+	[Automation( "Importers/Plugin Importer/Get Is Native Plugin" )]
 	class PluginImporterisNativePluginGet0 : Automation {
 
 		public UnityEditor.PluginImporter Instance;

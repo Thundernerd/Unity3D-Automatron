@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/Audio Importer/Default Sample Settings/Get" )]
+	[Automation( "Importers/Audio Importer/Get Default Sample Settings" )]
 	class AudioImporterdefaultSampleSettingsGet0 : Automation {
 
 		public UnityEditor.AudioImporter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Audio Importer/Default Sample Settings/Set" )]
+	[Automation( "Importers/Audio Importer/Set Default Sample Settings" )]
 	class AudioImporterdefaultSampleSettingsSet0 : Automation {
 
 		public UnityEditor.AudioImporter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Audio Importer/Force To Mono/Get" )]
+	[Automation( "Importers/Audio Importer/Get Force To Mono" )]
 	class AudioImporterforceToMonoGet1 : Automation {
 
 		public UnityEditor.AudioImporter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Audio Importer/Force To Mono/Set" )]
+	[Automation( "Importers/Audio Importer/Set Force To Mono" )]
 	class AudioImporterforceToMonoSet1 : Automation {
 
 		public UnityEditor.AudioImporter Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Audio Importer/Load In Background/Get" )]
+	[Automation( "Importers/Audio Importer/Get Load In Background" )]
 	class AudioImporterloadInBackgroundGet2 : Automation {
 
 		public UnityEditor.AudioImporter Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Audio Importer/Load In Background/Set" )]
+	[Automation( "Importers/Audio Importer/Set Load In Background" )]
 	class AudioImporterloadInBackgroundSet2 : Automation {
 
 		public UnityEditor.AudioImporter Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Audio Importer/Preload Audio Data/Get" )]
+	[Automation( "Importers/Audio Importer/Get Preload Audio Data" )]
 	class AudioImporterpreloadAudioDataGet3 : Automation {
 
 		public UnityEditor.AudioImporter Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Audio Importer/Preload Audio Data/Set" )]
+	[Automation( "Importers/Audio Importer/Set Preload Audio Data" )]
 	class AudioImporterpreloadAudioDataSet3 : Automation {
 
 		public UnityEditor.AudioImporter Instance;

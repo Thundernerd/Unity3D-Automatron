@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/Model Importer/Import Materials/Get" )]
+	[Automation( "Importers/Model Importer/Get Import Materials" )]
 	class ModelImporterimportMaterialsGet0 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Materials/Set" )]
+	[Automation( "Importers/Model Importer/Set Import Materials" )]
 	class ModelImporterimportMaterialsSet0 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Material Name/Get" )]
+	[Automation( "Importers/Model Importer/Get Material Name" )]
 	class ModelImportermaterialNameGet1 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Material Name/Set" )]
+	[Automation( "Importers/Model Importer/Set Material Name" )]
 	class ModelImportermaterialNameSet1 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Material Search/Get" )]
+	[Automation( "Importers/Model Importer/Get Material Search" )]
 	class ModelImportermaterialSearchGet2 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Material Search/Set" )]
+	[Automation( "Importers/Model Importer/Set Material Search" )]
 	class ModelImportermaterialSearchSet2 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Global Scale/Get" )]
+	[Automation( "Importers/Model Importer/Get Global Scale" )]
 	class ModelImporterglobalScaleGet3 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Global Scale/Set" )]
+	[Automation( "Importers/Model Importer/Set Global Scale" )]
 	class ModelImporterglobalScaleSet3 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Is Use File Units Supported/Get" )]
+	[Automation( "Importers/Model Importer/Get Is Use File Units Supported" )]
 	class ModelImporterisUseFileUnitsSupportedGet4 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Use File Units/Get" )]
+	[Automation( "Importers/Model Importer/Get Use File Units" )]
 	class ModelImporteruseFileUnitsGet5 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -139,7 +139,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Use File Units/Set" )]
+	[Automation( "Importers/Model Importer/Set Use File Units" )]
 	class ModelImporteruseFileUnitsSet5 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/File Scale/Get" )]
+	[Automation( "Importers/Model Importer/Get File Scale" )]
 	class ModelImporterfileScaleGet6 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -166,7 +166,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Is File Scale Used/Get" )]
+	[Automation( "Importers/Model Importer/Get Is File Scale Used" )]
 	class ModelImporterisFileScaleUsedGet7 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -180,7 +180,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Blend Shapes/Get" )]
+	[Automation( "Importers/Model Importer/Get Import Blend Shapes" )]
 	class ModelImporterimportBlendShapesGet8 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -194,7 +194,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Blend Shapes/Set" )]
+	[Automation( "Importers/Model Importer/Set Import Blend Shapes" )]
 	class ModelImporterimportBlendShapesSet8 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -207,7 +207,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Add Collider/Get" )]
+	[Automation( "Importers/Model Importer/Get Add Collider" )]
 	class ModelImporteraddColliderGet9 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -221,7 +221,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Add Collider/Set" )]
+	[Automation( "Importers/Model Importer/Set Add Collider" )]
 	class ModelImporteraddColliderSet9 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -234,7 +234,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Normal Smoothing Angle/Get" )]
+	[Automation( "Importers/Model Importer/Get Normal Smoothing Angle" )]
 	class ModelImporternormalSmoothingAngleGet10 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -248,7 +248,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Normal Smoothing Angle/Set" )]
+	[Automation( "Importers/Model Importer/Set Normal Smoothing Angle" )]
 	class ModelImporternormalSmoothingAngleSet10 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -261,7 +261,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Swap UV Channels/Get" )]
+	[Automation( "Importers/Model Importer/Get Swap UV Channels" )]
 	class ModelImporterswapUVChannelsGet11 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -275,7 +275,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Swap UV Channels/Set" )]
+	[Automation( "Importers/Model Importer/Set Swap UV Channels" )]
 	class ModelImporterswapUVChannelsSet11 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -288,7 +288,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Generate Secondary UV/Get" )]
+	[Automation( "Importers/Model Importer/Get Generate Secondary UV" )]
 	class ModelImportergenerateSecondaryUVGet12 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -302,7 +302,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Generate Secondary UV/Set" )]
+	[Automation( "Importers/Model Importer/Set Generate Secondary UV" )]
 	class ModelImportergenerateSecondaryUVSet12 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -315,7 +315,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Angle Distortion/Get" )]
+	[Automation( "Importers/Model Importer/Get Secondary UV Angle Distortion" )]
 	class ModelImportersecondaryUVAngleDistortionGet13 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -329,7 +329,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Angle Distortion/Set" )]
+	[Automation( "Importers/Model Importer/Set Secondary UV Angle Distortion" )]
 	class ModelImportersecondaryUVAngleDistortionSet13 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -342,7 +342,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Area Distortion/Get" )]
+	[Automation( "Importers/Model Importer/Get Secondary UV Area Distortion" )]
 	class ModelImportersecondaryUVAreaDistortionGet14 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -356,7 +356,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Area Distortion/Set" )]
+	[Automation( "Importers/Model Importer/Set Secondary UV Area Distortion" )]
 	class ModelImportersecondaryUVAreaDistortionSet14 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -369,7 +369,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Hard Angle/Get" )]
+	[Automation( "Importers/Model Importer/Get Secondary UV Hard Angle" )]
 	class ModelImportersecondaryUVHardAngleGet15 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -383,7 +383,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Hard Angle/Set" )]
+	[Automation( "Importers/Model Importer/Set Secondary UV Hard Angle" )]
 	class ModelImportersecondaryUVHardAngleSet15 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -396,7 +396,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Pack Margin/Get" )]
+	[Automation( "Importers/Model Importer/Get Secondary UV Pack Margin" )]
 	class ModelImportersecondaryUVPackMarginGet16 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -410,7 +410,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Secondary UV Pack Margin/Set" )]
+	[Automation( "Importers/Model Importer/Set Secondary UV Pack Margin" )]
 	class ModelImportersecondaryUVPackMarginSet16 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -423,7 +423,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Generate Animations/Get" )]
+	[Automation( "Importers/Model Importer/Get Generate Animations" )]
 	class ModelImportergenerateAnimationsGet17 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -437,7 +437,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Generate Animations/Set" )]
+	[Automation( "Importers/Model Importer/Set Generate Animations" )]
 	class ModelImportergenerateAnimationsSet17 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -450,7 +450,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Imported Take Infos/Get" )]
+	[Automation( "Importers/Model Importer/Get Imported Take Infos" )]
 	class ModelImporterimportedTakeInfosGet18 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -464,7 +464,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Transform Paths/Get" )]
+	[Automation( "Importers/Model Importer/Get Transform Paths" )]
 	class ModelImportertransformPathsGet19 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -478,7 +478,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Referenced Clips/Get" )]
+	[Automation( "Importers/Model Importer/Get Referenced Clips" )]
 	class ModelImporterreferencedClipsGet20 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -492,7 +492,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Is Readable/Get" )]
+	[Automation( "Importers/Model Importer/Get Is Readable" )]
 	class ModelImporterisReadableGet21 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -506,7 +506,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Is Readable/Set" )]
+	[Automation( "Importers/Model Importer/Set Is Readable" )]
 	class ModelImporterisReadableSet21 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -519,7 +519,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Optimize Mesh/Get" )]
+	[Automation( "Importers/Model Importer/Get Optimize Mesh" )]
 	class ModelImporteroptimizeMeshGet22 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -533,7 +533,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Optimize Mesh/Set" )]
+	[Automation( "Importers/Model Importer/Set Optimize Mesh" )]
 	class ModelImporteroptimizeMeshSet22 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -546,7 +546,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Normals/Get" )]
+	[Automation( "Importers/Model Importer/Get Import Normals" )]
 	class ModelImporterimportNormalsGet23 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -560,7 +560,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Normals/Set" )]
+	[Automation( "Importers/Model Importer/Set Import Normals" )]
 	class ModelImporterimportNormalsSet23 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -573,7 +573,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Tangents/Get" )]
+	[Automation( "Importers/Model Importer/Get Import Tangents" )]
 	class ModelImporterimportTangentsGet24 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -587,7 +587,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Tangents/Set" )]
+	[Automation( "Importers/Model Importer/Set Import Tangents" )]
 	class ModelImporterimportTangentsSet24 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -600,7 +600,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Bake IK/Get" )]
+	[Automation( "Importers/Model Importer/Get Bake IK" )]
 	class ModelImporterbakeIKGet25 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -614,7 +614,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Bake IK/Set" )]
+	[Automation( "Importers/Model Importer/Set Bake IK" )]
 	class ModelImporterbakeIKSet25 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -627,7 +627,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Is Bake IK Supported/Get" )]
+	[Automation( "Importers/Model Importer/Get Is Bake IK Supported" )]
 	class ModelImporterisBakeIKSupportedGet26 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -641,7 +641,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Resample Curves/Get" )]
+	[Automation( "Importers/Model Importer/Get Resample Curves" )]
 	class ModelImporterresampleCurvesGet27 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -655,7 +655,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Resample Curves/Set" )]
+	[Automation( "Importers/Model Importer/Set Resample Curves" )]
 	class ModelImporterresampleCurvesSet27 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -668,7 +668,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Is Tangent Import Supported/Get" )]
+	[Automation( "Importers/Model Importer/Get Is Tangent Import Supported" )]
 	class ModelImporterisTangentImportSupportedGet28 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -682,7 +682,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Mesh Compression/Get" )]
+	[Automation( "Importers/Model Importer/Get Mesh Compression" )]
 	class ModelImportermeshCompressionGet29 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -696,7 +696,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Mesh Compression/Set" )]
+	[Automation( "Importers/Model Importer/Set Mesh Compression" )]
 	class ModelImportermeshCompressionSet29 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -709,7 +709,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Animation/Get" )]
+	[Automation( "Importers/Model Importer/Get Import Animation" )]
 	class ModelImporterimportAnimationGet30 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -723,7 +723,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Import Animation/Set" )]
+	[Automation( "Importers/Model Importer/Set Import Animation" )]
 	class ModelImporterimportAnimationSet30 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -736,7 +736,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Optimize Game Objects/Get" )]
+	[Automation( "Importers/Model Importer/Get Optimize Game Objects" )]
 	class ModelImporteroptimizeGameObjectsGet31 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -750,7 +750,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Optimize Game Objects/Set" )]
+	[Automation( "Importers/Model Importer/Set Optimize Game Objects" )]
 	class ModelImporteroptimizeGameObjectsSet31 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -763,7 +763,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Extra Exposed Transform Paths/Get" )]
+	[Automation( "Importers/Model Importer/Get Extra Exposed Transform Paths" )]
 	class ModelImporterextraExposedTransformPathsGet32 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -777,7 +777,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Extra Exposed Transform Paths/Set" )]
+	[Automation( "Importers/Model Importer/Set Extra Exposed Transform Paths" )]
 	class ModelImporterextraExposedTransformPathsSet32 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -790,7 +790,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Compression/Get" )]
+	[Automation( "Importers/Model Importer/Get Animation Compression" )]
 	class ModelImporteranimationCompressionGet33 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -804,7 +804,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Compression/Set" )]
+	[Automation( "Importers/Model Importer/Set Animation Compression" )]
 	class ModelImporteranimationCompressionSet33 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -817,7 +817,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Rotation Error/Get" )]
+	[Automation( "Importers/Model Importer/Get Animation Rotation Error" )]
 	class ModelImporteranimationRotationErrorGet34 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -831,7 +831,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Rotation Error/Set" )]
+	[Automation( "Importers/Model Importer/Set Animation Rotation Error" )]
 	class ModelImporteranimationRotationErrorSet34 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -844,7 +844,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Position Error/Get" )]
+	[Automation( "Importers/Model Importer/Get Animation Position Error" )]
 	class ModelImporteranimationPositionErrorGet35 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -858,7 +858,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Position Error/Set" )]
+	[Automation( "Importers/Model Importer/Set Animation Position Error" )]
 	class ModelImporteranimationPositionErrorSet35 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -871,7 +871,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Scale Error/Get" )]
+	[Automation( "Importers/Model Importer/Get Animation Scale Error" )]
 	class ModelImporteranimationScaleErrorGet36 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -885,7 +885,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Scale Error/Set" )]
+	[Automation( "Importers/Model Importer/Set Animation Scale Error" )]
 	class ModelImporteranimationScaleErrorSet36 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -898,7 +898,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Wrap Mode/Get" )]
+	[Automation( "Importers/Model Importer/Get Animation Wrap Mode" )]
 	class ModelImporteranimationWrapModeGet37 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -912,7 +912,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Wrap Mode/Set" )]
+	[Automation( "Importers/Model Importer/Set Animation Wrap Mode" )]
 	class ModelImporteranimationWrapModeSet37 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -925,7 +925,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Type/Get" )]
+	[Automation( "Importers/Model Importer/Get Animation Type" )]
 	class ModelImporteranimationTypeGet38 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -939,7 +939,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Animation Type/Set" )]
+	[Automation( "Importers/Model Importer/Set Animation Type" )]
 	class ModelImporteranimationTypeSet38 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -952,7 +952,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Humanoid Oversampling/Get" )]
+	[Automation( "Importers/Model Importer/Get Humanoid Oversampling" )]
 	class ModelImporterhumanoidOversamplingGet39 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -966,7 +966,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Humanoid Oversampling/Set" )]
+	[Automation( "Importers/Model Importer/Set Humanoid Oversampling" )]
 	class ModelImporterhumanoidOversamplingSet39 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -979,7 +979,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Motion Node Name/Get" )]
+	[Automation( "Importers/Model Importer/Get Motion Node Name" )]
 	class ModelImportermotionNodeNameGet40 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -993,7 +993,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Motion Node Name/Set" )]
+	[Automation( "Importers/Model Importer/Set Motion Node Name" )]
 	class ModelImportermotionNodeNameSet40 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -1006,7 +1006,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Source Avatar/Get" )]
+	[Automation( "Importers/Model Importer/Get Source Avatar" )]
 	class ModelImportersourceAvatarGet41 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -1020,7 +1020,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Source Avatar/Set" )]
+	[Automation( "Importers/Model Importer/Set Source Avatar" )]
 	class ModelImportersourceAvatarSet41 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -1033,7 +1033,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Human Description/Get" )]
+	[Automation( "Importers/Model Importer/Get Human Description" )]
 	class ModelImporterhumanDescriptionGet42 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -1047,7 +1047,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Human Description/Set" )]
+	[Automation( "Importers/Model Importer/Set Human Description" )]
 	class ModelImporterhumanDescriptionSet42 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -1060,7 +1060,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Clip Animations/Get" )]
+	[Automation( "Importers/Model Importer/Get Clip Animations" )]
 	class ModelImporterclipAnimationsGet43 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -1074,7 +1074,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Clip Animations/Set" )]
+	[Automation( "Importers/Model Importer/Set Clip Animations" )]
 	class ModelImporterclipAnimationsSet43 : Automation {
 
 		public UnityEditor.ModelImporter Instance;
@@ -1087,7 +1087,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Model Importer/Default Clip Animations/Get" )]
+	[Automation( "Importers/Model Importer/Get Default Clip Animations" )]
 	class ModelImporterdefaultClipAnimationsGet44 : Automation {
 
 		public UnityEditor.ModelImporter Instance;

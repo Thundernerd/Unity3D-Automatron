@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/Speed Tree Importer/Wind Quality Names/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Wind Quality Names" )]
 	class SpeedTreeImporterwindQualityNamesGet0 : Automation {
 
 		[ReadOnly]
@@ -16,7 +16,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Has Imported/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Has Imported" )]
 	class SpeedTreeImporterhasImportedGet0 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Material Folder Path/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Material Folder Path" )]
 	class SpeedTreeImportermaterialFolderPathGet1 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Scale Factor/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Scale Factor" )]
 	class SpeedTreeImporterscaleFactorGet2 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -58,7 +58,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Scale Factor/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Scale Factor" )]
 	class SpeedTreeImporterscaleFactorSet2 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Main Color/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Main Color" )]
 	class SpeedTreeImportermainColorGet3 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -85,7 +85,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Main Color/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Main Color" )]
 	class SpeedTreeImportermainColorSet3 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Spec Color/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Spec Color" )]
 	class SpeedTreeImporterspecColorGet4 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -112,7 +112,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Spec Color/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Spec Color" )]
 	class SpeedTreeImporterspecColorSet4 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Hue Variation/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Hue Variation" )]
 	class SpeedTreeImporterhueVariationGet5 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -139,7 +139,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Hue Variation/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Hue Variation" )]
 	class SpeedTreeImporterhueVariationSet5 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Shininess/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Shininess" )]
 	class SpeedTreeImportershininessGet6 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -166,7 +166,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Shininess/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Shininess" )]
 	class SpeedTreeImportershininessSet6 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Alpha Test Ref/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Alpha Test Ref" )]
 	class SpeedTreeImporteralphaTestRefGet7 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -193,7 +193,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Alpha Test Ref/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Alpha Test Ref" )]
 	class SpeedTreeImporteralphaTestRefSet7 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Has Billboard/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Has Billboard" )]
 	class SpeedTreeImporterhasBillboardGet8 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -220,7 +220,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Enable Smooth LOD Transition/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Enable Smooth LOD Transition" )]
 	class SpeedTreeImporterenableSmoothLODTransitionGet9 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -234,7 +234,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Enable Smooth LOD Transition/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Enable Smooth LOD Transition" )]
 	class SpeedTreeImporterenableSmoothLODTransitionSet9 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -247,7 +247,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Animate Cross Fading/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Animate Cross Fading" )]
 	class SpeedTreeImporteranimateCrossFadingGet10 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -261,7 +261,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Animate Cross Fading/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Animate Cross Fading" )]
 	class SpeedTreeImporteranimateCrossFadingSet10 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -274,7 +274,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Billboard Transition Cross Fade Width/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Billboard Transition Cross Fade Width" )]
 	class SpeedTreeImporterbillboardTransitionCrossFadeWidthGet11 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -288,7 +288,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Billboard Transition Cross Fade Width/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Billboard Transition Cross Fade Width" )]
 	class SpeedTreeImporterbillboardTransitionCrossFadeWidthSet11 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -301,7 +301,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Fade Out Width/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Fade Out Width" )]
 	class SpeedTreeImporterfadeOutWidthGet12 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -315,7 +315,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Fade Out Width/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Fade Out Width" )]
 	class SpeedTreeImporterfadeOutWidthSet12 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -328,7 +328,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/LOD Heights/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get LOD Heights" )]
 	class SpeedTreeImporterLODHeightsGet13 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -342,7 +342,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/LOD Heights/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set LOD Heights" )]
 	class SpeedTreeImporterLODHeightsSet13 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -355,7 +355,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Cast Shadows/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Cast Shadows" )]
 	class SpeedTreeImportercastShadowsGet14 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -369,7 +369,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Cast Shadows/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Cast Shadows" )]
 	class SpeedTreeImportercastShadowsSet14 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -382,7 +382,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Receive Shadows/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Receive Shadows" )]
 	class SpeedTreeImporterreceiveShadowsGet15 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -396,7 +396,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Receive Shadows/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Receive Shadows" )]
 	class SpeedTreeImporterreceiveShadowsSet15 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -409,7 +409,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Use Light Probes/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Use Light Probes" )]
 	class SpeedTreeImporteruseLightProbesGet16 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -423,7 +423,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Use Light Probes/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Use Light Probes" )]
 	class SpeedTreeImporteruseLightProbesSet16 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -436,7 +436,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Reflection Probe Usages/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Reflection Probe Usages" )]
 	class SpeedTreeImporterreflectionProbeUsagesGet17 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -450,7 +450,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Reflection Probe Usages/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Reflection Probe Usages" )]
 	class SpeedTreeImporterreflectionProbeUsagesSet17 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -463,7 +463,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Enable Bump/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Enable Bump" )]
 	class SpeedTreeImporterenableBumpGet18 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -477,7 +477,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Enable Bump/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Enable Bump" )]
 	class SpeedTreeImporterenableBumpSet18 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -490,7 +490,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Enable Hue/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Enable Hue" )]
 	class SpeedTreeImporterenableHueGet19 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -504,7 +504,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Enable Hue/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Enable Hue" )]
 	class SpeedTreeImporterenableHueSet19 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -517,7 +517,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Best Wind Quality/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Best Wind Quality" )]
 	class SpeedTreeImporterbestWindQualityGet20 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -531,7 +531,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Wind Qualities/Get" )]
+	[Automation( "Importers/Speed Tree Importer/Get Wind Qualities" )]
 	class SpeedTreeImporterwindQualitiesGet21 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;
@@ -545,7 +545,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Wind Qualities/Set" )]
+	[Automation( "Importers/Speed Tree Importer/Set Wind Qualities" )]
 	class SpeedTreeImporterwindQualitiesSet21 : Automation {
 
 		public UnityEditor.SpeedTreeImporter Instance;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/Movie Importer/Quality/Get" )]
+	[Automation( "Importers/Movie Importer/Get Quality" )]
 	class MovieImporterqualityGet0 : Automation {
 
 		public UnityEditor.MovieImporter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Movie Importer/Quality/Set" )]
+	[Automation( "Importers/Movie Importer/Set Quality" )]
 	class MovieImporterqualitySet0 : Automation {
 
 		public UnityEditor.MovieImporter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Movie Importer/Linear Texture/Get" )]
+	[Automation( "Importers/Movie Importer/Get Linear Texture" )]
 	class MovieImporterlinearTextureGet1 : Automation {
 
 		public UnityEditor.MovieImporter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Movie Importer/Linear Texture/Set" )]
+	[Automation( "Importers/Movie Importer/Set Linear Texture" )]
 	class MovieImporterlinearTextureSet1 : Automation {
 
 		public UnityEditor.MovieImporter Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Movie Importer/Duration/Get" )]
+	[Automation( "Importers/Movie Importer/Get Duration" )]
 	class MovieImporterdurationGet2 : Automation {
 
 		public UnityEditor.MovieImporter Instance;

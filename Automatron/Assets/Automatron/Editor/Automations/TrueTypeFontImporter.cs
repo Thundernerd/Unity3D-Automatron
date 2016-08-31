@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/True Type Font Importer/Font Size/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Font Size" )]
 	class TrueTypeFontImporterfontSizeGet0 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font Size/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Font Size" )]
 	class TrueTypeFontImporterfontSizeSet0 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font Texture Case/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Font Texture Case" )]
 	class TrueTypeFontImporterfontTextureCaseGet1 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font Texture Case/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Font Texture Case" )]
 	class TrueTypeFontImporterfontTextureCaseSet1 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Include Font Data/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Include Font Data" )]
 	class TrueTypeFontImporterincludeFontDataGet2 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Include Font Data/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Include Font Data" )]
 	class TrueTypeFontImporterincludeFontDataSet2 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Ascent Calculation Mode/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Ascent Calculation Mode" )]
 	class TrueTypeFontImporterascentCalculationModeGet3 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Ascent Calculation Mode/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Ascent Calculation Mode" )]
 	class TrueTypeFontImporterascentCalculationModeSet3 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font Names/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Font Names" )]
 	class TrueTypeFontImporterfontNamesGet4 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font Names/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Font Names" )]
 	class TrueTypeFontImporterfontNamesSet4 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font References/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Font References" )]
 	class TrueTypeFontImporterfontReferencesGet5 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font References/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Font References" )]
 	class TrueTypeFontImporterfontReferencesSet5 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Custom Characters/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Custom Characters" )]
 	class TrueTypeFontImportercustomCharactersGet6 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Custom Characters/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Custom Characters" )]
 	class TrueTypeFontImportercustomCharactersSet6 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font TTF Name/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Font TTF Name" )]
 	class TrueTypeFontImporterfontTTFNameGet7 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Character Spacing/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Character Spacing" )]
 	class TrueTypeFontImportercharacterSpacingGet8 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -220,7 +220,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Character Spacing/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Character Spacing" )]
 	class TrueTypeFontImportercharacterSpacingSet8 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Character Padding/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Character Padding" )]
 	class TrueTypeFontImportercharacterPaddingGet9 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -247,7 +247,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Character Padding/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Character Padding" )]
 	class TrueTypeFontImportercharacterPaddingSet9 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -260,7 +260,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font Rendering Mode/Get" )]
+	[Automation( "Importers/True Type Font Importer/Get Font Rendering Mode" )]
 	class TrueTypeFontImporterfontRenderingModeGet10 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
@@ -274,7 +274,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/True Type Font Importer/Font Rendering Mode/Set" )]
+	[Automation( "Importers/True Type Font Importer/Set Font Rendering Mode" )]
 	class TrueTypeFontImporterfontRenderingModeSet10 : Automation {
 
 		public UnityEditor.TrueTypeFontImporter Instance;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Importers/Asset Importer/Asset Path/Get" )]
+	[Automation( "Importers/Asset Importer/Get Asset Path" )]
 	class AssetImporterassetPathGet0 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Asset Importer/Asset Time Stamp/Get" )]
+	[Automation( "Importers/Asset Importer/Get Asset Time Stamp" )]
 	class AssetImporterassetTimeStampGet1 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
@@ -31,7 +31,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Asset Importer/User Data/Get" )]
+	[Automation( "Importers/Asset Importer/Get User Data" )]
 	class AssetImporteruserDataGet2 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
@@ -45,7 +45,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Asset Importer/User Data/Set" )]
+	[Automation( "Importers/Asset Importer/Set User Data" )]
 	class AssetImporteruserDataSet2 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
@@ -58,7 +58,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Asset Importer/Asset Bundle Name/Get" )]
+	[Automation( "Importers/Asset Importer/Get Asset Bundle Name" )]
 	class AssetImporterassetBundleNameGet3 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
@@ -72,7 +72,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Asset Importer/Asset Bundle Name/Set" )]
+	[Automation( "Importers/Asset Importer/Set Asset Bundle Name" )]
 	class AssetImporterassetBundleNameSet3 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
@@ -85,7 +85,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Asset Importer/Asset Bundle Variant/Get" )]
+	[Automation( "Importers/Asset Importer/Get Asset Bundle Variant" )]
 	class AssetImporterassetBundleVariantGet4 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
@@ -99,7 +99,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Importers/Asset Importer/Asset Bundle Variant/Set" )]
+	[Automation( "Importers/Asset Importer/Set Asset Bundle Variant" )]
 	class AssetImporterassetBundleVariantSet4 : Automation {
 
 		public UnityEditor.AssetImporter Instance;
