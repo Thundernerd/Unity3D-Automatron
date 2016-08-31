@@ -81,5 +81,170 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
+    ////////////////////////////////////
+
+    [Automation( "Primitives/Float/Get Epsilon" )]
+    class SingleEpsilonGet0 : Automation {
+
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.Epsilon;
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Get Max Value" )]
+    class SingleMaxValueGet1 : Automation {
+
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.MaxValue;
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Get Min Value" )]
+    class SingleMinValueGet2 : Automation {
+
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.MinValue;
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Get NaN" )]
+    class SingleNaNGet3 : Automation {
+
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.NaN;
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Get Positive Infinity" )]
+    class SinglePositiveInfinityGet4 : Automation {
+
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.PositiveInfinity;
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Get Negative Infinity" )]
+    class SingleNegativeInfinityGet5 : Automation {
+
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.NegativeInfinity;
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Is Infinity" )]
+    class SingleIsInfinity0 : Automation {
+
+        public System.Single f;
+        [ReadOnly]
+        public System.Boolean Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.IsInfinity( f );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Is NaN" )]
+    class SingleIsNaN1 : Automation {
+
+        public System.Single f;
+        [ReadOnly]
+        public System.Boolean Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.IsNaN( f );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Is Negative Infinity" )]
+    class SingleIsNegativeInfinity2 : Automation {
+
+        public System.Single f;
+        [ReadOnly]
+        public System.Boolean Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.IsNegativeInfinity( f );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Is Positive Infinity" )]
+    class SingleIsPositiveInfinity3 : Automation {
+
+        public System.Single f;
+        [ReadOnly]
+        public System.Boolean Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.IsPositiveInfinity( f );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Parse" )]
+    class SingleParse4 : Automation {
+
+        public System.String s;
+        [ReadOnly]
+        public System.Single Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.Parse( s );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Primitives/Float/Try Parse" )]
+    class SingleTryParse9 : Automation {
+
+        public System.String s;
+        public System.Single result;
+        [ReadOnly]
+        public System.Boolean Result;
+
+        public override IEnumerator Execute() {
+            Result = System.Single.TryParse( s, out result );
+            yield break;
+        }
+
+    }
+
 #pragma warning restore 0649
 }

@@ -3,7 +3,7 @@
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "Mathf/Sin" )]
+    [Automation( "Math/Sin" )]
     class MathfSin0 : Automation {
 
         public System.Single f;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Cos" )]
+    [Automation( "Math/Cos" )]
     class MathfCos1 : Automation {
 
         public System.Single f;
@@ -31,7 +31,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Tan" )]
+    [Automation( "Math/Tan" )]
     class MathfTan2 : Automation {
 
         public System.Single f;
@@ -45,7 +45,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Asin" )]
+    [Automation( "Math/Asin" )]
     class MathfAsin3 : Automation {
 
         public System.Single f;
@@ -59,7 +59,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Acos" )]
+    [Automation( "Math/Acos" )]
     class MathfAcos4 : Automation {
 
         public System.Single f;
@@ -73,7 +73,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Atan" )]
+    [Automation( "Math/Atan" )]
     class MathfAtan5 : Automation {
 
         public System.Single f;
@@ -87,7 +87,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Atan 2" )]
+    [Automation( "Math/Atan 2" )]
     class MathfAtan26 : Automation {
 
         public System.Single y;
@@ -102,7 +102,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Sqrt" )]
+    [Automation( "Math/Sqrt" )]
     class MathfSqrt7 : Automation {
 
         public System.Single f;
@@ -116,7 +116,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Abs/Float" )]
+    [Automation( "Math/Abs/Float" )]
     class MathfAbs8 : Automation {
 
         public System.Single f;
@@ -130,7 +130,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Abs/Int" )]
+    [Automation( "Math/Abs/Int" )]
     class MathfAbs9 : Automation {
 
         public System.Int32 value;
@@ -144,7 +144,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Min/Float" )]
+    [Automation( "Math/Min/Float" )]
     class MathfMin10 : Automation {
 
         public System.Single a;
@@ -159,7 +159,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Min/Int" )]
+    [Automation( "Math/Min/Int" )]
     class MathfMin12 : Automation {
 
         public System.Int32 a;
@@ -174,7 +174,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Max/Float" )]
+    [Automation( "Math/Max/Float" )]
     class MathfMax14 : Automation {
 
         public System.Single a;
@@ -189,7 +189,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Max/Int" )]
+    [Automation( "Math/Max/Int" )]
     class MathfMax16 : Automation {
 
         public System.Int32 a;
@@ -204,7 +204,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Pow" )]
+    [Automation( "Math/Pow" )]
     class MathfPow18 : Automation {
 
         public System.Single f;
@@ -219,7 +219,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Exp" )]
+    [Automation( "Math/Exp" )]
     class MathfExp19 : Automation {
 
         public System.Single power;
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Log Power" )]
+    [Automation( "Math/Log Power" )]
     class MathfLog20 : Automation {
 
         public System.Single f;
@@ -248,7 +248,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Log" )]
+    [Automation( "Math/Log" )]
     class MathfLog21 : Automation {
 
         public System.Single f;
@@ -262,7 +262,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Log 10" )]
+    [Automation( "Math/Log 10" )]
     class MathfLog1022 : Automation {
 
         public System.Single f;
@@ -276,7 +276,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Ceil" )]
+    [Automation( "Math/Ceil" )]
     class MathfCeil23 : Automation {
 
         public System.Single f;
@@ -290,7 +290,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Floor" )]
+    [Automation( "Math/Floor" )]
     class MathfFloor24 : Automation {
 
         public System.Single f;
@@ -304,7 +304,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Round" )]
+    [Automation( "Math/Round" )]
     class MathfRound25 : Automation {
 
         public System.Single f;
@@ -318,7 +318,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Ceil To Int" )]
+    [Automation( "Math/Ceil To Int" )]
     class MathfCeilToInt26 : Automation {
 
         public System.Single f;
@@ -332,7 +332,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Floor To Int" )]
+    [Automation( "Math/Floor To Int" )]
     class MathfFloorToInt27 : Automation {
 
         public System.Single f;
@@ -346,7 +346,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Round To Int" )]
+    [Automation( "Math/Round To Int" )]
     class MathfRoundToInt28 : Automation {
 
         public System.Single f;
@@ -360,7 +360,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Sign" )]
+    [Automation( "Math/Sign" )]
     class MathfSign29 : Automation {
 
         public System.Single f;
@@ -374,7 +374,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Clamp/Float" )]
+    [Automation( "Math/Clamp/Float" )]
     class MathfClamp30 : Automation {
 
         public System.Single value;
@@ -390,7 +390,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Clamp/Int" )]
+    [Automation( "Math/Clamp/Int" )]
     class MathfClamp31 : Automation {
 
         public System.Int32 value;
@@ -406,7 +406,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Clamp 01" )]
+    [Automation( "Math/Clamp 01" )]
     class MathfClamp0132 : Automation {
 
         public System.Single value;
@@ -420,7 +420,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Lerp" )]
+    [Automation( "Math/Lerp" )]
     class MathfLerp33 : Automation {
 
         public System.Single a;
@@ -436,7 +436,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Lerp Unclamped" )]
+    [Automation( "Math/Lerp Unclamped" )]
     class MathfLerpUnclamped34 : Automation {
 
         public System.Single a;
@@ -452,7 +452,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Lerp Angle" )]
+    [Automation( "Math/Lerp Angle" )]
     class MathfLerpAngle35 : Automation {
 
         public System.Single a;
@@ -468,7 +468,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Move Towards" )]
+    [Automation( "Math/Move Towards" )]
     class MathfMoveTowards36 : Automation {
 
         public System.Single current;
@@ -484,7 +484,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Move Towards Angle" )]
+    [Automation( "Math/Move Towards Angle" )]
     class MathfMoveTowardsAngle37 : Automation {
 
         public System.Single current;
@@ -500,7 +500,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Smooth Step" )]
+    [Automation( "Math/Smooth Step" )]
     class MathfSmoothStep38 : Automation {
 
         public System.Single from;
@@ -516,7 +516,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Gamma" )]
+    [Automation( "Math/Gamma" )]
     class MathfGamma39 : Automation {
 
         public System.Single value;
@@ -532,7 +532,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Approximately" )]
+    [Automation( "Math/Approximately" )]
     class MathfApproximately40 : Automation {
 
         public System.Single a;
@@ -547,7 +547,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Smooth Damp" )]
+    [Automation( "Math/Smooth Damp" )]
     class MathfSmoothDamp41 : Automation {
 
         public System.Single current;
@@ -565,7 +565,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Smooth Damp Angle" )]
+    [Automation( "Math/Smooth Damp Angle" )]
     class MathfSmoothDampAngle44 : Automation {
 
         public System.Single current;
@@ -583,7 +583,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Repeat" )]
+    [Automation( "Math/Repeat" )]
     class MathfRepeat47 : Automation {
 
         public System.Single t;
@@ -598,7 +598,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Ping Pong" )]
+    [Automation( "Math/Ping Pong" )]
     class MathfPingPong48 : Automation {
 
         public System.Single t;
@@ -613,7 +613,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Inverse Lerp" )]
+    [Automation( "Math/Inverse Lerp" )]
     class MathfInverseLerp49 : Automation {
 
         public System.Single a;
@@ -629,7 +629,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Closest Power Of Two" )]
+    [Automation( "Math/Closest Power Of Two" )]
     class MathfClosestPowerOfTwo50 : Automation {
 
         public System.Int32 value;
@@ -643,7 +643,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Gamma To Linear Space" )]
+    [Automation( "Math/Gamma To Linear Space" )]
     class MathfGammaToLinearSpace51 : Automation {
 
         public System.Single value;
@@ -657,7 +657,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Linear To Gamma Space" )]
+    [Automation( "Math/Linear To Gamma Space" )]
     class MathfLinearToGammaSpace52 : Automation {
 
         public System.Single value;
@@ -671,7 +671,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Is Power Of Two" )]
+    [Automation( "Math/Is Power Of Two" )]
     class MathfIsPowerOfTwo53 : Automation {
 
         public System.Int32 value;
@@ -685,7 +685,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Next Power Of Two" )]
+    [Automation( "Math/Next Power Of Two" )]
     class MathfNextPowerOfTwo54 : Automation {
 
         public System.Int32 value;
@@ -699,7 +699,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Delta Angle" )]
+    [Automation( "Math/Delta Angle" )]
     class MathfDeltaAngle55 : Automation {
 
         public System.Single current;
@@ -714,7 +714,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Perlin Noise" )]
+    [Automation( "Math/Perlin Noise" )]
     class MathfPerlinNoise56 : Automation {
 
         public System.Single x;
@@ -729,7 +729,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Float To Half" )]
+    [Automation( "Math/Float To Half" )]
     class MathfFloatToHalf57 : Automation {
 
         public System.Single val;
@@ -743,7 +743,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Mathf/Half To Float" )]
+    [Automation( "Math/Half To Float" )]
     class MathfHalfToFloat58 : Automation {
 
         public System.UInt16 val;

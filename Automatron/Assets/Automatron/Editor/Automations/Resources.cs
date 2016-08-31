@@ -5,108 +5,106 @@ using UnityEngine;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
+    [Automation( "Resources/Find Objects Of Type All" )]
+    class ResourcesFindObjectsOfTypeAll0 : Automation {
+        [TypeLimit( typeof( UnityEngine.Object ) )]
+        public System.Type type;
+        [ReadOnly]
+        public UnityEngine.Object[] Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Resources.FindObjectsOfTypeAll( type );
+            yield break;
+        }
+
+    }
+
     [Automation( "Resources/Load" )]
-    class LoadResource : Automation {
+    class ResourcesLoad1 : Automation {
 
-        public string Path;
+        public System.String path;
         [ReadOnly]
-        public Object Resource;
-
-        public override void Reset() {
-            base.Reset();
-            Resource = null;
-        }
+        public UnityEngine.Object Result;
 
         public override IEnumerator Execute() {
-            Resource = Resources.Load( Path );
+            Result = UnityEngine.Resources.Load( path );
             yield break;
         }
+
     }
 
-    [Automation( "Resources/Load Multiple" )]
-    class LoadResourceM : Automation {
+    [Automation( "Resources/Load Typed" )]
+    class ResourcesLoad2 : Automation {
 
-        public string[] Paths;
+        public System.String path;
+        [TypeLimit( typeof( UnityEngine.Object ) )]
+        public System.Type systemTypeInstance;
         [ReadOnly]
-        public Object[] Resources;
-
-        public override void Reset() {
-            base.Reset();
-            Resources = new Object[0];
-        }
+        public UnityEngine.Object Result;
 
         public override IEnumerator Execute() {
-            var t = new List<Object>();
-            for ( int i = 0; i < Paths.Length; i++ ) {
-                t.Add( UnityEngine.Resources.Load( Paths[i] ) );
-                Progress = i / (float)Paths.Length;
-                yield return null;
-            }
-            Resources = t.ToArray();
+            Result = UnityEngine.Resources.Load( path, systemTypeInstance );
             yield break;
         }
+
     }
 
-    [Automation( "Resources/Load All Multiple" )]
-    class LoadAllResourcesM : Automation {
+    [Automation( "Resources/Load All Typed" )]
+    class ResourcesLoadAll5 : Automation {
 
-        public string[] Paths;
+        public System.String path;
+        [TypeLimit( typeof( UnityEngine.Object ) )]
+        public System.Type systemTypeInstance;
         [ReadOnly]
-        public Object[] Resources;
-
-        public override void Reset() {
-            base.Reset();
-            Resources = new Object[0];
-        }
+        public UnityEngine.Object[] Result;
 
         public override IEnumerator Execute() {
-            var t = new List<Object>();
-            for ( int i = 0; i < Paths.Length; i++ ) {
-                t.AddRange( UnityEngine.Resources.LoadAll( Paths[i] ) );
-                Progress = i / (float)Paths.Length;
-                yield return null;
-            }
-            Resources = t.ToArray();
+            Result = UnityEngine.Resources.LoadAll( path, systemTypeInstance );
             yield break;
         }
+
     }
 
     [Automation( "Resources/Load All" )]
-    class LoadAllResources : Automation {
+    class ResourcesLoadAll6 : Automation {
 
-        public string Path;
+        public System.String path;
         [ReadOnly]
-        public Object[] Resources;
-
-        public override void Reset() {
-            base.Reset();
-            Resources = new Object[0];
-        }
+        public UnityEngine.Object[] Result;
 
         public override IEnumerator Execute() {
-            Resources = UnityEngine.Resources.LoadAll( Path );
+            Result = UnityEngine.Resources.LoadAll( path );
             yield break;
         }
+
+    }
+
+    [Automation( "Resources/Get Builtin Resource" )]
+    class ResourcesGetBuiltinResource7 : Automation {
+
+        [TypeLimit( typeof( UnityEngine.Object ) )]
+        public System.Type type;
+        public System.String path;
+        [ReadOnly]
+        public UnityEngine.Object Result;
+
+        public override IEnumerator Execute() {
+            Result = UnityEngine.Resources.GetBuiltinResource( type, path );
+            yield break;
+        }
+
     }
 
     [Automation( "Resources/Unload Asset" )]
-    class UnloadAsset : Automation {
+    class ResourcesUnloadAsset8 : Automation {
 
-        public Object Asset;
-
-        public override IEnumerator Execute() {
-            Resources.UnloadAsset( Asset );
-            yield break;
-        }
-    }
-
-    [Automation( "Resources/Unload Unused Assets" )]
-    class UnloadUnusedAssets : Automation {
+        public UnityEngine.Object assetToUnload;
 
         public override IEnumerator Execute() {
-            Resources.UnloadUnusedAssets();
+            UnityEngine.Resources.UnloadAsset( assetToUnload );
             yield break;
         }
+
     }
 
 #pragma warning restore 0649

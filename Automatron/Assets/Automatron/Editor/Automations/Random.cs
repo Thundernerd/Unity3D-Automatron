@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TNRD.Automatron.Automations.Generated {
+namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
     [Automation( "Random/Quaternion" )]

@@ -1,114 +1,112 @@
-using System.Collections;
+﻿using System.Collections;
 
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "File Util/Delete File Or Directory" )]
-	class FileUtilDeleteFileOrDirectory0 : Automation {
+    [Automation( "IO/Unity/Delete File Or Directory" )]
+    class FileUtilDeleteFileOrDirectory0 : Automation {
 
-		public System.String path;
-		[ReadOnly]
-		public System.Boolean Result;
+        public System.String path;
+        [ReadOnly]
+        public System.Boolean Result;
 
-		public override IEnumerator Execute() {
-			Result = UnityEditor.FileUtil.DeleteFileOrDirectory(path);
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            Result = UnityEditor.FileUtil.DeleteFileOrDirectory( path );
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "File Util/Copy File Or Directory" )]
-	class FileUtilCopyFileOrDirectory1 : Automation {
+    [Automation( "IO/Unity/Copy File Or Directory" )]
+    class FileUtilCopyFileOrDirectory1 : Automation {
 
-		public System.String from;
-		public System.String to;
+        public System.String from;
+        public System.String to;
 
-		public override IEnumerator Execute() {
-			UnityEditor.FileUtil.CopyFileOrDirectory(from,to);
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            UnityEditor.FileUtil.CopyFileOrDirectory( from, to );
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "File Util/Copy File Or Directory Follow Symlinks" )]
-	class FileUtilCopyFileOrDirectoryFollowSymlinks2 : Automation {
+    [Automation( "IO/Unity/Copy File Or Directory Follow Symlinks" )]
+    class FileUtilCopyFileOrDirectoryFollowSymlinks2 : Automation {
 
-		public System.String from;
-		public System.String to;
+        public System.String from;
+        public System.String to;
 
-		public override IEnumerator Execute() {
-			UnityEditor.FileUtil.CopyFileOrDirectoryFollowSymlinks(from,to);
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            UnityEditor.FileUtil.CopyFileOrDirectoryFollowSymlinks( from, to );
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "File Util/Move File Or Directory" )]
-	class FileUtilMoveFileOrDirectory3 : Automation {
+    [Automation( "IO/Unity/Move File Or Directory" )]
+    class FileUtilMoveFileOrDirectory3 : Automation {
 
-		public System.String from;
-		public System.String to;
+        public System.String from;
+        public System.String to;
 
-		public override IEnumerator Execute() {
-			UnityEditor.FileUtil.MoveFileOrDirectory(from,to);
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            UnityEditor.FileUtil.MoveFileOrDirectory( from, to );
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "File Util/Get Unique Temp Path In Project" )]
-	class FileUtilGetUniqueTempPathInProject4 : Automation {
+    [Automation( "IO/Unity/Get Unique Temp Path In Project" )]
+    class FileUtilGetUniqueTempPathInProject4 : Automation {
 
-		[ReadOnly]
-		public System.String Result;
+        [ReadOnly]
+        public System.String Result;
 
-		public override IEnumerator Execute() {
-			Result = UnityEditor.FileUtil.GetUniqueTempPathInProject();
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            Result = UnityEditor.FileUtil.GetUniqueTempPathInProject();
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "File Util/Get Project Relative Path" )]
-	class FileUtilGetProjectRelativePath5 : Automation {
+    [Automation( "IO/Unity/Get Project Relative Path" )]
+    class FileUtilGetProjectRelativePath5 : Automation {
 
-		public System.String path;
-		[ReadOnly]
-		public System.String Result;
+        public System.String path;
+        [ReadOnly]
+        public System.String Result;
 
-		public override IEnumerator Execute() {
-			Result = UnityEditor.FileUtil.GetProjectRelativePath(path);
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            Result = UnityEditor.FileUtil.GetProjectRelativePath( path );
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "File Util/Replace File" )]
-	class FileUtilReplaceFile6 : Automation {
+    [Automation( "IO/Unity/Replace File" )]
+    class FileUtilReplaceFile6 : Automation {
 
-		public System.String src;
-		public System.String dst;
+        public System.String src;
+        public System.String dst;
 
-		public override IEnumerator Execute() {
-			UnityEditor.FileUtil.ReplaceFile(src,dst);
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            UnityEditor.FileUtil.ReplaceFile( src, dst );
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "File Util/Replace Directory" )]
-	class FileUtilReplaceDirectory7 : Automation {
+    [Automation( "IO/Unity/Replace Directory" )]
+    class FileUtilReplaceDirectory7 : Automation {
 
-		public System.String src;
-		public System.String dst;
+        public System.String src;
+        public System.String dst;
 
-		public override IEnumerator Execute() {
-			UnityEditor.FileUtil.ReplaceDirectory(src,dst);
-			yield break;
-		}
-
-	}
-
+        public override IEnumerator Execute() {
+            UnityEditor.FileUtil.ReplaceDirectory( src, dst );
+            yield break;
+        }
+    }
 
 #pragma warning restore 0649
 }

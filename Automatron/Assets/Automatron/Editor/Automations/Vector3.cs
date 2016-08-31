@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "Vector3/Lerp" )]
+    [Automation( "Math/Vector3/Lerp" )]
     class Vector3Lerp0 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Lerp Unclamped" )]
+    [Automation( "Math/Vector3/Lerp Unclamped" )]
     class Vector3LerpUnclamped1 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -36,7 +36,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Slerp" )]
+    [Automation( "Math/Vector3/Slerp" )]
     class Vector3Slerp2 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -52,7 +52,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Slerp Unclamped" )]
+    [Automation( "Math/Vector3/Slerp Unclamped" )]
     class Vector3SlerpUnclamped3 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -68,7 +68,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Ortho Normalize" )]
+    [Automation( "Math/Vector3/Ortho Normalize" )]
     class Vector3OrthoNormalize4 : Automation {
 
         public UnityEngine.Vector3 normal;
@@ -81,7 +81,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Move Towards" )]
+    [Automation( "Math/Vector3/Move Towards" )]
     class Vector3MoveTowards6 : Automation {
 
         public UnityEngine.Vector3 current;
@@ -97,7 +97,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Rotate Towards" )]
+    [Automation( "Math/Vector3/Rotate Towards" )]
     class Vector3RotateTowards7 : Automation {
 
         public UnityEngine.Vector3 current;
@@ -114,7 +114,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Smooth Damp" )]
+    [Automation( "Math/Vector3/Smooth Damp" )]
     class Vector3SmoothDamp8 : Automation {
 
         public UnityEngine.Vector3 current;
@@ -132,7 +132,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Scale" )]
+    [Automation( "Math/Vector3/Scale" )]
     class Vector3Scale11 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -147,7 +147,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Cross" )]
+    [Automation( "Math/Vector3/Cross" )]
     class Vector3Cross12 : Automation {
 
         public UnityEngine.Vector3 lhs;
@@ -162,7 +162,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Reflect" )]
+    [Automation( "Math/Vector3/Reflect" )]
     class Vector3Reflect13 : Automation {
 
         public UnityEngine.Vector3 inDirection;
@@ -177,7 +177,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Normalize" )]
+    [Automation( "Math/Vector3/Normalize" )]
     class Vector3Normalize14 : Automation {
 
         public UnityEngine.Vector3 value;
@@ -191,7 +191,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Dot" )]
+    [Automation( "Math/Vector3/Dot" )]
     class Vector3Dot15 : Automation {
 
         public UnityEngine.Vector3 lhs;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Project" )]
+    [Automation( "Math/Vector3/Project" )]
     class Vector3Project16 : Automation {
 
         public UnityEngine.Vector3 vector;
@@ -221,7 +221,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Project On Plane" )]
+    [Automation( "Math/Vector3/Project On Plane" )]
     class Vector3ProjectOnPlane17 : Automation {
 
         public UnityEngine.Vector3 vector;
@@ -236,7 +236,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Angle" )]
+    [Automation( "Math/Vector3/Angle" )]
     class Vector3Angle18 : Automation {
 
         public UnityEngine.Vector3 from;
@@ -251,7 +251,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Distance" )]
+    [Automation( "Math/Vector3/Distance" )]
     class Vector3Distance19 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -266,7 +266,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Clamp Magnitude" )]
+    [Automation( "Math/Vector3/Clamp Magnitude" )]
     class Vector3ClampMagnitude20 : Automation {
 
         public UnityEngine.Vector3 vector;
@@ -281,7 +281,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Magnitude" )]
+    [Automation( "Math/Vector3/Magnitude" )]
     class Vector3Magnitude21 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -295,7 +295,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Sqr Magnitude" )]
+    [Automation( "Math/Vector3/Sqr Magnitude" )]
     class Vector3SqrMagnitude22 : Automation {
 
         public UnityEngine.Vector3 a;
@@ -309,7 +309,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Min" )]
+    [Automation( "Math/Vector3/Min" )]
     class Vector3Min23 : Automation {
 
         public UnityEngine.Vector3 lhs;
@@ -324,7 +324,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Max" )]
+    [Automation( "Math/Vector3/Max" )]
     class Vector3Max24 : Automation {
 
         public UnityEngine.Vector3 lhs;
@@ -339,7 +339,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector3/Add" )]
+    [Automation( "Math/Vector3/Add" )]
     class Vector3Add : Automation {
 
         public Vector3 InOut;
@@ -351,7 +351,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector3/Subtract" )]
+    [Automation( "Math/Vector3/Subtract" )]
     class Vector3Subtract : Automation {
 
         public Vector3 InOut;
@@ -363,7 +363,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector3/Multiply" )]
+    [Automation( "Math/Vector3/Multiply" )]
     class Vector3Multiply : Automation {
 
         public Vector3 InOut;
@@ -375,7 +375,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector3/Divide" )]
+    [Automation( "Math/Vector3/Divide" )]
     class Vector3Divide : Automation {
 
         public Vector3 InOut;
@@ -387,7 +387,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector3/Create" )]
+    [Automation( "Math/Vector3/Create" )]
     class Vector3C : Automation {
 
         public Vector3 Value;

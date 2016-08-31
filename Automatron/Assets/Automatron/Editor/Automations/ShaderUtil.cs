@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Shader Util/Get Property Count" )]
+	[Automation( "Shader/Utilities/Get Property Count" )]
 	class ShaderUtilGetPropertyCount0 : Automation {
 
 		public UnityEngine.Shader s;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Get Property Description" )]
+	[Automation( "Shader/Utilities/Get Property Description" )]
 	class ShaderUtilGetPropertyDescription1 : Automation {
 
 		public UnityEngine.Shader s;
@@ -32,7 +32,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Get Property Name" )]
+	[Automation( "Shader/Utilities/Get Property Name" )]
 	class ShaderUtilGetPropertyName2 : Automation {
 
 		public UnityEngine.Shader s;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Get Property Type" )]
+	[Automation( "Shader/Utilities/Get Property Type" )]
 	class ShaderUtilGetPropertyType3 : Automation {
 
 		public UnityEngine.Shader s;
@@ -62,7 +62,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Get Range Limits" )]
+	[Automation( "Shader/Utilities/Get Range Limits" )]
 	class ShaderUtilGetRangeLimits4 : Automation {
 
 		public UnityEngine.Shader s;
@@ -78,7 +78,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Get Tex Dim" )]
+	[Automation( "Shader/Utilities/Get Tex Dim" )]
 	class ShaderUtilGetTexDim5 : Automation {
 
 		public UnityEngine.Shader s;
@@ -93,7 +93,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Is Shader Property Hidden" )]
+	[Automation( "Shader/Utilities/Is Shader Property Hidden" )]
 	class ShaderUtilIsShaderPropertyHidden6 : Automation {
 
 		public UnityEngine.Shader s;
@@ -108,7 +108,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Create Shader Asset" )]
+	[Automation( "Shader/Utilities/Create Shader Asset" )]
 	class ShaderUtilCreateShaderAsset7 : Automation {
 
 		public System.String source;
@@ -122,7 +122,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader Util/Update Shader Asset" )]
+	[Automation( "Shader/Utilities/Update Shader Asset" )]
 	class ShaderUtilUpdateShaderAsset8 : Automation {
 
 		public UnityEngine.Shader shader;

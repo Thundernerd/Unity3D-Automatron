@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "Quaternion/Dot" )]
+    [Automation( "Math/Quaternion/Dot" )]
     class QuaternionDot0 : Automation {
 
         public UnityEngine.Quaternion a;
@@ -19,7 +19,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Angle Axis" )]
+    [Automation( "Math/Quaternion/Angle Axis" )]
     class QuaternionAngleAxis1 : Automation {
 
         public System.Single angle;
@@ -34,7 +34,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/From To Rotation" )]
+    [Automation( "Math/Quaternion/From To Rotation" )]
     class QuaternionFromToRotation2 : Automation {
 
         public UnityEngine.Vector3 fromDirection;
@@ -49,7 +49,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Look Rotation" )]
+    [Automation( "Math/Quaternion/Look Rotation" )]
     class QuaternionLookRotation3 : Automation {
 
         public UnityEngine.Vector3 forward;
@@ -64,7 +64,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Slerp" )]
+    [Automation( "Math/Quaternion/Slerp" )]
     class QuaternionSlerp5 : Automation {
 
         public UnityEngine.Quaternion a;
@@ -80,7 +80,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Slerp Unclamped" )]
+    [Automation( "Math/Quaternion/Slerp Unclamped" )]
     class QuaternionSlerpUnclamped6 : Automation {
 
         public UnityEngine.Quaternion a;
@@ -96,7 +96,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Lerp" )]
+    [Automation( "Math/Quaternion/Lerp" )]
     class QuaternionLerp7 : Automation {
 
         public UnityEngine.Quaternion a;
@@ -112,7 +112,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Lerp Unclamped" )]
+    [Automation( "Math/Quaternion/Lerp Unclamped" )]
     class QuaternionLerpUnclamped8 : Automation {
 
         public UnityEngine.Quaternion a;
@@ -128,7 +128,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Rotate Towards" )]
+    [Automation( "Math/Quaternion/Rotate Towards" )]
     class QuaternionRotateTowards9 : Automation {
 
         public UnityEngine.Quaternion from;
@@ -144,7 +144,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Inverse" )]
+    [Automation( "Math/Quaternion/Inverse" )]
     class QuaternionInverse10 : Automation {
 
         public UnityEngine.Quaternion rotation;
@@ -158,7 +158,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Angle" )]
+    [Automation( "Math/Quaternion/Angle" )]
     class QuaternionAngle11 : Automation {
 
         public UnityEngine.Quaternion a;
@@ -173,7 +173,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Euler" )]
+    [Automation( "Math/Quaternion/Euler" )]
     class QuaternionEuler12 : Automation {
 
         public System.Single x;
@@ -189,7 +189,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Euler (V3)" )]
+    [Automation( "Math/Quaternion/Euler (V3)" )]
     class QuaternionEuler13 : Automation {
 
         public UnityEngine.Vector3 euler;
@@ -203,7 +203,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Quaternion/Multiply" )]
+    [Automation( "Math/Quaternion/Multiply" )]
     class QuaternionMultiplyQ : Automation {
 
         public Quaternion InOut;
@@ -215,7 +215,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Quaternion/Multiply (V3)" )]
+    [Automation( "Math/Quaternion/Multiply (V3)" )]
     class QuaternionMultiplyV : Automation {
 
         public Quaternion Rotation;

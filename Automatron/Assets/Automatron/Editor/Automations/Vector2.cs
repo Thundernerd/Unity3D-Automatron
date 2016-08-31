@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "Vector2/Lerp" )]
+    [Automation( "Math/Vector2/Lerp" )]
     class Vector2Lerp0 : Automation {
 
         public UnityEngine.Vector2 a;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Lerp Unclamped" )]
+    [Automation( "Math/Vector2/Lerp Unclamped" )]
     class Vector2LerpUnclamped1 : Automation {
 
         public UnityEngine.Vector2 a;
@@ -36,7 +36,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Move Towards" )]
+    [Automation( "Math/Vector2/Move Towards" )]
     class Vector2MoveTowards2 : Automation {
 
         public UnityEngine.Vector2 current;
@@ -52,7 +52,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Scale" )]
+    [Automation( "Math/Vector2/Scale" )]
     class Vector2Scale3 : Automation {
 
         public UnityEngine.Vector2 a;
@@ -67,7 +67,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Reflect" )]
+    [Automation( "Math/Vector2/Reflect" )]
     class Vector2Reflect4 : Automation {
 
         public UnityEngine.Vector2 inDirection;
@@ -82,7 +82,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Dot" )]
+    [Automation( "Math/Vector2/Dot" )]
     class Vector2Dot5 : Automation {
 
         public UnityEngine.Vector2 lhs;
@@ -97,7 +97,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Angle" )]
+    [Automation( "Math/Vector2/Angle" )]
     class Vector2Angle6 : Automation {
 
         public UnityEngine.Vector2 from;
@@ -112,7 +112,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Distance" )]
+    [Automation( "Math/Vector2/Distance" )]
     class Vector2Distance7 : Automation {
 
         public UnityEngine.Vector2 a;
@@ -127,7 +127,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Clamp Magnitude" )]
+    [Automation( "Math/Vector2/Clamp Magnitude" )]
     class Vector2ClampMagnitude8 : Automation {
 
         public UnityEngine.Vector2 vector;
@@ -142,7 +142,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Sqr Magnitude" )]
+    [Automation( "Math/Vector2/Sqr Magnitude" )]
     class Vector2SqrMagnitude9 : Automation {
 
         public UnityEngine.Vector2 a;
@@ -156,7 +156,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Min" )]
+    [Automation( "Math/Vector2/Min" )]
     class Vector2Min10 : Automation {
 
         public UnityEngine.Vector2 lhs;
@@ -171,7 +171,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Max" )]
+    [Automation( "Math/Vector2/Max" )]
     class Vector2Max11 : Automation {
 
         public UnityEngine.Vector2 lhs;
@@ -186,7 +186,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Smooth Damp" )]
+    [Automation( "Math/Vector2/Smooth Damp" )]
     class Vector2SmoothDamp12 : Automation {
 
         public UnityEngine.Vector2 current;
@@ -204,7 +204,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector2/Add" )]
+    [Automation( "Math/Vector2/Add" )]
     class Vector2Add : Automation {
 
         public Vector2 InOut;
@@ -216,7 +216,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector2/Subtract" )]
+    [Automation( "Math/Vector2/Subtract" )]
     class Vector2Subtract : Automation {
 
         public Vector2 InOut;
@@ -228,7 +228,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector2/Multiply" )]
+    [Automation( "Math/Vector2/Multiply" )]
     class Vector2Multiply : Automation {
 
         public Vector2 InOut;
@@ -240,7 +240,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector2/Divide" )]
+    [Automation( "Math/Vector2/Divide" )]
     class Vector2Divide : Automation {
 
         public Vector2 InOut;
@@ -252,7 +252,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector2/Create" )]
+    [Automation( "Math/Vector2/Create" )]
     class Vector2C : Automation {
 
         public Vector2 Value;

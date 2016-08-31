@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "Vector4/Lerp" )]
+    [Automation( "Math/Vector4/Lerp" )]
     class Vector4Lerp0 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Lerp Unclamped" )]
+    [Automation( "Math/Vector4/Lerp Unclamped" )]
     class Vector4LerpUnclamped1 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -36,7 +36,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Move Towards" )]
+    [Automation( "Math/Vector4/Move Towards" )]
     class Vector4MoveTowards2 : Automation {
 
         public UnityEngine.Vector4 current;
@@ -52,7 +52,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Scale" )]
+    [Automation( "Math/Vector4/Scale" )]
     class Vector4Scale3 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -67,7 +67,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Normalize" )]
+    [Automation( "Math/Vector4/Normalize" )]
     class Vector4Normalize4 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -81,7 +81,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Dot" )]
+    [Automation( "Math/Vector4/Dot" )]
     class Vector4Dot5 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -96,7 +96,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Project" )]
+    [Automation( "Math/Vector4/Project" )]
     class Vector4Project6 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Distance" )]
+    [Automation( "Math/Vector4/Distance" )]
     class Vector4Distance7 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -126,7 +126,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Magnitude" )]
+    [Automation( "Math/Vector4/Magnitude" )]
     class Vector4Magnitude8 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -140,7 +140,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Sqr Magnitude" )]
+    [Automation( "Math/Vector4/Sqr Magnitude" )]
     class Vector4SqrMagnitude9 : Automation {
 
         public UnityEngine.Vector4 a;
@@ -154,7 +154,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Min" )]
+    [Automation( "Math/Vector4/Min" )]
     class Vector4Min10 : Automation {
 
         public UnityEngine.Vector4 lhs;
@@ -169,7 +169,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Max" )]
+    [Automation( "Math/Vector4/Max" )]
     class Vector4Max11 : Automation {
 
         public UnityEngine.Vector4 lhs;
@@ -184,7 +184,7 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Vector4/Add" )]
+    [Automation( "Math/Vector4/Add" )]
     class Vector4Add : Automation {
 
         public Vector4 InOut;
@@ -196,7 +196,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector4/Subtract" )]
+    [Automation( "Math/Vector4/Subtract" )]
     class Vector4Subtract : Automation {
 
         public Vector4 InOut;
@@ -208,7 +208,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector4/Multiply" )]
+    [Automation( "Math/Vector4/Multiply" )]
     class Vector4Multiply : Automation {
 
         public Vector4 InOut;
@@ -220,7 +220,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector4/Divide" )]
+    [Automation( "Math/Vector4/Divide" )]
     class Vector4Divide : Automation {
 
         public Vector4 InOut;
@@ -232,7 +232,7 @@ namespace TNRD.Automatron.Automations {
         }
     }
 
-    [Automation( "Vector4/Create" )]
+    [Automation( "Math/Vector4/Create" )]
     class Vector4C : Automation {
 
         public Vector4 Value;

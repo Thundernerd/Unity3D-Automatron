@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-	[Automation( "Matrix 4x4/Inverse" )]
+	[Automation( "Math/Matrix 4x4/Inverse" )]
 	class Matrix4x4Inverse0 : Automation {
 
 		public UnityEngine.Matrix4x4 m;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Matrix 4x4/Transpose" )]
+	[Automation( "Math/Matrix 4x4/Transpose" )]
 	class Matrix4x4Transpose1 : Automation {
 
 		public UnityEngine.Matrix4x4 m;
@@ -31,7 +31,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Matrix 4x4/Determinant" )]
+	[Automation( "Math/Matrix 4x4/Determinant" )]
 	class Matrix4x4Determinant2 : Automation {
 
 		public UnityEngine.Matrix4x4 m;
@@ -45,7 +45,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Matrix 4x4/Scale" )]
+	[Automation( "Math/Matrix 4x4/Scale" )]
 	class Matrix4x4Scale3 : Automation {
 
 		public UnityEngine.Vector3 v;
@@ -59,7 +59,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Matrix 4x4/TRS" )]
+	[Automation( "Math/Matrix 4x4/TRS" )]
 	class Matrix4x4TRS4 : Automation {
 
 		public UnityEngine.Vector3 pos;
@@ -75,7 +75,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Matrix 4x4/Ortho" )]
+	[Automation( "Math/Matrix 4x4/Ortho" )]
 	class Matrix4x4Ortho5 : Automation {
 
 		public System.Single left;
@@ -94,7 +94,7 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Matrix 4x4/Perspective" )]
+	[Automation( "Math/Matrix 4x4/Perspective" )]
 	class Matrix4x4Perspective6 : Automation {
 
 		public System.Single fov;
