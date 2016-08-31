@@ -69,13 +69,8 @@ namespace TNRD.Automatron {
             name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
             if ( name.Length > 35 ) {
                 var index = name.IndexOf( '/' );
-                if ( index != -1 ) {
-                    name = name.Substring( index + 1 );
-                }
-
-                if ( name.EndsWith( "/Set" ) || name.EndsWith( "/Get" ) ) {
-                    name = name.Substring( 0, name.LastIndexOf( '/' ) );
-                }
+                var lastIndex = name.LastIndexOf( '/' );
+                name = name.Remove( index, lastIndex - index );
             }
         }
 
