@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TNRD.Editor.Core;
 using UnityEditor;
 using System.Reflection;
 using System;
@@ -189,6 +187,7 @@ public class FancyPopup : EditorWindow {
     #endregion
 
     private MethodInfo searchField;
+    private string[] treePaths;
     private TreeItem[] treeItems;
 
     private bool dirtyList = true;
@@ -247,11 +246,9 @@ public class FancyPopup : EditorWindow {
         CreateTree();
         ShowAsDropDown( rect, new Vector2( 230, 320 ) );
         Focus();
-        Initialize();
-    }
 
-    private void Initialize() {
         searchField = typeof( EditorGUI ).GetMethod( "SearchField", BindingFlags.Static | BindingFlags.NonPublic );
+        treePaths = treeItems.Select( t => "Automations/" + t.name ).ToArray();
     }
 
     private void InitializeGUI() {
@@ -259,15 +256,10 @@ public class FancyPopup : EditorWindow {
     }
 
     private void CreateTree() {
-        // Can optimize this
-        // Can hardcode string just for this one :)
-        var submenus = treeItems.Select( t => "Automations/" + t.name ).ToArray();
-        var submenusCommands = treeItems.ToArray();
-
         var list1 = new List<string>();
         var list2 = new List<Element>();
-        for ( int index = 0; index < submenus.Length; index++ ) {
-            var menuPath = submenus[index];
+        for ( int index = 0; index < treePaths.Length; index++ ) {
+            var menuPath = treePaths[index];
             var strArray = menuPath.Split( '/' );
             while ( strArray.Length - 1 < list1.Count )
                 list1.RemoveAt( list1.Count - 1 );
@@ -277,7 +269,7 @@ public class FancyPopup : EditorWindow {
                 list2.Add( new GroupElement( list1.Count, strArray[list1.Count] ) );
                 list1.Add( strArray[list1.Count] );
             }
-            list2.Add( new ExecuteElement( list1.Count, strArray[strArray.Length - 1], submenusCommands[index] ) );
+            list2.Add( new ExecuteElement( list1.Count, strArray[strArray.Length - 1], treeItems[index] ) );
         }
         tree = list2.ToArray();
         if ( stack.Count == 0 ) {
