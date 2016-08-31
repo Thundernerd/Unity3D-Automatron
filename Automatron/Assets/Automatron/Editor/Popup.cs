@@ -354,8 +354,6 @@ public class FancyPopup : EditorWindow {
         return stack[index];
     }
 
-    private bool hasPreviousSearch = false;
-
     private void GoToChild( Element e, bool addIfComponent ) {
         if ( e is ExecuteElement ) {
             if ( addIfComponent ) {
@@ -366,7 +364,14 @@ public class FancyPopup : EditorWindow {
             return;
         }
 
-        hasPreviousSearch = hasSearch;
+        if ( hasSearch ) {
+            search = null;
+            delayedSearch = null;
+
+            stack.Clear();
+            stack.Add( tree[0] as GroupElement );
+        }
+
 
         lastTime = DateTime.Now.Ticks;
         if ( animTarget == 0 ) {
@@ -380,9 +385,6 @@ public class FancyPopup : EditorWindow {
     private void GoToParent() {
         if ( stack.Count <= 1 )
             return;
-        if ( hasPreviousSearch ) {
-            hasPreviousSearch = false;
-        }
         animTarget = 0;
         lastTime = DateTime.Now.Ticks;
     }
@@ -409,7 +411,7 @@ public class FancyPopup : EditorWindow {
                 evt.Use();
             }
 
-            if ( evt.keyCode == KeyCode.LeftArrow || evt.keyCode == KeyCode.Backspace ) {
+            if ( evt.keyCode == KeyCode.LeftArrow || ( evt.keyCode == KeyCode.Backspace && !hasSearch ) ) {
                 GoToParent();
                 evt.Use();
             }
@@ -450,22 +452,16 @@ public class FancyPopup : EditorWindow {
     private void ListGUI( Element[] tree, GroupElement parent ) {
         parent.scroll = GUILayout.BeginScrollView( parent.scroll );
         EditorGUIUtility.SetIconSize( new Vector2( 16, 16 ) );
-        List<Element> children;
+        List<Element> children = GetChildren( tree, parent );
         var hasDouble = false;
-        if ( hasPreviousSearch ) {
-            children = GetChildren( this.tree, parent );
-        } else {
-            children = GetChildren( tree, parent );
-            if ( hasSearch ) {
-                hasDouble = false;
-                for ( int i = 0; i < children.Count; i++ ) {
-                    var name = children[i].content.text;
-                    for ( int j = i + 1; j < children.Count; j++ ) {
-                        var name2 = children[j].content.text;
-                        if ( name == name2 ) {
-                            hasDouble = true;
-                            break;
-                        }
+        if ( hasSearch ) {
+            for ( int i = 0; i < children.Count; i++ ) {
+                var name = children[i].content.text;
+                for ( int j = i + 1; j < children.Count; j++ ) {
+                    var name2 = children[j].content.text;
+                    if ( name == name2 ) {
+                        hasDouble = true;
+                        break;
                     }
                 }
             }
