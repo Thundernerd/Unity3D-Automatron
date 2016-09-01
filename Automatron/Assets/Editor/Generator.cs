@@ -302,6 +302,7 @@ public class Generator : EditorWindow {
     private Vector2 scrollpos = new Vector2();
 
     private string searchPattern = "";
+    private int offset = 0;
 
     void OnGUI() {
         if ( !initialized ) {
@@ -358,10 +359,16 @@ public class Generator : EditorWindow {
         EditorGUILayout.BeginHorizontal();
         if ( GUILayout.Button( "<" ) ) {
             scrollpos = new Vector2();
+            offset -= 50;
+            if ( offset < 0 ) {
+                offset = 0;
+            }
         }
         if ( GUILayout.Button( ">" ) ) {
             scrollpos = new Vector2();
+            offset += 50;
         }
+
         EditorGUILayout.EndHorizontal();
 
         EditorGUI.BeginChangeCheck();
@@ -371,11 +378,13 @@ public class Generator : EditorWindow {
             if ( datas.Count == 0 ) {
                 GetTypes();
             }
+            offset = 0;
+            scrollpos = new Vector2();
             shownDatas = datas.Where( d => d.Name.Contains( searchPattern ) ).ToList();
         }
 
         scrollpos = EditorGUILayout.BeginScrollView( scrollpos );
-        for ( int i = 0; i < shownDatas.Count; i++ ) {
+        for ( int i = offset; i < Mathf.Min( offset + 50, shownDatas.Count ); i++ ) {
             var item = shownDatas[i];
             item.Checked = EditorGUILayout.ToggleLeft( item.Name, item.Checked );
             shownDatas[i] = item;
