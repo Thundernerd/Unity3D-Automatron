@@ -4,31 +4,6 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-    [Automation( "IO/File/Create" )]
-    class FileCreate : ConditionalAutomation {
-
-        public System.String path;
-        public bool overwrite;
-        [ReadOnly]
-        public bool Result;
-
-        public override IEnumerator ExecuteCondition() {
-            if (!overwrite && System.IO.File.Exists( path ) ) {
-                throw new System.IO.IOException( "File already exists" );
-            } else if (overwrite && System.IO.File.Exists( path ) ) {
-                System.IO.File.Delete( path );
-            }
-
-            System.IO.File.Create( path );
-            Result = System.IO.File.Exists( path );
-            yield break;
-        }
-
-        public override bool GetConditionalResult() {
-            return Result;
-        }
-    }
-
     [Automation( "IO/File/Append All Text" )]
 	class FileAppendAllText0 : Automation {
 
@@ -56,21 +31,32 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "IO/File/Create" )]
-	class FileCreate2 : Automation {
+    [Automation( "IO/File/Create" )]
+    class FileCreate2 : ConditionalAutomation {
 
-		public System.String path;
-		[ReadOnly]
-		public System.IO.FileStream Result;
+        public System.String path;
+        public bool overwrite;
+        [ReadOnly]
+        public bool Result;
 
-		public override IEnumerator Execute() {
-			Result = System.IO.File.Create(path);
-			yield break;
-		}
+        public override IEnumerator ExecuteCondition() {
+            if ( !overwrite && System.IO.File.Exists( path ) ) {
+                throw new System.IO.IOException( "File already exists" );
+            } else if ( overwrite && System.IO.File.Exists( path ) ) {
+                System.IO.File.Delete( path );
+            }
 
-	}
+            System.IO.File.Create( path );
+            Result = System.IO.File.Exists( path );
+            yield break;
+        }
 
-	[Automation( "IO/File/Delete" )]
+        public override bool GetConditionalResult() {
+            return Result;
+        }
+    }
+
+    [Automation( "IO/File/Delete" )]
 	class FileDelete3 : Automation {
 
 		public System.String path;
