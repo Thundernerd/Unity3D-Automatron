@@ -74,15 +74,43 @@ public class GeneratorWizard : ScriptableWizard {
         var data = datas[index];
         EditorGUILayout.LabelField( string.Format( "[{0}/{1}] {2}", index + 1, datas.Count, data.Name ) );
 
+        var fieldHeight = position.height;
+        var propertyHeight = position.height;
+        var methodHeight = position.height;
+
+        var allOpen = foldFields && foldProperties && foldMethods;
+        if ( allOpen ) {
+            fieldHeight /= 3;
+            propertyHeight /= 3;
+            methodHeight /= 3;
+        } else {
+            if ( foldFields ) {
+                if ( foldMethods || foldProperties ) {
+                    fieldHeight /= 2;
+                }
+            }
+            if ( foldProperties ) {
+                if ( foldFields || foldMethods ) {
+                    propertyHeight /= 2;
+                }
+            }
+            if ( foldMethods ) {
+                if ( foldFields || foldProperties ) {
+                    methodHeight /= 2;
+                }
+            }
+        }
+
         foldFields = EditorGUILayout.Foldout( foldFields, "Fields" );
         if ( foldFields ) {
-            fieldScroll = EditorGUILayout.BeginScrollView( fieldScroll, ExtendedGUI.DarkNoneWindowStyle, GUILayout.MinHeight( 75 ), GUILayout.MaxHeight( 200 ), GUILayout.ExpandHeight( true ) );
+            fieldScroll = EditorGUILayout.BeginScrollView( fieldScroll, ExtendedGUI.DarkNoneWindowStyle,
+                GUILayout.MinHeight( 16 ), GUILayout.MaxHeight( fieldHeight ), GUILayout.ExpandHeight( true ) );
             EditorGUI.indentLevel++;
             var fields = new Dictionary<FieldInfo, bool>( data.Fields );
             foreach ( var item in data.Fields ) {
                 var k = item.Key;
                 var v = item.Value;
-                v = EditorGUILayout.ToggleLeft( k.Name, v );
+                v = EditorGUILayout.ToggleLeft( k.FieldType.Name + " " + k.Name, v );
                 fields[k] = v;
             }
             data.Fields = fields;
@@ -92,12 +120,13 @@ public class GeneratorWizard : ScriptableWizard {
 
         foldProperties = EditorGUILayout.Foldout( foldProperties, "Properties" );
         if ( foldProperties ) {
-            propertyScroll = EditorGUILayout.BeginScrollView( propertyScroll, ExtendedGUI.DarkNoneWindowStyle, GUILayout.MinHeight( 75 ), GUILayout.MaxHeight( 200 ), GUILayout.ExpandHeight( true ) );
+            propertyScroll = EditorGUILayout.BeginScrollView( propertyScroll, ExtendedGUI.DarkNoneWindowStyle,
+                GUILayout.MinHeight( 16 ), GUILayout.MaxHeight( propertyHeight ), GUILayout.ExpandHeight( true ) );
             var props = new Dictionary<PropertyInfo, bool>( data.Properties );
             foreach ( var item in data.Properties ) {
                 var k = item.Key;
                 var v = item.Value;
-                v = EditorGUILayout.ToggleLeft( k.Name, v );
+                v = EditorGUILayout.ToggleLeft( k.PropertyType.Name + " " + k.Name, v );
                 props[k] = v;
             }
             data.Properties = props;
@@ -106,7 +135,8 @@ public class GeneratorWizard : ScriptableWizard {
 
         foldMethods = EditorGUILayout.Foldout( foldMethods, "Methods" );
         if ( foldMethods ) {
-            methodScroll = EditorGUILayout.BeginScrollView( methodScroll, ExtendedGUI.DarkNoneWindowStyle, GUILayout.MinHeight( 75 ), GUILayout.MaxHeight( position.height ), GUILayout.ExpandHeight( true ) );
+            methodScroll = EditorGUILayout.BeginScrollView( methodScroll, ExtendedGUI.DarkNoneWindowStyle,
+                GUILayout.MinHeight( 16 ), GUILayout.MaxHeight( methodHeight ), GUILayout.ExpandHeight( true ) );
             var methods = new Dictionary<MethodInfo, bool>( data.Methods );
             foreach ( var item in data.Methods ) {
                 var k = item.Key;
@@ -139,10 +169,6 @@ public class GeneratorWizard : ScriptableWizard {
         return true;
     }
 
-    void OnWizardOtherButton() {
-        Close();
-    }
-
     void OnWizardCreate() {
         Generator.Generate( datas.Select( d => new TypeData() {
             Name = d.Name,
@@ -152,7 +178,6 @@ public class GeneratorWizard : ScriptableWizard {
             Properties = d.Properties.Where( p => p.Value ).Select( f => f.Key ).ToList(),
             Methods = d.Methods.Where( m => m.Value ).Select( f => f.Key ).ToList(),
         } ).ToList() );
-        Close();
     }
 }
 
