@@ -402,6 +402,7 @@ public class Generator : EditorWindow {
         for ( int i = 0; i < properties.Count; i++ ) {
             var p = properties[i];
             var isStatic = false;
+            var isBool = p.PropertyType == typeof( bool );
 
             try {
                 p.GetValue( null, null );
@@ -413,7 +414,11 @@ public class Generator : EditorWindow {
                 builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
                     ObjectNames.NicifyVariableName( type.Name ),
                     ObjectNames.NicifyVariableName( p.Name ) ) );
-                builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", p.Name, i, type.Name ) + "{" );
+                if ( isBool ) {
+                    builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : ConditionalAutomation ", p.Name, i, type.Name ) + "{" );
+                } else {
+                    builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", p.Name, i, type.Name ) + "{" );
+                }
                 builder.AppendLine();
 
                 if ( !isStatic ) {
@@ -425,7 +430,11 @@ public class Generator : EditorWindow {
 
                 builder.AppendLine();
 
-                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+                if ( isBool ) {
+                    builder.AppendLine( "\t\tpublic override IEnumerator ExecuteCondition() {" );
+                } else {
+                    builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+                }
                 builder.Append( "\t\t\tResult = " );
                 if ( isStatic ) {
                     builder.AppendFormat( "{0}.{1}", GetTypeName( type ), p.Name );
@@ -438,6 +447,13 @@ public class Generator : EditorWindow {
 
                 builder.AppendLine( "\t\t}" );
                 builder.AppendLine();
+
+                if ( isBool ) {
+                    builder.AppendLine( "\t\tpublic override bool GetConditionalResult() {" );
+                    builder.AppendLine( "\t\t\treturn Result;" );
+                    builder.AppendLine( "\t\t}" );
+                }
+
                 builder.AppendLine( "\t}" );
                 builder.AppendLine();
             }
@@ -481,11 +497,16 @@ public class Generator : EditorWindow {
     private void WriteFields( Type type, List<FieldInfo> fields, StringBuilder builder ) {
         for ( int i = 0; i < fields.Count; i++ ) {
             var f = fields[i];
+            var isBool = f.FieldType == typeof( bool );
 
             builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
                 ObjectNames.NicifyVariableName( type.Name ),
                 ObjectNames.NicifyVariableName( f.Name ) ) );
-            builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", f.Name, i, type.Name ) + "{" );
+            if ( isBool ) {
+                builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : ConditionalAutomation ", f.Name, i, type.Name ) + "{" );
+            } else {
+                builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", f.Name, i, type.Name ) + "{" );
+            }
             builder.AppendLine();
 
             if ( !f.IsStatic ) {
@@ -497,7 +518,11 @@ public class Generator : EditorWindow {
 
             builder.AppendLine();
 
-            builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            if ( isBool ) {
+                builder.AppendLine( "\t\tpublic override IEnumerator ExecuteCondition() {" );
+            } else {
+                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            }
             builder.Append( "\t\t\tResult = " );
             if ( f.IsStatic ) {
                 builder.AppendFormat( "{0}.{1}", GetTypeName( type ), f.Name );
@@ -510,6 +535,13 @@ public class Generator : EditorWindow {
 
             builder.AppendLine( "\t\t}" );
             builder.AppendLine();
+
+            if ( isBool ) {
+                builder.AppendLine( "\t\tpublic override bool GetConditionalResult() {" );
+                builder.AppendLine( "\t\t\treturn Result;" );
+                builder.AppendLine( "\t\t}" );
+            }
+
             builder.AppendLine( "\t}" );
             builder.AppendLine();
 
