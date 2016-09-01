@@ -1,0 +1,65 @@
+using System.Collections;
+
+namespace TNRD.Automatron.Automations.Generated {
+#pragma warning disable 0649
+
+	[Automation( "Colliders/Mesh Collider/Get Shared Mesh" )]
+	class MeshCollidersharedMeshGet0 : Automation {
+
+		public UnityEngine.MeshCollider Instance;
+		[ReadOnly]
+		public UnityEngine.Mesh Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.sharedMesh;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Colliders/Mesh Collider/Set Shared Mesh" )]
+	class MeshCollidersharedMeshSet0 : Automation {
+
+		public UnityEngine.MeshCollider Instance;
+		public UnityEngine.Mesh Value;
+
+		public override IEnumerator Execute() {
+			Instance.sharedMesh = Value;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Colliders/Mesh Collider/Get Convex" )]
+	class MeshColliderconvexGet1 : ConditionalAutomation {
+
+		public UnityEngine.MeshCollider Instance;
+		[ReadOnly]
+		public System.Boolean Result;
+
+		public override IEnumerator ExecuteCondition() {
+			Result = Instance.convex;
+			yield break;
+		}
+
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
+
+	[Automation( "Colliders/Mesh Collider/Set Convex" )]
+	class MeshColliderconvexSet1 : Automation {
+
+		public UnityEngine.MeshCollider Instance;
+		public System.Boolean Value;
+
+		public override IEnumerator Execute() {
+			Instance.convex = Value;
+			yield break;
+		}
+
+	}
+
+
+#pragma warning restore 0649
+}
