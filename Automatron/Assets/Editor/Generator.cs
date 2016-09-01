@@ -35,7 +35,7 @@ public class Generator : EditorWindow {
         inst.Show();
     }
 
-    private struct TypeData {
+    private class TypeData {
         public Type Type;
         public bool Checked;
         public string Name;
@@ -236,6 +236,11 @@ public class Generator : EditorWindow {
             var item = shownDatas[i];
             item.Checked = EditorGUILayout.ToggleLeft( item.Name, item.Checked );
             shownDatas[i] = item;
+
+            var data = datas.Where( d => d.Name == item.Name ).FirstOrDefault();
+            if ( data != null ) {
+                data.Checked = item.Checked;
+            }
         }
         EditorGUILayout.EndScrollView();
     }
