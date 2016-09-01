@@ -42,18 +42,21 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Scene Manager/Set Active Scene" )]
-	class SceneManagerSetActiveScene1 : Automation {
+	[Automation( "Generated/Scene Manager/Set Active Scene" )]
+	class SceneManagerSetActiveScene1 : ConditionalAutomation {
 
 		public UnityEngine.SceneManagement.Scene scene;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEngine.SceneManagement.SceneManager.SetActiveScene(scene);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Scene Manager/Get Scene By Path" )]
@@ -138,32 +141,38 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Scene Manager/Unload Scene By ID" )]
-	class SceneManagerUnloadScene14 : Automation {
+	[Automation( "Generated/Scene Manager/Unload Scene" )]
+	class SceneManagerUnloadScene14 : ConditionalAutomation {
 
 		public System.Int32 sceneBuildIndex;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEngine.SceneManagement.SceneManager.UnloadScene(sceneBuildIndex);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
-	[Automation( "Scene Manager/Unload Scene" )]
-	class SceneManagerUnloadScene15 : Automation {
+	[Automation( "Generated/Scene Manager/Unload Scene" )]
+	class SceneManagerUnloadScene15 : ConditionalAutomation {
 
 		public System.String sceneName;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEngine.SceneManagement.SceneManager.UnloadScene(sceneName);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Scene Manager/Merge Scenes" )]

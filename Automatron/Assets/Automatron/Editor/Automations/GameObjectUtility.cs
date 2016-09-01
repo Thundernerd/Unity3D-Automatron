@@ -18,18 +18,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Game Object/Utilities/Are Static Editor Flags Set" )]
-	class GameObjectUtilityAreStaticEditorFlagsSet1 : Automation {
+	class GameObjectUtilityAreStaticEditorFlagsSet1 : ConditionalAutomation {
 
 		public UnityEngine.GameObject go;
 		public UnityEditor.StaticEditorFlags flags;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.GameObjectUtility.AreStaticEditorFlagsSet(go,flags);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Game Object/Utilities/Set Static Editor Flags" )]

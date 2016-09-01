@@ -210,59 +210,71 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Prefab Utility/Reconnect To Last Prefab" )]
-	class PrefabUtilityReconnectToLastPrefab18 : Automation {
+	class PrefabUtilityReconnectToLastPrefab18 : ConditionalAutomation {
 
 		public UnityEngine.GameObject go;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.PrefabUtility.ReconnectToLastPrefab(go);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
-	[Automation( "Prefab Utility/Reset To Prefab State" )]
-	class PrefabUtilityResetToPrefabState19 : Automation {
+	[Automation( "Generated/Prefab Utility/Reset To Prefab State" )]
+	class PrefabUtilityResetToPrefabState19 : ConditionalAutomation {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.PrefabUtility.ResetToPrefabState(obj);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
-	[Automation( "Prefab Utility/Is Component Added To Prefab Instance" )]
-	class PrefabUtilityIsComponentAddedToPrefabInstance20 : Automation {
+	[Automation( "Generated/Prefab Utility/Is Component Added To Prefab Instance" )]
+	class PrefabUtilityIsComponentAddedToPrefabInstance20 : ConditionalAutomation {
 
 		public UnityEngine.Object source;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.PrefabUtility.IsComponentAddedToPrefabInstance(source);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
-	[Automation( "Prefab Utility/Revert Prefab Instance" )]
-	class PrefabUtilityRevertPrefabInstance21 : Automation {
+	[Automation( "Generated/Prefab Utility/Revert Prefab Instance" )]
+	class PrefabUtilityRevertPrefabInstance21 : ConditionalAutomation {
 
 		public UnityEngine.GameObject go;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.PrefabUtility.RevertPrefabInstance(go);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Prefab Utility/Get Prefab Type" )]

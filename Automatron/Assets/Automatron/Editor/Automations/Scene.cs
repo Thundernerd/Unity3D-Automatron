@@ -87,18 +87,21 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Scene/Is Valid" )]
-	class SceneIsValid0 : Automation {
+	[Automation( "Generated/Scene/Is Valid" )]
+	class SceneIsValid0 : ConditionalAutomation {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.IsValid();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Scene/Get Root Game Objects" )]

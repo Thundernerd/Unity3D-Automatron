@@ -102,7 +102,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Substance Importer/Rename Material" )]
-	class SubstanceImporterRenameMaterial7 : Automation {
+	class SubstanceImporterRenameMaterial7 : ConditionalAutomation {
 
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
@@ -110,11 +110,14 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.RenameMaterial(material,name);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Substance Importer/On Shader Modified" )]
@@ -162,7 +165,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Substance Importer/Get Platform Texture Settings" )]
-	class SubstanceImporterGetPlatformTextureSettings11 : Automation {
+	class SubstanceImporterGetPlatformTextureSettings11 : ConditionalAutomation {
 
 		public UnityEditor.SubstanceImporter Instance;
 		public System.String materialName;
@@ -174,11 +177,14 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetPlatformTextureSettings(materialName,platform,out maxTextureWidth,out maxTextureHeight,out textureFormat,out loadBehavior);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Substance Importer/Set Platform Texture Settings" )]
@@ -258,18 +264,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Substance Importer/Get Generate All Outputs" )]
-	class SubstanceImporterGetGenerateAllOutputs17 : Automation {
+	class SubstanceImporterGetGenerateAllOutputs17 : ConditionalAutomation {
 
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetGenerateAllOutputs(material);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Substance Importer/Set Generate All Outputs" )]
@@ -316,18 +325,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Substance Importer/Get Generate Mip Maps" )]
-	class SubstanceImporterGetGenerateMipMaps21 : Automation {
+	class SubstanceImporterGetGenerateMipMaps21 : ConditionalAutomation {
 
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetGenerateMipMaps(material);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Substance Importer/Set Generate Mip Maps" )]

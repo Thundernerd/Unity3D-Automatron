@@ -161,61 +161,73 @@ namespace TNRD.Automatron.Automations {
 
     }
 
-    [Automation( "Primitives/Float/Is Infinity" )]
-    class SingleIsInfinity0 : Automation {
+	[Automation( "Generated/Single/Is Infinity" )]
+	class SingleIsInfinity5 : ConditionalAutomation {
 
-        public System.Single f;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Single f;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Single.IsInfinity( f );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Single.IsInfinity(f);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
-    [Automation( "Primitives/Float/Is NaN" )]
-    class SingleIsNaN1 : Automation {
+	[Automation( "Generated/Single/Is Na N" )]
+	class SingleIsNaN6 : ConditionalAutomation {
 
-        public System.Single f;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Single f;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Single.IsNaN( f );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Single.IsNaN(f);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
-    [Automation( "Primitives/Float/Is Negative Infinity" )]
-    class SingleIsNegativeInfinity2 : Automation {
+	[Automation( "Generated/Single/Is Negative Infinity" )]
+	class SingleIsNegativeInfinity7 : ConditionalAutomation {
 
-        public System.Single f;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Single f;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Single.IsNegativeInfinity( f );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Single.IsNegativeInfinity(f);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
-    [Automation( "Primitives/Float/Is Positive Infinity" )]
-    class SingleIsPositiveInfinity3 : Automation {
+	[Automation( "Generated/Single/Is Positive Infinity" )]
+	class SingleIsPositiveInfinity8 : ConditionalAutomation {
 
-        public System.Single f;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Single f;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Single.IsPositiveInfinity( f );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Single.IsPositiveInfinity(f);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Primitives/Float/Parse" )]
     class SingleParse4 : Automation {

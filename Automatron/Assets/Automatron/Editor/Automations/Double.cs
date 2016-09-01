@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
@@ -142,60 +143,72 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Primitives/Double/Is Infinity" )]
-    class DoubleIsInfinity0 : Automation {
+	class DoubleIsInfinity5 : ConditionalAutomation {
 
-        public System.Double d;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Double d;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Double.IsInfinity( d );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Double.IsInfinity(d);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Primitives/Double/Is NaN" )]
-    class DoubleIsNaN1 : Automation {
+	class DoubleIsNaN6 : ConditionalAutomation {
 
-        public System.Double d;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Double d;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Double.IsNaN( d );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Double.IsNaN(d);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Primitives/Double/Is Negative Infinity" )]
-    class DoubleIsNegativeInfinity2 : Automation {
+	class DoubleIsNegativeInfinity7 : ConditionalAutomation {
 
-        public System.Double d;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Double d;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Double.IsNegativeInfinity( d );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Double.IsNegativeInfinity(d);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Primitives/Double/Is Positive Infinity" )]
-    class DoubleIsPositiveInfinity3 : Automation {
+	class DoubleIsPositiveInfinity8 : ConditionalAutomation {
 
-        public System.Double d;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Double d;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Double.IsPositiveInfinity( d );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Double.IsPositiveInfinity(d);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Primitives/Double/Parse" )]
     class DoubleParse4 : Automation {
@@ -212,19 +225,35 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Primitives/Double/Try Parse" )]
-    class DoubleTryParse9 : Automation {
+    class DoubleTryParse9 : ConditionalAutomation {
 
         public System.String s;
         public System.Double result;
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
+        public override IEnumerator ExecuteCondition() {
             Result = System.Double.TryParse( s, out result );
             yield break;
         }
 
+        public override bool GetConditionalResult() {
+            return Result;
+        }
     }
 
+	[Automation( "Generated/Double/To String" )]
+	class DoubleToString15 : Automation {
+
+		public System.Double Instance;
+		[ReadOnly]
+		public System.String Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.ToString();
+			yield break;
+		}
+
+	}
 #pragma warning restore 0649
 }

@@ -196,31 +196,37 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "IO/Path/Has Extension" )]
-	class PathHasExtension10 : Automation {
+	class PathHasExtension10 : ConditionalAutomation {
 
 		public System.String path;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = System.IO.Path.HasExtension(path);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "IO/Path/Is Path Rooted" )]
-	class PathIsPathRooted11 : Automation {
+	class PathIsPathRooted11 : ConditionalAutomation {
 
 		public System.String path;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = System.IO.Path.IsPathRooted(path);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "IO/Path/Get Invalid File Name Chars" )]

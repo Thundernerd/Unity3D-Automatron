@@ -3,6 +3,18 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
+	[Automation( "Generated/Shader Util/Get Hardware Supports Rect Render Texture" )]
+	class ShaderUtilhardwareSupportsRectRenderTextureGet0 : Automation {
+
+		[ReadOnly]
+		public System.Boolean Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEditor.ShaderUtil.hardwareSupportsRectRenderTexture;
+			yield break;
+		}
+
+	}
 	[Automation( "Shader/Utilities/Get Property Count" )]
 	class ShaderUtilGetPropertyCount0 : Automation {
 
@@ -93,19 +105,22 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader/Utilities/Is Shader Property Hidden" )]
-	class ShaderUtilIsShaderPropertyHidden6 : Automation {
+	[Automation( "Generated/Shader Util/Is Shader Property Hidden" )]
+	class ShaderUtilIsShaderPropertyHidden6 : ConditionalAutomation {
 
 		public UnityEngine.Shader s;
 		public System.Int32 propertyIdx;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.ShaderUtil.IsShaderPropertyHidden(s,propertyIdx);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Shader/Utilities/Create Shader Asset" )]

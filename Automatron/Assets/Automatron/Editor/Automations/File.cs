@@ -30,6 +30,19 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
+	[Automation( "Generated/File/Create" )]
+	class FileCreate5 : Automation {
+
+		public System.String path;
+		[ReadOnly]
+		public System.IO.FileStream Result;
+
+		public override IEnumerator Execute() {
+			Result = System.IO.File.Create(path);
+			yield break;
+		}
+
+	}
 	[Automation( "IO/File/Delete" )]
 	class FileDelete10 : Automation {
 
@@ -43,17 +56,20 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "IO/File/Exists" )]
-	class FileExists11 : Automation {
+	class FileExists11 : ConditionalAutomation {
 
 		public System.String path;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = System.IO.File.Exists(path);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "IO/File/Get Attributes" )]

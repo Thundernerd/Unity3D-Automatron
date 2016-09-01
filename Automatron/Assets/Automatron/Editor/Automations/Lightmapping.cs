@@ -15,81 +15,99 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Lightmapping/Bake Async" )]
-	class LightmappingBakeAsync1 : Automation {
+	class LightmappingBakeAsync1 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.Lightmapping.BakeAsync();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Lightmapping/Bake" )]
-	class LightmappingBake2 : Automation {
+	class LightmappingBake2 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.Lightmapping.Bake();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Lightmapping/Bake Selected Async" )]
-	class LightmappingBakeSelectedAsync3 : Automation {
+	class LightmappingBakeSelectedAsync3 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.Lightmapping.BakeSelectedAsync();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Lightmapping/Bake Selected" )]
-	class LightmappingBakeSelected4 : Automation {
+	class LightmappingBakeSelected4 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.Lightmapping.BakeSelected();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Lightmapping/Bake Light Probes Only Async" )]
-	class LightmappingBakeLightProbesOnlyAsync5 : Automation {
+	class LightmappingBakeLightProbesOnlyAsync5 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.Lightmapping.BakeLightProbesOnlyAsync();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Lightmapping/Bake Light Probes Only" )]
-	class LightmappingBakeLightProbesOnly6 : Automation {
+	class LightmappingBakeLightProbesOnly6 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.Lightmapping.BakeLightProbesOnly();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Lightmapping/Cancel" )]
@@ -140,18 +158,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Lightmapping/Bake Reflection Probe" )]
-	class LightmappingBakeReflectionProbe11 : Automation {
+	class LightmappingBakeReflectionProbe11 : ConditionalAutomation {
 
 		public UnityEngine.ReflectionProbe probe;
 		public System.String path;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.Lightmapping.BakeReflectionProbe(probe,path);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Lightmapping/Get Terrain GI Chunks" )]

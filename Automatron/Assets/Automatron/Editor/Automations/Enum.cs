@@ -50,7 +50,7 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Enum/Is Defined" )]
-    class EnumIsDefined4 : Automation {
+	class EnumIsDefined4 : ConditionalAutomation {
 
         [TypeLimit( typeof( System.Enum ) )]
         public System.Type enumType;
@@ -58,12 +58,15 @@ namespace TNRD.Automatron.Automations {
         [ReadOnly]
         public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = System.Enum.IsDefined( enumType, value );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = System.Enum.IsDefined(enumType,value);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Enum/Parse" )]
     class EnumParse7 : Automation {

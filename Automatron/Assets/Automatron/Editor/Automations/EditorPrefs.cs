@@ -101,32 +101,38 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Editor Prefs/Get Bool" )]
-	class EditorPrefsGetBool10 : Automation {
+	class EditorPrefsGetBool10 : ConditionalAutomation {
 
 		public System.String key;
 		public System.Boolean defaultValue;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.EditorPrefs.GetBool(key,defaultValue);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Prefs/Has Key" )]
-	class EditorPrefsHasKey12 : Automation {
+	class EditorPrefsHasKey12 : ConditionalAutomation {
 
 		public System.String key;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.EditorPrefs.HasKey(key);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Prefs/Delete Key" )]

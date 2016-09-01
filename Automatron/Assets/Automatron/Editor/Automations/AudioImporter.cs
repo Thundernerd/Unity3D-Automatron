@@ -112,18 +112,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Audio Importer/Contains Sample Settings Override" )]
-	class AudioImporterContainsSampleSettingsOverride0 : Automation {
+	class AudioImporterContainsSampleSettingsOverride0 : ConditionalAutomation {
 
 		public UnityEditor.AudioImporter Instance;
 		public System.String platform;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.ContainsSampleSettingsOverride(platform);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Audio Importer/Get Override Sample Settings" )]
@@ -142,7 +145,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Audio Importer/Set Override Sample Settings" )]
-	class AudioImporterSetOverrideSampleSettings2 : Automation {
+	class AudioImporterSetOverrideSampleSettings2 : ConditionalAutomation {
 
 		public UnityEditor.AudioImporter Instance;
 		public System.String platform;
@@ -150,26 +153,32 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.SetOverrideSampleSettings(platform,settings);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Audio Importer/Clear Sample Setting Override" )]
-	class AudioImporterClearSampleSettingOverride3 : Automation {
+	class AudioImporterClearSampleSettingOverride3 : ConditionalAutomation {
 
 		public UnityEditor.AudioImporter Instance;
 		public System.String platform;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.ClearSampleSettingOverride(platform);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 

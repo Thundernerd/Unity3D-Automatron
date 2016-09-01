@@ -3,6 +3,85 @@ using System.Collections;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
+	[Automation( "Generated/Shader/Get Is Supported" )]
+	class ShaderisSupportedGet0 : Automation {
+
+		public UnityEngine.Shader Instance;
+		[ReadOnly]
+		public System.Boolean Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.isSupported;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Shader/Get Maximum LOD" )]
+	class ShadermaximumLODGet1 : Automation {
+
+		public UnityEngine.Shader Instance;
+		[ReadOnly]
+		public System.Int32 Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.maximumLOD;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Shader/Set Maximum LOD" )]
+	class ShadermaximumLODSet1 : Automation {
+
+		public UnityEngine.Shader Instance;
+		public System.Int32 Value;
+
+		public override IEnumerator Execute() {
+			Instance.maximumLOD = Value;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Shader/Get Global Maximum LOD" )]
+	class ShaderglobalMaximumLODGet2 : Automation {
+
+		[ReadOnly]
+		public System.Int32 Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.Shader.globalMaximumLOD;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Shader/Set Global Maximum LOD" )]
+	class ShaderglobalMaximumLODSet2 : Automation {
+
+		public System.Int32 Value;
+
+		public override IEnumerator Execute() {
+			UnityEngine.Shader.globalMaximumLOD = Value;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Shader/Get Render Queue" )]
+	class ShaderrenderQueueGet3 : Automation {
+
+		public UnityEngine.Shader Instance;
+		[ReadOnly]
+		public System.Int32 Result;
+
+		public override IEnumerator Execute() {
+			Result = Instance.renderQueue;
+			yield break;
+		}
+
+	}
 	[Automation( "Shader/Find" )]
 	class ShaderFind0 : Automation {
 
@@ -41,18 +120,21 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Shader/Is Keyword Enabled" )]
-	class ShaderIsKeywordEnabled3 : Automation {
+	[Automation( "Generated/Shader/Is Keyword Enabled" )]
+	class ShaderIsKeywordEnabled3 : ConditionalAutomation {
 
 		public System.String keyword;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEngine.Shader.IsKeywordEnabled(keyword);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Shader/Set Global Color" )]

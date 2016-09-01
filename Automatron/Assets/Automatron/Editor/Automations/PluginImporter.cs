@@ -31,17 +31,20 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Plugin Importer/Get Compatible With Any Platform" )]
-	class PluginImporterGetCompatibleWithAnyPlatform1 : Automation {
+	class PluginImporterGetCompatibleWithAnyPlatform1 : ConditionalAutomation {
 
 		public UnityEditor.PluginImporter Instance;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetCompatibleWithAnyPlatform();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Plugin Importer/Set Compatible With Editor" )]
@@ -58,17 +61,20 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Plugin Importer/Get Compatible With Editor" )]
-	class PluginImporterGetCompatibleWithEditor3 : Automation {
+	class PluginImporterGetCompatibleWithEditor3 : ConditionalAutomation {
 
 		public UnityEditor.PluginImporter Instance;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetCompatibleWithEditor();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Plugin Importer/Set Compatible With Platform" )]
@@ -86,18 +92,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Plugin Importer/Get Compatible With Platform" )]
-	class PluginImporterGetCompatibleWithPlatform5 : Automation {
+	class PluginImporterGetCompatibleWithPlatform5 : ConditionalAutomation {
 
 		public UnityEditor.PluginImporter Instance;
 		public UnityEditor.BuildTarget platform;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetCompatibleWithPlatform(platform);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Plugin Importer/Set Compatible With Platform" )]
@@ -115,18 +124,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Plugin Importer/Get Compatible With Platform" )]
-	class PluginImporterGetCompatibleWithPlatform7 : Automation {
+	class PluginImporterGetCompatibleWithPlatform7 : ConditionalAutomation {
 
 		public UnityEditor.PluginImporter Instance;
 		public System.String platformName;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetCompatibleWithPlatform(platformName);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Plugin Importer/Set Platform Data" )]

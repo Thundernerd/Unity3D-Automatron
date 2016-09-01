@@ -199,23 +199,37 @@ namespace TNRD.Automatron.Automations {
 
 	}
 
-	[Automation( "Game Object/Get Component" )]
-	class GameObjectGetComponent1 : Automation {
+    [Automation( "Game Object/Get Component By Type" )]
+    class GameObjectGetComponent1 : Automation {
 
-		public UnityEngine.GameObject Instance;
-        [TypeLimit( typeof( UnityEngine.Component ) )]
+        public UnityEngine.GameObject Instance;
         public System.Type type;
-		[ReadOnly]
-		public UnityEngine.Component Result;
+        [ReadOnly]
+        public UnityEngine.Component Result;
 
-		public override IEnumerator Execute() {
-			Result = Instance.GetComponent(type);
-			yield break;
-		}
+        public override IEnumerator Execute() {
+            Result = Instance.GetComponent( type );
+            yield break;
+        }
 
-	}
+    }
 
-	[Automation( "Game Object/Get Component In Children" )]
+    [Automation( "Game Object/Get Component By Name" )]
+    class GameObjectGetComponent2 : Automation {
+
+        public UnityEngine.GameObject Instance;
+        public System.String type;
+        [ReadOnly]
+        public UnityEngine.Component Result;
+
+        public override IEnumerator Execute() {
+            Result = Instance.GetComponent( type );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Game Object/Get Component In Children" )]
 	class GameObjectGetComponentInChildren3 : Automation {
 
 		public UnityEngine.GameObject Instance;

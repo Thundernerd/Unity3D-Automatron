@@ -882,17 +882,20 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Texture Importer/Get Allows Alpha Splitting" )]
-	class TextureImporterGetAllowsAlphaSplitting0 : Automation {
+	class TextureImporterGetAllowsAlphaSplitting0 : ConditionalAutomation {
 
 		public UnityEditor.TextureImporter Instance;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetAllowsAlphaSplitting();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Texture Importer/Set Allows Alpha Splitting" )]
@@ -909,7 +912,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Texture Importer/Get Platform Texture Settings" )]
-	class TextureImporterGetPlatformTextureSettings2 : Automation {
+	class TextureImporterGetPlatformTextureSettings2 : ConditionalAutomation {
 
 		public UnityEditor.TextureImporter Instance;
 		public System.String platform;
@@ -919,15 +922,18 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetPlatformTextureSettings(platform,out maxTextureSize,out textureFormat,out compressionQuality);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Texture Importer/Get Platform Texture Settings" )]
-	class TextureImporterGetPlatformTextureSettings3 : Automation {
+	class TextureImporterGetPlatformTextureSettings3 : ConditionalAutomation {
 
 		public UnityEditor.TextureImporter Instance;
 		public System.String platform;
@@ -936,11 +942,14 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.GetPlatformTextureSettings(platform,out maxTextureSize,out textureFormat);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Texture Importer/Set Platform Texture Settings" )]
@@ -1005,17 +1014,20 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Importers/Texture Importer/Does Source Texture Have Alpha" )]
-	class TextureImporterDoesSourceTextureHaveAlpha8 : Automation {
+	class TextureImporterDoesSourceTextureHaveAlpha8 : ConditionalAutomation {
 
 		public UnityEditor.TextureImporter Instance;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = Instance.DoesSourceTextureHaveAlpha();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Importers/Texture Importer/Read Texture Settings" )]

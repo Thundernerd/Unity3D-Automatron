@@ -47,18 +47,21 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Editor Scene Manager/Close Scene" )]
-	class EditorSceneManagerCloseScene4 : Automation {
+	class EditorSceneManagerCloseScene4 : ConditionalAutomation {
 
 		public UnityEngine.SceneManagement.Scene scene;
 		public System.Boolean removeScene;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.SceneManagement.EditorSceneManager.CloseScene(scene,removeScene);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Scene Manager/Move Scene Before" )]
@@ -88,7 +91,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Editor Scene Manager/Save Scene" )]
-	class EditorSceneManagerSaveScene7 : Automation {
+	class EditorSceneManagerSaveScene7 : ConditionalAutomation {
 
 		public UnityEngine.SceneManagement.Scene scene;
 		public System.String dstScenePath;
@@ -96,79 +99,97 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene,dstScenePath,saveAsCopy);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Scene Manager/Save Open Scenes" )]
-	class EditorSceneManagerSaveOpenScenes10 : Automation {
+	class EditorSceneManagerSaveOpenScenes10 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.SceneManagement.EditorSceneManager.SaveOpenScenes();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Scene Manager/Save Scenes" )]
-	class EditorSceneManagerSaveScenes11 : Automation {
+	class EditorSceneManagerSaveScenes11 : ConditionalAutomation {
 
 		public UnityEngine.SceneManagement.Scene[] scenes;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.SceneManagement.EditorSceneManager.SaveScenes(scenes);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Scene Manager/Save Current Modified Scenes If User Wants To" )]
-	class EditorSceneManagerSaveCurrentModifiedScenesIfUserWantsTo12 : Automation {
+	class EditorSceneManagerSaveCurrentModifiedScenesIfUserWantsTo12 : ConditionalAutomation {
 
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.SceneManagement.EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Scene Manager/Save Modified Scenes If User Wants To" )]
-	class EditorSceneManagerSaveModifiedScenesIfUserWantsTo13 : Automation {
+	class EditorSceneManagerSaveModifiedScenesIfUserWantsTo13 : ConditionalAutomation {
 
 		public UnityEngine.SceneManagement.Scene[] scenes;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.SceneManagement.EditorSceneManager.SaveModifiedScenesIfUserWantsTo(scenes);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Scene Manager/Mark Scene Dirty" )]
-	class EditorSceneManagerMarkSceneDirty14 : Automation {
+	class EditorSceneManagerMarkSceneDirty14 : ConditionalAutomation {
 
 		public UnityEngine.SceneManagement.Scene scene;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(scene);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor Scene Manager/Mark All Scenes Dirty" )]

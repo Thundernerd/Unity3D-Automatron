@@ -203,7 +203,7 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Math/Utilities/Intersect Ray Sphere" )]
-	class MathUtilsIntersectRaySphere13 : Automation {
+	class MathUtilsIntersectRaySphere13 : ConditionalAutomation {
 
 		public UnityEngine.Ray ray;
 		public UnityEngine.Vector3 sphereOrigin;
@@ -213,15 +213,18 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.MathUtils.IntersectRaySphere(ray,sphereOrigin,sphereRadius,ref t,ref q);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Math/Utilities/Closest Pt Ray Sphere" )]
-	class MathUtilsClosestPtRaySphere14 : Automation {
+	class MathUtilsClosestPtRaySphere14 : ConditionalAutomation {
 
 		public UnityEngine.Ray ray;
 		public UnityEngine.Vector3 sphereOrigin;
@@ -231,11 +234,14 @@ namespace TNRD.Automatron.Automations {
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.MathUtils.ClosestPtRaySphere(ray,sphereOrigin,sphereRadius,ref t,ref q);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 

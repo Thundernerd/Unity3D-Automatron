@@ -1093,31 +1093,37 @@ namespace TNRD.Automatron.Automations {
 	}
 
 	[Automation( "Editor User Build Settings/Get WSA Dot Net Native" )]
-	class EditorUserBuildSettingsGetWSADotNetNative1 : Automation {
+	class EditorUserBuildSettingsGetWSADotNetNative1 : ConditionalAutomation {
 
 		public UnityEditor.WSABuildType config;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.EditorUserBuildSettings.GetWSADotNetNative(config);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor User Build Settings/Switch Active Build Target" )]
-	class EditorUserBuildSettingsSwitchActiveBuildTarget2 : Automation {
+	class EditorUserBuildSettingsSwitchActiveBuildTarget2 : ConditionalAutomation {
 
 		public UnityEditor.BuildTarget target;
 		[ReadOnly]
 		public System.Boolean Result;
 
-		public override IEnumerator Execute() {
+		public override IEnumerator ExecuteCondition() {
 			Result = UnityEditor.EditorUserBuildSettings.SwitchActiveBuildTarget(target);
 			yield break;
 		}
 
+		public override bool GetConditionalResult() {
+			return Result;
+		}
 	}
 
 	[Automation( "Editor User Build Settings/Get Build Location" )]

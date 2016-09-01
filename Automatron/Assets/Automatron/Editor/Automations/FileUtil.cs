@@ -4,18 +4,21 @@ namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
     [Automation( "IO/Unity/Delete File Or Directory" )]
-    class FileUtilDeleteFileOrDirectory0 : Automation {
+	class FileUtilDeleteFileOrDirectory0 : ConditionalAutomation {
 
-        public System.String path;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.String path;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = UnityEditor.FileUtil.DeleteFileOrDirectory( path );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = UnityEditor.FileUtil.DeleteFileOrDirectory(path);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "IO/Unity/Copy File Or Directory" )]
     class FileUtilCopyFileOrDirectory1 : Automation {

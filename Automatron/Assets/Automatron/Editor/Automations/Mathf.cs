@@ -3,6 +3,84 @@
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
+	[Automation( "Generated/Mathf/Get PI" )]
+	class MathfPIGet0 : Automation {
+
+		[ReadOnly]
+		public System.Single Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.Mathf.PI;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Mathf/Get Infinity" )]
+	class MathfInfinityGet1 : Automation {
+
+		[ReadOnly]
+		public System.Single Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.Mathf.Infinity;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Mathf/Get Negative Infinity" )]
+	class MathfNegativeInfinityGet2 : Automation {
+
+		[ReadOnly]
+		public System.Single Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.Mathf.NegativeInfinity;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Mathf/Get Deg 2 Rad" )]
+	class MathfDeg2RadGet3 : Automation {
+
+		[ReadOnly]
+		public System.Single Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.Mathf.Deg2Rad;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Mathf/Get Rad 2 Deg" )]
+	class MathfRad2DegGet4 : Automation {
+
+		[ReadOnly]
+		public System.Single Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.Mathf.Rad2Deg;
+			yield break;
+		}
+
+	}
+
+	[Automation( "Generated/Mathf/Get Epsilon" )]
+	class MathfEpsilonGet5 : Automation {
+
+		[ReadOnly]
+		public System.Single Result;
+
+		public override IEnumerator Execute() {
+			Result = UnityEngine.Mathf.Epsilon;
+			yield break;
+		}
+
+	}
+
     [Automation( "Math/Sin" )]
     class MathfSin0 : Automation {
 
@@ -533,19 +611,22 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Math/Approximately" )]
-    class MathfApproximately40 : Automation {
+	class MathfApproximately40 : ConditionalAutomation {
 
-        public System.Single a;
-        public System.Single b;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Single a;
+		public System.Single b;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = UnityEngine.Mathf.Approximately( a, b );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = UnityEngine.Mathf.Approximately(a,b);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Math/Smooth Damp" )]
     class MathfSmoothDamp41 : Automation {
@@ -672,18 +753,21 @@ namespace TNRD.Automatron.Automations {
     }
 
     [Automation( "Math/Is Power Of Two" )]
-    class MathfIsPowerOfTwo53 : Automation {
+	class MathfIsPowerOfTwo53 : ConditionalAutomation {
 
-        public System.Int32 value;
-        [ReadOnly]
-        public System.Boolean Result;
+		public System.Int32 value;
+		[ReadOnly]
+		public System.Boolean Result;
 
-        public override IEnumerator Execute() {
-            Result = UnityEngine.Mathf.IsPowerOfTwo( value );
-            yield break;
-        }
+		public override IEnumerator ExecuteCondition() {
+			Result = UnityEngine.Mathf.IsPowerOfTwo(value);
+			yield break;
+		}
 
-    }
+		public override bool GetConditionalResult() {
+			return Result;
+		}
+	}
 
     [Automation( "Math/Next Power Of Two" )]
     class MathfNextPowerOfTwo54 : Automation {
