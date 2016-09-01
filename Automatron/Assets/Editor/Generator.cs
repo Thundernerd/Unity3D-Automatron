@@ -23,6 +23,8 @@ public class Generator : EditorWindow {
     private bool getFieldsStatic = true;
     private bool getFieldsInstance = false;
 
+    private bool includeSystem;
+
     private bool fold = false;
 
     [MenuItem( "Window/Generate" )]
@@ -58,7 +60,12 @@ public class Generator : EditorWindow {
 
         datas.AddRange( uEngine );
         datas.AddRange( uEditor );
-        //datas.AddRange( GetTypes( Assembly.GetAssembly( typeof( int ) ) ) );
+
+        if ( includeSystem ) {
+            datas.AddRange( GetTypes( Assembly.Load( "mscorlib" ) ) );
+        }
+
+        datas = datas.OrderBy( d => d.Name ).ToList();
     }
 
     private List<TypeData> GetTypes( Assembly assembly ) {
@@ -190,6 +197,10 @@ public class Generator : EditorWindow {
             getFieldsStatic = EditorGUILayout.ToggleLeft( "Static", getFieldsStatic );
             EditorGUI.EndDisabledGroup();
             EditorGUI.indentLevel--;
+
+            EditorGUILayout.Space();
+            includeSystem = EditorGUILayout.ToggleLeft( "Include System", includeSystem );
+
             if ( EditorGUI.EndChangeCheck() ) {
                 GetTypes();
             }
@@ -211,7 +222,7 @@ public class Generator : EditorWindow {
         EditorGUILayout.EndHorizontal();
 
         EditorGUI.BeginChangeCheck();
-        searchPattern = EditorGUILayout.DelayedTextField( searchPattern );
+        searchPattern = EditorGUILayout.TextField( searchPattern );
         if ( EditorGUI.EndChangeCheck() || doSearch ) {
             doSearch = false;
             if ( datas.Count == 0 ) {
@@ -282,214 +293,9 @@ public class Generator : EditorWindow {
             builder.AppendLine( "#pragma warning disable 0649" );
             builder.AppendLine();
 
-            #region Fields
-            for ( int i = 0; i < fields.Count; i++ ) {
-                var f = fields[i];
-
-                builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
-                    ObjectNames.NicifyVariableName( type.Name ),
-                    ObjectNames.NicifyVariableName( f.Name ) ) );
-                builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", f.Name, i, type.Name ) + "{" );
-                builder.AppendLine();
-
-                if ( !f.IsStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
-                }
-
-                builder.AppendLine( "\t\t[ReadOnly]" );
-                builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( f.FieldType ) ) );
-
-                builder.AppendLine();
-
-                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                builder.Append( "\t\t\tResult = " );
-                if ( f.IsStatic ) {
-                    builder.AppendFormat( "{0}.{1}", GetTypeName( type ), f.Name );
-                } else {
-                    builder.AppendFormat( "Instance.{0}", f.Name );
-                }
-                builder.AppendLine( ";" );
-                builder.AppendLine( "\t\t\tyield break;" );
-
-
-                builder.AppendLine( "\t\t}" );
-                builder.AppendLine();
-                builder.AppendLine( "\t}" );
-                builder.AppendLine();
-
-
-                /////////////////////////////// SET
-
-                builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Set {1}\" )]",
-                    ObjectNames.NicifyVariableName( type.Name ),
-                    ObjectNames.NicifyVariableName( f.Name ) ) );
-                builder.AppendLine( string.Format( "\tclass {2}{0}Set{1} : Automation ", f.Name, i, type.Name ) + "{" );
-                builder.AppendLine();
-
-                if ( !f.IsStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
-                }
-
-                builder.AppendLine( string.Format( "\t\tpublic {0} Value;", GetTypeName( f.FieldType ) ) );
-
-                builder.AppendLine();
-
-                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                if ( f.IsStatic ) {
-                    builder.AppendFormat( "\t\t\t{0}.{1}", GetTypeName( type ), f.Name );
-                } else {
-                    builder.AppendFormat( "\t\t\tInstance.{0}", f.Name );
-                }
-                builder.AppendLine( " = Value;" );
-                builder.AppendLine( "\t\t\tyield break;" );
-
-
-                builder.AppendLine( "\t\t}" );
-                builder.AppendLine();
-                builder.AppendLine( "\t}" );
-                builder.AppendLine();
-            }
-            #endregion
-
-            #region Properties
-            for ( int i = 0; i < properties.Count; i++ ) {
-                var p = properties[i];
-                var isStatic = false;
-
-                try {
-                    p.GetValue( null, null );
-                    isStatic = true;
-                } catch ( Exception ) { }
-
-                if ( p.CanRead ) {
-
-                    builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
-                        ObjectNames.NicifyVariableName( type.Name ),
-                        ObjectNames.NicifyVariableName( p.Name ) ) );
-                    builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", p.Name, i, type.Name ) + "{" );
-                    builder.AppendLine();
-
-                    if ( !isStatic ) {
-                        builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
-                    }
-
-                    builder.AppendLine( "\t\t[ReadOnly]" );
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( p.PropertyType ) ) );
-
-                    builder.AppendLine();
-
-                    builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                    builder.Append( "\t\t\tResult = " );
-                    if ( isStatic ) {
-                        builder.AppendFormat( "{0}.{1}", GetTypeName( type ), p.Name );
-                    } else {
-                        builder.AppendFormat( "Instance.{0}", p.Name );
-                    }
-                    builder.AppendLine( ";" );
-                    builder.AppendLine( "\t\t\tyield break;" );
-
-
-                    builder.AppendLine( "\t\t}" );
-                    builder.AppendLine();
-                    builder.AppendLine( "\t}" );
-                    builder.AppendLine();
-                }
-
-
-                /////////////////////////////// SET
-
-                if ( !p.CanWrite ) continue;
-
-                builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Set {1}\" )]",
-                    ObjectNames.NicifyVariableName( type.Name ),
-                    ObjectNames.NicifyVariableName( p.Name ) ) );
-                builder.AppendLine( string.Format( "\tclass {2}{0}Set{1} : Automation ", p.Name, i, type.Name ) + "{" );
-                builder.AppendLine();
-
-                if ( !isStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
-                }
-
-                builder.AppendLine( string.Format( "\t\tpublic {0} Value;", GetTypeName( p.PropertyType ) ) );
-
-                builder.AppendLine();
-
-                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                if ( isStatic ) {
-                    builder.AppendFormat( "\t\t\t{0}.{1}", GetTypeName( type ), p.Name );
-                } else {
-                    builder.AppendFormat( "\t\t\tInstance.{0}", p.Name );
-                }
-                builder.AppendLine( " = Value;" );
-                builder.AppendLine( "\t\t\tyield break;" );
-
-
-                builder.AppendLine( "\t\t}" );
-                builder.AppendLine();
-                builder.AppendLine( "\t}" );
-                builder.AppendLine();
-            }
-            #endregion
-
-            #region Methods
-            for ( int i = 0; i < methods.Count; i++ ) {
-                var m = methods[i];
-
-                builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/{1}\" )]",
-                    ObjectNames.NicifyVariableName( type.Name ),
-                    ObjectNames.NicifyVariableName( m.Name ) ) );
-                builder.AppendLine( string.Format( "\tclass {2}{0}{1} : Automation ", m.Name, i, type.Name ) + "{" );
-                builder.AppendLine();
-
-                if ( !m.IsStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
-                }
-
-                var parameters = m.GetParameters();
-                foreach ( var item in parameters ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
-                }
-
-                if ( m.ReturnType != typeof( void ) ) {
-                    builder.AppendLine( "\t\t[ReadOnly]" );
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
-                }
-
-                builder.AppendLine();
-                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                if ( m.ReturnType != typeof( void ) ) {
-                    builder.Append( "\t\t\tResult = " );
-                } else {
-                    builder.Append( "\t\t\t" );
-                }
-                if ( m.IsStatic ) {
-                    builder.AppendFormat( "{0}.{1}(", GetTypeName( type ), m.Name );
-                } else {
-                    builder.AppendFormat( "Instance.{0}(", m.Name );
-                }
-                for ( int j = 0; j < parameters.Length; j++ ) {
-                    var p = parameters[j];
-                    if ( p.ParameterType.IsByRef && !p.IsOut ) {
-                        builder.Append( "ref " );
-                    }
-                    if ( p.IsOut ) {
-                        builder.Append( "out " );
-                    }
-                    builder.Append( p.Name );
-                    if ( j < parameters.Length - 1 ) {
-                        builder.AppendFormat( "," );
-                    }
-                }
-                builder.AppendLine( ");" );
-                builder.AppendLine( "\t\t\tyield break;" );
-
-
-                builder.AppendLine( "\t\t}" );
-                builder.AppendLine();
-                builder.AppendLine( "\t}" );
-                builder.AppendLine();
-            }
-            #endregion
+            WriteFields( type, fields, builder );
+            WriteProperties( type, properties, builder );
+            WriteMethods( type, methods, builder );
 
             builder.AppendLine();
             builder.AppendLine( "#pragma warning restore 0649" );
@@ -505,6 +311,215 @@ public class Generator : EditorWindow {
         AssetDatabase.Refresh();
 
         yield break;
+    }
+
+    private void WriteMethods( Type type, List<MethodInfo> methods, StringBuilder builder ) {
+        for ( int i = 0; i < methods.Count; i++ ) {
+            var m = methods[i];
+
+            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/{1}\" )]",
+                ObjectNames.NicifyVariableName( type.Name ),
+                ObjectNames.NicifyVariableName( m.Name ) ) );
+            builder.AppendLine( string.Format( "\tclass {2}{0}{1} : Automation ", m.Name, i, type.Name ) + "{" );
+            builder.AppendLine();
+
+            if ( !m.IsStatic ) {
+                builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+            }
+
+            var parameters = m.GetParameters();
+            foreach ( var item in parameters ) {
+                builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
+            }
+
+            if ( m.ReturnType != typeof( void ) ) {
+                builder.AppendLine( "\t\t[ReadOnly]" );
+                builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
+            }
+
+            builder.AppendLine();
+            builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            if ( m.ReturnType != typeof( void ) ) {
+                builder.Append( "\t\t\tResult = " );
+            } else {
+                builder.Append( "\t\t\t" );
+            }
+            if ( m.IsStatic ) {
+                builder.AppendFormat( "{0}.{1}(", GetTypeName( type ), m.Name );
+            } else {
+                builder.AppendFormat( "Instance.{0}(", m.Name );
+            }
+            for ( int j = 0; j < parameters.Length; j++ ) {
+                var p = parameters[j];
+                if ( p.ParameterType.IsByRef && !p.IsOut ) {
+                    builder.Append( "ref " );
+                }
+                if ( p.IsOut ) {
+                    builder.Append( "out " );
+                }
+                builder.Append( p.Name );
+                if ( j < parameters.Length - 1 ) {
+                    builder.AppendFormat( "," );
+                }
+            }
+            builder.AppendLine( ");" );
+            builder.AppendLine( "\t\t\tyield break;" );
+
+
+            builder.AppendLine( "\t\t}" );
+            builder.AppendLine();
+            builder.AppendLine( "\t}" );
+            builder.AppendLine();
+        }
+    }
+
+    private void WriteProperties( Type type, List<PropertyInfo> properties, StringBuilder builder ) {
+        for ( int i = 0; i < properties.Count; i++ ) {
+            var p = properties[i];
+            var isStatic = false;
+
+            try {
+                p.GetValue( null, null );
+                isStatic = true;
+            } catch ( Exception ) { }
+
+            if ( p.CanRead ) {
+
+                builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
+                    ObjectNames.NicifyVariableName( type.Name ),
+                    ObjectNames.NicifyVariableName( p.Name ) ) );
+                builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", p.Name, i, type.Name ) + "{" );
+                builder.AppendLine();
+
+                if ( !isStatic ) {
+                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+                }
+
+                builder.AppendLine( "\t\t[ReadOnly]" );
+                builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( p.PropertyType ) ) );
+
+                builder.AppendLine();
+
+                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+                builder.Append( "\t\t\tResult = " );
+                if ( isStatic ) {
+                    builder.AppendFormat( "{0}.{1}", GetTypeName( type ), p.Name );
+                } else {
+                    builder.AppendFormat( "Instance.{0}", p.Name );
+                }
+                builder.AppendLine( ";" );
+                builder.AppendLine( "\t\t\tyield break;" );
+
+
+                builder.AppendLine( "\t\t}" );
+                builder.AppendLine();
+                builder.AppendLine( "\t}" );
+                builder.AppendLine();
+            }
+
+
+            /////////////////////////////// SET
+
+            if ( !p.CanWrite ) continue;
+
+            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Set {1}\" )]",
+                ObjectNames.NicifyVariableName( type.Name ),
+                ObjectNames.NicifyVariableName( p.Name ) ) );
+            builder.AppendLine( string.Format( "\tclass {2}{0}Set{1} : Automation ", p.Name, i, type.Name ) + "{" );
+            builder.AppendLine();
+
+            if ( !isStatic ) {
+                builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+            }
+
+            builder.AppendLine( string.Format( "\t\tpublic {0} Value;", GetTypeName( p.PropertyType ) ) );
+
+            builder.AppendLine();
+
+            builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            if ( isStatic ) {
+                builder.AppendFormat( "\t\t\t{0}.{1}", GetTypeName( type ), p.Name );
+            } else {
+                builder.AppendFormat( "\t\t\tInstance.{0}", p.Name );
+            }
+            builder.AppendLine( " = Value;" );
+            builder.AppendLine( "\t\t\tyield break;" );
+
+
+            builder.AppendLine( "\t\t}" );
+            builder.AppendLine();
+            builder.AppendLine( "\t}" );
+            builder.AppendLine();
+        }
+    }
+
+    private void WriteFields( Type type, List<FieldInfo> fields, StringBuilder builder ) {
+        for ( int i = 0; i < fields.Count; i++ ) {
+            var f = fields[i];
+
+            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
+                ObjectNames.NicifyVariableName( type.Name ),
+                ObjectNames.NicifyVariableName( f.Name ) ) );
+            builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", f.Name, i, type.Name ) + "{" );
+            builder.AppendLine();
+
+            if ( !f.IsStatic ) {
+                builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+            }
+
+            builder.AppendLine( "\t\t[ReadOnly]" );
+            builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( f.FieldType ) ) );
+
+            builder.AppendLine();
+
+            builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            builder.Append( "\t\t\tResult = " );
+            if ( f.IsStatic ) {
+                builder.AppendFormat( "{0}.{1}", GetTypeName( type ), f.Name );
+            } else {
+                builder.AppendFormat( "Instance.{0}", f.Name );
+            }
+            builder.AppendLine( ";" );
+            builder.AppendLine( "\t\t\tyield break;" );
+
+
+            builder.AppendLine( "\t\t}" );
+            builder.AppendLine();
+            builder.AppendLine( "\t}" );
+            builder.AppendLine();
+
+            if ( f.IsInitOnly ) continue;
+            /////////////////////////////// SET
+
+            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Set {1}\" )]",
+                ObjectNames.NicifyVariableName( type.Name ),
+                ObjectNames.NicifyVariableName( f.Name ) ) );
+            builder.AppendLine( string.Format( "\tclass {2}{0}Set{1} : Automation ", f.Name, i, type.Name ) + "{" );
+            builder.AppendLine();
+
+            if ( !f.IsStatic ) {
+                builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+            }
+
+            builder.AppendLine( string.Format( "\t\tpublic {0} Value;", GetTypeName( f.FieldType ) ) );
+
+            builder.AppendLine();
+
+            builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            if ( f.IsStatic ) {
+                builder.AppendFormat( "\t\t\t{0}.{1}", GetTypeName( type ), f.Name );
+            } else {
+                builder.AppendFormat( "\t\t\tInstance.{0}", f.Name );
+            }
+            builder.AppendLine( " = Value;" );
+            builder.AppendLine( "\t\t\tyield break;" );
+
+
+            builder.AppendLine( "\t\t}" );
+            builder.AppendLine();
+            builder.AppendLine( "\t}" );
+            builder.AppendLine();
+        }
     }
 
     private string GetTypeName( Type type ) {
