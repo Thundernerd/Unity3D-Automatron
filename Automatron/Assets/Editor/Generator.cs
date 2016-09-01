@@ -6,7 +6,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using TNRD.Automatron;
 using TNRD.Editor.Core;
 using UnityEditor;
 using UnityEngine;
@@ -538,8 +537,6 @@ namespace TNRD.Automatron.Generator {
         private string searchQuery = "";
 
         private Vector2 scrollPosition = new Vector2();
-        private int page = 0;
-        private int amountPerPage = 100;
 
         private void LoadTypes() {
             EditorCoroutine.Start( LoadTypesAsync() );
@@ -748,7 +745,6 @@ namespace TNRD.Automatron.Generator {
         private List<MethodInfo> GetMethods( Type type ) {
             var flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public;
 
-            var list = new List<MethodInfo>();
             return type.GetMethods( flags )
                     .Where( m => !m.Name.StartsWith( "get_" ) && !m.Name.StartsWith( "set_" ) && !m.Name.StartsWith( "op_" ) && !m.Name.StartsWith( "add_" ) && !m.Name.StartsWith( "remove_" ) )
                     .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
