@@ -411,6 +411,36 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
+    [Automation( "String/Append" )]
+    class StringAppend28 : Automation {
+
+        public System.String instance;
+        public System.String value;
+        [ReadOnly]
+        public System.String Result;
+
+        public override IEnumerator Execute() {
+            Result = instance + value;
+            yield break;
+        }
+
+    }
+
+    [Automation( "String/Prepend" )]
+    class StringPrepend29 : Automation {
+
+        public System.String instance;
+        public System.String value;
+        [ReadOnly]
+        public System.String Result;
+
+        public override IEnumerator Execute() {
+            Result = value + instance;
+            yield break;
+        }
+
+    }
+
 
 #pragma warning restore 0649
 }
