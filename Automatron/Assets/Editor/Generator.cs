@@ -6,8 +6,155 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using TNRD.Automatron;
+using TNRD.Editor.Core;
 using UnityEditor;
 using UnityEngine;
+
+public class TypeData {
+    public Type Type;
+    public bool Checked;
+    public string Name;
+    public List<MethodInfo> Methods;
+    public List<PropertyInfo> Properties;
+    public List<FieldInfo> Fields;
+}
+
+public class SelectData {
+    public Type Type;
+    public string Name;
+
+    public Dictionary<FieldInfo, bool> Fields;
+    public Dictionary<PropertyInfo, bool> Properties;
+    public Dictionary<MethodInfo, bool> Methods;
+}
+
+public static class DictExt {
+    public static Dictionary<T, T2> AddRange<T, T2>( this Dictionary<T, T2> dict, IEnumerable<KeyValuePair<T, T2>> values ) {
+        foreach ( var item in values ) {
+            dict.Add( item.Key, item.Value );
+        }
+        return dict;
+    }
+}
+
+public class GeneratorWizard : ScriptableWizard {
+
+    public static void Init( List<TypeData> datas ) {
+        var wiz = DisplayWizard<GeneratorWizard>( "Select Members", "Generate", "Cancel" );
+        wiz.datas = datas.Select( d => new SelectData() {
+            Name = d.Name,
+            Type = d.Type,
+            Fields = new Dictionary<FieldInfo, bool>().AddRange( d.Fields.Select( f => new KeyValuePair<FieldInfo, bool>( f, false ) ) ),
+            Properties = new Dictionary<PropertyInfo, bool>().AddRange( d.Properties.Select( p => new KeyValuePair<PropertyInfo, bool>( p, false ) ) ),
+            Methods = new Dictionary<MethodInfo, bool>().AddRange( d.Methods.Select( m => new KeyValuePair<MethodInfo, bool>( m, false ) ) ),
+        } ).ToList();
+
+        wiz.Folds();
+    }
+
+    private List<SelectData> datas;
+    private int index = 0;
+    private bool foldFields = true;
+    private bool foldProperties = true;
+    private bool foldMethods = true;
+    private Vector2 fieldScroll = new Vector2();
+    private Vector2 propertyScroll = new Vector2();
+    private Vector2 methodScroll = new Vector2();
+
+    private void Folds() {
+        foldFields = datas[index].Fields.Count > 0;
+        foldProperties = datas[index].Properties.Count > 0;
+        foldMethods = datas[index].Methods.Count > 0;
+    }
+
+    protected override bool DrawWizardGUI() {
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+
+        var data = datas[index];
+        EditorGUILayout.LabelField( string.Format( "[{0}/{1}] {2}", index + 1, datas.Count, data.Name ) );
+
+        foldFields = EditorGUILayout.Foldout( foldFields, "Fields" );
+        if ( foldFields ) {
+            fieldScroll = EditorGUILayout.BeginScrollView( fieldScroll, ExtendedGUI.DarkNoneWindowStyle, GUILayout.MinHeight( 75 ), GUILayout.MaxHeight( 200 ), GUILayout.ExpandHeight( true ) );
+            EditorGUI.indentLevel++;
+            var fields = new Dictionary<FieldInfo, bool>( data.Fields );
+            foreach ( var item in data.Fields ) {
+                var k = item.Key;
+                var v = item.Value;
+                v = EditorGUILayout.ToggleLeft( k.Name, v );
+                fields[k] = v;
+            }
+            data.Fields = fields;
+            EditorGUI.indentLevel--;
+            EditorGUILayout.EndScrollView();
+        }
+
+        foldProperties = EditorGUILayout.Foldout( foldProperties, "Properties" );
+        if ( foldProperties ) {
+            propertyScroll = EditorGUILayout.BeginScrollView( propertyScroll, ExtendedGUI.DarkNoneWindowStyle, GUILayout.MinHeight( 75 ), GUILayout.MaxHeight( 200 ), GUILayout.ExpandHeight( true ) );
+            var props = new Dictionary<PropertyInfo, bool>( data.Properties );
+            foreach ( var item in data.Properties ) {
+                var k = item.Key;
+                var v = item.Value;
+                v = EditorGUILayout.ToggleLeft( k.Name, v );
+                props[k] = v;
+            }
+            data.Properties = props;
+            EditorGUILayout.EndScrollView();
+        }
+
+        foldMethods = EditorGUILayout.Foldout( foldMethods, "Methods" );
+        if ( foldMethods ) {
+            methodScroll = EditorGUILayout.BeginScrollView( methodScroll, ExtendedGUI.DarkNoneWindowStyle, GUILayout.MinHeight( 75 ), GUILayout.MaxHeight( position.height ), GUILayout.ExpandHeight( true ) );
+            var methods = new Dictionary<MethodInfo, bool>( data.Methods );
+            foreach ( var item in data.Methods ) {
+                var k = item.Key;
+                var v = item.Value;
+                var n = string.Format( "{0} {1}(", k.ReturnType.Name, k.Name );
+                var ps = k.GetParameters();
+                for ( int i = 0; i < ps.Length; i++ ) {
+                    var p = ps[i];
+                    n += string.Format( "{0} {1}", p.ParameterType.Name, p.Name );
+                    if ( i < ps.Length - 1 ) n += ",";
+                }
+                n += ")";
+                v = EditorGUILayout.ToggleLeft( n, v );
+                methods[k] = v;
+            }
+            data.Methods = methods;
+            EditorGUILayout.EndScrollView();
+        }
+
+        var r = EditorGUILayout.GetControlRect();
+        if ( GUI.Button( new Rect( r.x, r.y, r.width / 2, r.height ), "<" ) ) {
+            index = Mathf.Max( 0, index - 1 );
+            Folds();
+        }
+        if ( GUI.Button( new Rect( r.x + r.width / 2, r.y, r.width / 2, r.height ), ">" ) ) {
+            index = Math.Min( index + 1, datas.Count - 1 );
+            Folds();
+        }
+
+        return true;
+    }
+
+    void OnWizardOtherButton() {
+        Close();
+    }
+
+    void OnWizardCreate() {
+        Generator.Generate( datas.Select( d => new TypeData() {
+            Name = d.Name,
+            Type = d.Type,
+            Checked = true,
+            Fields = d.Fields.Where( f => f.Value ).Select( f => f.Key ).ToList(),
+            Properties = d.Properties.Where( p => p.Value ).Select( f => f.Key ).ToList(),
+            Methods = d.Methods.Where( m => m.Value ).Select( f => f.Key ).ToList(),
+        } ).ToList() );
+        Close();
+    }
+}
 
 public class Generator : EditorWindow {
 
@@ -27,21 +174,12 @@ public class Generator : EditorWindow {
 
     private bool fold = false;
 
-    [MenuItem( "Window/Generate" )]
+    [MenuItem( "Window/Generator" )]
     private static void Init() {
         var inst = GetWindow<Generator>( "Generator" );
         inst.minSize = new Vector2( 300, 500 );
         inst.maxSize = new Vector2( 700, 1000 );
         inst.Show();
-    }
-
-    private class TypeData {
-        public Type Type;
-        public bool Checked;
-        public string Name;
-        public List<MethodInfo> Methods;
-        public List<PropertyInfo> Properties;
-        public List<FieldInfo> Fields;
     }
 
     private bool initialized = false;
@@ -206,11 +344,16 @@ public class Generator : EditorWindow {
             }
         }
 
+        if ( GUILayout.Button( "Clear" ) ) {
+            foreach ( var item in datas ) {
+                item.Checked = false;
+            }
+        }
         if ( GUILayout.Button( "Generate" ) ) {
-            Generate();
+            GeneratorWizard.Init( datas.Where( d => d.Checked ).ToList() );
         }
         if ( GUILayout.Button( "Generate All" ) ) {
-            GenerateAll();
+            GeneratorWizard.Init( datas );
         }
         EditorGUILayout.BeginHorizontal();
         if ( GUILayout.Button( "<" ) ) {
@@ -245,18 +388,11 @@ public class Generator : EditorWindow {
         EditorGUILayout.EndScrollView();
     }
 
-    private void Generate() {
-        var types = shownDatas
-            .Where( d => d.Checked )
-            .ToList();
-        EditorCoroutine.Start( GenerateAsync( types ) );
+    public static void Generate( List<TypeData> dataTypes ) {
+        EditorCoroutine.Start( GenerateAsync( dataTypes ) );
     }
 
-    private void GenerateAll() {
-        EditorCoroutine.Start( GenerateAsync( shownDatas ) );
-    }
-
-    private IEnumerator GenerateAsync( List<TypeData> dataTypes ) {
+    private static IEnumerator GenerateAsync( List<TypeData> dataTypes ) {
         var amountDone = 0;
 
         foreach ( var typeData in dataTypes ) {
@@ -278,13 +414,13 @@ public class Generator : EditorWindow {
             }
 
             var skip = true;
-            if ( getMethods && methods.Count > 0 ) {
+            if ( methods.Count > 0 ) {
                 skip = false;
             }
-            if ( getProperties && properties.Count > 0 ) {
+            if ( properties.Count > 0 ) {
                 skip = false;
             }
-            if ( getFields && fields.Count > 0 ) {
+            if ( fields.Count > 0 ) {
                 skip = false;
             }
 
@@ -321,12 +457,12 @@ public class Generator : EditorWindow {
         yield break;
     }
 
-    private void WriteMethods( Type type, List<MethodInfo> methods, StringBuilder builder ) {
+    private static void WriteMethods( Type type, List<MethodInfo> methods, StringBuilder builder ) {
         for ( int i = 0; i < methods.Count; i++ ) {
             var m = methods[i];
             var isConditional = m.ReturnType == typeof( bool );
 
-            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/{1}\" )]",
+            builder.AppendLine( string.Format( "\t[Automation( \"{0}/{1}\" )]",
                 ObjectNames.NicifyVariableName( type.Name ),
                 ObjectNames.NicifyVariableName( m.Name ) ) );
             if ( isConditional ) {
@@ -398,7 +534,7 @@ public class Generator : EditorWindow {
         }
     }
 
-    private void WriteProperties( Type type, List<PropertyInfo> properties, StringBuilder builder ) {
+    private static void WriteProperties( Type type, List<PropertyInfo> properties, StringBuilder builder ) {
         for ( int i = 0; i < properties.Count; i++ ) {
             var p = properties[i];
             var isStatic = false;
@@ -411,7 +547,7 @@ public class Generator : EditorWindow {
 
             if ( p.CanRead ) {
 
-                builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
+                builder.AppendLine( string.Format( "\t[Automation( \"{0}/Get {1}\" )]",
                     ObjectNames.NicifyVariableName( type.Name ),
                     ObjectNames.NicifyVariableName( p.Name ) ) );
                 if ( isBool ) {
@@ -463,7 +599,7 @@ public class Generator : EditorWindow {
 
             if ( !p.CanWrite ) continue;
 
-            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Set {1}\" )]",
+            builder.AppendLine( string.Format( "\t[Automation( \"{0}/Set {1}\" )]",
                 ObjectNames.NicifyVariableName( type.Name ),
                 ObjectNames.NicifyVariableName( p.Name ) ) );
             builder.AppendLine( string.Format( "\tclass {2}{0}Set{1} : Automation ", p.Name, i, type.Name ) + "{" );
@@ -494,12 +630,12 @@ public class Generator : EditorWindow {
         }
     }
 
-    private void WriteFields( Type type, List<FieldInfo> fields, StringBuilder builder ) {
+    private static void WriteFields( Type type, List<FieldInfo> fields, StringBuilder builder ) {
         for ( int i = 0; i < fields.Count; i++ ) {
             var f = fields[i];
             var isBool = f.FieldType == typeof( bool );
 
-            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Get {1}\" )]",
+            builder.AppendLine( string.Format( "\t[Automation( \"{0}/Get {1}\" )]",
                 ObjectNames.NicifyVariableName( type.Name ),
                 ObjectNames.NicifyVariableName( f.Name ) ) );
             if ( isBool ) {
@@ -548,7 +684,7 @@ public class Generator : EditorWindow {
             if ( f.IsInitOnly ) continue;
             /////////////////////////////// SET
 
-            builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/Set {1}\" )]",
+            builder.AppendLine( string.Format( "\t[Automation( \"{0}/Set {1}\" )]",
                 ObjectNames.NicifyVariableName( type.Name ),
                 ObjectNames.NicifyVariableName( f.Name ) ) );
             builder.AppendLine( string.Format( "\tclass {2}{0}Set{1} : Automation ", f.Name, i, type.Name ) + "{" );
@@ -579,9 +715,7 @@ public class Generator : EditorWindow {
         }
     }
 
-    private string GetTypeName( Type type ) {
-
+    private static string GetTypeName( Type type ) {
         return type.FullName.Trim( '&' ).Replace( "+", "." );
-        //return string.Format( "{0}.{1}", type.Namespace, type.FullName ).Trim( '&' );
     }
 }
