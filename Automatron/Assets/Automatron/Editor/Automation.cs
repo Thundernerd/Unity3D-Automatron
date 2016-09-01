@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using TNRD.Editor;
 using TNRD.Editor.Core;
@@ -305,10 +307,31 @@ namespace TNRD.Automatron {
                 if ( item.LineIn != null ) {
                     var value = item.LineIn.Left.GetValue();
                     try {
+                        var type = value.GetType();
+
+                        if ( type.IsArray ) {
+                            var myType = item.GetFieldType();
+                            if ( myType.GetInterfaces().Contains( typeof( IList ) ) ) {
+                                var list = Converter.ArrayToList( (Array)value );
+                                value = list;
+                            }
+                        } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
+                            var myType = item.GetFieldType();
+                            if ( myType.IsArray ) {
+                                var array = Converter.ListToArray( (IList)value );
+                                value = array;
+                            }
+                        }
+
                         item.SetValue( value );
                     } catch ( System.ArgumentException ex ) {
                         item.LineIn.Color = new Color( 0.72f, 0.72f, 0.047f, 1 );
                         ErrorType = ErrorType.Arugment;
+                        Globals.LastError = ex;
+                        Globals.IsError = true;
+                    } catch ( System.Exception ex ) {
+                        item.LineIn.Color = new Color( 0.36f, 0.0235f, 0.0235f, 1 );
+                        ErrorType = ErrorType.Generic;
                         Globals.LastError = ex;
                         Globals.IsError = true;
                     }
