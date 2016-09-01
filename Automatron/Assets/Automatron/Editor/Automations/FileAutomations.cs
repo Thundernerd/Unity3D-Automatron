@@ -1,9 +1,35 @@
+using System;
 using System.Collections;
 
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "File/Append All Text" )]
+    [Automation( "IO/File/Create" )]
+    class FileCreate : ConditionalAutomation {
+
+        public System.String path;
+        public bool overwrite;
+        [ReadOnly]
+        public bool Result;
+
+        public override IEnumerator ExecuteCondition() {
+            if (!overwrite && System.IO.File.Exists( path ) ) {
+                throw new System.IO.IOException( "File already exists" );
+            } else if (overwrite && System.IO.File.Exists( path ) ) {
+                System.IO.File.Delete( path );
+            }
+
+            System.IO.File.Create( path );
+            Result = System.IO.File.Exists( path );
+            yield break;
+        }
+
+        public override bool GetConditionalResult() {
+            return Result;
+        }
+    }
+
+    [Automation( "IO/File/Append All Text" )]
 	class FileAppendAllText0 : Automation {
 
 		public System.String path;
@@ -16,7 +42,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Copy" )]
+	[Automation( "IO/File/Copy" )]
 	class FileCopy1 : Automation {
 
 		public System.String sourceFileName;
@@ -30,7 +56,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Create" )]
+	[Automation( "IO/File/Create" )]
 	class FileCreate2 : Automation {
 
 		public System.String path;
@@ -44,7 +70,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Delete" )]
+	[Automation( "IO/File/Delete" )]
 	class FileDelete3 : Automation {
 
 		public System.String path;
@@ -56,7 +82,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Exists" )]
+	[Automation( "IO/File/Exists" )]
 	class FileExists4 : ConditionalAutomation {
 
 		public System.String path;
@@ -73,7 +99,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "File/Get Attributes" )]
+	[Automation( "IO/File/Get Attributes" )]
 	class FileGetAttributes5 : Automation {
 
 		public System.String path;
@@ -87,7 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Get Creation Time" )]
+	[Automation( "IO/File/Get Creation Time" )]
 	class FileGetCreationTime6 : Automation {
 
 		public System.String path;
@@ -101,7 +127,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Get Creation Time Utc" )]
+	[Automation( "IO/File/Get Creation Time Utc" )]
 	class FileGetCreationTimeUtc7 : Automation {
 
 		public System.String path;
@@ -115,7 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Get Last Access Time" )]
+	[Automation( "IO/File/Get Last Access Time" )]
 	class FileGetLastAccessTime8 : Automation {
 
 		public System.String path;
@@ -129,7 +155,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Get Last Access Time Utc" )]
+	[Automation( "IO/File/Get Last Access Time Utc" )]
 	class FileGetLastAccessTimeUtc9 : Automation {
 
 		public System.String path;
@@ -143,7 +169,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Get Last Write Time" )]
+	[Automation( "IO/File/Get Last Write Time" )]
 	class FileGetLastWriteTime10 : Automation {
 
 		public System.String path;
@@ -157,7 +183,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Get Last Write Time Utc" )]
+	[Automation( "IO/File/Get Last Write Time Utc" )]
 	class FileGetLastWriteTimeUtc11 : Automation {
 
 		public System.String path;
@@ -171,7 +197,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Move" )]
+	[Automation( "IO/File/Move" )]
 	class FileMove12 : Automation {
 
 		public System.String sourceFileName;
@@ -184,7 +210,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Replace" )]
+	[Automation( "IO/File/Replace" )]
 	class FileReplace13 : Automation {
 
 		public System.String sourceFileName;
@@ -199,7 +225,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Set Creation Time" )]
+	[Automation( "IO/File/Set Creation Time" )]
 	class FileSetCreationTime14 : Automation {
 
 		public System.String path;
@@ -212,7 +238,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Set Creation Time Utc" )]
+	[Automation( "IO/File/Set Creation Time Utc" )]
 	class FileSetCreationTimeUtc15 : Automation {
 
 		public System.String path;
@@ -225,7 +251,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Set Last Access Time" )]
+	[Automation( "IO/File/Set Last Access Time" )]
 	class FileSetLastAccessTime16 : Automation {
 
 		public System.String path;
@@ -238,7 +264,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Set Last Access Time Utc" )]
+	[Automation( "IO/File/Set Last Access Time Utc" )]
 	class FileSetLastAccessTimeUtc17 : Automation {
 
 		public System.String path;
@@ -251,7 +277,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Set Last Write Time" )]
+	[Automation( "IO/File/Set Last Write Time" )]
 	class FileSetLastWriteTime18 : Automation {
 
 		public System.String path;
@@ -264,7 +290,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Set Last Write Time Utc" )]
+	[Automation( "IO/File/Set Last Write Time Utc" )]
 	class FileSetLastWriteTimeUtc19 : Automation {
 
 		public System.String path;
@@ -277,7 +303,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Read All Bytes" )]
+	[Automation( "IO/File/Read All Bytes" )]
 	class FileReadAllBytes20 : Automation {
 
 		public System.String path;
@@ -291,7 +317,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Read All Lines" )]
+	[Automation( "IO/File/Read All Lines" )]
 	class FileReadAllLines21 : Automation {
 
 		public System.String path;
@@ -305,7 +331,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Read All Text" )]
+	[Automation( "IO/File/Read All Text" )]
 	class FileReadAllText22 : Automation {
 
 		public System.String path;
@@ -319,7 +345,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Write All Bytes" )]
+	[Automation( "IO/File/Write All Bytes" )]
 	class FileWriteAllBytes23 : Automation {
 
 		public System.String path;
@@ -332,7 +358,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Write All Lines" )]
+	[Automation( "IO/File/Write All Lines" )]
 	class FileWriteAllLines24 : Automation {
 
 		public System.String path;
@@ -345,7 +371,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Write All Text" )]
+	[Automation( "IO/File/Write All Text" )]
 	class FileWriteAllText25 : Automation {
 
 		public System.String path;
@@ -358,7 +384,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Encrypt" )]
+	[Automation( "IO/File/Encrypt" )]
 	class FileEncrypt26 : Automation {
 
 		public System.String path;
@@ -370,7 +396,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File/Decrypt" )]
+	[Automation( "IO/File/Decrypt" )]
 	class FileDecrypt27 : Automation {
 
 		public System.String path;

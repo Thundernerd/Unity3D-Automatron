@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "File Util/Delete File Or Directory" )]
+	[Automation( "IO/File Util/Delete File Or Directory" )]
 	class FileUtilDeleteFileOrDirectory0 : ConditionalAutomation {
 
 		public System.String path;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "File Util/Copy File Or Directory" )]
+	[Automation( "IO/File Util/Copy File Or Directory" )]
 	class FileUtilCopyFileOrDirectory1 : Automation {
 
 		public System.String from;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Util/Copy File Or Directory Follow Symlinks" )]
+	[Automation( "IO/File Util/Copy File Or Directory Follow Symlinks" )]
 	class FileUtilCopyFileOrDirectoryFollowSymlinks2 : Automation {
 
 		public System.String from;
@@ -46,7 +46,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Util/Move File Or Directory" )]
+	[Automation( "IO/File Util/Move File Or Directory" )]
 	class FileUtilMoveFileOrDirectory3 : Automation {
 
 		public System.String from;
@@ -59,7 +59,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Util/Get Unique Temp Path In Project" )]
+	[Automation( "IO/File Util/Get Unique Temp Path In Project" )]
 	class FileUtilGetUniqueTempPathInProject4 : Automation {
 
 		[ReadOnly]
@@ -72,7 +72,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Util/Get Project Relative Path" )]
+	[Automation( "IO/File Util/Get Project Relative Path" )]
 	class FileUtilGetProjectRelativePath5 : Automation {
 
 		public System.String path;
@@ -86,7 +86,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Util/Replace File" )]
+	[Automation( "IO/File Util/Replace File" )]
 	class FileUtilReplaceFile6 : Automation {
 
 		public System.String src;
@@ -99,7 +99,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Util/Replace Directory" )]
+	[Automation( "IO/File Util/Replace Directory" )]
 	class FileUtilReplaceDirectory7 : Automation {
 
 		public System.String src;

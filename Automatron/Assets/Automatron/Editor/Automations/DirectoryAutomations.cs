@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Directory/Create Directory" )]
+	[Automation( "IO/Directory/Create Directory" )]
 	class DirectoryCreateDirectory0 : Automation {
 
 		public System.String path;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Delete" )]
+	[Automation( "IO/Directory/Delete" )]
 	class DirectoryDelete1 : Automation {
 
 		public System.String path;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Exists" )]
+	[Automation( "IO/Directory/Exists" )]
 	class DirectoryExists2 : ConditionalAutomation {
 
 		public System.String path;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Directory/Get Last Access Time" )]
+	[Automation( "IO/Directory/Get Last Access Time" )]
 	class DirectoryGetLastAccessTime3 : Automation {
 
 		public System.String path;
@@ -61,7 +61,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Last Access Time Utc" )]
+	[Automation( "IO/Directory/Get Last Access Time Utc" )]
 	class DirectoryGetLastAccessTimeUtc4 : Automation {
 
 		public System.String path;
@@ -75,7 +75,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Last Write Time" )]
+	[Automation( "IO/Directory/Get Last Write Time" )]
 	class DirectoryGetLastWriteTime5 : Automation {
 
 		public System.String path;
@@ -89,7 +89,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Last Write Time Utc" )]
+	[Automation( "IO/Directory/Get Last Write Time Utc" )]
 	class DirectoryGetLastWriteTimeUtc6 : Automation {
 
 		public System.String path;
@@ -103,7 +103,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Creation Time" )]
+	[Automation( "IO/Directory/Get Creation Time" )]
 	class DirectoryGetCreationTime7 : Automation {
 
 		public System.String path;
@@ -117,7 +117,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Creation Time Utc" )]
+	[Automation( "IO/Directory/Get Creation Time Utc" )]
 	class DirectoryGetCreationTimeUtc8 : Automation {
 
 		public System.String path;
@@ -131,7 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Current Directory" )]
+	[Automation( "IO/Directory/Get Current Directory" )]
 	class DirectoryGetCurrentDirectory9 : Automation {
 
 		[ReadOnly]
@@ -144,7 +144,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Directories" )]
+	[Automation( "IO/Directory/Get Directories" )]
 	class DirectoryGetDirectories10 : Automation {
 
 		public System.String path;
@@ -160,7 +160,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Directory Root" )]
+	[Automation( "IO/Directory/Get Directory Root" )]
 	class DirectoryGetDirectoryRoot11 : Automation {
 
 		public System.String path;
@@ -174,7 +174,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Files" )]
+	[Automation( "IO/Directory/Get Files" )]
 	class DirectoryGetFiles12 : Automation {
 
 		public System.String path;
@@ -190,7 +190,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get File System Entries" )]
+	[Automation( "IO/Directory/Get File System Entries" )]
 	class DirectoryGetFileSystemEntries13 : Automation {
 
 		public System.String path;
@@ -205,7 +205,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Get Logical Drives" )]
+	[Automation( "IO/Directory/Get Logical Drives" )]
 	class DirectoryGetLogicalDrives14 : Automation {
 
 		[ReadOnly]
@@ -218,7 +218,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Move" )]
+	[Automation( "IO/Directory/Move" )]
 	class DirectoryMove15 : Automation {
 
 		public System.String sourceDirName;
@@ -231,7 +231,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Set Creation Time" )]
+	[Automation( "IO/Directory/Set Creation Time" )]
 	class DirectorySetCreationTime16 : Automation {
 
 		public System.String path;
@@ -244,7 +244,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Set Creation Time Utc" )]
+	[Automation( "IO/Directory/Set Creation Time Utc" )]
 	class DirectorySetCreationTimeUtc17 : Automation {
 
 		public System.String path;
@@ -257,7 +257,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Set Current Directory" )]
+	[Automation( "IO/Directory/Set Current Directory" )]
 	class DirectorySetCurrentDirectory18 : Automation {
 
 		public System.String path;
@@ -269,7 +269,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Set Last Access Time" )]
+	[Automation( "IO/Directory/Set Last Access Time" )]
 	class DirectorySetLastAccessTime19 : Automation {
 
 		public System.String path;
@@ -282,7 +282,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Set Last Access Time Utc" )]
+	[Automation( "IO/Directory/Set Last Access Time Utc" )]
 	class DirectorySetLastAccessTimeUtc20 : Automation {
 
 		public System.String path;
@@ -295,7 +295,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Set Last Write Time" )]
+	[Automation( "IO/Directory/Set Last Write Time" )]
 	class DirectorySetLastWriteTime21 : Automation {
 
 		public System.String path;
@@ -308,7 +308,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory/Set Last Write Time Utc" )]
+	[Automation( "IO/Directory/Set Last Write Time Utc" )]
 	class DirectorySetLastWriteTimeUtc22 : Automation {
 
 		public System.String path;

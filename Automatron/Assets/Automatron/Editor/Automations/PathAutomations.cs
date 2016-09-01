@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Path/Get Alt Directory Separator Char" )]
+	[Automation( "IO/Path/Get Alt Directory Separator Char" )]
 	class PathAltDirectorySeparatorCharGet0 : Automation {
 
 		[ReadOnly]
@@ -16,7 +16,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Directory Separator Char" )]
+	[Automation( "IO/Path/Get Directory Separator Char" )]
 	class PathDirectorySeparatorCharGet1 : Automation {
 
 		[ReadOnly]
@@ -29,7 +29,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Path Separator" )]
+	[Automation( "IO/Path/Get Path Separator" )]
 	class PathPathSeparatorGet2 : Automation {
 
 		[ReadOnly]
@@ -42,7 +42,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Volume Separator Char" )]
+	[Automation( "IO/Path/Get Volume Separator Char" )]
 	class PathVolumeSeparatorCharGet3 : Automation {
 
 		[ReadOnly]
@@ -55,7 +55,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Change Extension" )]
+	[Automation( "IO/Path/Change Extension" )]
 	class PathChangeExtension0 : Automation {
 
 		public System.String path;
@@ -70,7 +70,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Combine" )]
+	[Automation( "IO/Path/Combine" )]
 	class PathCombine1 : Automation {
 
 		public System.String path1;
@@ -85,7 +85,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Directory Name" )]
+	[Automation( "IO/Path/Get Directory Name" )]
 	class PathGetDirectoryName2 : Automation {
 
 		public System.String path;
@@ -99,7 +99,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Extension" )]
+	[Automation( "IO/Path/Get Extension" )]
 	class PathGetExtension3 : Automation {
 
 		public System.String path;
@@ -113,7 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get File Name" )]
+	[Automation( "IO/Path/Get File Name" )]
 	class PathGetFileName4 : Automation {
 
 		public System.String path;
@@ -127,7 +127,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get File Name Without Extension" )]
+	[Automation( "IO/Path/Get File Name Without Extension" )]
 	class PathGetFileNameWithoutExtension5 : Automation {
 
 		public System.String path;
@@ -141,7 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Full Path" )]
+	[Automation( "IO/Path/Get Full Path" )]
 	class PathGetFullPath6 : Automation {
 
 		public System.String path;
@@ -155,7 +155,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Path Root" )]
+	[Automation( "IO/Path/Get Path Root" )]
 	class PathGetPathRoot7 : Automation {
 
 		public System.String path;
@@ -169,7 +169,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Temp File Name" )]
+	[Automation( "IO/Path/Get Temp File Name" )]
 	class PathGetTempFileName8 : Automation {
 
 		[ReadOnly]
@@ -182,7 +182,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Temp Path" )]
+	[Automation( "IO/Path/Get Temp Path" )]
 	class PathGetTempPath9 : Automation {
 
 		[ReadOnly]
@@ -195,7 +195,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Has Extension" )]
+	[Automation( "IO/Path/Has Extension" )]
 	class PathHasExtension10 : ConditionalAutomation {
 
 		public System.String path;
@@ -212,7 +212,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Path/Is Path Rooted" )]
+	[Automation( "IO/Path/Is Path Rooted" )]
 	class PathIsPathRooted11 : ConditionalAutomation {
 
 		public System.String path;
@@ -229,7 +229,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Path/Get Invalid File Name Chars" )]
+	[Automation( "IO/Path/Get Invalid File Name Chars" )]
 	class PathGetInvalidFileNameChars12 : Automation {
 
 		[ReadOnly]
@@ -242,7 +242,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Invalid Path Chars" )]
+	[Automation( "IO/Path/Get Invalid Path Chars" )]
 	class PathGetInvalidPathChars13 : Automation {
 
 		[ReadOnly]
@@ -255,7 +255,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Path/Get Random File Name" )]
+	[Automation( "IO/Path/Get Random File Name" )]
 	class PathGetRandomFileName14 : Automation {
 
 		[ReadOnly]
