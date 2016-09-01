@@ -102,7 +102,7 @@ namespace TNRD.Automatron.Generator {
                 foreach ( var item in data.Fields ) {
                     var k = item.Key;
                     var v = item.Value;
-                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1}\t\t{2}", k.IsStatic ? "Static" : "Instance", k.FieldType.Name, k.Name ), v );
+                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", k.IsStatic ? "Static" : "Instance", k.FieldType.Name, k.Name ), v );
                     fields[k] = v;
                 }
                 data.Fields = fields;
@@ -120,7 +120,7 @@ namespace TNRD.Automatron.Generator {
                     var v = item.Value;
                     var s = false;
                     try { k.GetValue( null, null ); s = true; } catch ( Exception ) { }
-                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1}\t\t{2}", s ? "Static" : "Instance", k.PropertyType.Name, k.Name ), v );
+                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", s ? "Static" : "Instance", k.PropertyType.Name, k.Name ), v );
                     props[k] = v;
                 }
                 data.Properties = props;
@@ -135,7 +135,7 @@ namespace TNRD.Automatron.Generator {
                 foreach ( var item in data.Methods ) {
                     var k = item.Key;
                     var v = item.Value;
-                    var n = string.Format( "[{0}]\t{1}\t\t{2}(", k.IsStatic ? "Static" : "Instance", k.ReturnType.Name, k.Name );
+                    var n = string.Format( "[{0}]\t{1} {2}(", k.IsStatic ? "Static" : "Instance", k.ReturnType.Name, k.Name );
                     var ps = k.GetParameters();
                     for ( int i = 0; i < ps.Length; i++ ) {
                         var p = ps[i];
@@ -239,13 +239,14 @@ namespace TNRD.Automatron.Generator {
                 builder.AppendLine( "#pragma warning restore 0649" );
                 builder.AppendLine( "}" );
 
-                var path = string.Format( "{0}/Automatron/Editor/Automations/Generated/{1}.cs", Application.dataPath, type.Name );
+                var path = string.Format( "{0}/Automatron/Editor/Automations/Generated/{1}Automations.cs", Application.dataPath, type.Name );
+                Debug.LogFormat( "Writing {0}", type.Name );
                 File.WriteAllText( path, builder.ToString() );
                 amountDone++;
                 yield return null;
             }
 
-            Debug.LogFormat( "Done; Written {0}", amountDone );
+            Debug.Log( "Done" );
 
             AssetDatabase.Refresh();
 
