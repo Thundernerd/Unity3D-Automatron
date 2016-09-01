@@ -76,6 +76,10 @@ namespace TNRD.Automatron {
             info.SetValue( parent, value );
         }
 
+        public Type GetFieldType() {
+            return info.FieldType;
+        }
+
         public void OnGUI( Rect rect ) {
             Rectangle = rect;
 
