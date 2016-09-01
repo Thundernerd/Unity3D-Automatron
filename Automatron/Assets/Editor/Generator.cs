@@ -252,6 +252,8 @@ public class Generator : EditorWindow {
     }
 
     private IEnumerator GenerateAsync( List<TypeData> dataTypes ) {
+        var amountDone = 0;
+
         foreach ( var typeData in dataTypes ) {
             var type = typeData.Type;
             var methods = typeData.Methods;
@@ -303,10 +305,11 @@ public class Generator : EditorWindow {
 
             var path = string.Format( "{0}/Automatron/Editor/Automations/Generated/{1}.cs", Application.dataPath, type.Name );
             File.WriteAllText( path, builder.ToString() );
+            amountDone++;
             yield return null;
         }
 
-        Debug.Log( "DONE!" );
+        Debug.LogFormat( "Done; Written {0}", amountDone );
 
         AssetDatabase.Refresh();
 
@@ -316,11 +319,16 @@ public class Generator : EditorWindow {
     private void WriteMethods( Type type, List<MethodInfo> methods, StringBuilder builder ) {
         for ( int i = 0; i < methods.Count; i++ ) {
             var m = methods[i];
+            var isConditional = m.ReturnType == typeof( bool );
 
             builder.AppendLine( string.Format( "\t[Automation( \"Generated/{0}/{1}\" )]",
                 ObjectNames.NicifyVariableName( type.Name ),
                 ObjectNames.NicifyVariableName( m.Name ) ) );
-            builder.AppendLine( string.Format( "\tclass {2}{0}{1} : Automation ", m.Name, i, type.Name ) + "{" );
+            if ( isConditional ) {
+                builder.AppendLine( string.Format( "\tclass {2}{0}{1} : ConditionalAutomation ", m.Name, i, type.Name ) + "{" );
+            } else {
+                builder.AppendLine( string.Format( "\tclass {2}{0}{1} : Automation ", m.Name, i, type.Name ) + "{" );
+            }
             builder.AppendLine();
 
             if ( !m.IsStatic ) {
@@ -338,7 +346,12 @@ public class Generator : EditorWindow {
             }
 
             builder.AppendLine();
-            builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            if ( isConditional ) {
+                builder.AppendLine( "\t\tpublic override IEnumerator ExecuteCondition() {" );
+            } else {
+                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
+            }
+
             if ( m.ReturnType != typeof( void ) ) {
                 builder.Append( "\t\t\tResult = " );
             } else {
@@ -368,6 +381,13 @@ public class Generator : EditorWindow {
 
             builder.AppendLine( "\t\t}" );
             builder.AppendLine();
+
+            if ( isConditional ) {
+                builder.AppendLine( "\t\tpublic override bool GetConditionalResult() {" );
+                builder.AppendLine( "\t\t\treturn Result;" );
+                builder.AppendLine( "\t\t}" );
+            }
+
             builder.AppendLine( "\t}" );
             builder.AppendLine();
         }
