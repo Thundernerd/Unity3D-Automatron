@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Directory Info/Get Exists" )]
+	[Automation( "IO/Directory Info/Get Exists" )]
 	class DirectoryInfoExistsGet0 : ConditionalAutomation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Directory Info/Get Name" )]
+	[Automation( "IO/Directory Info/Get Name" )]
 	class DirectoryInfoNameGet1 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -34,7 +34,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Get Parent" )]
+	[Automation( "IO/Directory Info/Get Parent" )]
 	class DirectoryInfoParentGet2 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -48,7 +48,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Get Root" )]
+	[Automation( "IO/Directory Info/Get Root" )]
 	class DirectoryInfoRootGet3 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -62,7 +62,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Create Subdirectory" )]
+	[Automation( "IO/Directory Info/Create Subdirectory" )]
 	class DirectoryInfoCreateSubdirectory0 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -77,7 +77,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Delete" )]
+	[Automation( "IO/Directory Info/Delete" )]
 	class DirectoryInfoDelete1 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -90,7 +90,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Move To" )]
+	[Automation( "IO/Directory Info/Move To" )]
 	class DirectoryInfoMoveTo2 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -103,7 +103,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/To String" )]
+	[Automation( "IO/Directory Info/To String" )]
 	class DirectoryInfoToString3 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -117,7 +117,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Get Directories" )]
+	[Automation( "IO/Directory Info/Get Directories" )]
 	class DirectoryInfoGetDirectories4 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -133,7 +133,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Get Files" )]
+	[Automation( "IO/Directory Info/Get Files" )]
 	class DirectoryInfoGetFiles5 : Automation {
 
 		public System.IO.DirectoryInfo Instance;
@@ -149,7 +149,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Directory Info/Create" )]
+	[Automation( "IO/Directory Info/Create" )]
 	class DirectoryInfoCreate6 : Automation {
 
 		public System.IO.DirectoryInfo Instance;

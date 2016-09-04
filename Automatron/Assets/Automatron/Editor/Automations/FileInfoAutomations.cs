@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "File Info/Get Exists" )]
+	[Automation( "IO/File Info/Get Exists" )]
 	class FileInfoExistsGet0 : ConditionalAutomation {
 
 		public System.IO.FileInfo Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "File Info/Get Name" )]
+	[Automation( "IO/File Info/Get Name" )]
 	class FileInfoNameGet1 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -34,7 +34,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Get Is Read Only" )]
+	[Automation( "IO/File Info/Get Is Read Only" )]
 	class FileInfoIsReadOnlyGet2 : ConditionalAutomation {
 
 		public System.IO.FileInfo Instance;
@@ -51,7 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "File Info/Set Is Read Only" )]
+	[Automation( "IO/File Info/Set Is Read Only" )]
 	class FileInfoIsReadOnlySet2 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -64,7 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Get Directory Name" )]
+	[Automation( "IO/File Info/Get Directory Name" )]
 	class FileInfoDirectoryNameGet3 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -78,7 +78,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Get Directory" )]
+	[Automation( "IO/File Info/Get Directory" )]
 	class FileInfoDirectoryGet4 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -92,7 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Encrypt" )]
+	[Automation( "IO/File Info/Encrypt" )]
 	class FileInfoEncrypt0 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -104,7 +104,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Decrypt" )]
+	[Automation( "IO/File Info/Decrypt" )]
 	class FileInfoDecrypt1 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -116,7 +116,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Delete" )]
+	[Automation( "IO/File Info/Delete" )]
 	class FileInfoDelete2 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -128,7 +128,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Move To" )]
+	[Automation( "IO/File Info/Move To" )]
 	class FileInfoMoveTo3 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -141,7 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Copy To" )]
+	[Automation( "IO/File Info/Copy To" )]
 	class FileInfoCopyTo4 : Automation {
 
 		public System.IO.FileInfo Instance;
@@ -157,7 +157,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "File Info/Replace" )]
+	[Automation( "IO/File Info/Replace" )]
 	class FileInfoReplace5 : Automation {
 
 		public System.IO.FileInfo Instance;
