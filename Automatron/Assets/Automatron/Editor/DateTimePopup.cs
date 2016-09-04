@@ -153,7 +153,7 @@ namespace TNRD.Automatron {
             }
 
             for ( int i = 0; i < 42; i++ ) {
-                daysToPrint[i] = startDate.AddDays( i );
+                daysToPrint[i] = startDate.AddDays( i ).Add( current.TimeOfDay );
             }
 
             EditorGUILayout.Space();
