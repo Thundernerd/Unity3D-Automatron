@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Boolean/Get False String" )]
+	[Automation( "Bool/Get False String" )]
 	class BooleanFalseStringGet0 : Automation {
 
 		[ReadOnly]
@@ -16,7 +16,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Boolean/Get True String" )]
+	[Automation( "Bool/Get True String" )]
 	class BooleanTrueStringGet1 : Automation {
 
 		[ReadOnly]
@@ -29,7 +29,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Boolean/Parse" )]
+	[Automation( "Bool/Parse" )]
 	class BooleanParse0 : ConditionalAutomation {
 
 		public System.String value;
@@ -46,7 +46,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Boolean/Try Parse" )]
+	[Automation( "Bool/Try Parse" )]
 	class BooleanTryParse1 : ConditionalAutomation {
 
 		public System.String value;
@@ -64,7 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Boolean/To String" )]
+	[Automation( "Bool/To String" )]
 	class BooleanToString2 : Automation {
 
 		public System.Boolean Instance;

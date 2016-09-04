@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Int 32/Get Max Value" )]
+	[Automation( "Int/Get Max Value" )]
 	class Int32MaxValueGet0 : Automation {
 
 		[ReadOnly]
@@ -16,7 +16,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Int 32/Get Min Value" )]
+	[Automation( "Int/Get Min Value" )]
 	class Int32MinValueGet1 : Automation {
 
 		[ReadOnly]
@@ -29,7 +29,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Int 32/Parse" )]
+	[Automation( "Int/Parse" )]
 	class Int32Parse0 : Automation {
 
 		public System.String s;
@@ -43,7 +43,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Int 32/Try Parse" )]
+	[Automation( "Int/Try Parse" )]
 	class Int32TryParse1 : ConditionalAutomation {
 
 		public System.String s;
@@ -61,7 +61,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Int 32/To String" )]
+	[Automation( "Int/To String" )]
 	class Int32ToString2 : Automation {
 
 		public System.Int32 Instance;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Single/Get Epsilon" )]
+	[Automation( "Float/Get Epsilon" )]
 	class SingleEpsilonGet0 : Automation {
 
 		[ReadOnly]
@@ -16,7 +16,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Single/Get Max Value" )]
+	[Automation( "Float/Get Max Value" )]
 	class SingleMaxValueGet1 : Automation {
 
 		[ReadOnly]
@@ -29,7 +29,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Single/Get Min Value" )]
+	[Automation( "Float/Get Min Value" )]
 	class SingleMinValueGet2 : Automation {
 
 		[ReadOnly]
@@ -42,7 +42,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Single/Get Na N" )]
+	[Automation( "Float/Get Na N" )]
 	class SingleNaNGet3 : Automation {
 
 		[ReadOnly]
@@ -55,7 +55,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Single/Get Positive Infinity" )]
+	[Automation( "Float/Get Positive Infinity" )]
 	class SinglePositiveInfinityGet4 : Automation {
 
 		[ReadOnly]
@@ -68,7 +68,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Single/Get Negative Infinity" )]
+	[Automation( "Float/Get Negative Infinity" )]
 	class SingleNegativeInfinityGet5 : Automation {
 
 		[ReadOnly]
@@ -81,7 +81,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Single/Is Infinity" )]
+	[Automation( "Float/Is Infinity" )]
 	class SingleIsInfinity0 : ConditionalAutomation {
 
 		public System.Single f;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Single/Is Na N" )]
+	[Automation( "Float/Is Na N" )]
 	class SingleIsNaN1 : ConditionalAutomation {
 
 		public System.Single f;
@@ -115,7 +115,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Single/Is Negative Infinity" )]
+	[Automation( "Float/Is Negative Infinity" )]
 	class SingleIsNegativeInfinity2 : ConditionalAutomation {
 
 		public System.Single f;
@@ -132,7 +132,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Single/Is Positive Infinity" )]
+	[Automation( "Float/Is Positive Infinity" )]
 	class SingleIsPositiveInfinity3 : ConditionalAutomation {
 
 		public System.Single f;
@@ -149,7 +149,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Single/Parse" )]
+	[Automation( "Float/Parse" )]
 	class SingleParse4 : Automation {
 
 		public System.String s;
@@ -163,7 +163,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Single/Try Parse" )]
+	[Automation( "Float/Try Parse" )]
 	class SingleTryParse5 : ConditionalAutomation {
 
 		public System.String s;
@@ -181,7 +181,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Single/To String" )]
+	[Automation( "Float/To String" )]
 	class SingleToString6 : Automation {
 
 		public System.Single Instance;
