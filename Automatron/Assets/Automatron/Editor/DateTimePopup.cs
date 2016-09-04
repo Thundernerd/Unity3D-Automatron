@@ -94,7 +94,7 @@ namespace TNRD.Automatron {
             position = rect;
             current = value;
             wantsMouseMove = true;
-            ShowAsDropDown( rect, new Vector2( 218, 325 ) );
+            ShowAsDropDown( rect, new Vector2( 218, 290 ) );
             Focus();
         }
 
