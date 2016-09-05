@@ -34,6 +34,8 @@ namespace TNRD.Automatron {
                 var name = item.Attributes.ElementAt( 0 ).Name;
                 if ( !automations.ContainsKey( name ) ) {
                     automations.Add( name, item.AutomationType );
+                } else {
+                    Debug.Log( "Double for " + name );
                 }
             }
         }
@@ -97,6 +99,9 @@ namespace TNRD.Automatron {
             wnd.Show( true );
         }
 
+        public static float DeltaTime = 0;
+        private float previousTime = 0;
+
         private QueueStart entryPoint;
         [RequireSerialization]
         private string entryId;
@@ -154,6 +159,13 @@ namespace TNRD.Automatron {
             stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
             resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
             trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
+        }
+
+        protected override void OnUpdate() {
+            var time = Time.realtimeSinceStartup;
+            // Min-Maxing this to make sure it's between 0 and 1/60
+            DeltaTime = Mathf.Min( Mathf.Max( 0, time - previousTime ), 0.016f );
+            previousTime = time;
         }
 
         protected override void OnGUI() {
@@ -224,8 +236,6 @@ namespace TNRD.Automatron {
             foreach ( var item in automations ) {
                 items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
             }
-
-            var pos = new Rect( Event.current.mousePosition, new Vector2( 230, 40 ) );
             FancyPopup.ShowAsContext( items.ToArray() );
         }
 
@@ -261,6 +271,13 @@ namespace TNRD.Automatron {
             Globals.IsError = false;
             Globals.IsExecuting = true;
 
+            var errors = GetControls<AutomationError>();
+            foreach ( var item in errors ) {
+                item.Remove();
+            }
+
+            yield return null;
+
             foreach ( var item in list ) {
                 item.PrepareForExecute();
                 if ( Globals.IsError ) break;
@@ -287,6 +304,10 @@ namespace TNRD.Automatron {
 
                 item.Progress = 1;
                 if ( Globals.IsError ) break;
+            }
+
+            if ( Globals.IsError ) {
+                AddControl( new AutomationError( Globals.LastError ) );
             }
 
             Globals.IsExecuting = false;

@@ -38,6 +38,10 @@ namespace TNRD.Automatron.Automations {
             var condition = GetConditionalResult();
             var list = condition ? TrueList : FalseList;
 
+            if ( list == null ) {
+                yield break;
+            }
+
             foreach ( var item in list ) {
                 item.PrepareForExecute();
                 if ( Globals.IsError ) break;

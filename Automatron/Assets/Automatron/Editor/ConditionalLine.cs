@@ -109,7 +109,7 @@ namespace TNRD.Automatron {
         }
 
         protected override void OnDestroy() {
-            if ( Left != null && Left.LineOut == this ) {
+            if ( Left != null && Left.LineOut2 == this ) {
                 Left.LineOut = null;
             }
 
