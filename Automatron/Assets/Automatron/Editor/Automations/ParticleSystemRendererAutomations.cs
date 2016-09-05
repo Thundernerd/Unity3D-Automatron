@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Particle System Renderer/Get Render Mode" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Render Mode" )]
 	class ParticleSystemRendererrenderModeGet0 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Render Mode" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Render Mode" )]
 	class ParticleSystemRendererrenderModeSet0 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Length Scale" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Length Scale" )]
 	class ParticleSystemRendererlengthScaleGet1 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Length Scale" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Length Scale" )]
 	class ParticleSystemRendererlengthScaleSet1 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Velocity Scale" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Velocity Scale" )]
 	class ParticleSystemRenderervelocityScaleGet2 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Velocity Scale" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Velocity Scale" )]
 	class ParticleSystemRenderervelocityScaleSet2 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Camera Velocity Scale" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Camera Velocity Scale" )]
 	class ParticleSystemRenderercameraVelocityScaleGet3 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Camera Velocity Scale" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Camera Velocity Scale" )]
 	class ParticleSystemRenderercameraVelocityScaleSet3 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Normal Direction" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Normal Direction" )]
 	class ParticleSystemRenderernormalDirectionGet4 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Normal Direction" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Normal Direction" )]
 	class ParticleSystemRenderernormalDirectionSet4 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Alignment" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Alignment" )]
 	class ParticleSystemRendereralignmentGet5 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Alignment" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Alignment" )]
 	class ParticleSystemRendereralignmentSet5 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Pivot" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Pivot" )]
 	class ParticleSystemRendererpivotGet6 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Pivot" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Pivot" )]
 	class ParticleSystemRendererpivotSet6 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Sort Mode" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Sort Mode" )]
 	class ParticleSystemRenderersortModeGet7 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Sort Mode" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Sort Mode" )]
 	class ParticleSystemRenderersortModeSet7 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -219,7 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Sorting Fudge" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Sorting Fudge" )]
 	class ParticleSystemRenderersortingFudgeGet8 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Sorting Fudge" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Sorting Fudge" )]
 	class ParticleSystemRenderersortingFudgeSet8 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -246,7 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Min Particle Size" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Min Particle Size" )]
 	class ParticleSystemRendererminParticleSizeGet9 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -260,7 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Min Particle Size" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Min Particle Size" )]
 	class ParticleSystemRendererminParticleSizeSet9 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -273,7 +273,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Max Particle Size" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Max Particle Size" )]
 	class ParticleSystemRenderermaxParticleSizeGet10 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -287,7 +287,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Max Particle Size" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Max Particle Size" )]
 	class ParticleSystemRenderermaxParticleSizeSet10 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -300,7 +300,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Get Mesh" )]
+	[Automation( "Rendeders/Particle System Renderer/Get Mesh" )]
 	class ParticleSystemRenderermeshGet11 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;
@@ -314,7 +314,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle System Renderer/Set Mesh" )]
+	[Automation( "Rendeders/Particle System Renderer/Set Mesh" )]
 	class ParticleSystemRenderermeshSet11 : Automation {
 
 		public UnityEngine.ParticleSystemRenderer Instance;

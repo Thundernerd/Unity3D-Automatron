@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Target Joint 2D/Get Anchor" )]
+	[Automation( "Joints/Target Joint 2D/Get Anchor" )]
 	class TargetJoint2DanchorGet0 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Set Anchor" )]
+	[Automation( "Joints/Target Joint 2D/Set Anchor" )]
 	class TargetJoint2DanchorSet0 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Get Target" )]
+	[Automation( "Joints/Target Joint 2D/Get Target" )]
 	class TargetJoint2DtargetGet1 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Set Target" )]
+	[Automation( "Joints/Target Joint 2D/Set Target" )]
 	class TargetJoint2DtargetSet1 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Get Auto Configure Target" )]
+	[Automation( "Joints/Target Joint 2D/Get Auto Configure Target" )]
 	class TargetJoint2DautoConfigureTargetGet2 : ConditionalAutomation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -74,7 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Target Joint 2D/Set Auto Configure Target" )]
+	[Automation( "Joints/Target Joint 2D/Set Auto Configure Target" )]
 	class TargetJoint2DautoConfigureTargetSet2 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -87,7 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Get Max Force" )]
+	[Automation( "Joints/Target Joint 2D/Get Max Force" )]
 	class TargetJoint2DmaxForceGet3 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -101,7 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Set Max Force" )]
+	[Automation( "Joints/Target Joint 2D/Set Max Force" )]
 	class TargetJoint2DmaxForceSet3 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -114,7 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Get Damping Ratio" )]
+	[Automation( "Joints/Target Joint 2D/Get Damping Ratio" )]
 	class TargetJoint2DdampingRatioGet4 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -128,7 +128,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Set Damping Ratio" )]
+	[Automation( "Joints/Target Joint 2D/Set Damping Ratio" )]
 	class TargetJoint2DdampingRatioSet4 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -141,7 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Get Frequency" )]
+	[Automation( "Joints/Target Joint 2D/Get Frequency" )]
 	class TargetJoint2DfrequencyGet5 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;
@@ -155,7 +155,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Target Joint 2D/Set Frequency" )]
+	[Automation( "Joints/Target Joint 2D/Set Frequency" )]
 	class TargetJoint2DfrequencySet5 : Automation {
 
 		public UnityEngine.TargetJoint2D Instance;

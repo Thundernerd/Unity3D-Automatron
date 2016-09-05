@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Trail Renderer/Get Time" )]
+	[Automation( "Rendeders/Trail Renderer/Get Time" )]
 	class TrailRenderertimeGet0 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Trail Renderer/Set Time" )]
+	[Automation( "Rendeders/Trail Renderer/Set Time" )]
 	class TrailRenderertimeSet0 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Trail Renderer/Get Start Width" )]
+	[Automation( "Rendeders/Trail Renderer/Get Start Width" )]
 	class TrailRendererstartWidthGet1 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Trail Renderer/Set Start Width" )]
+	[Automation( "Rendeders/Trail Renderer/Set Start Width" )]
 	class TrailRendererstartWidthSet1 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Trail Renderer/Get End Width" )]
+	[Automation( "Rendeders/Trail Renderer/Get End Width" )]
 	class TrailRendererendWidthGet2 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Trail Renderer/Set End Width" )]
+	[Automation( "Rendeders/Trail Renderer/Set End Width" )]
 	class TrailRendererendWidthSet2 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Trail Renderer/Get Autodestruct" )]
+	[Automation( "Rendeders/Trail Renderer/Get Autodestruct" )]
 	class TrailRendererautodestructGet3 : ConditionalAutomation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -101,7 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Trail Renderer/Set Autodestruct" )]
+	[Automation( "Rendeders/Trail Renderer/Set Autodestruct" )]
 	class TrailRendererautodestructSet3 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;
@@ -114,7 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Trail Renderer/Clear" )]
+	[Automation( "Rendeders/Trail Renderer/Clear" )]
 	class TrailRendererClear0 : Automation {
 
 		public UnityEngine.TrailRenderer Instance;

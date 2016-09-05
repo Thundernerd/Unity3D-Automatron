@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Audio Low Pass Filter/Get Cutoff Frequency" )]
+	[Automation( "Audio/Audio Low Pass Filter/Get Cutoff Frequency" )]
 	class AudioLowPassFiltercutoffFrequencyGet0 : Automation {
 
 		public UnityEngine.AudioLowPassFilter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Low Pass Filter/Set Cutoff Frequency" )]
+	[Automation( "Audio/Audio Low Pass Filter/Set Cutoff Frequency" )]
 	class AudioLowPassFiltercutoffFrequencySet0 : Automation {
 
 		public UnityEngine.AudioLowPassFilter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Low Pass Filter/Get Custom Cutoff Curve" )]
+	[Automation( "Audio/Audio Low Pass Filter/Get Custom Cutoff Curve" )]
 	class AudioLowPassFiltercustomCutoffCurveGet1 : Automation {
 
 		public UnityEngine.AudioLowPassFilter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Low Pass Filter/Set Custom Cutoff Curve" )]
+	[Automation( "Audio/Audio Low Pass Filter/Set Custom Cutoff Curve" )]
 	class AudioLowPassFiltercustomCutoffCurveSet1 : Automation {
 
 		public UnityEngine.AudioLowPassFilter Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Low Pass Filter/Get Lowpass Resonance Q" )]
+	[Automation( "Audio/Audio Low Pass Filter/Get Lowpass Resonance Q" )]
 	class AudioLowPassFilterlowpassResonanceQGet2 : Automation {
 
 		public UnityEngine.AudioLowPassFilter Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Low Pass Filter/Set Lowpass Resonance Q" )]
+	[Automation( "Audio/Audio Low Pass Filter/Set Lowpass Resonance Q" )]
 	class AudioLowPassFilterlowpassResonanceQSet2 : Automation {
 
 		public UnityEngine.AudioLowPassFilter Instance;

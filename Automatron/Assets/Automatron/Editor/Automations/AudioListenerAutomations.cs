@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Audio Listener/Get Volume" )]
+	[Automation( "Audio/Audio Listener/Get Volume" )]
 	class AudioListenervolumeGet0 : Automation {
 
 		[ReadOnly]
@@ -16,7 +16,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Listener/Set Volume" )]
+	[Automation( "Audio/Audio Listener/Set Volume" )]
 	class AudioListenervolumeSet0 : Automation {
 
 		public System.Single Value;
@@ -28,7 +28,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Listener/Get Pause" )]
+	[Automation( "Audio/Audio Listener/Get Pause" )]
 	class AudioListenerpauseGet1 : ConditionalAutomation {
 
 		[ReadOnly]
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Listener/Set Pause" )]
+	[Automation( "Audio/Audio Listener/Set Pause" )]
 	class AudioListenerpauseSet1 : Automation {
 
 		public System.Boolean Value;
@@ -56,7 +56,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Listener/Get Velocity Update Mode" )]
+	[Automation( "Audio/Audio Listener/Get Velocity Update Mode" )]
 	class AudioListenervelocityUpdateModeGet2 : Automation {
 
 		public UnityEngine.AudioListener Instance;
@@ -70,7 +70,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Listener/Set Velocity Update Mode" )]
+	[Automation( "Audio/Audio Listener/Set Velocity Update Mode" )]
 	class AudioListenervelocityUpdateModeSet2 : Automation {
 
 		public UnityEngine.AudioListener Instance;
@@ -83,7 +83,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Listener/Get Output Data" )]
+	[Automation( "Audio/Audio Listener/Get Output Data" )]
 	class AudioListenerGetOutputData0 : Automation {
 
 		public System.Single[] samples;
@@ -96,7 +96,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Listener/Get Spectrum Data" )]
+	[Automation( "Audio/Audio Listener/Get Spectrum Data" )]
 	class AudioListenerGetSpectrumData1 : Automation {
 
 		public System.Single[] samples;

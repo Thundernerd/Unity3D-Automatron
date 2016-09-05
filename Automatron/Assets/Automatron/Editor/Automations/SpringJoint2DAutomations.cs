@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Spring Joint 2D/Get Auto Configure Distance" )]
+	[Automation( "Joints/Spring Joint 2D/Get Auto Configure Distance" )]
 	class SpringJoint2DautoConfigureDistanceGet0 : ConditionalAutomation {
 
 		public UnityEngine.SpringJoint2D Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Spring Joint 2D/Set Auto Configure Distance" )]
+	[Automation( "Joints/Spring Joint 2D/Set Auto Configure Distance" )]
 	class SpringJoint2DautoConfigureDistanceSet0 : Automation {
 
 		public UnityEngine.SpringJoint2D Instance;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Spring Joint 2D/Get Distance" )]
+	[Automation( "Joints/Spring Joint 2D/Get Distance" )]
 	class SpringJoint2DdistanceGet1 : Automation {
 
 		public UnityEngine.SpringJoint2D Instance;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Spring Joint 2D/Set Distance" )]
+	[Automation( "Joints/Spring Joint 2D/Set Distance" )]
 	class SpringJoint2DdistanceSet1 : Automation {
 
 		public UnityEngine.SpringJoint2D Instance;
@@ -60,7 +60,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Spring Joint 2D/Get Damping Ratio" )]
+	[Automation( "Joints/Spring Joint 2D/Get Damping Ratio" )]
 	class SpringJoint2DdampingRatioGet2 : Automation {
 
 		public UnityEngine.SpringJoint2D Instance;
@@ -74,7 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Spring Joint 2D/Set Damping Ratio" )]
+	[Automation( "Joints/Spring Joint 2D/Set Damping Ratio" )]
 	class SpringJoint2DdampingRatioSet2 : Automation {
 
 		public UnityEngine.SpringJoint2D Instance;
@@ -87,7 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Spring Joint 2D/Get Frequency" )]
+	[Automation( "Joints/Spring Joint 2D/Get Frequency" )]
 	class SpringJoint2DfrequencyGet3 : Automation {
 
 		public UnityEngine.SpringJoint2D Instance;
@@ -101,7 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Spring Joint 2D/Set Frequency" )]
+	[Automation( "Joints/Spring Joint 2D/Set Frequency" )]
 	class SpringJoint2DfrequencySet3 : Automation {
 
 		public UnityEngine.SpringJoint2D Instance;

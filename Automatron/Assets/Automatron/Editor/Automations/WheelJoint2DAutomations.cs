@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Wheel Joint 2D/Get Suspension" )]
+	[Automation( "Joints/Wheel Joint 2D/Get Suspension" )]
 	class WheelJoint2DsuspensionGet0 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Wheel Joint 2D/Set Suspension" )]
+	[Automation( "Joints/Wheel Joint 2D/Set Suspension" )]
 	class WheelJoint2DsuspensionSet0 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Wheel Joint 2D/Get Use Motor" )]
+	[Automation( "Joints/Wheel Joint 2D/Get Use Motor" )]
 	class WheelJoint2DuseMotorGet1 : ConditionalAutomation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Wheel Joint 2D/Set Use Motor" )]
+	[Automation( "Joints/Wheel Joint 2D/Set Use Motor" )]
 	class WheelJoint2DuseMotorSet1 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -60,7 +60,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Wheel Joint 2D/Get Motor" )]
+	[Automation( "Joints/Wheel Joint 2D/Get Motor" )]
 	class WheelJoint2DmotorGet2 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -74,7 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Wheel Joint 2D/Set Motor" )]
+	[Automation( "Joints/Wheel Joint 2D/Set Motor" )]
 	class WheelJoint2DmotorSet2 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -87,7 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Wheel Joint 2D/Get Joint Translation" )]
+	[Automation( "Joints/Wheel Joint 2D/Get Joint Translation" )]
 	class WheelJoint2DjointTranslationGet3 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -101,7 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Wheel Joint 2D/Get Joint Speed" )]
+	[Automation( "Joints/Wheel Joint 2D/Get Joint Speed" )]
 	class WheelJoint2DjointSpeedGet4 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;
@@ -115,7 +115,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Wheel Joint 2D/Get Motor Torque" )]
+	[Automation( "Joints/Wheel Joint 2D/Get Motor Torque" )]
 	class WheelJoint2DGetMotorTorque0 : Automation {
 
 		public UnityEngine.WheelJoint2D Instance;

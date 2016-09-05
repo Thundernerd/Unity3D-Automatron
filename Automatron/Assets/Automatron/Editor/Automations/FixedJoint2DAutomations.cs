@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Fixed Joint 2D/Get Damping Ratio" )]
+	[Automation( "Joints/Fixed Joint 2D/Get Damping Ratio" )]
 	class FixedJoint2DdampingRatioGet0 : Automation {
 
 		public UnityEngine.FixedJoint2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Fixed Joint 2D/Set Damping Ratio" )]
+	[Automation( "Joints/Fixed Joint 2D/Set Damping Ratio" )]
 	class FixedJoint2DdampingRatioSet0 : Automation {
 
 		public UnityEngine.FixedJoint2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Fixed Joint 2D/Get Frequency" )]
+	[Automation( "Joints/Fixed Joint 2D/Get Frequency" )]
 	class FixedJoint2DfrequencyGet1 : Automation {
 
 		public UnityEngine.FixedJoint2D Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Fixed Joint 2D/Set Frequency" )]
+	[Automation( "Joints/Fixed Joint 2D/Set Frequency" )]
 	class FixedJoint2DfrequencySet1 : Automation {
 
 		public UnityEngine.FixedJoint2D Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Fixed Joint 2D/Get Reference Angle" )]
+	[Automation( "Joints/Fixed Joint 2D/Get Reference Angle" )]
 	class FixedJoint2DreferenceAngleGet2 : Automation {
 
 		public UnityEngine.FixedJoint2D Instance;

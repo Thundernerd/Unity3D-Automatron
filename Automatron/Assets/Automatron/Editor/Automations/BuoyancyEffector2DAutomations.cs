@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Buoyancy Effector 2D/Get Surface Level" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Get Surface Level" )]
 	class BuoyancyEffector2DsurfaceLevelGet0 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Set Surface Level" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Set Surface Level" )]
 	class BuoyancyEffector2DsurfaceLevelSet0 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Get Density" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Get Density" )]
 	class BuoyancyEffector2DdensityGet1 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Set Density" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Set Density" )]
 	class BuoyancyEffector2DdensitySet1 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Get Linear Drag" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Get Linear Drag" )]
 	class BuoyancyEffector2DlinearDragGet2 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Set Linear Drag" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Set Linear Drag" )]
 	class BuoyancyEffector2DlinearDragSet2 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Get Angular Drag" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Get Angular Drag" )]
 	class BuoyancyEffector2DangularDragGet3 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Set Angular Drag" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Set Angular Drag" )]
 	class BuoyancyEffector2DangularDragSet3 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Get Flow Angle" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Get Flow Angle" )]
 	class BuoyancyEffector2DflowAngleGet4 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Set Flow Angle" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Set Flow Angle" )]
 	class BuoyancyEffector2DflowAngleSet4 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Get Flow Magnitude" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Get Flow Magnitude" )]
 	class BuoyancyEffector2DflowMagnitudeGet5 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Set Flow Magnitude" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Set Flow Magnitude" )]
 	class BuoyancyEffector2DflowMagnitudeSet5 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Get Flow Variation" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Get Flow Variation" )]
 	class BuoyancyEffector2DflowVariationGet6 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Buoyancy Effector 2D/Set Flow Variation" )]
+	[Automation( "Effectors/Buoyancy Effector 2D/Set Flow Variation" )]
 	class BuoyancyEffector2DflowVariationSet6 : Automation {
 
 		public UnityEngine.BuoyancyEffector2D Instance;

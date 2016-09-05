@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Mesh Renderer/Get Additional Vertex Streams" )]
+	[Automation( "Rendeders/Mesh Renderer/Get Additional Vertex Streams" )]
 	class MeshRendereradditionalVertexStreamsGet0 : Automation {
 
 		public UnityEngine.MeshRenderer Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Mesh Renderer/Set Additional Vertex Streams" )]
+	[Automation( "Rendeders/Mesh Renderer/Set Additional Vertex Streams" )]
 	class MeshRendereradditionalVertexStreamsSet0 : Automation {
 
 		public UnityEngine.MeshRenderer Instance;

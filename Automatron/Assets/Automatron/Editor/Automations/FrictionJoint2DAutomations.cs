@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Friction Joint 2D/Get Max Force" )]
+	[Automation( "Joints/Friction Joint 2D/Get Max Force" )]
 	class FrictionJoint2DmaxForceGet0 : Automation {
 
 		public UnityEngine.FrictionJoint2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Friction Joint 2D/Set Max Force" )]
+	[Automation( "Joints/Friction Joint 2D/Set Max Force" )]
 	class FrictionJoint2DmaxForceSet0 : Automation {
 
 		public UnityEngine.FrictionJoint2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Friction Joint 2D/Get Max Torque" )]
+	[Automation( "Joints/Friction Joint 2D/Get Max Torque" )]
 	class FrictionJoint2DmaxTorqueGet1 : Automation {
 
 		public UnityEngine.FrictionJoint2D Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Friction Joint 2D/Set Max Torque" )]
+	[Automation( "Joints/Friction Joint 2D/Set Max Torque" )]
 	class FrictionJoint2DmaxTorqueSet1 : Automation {
 
 		public UnityEngine.FrictionJoint2D Instance;

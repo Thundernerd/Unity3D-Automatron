@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Particle Renderer/Get Particle Render Mode" )]
+	[Automation( "Rendeders/Particle Renderer/Get Particle Render Mode" )]
 	class ParticleRendererparticleRenderModeGet0 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Particle Render Mode" )]
+	[Automation( "Rendeders/Particle Renderer/Set Particle Render Mode" )]
 	class ParticleRendererparticleRenderModeSet0 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Length Scale" )]
+	[Automation( "Rendeders/Particle Renderer/Get Length Scale" )]
 	class ParticleRendererlengthScaleGet1 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Length Scale" )]
+	[Automation( "Rendeders/Particle Renderer/Set Length Scale" )]
 	class ParticleRendererlengthScaleSet1 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Velocity Scale" )]
+	[Automation( "Rendeders/Particle Renderer/Get Velocity Scale" )]
 	class ParticleRenderervelocityScaleGet2 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Velocity Scale" )]
+	[Automation( "Rendeders/Particle Renderer/Set Velocity Scale" )]
 	class ParticleRenderervelocityScaleSet2 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Camera Velocity Scale" )]
+	[Automation( "Rendeders/Particle Renderer/Get Camera Velocity Scale" )]
 	class ParticleRenderercameraVelocityScaleGet3 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Camera Velocity Scale" )]
+	[Automation( "Rendeders/Particle Renderer/Set Camera Velocity Scale" )]
 	class ParticleRenderercameraVelocityScaleSet3 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Max Particle Size" )]
+	[Automation( "Rendeders/Particle Renderer/Get Max Particle Size" )]
 	class ParticleRenderermaxParticleSizeGet4 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Max Particle Size" )]
+	[Automation( "Rendeders/Particle Renderer/Set Max Particle Size" )]
 	class ParticleRenderermaxParticleSizeSet4 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Uv Animation X Tile" )]
+	[Automation( "Rendeders/Particle Renderer/Get Uv Animation X Tile" )]
 	class ParticleRendereruvAnimationXTileGet5 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Uv Animation X Tile" )]
+	[Automation( "Rendeders/Particle Renderer/Set Uv Animation X Tile" )]
 	class ParticleRendereruvAnimationXTileSet5 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Uv Animation Y Tile" )]
+	[Automation( "Rendeders/Particle Renderer/Get Uv Animation Y Tile" )]
 	class ParticleRendereruvAnimationYTileGet6 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Uv Animation Y Tile" )]
+	[Automation( "Rendeders/Particle Renderer/Set Uv Animation Y Tile" )]
 	class ParticleRendereruvAnimationYTileSet6 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Uv Animation Cycles" )]
+	[Automation( "Rendeders/Particle Renderer/Get Uv Animation Cycles" )]
 	class ParticleRendereruvAnimationCyclesGet7 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Uv Animation Cycles" )]
+	[Automation( "Rendeders/Particle Renderer/Set Uv Animation Cycles" )]
 	class ParticleRendereruvAnimationCyclesSet7 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -219,7 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Max Partile Size" )]
+	[Automation( "Rendeders/Particle Renderer/Get Max Partile Size" )]
 	class ParticleRenderermaxPartileSizeGet8 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Max Partile Size" )]
+	[Automation( "Rendeders/Particle Renderer/Set Max Partile Size" )]
 	class ParticleRenderermaxPartileSizeSet8 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -246,7 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Get Uv Tiles" )]
+	[Automation( "Rendeders/Particle Renderer/Get Uv Tiles" )]
 	class ParticleRendereruvTilesGet9 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;
@@ -260,7 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Particle Renderer/Set Uv Tiles" )]
+	[Automation( "Rendeders/Particle Renderer/Set Uv Tiles" )]
 	class ParticleRendereruvTilesSet9 : Automation {
 
 		public UnityEngine.ParticleRenderer Instance;

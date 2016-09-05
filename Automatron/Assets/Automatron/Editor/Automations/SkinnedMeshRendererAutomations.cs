@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Skinned Mesh Renderer/Get Bones" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Get Bones" )]
 	class SkinnedMeshRendererbonesGet0 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Set Bones" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Set Bones" )]
 	class SkinnedMeshRendererbonesSet0 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Get Root Bone" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Get Root Bone" )]
 	class SkinnedMeshRendererrootBoneGet1 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Set Root Bone" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Set Root Bone" )]
 	class SkinnedMeshRendererrootBoneSet1 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Get Quality" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Get Quality" )]
 	class SkinnedMeshRendererqualityGet2 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Set Quality" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Set Quality" )]
 	class SkinnedMeshRendererqualitySet2 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Get Shared Mesh" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Get Shared Mesh" )]
 	class SkinnedMeshRenderersharedMeshGet3 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Set Shared Mesh" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Set Shared Mesh" )]
 	class SkinnedMeshRenderersharedMeshSet3 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Get Update When Offscreen" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Get Update When Offscreen" )]
 	class SkinnedMeshRendererupdateWhenOffscreenGet4 : ConditionalAutomation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -128,7 +128,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Skinned Mesh Renderer/Set Update When Offscreen" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Set Update When Offscreen" )]
 	class SkinnedMeshRendererupdateWhenOffscreenSet4 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -141,7 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Get Local Bounds" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Get Local Bounds" )]
 	class SkinnedMeshRendererlocalBoundsGet5 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -155,7 +155,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Set Local Bounds" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Set Local Bounds" )]
 	class SkinnedMeshRendererlocalBoundsSet5 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -168,7 +168,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Bake Mesh" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Bake Mesh" )]
 	class SkinnedMeshRendererBakeMesh0 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -181,7 +181,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Get Blend Shape Weight" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Get Blend Shape Weight" )]
 	class SkinnedMeshRendererGetBlendShapeWeight1 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;
@@ -196,7 +196,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Skinned Mesh Renderer/Set Blend Shape Weight" )]
+	[Automation( "Rendeders/Skinned Mesh Renderer/Set Blend Shape Weight" )]
 	class SkinnedMeshRendererSetBlendShapeWeight2 : Automation {
 
 		public UnityEngine.SkinnedMeshRenderer Instance;

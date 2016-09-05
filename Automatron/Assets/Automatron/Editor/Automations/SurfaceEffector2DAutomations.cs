@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Surface Effector 2D/Get Speed" )]
+	[Automation( "Effectors/Surface Effector 2D/Get Speed" )]
 	class SurfaceEffector2DspeedGet0 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Set Speed" )]
+	[Automation( "Effectors/Surface Effector 2D/Set Speed" )]
 	class SurfaceEffector2DspeedSet0 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Get Speed Variation" )]
+	[Automation( "Effectors/Surface Effector 2D/Get Speed Variation" )]
 	class SurfaceEffector2DspeedVariationGet1 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Set Speed Variation" )]
+	[Automation( "Effectors/Surface Effector 2D/Set Speed Variation" )]
 	class SurfaceEffector2DspeedVariationSet1 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Get Force Scale" )]
+	[Automation( "Effectors/Surface Effector 2D/Get Force Scale" )]
 	class SurfaceEffector2DforceScaleGet2 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Set Force Scale" )]
+	[Automation( "Effectors/Surface Effector 2D/Set Force Scale" )]
 	class SurfaceEffector2DforceScaleSet2 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Get Use Contact Force" )]
+	[Automation( "Effectors/Surface Effector 2D/Get Use Contact Force" )]
 	class SurfaceEffector2DuseContactForceGet3 : ConditionalAutomation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -101,7 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Surface Effector 2D/Set Use Contact Force" )]
+	[Automation( "Effectors/Surface Effector 2D/Set Use Contact Force" )]
 	class SurfaceEffector2DuseContactForceSet3 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -114,7 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Get Use Friction" )]
+	[Automation( "Effectors/Surface Effector 2D/Get Use Friction" )]
 	class SurfaceEffector2DuseFrictionGet4 : ConditionalAutomation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -131,7 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Surface Effector 2D/Set Use Friction" )]
+	[Automation( "Effectors/Surface Effector 2D/Set Use Friction" )]
 	class SurfaceEffector2DuseFrictionSet4 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -144,7 +144,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Surface Effector 2D/Get Use Bounce" )]
+	[Automation( "Effectors/Surface Effector 2D/Get Use Bounce" )]
 	class SurfaceEffector2DuseBounceGet5 : ConditionalAutomation {
 
 		public UnityEngine.SurfaceEffector2D Instance;
@@ -161,7 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Surface Effector 2D/Set Use Bounce" )]
+	[Automation( "Effectors/Surface Effector 2D/Set Use Bounce" )]
 	class SurfaceEffector2DuseBounceSet5 : Automation {
 
 		public UnityEngine.SurfaceEffector2D Instance;

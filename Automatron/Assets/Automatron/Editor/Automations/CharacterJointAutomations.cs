@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Character Joint/Get Swing Axis" )]
+	[Automation( "Joints/Character Joint/Get Swing Axis" )]
 	class CharacterJointswingAxisGet0 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Swing Axis" )]
+	[Automation( "Joints/Character Joint/Set Swing Axis" )]
 	class CharacterJointswingAxisSet0 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Twist Limit Spring" )]
+	[Automation( "Joints/Character Joint/Get Twist Limit Spring" )]
 	class CharacterJointtwistLimitSpringGet1 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Twist Limit Spring" )]
+	[Automation( "Joints/Character Joint/Set Twist Limit Spring" )]
 	class CharacterJointtwistLimitSpringSet1 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Swing Limit Spring" )]
+	[Automation( "Joints/Character Joint/Get Swing Limit Spring" )]
 	class CharacterJointswingLimitSpringGet2 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Swing Limit Spring" )]
+	[Automation( "Joints/Character Joint/Set Swing Limit Spring" )]
 	class CharacterJointswingLimitSpringSet2 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Low Twist Limit" )]
+	[Automation( "Joints/Character Joint/Get Low Twist Limit" )]
 	class CharacterJointlowTwistLimitGet3 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Low Twist Limit" )]
+	[Automation( "Joints/Character Joint/Set Low Twist Limit" )]
 	class CharacterJointlowTwistLimitSet3 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get High Twist Limit" )]
+	[Automation( "Joints/Character Joint/Get High Twist Limit" )]
 	class CharacterJointhighTwistLimitGet4 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set High Twist Limit" )]
+	[Automation( "Joints/Character Joint/Set High Twist Limit" )]
 	class CharacterJointhighTwistLimitSet4 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Swing 1 Limit" )]
+	[Automation( "Joints/Character Joint/Get Swing 1 Limit" )]
 	class CharacterJointswing1LimitGet5 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Swing 1 Limit" )]
+	[Automation( "Joints/Character Joint/Set Swing 1 Limit" )]
 	class CharacterJointswing1LimitSet5 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Swing 2 Limit" )]
+	[Automation( "Joints/Character Joint/Get Swing 2 Limit" )]
 	class CharacterJointswing2LimitGet6 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Swing 2 Limit" )]
+	[Automation( "Joints/Character Joint/Set Swing 2 Limit" )]
 	class CharacterJointswing2LimitSet6 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Enable Projection" )]
+	[Automation( "Joints/Character Joint/Get Enable Projection" )]
 	class CharacterJointenableProjectionGet7 : ConditionalAutomation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -209,7 +209,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Character Joint/Set Enable Projection" )]
+	[Automation( "Joints/Character Joint/Set Enable Projection" )]
 	class CharacterJointenableProjectionSet7 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -222,7 +222,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Projection Distance" )]
+	[Automation( "Joints/Character Joint/Get Projection Distance" )]
 	class CharacterJointprojectionDistanceGet8 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -236,7 +236,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Projection Distance" )]
+	[Automation( "Joints/Character Joint/Set Projection Distance" )]
 	class CharacterJointprojectionDistanceSet8 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -249,7 +249,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Get Projection Angle" )]
+	[Automation( "Joints/Character Joint/Get Projection Angle" )]
 	class CharacterJointprojectionAngleGet9 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;
@@ -263,7 +263,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Character Joint/Set Projection Angle" )]
+	[Automation( "Joints/Character Joint/Set Projection Angle" )]
 	class CharacterJointprojectionAngleSet9 : Automation {
 
 		public UnityEngine.CharacterJoint Instance;

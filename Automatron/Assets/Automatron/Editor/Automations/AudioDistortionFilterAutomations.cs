@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Audio Distortion Filter/Get Distortion Level" )]
+	[Automation( "Audio/Audio Distortion Filter/Get Distortion Level" )]
 	class AudioDistortionFilterdistortionLevelGet0 : Automation {
 
 		public UnityEngine.AudioDistortionFilter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Distortion Filter/Set Distortion Level" )]
+	[Automation( "Audio/Audio Distortion Filter/Set Distortion Level" )]
 	class AudioDistortionFilterdistortionLevelSet0 : Automation {
 
 		public UnityEngine.AudioDistortionFilter Instance;

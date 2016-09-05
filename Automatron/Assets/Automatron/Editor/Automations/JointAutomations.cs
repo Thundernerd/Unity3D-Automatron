@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Joint/Get Connected Body" )]
+	[Automation( "Joints/Joint/Get Connected Body" )]
 	class JointconnectedBodyGet0 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Set Connected Body" )]
+	[Automation( "Joints/Joint/Set Connected Body" )]
 	class JointconnectedBodySet0 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Axis" )]
+	[Automation( "Joints/Joint/Get Axis" )]
 	class JointaxisGet1 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Set Axis" )]
+	[Automation( "Joints/Joint/Set Axis" )]
 	class JointaxisSet1 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Anchor" )]
+	[Automation( "Joints/Joint/Get Anchor" )]
 	class JointanchorGet2 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Set Anchor" )]
+	[Automation( "Joints/Joint/Set Anchor" )]
 	class JointanchorSet2 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Connected Anchor" )]
+	[Automation( "Joints/Joint/Get Connected Anchor" )]
 	class JointconnectedAnchorGet3 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Set Connected Anchor" )]
+	[Automation( "Joints/Joint/Set Connected Anchor" )]
 	class JointconnectedAnchorSet3 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Auto Configure Connected Anchor" )]
+	[Automation( "Joints/Joint/Get Auto Configure Connected Anchor" )]
 	class JointautoConfigureConnectedAnchorGet4 : ConditionalAutomation {
 
 		public UnityEngine.Joint Instance;
@@ -128,7 +128,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Joint/Set Auto Configure Connected Anchor" )]
+	[Automation( "Joints/Joint/Set Auto Configure Connected Anchor" )]
 	class JointautoConfigureConnectedAnchorSet4 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -141,7 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Break Force" )]
+	[Automation( "Joints/Joint/Get Break Force" )]
 	class JointbreakForceGet5 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -155,7 +155,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Set Break Force" )]
+	[Automation( "Joints/Joint/Set Break Force" )]
 	class JointbreakForceSet5 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -168,7 +168,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Break Torque" )]
+	[Automation( "Joints/Joint/Get Break Torque" )]
 	class JointbreakTorqueGet6 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -182,7 +182,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Set Break Torque" )]
+	[Automation( "Joints/Joint/Set Break Torque" )]
 	class JointbreakTorqueSet6 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -195,7 +195,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Enable Collision" )]
+	[Automation( "Joints/Joint/Get Enable Collision" )]
 	class JointenableCollisionGet7 : ConditionalAutomation {
 
 		public UnityEngine.Joint Instance;
@@ -212,7 +212,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Joint/Set Enable Collision" )]
+	[Automation( "Joints/Joint/Set Enable Collision" )]
 	class JointenableCollisionSet7 : Automation {
 
 		public UnityEngine.Joint Instance;
@@ -225,7 +225,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint/Get Enable Preprocessing" )]
+	[Automation( "Joints/Joint/Get Enable Preprocessing" )]
 	class JointenablePreprocessingGet8 : ConditionalAutomation {
 
 		public UnityEngine.Joint Instance;
@@ -242,7 +242,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Joint/Set Enable Preprocessing" )]
+	[Automation( "Joints/Joint/Set Enable Preprocessing" )]
 	class JointenablePreprocessingSet8 : Automation {
 
 		public UnityEngine.Joint Instance;

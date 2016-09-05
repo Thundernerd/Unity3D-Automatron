@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Effector 2D/Get Use Collider Mask" )]
+	[Automation( "Effectors/Effector 2D/Get Use Collider Mask" )]
 	class Effector2DuseColliderMaskGet0 : ConditionalAutomation {
 
 		public UnityEngine.Effector2D Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Effector 2D/Set Use Collider Mask" )]
+	[Automation( "Effectors/Effector 2D/Set Use Collider Mask" )]
 	class Effector2DuseColliderMaskSet0 : Automation {
 
 		public UnityEngine.Effector2D Instance;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Effector 2D/Get Collider Mask" )]
+	[Automation( "Effectors/Effector 2D/Get Collider Mask" )]
 	class Effector2DcolliderMaskGet1 : Automation {
 
 		public UnityEngine.Effector2D Instance;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Effector 2D/Set Collider Mask" )]
+	[Automation( "Effectors/Effector 2D/Set Collider Mask" )]
 	class Effector2DcolliderMaskSet1 : Automation {
 
 		public UnityEngine.Effector2D Instance;

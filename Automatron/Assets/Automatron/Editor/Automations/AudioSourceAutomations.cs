@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Audio Source/Get Volume" )]
+	[Automation( "Audio/Audio Source/Get Volume" )]
 	class AudioSourcevolumeGet0 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Volume" )]
+	[Automation( "Audio/Audio Source/Set Volume" )]
 	class AudioSourcevolumeSet0 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Pitch" )]
+	[Automation( "Audio/Audio Source/Get Pitch" )]
 	class AudioSourcepitchGet1 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Pitch" )]
+	[Automation( "Audio/Audio Source/Set Pitch" )]
 	class AudioSourcepitchSet1 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Time" )]
+	[Automation( "Audio/Audio Source/Get Time" )]
 	class AudioSourcetimeGet2 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Time" )]
+	[Automation( "Audio/Audio Source/Set Time" )]
 	class AudioSourcetimeSet2 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Time Samples" )]
+	[Automation( "Audio/Audio Source/Get Time Samples" )]
 	class AudioSourcetimeSamplesGet3 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Time Samples" )]
+	[Automation( "Audio/Audio Source/Set Time Samples" )]
 	class AudioSourcetimeSamplesSet3 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Clip" )]
+	[Automation( "Audio/Audio Source/Get Clip" )]
 	class AudioSourceclipGet4 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Clip" )]
+	[Automation( "Audio/Audio Source/Set Clip" )]
 	class AudioSourceclipSet4 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Output Audio Mixer Group" )]
+	[Automation( "Audio/Audio Source/Get Output Audio Mixer Group" )]
 	class AudioSourceoutputAudioMixerGroupGet5 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Output Audio Mixer Group" )]
+	[Automation( "Audio/Audio Source/Set Output Audio Mixer Group" )]
 	class AudioSourceoutputAudioMixerGroupSet5 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Is Playing" )]
+	[Automation( "Audio/Audio Source/Get Is Playing" )]
 	class AudioSourceisPlayingGet6 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -182,7 +182,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Get Loop" )]
+	[Automation( "Audio/Audio Source/Get Loop" )]
 	class AudioSourceloopGet7 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -199,7 +199,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Loop" )]
+	[Automation( "Audio/Audio Source/Set Loop" )]
 	class AudioSourceloopSet7 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -212,7 +212,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Ignore Listener Volume" )]
+	[Automation( "Audio/Audio Source/Get Ignore Listener Volume" )]
 	class AudioSourceignoreListenerVolumeGet8 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -229,7 +229,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Ignore Listener Volume" )]
+	[Automation( "Audio/Audio Source/Set Ignore Listener Volume" )]
 	class AudioSourceignoreListenerVolumeSet8 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -242,7 +242,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Play On Awake" )]
+	[Automation( "Audio/Audio Source/Get Play On Awake" )]
 	class AudioSourceplayOnAwakeGet9 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -259,7 +259,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Play On Awake" )]
+	[Automation( "Audio/Audio Source/Set Play On Awake" )]
 	class AudioSourceplayOnAwakeSet9 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -272,7 +272,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Ignore Listener Pause" )]
+	[Automation( "Audio/Audio Source/Get Ignore Listener Pause" )]
 	class AudioSourceignoreListenerPauseGet10 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -289,7 +289,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Ignore Listener Pause" )]
+	[Automation( "Audio/Audio Source/Set Ignore Listener Pause" )]
 	class AudioSourceignoreListenerPauseSet10 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -302,7 +302,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Velocity Update Mode" )]
+	[Automation( "Audio/Audio Source/Get Velocity Update Mode" )]
 	class AudioSourcevelocityUpdateModeGet11 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -316,7 +316,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Velocity Update Mode" )]
+	[Automation( "Audio/Audio Source/Set Velocity Update Mode" )]
 	class AudioSourcevelocityUpdateModeSet11 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -329,7 +329,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Pan Stereo" )]
+	[Automation( "Audio/Audio Source/Get Pan Stereo" )]
 	class AudioSourcepanStereoGet12 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -343,7 +343,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Pan Stereo" )]
+	[Automation( "Audio/Audio Source/Set Pan Stereo" )]
 	class AudioSourcepanStereoSet12 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -356,7 +356,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Spatial Blend" )]
+	[Automation( "Audio/Audio Source/Get Spatial Blend" )]
 	class AudioSourcespatialBlendGet13 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -370,7 +370,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Spatial Blend" )]
+	[Automation( "Audio/Audio Source/Set Spatial Blend" )]
 	class AudioSourcespatialBlendSet13 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -383,7 +383,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Spatialize" )]
+	[Automation( "Audio/Audio Source/Get Spatialize" )]
 	class AudioSourcespatializeGet14 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -400,7 +400,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Spatialize" )]
+	[Automation( "Audio/Audio Source/Set Spatialize" )]
 	class AudioSourcespatializeSet14 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -413,7 +413,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Reverb Zone Mix" )]
+	[Automation( "Audio/Audio Source/Get Reverb Zone Mix" )]
 	class AudioSourcereverbZoneMixGet15 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -427,7 +427,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Reverb Zone Mix" )]
+	[Automation( "Audio/Audio Source/Set Reverb Zone Mix" )]
 	class AudioSourcereverbZoneMixSet15 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -440,7 +440,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Bypass Effects" )]
+	[Automation( "Audio/Audio Source/Get Bypass Effects" )]
 	class AudioSourcebypassEffectsGet16 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -457,7 +457,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Bypass Effects" )]
+	[Automation( "Audio/Audio Source/Set Bypass Effects" )]
 	class AudioSourcebypassEffectsSet16 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -470,7 +470,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Bypass Listener Effects" )]
+	[Automation( "Audio/Audio Source/Get Bypass Listener Effects" )]
 	class AudioSourcebypassListenerEffectsGet17 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -487,7 +487,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Bypass Listener Effects" )]
+	[Automation( "Audio/Audio Source/Set Bypass Listener Effects" )]
 	class AudioSourcebypassListenerEffectsSet17 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -500,7 +500,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Bypass Reverb Zones" )]
+	[Automation( "Audio/Audio Source/Get Bypass Reverb Zones" )]
 	class AudioSourcebypassReverbZonesGet18 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -517,7 +517,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Bypass Reverb Zones" )]
+	[Automation( "Audio/Audio Source/Set Bypass Reverb Zones" )]
 	class AudioSourcebypassReverbZonesSet18 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -530,7 +530,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Doppler Level" )]
+	[Automation( "Audio/Audio Source/Get Doppler Level" )]
 	class AudioSourcedopplerLevelGet19 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -544,7 +544,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Doppler Level" )]
+	[Automation( "Audio/Audio Source/Set Doppler Level" )]
 	class AudioSourcedopplerLevelSet19 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -557,7 +557,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Spread" )]
+	[Automation( "Audio/Audio Source/Get Spread" )]
 	class AudioSourcespreadGet20 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -571,7 +571,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Spread" )]
+	[Automation( "Audio/Audio Source/Set Spread" )]
 	class AudioSourcespreadSet20 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -584,7 +584,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Priority" )]
+	[Automation( "Audio/Audio Source/Get Priority" )]
 	class AudioSourcepriorityGet21 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -598,7 +598,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Priority" )]
+	[Automation( "Audio/Audio Source/Set Priority" )]
 	class AudioSourceprioritySet21 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -611,7 +611,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Mute" )]
+	[Automation( "Audio/Audio Source/Get Mute" )]
 	class AudioSourcemuteGet22 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -628,7 +628,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Set Mute" )]
+	[Automation( "Audio/Audio Source/Set Mute" )]
 	class AudioSourcemuteSet22 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -641,7 +641,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Min Distance" )]
+	[Automation( "Audio/Audio Source/Get Min Distance" )]
 	class AudioSourceminDistanceGet23 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -655,7 +655,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Min Distance" )]
+	[Automation( "Audio/Audio Source/Set Min Distance" )]
 	class AudioSourceminDistanceSet23 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -668,7 +668,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Max Distance" )]
+	[Automation( "Audio/Audio Source/Get Max Distance" )]
 	class AudioSourcemaxDistanceGet24 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -682,7 +682,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Max Distance" )]
+	[Automation( "Audio/Audio Source/Set Max Distance" )]
 	class AudioSourcemaxDistanceSet24 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -695,7 +695,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Rolloff Mode" )]
+	[Automation( "Audio/Audio Source/Get Rolloff Mode" )]
 	class AudioSourcerolloffModeGet25 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -709,7 +709,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Rolloff Mode" )]
+	[Automation( "Audio/Audio Source/Set Rolloff Mode" )]
 	class AudioSourcerolloffModeSet25 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -722,7 +722,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Play" )]
+	[Automation( "Audio/Audio Source/Play" )]
 	class AudioSourcePlay0 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -734,7 +734,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Play Delayed" )]
+	[Automation( "Audio/Audio Source/Play Delayed" )]
 	class AudioSourcePlayDelayed1 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -747,7 +747,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Play Scheduled" )]
+	[Automation( "Audio/Audio Source/Play Scheduled" )]
 	class AudioSourcePlayScheduled2 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -760,7 +760,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Scheduled Start Time" )]
+	[Automation( "Audio/Audio Source/Set Scheduled Start Time" )]
 	class AudioSourceSetScheduledStartTime3 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -773,7 +773,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Scheduled End Time" )]
+	[Automation( "Audio/Audio Source/Set Scheduled End Time" )]
 	class AudioSourceSetScheduledEndTime4 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -786,7 +786,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Stop" )]
+	[Automation( "Audio/Audio Source/Stop" )]
 	class AudioSourceStop5 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -798,7 +798,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Pause" )]
+	[Automation( "Audio/Audio Source/Pause" )]
 	class AudioSourcePause6 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -810,7 +810,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Un Pause" )]
+	[Automation( "Audio/Audio Source/Un Pause" )]
 	class AudioSourceUnPause7 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -822,7 +822,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Play One Shot" )]
+	[Automation( "Audio/Audio Source/Play One Shot" )]
 	class AudioSourcePlayOneShot8 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -836,7 +836,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Play Clip At Point" )]
+	[Automation( "Audio/Audio Source/Play Clip At Point" )]
 	class AudioSourcePlayClipAtPoint9 : Automation {
 
 		public UnityEngine.AudioClip clip;
@@ -850,7 +850,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Custom Curve" )]
+	[Automation( "Audio/Audio Source/Set Custom Curve" )]
 	class AudioSourceSetCustomCurve10 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -864,7 +864,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Custom Curve" )]
+	[Automation( "Audio/Audio Source/Get Custom Curve" )]
 	class AudioSourceGetCustomCurve11 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -879,7 +879,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Output Data" )]
+	[Automation( "Audio/Audio Source/Get Output Data" )]
 	class AudioSourceGetOutputData12 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -893,7 +893,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Get Spectrum Data" )]
+	[Automation( "Audio/Audio Source/Get Spectrum Data" )]
 	class AudioSourceGetSpectrumData13 : Automation {
 
 		public UnityEngine.AudioSource Instance;
@@ -908,7 +908,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Source/Set Spatializer Float" )]
+	[Automation( "Audio/Audio Source/Set Spatializer Float" )]
 	class AudioSourceSetSpatializerFloat14 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;
@@ -927,7 +927,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Audio Source/Get Spatializer Float" )]
+	[Automation( "Audio/Audio Source/Get Spatializer Float" )]
 	class AudioSourceGetSpatializerFloat15 : ConditionalAutomation {
 
 		public UnityEngine.AudioSource Instance;

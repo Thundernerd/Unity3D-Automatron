@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Canvas Renderer/Get Has Rect Clipping" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Has Rect Clipping" )]
 	class CanvasRendererhasRectClippingGet0 : ConditionalAutomation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Canvas Renderer/Get Has Pop Instruction" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Has Pop Instruction" )]
 	class CanvasRendererhasPopInstructionGet1 : ConditionalAutomation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -37,7 +37,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Canvas Renderer/Set Has Pop Instruction" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Has Pop Instruction" )]
 	class CanvasRendererhasPopInstructionSet1 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -50,7 +50,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Material Count" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Material Count" )]
 	class CanvasRenderermaterialCountGet2 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -64,7 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Set Material Count" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Material Count" )]
 	class CanvasRenderermaterialCountSet2 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -77,7 +77,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Pop Material Count" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Pop Material Count" )]
 	class CanvasRendererpopMaterialCountGet3 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -91,7 +91,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Set Pop Material Count" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Pop Material Count" )]
 	class CanvasRendererpopMaterialCountSet3 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -104,7 +104,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Relative Depth" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Relative Depth" )]
 	class CanvasRendererrelativeDepthGet4 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -118,7 +118,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Cull" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Cull" )]
 	class CanvasRenderercullGet5 : ConditionalAutomation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -135,7 +135,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Canvas Renderer/Set Cull" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Cull" )]
 	class CanvasRenderercullSet5 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -148,7 +148,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Absolute Depth" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Absolute Depth" )]
 	class CanvasRendererabsoluteDepthGet6 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -162,7 +162,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Has Moved" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Has Moved" )]
 	class CanvasRendererhasMovedGet7 : ConditionalAutomation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Canvas Renderer/Set Color" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Color" )]
 	class CanvasRendererSetColor0 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Color" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Color" )]
 	class CanvasRendererGetColor1 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Alpha" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Alpha" )]
 	class CanvasRendererGetAlpha2 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -220,7 +220,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Set Alpha" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Alpha" )]
 	class CanvasRendererSetAlpha3 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Enable Rect Clipping" )]
+	[Automation( "Rendeders/Canvas Renderer/Enable Rect Clipping" )]
 	class CanvasRendererEnableRectClipping4 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -246,7 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Disable Rect Clipping" )]
+	[Automation( "Rendeders/Canvas Renderer/Disable Rect Clipping" )]
 	class CanvasRendererDisableRectClipping5 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -258,7 +258,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Set Material" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Material" )]
 	class CanvasRendererSetMaterial6 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -272,7 +272,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Material" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Material" )]
 	class CanvasRendererGetMaterial7 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -286,7 +286,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Set Pop Material" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Pop Material" )]
 	class CanvasRendererSetPopMaterial8 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -300,7 +300,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Get Pop Material" )]
+	[Automation( "Rendeders/Canvas Renderer/Get Pop Material" )]
 	class CanvasRendererGetPopMaterial9 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -315,7 +315,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Set Texture" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Texture" )]
 	class CanvasRendererSetTexture10 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -328,7 +328,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Set Mesh" )]
+	[Automation( "Rendeders/Canvas Renderer/Set Mesh" )]
 	class CanvasRendererSetMesh11 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;
@@ -341,7 +341,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Canvas Renderer/Clear" )]
+	[Automation( "Rendeders/Canvas Renderer/Clear" )]
 	class CanvasRendererClear12 : Automation {
 
 		public UnityEngine.CanvasRenderer Instance;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Joint 2D/Get Connected Body" )]
+	[Automation( "Joints/Joint 2D/Get Connected Body" )]
 	class Joint2DconnectedBodyGet0 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Set Connected Body" )]
+	[Automation( "Joints/Joint 2D/Set Connected Body" )]
 	class Joint2DconnectedBodySet0 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Get Enable Collision" )]
+	[Automation( "Joints/Joint 2D/Get Enable Collision" )]
 	class Joint2DenableCollisionGet1 : ConditionalAutomation {
 
 		public UnityEngine.Joint2D Instance;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Joint 2D/Set Enable Collision" )]
+	[Automation( "Joints/Joint 2D/Set Enable Collision" )]
 	class Joint2DenableCollisionSet1 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -60,7 +60,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Get Break Force" )]
+	[Automation( "Joints/Joint 2D/Get Break Force" )]
 	class Joint2DbreakForceGet2 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -74,7 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Set Break Force" )]
+	[Automation( "Joints/Joint 2D/Set Break Force" )]
 	class Joint2DbreakForceSet2 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -87,7 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Get Break Torque" )]
+	[Automation( "Joints/Joint 2D/Get Break Torque" )]
 	class Joint2DbreakTorqueGet3 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -101,7 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Set Break Torque" )]
+	[Automation( "Joints/Joint 2D/Set Break Torque" )]
 	class Joint2DbreakTorqueSet3 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -114,7 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Get Reaction Force" )]
+	[Automation( "Joints/Joint 2D/Get Reaction Force" )]
 	class Joint2DreactionForceGet4 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -128,7 +128,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Get Reaction Torque" )]
+	[Automation( "Joints/Joint 2D/Get Reaction Torque" )]
 	class Joint2DreactionTorqueGet5 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -142,7 +142,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Get Reaction Force At TimeStep" )]
+	[Automation( "Joints/Joint 2D/Get Reaction Force At TimeStep" )]
 	class Joint2DGetReactionForce0 : Automation {
 
 		public UnityEngine.Joint2D Instance;
@@ -157,7 +157,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Joint 2D/Get Reaction Torque At TimeStep" )]
+	[Automation( "Joints/Joint 2D/Get Reaction Torque At TimeStep" )]
 	class Joint2DGetReactionTorque1 : Automation {
 
 		public UnityEngine.Joint2D Instance;

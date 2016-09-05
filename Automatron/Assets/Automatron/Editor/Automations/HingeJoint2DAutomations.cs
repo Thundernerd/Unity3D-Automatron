@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Hinge Joint 2D/Get Use Motor" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Use Motor" )]
 	class HingeJoint2DuseMotorGet0 : ConditionalAutomation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Hinge Joint 2D/Set Use Motor" )]
+	[Automation( "Joints/Hinge Joint 2D/Set Use Motor" )]
 	class HingeJoint2DuseMotorSet0 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Use Limits" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Use Limits" )]
 	class HingeJoint2DuseLimitsGet1 : ConditionalAutomation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -50,7 +50,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Hinge Joint 2D/Set Use Limits" )]
+	[Automation( "Joints/Hinge Joint 2D/Set Use Limits" )]
 	class HingeJoint2DuseLimitsSet1 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -63,7 +63,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Motor" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Motor" )]
 	class HingeJoint2DmotorGet2 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -77,7 +77,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Set Motor" )]
+	[Automation( "Joints/Hinge Joint 2D/Set Motor" )]
 	class HingeJoint2DmotorSet2 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -90,7 +90,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Limits" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Limits" )]
 	class HingeJoint2DlimitsGet3 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -104,7 +104,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Set Limits" )]
+	[Automation( "Joints/Hinge Joint 2D/Set Limits" )]
 	class HingeJoint2DlimitsSet3 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -117,7 +117,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Limit State" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Limit State" )]
 	class HingeJoint2DlimitStateGet4 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -131,7 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Reference Angle" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Reference Angle" )]
 	class HingeJoint2DreferenceAngleGet5 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -145,7 +145,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Joint Angle" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Joint Angle" )]
 	class HingeJoint2DjointAngleGet6 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -159,7 +159,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Joint Speed" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Joint Speed" )]
 	class HingeJoint2DjointSpeedGet7 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;
@@ -173,7 +173,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint 2D/Get Motor Torque" )]
+	[Automation( "Joints/Hinge Joint 2D/Get Motor Torque" )]
 	class HingeJoint2DGetMotorTorque0 : Automation {
 
 		public UnityEngine.HingeJoint2D Instance;

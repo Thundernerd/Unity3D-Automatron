@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Audio Chorus Filter/Get Dry Mix" )]
+	[Automation( "Audio/Audio Chorus Filter/Get Dry Mix" )]
 	class AudioChorusFilterdryMixGet0 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Set Dry Mix" )]
+	[Automation( "Audio/Audio Chorus Filter/Set Dry Mix" )]
 	class AudioChorusFilterdryMixSet0 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Get Wet Mix 1" )]
+	[Automation( "Audio/Audio Chorus Filter/Get Wet Mix 1" )]
 	class AudioChorusFilterwetMix1Get1 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Set Wet Mix 1" )]
+	[Automation( "Audio/Audio Chorus Filter/Set Wet Mix 1" )]
 	class AudioChorusFilterwetMix1Set1 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Get Wet Mix 2" )]
+	[Automation( "Audio/Audio Chorus Filter/Get Wet Mix 2" )]
 	class AudioChorusFilterwetMix2Get2 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Set Wet Mix 2" )]
+	[Automation( "Audio/Audio Chorus Filter/Set Wet Mix 2" )]
 	class AudioChorusFilterwetMix2Set2 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Get Wet Mix 3" )]
+	[Automation( "Audio/Audio Chorus Filter/Get Wet Mix 3" )]
 	class AudioChorusFilterwetMix3Get3 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Set Wet Mix 3" )]
+	[Automation( "Audio/Audio Chorus Filter/Set Wet Mix 3" )]
 	class AudioChorusFilterwetMix3Set3 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Get Delay" )]
+	[Automation( "Audio/Audio Chorus Filter/Get Delay" )]
 	class AudioChorusFilterdelayGet4 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Set Delay" )]
+	[Automation( "Audio/Audio Chorus Filter/Set Delay" )]
 	class AudioChorusFilterdelaySet4 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Get Rate" )]
+	[Automation( "Audio/Audio Chorus Filter/Get Rate" )]
 	class AudioChorusFilterrateGet5 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Set Rate" )]
+	[Automation( "Audio/Audio Chorus Filter/Set Rate" )]
 	class AudioChorusFilterrateSet5 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Get Depth" )]
+	[Automation( "Audio/Audio Chorus Filter/Get Depth" )]
 	class AudioChorusFilterdepthGet6 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Chorus Filter/Set Depth" )]
+	[Automation( "Audio/Audio Chorus Filter/Set Depth" )]
 	class AudioChorusFilterdepthSet6 : Automation {
 
 		public UnityEngine.AudioChorusFilter Instance;

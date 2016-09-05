@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Platform Effector 2D/Get Use One Way" )]
+	[Automation( "Effectors/Platform Effector 2D/Get Use One Way" )]
 	class PlatformEffector2DuseOneWayGet0 : ConditionalAutomation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Platform Effector 2D/Set Use One Way" )]
+	[Automation( "Effectors/Platform Effector 2D/Set Use One Way" )]
 	class PlatformEffector2DuseOneWaySet0 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Platform Effector 2D/Get Use One Way Grouping" )]
+	[Automation( "Effectors/Platform Effector 2D/Get Use One Way Grouping" )]
 	class PlatformEffector2DuseOneWayGroupingGet1 : ConditionalAutomation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -50,7 +50,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Platform Effector 2D/Set Use One Way Grouping" )]
+	[Automation( "Effectors/Platform Effector 2D/Set Use One Way Grouping" )]
 	class PlatformEffector2DuseOneWayGroupingSet1 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -63,7 +63,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Platform Effector 2D/Get Use Side Friction" )]
+	[Automation( "Effectors/Platform Effector 2D/Get Use Side Friction" )]
 	class PlatformEffector2DuseSideFrictionGet2 : ConditionalAutomation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -80,7 +80,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Platform Effector 2D/Set Use Side Friction" )]
+	[Automation( "Effectors/Platform Effector 2D/Set Use Side Friction" )]
 	class PlatformEffector2DuseSideFrictionSet2 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -93,7 +93,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Platform Effector 2D/Get Use Side Bounce" )]
+	[Automation( "Effectors/Platform Effector 2D/Get Use Side Bounce" )]
 	class PlatformEffector2DuseSideBounceGet3 : ConditionalAutomation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -110,7 +110,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Platform Effector 2D/Set Use Side Bounce" )]
+	[Automation( "Effectors/Platform Effector 2D/Set Use Side Bounce" )]
 	class PlatformEffector2DuseSideBounceSet3 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -123,7 +123,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Platform Effector 2D/Get Surface Arc" )]
+	[Automation( "Effectors/Platform Effector 2D/Get Surface Arc" )]
 	class PlatformEffector2DsurfaceArcGet4 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -137,7 +137,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Platform Effector 2D/Set Surface Arc" )]
+	[Automation( "Effectors/Platform Effector 2D/Set Surface Arc" )]
 	class PlatformEffector2DsurfaceArcSet4 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -150,7 +150,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Platform Effector 2D/Get Side Arc" )]
+	[Automation( "Effectors/Platform Effector 2D/Get Side Arc" )]
 	class PlatformEffector2DsideArcGet5 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;
@@ -164,7 +164,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Platform Effector 2D/Set Side Arc" )]
+	[Automation( "Effectors/Platform Effector 2D/Set Side Arc" )]
 	class PlatformEffector2DsideArcSet5 : Automation {
 
 		public UnityEngine.PlatformEffector2D Instance;

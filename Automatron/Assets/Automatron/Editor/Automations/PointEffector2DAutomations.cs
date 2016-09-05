@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Point Effector 2D/Get Force Magnitude" )]
+	[Automation( "Effectors/Point Effector 2D/Get Force Magnitude" )]
 	class PointEffector2DforceMagnitudeGet0 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Force Magnitude" )]
+	[Automation( "Effectors/Point Effector 2D/Set Force Magnitude" )]
 	class PointEffector2DforceMagnitudeSet0 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Get Force Variation" )]
+	[Automation( "Effectors/Point Effector 2D/Get Force Variation" )]
 	class PointEffector2DforceVariationGet1 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Force Variation" )]
+	[Automation( "Effectors/Point Effector 2D/Set Force Variation" )]
 	class PointEffector2DforceVariationSet1 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Get Distance Scale" )]
+	[Automation( "Effectors/Point Effector 2D/Get Distance Scale" )]
 	class PointEffector2DdistanceScaleGet2 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Distance Scale" )]
+	[Automation( "Effectors/Point Effector 2D/Set Distance Scale" )]
 	class PointEffector2DdistanceScaleSet2 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Get Drag" )]
+	[Automation( "Effectors/Point Effector 2D/Get Drag" )]
 	class PointEffector2DdragGet3 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Drag" )]
+	[Automation( "Effectors/Point Effector 2D/Set Drag" )]
 	class PointEffector2DdragSet3 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Get Angular Drag" )]
+	[Automation( "Effectors/Point Effector 2D/Get Angular Drag" )]
 	class PointEffector2DangularDragGet4 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Angular Drag" )]
+	[Automation( "Effectors/Point Effector 2D/Set Angular Drag" )]
 	class PointEffector2DangularDragSet4 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Get Force Source" )]
+	[Automation( "Effectors/Point Effector 2D/Get Force Source" )]
 	class PointEffector2DforceSourceGet5 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Force Source" )]
+	[Automation( "Effectors/Point Effector 2D/Set Force Source" )]
 	class PointEffector2DforceSourceSet5 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Get Force Target" )]
+	[Automation( "Effectors/Point Effector 2D/Get Force Target" )]
 	class PointEffector2DforceTargetGet6 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Force Target" )]
+	[Automation( "Effectors/Point Effector 2D/Set Force Target" )]
 	class PointEffector2DforceTargetSet6 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Get Force Mode" )]
+	[Automation( "Effectors/Point Effector 2D/Get Force Mode" )]
 	class PointEffector2DforceModeGet7 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Point Effector 2D/Set Force Mode" )]
+	[Automation( "Effectors/Point Effector 2D/Set Force Mode" )]
 	class PointEffector2DforceModeSet7 : Automation {
 
 		public UnityEngine.PointEffector2D Instance;

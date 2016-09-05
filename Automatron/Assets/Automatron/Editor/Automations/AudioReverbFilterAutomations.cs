@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Audio Reverb Filter/Get Reverb Preset" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Reverb Preset" )]
 	class AudioReverbFilterreverbPresetGet0 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Reverb Preset" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Reverb Preset" )]
 	class AudioReverbFilterreverbPresetSet0 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Dry Level" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Dry Level" )]
 	class AudioReverbFilterdryLevelGet1 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Dry Level" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Dry Level" )]
 	class AudioReverbFilterdryLevelSet1 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Room" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Room" )]
 	class AudioReverbFilterroomGet2 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Room" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Room" )]
 	class AudioReverbFilterroomSet2 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Room HF" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Room HF" )]
 	class AudioReverbFilterroomHFGet3 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Room HF" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Room HF" )]
 	class AudioReverbFilterroomHFSet3 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Room Rolloff" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Room Rolloff" )]
 	class AudioReverbFilterroomRolloffGet4 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Room Rolloff" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Room Rolloff" )]
 	class AudioReverbFilterroomRolloffSet4 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Decay Time" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Decay Time" )]
 	class AudioReverbFilterdecayTimeGet5 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Decay Time" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Decay Time" )]
 	class AudioReverbFilterdecayTimeSet5 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Decay HF Ratio" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Decay HF Ratio" )]
 	class AudioReverbFilterdecayHFRatioGet6 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Decay HF Ratio" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Decay HF Ratio" )]
 	class AudioReverbFilterdecayHFRatioSet6 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Reflections Level" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Reflections Level" )]
 	class AudioReverbFilterreflectionsLevelGet7 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Reflections Level" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Reflections Level" )]
 	class AudioReverbFilterreflectionsLevelSet7 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -219,7 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Reflections Delay" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Reflections Delay" )]
 	class AudioReverbFilterreflectionsDelayGet8 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Reflections Delay" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Reflections Delay" )]
 	class AudioReverbFilterreflectionsDelaySet8 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -246,7 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Reverb Level" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Reverb Level" )]
 	class AudioReverbFilterreverbLevelGet9 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -260,7 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Reverb Level" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Reverb Level" )]
 	class AudioReverbFilterreverbLevelSet9 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -273,7 +273,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Reverb Delay" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Reverb Delay" )]
 	class AudioReverbFilterreverbDelayGet10 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -287,7 +287,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Reverb Delay" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Reverb Delay" )]
 	class AudioReverbFilterreverbDelaySet10 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -300,7 +300,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Diffusion" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Diffusion" )]
 	class AudioReverbFilterdiffusionGet11 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -314,7 +314,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Diffusion" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Diffusion" )]
 	class AudioReverbFilterdiffusionSet11 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -327,7 +327,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Density" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Density" )]
 	class AudioReverbFilterdensityGet12 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -341,7 +341,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Density" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Density" )]
 	class AudioReverbFilterdensitySet12 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -354,7 +354,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Hf Reference" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Hf Reference" )]
 	class AudioReverbFilterhfReferenceGet13 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -368,7 +368,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Hf Reference" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Hf Reference" )]
 	class AudioReverbFilterhfReferenceSet13 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -381,7 +381,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Room LF" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Room LF" )]
 	class AudioReverbFilterroomLFGet14 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -395,7 +395,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Room LF" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Room LF" )]
 	class AudioReverbFilterroomLFSet14 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -408,7 +408,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Get Lf Reference" )]
+	[Automation( "Audio/Audio Reverb Filter/Get Lf Reference" )]
 	class AudioReverbFilterlfReferenceGet15 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;
@@ -422,7 +422,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Filter/Set Lf Reference" )]
+	[Automation( "Audio/Audio Reverb Filter/Set Lf Reference" )]
 	class AudioReverbFilterlfReferenceSet15 : Automation {
 
 		public UnityEngine.AudioReverbFilter Instance;

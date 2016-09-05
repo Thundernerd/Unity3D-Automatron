@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Distance Joint 2D/Get Auto Configure Distance" )]
+	[Automation( "Joints/Distance Joint 2D/Get Auto Configure Distance" )]
 	class DistanceJoint2DautoConfigureDistanceGet0 : ConditionalAutomation {
 
 		public UnityEngine.DistanceJoint2D Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Distance Joint 2D/Set Auto Configure Distance" )]
+	[Automation( "Joints/Distance Joint 2D/Set Auto Configure Distance" )]
 	class DistanceJoint2DautoConfigureDistanceSet0 : Automation {
 
 		public UnityEngine.DistanceJoint2D Instance;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Distance Joint 2D/Get Distance" )]
+	[Automation( "Joints/Distance Joint 2D/Get Distance" )]
 	class DistanceJoint2DdistanceGet1 : Automation {
 
 		public UnityEngine.DistanceJoint2D Instance;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Distance Joint 2D/Set Distance" )]
+	[Automation( "Joints/Distance Joint 2D/Set Distance" )]
 	class DistanceJoint2DdistanceSet1 : Automation {
 
 		public UnityEngine.DistanceJoint2D Instance;
@@ -60,7 +60,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Distance Joint 2D/Get Max Distance Only" )]
+	[Automation( "Joints/Distance Joint 2D/Get Max Distance Only" )]
 	class DistanceJoint2DmaxDistanceOnlyGet2 : ConditionalAutomation {
 
 		public UnityEngine.DistanceJoint2D Instance;
@@ -77,7 +77,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Distance Joint 2D/Set Max Distance Only" )]
+	[Automation( "Joints/Distance Joint 2D/Set Max Distance Only" )]
 	class DistanceJoint2DmaxDistanceOnlySet2 : Automation {
 
 		public UnityEngine.DistanceJoint2D Instance;

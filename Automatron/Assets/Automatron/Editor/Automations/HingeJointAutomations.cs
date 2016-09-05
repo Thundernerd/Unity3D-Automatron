@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Hinge Joint/Get Motor" )]
+	[Automation( "Joints/Hinge Joint/Get Motor" )]
 	class HingeJointmotorGet0 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Set Motor" )]
+	[Automation( "Joints/Hinge Joint/Set Motor" )]
 	class HingeJointmotorSet0 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Get Limits" )]
+	[Automation( "Joints/Hinge Joint/Get Limits" )]
 	class HingeJointlimitsGet1 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Set Limits" )]
+	[Automation( "Joints/Hinge Joint/Set Limits" )]
 	class HingeJointlimitsSet1 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Get Spring" )]
+	[Automation( "Joints/Hinge Joint/Get Spring" )]
 	class HingeJointspringGet2 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Set Spring" )]
+	[Automation( "Joints/Hinge Joint/Set Spring" )]
 	class HingeJointspringSet2 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Get Use Motor" )]
+	[Automation( "Joints/Hinge Joint/Get Use Motor" )]
 	class HingeJointuseMotorGet3 : ConditionalAutomation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -101,7 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Hinge Joint/Set Use Motor" )]
+	[Automation( "Joints/Hinge Joint/Set Use Motor" )]
 	class HingeJointuseMotorSet3 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -114,7 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Get Use Limits" )]
+	[Automation( "Joints/Hinge Joint/Get Use Limits" )]
 	class HingeJointuseLimitsGet4 : ConditionalAutomation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -131,7 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Hinge Joint/Set Use Limits" )]
+	[Automation( "Joints/Hinge Joint/Set Use Limits" )]
 	class HingeJointuseLimitsSet4 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -144,7 +144,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Get Use Spring" )]
+	[Automation( "Joints/Hinge Joint/Get Use Spring" )]
 	class HingeJointuseSpringGet5 : ConditionalAutomation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -161,7 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Hinge Joint/Set Use Spring" )]
+	[Automation( "Joints/Hinge Joint/Set Use Spring" )]
 	class HingeJointuseSpringSet5 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -174,7 +174,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Get Velocity" )]
+	[Automation( "Joints/Hinge Joint/Get Velocity" )]
 	class HingeJointvelocityGet6 : Automation {
 
 		public UnityEngine.HingeJoint Instance;
@@ -188,7 +188,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Hinge Joint/Get Angle" )]
+	[Automation( "Joints/Hinge Joint/Get Angle" )]
 	class HingeJointangleGet7 : Automation {
 
 		public UnityEngine.HingeJoint Instance;

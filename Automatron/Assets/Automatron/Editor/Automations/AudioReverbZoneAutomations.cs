@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Audio Reverb Zone/Get Min Distance" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Min Distance" )]
 	class AudioReverbZoneminDistanceGet0 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Min Distance" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Min Distance" )]
 	class AudioReverbZoneminDistanceSet0 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Max Distance" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Max Distance" )]
 	class AudioReverbZonemaxDistanceGet1 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Max Distance" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Max Distance" )]
 	class AudioReverbZonemaxDistanceSet1 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Reverb Preset" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Reverb Preset" )]
 	class AudioReverbZonereverbPresetGet2 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -71,7 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Reverb Preset" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Reverb Preset" )]
 	class AudioReverbZonereverbPresetSet2 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -84,7 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Room" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Room" )]
 	class AudioReverbZoneroomGet3 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -98,7 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Room" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Room" )]
 	class AudioReverbZoneroomSet3 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -111,7 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Room HF" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Room HF" )]
 	class AudioReverbZoneroomHFGet4 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -125,7 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Room HF" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Room HF" )]
 	class AudioReverbZoneroomHFSet4 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -138,7 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Room LF" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Room LF" )]
 	class AudioReverbZoneroomLFGet5 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -152,7 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Room LF" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Room LF" )]
 	class AudioReverbZoneroomLFSet5 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -165,7 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Decay Time" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Decay Time" )]
 	class AudioReverbZonedecayTimeGet6 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -179,7 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Decay Time" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Decay Time" )]
 	class AudioReverbZonedecayTimeSet6 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -192,7 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Decay HF Ratio" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Decay HF Ratio" )]
 	class AudioReverbZonedecayHFRatioGet7 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -206,7 +206,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Decay HF Ratio" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Decay HF Ratio" )]
 	class AudioReverbZonedecayHFRatioSet7 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -219,7 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Reflections" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Reflections" )]
 	class AudioReverbZonereflectionsGet8 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Reflections" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Reflections" )]
 	class AudioReverbZonereflectionsSet8 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -246,7 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Reflections Delay" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Reflections Delay" )]
 	class AudioReverbZonereflectionsDelayGet9 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -260,7 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Reflections Delay" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Reflections Delay" )]
 	class AudioReverbZonereflectionsDelaySet9 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -273,7 +273,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Reverb" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Reverb" )]
 	class AudioReverbZonereverbGet10 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -287,7 +287,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Reverb" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Reverb" )]
 	class AudioReverbZonereverbSet10 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -300,7 +300,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Reverb Delay" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Reverb Delay" )]
 	class AudioReverbZonereverbDelayGet11 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -314,7 +314,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Reverb Delay" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Reverb Delay" )]
 	class AudioReverbZonereverbDelaySet11 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -327,7 +327,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get HF Reference" )]
+	[Automation( "Audio/Audio Reverb Zone/Get HF Reference" )]
 	class AudioReverbZoneHFReferenceGet12 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -341,7 +341,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set HF Reference" )]
+	[Automation( "Audio/Audio Reverb Zone/Set HF Reference" )]
 	class AudioReverbZoneHFReferenceSet12 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -354,7 +354,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get LF Reference" )]
+	[Automation( "Audio/Audio Reverb Zone/Get LF Reference" )]
 	class AudioReverbZoneLFReferenceGet13 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -368,7 +368,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set LF Reference" )]
+	[Automation( "Audio/Audio Reverb Zone/Set LF Reference" )]
 	class AudioReverbZoneLFReferenceSet13 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -381,7 +381,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Room Rolloff Factor" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Room Rolloff Factor" )]
 	class AudioReverbZoneroomRolloffFactorGet14 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -395,7 +395,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Room Rolloff Factor" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Room Rolloff Factor" )]
 	class AudioReverbZoneroomRolloffFactorSet14 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -408,7 +408,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Diffusion" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Diffusion" )]
 	class AudioReverbZonediffusionGet15 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -422,7 +422,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Diffusion" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Diffusion" )]
 	class AudioReverbZonediffusionSet15 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -435,7 +435,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Get Density" )]
+	[Automation( "Audio/Audio Reverb Zone/Get Density" )]
 	class AudioReverbZonedensityGet16 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;
@@ -449,7 +449,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Audio Reverb Zone/Set Density" )]
+	[Automation( "Audio/Audio Reverb Zone/Set Density" )]
 	class AudioReverbZonedensitySet16 : Automation {
 
 		public UnityEngine.AudioReverbZone Instance;

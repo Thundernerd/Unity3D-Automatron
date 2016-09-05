@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Sprite Renderer/Get Sprite" )]
+	[Automation( "Rendeders/Sprite Renderer/Get Sprite" )]
 	class SpriteRendererspriteGet0 : Automation {
 
 		public UnityEngine.SpriteRenderer Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Sprite Renderer/Set Sprite" )]
+	[Automation( "Rendeders/Sprite Renderer/Set Sprite" )]
 	class SpriteRendererspriteSet0 : Automation {
 
 		public UnityEngine.SpriteRenderer Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Sprite Renderer/Get Color" )]
+	[Automation( "Rendeders/Sprite Renderer/Get Color" )]
 	class SpriteRenderercolorGet1 : Automation {
 
 		public UnityEngine.SpriteRenderer Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Sprite Renderer/Set Color" )]
+	[Automation( "Rendeders/Sprite Renderer/Set Color" )]
 	class SpriteRenderercolorSet1 : Automation {
 
 		public UnityEngine.SpriteRenderer Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Sprite Renderer/Get Flip X" )]
+	[Automation( "Rendeders/Sprite Renderer/Get Flip X" )]
 	class SpriteRendererflipXGet2 : ConditionalAutomation {
 
 		public UnityEngine.SpriteRenderer Instance;
@@ -74,7 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Sprite Renderer/Set Flip X" )]
+	[Automation( "Rendeders/Sprite Renderer/Set Flip X" )]
 	class SpriteRendererflipXSet2 : Automation {
 
 		public UnityEngine.SpriteRenderer Instance;
@@ -87,7 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Sprite Renderer/Get Flip Y" )]
+	[Automation( "Rendeders/Sprite Renderer/Get Flip Y" )]
 	class SpriteRendererflipYGet3 : ConditionalAutomation {
 
 		public UnityEngine.SpriteRenderer Instance;
@@ -104,7 +104,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Sprite Renderer/Set Flip Y" )]
+	[Automation( "Rendeders/Sprite Renderer/Set Flip Y" )]
 	class SpriteRendererflipYSet3 : Automation {
 
 		public UnityEngine.SpriteRenderer Instance;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Line Renderer/Get Use World Space" )]
+	[Automation( "Rendeders/Line Renderer/Get Use World Space" )]
 	class LineRendereruseWorldSpaceGet0 : ConditionalAutomation {
 
 		public UnityEngine.LineRenderer Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Line Renderer/Set Use World Space" )]
+	[Automation( "Rendeders/Line Renderer/Set Use World Space" )]
 	class LineRendereruseWorldSpaceSet0 : Automation {
 
 		public UnityEngine.LineRenderer Instance;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Line Renderer/Set Width" )]
+	[Automation( "Rendeders/Line Renderer/Set Width" )]
 	class LineRendererSetWidth0 : Automation {
 
 		public UnityEngine.LineRenderer Instance;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Line Renderer/Set Colors" )]
+	[Automation( "Rendeders/Line Renderer/Set Colors" )]
 	class LineRendererSetColors1 : Automation {
 
 		public UnityEngine.LineRenderer Instance;
@@ -61,7 +61,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Line Renderer/Set Vertex Count" )]
+	[Automation( "Rendeders/Line Renderer/Set Vertex Count" )]
 	class LineRendererSetVertexCount2 : Automation {
 
 		public UnityEngine.LineRenderer Instance;
@@ -74,7 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Line Renderer/Set Position" )]
+	[Automation( "Rendeders/Line Renderer/Set Position" )]
 	class LineRendererSetPosition3 : Automation {
 
 		public UnityEngine.LineRenderer Instance;
@@ -88,7 +88,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Line Renderer/Set Positions" )]
+	[Automation( "Rendeders/Line Renderer/Set Positions" )]
 	class LineRendererSetPositions4 : Automation {
 
 		public UnityEngine.LineRenderer Instance;

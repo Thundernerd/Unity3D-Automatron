@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Anchored Joint 2D/Get Anchor" )]
+	[Automation( "Joints/Anchored Joint 2D/Get Anchor" )]
 	class AnchoredJoint2DanchorGet0 : Automation {
 
 		public UnityEngine.AnchoredJoint2D Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Anchored Joint 2D/Set Anchor" )]
+	[Automation( "Joints/Anchored Joint 2D/Set Anchor" )]
 	class AnchoredJoint2DanchorSet0 : Automation {
 
 		public UnityEngine.AnchoredJoint2D Instance;
@@ -30,7 +30,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Anchored Joint 2D/Get Connected Anchor" )]
+	[Automation( "Joints/Anchored Joint 2D/Get Connected Anchor" )]
 	class AnchoredJoint2DconnectedAnchorGet1 : Automation {
 
 		public UnityEngine.AnchoredJoint2D Instance;
@@ -44,7 +44,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Anchored Joint 2D/Set Connected Anchor" )]
+	[Automation( "Joints/Anchored Joint 2D/Set Connected Anchor" )]
 	class AnchoredJoint2DconnectedAnchorSet1 : Automation {
 
 		public UnityEngine.AnchoredJoint2D Instance;
@@ -57,7 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Anchored Joint 2D/Get Auto Configure Connected Anchor" )]
+	[Automation( "Joints/Anchored Joint 2D/Get Auto Configure Connected Anchor" )]
 	class AnchoredJoint2DautoConfigureConnectedAnchorGet2 : ConditionalAutomation {
 
 		public UnityEngine.AnchoredJoint2D Instance;
@@ -74,7 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Anchored Joint 2D/Set Auto Configure Connected Anchor" )]
+	[Automation( "Joints/Anchored Joint 2D/Set Auto Configure Connected Anchor" )]
 	class AnchoredJoint2DautoConfigureConnectedAnchorSet2 : Automation {
 
 		public UnityEngine.AnchoredJoint2D Instance;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Slider Joint 2D/Get Auto Configure Angle" )]
+	[Automation( "Joints/Slider Joint 2D/Get Auto Configure Angle" )]
 	class SliderJoint2DautoConfigureAngleGet0 : ConditionalAutomation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -20,7 +20,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Slider Joint 2D/Set Auto Configure Angle" )]
+	[Automation( "Joints/Slider Joint 2D/Set Auto Configure Angle" )]
 	class SliderJoint2DautoConfigureAngleSet0 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -33,7 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Angle" )]
+	[Automation( "Joints/Slider Joint 2D/Get Angle" )]
 	class SliderJoint2DangleGet1 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -47,7 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Set Angle" )]
+	[Automation( "Joints/Slider Joint 2D/Set Angle" )]
 	class SliderJoint2DangleSet1 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -60,7 +60,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Use Motor" )]
+	[Automation( "Joints/Slider Joint 2D/Get Use Motor" )]
 	class SliderJoint2DuseMotorGet2 : ConditionalAutomation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -77,7 +77,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Slider Joint 2D/Set Use Motor" )]
+	[Automation( "Joints/Slider Joint 2D/Set Use Motor" )]
 	class SliderJoint2DuseMotorSet2 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -90,7 +90,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Use Limits" )]
+	[Automation( "Joints/Slider Joint 2D/Get Use Limits" )]
 	class SliderJoint2DuseLimitsGet3 : ConditionalAutomation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -107,7 +107,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Slider Joint 2D/Set Use Limits" )]
+	[Automation( "Joints/Slider Joint 2D/Set Use Limits" )]
 	class SliderJoint2DuseLimitsSet3 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -120,7 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Motor" )]
+	[Automation( "Joints/Slider Joint 2D/Get Motor" )]
 	class SliderJoint2DmotorGet4 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -134,7 +134,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Set Motor" )]
+	[Automation( "Joints/Slider Joint 2D/Set Motor" )]
 	class SliderJoint2DmotorSet4 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -147,7 +147,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Limits" )]
+	[Automation( "Joints/Slider Joint 2D/Get Limits" )]
 	class SliderJoint2DlimitsGet5 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -161,7 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Set Limits" )]
+	[Automation( "Joints/Slider Joint 2D/Set Limits" )]
 	class SliderJoint2DlimitsSet5 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -174,7 +174,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Limit State" )]
+	[Automation( "Joints/Slider Joint 2D/Get Limit State" )]
 	class SliderJoint2DlimitStateGet6 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -188,7 +188,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Reference Angle" )]
+	[Automation( "Joints/Slider Joint 2D/Get Reference Angle" )]
 	class SliderJoint2DreferenceAngleGet7 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -202,7 +202,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Joint Translation" )]
+	[Automation( "Joints/Slider Joint 2D/Get Joint Translation" )]
 	class SliderJoint2DjointTranslationGet8 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -216,7 +216,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Joint Speed" )]
+	[Automation( "Joints/Slider Joint 2D/Get Joint Speed" )]
 	class SliderJoint2DjointSpeedGet9 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;
@@ -230,7 +230,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Slider Joint 2D/Get Motor Force" )]
+	[Automation( "Joints/Slider Joint 2D/Get Motor Force" )]
 	class SliderJoint2DGetMotorForce0 : Automation {
 
 		public UnityEngine.SliderJoint2D Instance;

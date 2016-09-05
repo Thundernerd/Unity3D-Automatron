@@ -3,7 +3,7 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Billboard Renderer/Get Billboard" )]
+	[Automation( "Rendeders/Billboard Renderer/Get Billboard" )]
 	class BillboardRendererbillboardGet0 : Automation {
 
 		public UnityEngine.BillboardRenderer Instance;
@@ -17,7 +17,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Billboard Renderer/Set Billboard" )]
+	[Automation( "Rendeders/Billboard Renderer/Set Billboard" )]
 	class BillboardRendererbillboardSet0 : Automation {
 
 		public UnityEngine.BillboardRenderer Instance;
