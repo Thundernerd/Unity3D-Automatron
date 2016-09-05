@@ -112,6 +112,7 @@ namespace TNRD.Automatron {
         private GUIContent resetContent;
 
         private EditorCoroutine executionRoutine = null;
+        private EditorCoroutine lookAtRoutine = null;
 
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
@@ -136,6 +137,12 @@ namespace TNRD.Automatron {
 
         protected override void OnBeforeSerialize() {
             entryId = entryPoint.ID;
+
+            if ( lookAtRoutine != null ) {
+                lookAtRoutine.Stop();
+            }
+
+            var controls = GetControls<AutomationError>();
         }
 
         protected override void OnAfterSerialized() {
@@ -268,6 +275,7 @@ namespace TNRD.Automatron {
             }
 
             Globals.LastError = null;
+            Globals.LastAutomation = null;
             Globals.IsError = false;
             Globals.IsExecuting = true;
 
@@ -290,6 +298,7 @@ namespace TNRD.Automatron {
                         moveNext = routine.MoveNext();
                     } catch ( Exception ex ) {
                         Globals.LastError = ex;
+                        Globals.LastAutomation = item;
                         Globals.IsError = true;
                         item.ErrorType = ErrorType.Generic;
                         break;
@@ -307,6 +316,7 @@ namespace TNRD.Automatron {
             }
 
             if ( Globals.IsError ) {
+                LookAtAutomationSmooth( Globals.LastAutomation );
                 AddControl( new AutomationError( Globals.LastError ) );
             }
 
@@ -371,6 +381,40 @@ namespace TNRD.Automatron {
             instance.Position = mpos;
 
             AddControl( instance );
+        }
+
+        private void LookAtAutomation( Automation auto ) {
+            var rect = auto.Rectangle;
+            Globals.Camera -= rect.position - new Vector2( Size.x / 2, Size.y / 2 ) + ( rect.size / 2 );
+        }
+
+        private void LookAtAutomationSmooth( Automation auto ) {
+            if ( lookAtRoutine != null ) {
+                lookAtRoutine.Stop();
+                lookAtRoutine = null;
+            }
+            var rect = auto.Rectangle;
+            var npos = rect.position - new Vector2( Size.x / 2, Size.y / 2 ) + ( rect.size / 2 );
+
+            lookAtRoutine = EditorCoroutine.Start( LookAtAutomationSmoothAsync( npos ) );
+        }
+
+        private IEnumerator LookAtAutomationSmoothAsync( Vector2 pos ) {
+            var dest = Globals.Camera - pos;
+            var timer = 0f;
+            var tween = new TinyTween.Vector2Tween();
+            tween.Start( Globals.Camera, dest, 1, TinyTween.ScaleFuncs.CubicEaseOut );
+
+            while ( timer < 1 ) {
+                tween.Update( timer );
+                Globals.Camera = tween.CurrentValue;
+                timer += DeltaTime;
+                yield return null;
+            }
+
+            Globals.Camera = dest;
+
+            yield break;
         }
     }
 }

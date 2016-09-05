@@ -347,11 +347,13 @@ namespace TNRD.Automatron {
                     } catch ( System.ArgumentException ex ) {
                         item.LineIn.Color = new Color( 0.72f, 0.72f, 0.047f, 1 );
                         ErrorType = ErrorType.Arugment;
+                        Globals.LastAutomation = this;
                         Globals.LastError = ex;
                         Globals.IsError = true;
                     } catch ( System.Exception ex ) {
                         item.LineIn.Color = new Color( 0.36f, 0.0235f, 0.0235f, 1 );
                         ErrorType = ErrorType.Generic;
+                        Globals.LastAutomation = this;
                         Globals.LastError = ex;
                         Globals.IsError = true;
                     }
