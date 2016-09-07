@@ -1,17 +1,16 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using TNRD.Editor.Core;
-using System;
 using System.Linq;
+using System.Reflection;
+using TNRD.Automatron.Automations;
 using TNRD.Automatron.Drawers;
 using TNRD.Editor;
-using TNRD.Editor.Utilities;
-using TNRD.Automatron.Automations;
+using TNRD.Editor.Core;
 using TNRD.Editor.Serialization;
-using System.Collections;
 using TNRD.Editor.Windows;
-using System.Reflection;
+using UnityEditor;
+using UnityEngine;
 
 namespace TNRD.Automatron {
 
@@ -141,8 +140,6 @@ namespace TNRD.Automatron {
             if ( lookAtRoutine != null ) {
                 lookAtRoutine.Stop();
             }
-
-            var controls = GetControls<AutomationError>();
         }
 
         protected override void OnAfterSerialized() {
@@ -178,7 +175,7 @@ namespace TNRD.Automatron {
         protected override void OnGUI() {
             EditorGUILayout.BeginHorizontal( EditorStyles.toolbar );
             if ( GUILayout.Button( "File", EditorStyles.toolbarDropDown ) ) {
-
+                
             }
 
             if ( GUILayout.Button( "Automations", EditorStyles.toolbarDropDown ) ) {
@@ -239,11 +236,17 @@ namespace TNRD.Automatron {
         }
 
         private void ShowAutomationPopup() {
-            var items = new List<FancyPopup.TreeItem>();
+            //var items = new List<FancyPopup.TreeItem>();
+            //foreach ( var item in automations ) {
+            //    items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
+            //}
+            //FancyPopup.ShowAsContext( items.ToArray() );
+
+            var items = new List<AutomationPopup.TreeItem>();
             foreach ( var item in automations ) {
-                items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
+                items.Add( new AutomationPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
             }
-            FancyPopup.ShowAsContext( items.ToArray() );
+            AutomationPopup.ShowAsContext( items );
         }
 
         private void CreateAutomation( Vector2 mpos, Type type ) {
