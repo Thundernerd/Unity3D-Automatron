@@ -257,8 +257,6 @@ namespace TNRD.Automatron {
         private bool isAm = true;
         private bool isHours = true;
 
-        private string[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-
         private void Initialize( Rect rect, DateTime value ) {
             rect.position = GUIUtility.GUIToScreenPoint( rect.position );
             position = rect;

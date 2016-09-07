@@ -6,21 +6,7 @@ namespace TNRD.Automatron.Drawers {
 
     [CustomDrawer( typeof( RectOffset ) )]
     public class RectOffsetDrawer : AutomationDrawer {
-
-        private GUIContent[] horizontalNames;
-        private GUIContent[] verticalNames;
-
-        public override void Initialize() {
-            horizontalNames = new GUIContent[] {
-                new GUIContent("left"),
-                new GUIContent("right")
-            };
-            verticalNames = new GUIContent[] {
-                new GUIContent("top"),
-                new GUIContent("bottom")
-            };
-        }
-
+        
         public override float GetFieldHeight() {
             // 18 for label, 34 for the rect field
             return 54;
@@ -32,8 +18,6 @@ namespace TNRD.Automatron.Drawers {
             EditorGUI.HandlePrefixLabel( rect, GetControlRect(), new GUIContent( name ) );
 
             var r = (RectOffset)value ?? new RectOffset();
-            var h = new float[] { r.left, r.right };
-            var v = new float[] { r.top, r.bottom };
 
             var hrect = GetControlRect();
             r.left = DrawBox( hrect, "left", r.left, 0 );
