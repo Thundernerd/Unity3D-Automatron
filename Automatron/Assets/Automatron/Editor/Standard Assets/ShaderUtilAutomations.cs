@@ -94,21 +94,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Shader Util/Get Tex Dim" )]
-	class ShaderUtilGetTexDim5 : Automation {
-
-		public UnityEngine.Shader s;
-		public System.Int32 propertyIdx;
-		[ReadOnly]
-		public UnityEditor.ShaderUtil.ShaderPropertyTexDim Result;
-
-		public override IEnumerator Execute() {
-			Result = UnityEditor.ShaderUtil.GetTexDim(s,propertyIdx);
-			yield break;
-		}
-
-	}
-
 	[Automation( "Shader Util/Is Shader Property Hidden" )]
 	class ShaderUtilIsShaderPropertyHidden6 : ConditionalAutomation {
 

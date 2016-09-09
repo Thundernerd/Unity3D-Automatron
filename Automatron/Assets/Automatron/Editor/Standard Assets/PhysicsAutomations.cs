@@ -124,7 +124,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
-			Result = UnityEngine.Physics.solverIterationCount;
+			Result = UnityEngine.Physics.defaultSolverIterations;
 			yield break;
 		}
 
@@ -136,7 +136,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 Value;
 
 		public override IEnumerator Execute() {
-			UnityEngine.Physics.solverIterationCount = Value;
+			UnityEngine.Physics.defaultSolverIterations = Value;
 			yield break;
 		}
 
