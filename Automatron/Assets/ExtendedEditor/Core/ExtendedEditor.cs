@@ -27,6 +27,8 @@ namespace TNRD.Editor.Core {
             }
         }
 
+        public string EditorName;
+
         public ExtendedAssets Assets = new ExtendedAssets();
 
         [IgnoreSerialization]
@@ -356,7 +358,7 @@ namespace TNRD.Editor.Core {
                 id = string.Format( "tnrd_editor_{0}_{1}", title, index );
             }
 
-            inst.name = id;
+            inst.EditorName = id;
 
             return inst;
         }
@@ -378,13 +380,14 @@ namespace TNRD.Editor.Core {
             }
 
             var b64 = Serializer.SerializeToB64( sEditor );
-            EditorPrefs.SetString( name, b64 );
+            EditorPrefs.SetString( EditorName, b64 );
         }
 
-        public void OnAfterDeserialize() {
-            if ( EditorPrefs.HasKey( name ) ) {
-                var b64 = EditorPrefs.GetString( name );
-                EditorPrefs.DeleteKey( name );
+        public void OnEnable() {
+            if ( EditorPrefs.HasKey( EditorName ) ) {
+
+                var b64 = EditorPrefs.GetString( EditorName );
+                EditorPrefs.DeleteKey( EditorName );
 
                 Input = new ExtendedInput();
 
@@ -409,6 +412,10 @@ namespace TNRD.Editor.Core {
                     item.SortControls();
                 }
             }
+        }
+
+        public void OnAfterDeserialize() {
+
         }
 
         private int GenerateID() {
