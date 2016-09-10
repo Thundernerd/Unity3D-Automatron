@@ -34,6 +34,8 @@ namespace TNRD.Automatron {
                 var name = item.Attributes.ElementAt( 0 ).Name;
                 if ( !automations.ContainsKey( name ) ) {
                     automations.Add( name, item.AutomationType );
+                } else {
+                    Debug.Log( "Double for " + name );
                 }
             }
         }
@@ -97,6 +99,9 @@ namespace TNRD.Automatron {
             wnd.Show( true );
         }
 
+        public static float DeltaTime = 0;
+        private float previousTime = 0;
+
         private QueueStart entryPoint;
         [RequireSerialization]
         private string entryId;
@@ -107,6 +112,7 @@ namespace TNRD.Automatron {
         private GUIContent resetContent;
 
         private EditorCoroutine executionRoutine = null;
+        private EditorCoroutine lookAtRoutine = null;
 
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
@@ -131,6 +137,12 @@ namespace TNRD.Automatron {
 
         protected override void OnBeforeSerialize() {
             entryId = entryPoint.ID;
+
+            if ( lookAtRoutine != null ) {
+                lookAtRoutine.Stop();
+            }
+
+            var controls = GetControls<AutomationError>();
         }
 
         protected override void OnAfterSerialized() {
@@ -154,6 +166,13 @@ namespace TNRD.Automatron {
             stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
             resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
             trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
+        }
+
+        protected override void OnUpdate() {
+            var time = Time.realtimeSinceStartup;
+            // Min-Maxing this to make sure it's between 0 and 1/60
+            DeltaTime = Mathf.Min( Mathf.Max( 0, time - previousTime ), 0.016f );
+            previousTime = time;
         }
 
         protected override void OnGUI() {
@@ -224,8 +243,6 @@ namespace TNRD.Automatron {
             foreach ( var item in automations ) {
                 items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
             }
-
-            var pos = new Rect( Event.current.mousePosition, new Vector2( 230, 40 ) );
             FancyPopup.ShowAsContext( items.ToArray() );
         }
 
@@ -258,8 +275,16 @@ namespace TNRD.Automatron {
             }
 
             Globals.LastError = null;
+            Globals.LastAutomation = null;
             Globals.IsError = false;
             Globals.IsExecuting = true;
+
+            var errors = GetControls<AutomationError>();
+            foreach ( var item in errors ) {
+                item.Remove();
+            }
+
+            yield return null;
 
             foreach ( var item in list ) {
                 item.PrepareForExecute();
@@ -273,6 +298,7 @@ namespace TNRD.Automatron {
                         moveNext = routine.MoveNext();
                     } catch ( Exception ex ) {
                         Globals.LastError = ex;
+                        Globals.LastAutomation = item;
                         Globals.IsError = true;
                         item.ErrorType = ErrorType.Generic;
                         break;
@@ -287,6 +313,11 @@ namespace TNRD.Automatron {
 
                 item.Progress = 1;
                 if ( Globals.IsError ) break;
+            }
+
+            if ( Globals.IsError ) {
+                LookAtAutomationSmooth( Globals.LastAutomation );
+                AddControl( new AutomationError( Globals.LastError ) );
             }
 
             Globals.IsExecuting = false;
@@ -350,6 +381,40 @@ namespace TNRD.Automatron {
             instance.Position = mpos;
 
             AddControl( instance );
+        }
+
+        private void LookAtAutomation( Automation auto ) {
+            var rect = auto.Rectangle;
+            Globals.Camera -= rect.position - new Vector2( Size.x / 2, Size.y / 2 ) + ( rect.size / 2 );
+        }
+
+        private void LookAtAutomationSmooth( Automation auto ) {
+            if ( lookAtRoutine != null ) {
+                lookAtRoutine.Stop();
+                lookAtRoutine = null;
+            }
+            var rect = auto.Rectangle;
+            var npos = rect.position - new Vector2( Size.x / 2, Size.y / 2 ) + ( rect.size / 2 );
+
+            lookAtRoutine = EditorCoroutine.Start( LookAtAutomationSmoothAsync( npos ) );
+        }
+
+        private IEnumerator LookAtAutomationSmoothAsync( Vector2 pos ) {
+            var dest = Globals.Camera - pos;
+            var timer = 0f;
+            var tween = new TinyTween.Vector2Tween();
+            tween.Start( Globals.Camera, dest, 1, TinyTween.ScaleFuncs.CubicEaseOut );
+
+            while ( timer < 1 ) {
+                tween.Update( timer );
+                Globals.Camera = tween.CurrentValue;
+                timer += DeltaTime;
+                yield return null;
+            }
+
+            Globals.Camera = dest;
+
+            yield break;
         }
     }
 }

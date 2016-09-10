@@ -22,6 +22,7 @@ namespace TNRD.Automatron.Automations {
                 try {
                     moveNext = myRoutine.MoveNext();
                 } catch ( Exception ex ) {
+                    Globals.LastAutomation = this;
                     Globals.LastError = ex;
                     Globals.IsError = true;
                     ErrorType = ErrorType.Generic;
@@ -38,6 +39,10 @@ namespace TNRD.Automatron.Automations {
             var condition = GetConditionalResult();
             var list = condition ? TrueList : FalseList;
 
+            if ( list == null ) {
+                yield break;
+            }
+
             foreach ( var item in list ) {
                 item.PrepareForExecute();
                 if ( Globals.IsError ) break;
@@ -50,6 +55,7 @@ namespace TNRD.Automatron.Automations {
                     try {
                         moveNext = routine.MoveNext();
                     } catch ( Exception ex ) {
+                        Globals.LastAutomation = item;
                         Globals.LastError = ex;
                         Globals.IsError = true;
                         item.ErrorType = ErrorType.Generic;
@@ -139,6 +145,7 @@ namespace TNRD.Automatron.Automations {
                     try {
                         moveNext = myRoutine.MoveNext();
                     } catch ( Exception ex ) {
+                        Globals.LastAutomation = this;
                         Globals.LastError = ex;
                         Globals.IsError = true;
                         ErrorType = ErrorType.Generic;
@@ -168,6 +175,7 @@ namespace TNRD.Automatron.Automations {
                         try {
                             moveNext = routine.MoveNext();
                         } catch ( Exception ex ) {
+                            Globals.LastAutomation = item;
                             Globals.LastError = ex;
                             Globals.IsError = true;
                             item.ErrorType = ErrorType.Generic;

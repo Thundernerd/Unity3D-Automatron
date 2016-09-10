@@ -36,5 +36,9 @@ namespace TNRD.Automatron {
             lastY += height + 2;
             return rect;
         }
+
+        protected void ResetRect() {
+            lastY = totalRect.y;
+        }
     }
 }

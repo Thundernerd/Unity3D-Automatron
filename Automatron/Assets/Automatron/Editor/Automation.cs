@@ -70,13 +70,29 @@ namespace TNRD.Automatron {
         private void GetName() {
             name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
             if ( name.Contains( "/" ) && name.Length > 35 ) {
-                var index = name.IndexOf( '/' );
-                var lastIndex = name.LastIndexOf( '/' );
-                name = name.Remove( index, lastIndex - index );
-            }
-            if ( name.Contains( "/" ) && name.Length > 35 ) {
-                var index = name.LastIndexOf( '/' );
-                name = name.Substring( index + 1 );
+                var foundFirst = false;
+                int ind = -1;
+                for ( int i = name.Length - 1; i >= 0; i-- ) {
+                    if ( name[i] == '/' ) {
+                        if ( !foundFirst ) {
+                            ind = i;
+                            foundFirst = true;
+                            continue;
+                        }
+
+                        ind = i;
+                        break;
+                    }
+                }
+
+                if ( ind != -1 ) {
+                    name = name.Substring( ind + 1 );
+                }
+
+                if ( name.Contains( "/" ) && name.Length > 35 ) {
+                    var index = name.LastIndexOf( '/' );
+                    name = name.Substring( index + 1 );
+                }
             }
         }
 
@@ -331,11 +347,13 @@ namespace TNRD.Automatron {
                     } catch ( System.ArgumentException ex ) {
                         item.LineIn.Color = new Color( 0.72f, 0.72f, 0.047f, 1 );
                         ErrorType = ErrorType.Arugment;
+                        Globals.LastAutomation = this;
                         Globals.LastError = ex;
                         Globals.IsError = true;
                     } catch ( System.Exception ex ) {
                         item.LineIn.Color = new Color( 0.36f, 0.0235f, 0.0235f, 1 );
                         ErrorType = ErrorType.Generic;
+                        Globals.LastAutomation = this;
                         Globals.LastError = ex;
                         Globals.IsError = true;
                     }

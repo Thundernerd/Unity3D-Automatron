@@ -17,5 +17,6 @@ namespace TNRD.Automatron {
         public static AutomationLine TempAutomationLine;
 
         public static Exception LastError;
+        public static Automation LastAutomation;
     }
 }
