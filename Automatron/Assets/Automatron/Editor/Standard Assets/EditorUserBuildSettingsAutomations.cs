@@ -752,56 +752,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Editor User Build Settings/Get Blackberry Build Subtarget" )]
-	class EditorUserBuildSettingsblackberryBuildSubtargetGet28 : Automation {
-
-		[ReadOnly]
-		public UnityEditor.MobileTextureSubtarget Result;
-
-		public override IEnumerator Execute() {
-			Result = UnityEditor.EditorUserBuildSettings.blackberryBuildSubtarget;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Editor User Build Settings/Set Blackberry Build Subtarget" )]
-	class EditorUserBuildSettingsblackberryBuildSubtargetSet28 : Automation {
-
-		public UnityEditor.MobileTextureSubtarget Value;
-
-		public override IEnumerator Execute() {
-			UnityEditor.EditorUserBuildSettings.blackberryBuildSubtarget = Value;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Editor User Build Settings/Get Blackberry Build Type" )]
-	class EditorUserBuildSettingsblackberryBuildTypeGet29 : Automation {
-
-		[ReadOnly]
-		public UnityEditor.BlackBerryBuildType Result;
-
-		public override IEnumerator Execute() {
-			Result = UnityEditor.EditorUserBuildSettings.blackberryBuildType;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Editor User Build Settings/Set Blackberry Build Type" )]
-	class EditorUserBuildSettingsblackberryBuildTypeSet29 : Automation {
-
-		public UnityEditor.BlackBerryBuildType Value;
-
-		public override IEnumerator Execute() {
-			UnityEditor.EditorUserBuildSettings.blackberryBuildType = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Editor User Build Settings/Get Tizen Build Subtarget" )]
 	class EditorUserBuildSettingstizenBuildSubtargetGet30 : Automation {
 
@@ -932,31 +882,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public override IEnumerator Execute() {
 			UnityEditor.EditorUserBuildSettings.development = Value;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Editor User Build Settings/Get Web GL Optimization Level" )]
-	class EditorUserBuildSettingswebGLOptimizationLevelGet36 : Automation {
-
-		[ReadOnly]
-		public System.Int32 Result;
-
-		public override IEnumerator Execute() {
-			Result = UnityEditor.EditorUserBuildSettings.webGLOptimizationLevel;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Editor User Build Settings/Set Web GL Optimization Level" )]
-	class EditorUserBuildSettingswebGLOptimizationLevelSet36 : Automation {
-
-		public System.Int32 Value;
-
-		public override IEnumerator Execute() {
-			UnityEditor.EditorUserBuildSettings.webGLOptimizationLevel = Value;
 			yield break;
 		}
 

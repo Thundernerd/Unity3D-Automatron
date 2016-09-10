@@ -553,7 +553,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
-			Result = Instance.solverIterationCount;
+			Result = Instance.solverIterations;
 			yield break;
 		}
 
@@ -566,7 +566,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 Value;
 
 		public override IEnumerator Execute() {
-			Instance.solverIterationCount = Value;
+			Instance.solverIterations = Value;
 			yield break;
 		}
 
