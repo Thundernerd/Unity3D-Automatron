@@ -408,36 +408,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Light/Get Already Lightmapped" )]
-	class LightalreadyLightmappedGet15 : ConditionalAutomation {
-
-		public UnityEngine.Light Instance;
-		[ReadOnly]
-		public System.Boolean Result;
-
-		public override IEnumerator ExecuteCondition() {
-			Result = Instance.alreadyLightmapped;
-			yield break;
-		}
-
-		public override bool GetConditionalResult() {
-			return Result;
-		}
-	}
-
-	[Automation( "Light/Set Already Lightmapped" )]
-	class LightalreadyLightmappedSet15 : Automation {
-
-		public UnityEngine.Light Instance;
-		public System.Boolean Value;
-
-		public override IEnumerator Execute() {
-			Instance.alreadyLightmapped = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Light/Get Culling Mask" )]
 	class LightcullingMaskGet16 : Automation {
 

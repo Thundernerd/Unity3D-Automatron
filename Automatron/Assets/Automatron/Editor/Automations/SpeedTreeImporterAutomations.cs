@@ -101,33 +101,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Importers/Speed Tree Importer/Get Spec Color" )]
-	class SpeedTreeImporterspecColorGet4 : Automation {
-
-		public UnityEditor.SpeedTreeImporter Instance;
-		[ReadOnly]
-		public UnityEngine.Color Result;
-
-		public override IEnumerator Execute() {
-			Result = Instance.specColor;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Importers/Speed Tree Importer/Set Spec Color" )]
-	class SpeedTreeImporterspecColorSet4 : Automation {
-
-		public UnityEditor.SpeedTreeImporter Instance;
-		public UnityEngine.Color Value;
-
-		public override IEnumerator Execute() {
-			Instance.specColor = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Importers/Speed Tree Importer/Get Hue Variation" )]
 	class SpeedTreeImporterhueVariationGet5 : Automation {
 
@@ -150,33 +123,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public override IEnumerator Execute() {
 			Instance.hueVariation = Value;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Importers/Speed Tree Importer/Get Shininess" )]
-	class SpeedTreeImportershininessGet6 : Automation {
-
-		public UnityEditor.SpeedTreeImporter Instance;
-		[ReadOnly]
-		public System.Single Result;
-
-		public override IEnumerator Execute() {
-			Result = Instance.shininess;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Importers/Speed Tree Importer/Set Shininess" )]
-	class SpeedTreeImportershininessSet6 : Automation {
-
-		public UnityEditor.SpeedTreeImporter Instance;
-		public System.Single Value;
-
-		public override IEnumerator Execute() {
-			Instance.shininess = Value;
 			yield break;
 		}
 

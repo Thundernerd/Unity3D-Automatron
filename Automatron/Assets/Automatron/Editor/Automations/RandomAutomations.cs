@@ -3,31 +3,6 @@ using System.Collections;
 namespace TNRD.Automatron.Automations.Generated {
 #pragma warning disable 0649
 
-	[Automation( "Random/Get Seed" )]
-	class RandomseedGet0 : Automation {
-
-		[ReadOnly]
-		public System.Int32 Result;
-
-		public override IEnumerator Execute() {
-			Result = UnityEngine.Random.seed;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Random/Set Seed" )]
-	class RandomseedSet0 : Automation {
-
-		public System.Int32 Value;
-
-		public override IEnumerator Execute() {
-			UnityEngine.Random.seed = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Random/Get Value" )]
 	class RandomvalueGet1 : Automation {
 

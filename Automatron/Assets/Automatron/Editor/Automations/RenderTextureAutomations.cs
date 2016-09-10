@@ -218,66 +218,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Render Texture/Get Is Cubemap" )]
-	class RenderTextureisCubemapGet8 : ConditionalAutomation {
-
-		public UnityEngine.RenderTexture Instance;
-		[ReadOnly]
-		public System.Boolean Result;
-
-		public override IEnumerator ExecuteCondition() {
-			Result = Instance.isCubemap;
-			yield break;
-		}
-
-		public override bool GetConditionalResult() {
-			return Result;
-		}
-	}
-
-	[Automation( "Render Texture/Set Is Cubemap" )]
-	class RenderTextureisCubemapSet8 : Automation {
-
-		public UnityEngine.RenderTexture Instance;
-		public System.Boolean Value;
-
-		public override IEnumerator Execute() {
-			Instance.isCubemap = Value;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Render Texture/Get Is Volume" )]
-	class RenderTextureisVolumeGet9 : ConditionalAutomation {
-
-		public UnityEngine.RenderTexture Instance;
-		[ReadOnly]
-		public System.Boolean Result;
-
-		public override IEnumerator ExecuteCondition() {
-			Result = Instance.isVolume;
-			yield break;
-		}
-
-		public override bool GetConditionalResult() {
-			return Result;
-		}
-	}
-
-	[Automation( "Render Texture/Set Is Volume" )]
-	class RenderTextureisVolumeSet9 : Automation {
-
-		public UnityEngine.RenderTexture Instance;
-		public System.Boolean Value;
-
-		public override IEnumerator Execute() {
-			Instance.isVolume = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Render Texture/Get Volume Depth" )]
 	class RenderTexturevolumeDepthGet10 : Automation {
 

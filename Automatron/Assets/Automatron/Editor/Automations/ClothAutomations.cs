@@ -307,33 +307,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Cloth/Get Use Continuous Collision" )]
-	class ClothuseContinuousCollisionGet12 : Automation {
-
-		public UnityEngine.Cloth Instance;
-		[ReadOnly]
-		public System.Single Result;
-
-		public override IEnumerator Execute() {
-			Result = Instance.useContinuousCollision;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Cloth/Set Use Continuous Collision" )]
-	class ClothuseContinuousCollisionSet12 : Automation {
-
-		public UnityEngine.Cloth Instance;
-		public System.Single Value;
-
-		public override IEnumerator Execute() {
-			Instance.useContinuousCollision = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Cloth/Get Use Virtual Particles" )]
 	class ClothuseVirtualParticlesGet13 : Automation {
 
@@ -437,36 +410,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public override IEnumerator Execute() {
 			Instance.worldAccelerationScale = Value;
-			yield break;
-		}
-
-	}
-
-	[Automation( "Cloth/Get Solver Frequency" )]
-	class ClothsolverFrequencyGet17 : ConditionalAutomation {
-
-		public UnityEngine.Cloth Instance;
-		[ReadOnly]
-		public System.Boolean Result;
-
-		public override IEnumerator ExecuteCondition() {
-			Result = Instance.solverFrequency;
-			yield break;
-		}
-
-		public override bool GetConditionalResult() {
-			return Result;
-		}
-	}
-
-	[Automation( "Cloth/Set Solver Frequency" )]
-	class ClothsolverFrequencySet17 : Automation {
-
-		public UnityEngine.Cloth Instance;
-		public System.Boolean Value;
-
-		public override IEnumerator Execute() {
-			Instance.solverFrequency = Value;
 			yield break;
 		}
 

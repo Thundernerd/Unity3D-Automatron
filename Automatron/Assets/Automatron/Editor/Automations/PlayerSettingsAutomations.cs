@@ -1504,34 +1504,6 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Player Settings/Get Stereoscopic 3D" )]
-	class PlayerSettingsstereoscopic3DGet58 : ConditionalAutomation {
-
-		[ReadOnly]
-		public System.Boolean Result;
-
-		public override IEnumerator ExecuteCondition() {
-			Result = UnityEditor.PlayerSettings.stereoscopic3D;
-			yield break;
-		}
-
-		public override bool GetConditionalResult() {
-			return Result;
-		}
-	}
-
-	[Automation( "Player Settings/Set Stereoscopic 3D" )]
-	class PlayerSettingsstereoscopic3DSet58 : Automation {
-
-		public System.Boolean Value;
-
-		public override IEnumerator Execute() {
-			UnityEditor.PlayerSettings.stereoscopic3D = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Player Settings/Set Property Int" )]
 	class PlayerSettingsSetPropertyInt0 : Automation {
 

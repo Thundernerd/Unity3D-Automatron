@@ -382,36 +382,6 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
-	[Automation( "Rendeders/Renderer/Get Use Light Probes" )]
-	class RendereruseLightProbesGet16 : ConditionalAutomation {
-
-		public UnityEngine.Renderer Instance;
-		[ReadOnly]
-		public System.Boolean Result;
-
-		public override IEnumerator ExecuteCondition() {
-			Result = Instance.useLightProbes;
-			yield break;
-		}
-
-		public override bool GetConditionalResult() {
-			return Result;
-		}
-	}
-
-	[Automation( "Rendeders/Renderer/Set Use Light Probes" )]
-	class RendereruseLightProbesSet16 : Automation {
-
-		public UnityEngine.Renderer Instance;
-		public System.Boolean Value;
-
-		public override IEnumerator Execute() {
-			Instance.useLightProbes = Value;
-			yield break;
-		}
-
-	}
-
 	[Automation( "Rendeders/Renderer/Get Probe Anchor" )]
 	class RendererprobeAnchorGet17 : Automation {
 
