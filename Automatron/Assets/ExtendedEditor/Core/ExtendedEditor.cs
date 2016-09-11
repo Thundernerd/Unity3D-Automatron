@@ -51,6 +51,9 @@ namespace TNRD.Editor.Core {
 
         private static ReflectionData rData = new ReflectionData( typeof( ExtendedWindow ) );
         private static ReflectionData pData = new ReflectionData( typeof( ExtendedPopup ) );
+        
+        public static float DeltaTime = 0;
+        private float previousTime = 0;
 
         [RequireSerialization]
         private int windowIDs = 0;
@@ -180,6 +183,11 @@ namespace TNRD.Editor.Core {
             for ( int i = 0; i < windowsToProcess.Count; i++ ) {
                 rData.Update.Invoke( windowsToProcess[i], null );
             }
+
+            var time = Time.realtimeSinceStartup;
+            // Min-Maxing this to make sure it's between 0 and 1/60
+            DeltaTime = Mathf.Min( Mathf.Max( 0, time - previousTime ), 0.016f );
+            previousTime = time;
         }
 
         private void PopupGUI( int id ) {

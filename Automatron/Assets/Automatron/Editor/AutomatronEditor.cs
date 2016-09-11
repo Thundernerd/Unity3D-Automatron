@@ -92,9 +92,6 @@ namespace TNRD.Automatron {
         }
         #endregion
 
-        public static float DeltaTime = 0;
-        private float previousTime = 0;
-
         public string Name;
 
         private QueueStart entryPoint;
@@ -234,13 +231,6 @@ namespace TNRD.Automatron {
             stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
             resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
             trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
-        }
-
-        protected override void OnUpdate() {
-            var time = Time.realtimeSinceStartup;
-            // Min-Maxing this to make sure it's between 0 and 1/60
-            DeltaTime = Mathf.Min( Mathf.Max( 0, time - previousTime ), 0.016f );
-            previousTime = time;
         }
 
         protected override void OnGUI() {
@@ -471,7 +461,7 @@ namespace TNRD.Automatron {
             while ( timer < 1 ) {
                 tween.Update( timer );
                 Globals.Camera = tween.CurrentValue;
-                timer += DeltaTime;
+                timer += ExtendedEditor.DeltaTime;
                 yield return null;
             }
 
