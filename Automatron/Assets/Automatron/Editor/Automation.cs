@@ -48,6 +48,11 @@ namespace TNRD.Automatron {
         [IgnoreSerialization]
         public ErrorType ErrorType = ErrorType.None;
 
+        [IgnoreSerialization]
+        public bool HasRun = false;
+        [IgnoreSerialization]
+        public bool IsInLoop = false;
+
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
 
@@ -292,12 +297,22 @@ namespace TNRD.Automatron {
             return sortedFields[id];
         }
 
-        public virtual void GetAutomations( ref List<Automation> automations ) {
+        public virtual List<Automation> GetNextAutomations() {
+            var list = new List<Automation>();
+
+            if ( LineOut != null ) {
+                LineOut.Right.GetAutomations( ref list, false );
+            }
+
+            return list;
+        }
+
+        public void GetAutomations( ref List<Automation> automations, bool goNext ) {
             foreach ( var field in fields ) {
                 if ( field.LineIn != null ) {
                     var parent = field.LineIn.Left.Parent;
-                    if ( !automations.Contains( parent ) ) {
-                        parent.GetAutomations( ref automations );
+                    if ( ( !parent.HasRun && !IsInLoop ) && !automations.Contains( parent ) ) {
+                        parent.GetAutomations( ref automations, true );
                     }
                 }
             }
@@ -306,12 +321,14 @@ namespace TNRD.Automatron {
                 automations.Add( this );
             }
 
-            if ( LineOut != null ) {
-                LineOut.Right.GetAutomations( ref automations );
+            if ( goNext && LineOut != null ) {
+                LineOut.Right.GetAutomations( ref automations, true );
             }
         }
 
         public virtual void Reset() {
+            HasRun = false;
+            IsInLoop = false;
             Progress = 0;
             ErrorType = ErrorType.None;
 

@@ -141,8 +141,6 @@ namespace TNRD.Automatron {
             if ( lookAtRoutine != null ) {
                 lookAtRoutine.Stop();
             }
-
-            var controls = GetControls<AutomationError>();
         }
 
         protected override void OnAfterSerialized() {
@@ -258,20 +256,9 @@ namespace TNRD.Automatron {
         }
 
         private IEnumerator ExecuteAutomationsAsync() {
-            var entries = new List<QueueStart>() {
-                entryPoint
-            };
-
-            var entryPoints = GetControls<QueueStart>();
-            foreach ( var item in entryPoints ) {
-                if ( !entries.Contains( item ) ) {
-                    entries.Add( item );
-                }
-            }
-
-            var list = new List<Automation>();
-            foreach ( var item in entries ) {
-                list.AddRange( GetAutomations( item ) );
+            var autos = GetControls<Automation>();
+            foreach ( var item in autos ) {
+                item.Reset();
             }
 
             Globals.LastError = null;
@@ -286,33 +273,87 @@ namespace TNRD.Automatron {
 
             yield return null;
 
-            foreach ( var item in list ) {
-                item.PrepareForExecute();
-                if ( Globals.IsError ) break;
+            var entries = new List<QueueStart>() {
+                entryPoint
+            };
 
-                var routine = item.Execute();
+            var entryPoints = GetControls<QueueStart>();
+            foreach ( var item in entryPoints ) {
+                if ( !entries.Contains( item ) ) {
+                    entries.Add( item );
+                }
+            }
+
+            foreach ( var item in entries ) {
+                var automations = item.GetNextAutomations();
+                var loops = new List<LoopableAutomation>();
+                LoopEnd lEnd = null;
+
                 while ( true ) {
-                    var moveNext = false;
+                    if ( automations == null || automations.Count == 0 ) break;
 
-                    try {
-                        moveNext = routine.MoveNext();
-                    } catch ( Exception ex ) {
-                        Globals.LastError = ex;
-                        Globals.LastAutomation = item;
-                        Globals.IsError = true;
-                        item.ErrorType = ErrorType.Generic;
-                        break;
+                    foreach ( var auto in automations ) {
+                        if ( auto is LoopableAutomation ) {
+                            var lAuto = (LoopableAutomation)auto;
+                            if ( !loops.Contains( lAuto ) ) {
+                                loops.Add( lAuto );
+                            }
+                        } else if ( auto is LoopEnd ) {
+                            lEnd = (LoopEnd)auto;
+                        }
+
+                        auto.IsInLoop = loops.Count > 0;
+                        auto.PrepareForExecute();
+                        if ( Globals.IsError ) break;
+
+                        var routine = auto.Execute();
+                        while ( true ) {
+                            var moveNext = false;
+
+                            try {
+                                moveNext = routine.MoveNext();
+                            } catch ( Exception ex ) {
+                                Globals.LastError = ex;
+                                Globals.LastAutomation = auto;
+                                Globals.IsError = true;
+                                auto.ErrorType = ErrorType.Generic;
+                                break;
+                            }
+
+                            if ( !moveNext ) break;
+
+                            yield return routine.Current;
+                        }
+
+                        if ( Globals.IsError ) break;
+                        if ( !( auto is LoopableAutomation ) && !( auto is LoopEnd ) ) {
+                            auto.Progress = 1;
+                            auto.HasRun = true;
+                        }
                     }
 
-                    if ( !moveNext ) break;
+                    if ( Globals.IsError ) break;
 
-                    yield return routine.Current;
+                    if ( lEnd != null ) {
+                        var lastLoop = loops[loops.Count - 1];
+                        var done = lastLoop.IsDone();
+
+                        lEnd.Progress = lastLoop.Progress;
+                        if ( done ) {
+                            automations = lEnd.GetNextAutomations();
+                            loops.RemoveAt( loops.Count - 1 );
+                            lEnd = null;
+                        } else {
+                            automations = lastLoop.GetNextAutomations();
+                            automations.Insert( 0, lastLoop );
+                        }
+                    } else {
+                        automations = automations[automations.Count - 1].GetNextAutomations();
+                    }
                 }
 
                 if ( Globals.IsError ) break;
-
-                item.Progress = 1;
-                if ( Globals.IsError ) break;
+                yield return null;
             }
 
             if ( Globals.IsError ) {
@@ -321,56 +362,8 @@ namespace TNRD.Automatron {
             }
 
             Globals.IsExecuting = false;
+
             yield break;
-        }
-
-        public static List<Automation> GetAutomations( Automation start ) {
-            try {
-                var list = new List<Automation>();
-                start.GetAutomations( ref list );
-
-                foreach ( var item in list ) {
-                    item.Reset();
-                }
-
-                var newList = new List<Automation>();
-                for ( int i = 0; i < list.Count; i++ ) {
-                    var item = list[i];
-
-                    newList.Add( item );
-
-                    if ( item is LoopableAutomation ) {
-                        i = FixLoops( list, i );
-                    }
-                }
-
-                return newList;
-            } catch ( Exception ) {
-                Debug.Log( "OH noe!" );
-                throw;
-            }
-        }
-
-        private static int FixLoops( List<Automation> list, int index ) {
-            var loopList = new List<Automation>();
-            var loopStart = (LoopableAutomation)list[index];
-
-            for ( int i = index + 1; i < list.Count; i++ ) {
-                var item = list[i];
-                if ( item is LoopableAutomation ) {
-                    loopList.Add( item );
-                    i = FixLoops( list, i );
-                } else if ( item is LoopEnd ) {
-                    loopList.Add( item );
-                    loopStart.LoopList = loopList;
-                    return i;
-                } else {
-                    loopList.Add( item );
-                }
-            }
-
-            // Improve this
-            throw new Exception( "No loop end found!" );
         }
 
         private void CreateAutomation( object data ) {

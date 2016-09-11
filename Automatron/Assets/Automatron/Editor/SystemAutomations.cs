@@ -13,66 +13,13 @@ namespace TNRD.Automatron.Automations {
 
         public ConditionalLine LineOut2 { get; set; }
 
-        public sealed override IEnumerator Execute() {
-            var myRoutine = ExecuteCondition();
+        protected override void OnDestroy() {
+            base.OnDestroy();
 
-            while ( true ) {
-                var moveNext = false;
-
-                try {
-                    moveNext = myRoutine.MoveNext();
-                } catch ( Exception ex ) {
-                    Globals.LastAutomation = this;
-                    Globals.LastError = ex;
-                    Globals.IsError = true;
-                    ErrorType = ErrorType.Generic;
-                    break;
-                }
-
-                if ( !moveNext ) break;
-
-                yield return myRoutine.Current;
+            if ( LineOut2 != null ) {
+                LineOut2.Remove();
+                LineOut2 = null;
             }
-
-            if ( Globals.IsError ) yield break;
-
-            var condition = GetConditionalResult();
-            var list = condition ? TrueList : FalseList;
-
-            if ( list == null ) {
-                yield break;
-            }
-
-            foreach ( var item in list ) {
-                item.PrepareForExecute();
-                if ( Globals.IsError ) break;
-
-                var routine = item.Execute();
-
-                while ( true ) {
-                    var moveNext = false;
-
-                    try {
-                        moveNext = routine.MoveNext();
-                    } catch ( Exception ex ) {
-                        Globals.LastAutomation = item;
-                        Globals.LastError = ex;
-                        Globals.IsError = true;
-                        item.ErrorType = ErrorType.Generic;
-                        break;
-                    }
-
-                    if ( !moveNext ) break;
-
-                    yield return routine.Current;
-                }
-
-                if ( Globals.IsError ) break;
-
-                item.Progress = 1;
-            }
-
-            yield break;
         }
 
         protected override void OnGUI() {
@@ -104,103 +51,27 @@ namespace TNRD.Automatron.Automations {
             }
         }
 
-        public override void GetAutomations( ref List<Automation> automations ) {
-            foreach ( var field in fields ) {
-                if ( field.LineIn != null ) {
-                    var parent = field.LineIn.Left.Parent;
-                    if ( !automations.Contains( parent ) ) {
-                        parent.GetAutomations( ref automations );
-                    }
+        public override List<Automation> GetNextAutomations() {
+            var list = new List<Automation>();
+            var result = GetConditionalResult();
+
+            if ( result ) {
+                if ( LineOut != null ) {
+                    LineOut.Right.GetAutomations( ref list, false );
+                }
+            } else {
+                if ( LineOut2 != null ) {
+                    LineOut2.Right.GetAutomations( ref list, false );
                 }
             }
 
-            if ( !automations.Contains( this ) ) {
-                automations.Add( this );
-            }
-
-            if ( LineOut != null ) {
-                TrueList = AutomatronEditor.GetAutomations( LineOut.Right );
-            }
-
-            if ( LineOut2 != null ) {
-                FalseList = AutomatronEditor.GetAutomations( LineOut2.Right );
-            }
+            return list;
         }
-
-        public abstract IEnumerator ExecuteCondition();
+        
         public abstract bool GetConditionalResult();
     }
 
     public abstract class LoopableAutomation : Automation {
-
-        public List<Automation> LoopList { get; set; }
-
-        public sealed override IEnumerator Execute() {
-            while ( !IsDone() ) {
-                var myRoutine = ExecuteLoop();
-
-                while ( true ) {
-                    var moveNext = false;
-
-                    try {
-                        moveNext = myRoutine.MoveNext();
-                    } catch ( Exception ex ) {
-                        Globals.LastAutomation = this;
-                        Globals.LastError = ex;
-                        Globals.IsError = true;
-                        ErrorType = ErrorType.Generic;
-                        break;
-                    }
-
-                    if ( !moveNext ) break;
-
-                    yield return myRoutine.Current;
-                }
-
-                if ( Globals.IsError ) break;
-
-                foreach ( var item in LoopList ) {
-                    item.Progress = 0;
-                }
-
-                foreach ( var item in LoopList ) {
-                    item.PrepareForExecute();
-                    if ( Globals.IsError ) break;
-
-                    var routine = item.Execute();
-
-                    while ( true ) {
-                        var moveNext = false;
-
-                        try {
-                            moveNext = routine.MoveNext();
-                        } catch ( Exception ex ) {
-                            Globals.LastAutomation = item;
-                            Globals.LastError = ex;
-                            Globals.IsError = true;
-                            item.ErrorType = ErrorType.Generic;
-                            break;
-                        }
-
-                        if ( !moveNext ) break;
-
-                        yield return routine.Current;
-                    }
-
-                    if ( Globals.IsError ) break;
-
-                    if ( item is LoopEnd ) {
-                        item.Progress = Progress;
-                    } else {
-                        item.Progress = 1;
-                    }
-                }
-
-                yield return null;
-            }
-        }
-
-        public abstract IEnumerator ExecuteLoop();
         public abstract bool IsDone();
     }
 
