@@ -239,7 +239,7 @@ namespace TNRD.Automatron.Generator {
                 builder.AppendLine( "#pragma warning restore 0649" );
                 builder.AppendLine( "}" );
 
-                var path = string.Format( "{0}/Automatron/Editor/Automations/Generated/{1}Automations.cs", Application.dataPath, type.Name );
+                var path = string.Format( "{0}/Automatron/Editor/Automations/{1}Automations.cs", Application.dataPath, type.Name );
                 Debug.LogFormat( "Writing {0}", type.Name );
                 File.WriteAllText( path, builder.ToString() );
                 amountDone++;
@@ -283,11 +283,7 @@ namespace TNRD.Automatron.Generator {
                 }
 
                 builder.AppendLine();
-                if ( isConditional ) {
-                    builder.AppendLine( "\t\tpublic override IEnumerator ExecuteCondition() {" );
-                } else {
-                    builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                }
+                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
 
                 if ( m.ReturnType != typeof( void ) ) {
                     builder.Append( "\t\t\tResult = " );
@@ -362,11 +358,8 @@ namespace TNRD.Automatron.Generator {
 
                     builder.AppendLine();
 
-                    if ( isBool ) {
-                        builder.AppendLine( "\t\tpublic override IEnumerator ExecuteCondition() {" );
-                    } else {
-                        builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                    }
+
+                    builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                     builder.Append( "\t\t\tResult = " );
                     if ( isStatic ) {
                         builder.AppendFormat( "{0}.{1}", GetTypeName( type ), p.Name );
@@ -450,11 +443,7 @@ namespace TNRD.Automatron.Generator {
 
                 builder.AppendLine();
 
-                if ( isBool ) {
-                    builder.AppendLine( "\t\tpublic override IEnumerator ExecuteCondition() {" );
-                } else {
-                    builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
-                }
+                builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                 builder.Append( "\t\t\tResult = " );
                 if ( f.IsStatic ) {
                     builder.AppendFormat( "{0}.{1}", GetTypeName( type ), f.Name );
