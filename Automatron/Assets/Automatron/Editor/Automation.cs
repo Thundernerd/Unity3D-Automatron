@@ -42,7 +42,7 @@ namespace TNRD.Automatron {
         public float Progress;
 
         [IgnoreSerialization]
-        public AutomationLine LineIn;
+        public List<AutomationLine> LinesIn = new List<AutomationLine>();
         [IgnoreSerialization]
         public AutomationLine LineOut;
 
@@ -115,9 +115,10 @@ namespace TNRD.Automatron {
                 }
             }
 
-            if ( LineIn != null ) {
-                LineIn.Remove();
-                LineIn = null;
+            if ( LinesIn.Count > 0 ) {
+                for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
+                    LinesIn[i].Remove();
+                }
             }
 
             if ( LineOut != null ) {
@@ -157,9 +158,10 @@ namespace TNRD.Automatron {
         }
 
         private void RemoveIncomingLines() {
-            if ( LineIn != null ) {
-                LineIn.Remove();
-                LineIn = null;
+            if ( LinesIn.Count > 0 ) {
+                for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
+                    LinesIn[i].Remove();
+                }
             }
 
             foreach ( var item in fields ) {
@@ -233,20 +235,21 @@ namespace TNRD.Automatron {
 
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     if ( lArrow.Contains( Input.MousePosition ) ) {
-                        if ( LineIn != null ) {
-                            LineIn.Remove();
-                            LineIn = null;
+                        var line = AutomationLine.HookLineIn( this );
+                        if (LinesIn.Contains(line)) {
+                            LinesIn.Remove( line );
                         }
 
-                        LineIn = AutomationLine.HookLineIn( this );
-                        Window.AddControl( LineIn );
+                        LinesIn.Add( line );
+                        Window.AddControl( line );
                         Input.Use();
                     }
                 } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
                     if ( lArrow.Contains( Input.MousePosition ) ) {
-                        if ( LineIn != null ) {
-                            LineIn.Remove();
-                            LineIn = null;
+                        if ( LinesIn.Count > 0 ) {
+                            for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
+                                LinesIn[i].Remove();
+                            }
                         }
 
                         Input.Use();
