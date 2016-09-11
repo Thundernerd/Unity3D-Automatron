@@ -120,8 +120,8 @@ namespace TNRD.Automatron {
             AutomatronSerializer.Save( this );
         }
 
-        public void LoadAutomatron( string name ) {
-            var a = AutomatronSerializer.Load( name );
+        public void LoadAutomatron( string path ) {
+            var a = AutomatronSerializer.Load( path );
             if ( a == null ) {
 
                 return;
@@ -236,7 +236,22 @@ namespace TNRD.Automatron {
         protected override void OnGUI() {
             EditorGUILayout.BeginHorizontal( EditorStyles.toolbar );
             if ( GUILayout.Button( "File", EditorStyles.toolbarDropDown ) ) {
+                var gm = GenericMenuBuilder.CreateMenu();
+                gm.AddItem( "New Automatron", false, () => {
 
+                } );
+                gm.AddItem( "Open Automatron", false, () => {
+                    AddWindow( new AutomatronMenu() );
+                    Remove();
+                } );
+                gm.AddSeparator();
+                gm.AddItem( "Save Automatron", false, () => {
+                    AutomatronSerializer.Save( this );
+                } );
+                gm.AddItem( "Save Automatron As..", false, null );
+                gm.AddSeparator();
+                gm.AddItem( "Settings", false, null );
+                gm.ShowAsContext();
             }
 
             if ( GUILayout.Button( "Automations", EditorStyles.toolbarDropDown ) ) {

@@ -36,14 +36,12 @@ namespace TNRD.Automatron {
 
     public class AutomatronSerializer {
 
-        public static SerializableAutomatron Load( string name ) {
-            var path = Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder );
-            var fpath = Path.Combine( path, name + ".cfg" );
-            if ( !File.Exists( fpath ) ) {
+        public static SerializableAutomatron Load( string path ) {
+            if ( !File.Exists( path ) ) {
                 return null;
             }
 
-            var b64 = File.ReadAllText( fpath );
+            var b64 = File.ReadAllText( path );
             var automatron = Deserializer.Deserialize<SerializableAutomatron>( b64 );
             return automatron;
         }
