@@ -92,19 +92,14 @@ namespace TNRD.Automatron {
         }
         #endregion
 
-        [MenuItem( "Window/Automatron" )]
-        private static void Init() {
-            var wnd = CreateEditor( "Automatron" );
-            wnd.minSize = new Vector2( 960, 540 );
-            wnd.Show( true );
-        }
-
         public static float DeltaTime = 0;
         private float previousTime = 0;
 
+        public string Name;
+
         private QueueStart entryPoint;
         [RequireSerialization]
-        private string entryId;
+        public string EntryId;
 
         private GUIContent executeContent;
         private GUIContent stopContent;
@@ -114,20 +109,95 @@ namespace TNRD.Automatron {
         private EditorCoroutine executionRoutine = null;
         private EditorCoroutine lookAtRoutine = null;
 
+        public void NewAutomatron( string name ) {
+            Name = name;
+
+            entryPoint = new QueueStart() {
+                IsInitial = true, Position = WindowRect.center
+            };
+            AddControl( entryPoint );
+
+            EntryId = entryPoint.ID;
+            Globals.Camera = new Vector2();
+
+            AutomatronSerializer.Save( this );
+        }
+
+        public void LoadAutomatron( string name ) {
+            var a = AutomatronSerializer.Load( name );
+            if ( a == null ) {
+
+                return;
+            }
+
+            Globals.Camera = a.Camera;
+            Name = a.Name;
+
+            foreach ( var item in a.Automations ) {
+                var type = Type.GetType( item.Type );
+                var pos = item.Position;
+
+                var instance = (Automation)Activator.CreateInstance( type );
+                instance.Position = pos;
+
+                AddControl( instance );
+                instance.ID = item.ID;
+
+                if ( item.ID == a.EntryID ) {
+                    entryPoint = (QueueStart)instance;
+                    EntryId = entryPoint.ID;
+                }
+            }
+
+            var automations = GetControls<Automation>();
+            foreach ( var item in a.Lines ) {
+                if ( item.LineType == ELineType.FieldLine ) {
+                    var left = automations.Where( auto => auto.HasField( item.IdLeft ) ).FirstOrDefault();
+                    var right = automations.Where( auto => auto.HasField( item.IdRight ) ).FirstOrDefault();
+
+                    if ( left == null || right == null ) continue;
+
+                    var line = new FieldLine( left.GetField( item.IdLeft ), right.GetField( item.IdRight ) );
+                    AddControl( line );
+                } else {
+                    var left = automations.Where( auto => auto.ID == item.IdLeft ).FirstOrDefault();
+                    var right = automations.Where( auto => auto.ID == item.IdRight ).FirstOrDefault();
+
+                    if ( left == null || right == null ) continue;
+
+                    BezierLine line = null;
+
+                    switch ( item.LineType ) {
+                        case ELineType.AutomationLine:
+                            line = new AutomationLine( left, right );
+                            break;
+                        case ELineType.ConditionalLine:
+                            line = new ConditionalLine( (ConditionalAutomation)left, right );
+                            break;
+                    }
+
+                    if ( line != null ) {
+                        AddControl( line );
+                        line.ID = item.ID;
+                    }
+                }
+            }
+
+            var id = GetControlID();
+            if ( id < a.ControlID ) {
+                var amount = a.ControlID - id;
+                for ( int i = 0; i < amount; i++ ) {
+                    GetControlID();
+                }
+            }
+        }
+
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
             WindowSettings.IsFullscreen = true;
 
-            entryPoint = new QueueStart() {
-                IsInitial = true,
-                Position = WindowRect.center
-            };
-
-            AddControl( entryPoint );
-
             CreateIcons();
 
-            Globals.Camera = new Vector2();
             Globals.IsError = false;
             Globals.IsExecuting = false;
             Globals.LastError = null;
@@ -136,7 +206,7 @@ namespace TNRD.Automatron {
         }
 
         protected override void OnBeforeSerialize() {
-            entryId = entryPoint.ID;
+            EntryId = entryPoint.ID;
 
             if ( lookAtRoutine != null ) {
                 lookAtRoutine.Stop();
@@ -146,7 +216,7 @@ namespace TNRD.Automatron {
         protected override void OnAfterSerialized() {
             var entries = GetControls<QueueStart>();
             foreach ( var item in entries ) {
-                if ( item.ID == entryId ) {
+                if ( item.ID == EntryId ) {
                     entryPoint = item;
                     break;
                 }
