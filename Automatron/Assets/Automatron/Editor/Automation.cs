@@ -356,7 +356,7 @@ namespace TNRD.Automatron {
             foreach ( var field in fields ) {
                 if ( field.LineIn != null ) {
                     var parent = field.LineIn.Left.Parent;
-                    if ( ( !parent.HasRun && !IsInLoop ) && !automations.Contains( parent ) ) {
+                    if ( ( ExecuteEveryLoop || ( !parent.HasRun && !IsInLoop ) ) && !automations.Contains( parent ) ) {
                         parent.GetAutomations( ref automations, true );
                     }
                 }
