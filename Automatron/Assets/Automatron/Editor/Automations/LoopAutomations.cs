@@ -22,7 +22,7 @@ namespace TNRD.Automatron.Automations.Generated {
             Result = null;
         }
 
-        public override IEnumerator ExecuteLoop() {
+        public override IEnumerator Execute() {
             Result = GameObjects[index];
             index++;
             Progress = (float)index / GameObjects.Length;
@@ -49,7 +49,7 @@ namespace TNRD.Automatron.Automations.Generated {
             Result = "";
         }
 
-        public override IEnumerator ExecuteLoop() {
+        public override IEnumerator Execute() {
             Result = Values[index];
             index++;
             Progress = (float)index / Values.Length;
@@ -77,7 +77,7 @@ namespace TNRD.Automatron.Automations.Generated {
             Result = 0;
         }
 
-        public override IEnumerator ExecuteLoop() {
+        public override IEnumerator Execute() {
             Result = index;
             index++;
             Progress = (float)index / Times;
@@ -100,7 +100,13 @@ namespace TNRD.Automatron.Automations.Generated {
 
         private int index = 0;
 
-        public override IEnumerator ExecuteLoop() {
+        public override void Reset() {
+            base.Reset();
+            index = 0;
+            Result = null;
+        }
+
+        public override IEnumerator Execute() {
             Result = Items.GetValue( index );
             index++;
             Progress = (float)index / Items.Length;
@@ -123,7 +129,13 @@ namespace TNRD.Automatron.Automations.Generated {
 
         private int index = 0;
 
-        public override IEnumerator ExecuteLoop() {
+        public override void Reset() {
+            base.Reset();
+            index = 0;
+            Result = null;
+        }
+
+        public override IEnumerator Execute() {
             Result = Items[index];
             index++;
             Progress = (float)index / Items.Count;
