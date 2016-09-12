@@ -274,12 +274,20 @@ namespace TNRD.Automatron.Generator {
 
                 var parameters = m.GetParameters();
                 foreach ( var item in parameters ) {
+                    if ( item.ParameterType == typeof( Type ) ) {
+                        builder.AppendLine( "\t\t[TypeLimit()]" );
+                    }
                     builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
                 }
 
                 if ( m.ReturnType != typeof( void ) ) {
                     builder.AppendLine( "\t\t[ReadOnly]" );
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
+
+                    builder.AppendLine( "\t\tpublic override void Reset() {" );
+                    builder.AppendLine( "\t\t\tbase.Reset();" );
+                    builder.AppendLine( string.Format( "\t\t\tresult = {0};", m.ReturnType.IsValueType ? Activator.CreateInstance( m.ReturnType ).ToString() : "null" ) );
+                    builder.AppendLine( "\t\t}" );
                 }
 
                 builder.AppendLine();
@@ -358,6 +366,10 @@ namespace TNRD.Automatron.Generator {
 
                     builder.AppendLine();
 
+                    builder.AppendLine( "\t\tpublic override void Reset() {" );
+                    builder.AppendLine( "\t\t\tbase.Reset();" );
+                    builder.AppendLine( string.Format( "\t\t\tresult = {0};", p.PropertyType.IsValueType ? Activator.CreateInstance( p.PropertyType ).ToString() : "null" ) );
+                    builder.AppendLine( "\t\t}" );
 
                     builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                     builder.Append( "\t\t\tResult = " );
@@ -442,6 +454,11 @@ namespace TNRD.Automatron.Generator {
                 builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( f.FieldType ) ) );
 
                 builder.AppendLine();
+
+                builder.AppendLine( "\t\tpublic override void Reset() {" );
+                builder.AppendLine( "\t\t\tbase.Reset();" );
+                builder.AppendLine( string.Format( "\t\t\tresult = {0};", f.FieldType.IsValueType ? Activator.CreateInstance( f.FieldType ).ToString() : "null" ) );
+                builder.AppendLine( "\t\t}" );
 
                 builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                 builder.Append( "\t\t\tResult = " );
@@ -571,7 +588,12 @@ namespace TNRD.Automatron.Generator {
             isBusy = true;
             Repaint();
             yield return null;
-            var names = allTypes.Select( t => GetTypeName( t ).Replace( ".", "/" ) ).ToList();
+            var names = allTypes
+                .Select( t => string.Format( "{0}/{1}/{2}", 
+                    t.Assembly.GetName().Name.Replace( ".", "/" ), 
+                    t.Name[0], 
+                    t.Name ) )
+                .OrderBy( t => t );
             yield return null;
             typeNames = names.ToArray();
             yield return null;
