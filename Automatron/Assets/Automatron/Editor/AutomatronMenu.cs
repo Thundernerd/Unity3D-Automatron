@@ -246,7 +246,14 @@ namespace TNRD.Automatron {
             GUILayout.Space( 55 );
 
             EditorGUILayout.LabelField( "Name", labelStyle, GUILayout.Height( 28 ) );
+            var nId = GUIUtility.GetControlID( FocusType.Passive ) + 1;
             automatronName = EditorGUILayout.TextField( automatronName, textboxStyle, GUILayout.Height( 24 ), GUILayout.Width( area.width / 2 ) );
+
+            if ( GUIUtility.keyboardControl == nId && anim == 1 ) {
+                if ( Input.KeyReleased( KeyCode.KeypadEnter ) || Input.KeyReleased( KeyCode.Return ) ) {
+                    createAutomatron = true;
+                }
+            }
 
             var path = Path.Combine( automatronPath, automatronName + ".acfg" );
             if ( File.Exists( path ) ) {
