@@ -30,6 +30,7 @@ namespace TNRD.Automatron {
         private Vector2 scroll = new Vector2();
 
         private string automatronName = "";
+        private string automatronPath = "";
         private bool createAutomatron = false;
 
         private int target = 0;
@@ -140,7 +141,7 @@ namespace TNRD.Automatron {
                 for ( int i = 0; i < configs.Count; i++ ) {
                     var p = configs[i];
                     var l = Path.GetFileNameWithoutExtension( p );
-                    var s = p.Replace( Application.dataPath, "" ).Replace( "\\", "/" );
+                    var s = p.Replace( "\\", "/" );
 
                     GUILayout.Space( 5 );
                     var r = EditorGUILayout.GetControlRect( false, 48 );
@@ -208,6 +209,27 @@ namespace TNRD.Automatron {
             var path = Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) + automatronName + ".acfg";
             if ( File.Exists( path ) ) {
                 EditorGUILayout.LabelField( string.Format( "'{0}' already exists. Proceeding will overwrite it", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
+            } else {
+                GUILayout.Space( 22 );
+            }
+
+            EditorGUILayout.LabelField( "Path", labelStyle, GUILayout.Height( 28 ) );
+            var r = EditorGUILayout.GetControlRect( GUILayout.Height( 24 ), GUILayout.Width( area.width / 2 ) );
+            automatronPath = EditorGUI.TextField( r, automatronPath, textboxStyle );
+
+            r.x += r.width + 5; r.width = 50;
+            isHover = r.Contains( Input.MousePosition );
+            if ( Event.current.type == EventType.Repaint )
+                labelStyle.Draw( r, "•••", isHover, isHover, false, false );
+            if ( isHover ) {
+                EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
+                if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                    GUIUtility.keyboardControl = -1;
+                    var p = EditorUtility.OpenFolderPanel( "Automatron Path", automatronPath, "" );
+                    if ( !string.IsNullOrEmpty( p ) ) {
+                        automatronPath = p;
+                    }
+                }
             }
 
             GUILayout.EndArea();
@@ -229,7 +251,7 @@ namespace TNRD.Automatron {
                 createAutomatron = false;
                 var wnd = new AutomatronEditor();
                 AddWindow( wnd );
-                wnd.NewAutomatron( automatronName );
+                wnd.NewAutomatron( automatronPath, automatronName );
                 Remove();
             }
 

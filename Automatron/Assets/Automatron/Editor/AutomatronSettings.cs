@@ -71,8 +71,8 @@ public class AutomatronSettings {
         }
     }
 
-    public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD_AUTOMATRON_CONFIGFOLDER", "Config Folder", "Automatron/Configs/" );
-    public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD_AUTOMATRON_AUTOSAVE", "Auto Save", true );
+    public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD.Automatron.ConfigFolder", "Config Folder", Application.dataPath + "/Automatron/Configs/" );
+    public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave", "Auto Save", true );
 
     [PreferenceItem( "Automatron" )]
     public static void PreferencesGUI() {

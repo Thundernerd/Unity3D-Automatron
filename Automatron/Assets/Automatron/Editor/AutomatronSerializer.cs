@@ -82,7 +82,7 @@ namespace TNRD.Automatron {
 
             var b64 = Serializer.SerializeToB64( automatron );
 
-            var path = Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder );
+            var path = editor.Path;
             if ( !Directory.Exists( path ) ) {
                 Directory.CreateDirectory( path );
             }

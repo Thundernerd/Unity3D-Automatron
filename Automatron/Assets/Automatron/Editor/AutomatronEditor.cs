@@ -93,6 +93,7 @@ namespace TNRD.Automatron {
         #endregion
 
         public string Name;
+        public string Path;
 
         private QueueStart entryPoint;
         [RequireSerialization]
@@ -106,8 +107,9 @@ namespace TNRD.Automatron {
         private EditorCoroutine executionRoutine = null;
         private EditorCoroutine lookAtRoutine = null;
 
-        public void NewAutomatron( string name ) {
+        public void NewAutomatron( string path, string name ) {
             Name = name;
+            Path = path;
 
             entryPoint = new QueueStart() {
                 IsInitial = true, Position = WindowRect.center
