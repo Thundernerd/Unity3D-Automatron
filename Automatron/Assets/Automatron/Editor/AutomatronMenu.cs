@@ -39,6 +39,10 @@ namespace TNRD.Automatron {
             WindowStyle = EWindowStyle.NoToolbarLight;
             WindowSettings.IsFullscreen = true;
 
+            if ( !Directory.Exists( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) ) ) {
+                Directory.CreateDirectory( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) );
+            }
+
             configs = Directory.GetFiles( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ), "*.acfg" )
                 .OrderByDescending( f => File.GetLastWriteTime( f ).Ticks )
                 .ToList();
@@ -61,7 +65,7 @@ namespace TNRD.Automatron {
             headerStyle = new GUIStyle( EditorStyles.whiteLabel );
             headerStyle.alignment = TextAnchor.UpperCenter;
             headerStyle.fontSize = 64;
-            
+
             buttonStyle = new GUIStyle( EditorStyles.label );
             buttonStyle.alignment = TextAnchor.MiddleCenter;
             buttonStyle.fontSize = 14;
@@ -203,7 +207,7 @@ namespace TNRD.Automatron {
 
             var path = Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) + automatronName + ".acfg";
             if ( File.Exists( path ) ) {
-                EditorGUILayout.LabelField( string.Format( "{0} already exists. Proceeding will overwrite it", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
+                EditorGUILayout.LabelField( string.Format( "'{0}' already exists. Proceeding will overwrite it", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
             }
 
             GUILayout.EndArea();
