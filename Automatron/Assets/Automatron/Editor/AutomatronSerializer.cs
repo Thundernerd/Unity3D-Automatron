@@ -87,7 +87,7 @@ namespace TNRD.Automatron {
                 Directory.CreateDirectory( path );
             }
 
-            var fpath = Path.Combine( path, automatron.Name + ".cfg" );
+            var fpath = Path.Combine( path, automatron.Name + ".acfg" );
             File.WriteAllText( fpath, b64 );
         }
     }

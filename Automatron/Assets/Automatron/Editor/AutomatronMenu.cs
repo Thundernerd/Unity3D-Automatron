@@ -24,9 +24,13 @@ namespace TNRD.Automatron {
         private GUIStyle labelStyle;
         private GUIStyle subLabelStyle;
         private GUIStyle buttonStyle;
+        private GUIStyle textboxStyle;
 
         private List<string> configs = new List<string>();
         private Vector2 scroll = new Vector2();
+
+        private string automatronName = "";
+        private bool createAutomatron = false;
 
         private int target = 0;
         private float anim = 0;
@@ -35,7 +39,7 @@ namespace TNRD.Automatron {
             WindowStyle = EWindowStyle.NoToolbarLight;
             WindowSettings.IsFullscreen = true;
 
-            configs = Directory.GetFiles( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ), "*.cfg" )
+            configs = Directory.GetFiles( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ), "*.acfg" )
                 .OrderByDescending( f => File.GetLastWriteTime( f ).Ticks )
                 .ToList();
         }
@@ -48,7 +52,7 @@ namespace TNRD.Automatron {
             WindowSettings.IsFullscreen = true;
             RunOnGUIThread( CreateStyles );
 
-            configs = Directory.GetFiles( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ), "*.cfg" )
+            configs = Directory.GetFiles( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ), "*.acfg" )
                 .OrderByDescending( f => File.GetLastWriteTime( f ).Ticks )
                 .ToList();
         }
@@ -57,12 +61,7 @@ namespace TNRD.Automatron {
             headerStyle = new GUIStyle( EditorStyles.whiteLabel );
             headerStyle.alignment = TextAnchor.UpperCenter;
             headerStyle.fontSize = 64;
-
-            noneStyle = new GUIStyle( EditorStyles.label );
-            noneStyle.alignment = TextAnchor.UpperLeft;
-            noneStyle.fontStyle = FontStyle.Italic;
-            noneStyle.fontSize = 24;
-
+            
             buttonStyle = new GUIStyle( EditorStyles.label );
             buttonStyle.alignment = TextAnchor.MiddleCenter;
             buttonStyle.fontSize = 14;
@@ -75,67 +74,62 @@ namespace TNRD.Automatron {
             subLabelStyle = new GUIStyle( EditorStyles.centeredGreyMiniLabel );
             subLabelStyle.alignment = TextAnchor.LowerLeft;
             subLabelStyle.fontSize = 14;
+
+            textboxStyle = new GUIStyle( EditorStyles.textField );
+            textboxStyle.fontSize = 16;
+
+            noneStyle = new GUIStyle( labelStyle );
+            noneStyle.fontStyle = FontStyle.Italic;
         }
 
         protected override void OnUpdate() {
             if ( target == 1 && anim < 1 ) {
-                anim = Mathf.MoveTowards( anim, 1, ExtendedEditor.DeltaTime * 5 );
-                //anim += ExtendedEditor.DeltaTime * 2;
+                anim = Mathf.MoveTowards( anim, 1, ExtendedEditor.DeltaTime * 3 );
                 if ( anim > 1 ) {
                     anim = 1;
                 }
             } else if ( target == 0 && anim > 0 ) {
-                anim = Mathf.MoveTowards( anim, 0, ExtendedEditor.DeltaTime * 5 );
+                anim = Mathf.MoveTowards( anim, 0, ExtendedEditor.DeltaTime * 3 );
                 if ( anim < 0 ) {
                     anim = 0;
                 }
             }
         }
 
-        protected override void OnGUI() {
-            EditorGUI.LabelField( new Rect( 0, 10, Size.x, Size.y ), "AUTOMATRON", headerStyle );
+        private void ListGUI() {
+            var area = new Rect( 50 + ( Size.x * anim ), 125, Size.x - 100, Size.y - 200 );
+            GUILayout.BeginArea( area );
 
-            GUILayout.BeginArea( new Rect( 50, 125, Size.x - 100, 16 ) );
+            GUILayout.BeginArea( new Rect( area.width - 125, 35, 125, 16 ) );
             ExtendedGUI.HorizontalLine();
             GUILayout.EndArea();
 
-            GUILayout.BeginArea( new Rect( Size.x - 175, 160, 125, 16 ) );
-            ExtendedGUI.HorizontalLine();
-            GUILayout.EndArea();
-
-            var cbr = new Rect( Size.x - 165, 132.5f, 50, 20 );
+            var cbr = new Rect( area.width - 115, 7.5f, 50, 20 );
             var isHover = cbr.Contains( Input.MousePosition );
             if ( Event.current.type == EventType.Repaint )
                 buttonStyle.Draw( cbr, "Create", isHover, isHover, false, false );
             if ( isHover ) {
                 EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
-                    
+                    target = 1;
                 }
             }
 
-            if ( Input.KeyPressed( KeyCode.Alpha1 ) ) {
-                target = 1;
-            } else if ( Input.KeyPressed( KeyCode.Alpha2 ) ) {
-                target = 0;
-            }
-
-
-            var obr = new Rect( Size.x - 110, 132.5f, 50, 20 );
+            var obr = new Rect( area.width - 60, 7.5f, 50, 20 );
             isHover = obr.Contains( Input.MousePosition );
             if ( Event.current.type == EventType.Repaint )
                 buttonStyle.Draw( obr, "Open", isHover, isHover, false, false );
             if ( isHover ) {
                 EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
-                    // Open file dialog
+                    EditorUtility.OpenFilePanel( "Select Automation", "", "acfg" );
                 }
             }
 
-            GUILayout.BeginArea( new Rect( 50 + ( Size.x * anim ), 175, Size.x - 100, Size.y - 200 ) );
+            GUILayout.Space( 50 );
 
             if ( configs.Count == 0 ) {
-                EditorGUILayout.LabelField( "No Automatrons found!", noneStyle, GUILayout.ExpandHeight( true ) );
+                EditorGUILayout.LabelField( "It seems pretty empty over here", noneStyle, GUILayout.ExpandHeight( true ) );
             } else {
                 scroll = EditorGUILayout.BeginScrollView( scroll );
 
@@ -166,12 +160,74 @@ namespace TNRD.Automatron {
             }
 
             GUILayout.EndArea();
+        }
 
-            GUILayout.BeginArea( new Rect( 50 - ( ( 1 - anim ) * Size.x ), 175, Size.x - 100, Size.y - 200 ) );
-            EditorGUILayout.LabelField( "Name of the fucking thing", noneStyle, GUILayout.ExpandHeight( true ) );
-            EditorGUILayout.LabelField( "Name of the fucking thing", noneStyle, GUILayout.ExpandHeight( true ) );
-            EditorGUILayout.LabelField( "Name of the fucking thing", noneStyle, GUILayout.ExpandHeight( true ) );
+        private void CreateGUI() {
+            var area = new Rect( 54 - ( ( 1 - anim ) * Size.x ), 125, Size.x - 100, Size.y - 200 );
+            GUILayout.BeginArea( area );
+
+            GUILayout.BeginArea( new Rect( area.width - 129, 35, 125, 16 ) );
+            ExtendedGUI.HorizontalLine();
             GUILayout.EndArea();
+
+            var cbr = new Rect( area.width - 119, 7.5f, 50, 20 );
+            var isHover = cbr.Contains( Input.MousePosition );
+            if ( Event.current.type == EventType.Repaint )
+                buttonStyle.Draw( cbr, "Create", isHover, isHover, false, false );
+            if ( isHover ) {
+                EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
+                if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                    if ( !string.IsNullOrEmpty( automatronName ) ) {
+                        createAutomatron = true;
+                    }
+                }
+            }
+
+            var obr = new Rect( area.width - 64, 7.5f, 50, 20 );
+            isHover = obr.Contains( Input.MousePosition );
+            if ( Event.current.type == EventType.Repaint )
+                buttonStyle.Draw( obr, "Cancel", isHover, isHover, false, false );
+            if ( isHover ) {
+                EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
+                if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                    target = 0;
+                    automatronName = "";
+                    GUIUtility.keyboardControl = -1;
+                }
+            }
+
+            GUILayout.Space( 55 );
+
+            EditorGUILayout.LabelField( "Name", labelStyle, GUILayout.Height( 28 ) );
+            automatronName = EditorGUILayout.TextField( automatronName, textboxStyle, GUILayout.Height( 24 ), GUILayout.Width( area.width / 2 ) );
+
+            var path = Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) + automatronName + ".acfg";
+            if ( File.Exists( path ) ) {
+                EditorGUILayout.LabelField( string.Format( "{0} already exists. Proceeding will overwrite it", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
+            }
+
+            GUILayout.EndArea();
+        }
+
+        protected override void OnGUI() {
+            EditorGUI.LabelField( new Rect( 0, 10, Size.x, Size.y ), "AUTOMATRON", headerStyle );
+
+            GUILayout.BeginArea( new Rect( 50, 125, Size.x - 100, 16 ) );
+            ExtendedGUI.HorizontalLine();
+            GUILayout.EndArea();
+
+            ListGUI();
+            if ( anim > 0 ) {
+                CreateGUI();
+            }
+
+            if ( createAutomatron ) {
+                createAutomatron = false;
+                var wnd = new AutomatronEditor();
+                AddWindow( wnd );
+                wnd.NewAutomatron( automatronName );
+                Remove();
+            }
 
             Repaint();
         }
