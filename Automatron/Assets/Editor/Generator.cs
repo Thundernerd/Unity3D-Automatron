@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -277,7 +278,13 @@ namespace TNRD.Automatron.Generator {
                     if ( item.ParameterType == typeof( Type ) ) {
                         builder.AppendLine( "\t\t[TypeLimit()]" );
                     }
-                    builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
+                    var attrs = item.ParameterType.GetCustomAttributes( typeof( DefaultValueAttribute ), false );
+                    if ( attrs.Length == 1 ) {
+                        var val = ( attrs[0] as DefaultValueAttribute ).Value;
+                        builder.AppendLine( string.Format( "\t\tpublic {0} {1} = {2};", GetTypeName( item.ParameterType ), item.Name, val == null ? "null" : val.ToString() ) );
+                    } else {
+                        builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
+                    }
                 }
 
                 if ( m.ReturnType != typeof( void ) ) {
