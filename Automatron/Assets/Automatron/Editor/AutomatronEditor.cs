@@ -240,7 +240,8 @@ namespace TNRD.Automatron {
             if ( GUILayout.Button( "File", EditorStyles.toolbarDropDown ) ) {
                 var gm = GenericMenuBuilder.CreateMenu();
                 gm.AddItem( "New Automatron", false, () => {
-
+                    AddWindow( new AutomatronMenu( 1 ) );
+                    Remove();
                 } );
                 gm.AddItem( "Open Automatron", false, () => {
                     AddWindow( new AutomatronMenu() );
@@ -250,9 +251,13 @@ namespace TNRD.Automatron {
                 gm.AddItem( "Save Automatron", false, () => {
                     AutomatronSerializer.Save( this );
                 } );
-                gm.AddItem( "Save Automatron As..", false, null );
+                gm.AddItem( "Save Automatron As..", false, () => {
+
+                } );
                 gm.AddSeparator();
-                gm.AddItem( "Settings", false, null );
+                gm.AddItem( "Generator", false, () => {
+                    Generation.Generator.CreateMe();
+                } );
                 gm.ShowAsContext();
             }
 

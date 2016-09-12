@@ -41,6 +41,11 @@ namespace TNRD.Automatron {
         private int target = 0;
         private float anim = 0;
 
+        public AutomatronMenu() { }
+        public AutomatronMenu( int target ) {
+            this.target = target;
+        }
+
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
             WindowSettings.IsFullscreen = true;
