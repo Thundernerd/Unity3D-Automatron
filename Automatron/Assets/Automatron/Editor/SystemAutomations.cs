@@ -8,9 +8,6 @@ namespace TNRD.Automatron.Automations {
 
     public abstract class ConditionalAutomation : Automation {
 
-        public List<Automation> TrueList { get; set; }
-        public List<Automation> FalseList { get; set; }
-
         public ConditionalLine LineOut2 { get; set; }
 
         protected override void OnDestroy() {

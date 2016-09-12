@@ -46,16 +46,16 @@ namespace TNRD.Automatron {
 
         protected override void OnUpdate() {
             if ( fadeIn ) {
-                color.a += AutomatronEditor.DeltaTime * 2;
+                color.a += ExtendedEditor.DeltaTime * 2;
                 if ( color.a > 1 ) {
                     color.a = 1;
                     fadeIn = false;
                 }
             } else {
                 if ( timer > 0 ) {
-                    timer -= AutomatronEditor.DeltaTime;
+                    timer -= ExtendedEditor.DeltaTime;
                 } else if ( color.a > 0 ) {
-                    color.a -= AutomatronEditor.DeltaTime * 2;
+                    color.a -= ExtendedEditor.DeltaTime * 2;
                 } else {
                     Remove();
                 }

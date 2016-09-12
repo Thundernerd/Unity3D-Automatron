@@ -53,7 +53,7 @@ namespace TNRD.Editor.Core {
         public EAnchor AnchorPoint = EAnchor.MiddleCenter;
 
         public string ID {
-            get; private set;
+            get; set;
         }
 
         [RequireSerialization]

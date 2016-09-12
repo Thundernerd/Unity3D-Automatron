@@ -93,7 +93,7 @@ namespace TNRD.Automatron {
             Right = right;
 
             left.LineOut = this;
-            Right.LineIn = this;
+            Right.LinesIn.Add( this );
         }
 
         protected override void OnInitialize() {
@@ -133,7 +133,7 @@ namespace TNRD.Automatron {
             }
 
             Left.LineOut = this;
-            Right.LineIn = this;
+            Right.LinesIn.Add( this );
 
             SortingOrder = ESortingOrder.Line;
         }
@@ -152,8 +152,8 @@ namespace TNRD.Automatron {
                 Left.LineOut = null;
             }
 
-            if ( Right != null && Right.LineIn == this ) {
-                Right.LineIn = null;
+            if ( Right != null ) {
+                Right.LinesIn.Remove( this );
             }
         }
 

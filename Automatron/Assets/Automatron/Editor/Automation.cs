@@ -6,6 +6,7 @@ using System.Reflection;
 using TNRD.Editor;
 using TNRD.Editor.Core;
 using TNRD.Editor.Serialization;
+using TNRD.Editor.Utilities;
 using UnityEditor;
 using UnityEngine;
 
@@ -41,7 +42,7 @@ namespace TNRD.Automatron {
         public float Progress;
 
         [IgnoreSerialization]
-        public AutomationLine LineIn;
+        public List<AutomationLine> LinesIn = new List<AutomationLine>();
         [IgnoreSerialization]
         public AutomationLine LineOut;
 
@@ -52,6 +53,8 @@ namespace TNRD.Automatron {
         public bool HasRun = false;
         [IgnoreSerialization]
         public bool IsInLoop = false;
+
+        public bool ExecuteEveryLoop = false;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
@@ -112,9 +115,10 @@ namespace TNRD.Automatron {
                 }
             }
 
-            if ( LineIn != null ) {
-                LineIn.Remove();
-                LineIn = null;
+            if ( LinesIn.Count > 0 ) {
+                for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
+                    LinesIn[i].Remove();
+                }
             }
 
             if ( LineOut != null ) {
@@ -149,6 +153,39 @@ namespace TNRD.Automatron {
 
         }
 
+        private void ToggleExecuteEveryLoop() {
+            ExecuteEveryLoop = !ExecuteEveryLoop;
+        }
+
+        private void RemoveIncomingLines() {
+            if ( LinesIn.Count > 0 ) {
+                for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
+                    LinesIn[i].Remove();
+                }
+            }
+
+            foreach ( var item in fields ) {
+                if ( item.LineIn != null ) {
+                    item.LineIn.Remove();
+                }
+            }
+        }
+
+        private void RemoveOutgoingLines() {
+            if ( LineOut != null ) {
+                LineOut.Remove();
+                LineOut = null;
+            }
+
+            foreach ( var item in fields ) {
+                if ( item.LinesOut.Count > 0 ) {
+                    for ( int i = item.LinesOut.Count - 1; i >= 0; i-- ) {
+                        item.LinesOut[i].Remove();
+                    }
+                }
+            }
+        }
+
         protected override void OnGUI() {
             var rect = Rectangle;
 
@@ -164,7 +201,17 @@ namespace TNRD.Automatron {
                     GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width, 15 ), Assets["argumentException"] );
                     break;
             }
-            GUI.Label( new Rect( rect.x, rect.y, rect.width, 16 ), name, headerStyle );
+            var topRect = new Rect( rect.x, rect.y, rect.width, 16 );
+            GUI.Label( topRect, name, headerStyle );
+
+            if ( Input.ButtonReleased( EMouseButton.Right ) && topRect.Contains( Input.MousePosition ) ) {
+                var gm = GenericMenuBuilder.CreateMenu();
+                gm.AddItem( "Execute Every Loop", ExecuteEveryLoop, ToggleExecuteEveryLoop );
+                gm.AddSeparator();
+                gm.AddItem( "Remove Incoming Lines", false, RemoveIncomingLines );
+                gm.AddItem( "Remove Outgoing Lines", false, RemoveOutgoingLines );
+                gm.ShowAsContext();
+            }
 
             if ( showCloseButton && !Globals.IsExecuting ) {
                 var cRect = new Rect( rect.x + rect.width - 14, rect.y + 1, 13, 13 );
@@ -188,20 +235,21 @@ namespace TNRD.Automatron {
 
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     if ( lArrow.Contains( Input.MousePosition ) ) {
-                        if ( LineIn != null ) {
-                            LineIn.Remove();
-                            LineIn = null;
+                        var line = AutomationLine.HookLineIn( this );
+                        if (LinesIn.Contains(line)) {
+                            LinesIn.Remove( line );
                         }
 
-                        LineIn = AutomationLine.HookLineIn( this );
-                        Window.AddControl( LineIn );
+                        LinesIn.Add( line );
+                        Window.AddControl( line );
                         Input.Use();
                     }
                 } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
                     if ( lArrow.Contains( Input.MousePosition ) ) {
-                        if ( LineIn != null ) {
-                            LineIn.Remove();
-                            LineIn = null;
+                        if ( LinesIn.Count > 0 ) {
+                            for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
+                                LinesIn[i].Remove();
+                            }
                         }
 
                         Input.Use();
@@ -311,7 +359,7 @@ namespace TNRD.Automatron {
             foreach ( var field in fields ) {
                 if ( field.LineIn != null ) {
                     var parent = field.LineIn.Left.Parent;
-                    if ( ( !parent.HasRun && !IsInLoop ) && !automations.Contains( parent ) ) {
+                    if ( ( ExecuteEveryLoop || ( !parent.HasRun && !IsInLoop ) ) && !automations.Contains( parent ) ) {
                         parent.GetAutomations( ref automations, true );
                     }
                 }
