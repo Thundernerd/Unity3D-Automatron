@@ -573,7 +573,7 @@ namespace TNRD.Automatron.Generator {
             yield return null;
             types.AddRange( LoadTypesFromAssembly( "UnityEngine" ) );
             yield return null;
-            types = types.OrderBy( t => GetTypeName( t ) ).ToList();
+            types = types.OrderBy( t => t.Name ).ToList();
             yield return null;
             allTypes = types;
             yield return null;
@@ -589,11 +589,10 @@ namespace TNRD.Automatron.Generator {
             Repaint();
             yield return null;
             var names = allTypes
-                .Select( t => string.Format( "{0}/{1}/{2}", 
-                    t.Assembly.GetName().Name.Replace( ".", "/" ), 
-                    t.Name[0], 
-                    t.Name ) )
-                .OrderBy( t => t );
+                .Select( t => string.Format( "{0}/{1}/{2}",
+                    t.Assembly.GetName().Name.Replace( ".", "/" ),
+                    t.Name[0],
+                    t.Name ) );
             yield return null;
             typeNames = names.ToArray();
             yield return null;
