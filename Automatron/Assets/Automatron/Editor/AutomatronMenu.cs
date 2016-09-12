@@ -34,6 +34,8 @@ namespace TNRD.Automatron {
         private bool createAutomatron = false;
         private bool loadAutomatron = false;
         private bool deleteAutomatron = false;
+        private bool addAutomatrons = false;
+        private List<string> automatrons;
         private string automatron = "";
 
         private int target = 0;
@@ -296,6 +298,30 @@ namespace TNRD.Automatron {
                 CreateGUI();
             }
 
+            switch ( Event.current.type ) {
+                case EventType.DragUpdated:
+                case EventType.DragPerform: {
+                        var paths = DragAndDrop.paths.Where( p => p.EndsWith( ".acfg" ) ).ToList();
+
+                        if ( paths.Count > 0 ) {
+                            DragAndDrop.visualMode = DragAndDropVisualMode.Link;
+                        }
+
+                        if ( Event.current.type == EventType.DragPerform ) {
+                            DragAndDrop.AcceptDrag();
+
+                            if ( paths.Count == 1 ) {
+                                loadAutomatron = true;
+                                automatron = paths[0];
+                            } else {
+                                addAutomatrons = true;
+                                automatrons = paths;
+                            }
+                        }
+                    }
+                    break;
+            }
+
             if ( Event.current.type == EventType.Repaint ) {
                 if ( createAutomatron ) {
                     createAutomatron = false;
@@ -336,6 +362,15 @@ namespace TNRD.Automatron {
                     }
 
                     return;
+                } else if ( addAutomatrons ) {
+                    addAutomatrons = false;
+
+                    foreach ( var item in automatrons ) {
+                        if ( configs.Contains( item ) ) continue;
+                        configs.Insert( 0, item );
+                    }
+
+                    SaveRecents();
                 }
             }
 
