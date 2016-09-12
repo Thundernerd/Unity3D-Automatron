@@ -11,7 +11,7 @@ using TNRD.Editor.Core;
 using UnityEditor;
 using UnityEngine;
 
-namespace TNRD.Automatron.Generator {
+namespace TNRD.Automatron.Generation {
 
     public class WizardData {
         public Type Type;
