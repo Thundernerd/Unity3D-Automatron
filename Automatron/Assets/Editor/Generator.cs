@@ -96,6 +96,14 @@ namespace TNRD.Automatron.Generator {
 
             foldFields = EditorGUILayout.Foldout( foldFields, "Fields" );
             if ( foldFields ) {
+                if ( GUILayout.Button( "Toggle" ) ) {
+                    var fs = new Dictionary<FieldInfo, bool>( data.Fields );
+                    foreach ( var item in data.Fields ) {
+                        var k = item.Key; var v = item.Value;
+                        fs[k] = !v;
+                    }
+                    data.Fields = fs;
+                }
                 fieldScroll = EditorGUILayout.BeginScrollView( fieldScroll, ExtendedGUI.DarkNoneWindowStyle,
                     GUILayout.MinHeight( 16 ), GUILayout.MaxHeight( fieldHeight ), GUILayout.ExpandHeight( true ) );
                 EditorGUI.indentLevel++;
@@ -113,6 +121,15 @@ namespace TNRD.Automatron.Generator {
 
             foldProperties = EditorGUILayout.Foldout( foldProperties, "Properties" );
             if ( foldProperties ) {
+                if ( GUILayout.Button( "Toggle" ) ) {
+                    var ps = new Dictionary<PropertyInfo, bool>( data.Properties );
+                    foreach ( var item in data.Properties ) {
+                        var k = item.Key;
+                        var v = item.Value;
+                        ps[k] = !v;
+                    }
+                    data.Properties = ps;
+                }
                 propertyScroll = EditorGUILayout.BeginScrollView( propertyScroll, ExtendedGUI.DarkNoneWindowStyle,
                     GUILayout.MinHeight( 16 ), GUILayout.MaxHeight( propertyHeight ), GUILayout.ExpandHeight( true ) );
                 var props = new Dictionary<PropertyInfo, bool>( data.Properties );
@@ -130,6 +147,15 @@ namespace TNRD.Automatron.Generator {
 
             foldMethods = EditorGUILayout.Foldout( foldMethods, "Methods" );
             if ( foldMethods ) {
+                if ( GUILayout.Button( "Toggle" ) ) {
+                    var ms = new Dictionary<MethodInfo, bool>( data.Methods );
+                    foreach ( var item in data.Methods ) {
+                        var k = item.Key;
+                        var v = item.Value;
+                        ms[k] = !v;
+                    }
+                    data.Methods = ms;
+                }
                 methodScroll = EditorGUILayout.BeginScrollView( methodScroll, ExtendedGUI.DarkNoneWindowStyle,
                     GUILayout.MinHeight( 16 ), GUILayout.MaxHeight( methodHeight ), GUILayout.ExpandHeight( true ) );
                 var methods = new Dictionary<MethodInfo, bool>( data.Methods );
@@ -281,7 +307,7 @@ namespace TNRD.Automatron.Generator {
                     var attrs = item.ParameterType.GetCustomAttributes( typeof( DefaultValueAttribute ), false );
                     if ( attrs.Length == 1 ) {
                         var val = ( attrs[0] as DefaultValueAttribute ).Value;
-                        builder.AppendLine( string.Format( "\t\tpublic {0} {1} = {2};", GetTypeName( item.ParameterType ), item.Name, val == null ? "null" : val.ToString() ) );
+                        builder.AppendLine( string.Format( "\t\tpublic {0} {1} = {2};", GetTypeName( item.ParameterType ), item.Name, ToString( val ) ) );
                     } else {
                         builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
                     }
@@ -290,11 +316,6 @@ namespace TNRD.Automatron.Generator {
                 if ( m.ReturnType != typeof( void ) ) {
                     builder.AppendLine( "\t\t[ReadOnly]" );
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
-
-                    builder.AppendLine( "\t\tpublic override void Reset() {" );
-                    builder.AppendLine( "\t\t\tbase.Reset();" );
-                    builder.AppendLine( string.Format( "\t\t\tresult = {0};", m.ReturnType.IsValueType ? Activator.CreateInstance( m.ReturnType ).ToString() : "null" ) );
-                    builder.AppendLine( "\t\t}" );
                 }
 
                 builder.AppendLine();
@@ -372,11 +393,6 @@ namespace TNRD.Automatron.Generator {
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( p.PropertyType ) ) );
 
                     builder.AppendLine();
-
-                    builder.AppendLine( "\t\tpublic override void Reset() {" );
-                    builder.AppendLine( "\t\t\tbase.Reset();" );
-                    builder.AppendLine( string.Format( "\t\t\tresult = {0};", p.PropertyType.IsValueType ? Activator.CreateInstance( p.PropertyType ).ToString() : "null" ) );
-                    builder.AppendLine( "\t\t}" );
 
                     builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                     builder.Append( "\t\t\tResult = " );
@@ -462,11 +478,6 @@ namespace TNRD.Automatron.Generator {
 
                 builder.AppendLine();
 
-                builder.AppendLine( "\t\tpublic override void Reset() {" );
-                builder.AppendLine( "\t\t\tbase.Reset();" );
-                builder.AppendLine( string.Format( "\t\t\tresult = {0};", f.FieldType.IsValueType ? Activator.CreateInstance( f.FieldType ).ToString() : "null" ) );
-                builder.AppendLine( "\t\t}" );
-
                 builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                 builder.Append( "\t\t\tResult = " );
                 if ( f.IsStatic ) {
@@ -527,6 +538,41 @@ namespace TNRD.Automatron.Generator {
         private static string GetTypeName( Type t ) {
             if ( t == null ) return "null";
             return t.FullName.Trim( '&' ).Replace( "+", "." );
+        }
+
+        private static string ToString( object value ) {
+            if ( value == null ) return "null";
+            if ( !value.GetType().IsValueType ) return "null";
+
+            if ( value is bool ) {
+                return ( (bool)value ) ? "true" : "false";
+            } else if ( value is float ) {
+                return value.ToString() + "f";
+            } else if ( value is double ) {
+                return value.ToString() + "d";
+            } else if ( value is Vector2 ) {
+                var v = (Vector2)value;
+                return string.Format( "new Vector2({0}f,{1}f)", v.x, v.y );
+            } else if ( value is Vector3 ) {
+                var v = (Vector3)value;
+                return string.Format( "new Vector3({0}f,{1}f,{2}f)", v.x, v.y, v.z );
+            } else if ( value is Vector4 ) {
+                var v = (Vector4)value;
+                return string.Format( "new Vector4({0}f,{1}f,{2}f,{3}f)", v.x, v.y, v.z, v.w );
+            } else if ( value is Quaternion ) {
+                var v = (Quaternion)value;
+                return string.Format( "new Quaternion({0}f,{1}f,{2}f,{3}f)", v.x, v.y, v.z, v.w );
+            } else if ( value is Bounds ) {
+                var v = (Bounds)value;
+                return string.Format( "new Bounds({0},{1})", ToString( v.center ), ToString( v.size ) );
+            } else if ( value is Rect ) {
+                var v = (Rect)value;
+                return string.Format( "new Rect({0},{1})", ToString( v.position ), ToString( v.size ) );
+            } else if ( value.GetType().IsEnum ) {
+                return ( (int)Enum.GetValues( value.GetType() ).GetValue( 0 ) ).ToString();
+            }
+
+            return "undefined";
         }
 
         private object initializer = null;
