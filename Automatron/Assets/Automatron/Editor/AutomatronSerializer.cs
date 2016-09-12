@@ -42,8 +42,12 @@ namespace TNRD.Automatron {
             }
 
             var b64 = File.ReadAllText( path );
-            var automatron = Deserializer.Deserialize<SerializableAutomatron>( b64 );
-            return automatron;
+            try {
+                var automatron = Deserializer.Deserialize<SerializableAutomatron>( b64 );
+                return automatron;
+            } catch ( System.Exception ) {
+                return null;
+            }
         }
 
         public static void Save( AutomatronEditor editor ) {

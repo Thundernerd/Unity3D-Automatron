@@ -32,6 +32,9 @@ namespace TNRD.Automatron {
         private string automatronName = "";
         private string automatronPath = "";
         private bool createAutomatron = false;
+        private bool loadAutomatron = false;
+        private bool deleteAutomatron = false;
+        private string automatron = "";
 
         private int target = 0;
         private float anim = 0;
@@ -39,14 +42,9 @@ namespace TNRD.Automatron {
         protected override void OnInitialize() {
             WindowStyle = EWindowStyle.NoToolbarLight;
             WindowSettings.IsFullscreen = true;
+            automatronPath = AutomatronSettings.ConfigFolder;
 
-            if ( !Directory.Exists( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) ) ) {
-                Directory.CreateDirectory( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) );
-            }
-
-            configs = Directory.GetFiles( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ), "*.acfg" )
-                .OrderByDescending( f => File.GetLastWriteTime( f ).Ticks )
-                .ToList();
+            LoadRecents();
         }
 
         protected override void OnInitializeGUI() {
@@ -55,11 +53,44 @@ namespace TNRD.Automatron {
 
         protected override void OnAfterSerialized() {
             WindowSettings.IsFullscreen = true;
+            automatronPath = AutomatronSettings.ConfigFolder;
             RunOnGUIThread( CreateStyles );
 
-            configs = Directory.GetFiles( Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ), "*.acfg" )
-                .OrderByDescending( f => File.GetLastWriteTime( f ).Ticks )
-                .ToList();
+            LoadRecents();
+        }
+
+        private void LoadRecents() {
+            configs.Clear();
+
+            if ( !EditorPrefs.HasKey( "TNRD.Automatron.RecentAmount" ) ) {
+                EditorPrefs.SetInt( "TNRD.Automatron.RecentAmount", 0 );
+            }
+
+            var amount = EditorPrefs.GetInt( "TNRD.Automatron.RecentAmount", 0 );
+            for ( int i = 0; i < amount; i++ ) {
+                var key = string.Format( "TNRD.Automatron.Recent_{0}", i );
+                var path = EditorPrefs.GetString( key, "" );
+                if ( !string.IsNullOrEmpty( path ) ) {
+                    configs.Add( path );
+                }
+                EditorPrefs.DeleteKey( key );
+            }
+
+            for ( int i = 0; i < configs.Count; i++ ) {
+                EditorPrefs.SetString( string.Format( "TNRD.Automatron.Recent_{0}", i ), configs[i] );
+            }
+        }
+
+        private void SaveRecents() {
+            var amount = EditorPrefs.GetInt( "TNRD.Automatron.RecentAmount", 0 );
+            for ( int i = 0; i < amount; i++ ) {
+                EditorPrefs.DeleteKey( string.Format( "TNRD.Automatron.Recent_{0}", i ) );
+            }
+
+            EditorPrefs.SetInt( "TNRD.Automatron.RecentAmount", configs.Count );
+            for ( int i = 0; i < configs.Count; i++ ) {
+                EditorPrefs.SetString( string.Format( "TNRD.Automatron.Recent_{0}", i ), configs[i] );
+            }
         }
 
         private void CreateStyles() {
@@ -127,7 +158,14 @@ namespace TNRD.Automatron {
             if ( isHover ) {
                 EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
-                    EditorUtility.OpenFilePanel( "Select Automation", "", "acfg" );
+                    var p = EditorUtility.OpenFilePanel( "Select Automation", "", "acfg" );
+                    if ( !string.IsNullOrEmpty( p ) ) {
+                        var a = AutomatronSerializer.Load( p );
+                        if ( a != null ) {
+                            loadAutomatron = true;
+                            automatron = p;
+                        }
+                    }
                 }
             }
 
@@ -153,10 +191,14 @@ namespace TNRD.Automatron {
                     if ( isHover ) {
                         EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
                         if ( Input.ButtonReleased( EMouseButton.Left ) ) {
-                            var wnd = new AutomatronEditor();
-                            AddWindow( wnd );
-                            wnd.LoadAutomatron( p );
-                            Remove();
+                            automatron = p;
+
+                            if ( File.Exists( p ) ) {
+                                loadAutomatron = true;
+                            } else {
+                                EditorUtility.DisplayDialog( "Automatron", "Oops, that one doesn't exist!", "OK" );
+                                deleteAutomatron = true;
+                            }
                         }
                     }
                 }
@@ -206,7 +248,7 @@ namespace TNRD.Automatron {
             EditorGUILayout.LabelField( "Name", labelStyle, GUILayout.Height( 28 ) );
             automatronName = EditorGUILayout.TextField( automatronName, textboxStyle, GUILayout.Height( 24 ), GUILayout.Width( area.width / 2 ) );
 
-            var path = Path.Combine( Application.dataPath, AutomatronSettings.ConfigFolder ) + automatronName + ".acfg";
+            var path = Path.Combine( automatronPath, automatronName + ".acfg" );
             if ( File.Exists( path ) ) {
                 EditorGUILayout.LabelField( string.Format( "'{0}' already exists. Proceeding will overwrite it", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
             } else {
@@ -247,12 +289,47 @@ namespace TNRD.Automatron {
                 CreateGUI();
             }
 
-            if ( createAutomatron ) {
-                createAutomatron = false;
-                var wnd = new AutomatronEditor();
-                AddWindow( wnd );
-                wnd.NewAutomatron( automatronPath, automatronName );
-                Remove();
+            if ( Event.current.type == EventType.Repaint ) {
+                if ( createAutomatron ) {
+                    createAutomatron = false;
+
+                    configs.Insert( 0, ( Path.Combine( automatronPath, automatronName ).Replace( "\\", "/" ) + ".acfg" ) );
+                    SaveRecents();
+
+                    var wnd = new AutomatronEditor();
+                    AddWindow( wnd );
+                    wnd.NewAutomatron( automatronPath, automatronName );
+                    Remove();
+
+                    return;
+                } else if ( loadAutomatron ) {
+                    loadAutomatron = false;
+
+                    var i = configs.IndexOf( automatron );
+                    if ( i != -1 ) {
+                        configs.RemoveAt( i );
+                    }
+
+                    configs.Insert( 0, automatron );
+                    SaveRecents();
+
+                    var wnd = new AutomatronEditor();
+                    AddWindow( wnd );
+                    wnd.LoadAutomatron( automatron );
+                    Remove();
+
+                    return;
+                } else if ( deleteAutomatron ) {
+                    deleteAutomatron = false;
+
+                    var i = configs.IndexOf( automatron );
+                    if ( i != -1 ) {
+                        configs.RemoveAt( i );
+                        SaveRecents();
+                    }
+
+                    return;
+                }
             }
 
             Repaint();
