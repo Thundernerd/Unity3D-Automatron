@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using TNRD.Editor;
-using TNRD.Editor.Core;
+using TNRD.Automatron.Editor;
+using TNRD.Automatron.Editor.Core;
 using UnityEditor;
 using UnityEngine;
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using TNRD.Editor.Serialization;
+using TNRD.Automatron.Editor.Serialization;
 using UnityEngine;
 
 namespace TNRD.Automatron {

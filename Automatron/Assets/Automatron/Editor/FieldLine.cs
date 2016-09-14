@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using TNRD.Editor;
-using TNRD.Editor.Serialization;
+using TNRD.Automatron.Editor;
+using TNRD.Automatron.Editor.Serialization;
 
 namespace TNRD.Automatron {
 

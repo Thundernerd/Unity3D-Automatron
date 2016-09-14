@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using TNRD.Automatron.Drawers;
-using TNRD.Editor.Core;
-using TNRD.Editor.Serialization;
+using TNRD.Automatron.Editor.Core;
+using TNRD.Automatron.Editor.Serialization;
 using UnityEditor;
 using UnityEngine;
 

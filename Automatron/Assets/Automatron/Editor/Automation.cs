@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using TNRD.Editor;
-using TNRD.Editor.Core;
-using TNRD.Editor.Serialization;
-using TNRD.Editor.Utilities;
+using TNRD.Automatron.Editor;
+using TNRD.Automatron.Editor.Core;
+using TNRD.Automatron.Editor.Serialization;
+using TNRD.Automatron.Editor.Utilities;
 using UnityEditor;
 using UnityEngine;
 

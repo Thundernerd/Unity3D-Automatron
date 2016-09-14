@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using TNRD.Editor.Core;
+using TNRD.Automatron.Editor.Core;
 using System;
 
 namespace TNRD.Automatron {

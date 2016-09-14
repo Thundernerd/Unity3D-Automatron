@@ -1,5 +1,5 @@
-﻿using TNRD.Editor.Core;
-using TNRD.Editor.Serialization;
+﻿using TNRD.Automatron.Editor.Core;
+using TNRD.Automatron.Editor.Serialization;
 using UnityEditor;
 using UnityEngine;
 

@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-using TNRD.Editor.Core;
+using TNRD.Automatron.Editor.Core;
 using System;
 using System.Linq;
 using TNRD.Automatron.Drawers;
-using TNRD.Editor;
-using TNRD.Editor.Utilities;
+using TNRD.Automatron.Editor;
+using TNRD.Automatron.Editor.Utilities;
 using TNRD.Automatron.Automations;
-using TNRD.Editor.Serialization;
+using TNRD.Automatron.Editor.Serialization;
 using System.Collections;
-using TNRD.Editor.Windows;
+using TNRD.Automatron.Editor.Windows;
 using System.Reflection;
 
 namespace TNRD.Automatron {
