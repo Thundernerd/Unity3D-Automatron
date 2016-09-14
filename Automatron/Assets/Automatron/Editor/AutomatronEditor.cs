@@ -145,6 +145,14 @@ namespace TNRD.Automatron {
 
                 AddControl( instance );
                 instance.ID = item.ID;
+                instance.LoadFields();
+
+                foreach ( var f in item.Fields ) {
+                    var fid = instance.GetField( f.ID );
+                    if ( fid != null ) {
+                        fid.SetValue( f.Value );
+                    }
+                }
 
                 if ( item.ID == a.EntryID ) {
                     entryPoint = (QueueStart)instance;

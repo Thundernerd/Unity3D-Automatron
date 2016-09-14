@@ -20,6 +20,12 @@ namespace TNRD.Automatron {
         public string ID;
         public string Type;
         public Vector2 Position;
+        public List<SerializableField> Fields = new List<SerializableField>();
+    }
+
+    public class SerializableField {
+        public string ID;
+        public object Value;
     }
 
     public class SerializableLine {
@@ -65,6 +71,17 @@ namespace TNRD.Automatron {
                 automation.ID = item.ID;
                 automation.Type = item.GetType().FullName;
                 automation.Position = item.Position;
+
+                var fields = item.GetFields();
+                foreach ( var f in fields ) {
+                    var field = new SerializableField();
+                    field.ID = f.ID;
+                    var v = f.GetValue();
+                    if ( v is GameObject ) continue;
+                    if ( v is ScriptableObject ) continue;
+                    automation.Fields.Add( field );
+                }
+
                 automatron.Automations.Add( automation );
             }
 

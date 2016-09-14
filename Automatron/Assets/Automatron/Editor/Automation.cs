@@ -63,14 +63,14 @@ namespace TNRD.Automatron {
             SortingOrder = ESortingOrder.Automation;
 
             GetName();
-            GetFields();
+            LoadFields();
             UpdateSize();
             RunOnGUIThread( CreateStyles );
         }
 
         protected override void OnAfterSerialize() {
             GetName();
-            GetFields();
+            LoadFields();
             UpdateSize();
             RunOnGUIThread( CreateStyles );
         }
@@ -127,7 +127,10 @@ namespace TNRD.Automatron {
             }
         }
 
-        private void GetFields() {
+        public void LoadFields() {
+            fields.Clear();
+            sortedFields.Clear();
+
             var type = GetType();
             var infos = type.GetFields( BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly );
             for ( int i = 0; i < infos.Length; i++ ) {
@@ -343,6 +346,10 @@ namespace TNRD.Automatron {
 
         public AutomationField GetField( string id ) {
             return sortedFields[id];
+        }
+
+        public List<AutomationField> GetFields() {
+            return new List<AutomationField>( fields );
         }
 
         public virtual List<Automation> GetNextAutomations() {
