@@ -29,6 +29,8 @@ namespace TNRD.Automatron.Editor.Core {
 
         public string EditorName;
 
+        public string AssetPath;
+
         public ExtendedAssets Assets = new ExtendedAssets();
 
         [IgnoreSerialization]
@@ -357,7 +359,6 @@ namespace TNRD.Automatron.Editor.Core {
             var inst = CreateEditor( windows );
 
             inst.titleContent = new GUIContent( title );
-            inst.Assets.Initialize();
 
             var index = 0;
             var id = string.Format( "tnrd_editor_{0}_{1}", title, index );
@@ -369,6 +370,16 @@ namespace TNRD.Automatron.Editor.Core {
             inst.EditorName = id;
 
             return inst;
+        }
+
+        new public void Show() {
+            Assets.Initialize( AssetPath );
+            base.Show();
+        }
+
+        new public void Show(bool immediateDisplay) {
+            Assets.Initialize( AssetPath );
+            base.Show( immediateDisplay );
         }
 
         public void OnBeforeSerialize() {

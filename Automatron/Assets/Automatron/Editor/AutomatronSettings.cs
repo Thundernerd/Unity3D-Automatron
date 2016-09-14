@@ -75,10 +75,12 @@ namespace TNRD.Automatron {
 
         public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD.Automatron.ConfigFolder", "Config Folder", Application.dataPath + "/Automatron/Configs/" );
         public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave", "Auto Save", true );
+        public static EditorPrefsString AssetPath = new EditorPrefsString( "TNRD.Automatron.AssetFolder", "Asset Path", "Assets/Automatron/Editor/Assets/" );
 
         [PreferenceItem( "Automatron" )]
         public static void PreferencesGUI() {
             ConfigFolder.Draw();
+            AssetPath.Draw();
             AutoSave.Draw();
 
             GUILayout.FlexibleSpace();

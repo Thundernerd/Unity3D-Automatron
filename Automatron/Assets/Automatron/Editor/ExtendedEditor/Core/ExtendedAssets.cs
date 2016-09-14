@@ -26,14 +26,18 @@ namespace TNRD.Automatron.Editor.Core {
             textures = new Dictionary<string, Texture2D>();
         }
 
-        public void Initialize() {
-            var stack = new System.Diagnostics.StackTrace( true );
-            if ( stack.FrameCount > 0 ) {
-                var frame = stack.GetFrame( stack.FrameCount - 1 );
-                var fname = System.IO.Path.GetFileName( frame.GetFileName() );
+        public void Initialize( string path ) {
+            if ( !string.IsNullOrEmpty( path ) ) {
+                Path = path;
+            } else {
+                var stack = new System.Diagnostics.StackTrace( true );
+                if ( stack.FrameCount > 0 ) {
+                    var frame = stack.GetFrame( stack.FrameCount - 1 );
+                    var fname = System.IO.Path.GetFileName( frame.GetFileName() );
 
-                Path = frame.GetFileName().Replace( '\\', '/' );
-                Path = Path.Replace( fname, "Assets/" );
+                    Path = frame.GetFileName().Replace( '\\', '/' );
+                    Path = Path.Replace( fname, "Assets/" );
+                }
             }
         }
 
