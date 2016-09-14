@@ -220,69 +220,77 @@ namespace TNRD.Automatron.Editor.Serialization {
                             .Where( p => p.GetCustomAttributes( typeof( IgnoreSerializationAttribute ), false ).Length == 0 )
                             .OrderBy( p => p.Name ).ToList();
 
-            for ( int i = 0; i < fields.Count; i++ ) {
-                var field = fields[i];
-                var type = field.FieldType;
-                var tValue = field.GetValue( value );
-                var fname = string.Format( "{0}|{1}", field.Name, i );
+            try {
 
-                if ( type == typeof( object ) && tValue != null ) {
-                    type = tValue.GetType();
-                }
 
-                if ( type.IsArray ) {
-                    obj.Add( fname, SerializeList( tValue, type ) );
-                } else if ( type.IsEnum ) {
-                    obj.Add( fname, SerializeEnum( tValue, type ) );
-                } else if ( type.IsValueType && !type.IsPrimitive ) {
-                    if ( type == typeof( decimal ) ) {
-                        obj.Add( fname, SerializePrimitive( tValue, type ) );
-                    } else {
-                        obj.Add( fname, SerializeClass( tValue, type ) );
+                for ( int i = 0; i < fields.Count; i++ ) {
+                    var field = fields[i];
+                    var type = field.FieldType;
+                    var tValue = field.GetValue( value );
+                    var fname = string.Format( "{0}|{1}", field.Name, i );
+
+                    if ( type == typeof( object ) && tValue != null ) {
+                        type = tValue.GetType();
                     }
-                } else if ( type.IsValueType ) {
-                    obj.Add( fname, SerializePrimitive( tValue, type ) );
-                } else if ( type.IsClass ) {
-                    if ( type == typeof( string ) ) {
-                        obj.Add( fname, SerializePrimitive( tValue, type ) );
-                    } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
+
+                    if ( type.IsArray ) {
                         obj.Add( fname, SerializeList( tValue, type ) );
-                    } else {
-                        obj.Add( fname, SerializeClass( tValue, type ) );
+                    } else if ( type.IsEnum ) {
+                        obj.Add( fname, SerializeEnum( tValue, type ) );
+                    } else if ( type.IsValueType && !type.IsPrimitive ) {
+                        if ( type == typeof( decimal ) ) {
+                            obj.Add( fname, SerializePrimitive( tValue, type ) );
+                        } else {
+                            obj.Add( fname, SerializeClass( tValue, type ) );
+                        }
+                    } else if ( type.IsValueType ) {
+                        obj.Add( fname, SerializePrimitive( tValue, type ) );
+                    } else if ( type.IsClass ) {
+                        if ( type == typeof( string ) ) {
+                            obj.Add( fname, SerializePrimitive( tValue, type ) );
+                        } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
+                            obj.Add( fname, SerializeList( tValue, type ) );
+                        } else {
+                            obj.Add( fname, SerializeClass( tValue, type ) );
+                        }
                     }
                 }
-            }
 
-            for ( int i = 0; i < properties.Count; i++ ) {
-                var property = properties[i];
-                var type = property.PropertyType;
-                if ( property.GetIndexParameters().Length > 0 ) {
-                    continue;
-                }
-                var tValue = property.GetValue( value, null );
-                var pname = string.Format( "{0}|{1}", property.Name, i );
-
-                if ( type.IsArray ) {
-                    obj.Add( pname, SerializeList( tValue, type ) );
-                } else if ( type.IsEnum ) {
-                    obj.Add( pname, SerializeEnum( tValue, type ) );
-                } else if ( type.IsValueType && !type.IsPrimitive ) {
-                    if ( type == typeof( double ) ) {
-                        obj.Add( pname, SerializePrimitive( tValue, type ) );
-                    } else {
-                        obj.Add( pname, SerializeClass( tValue, type ) );
+                for ( int i = 0; i < properties.Count; i++ ) {
+                    var property = properties[i];
+                    var type = property.PropertyType;
+                    if ( property.GetIndexParameters().Length > 0 ) {
+                        continue;
                     }
-                } else if ( type.IsValueType ) {
-                    obj.Add( pname, SerializePrimitive( tValue, type ) );
-                } else if ( type.IsClass ) {
-                    if ( type == typeof( string ) ) {
-                        obj.Add( pname, SerializePrimitive( tValue, type ) );
-                    } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
+                    var tValue = property.GetValue( value, null );
+                    var pname = string.Format( "{0}|{1}", property.Name, i );
+
+                    if ( type.IsArray ) {
                         obj.Add( pname, SerializeList( tValue, type ) );
-                    } else {
-                        obj.Add( pname, SerializeClass( tValue, type ) );
+                    } else if ( type.IsEnum ) {
+                        obj.Add( pname, SerializeEnum( tValue, type ) );
+                    } else if ( type.IsValueType && !type.IsPrimitive ) {
+                        if ( type == typeof( double ) ) {
+                            obj.Add( pname, SerializePrimitive( tValue, type ) );
+                        } else {
+                            obj.Add( pname, SerializeClass( tValue, type ) );
+                        }
+                    } else if ( type.IsValueType ) {
+                        obj.Add( pname, SerializePrimitive( tValue, type ) );
+                    } else if ( type.IsClass ) {
+                        if ( type == typeof( string ) ) {
+                            obj.Add( pname, SerializePrimitive( tValue, type ) );
+                        } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
+                            obj.Add( pname, SerializeList( tValue, type ) );
+                        } else {
+                            obj.Add( pname, SerializeClass( tValue, type ) );
+                        }
                     }
                 }
+            } catch ( Exception ) {
+                // pretty ugly but doing this to prevent MissingReferenceExcpetion which apparently isn't catchable
+                obj.IsNull = true;
+                return obj;
             }
 
             return obj;
