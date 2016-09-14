@@ -90,15 +90,22 @@ namespace TNRD.Automatron {
             foreach ( var item in lines ) {
                 var line = new SerializableLine();
                 line.ID = item.ID;
-                line.IdLeft = ( (AutomationLine)item ).Left.ID;
-                line.IdRight = ( (AutomationLine)item ).Right.ID;
 
                 if ( item is ConditionalLine ) {
+                    var l = (ConditionalLine)item;
                     line.LineType = ELineType.ConditionalLine;
+                    line.IdLeft = l.Left.ID;
+                    line.IdRight = l.Right.ID;
                 } else if ( item is FieldLine ) {
+                    var l = (FieldLine)item;
                     line.LineType = ELineType.FieldLine;
+                    line.IdLeft = l.Left.ID;
+                    line.IdRight = l.Right.ID;
                 } else if ( item is AutomationLine ) {
+                    var l = (AutomationLine)item;
                     line.LineType = ELineType.AutomationLine;
+                    line.IdLeft = l.Left.ID;
+                    line.IdRight = l.Right.ID;
                 }
 
                 automatron.Lines.Add( line );
