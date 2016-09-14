@@ -83,10 +83,16 @@ namespace TNRD.Automatron {
         private static List<Type> GetAssemblyTypes( params string[] names ) {
             var list = new List<Type>();
             foreach ( var item in names ) {
-                var assembly = Assembly.Load( item );
-                list.AddRange( assembly.GetTypes()
-                    .Where( t => t.IsPublic )
-                    .Where( t => !t.Name.StartsWith( "<" ) && !t.Name.StartsWith( "$" ) ) );
+                try {
+                    var assembly = Assembly.Load( item );
+                    list.AddRange( assembly.GetTypes()
+                        .Where( t => t.IsPublic )
+                        .Where( t => !t.Name.StartsWith( "<" ) && !t.Name.StartsWith( "$" ) ) );
+                } catch ( System.IO.FileNotFoundException ) {
+                    // this library doesn't exist (yet)
+                    continue;
+                }
+                
             }
             return list;
         }

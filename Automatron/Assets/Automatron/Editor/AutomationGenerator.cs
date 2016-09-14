@@ -707,24 +707,29 @@ namespace TNRD.Automatron.Generation {
 
         private List<Type> LoadTypesFromAssembly( string assemblyName ) {
             var types = new List<Type>();
-            var assembly = Assembly.Load( assemblyName );
 
-            types = assembly.GetTypes()
-                .Where( t => !t.Name.StartsWith( "<" ) && !t.Name.StartsWith( "$" ) )
-                .Where( t => t.IsPublic )
-                .Where( t =>
-                    ( t.GetMethods( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
-                        .Where( m => !m.Name.StartsWith( "get_" ) && !m.Name.StartsWith( "set_" ) && !m.Name.StartsWith( "op_" ) && !m.Name.StartsWith( "add_" ) && !m.Name.StartsWith( "remove_" ) )
-                        .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
-                        .Where( m => m.GetGenericArguments().Length == 0 ).Count() > 0 )
-                        ||
-                    ( t.GetProperties( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
-                        .Where( p => p.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
-                        .Where( p => p.CanRead ).Count() > 0 )
-                        ||
-                    ( t.GetFields( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
-                        .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 ).Count() > 0 )
-                ).ToList();
+            try {
+                var assembly = Assembly.Load( assemblyName );
+
+                types = assembly.GetTypes()
+                    .Where( t => !t.Name.StartsWith( "<" ) && !t.Name.StartsWith( "$" ) )
+                    .Where( t => t.IsPublic )
+                    .Where( t =>
+                        ( t.GetMethods( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
+                            .Where( m => !m.Name.StartsWith( "get_" ) && !m.Name.StartsWith( "set_" ) && !m.Name.StartsWith( "op_" ) && !m.Name.StartsWith( "add_" ) && !m.Name.StartsWith( "remove_" ) )
+                            .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
+                            .Where( m => m.GetGenericArguments().Length == 0 ).Count() > 0 )
+                            ||
+                        ( t.GetProperties( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
+                            .Where( p => p.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
+                            .Where( p => p.CanRead ).Count() > 0 )
+                            ||
+                        ( t.GetFields( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
+                            .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 ).Count() > 0 )
+                    ).ToList();
+            } catch ( FileNotFoundException ) {
+                // this library doesn't exist (yet)
+            }
 
             return types;
         }
