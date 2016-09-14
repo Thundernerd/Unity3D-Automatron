@@ -3,7 +3,7 @@
 namespace TNRD.Automatron {
 
     [AttributeUsage( AttributeTargets.Class, Inherited = false, AllowMultiple = false )]
-    sealed class AutomationAttribute : Attribute {
+    public sealed class AutomationAttribute : Attribute {
 
         public string Name;
 

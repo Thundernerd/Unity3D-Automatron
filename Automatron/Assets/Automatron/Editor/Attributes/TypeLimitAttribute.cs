@@ -3,7 +3,7 @@
 namespace TNRD.Automatron {
 
     [AttributeUsage( AttributeTargets.Field, Inherited = false, AllowMultiple = false )]
-    sealed class TypeLimitAttribute : Attribute {
+    public sealed class TypeLimitAttribute : Attribute {
 
         public Type Type;
 
