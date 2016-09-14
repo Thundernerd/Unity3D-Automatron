@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using TNRD.Editor.Core;
-using UnityEditor;
-using TNRD.Editor;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using TNRD.Editor.Windows;
+using TNRD.Editor;
+using TNRD.Editor.Core;
+using UnityEditor;
+using UnityEngine;
 
 namespace TNRD.Automatron {
 

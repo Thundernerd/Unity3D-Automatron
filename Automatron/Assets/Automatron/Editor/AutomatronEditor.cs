@@ -107,6 +107,9 @@ namespace TNRD.Automatron {
         private EditorCoroutine executionRoutine = null;
         private EditorCoroutine lookAtRoutine = null;
 
+        [RequireSerialization]
+        private Vector2 camera;
+
         public void NewAutomatron( string path, string name ) {
             Name = name;
             Path = path;
@@ -119,7 +122,7 @@ namespace TNRD.Automatron {
             EntryId = entryPoint.ID;
             Globals.Camera = new Vector2();
 
-            AutomatronSerializer.Save( this );
+            Save();
         }
 
         public void LoadAutomatron( string path ) {
@@ -131,6 +134,7 @@ namespace TNRD.Automatron {
 
             Globals.Camera = a.Camera;
             Name = a.Name;
+            Path = a.Path;
 
             foreach ( var item in a.Automations ) {
                 var type = Type.GetType( item.Type );
@@ -210,6 +214,8 @@ namespace TNRD.Automatron {
             if ( lookAtRoutine != null ) {
                 lookAtRoutine.Stop();
             }
+
+            camera = Globals.Camera;
         }
 
         protected override void OnAfterSerialized() {
@@ -222,7 +228,7 @@ namespace TNRD.Automatron {
             }
 
             WindowSettings.IsFullscreen = true;
-            Globals.Camera = new Vector2();
+            Globals.Camera = camera;
 
             CreateIcons();
         }
@@ -313,6 +319,14 @@ namespace TNRD.Automatron {
 
             if ( Input.ButtonDown( EMouseButton.Middle ) ) {
                 Globals.Camera += Input.DragDelta;
+            }
+
+            if ( AutomatronSettings.AutoSave ) {
+                if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                    Save();
+                } else if ( Input.ButtonReleased( EMouseButton.Middle ) ) {
+                    Save();
+                }
             }
 
             Repaint();
@@ -490,6 +504,10 @@ namespace TNRD.Automatron {
             Globals.Camera = dest;
 
             yield break;
+        }
+
+        public void Save() {
+            AutomatronSerializer.Save( this );
         }
     }
 }

@@ -7,6 +7,7 @@ namespace TNRD.Automatron {
 
     public class SerializableAutomatron {
         public string Name;
+        public string Path;
         public string EntryID;
         public Vector2 Camera;
         public int ControlID;
@@ -54,6 +55,7 @@ namespace TNRD.Automatron {
             var automatron = new SerializableAutomatron();
             automatron.EntryID = editor.EntryId;
             automatron.Name = editor.Name;
+            automatron.Path = editor.Path;
             automatron.Camera = Globals.Camera;
             automatron.ControlID = editor.GetControlID();
 
