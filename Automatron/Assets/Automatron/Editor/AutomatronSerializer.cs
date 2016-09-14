@@ -79,6 +79,7 @@ namespace TNRD.Automatron {
                     var v = f.GetValue();
                     if ( v is GameObject ) continue;
                     if ( v is ScriptableObject ) continue;
+                    field.Value = v;
                     automation.Fields.Add( field );
                 }
 

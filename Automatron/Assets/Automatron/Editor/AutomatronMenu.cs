@@ -332,10 +332,10 @@ namespace TNRD.Automatron {
                     configs.Insert( 0, ( Path.Combine( automatronPath, automatronName ).Replace( "\\", "/" ) + ".acfg" ) );
                     SaveRecents();
 
+                    Remove();
                     var wnd = new AutomatronEditor();
                     AddWindow( wnd );
                     wnd.NewAutomatron( automatronPath, automatronName );
-                    Remove();
 
                     return;
                 } else if ( loadAutomatron ) {
@@ -349,10 +349,10 @@ namespace TNRD.Automatron {
                     configs.Insert( 0, automatron );
                     SaveRecents();
 
+                    Remove();
                     var wnd = new AutomatronEditor();
                     AddWindow( wnd );
                     wnd.LoadAutomatron( automatron );
-                    Remove();
 
                     return;
                 } else if ( deleteAutomatron ) {

@@ -226,6 +226,10 @@ namespace TNRD.Editor.Serialization {
                 var tValue = field.GetValue( value );
                 var fname = string.Format( "{0}|{1}", field.Name, i );
 
+                if ( type == typeof( object ) && tValue != null ) {
+                    type = tValue.GetType();
+                }
+
                 if ( type.IsArray ) {
                     obj.Add( fname, SerializeList( tValue, type ) );
                 } else if ( type.IsEnum ) {
