@@ -163,7 +163,27 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Game Object/Create Primitive" )]
+    [Automation( "Game Object/Create" )]
+    class GameObjectCreate0 : Automation {
+
+        public string name;
+        public UnityEngine.Vector3 position;
+        public UnityEngine.Vector3 rotation;
+        public UnityEngine.Vector3 scale;
+        [ReadOnly]
+        public UnityEngine.GameObject Result;
+
+        public override IEnumerator Execute() {
+            Result = new UnityEngine.GameObject( name );
+            Result.transform.position = position;
+            Result.transform.rotation = UnityEngine.Quaternion.Euler( rotation );
+            Result.transform.localScale = scale;
+            yield break;
+        }
+
+    }
+
+    [Automation( "Game Object/Create Primitive" )]
 	class GameObjectCreatePrimitive0 : Automation {
 
 		public UnityEngine.PrimitiveType type;
