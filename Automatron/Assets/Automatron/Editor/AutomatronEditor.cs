@@ -275,6 +275,37 @@ namespace TNRD.Automatron {
 
                 } );
                 gm.AddSeparator();
+                gm.AddItem( "Create Automation", false, () => {
+                    ShowPopup( new InputBox(
+                        "Create Automation",
+                        "Please insert the name for your automation",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                AutomationTemplator.CreateAutomation( input );
+                            }
+                        } ) );
+                } );
+                gm.AddItem( "Create Conditional", false, () => {
+                    ShowPopup( new InputBox(
+                        "Create Conditional Automation",
+                        "Please insert the name for your automation",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                AutomationTemplator.CreateConditionalAutomation( input );
+                            }
+                        } ) );
+                } );
+                gm.AddItem( "Create Loopable Loopable", false, () => {
+                    ShowPopup( new InputBox(
+                        "Create Automation",
+                        "Please insert the name for your automation",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                AutomationTemplator.CreateLoopableAutomation( input );
+                            }
+                        } ) );
+                } );
+                gm.AddSeparator();
                 gm.AddItem( "Generator", false, () => {
                     Generation.Generator.CreateMe();
                 } );
