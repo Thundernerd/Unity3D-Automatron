@@ -1,0 +1,15 @@
+﻿#if UNITY_EDITOR
+using System;
+using System.Collections;
+using TNRD.Automatron;
+using UnityEngine;
+using UnityEditor;
+
+[Automation( "_header_" )]
+public class _classname_Automation : Automation {
+
+    public override IEnumerator Execute() {
+        throw new NotImplementedException();
+    }
+}
+#endif

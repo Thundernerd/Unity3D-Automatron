@@ -1,0 +1,28 @@
+﻿#if UNITY_EDITOR
+using System;
+using System.Collections;
+using TNRD.Automatron;
+using TNRD.Automatron.Automations;
+using UnityEngine;
+using UnityEditor;
+
+[Automation( "_classname_" )]
+public class _classname_Automation : LoopableAutomation {
+
+    private int index = 0;
+
+    public override void Reset() {
+        base.Reset();
+        index = 0;
+    }
+
+    public override IEnumerator Execute() {
+        throw new NotImplementedException();
+    }
+
+    public override bool IsDone() {
+        // return index == ?
+        throw new NotImplementedException();
+    }
+}
+#endif
