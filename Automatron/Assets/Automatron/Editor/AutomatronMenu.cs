@@ -202,8 +202,9 @@ namespace TNRD.Automatron {
                             if ( File.Exists( p ) ) {
                                 loadAutomatron = true;
                             } else {
-                                EditorUtility.DisplayDialog( "Automatron", "Oops, that one doesn't exist!", "OK" );
-                                deleteAutomatron = true;
+                                if ( EditorUtility.DisplayDialog( "Automatron", string.Format( "\"{0}\" could not be opened. Do you want to remove the reference from the list?", l ), "Yes", "No" ) ) {
+                                    deleteAutomatron = true;
+                                }
                             }
                         }
                     }
