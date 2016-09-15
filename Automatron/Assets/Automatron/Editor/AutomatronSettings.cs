@@ -73,14 +73,22 @@ namespace TNRD.Automatron {
             }
         }
 
-        public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD.Automatron.ConfigFolder", "Config Folder", Application.dataPath + "/Automatron/Configs/" );
-        public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave", "Auto Save", true );
-        public static EditorPrefsString AssetPath = new EditorPrefsString( "TNRD.Automatron.AssetFolder", "Asset Path", "Assets/Automatron/Editor/Assets/" );
+        private static string projectName {
+            get {
+                var s = Application.dataPath.Split( '/' );
+                var p = s[s.Length - 2];
+                return p;
+            }
+        }
+
+        public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD.Automatron.ConfigFolder." + projectName, "Config Folder", "Assets/Automatron/Configs/" );
+        public static EditorPrefsString AutomatronFolder = new EditorPrefsString( "TNRD.Automatron.AutomatronFolder." + projectName, "Automatron Folder", "Assets/Automatron/Editor/" );
+        public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave." + projectName, "Auto Save", true );
 
         [PreferenceItem( "Automatron" )]
         public static void PreferencesGUI() {
             ConfigFolder.Draw();
-            AssetPath.Draw();
+            AutomatronFolder.Draw();
             AutoSave.Draw();
 
             GUILayout.FlexibleSpace();
