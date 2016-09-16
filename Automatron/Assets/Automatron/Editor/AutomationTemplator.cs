@@ -1,8 +1,10 @@
-﻿using System;
+﻿#if AUTOMATRON_LIB
+using Automatron.Properties;
+#endif
+using System;
 using System.IO;
 using System.Linq;
 using UnityEditor;
-using UnityEngine;
 
 namespace TNRD.Automatron {
 
@@ -15,11 +17,9 @@ namespace TNRD.Automatron {
 
         static AutomationTemplator() {
 #if AUTOMATRON_LIB
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            var names = assembly.GetManifestResourceNames();
-            foreach ( var item in names ) {
-                Debug.Log( item );
-            }
+            automationTemplate = Resources.AutomationTemplate;
+            conditionalTemplate = Resources.ConditionalTemplate;
+            loopableTemplate = Resources.LoopableTemplate;
 #else
             var assets = AssetDatabase.FindAssets( "Template.cs" ).Select( a => AssetDatabase.GUIDToAssetPath( a ) );
             automationTemplate = ReadAsset( assets.Where( a => a.EndsWith( "AutomationTemplate.cs.txt" ) ).FirstOrDefault() );
@@ -30,7 +30,7 @@ namespace TNRD.Automatron {
 
         private static string ReadAsset( string path ) {
             if ( string.IsNullOrEmpty( path ) ) return "";
-            var asset = AssetDatabase.LoadAssetAtPath<TextAsset>( path );
+            var asset = AssetDatabase.LoadAssetAtPath<UnityEngine.TextAsset>( path );
             return asset.text;
         }
 
