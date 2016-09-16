@@ -313,7 +313,7 @@ namespace TNRD.Automatron.Generation {
                 }
 
                 if ( m.ReturnType != typeof( void ) ) {
-                    builder.AppendLine( "\t\t[ReadOnly]" );
+                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );                    
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
                 }
 
@@ -388,7 +388,7 @@ namespace TNRD.Automatron.Generation {
                         builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
                     }
 
-                    builder.AppendLine( "\t\t[ReadOnly]" );
+                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( p.PropertyType ) ) );
 
                     builder.AppendLine();
@@ -472,7 +472,7 @@ namespace TNRD.Automatron.Generation {
                     builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
                 }
 
-                builder.AppendLine( "\t\t[ReadOnly]" );
+                builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );
                 builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( f.FieldType ) ) );
 
                 builder.AppendLine();
