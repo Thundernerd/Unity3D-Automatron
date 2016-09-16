@@ -92,7 +92,7 @@ namespace TNRD.Automatron {
                     // this library doesn't exist (yet)
                     continue;
                 }
-                
+
             }
             return list;
         }
@@ -101,7 +101,7 @@ namespace TNRD.Automatron {
         public string Name;
         public string Path;
 
-        private QueueStart entryPoint;
+        private InternalQueueStart entryPoint;
         [RequireSerialization]
         public string EntryId;
 
@@ -120,8 +120,8 @@ namespace TNRD.Automatron {
             Name = name;
             Path = path;
 
-            entryPoint = new QueueStart() {
-                IsInitial = true, Position = WindowRect.center
+            entryPoint = new InternalQueueStart() {
+                Position = WindowRect.center
             };
             AddControl( entryPoint );
 
@@ -161,7 +161,7 @@ namespace TNRD.Automatron {
                 }
 
                 if ( item.ID == a.EntryID ) {
-                    entryPoint = (QueueStart)instance;
+                    entryPoint = (InternalQueueStart)instance;
                     EntryId = entryPoint.ID;
                 }
             }
@@ -233,7 +233,7 @@ namespace TNRD.Automatron {
         }
 
         protected override void OnAfterSerialized() {
-            var entries = GetControls<QueueStart>();
+            var entries = GetControls<InternalQueueStart>();
             foreach ( var item in entries ) {
                 if ( item.ID == EntryId ) {
                     entryPoint = item;

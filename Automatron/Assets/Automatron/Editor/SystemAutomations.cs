@@ -64,7 +64,7 @@ namespace TNRD.Automatron.Automations {
 
             return list;
         }
-        
+
         public abstract bool GetConditionalResult();
     }
 
@@ -77,8 +77,6 @@ namespace TNRD.Automatron.Automations {
 
         private GUIStyle textStyle;
 
-        public bool IsInitial { get; set; }
-
         public QueueStart() {
 
         }
@@ -86,9 +84,6 @@ namespace TNRD.Automatron.Automations {
         protected override void OnInitialize() {
             base.OnInitialize();
 
-            if ( IsInitial ) {
-                showCloseButton = false;
-            }
             showInArrow = false;
             AnchorPoint = Editor.EAnchor.MiddleCenter;
         }
@@ -100,9 +95,6 @@ namespace TNRD.Automatron.Automations {
         protected override void OnAfterSerialize() {
             base.OnAfterSerialize();
             RunOnGUIThread( CreateStyle );
-            if ( IsInitial ) {
-                showCloseButton = false;
-            }
             showInArrow = false;
             AnchorPoint = Editor.EAnchor.MiddleCenter;
         }
@@ -127,6 +119,24 @@ namespace TNRD.Automatron.Automations {
 
         public override IEnumerator Execute() {
             yield break;
+        }
+    }
+
+    [Automation( "Entry Point" )]
+    class InternalQueueStart : QueueStart {
+
+        public InternalQueueStart() {
+
+        }
+
+        protected override void OnInitialize() {
+            base.OnInitialize();
+            showCloseButton = false;
+        }
+
+        protected override void OnAfterSerialize() {
+            base.OnAfterSerialize();
+            showCloseButton = false;
         }
     }
 

@@ -46,7 +46,7 @@ namespace TNRD.Automatron.Editor.Core {
                 return textures[key];
             }
 
-            var fpath = string.Format( "{0}{1}.png", Path, key );
+            var fpath = System.IO.Path.Combine( Path, key + ".png" );
             if ( !File.Exists( fpath ) ) {
                 return null;
             }
