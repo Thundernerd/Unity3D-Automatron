@@ -195,8 +195,7 @@ namespace TNRD.Automatron.Automations {
             yield break;
         }
     }
-
-    [Automation( "Entry Point" )]
+    
     class InternalQueueStart : QueueStart {
 
         public InternalQueueStart() {
@@ -211,63 +210,6 @@ namespace TNRD.Automatron.Automations {
         protected override void OnAfterSerialize() {
             base.OnAfterSerialize();
             showCloseButton = false;
-        }
-    }
-
-    [Automation( "Loop/End" )]
-    class LoopEnd : Automation {
-
-        private GUIStyle textStyle;
-
-        public bool IsInitial { get; set; }
-
-        public LoopEnd() {
-
-        }
-
-        protected override void OnInitialize() {
-            base.OnInitialize();
-
-            if ( IsInitial ) {
-                showCloseButton = false;
-                showInArrow = false;
-            }
-        }
-
-        protected override void OnInitializeGUI() {
-            CreateStyle();
-        }
-
-        protected override void OnAfterSerialize() {
-            base.OnAfterSerialize();
-            RunOnGUIThread( CreateStyle );
-            if ( IsInitial ) {
-                showCloseButton = false;
-                showInArrow = false;
-            }
-        }
-
-        private void CreateStyle() {
-            textStyle = new GUIStyle( EditorStyles.label );
-            textStyle.alignment = TextAnchor.MiddleCenter;
-            textStyle.fontSize = 22;
-            textStyle.fontStyle = FontStyle.Italic;
-        }
-
-        protected override void OnGUI() {
-            base.OnGUI();
-
-            Size.x = 150;
-            Size.y = 100;
-
-            var rect = Rectangle;
-            //rect.position += ( Window as AutomatronEditor ).Camera;
-
-            GUI.Label( rect, "Loop End", textStyle );
-        }
-
-        public override IEnumerator Execute() {
-            yield break;
         }
     }
 }

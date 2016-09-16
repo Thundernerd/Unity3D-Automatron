@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using TNRD.Automatron.Automations;
 using TNRD.Automatron.Editor;
@@ -73,31 +72,36 @@ namespace TNRD.Automatron {
         }
 
         private void GetName() {
-            name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
-            if ( name.Contains( "/" ) && name.Length > 35 ) {
-                var foundFirst = false;
-                int ind = -1;
-                for ( int i = name.Length - 1; i >= 0; i-- ) {
-                    if ( name[i] == '/' ) {
-                        if ( !foundFirst ) {
-                            ind = i;
-                            foundFirst = true;
-                            continue;
-                        }
+            try {
+                name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
+                if ( name.Contains( "/" ) && name.Length > 35 ) {
+                    var foundFirst = false;
+                    int ind = -1;
+                    for ( int i = name.Length - 1; i >= 0; i-- ) {
+                        if ( name[i] == '/' ) {
+                            if ( !foundFirst ) {
+                                ind = i;
+                                foundFirst = true;
+                                continue;
+                            }
 
-                        ind = i;
-                        break;
+                            ind = i;
+                            break;
+                        }
+                    }
+
+                    if ( ind != -1 ) {
+                        name = name.Substring( ind + 1 );
+                    }
+
+                    if ( name.Contains( "/" ) && name.Length > 35 ) {
+                        var index = name.LastIndexOf( '/' );
+                        name = name.Substring( index + 1 );
                     }
                 }
-
-                if ( ind != -1 ) {
-                    name = name.Substring( ind + 1 );
-                }
-
-                if ( name.Contains( "/" ) && name.Length > 35 ) {
-                    var index = name.LastIndexOf( '/' );
-                    name = name.Substring( index + 1 );
-                }
+            } catch ( IndexOutOfRangeException ) {
+                name = "";
+                // This is for the internal queue start
             }
         }
 
