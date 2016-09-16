@@ -38,7 +38,8 @@ namespace TNRD.Automatron {
     public enum ELineType {
         AutomationLine,
         FieldLine,
-        ConditionalLine
+        ConditionalLine,
+        LoopableLine
     }
 
     public class AutomatronSerializer {
@@ -99,6 +100,11 @@ namespace TNRD.Automatron {
                 } else if ( item is FieldLine ) {
                     var l = (FieldLine)item;
                     line.LineType = ELineType.FieldLine;
+                    line.IdLeft = l.Left.ID;
+                    line.IdRight = l.Right.ID;
+                } else if ( item is LoopableLine ) {
+                    var l = (LoopableLine)item;
+                    line.LineType = ELineType.LoopableLine;
                     line.IdLeft = l.Left.ID;
                     line.IdRight = l.Right.ID;
                 } else if ( item is AutomationLine ) {

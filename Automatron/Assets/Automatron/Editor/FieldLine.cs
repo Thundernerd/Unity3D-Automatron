@@ -188,6 +188,8 @@ namespace TNRD.Automatron {
 
             if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                 doMouseCheck = true;
+                if ( Left == null || Right == null )
+                    Input.Use();
             }
         }
     }

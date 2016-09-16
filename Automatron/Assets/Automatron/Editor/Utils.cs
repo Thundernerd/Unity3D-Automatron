@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -94,6 +96,14 @@ namespace TNRD.Automatron {
             }
 
             return true;
+        }
+
+        public static bool IsList( this Type type ) {
+            return type.GetInterfaces().Contains( typeof( IList ) );
+        }
+
+        public static bool IsArray(this Type type) {
+            return type.IsArray || type == typeof( Array );
         }
     }
 }

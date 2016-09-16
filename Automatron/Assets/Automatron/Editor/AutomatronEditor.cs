@@ -191,6 +191,9 @@ namespace TNRD.Automatron {
                         case ELineType.ConditionalLine:
                             line = new ConditionalLine( (ConditionalAutomation)left, right );
                             break;
+                        case ELineType.LoopableLine:
+                            line = new LoopableLine( (LoopableAutomation)left, right );
+                            break;
                     }
 
                     if ( line != null ) {
@@ -339,7 +342,7 @@ namespace TNRD.Automatron {
             }
 
             if ( GUILayout.Button( trashContent, EditorStyles.toolbarButton ) ) {
-                ShowPopup( new MessageBox( "Watch Out!", "You're about to empty this Automatron...\nAre you sure you want to do this?", EMessageBoxButtons.YesNo, ( EDialogResult result ) => {
+                ShowPopup( new MessageBox( "Caution!", "You're about to empty this Automatron...\nAre you sure you want to do this?", EMessageBoxButtons.YesNo, ( EDialogResult result ) => {
                     if ( result == EDialogResult.Yes ) {
                         var controls = GetControls<ExtendedControl>();
                         for ( int i = controls.Count - 1; i >= 0; i-- ) {
@@ -428,22 +431,22 @@ namespace TNRD.Automatron {
             foreach ( var item in entries ) {
                 var automations = item.GetNextAutomations();
                 var loops = new List<LoopableAutomation>();
-                LoopEnd lEnd = null;
 
                 while ( true ) {
                     if ( automations == null || automations.Count == 0 ) break;
 
                     foreach ( var auto in automations ) {
                         if ( auto is LoopableAutomation ) {
-                            var lAuto = (LoopableAutomation)auto;
-                            if ( !loops.Contains( lAuto ) ) {
-                                loops.Add( lAuto );
+                            var l = (LoopableAutomation)auto;
+                            if ( !loops.Contains( l ) ) {
+                                loops.Add( l );
                             }
-                        } else if ( auto is LoopEnd ) {
-                            lEnd = (LoopEnd)auto;
+
+                            if ( !l.IsDone() ) {
+                                l.ResetLoop();
+                            }
                         }
 
-                        auto.IsInLoop = loops.Count > 0;
                         auto.PrepareForExecute();
                         if ( Globals.IsError ) break;
 
@@ -467,29 +470,27 @@ namespace TNRD.Automatron {
                         }
 
                         if ( Globals.IsError ) break;
-                        if ( !( auto is LoopableAutomation ) && !( auto is LoopEnd ) ) {
+                        if ( !( auto is LoopableAutomation ) ) {
                             auto.Progress = 1;
-                            auto.HasRun = true;
                         }
+
+                        auto.HasRun = true;
                     }
 
                     if ( Globals.IsError ) break;
 
-                    if ( lEnd != null ) {
-                        var lastLoop = loops[loops.Count - 1];
-                        var done = lastLoop.IsDone();
+                    automations = automations[automations.Count - 1].GetNextAutomations();
 
-                        lEnd.Progress = lastLoop.Progress;
-                        if ( done ) {
-                            automations = lEnd.GetNextAutomations();
-                            loops.RemoveAt( loops.Count - 1 );
-                            lEnd = null;
+                    if ( automations.Count == 0 && loops.Count > 0 ) {
+                        var l = loops[loops.Count - 1];
+                        l.MoveNext();
+                        if ( l.IsDone() ) {
+                            l.Progress = 1;
+                            automations = l.GetNextAutomations();
+                            loops.Remove( l );
                         } else {
-                            automations = lastLoop.GetNextAutomations();
-                            automations.Insert( 0, lastLoop );
+                            l.GetAutomations( ref automations, false );
                         }
-                    } else {
-                        automations = automations[automations.Count - 1].GetNextAutomations();
                     }
                 }
 
