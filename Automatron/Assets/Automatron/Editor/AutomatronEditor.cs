@@ -260,6 +260,7 @@ namespace TNRD.Automatron {
 
         protected override void OnGUI() {
             EditorGUILayout.BeginHorizontal( EditorStyles.toolbar );
+            EditorGUI.BeginDisabledGroup( Globals.IsExecuting );
             if ( GUILayout.Button( "File", EditorStyles.toolbarDropDown ) ) {
                 var gm = GenericMenuBuilder.CreateMenu();
                 gm.AddItem( "New Automatron", false, () => {
@@ -318,6 +319,7 @@ namespace TNRD.Automatron {
             if ( GUILayout.Button( "Automations", EditorStyles.toolbarDropDown ) ) {
                 ShowAutomationPopup();
             }
+            EditorGUI.EndDisabledGroup();
 
             // Spacer
             GUILayout.Button( "", EditorStyles.toolbarButton );
@@ -384,6 +386,8 @@ namespace TNRD.Automatron {
         }
 
         private void ShowAutomationPopup() {
+            if ( Globals.IsExecuting ) return;
+
             var items = new List<FancyPopup.TreeItem>();
             foreach ( var item in automations ) {
                 items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
