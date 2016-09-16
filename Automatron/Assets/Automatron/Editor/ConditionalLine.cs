@@ -148,8 +148,16 @@ namespace TNRD.Automatron {
                 End.y += 8;
             }
 
-            P1 = Start + p1;
-            P2 = End + p2;
+            if ( Left == null ) {
+                P2 = End + p2;
+                P1 = mpos - ( mpos - End ).normalized * 50;
+            } else if ( Right == null ) {
+                P1 = Start + p1;
+                P2 = mpos - ( mpos - Start ).normalized * 50;
+            } else {
+                P1 = Start + p1;
+                P2 = End + p2;
+            }
 
             // Base ONGUI
             Handles.BeginGUI();
@@ -171,6 +179,8 @@ namespace TNRD.Automatron {
 
             if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                 doMouseCheck = true;
+                if ( Left == null || Right == null )
+                    Input.Use();
             }
         }
     }

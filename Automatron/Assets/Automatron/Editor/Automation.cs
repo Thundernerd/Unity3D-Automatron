@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
+using TNRD.Automatron.Automations;
 using TNRD.Automatron.Editor;
 using TNRD.Automatron.Editor.Core;
 using TNRD.Automatron.Editor.Serialization;
@@ -51,10 +51,6 @@ namespace TNRD.Automatron {
 
         [IgnoreSerialization]
         public bool HasRun = false;
-        [IgnoreSerialization]
-        public bool IsInLoop = false;
-
-        public bool ExecuteEveryLoop = false;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
@@ -76,31 +72,36 @@ namespace TNRD.Automatron {
         }
 
         private void GetName() {
-            name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
-            if ( name.Contains( "/" ) && name.Length > 35 ) {
-                var foundFirst = false;
-                int ind = -1;
-                for ( int i = name.Length - 1; i >= 0; i-- ) {
-                    if ( name[i] == '/' ) {
-                        if ( !foundFirst ) {
-                            ind = i;
-                            foundFirst = true;
-                            continue;
-                        }
+            try {
+                name = ( GetType().GetCustomAttributes( typeof( AutomationAttribute ), false )[0] as AutomationAttribute ).Name;
+                if ( name.Contains( "/" ) && name.Length > 35 ) {
+                    var foundFirst = false;
+                    int ind = -1;
+                    for ( int i = name.Length - 1; i >= 0; i-- ) {
+                        if ( name[i] == '/' ) {
+                            if ( !foundFirst ) {
+                                ind = i;
+                                foundFirst = true;
+                                continue;
+                            }
 
-                        ind = i;
-                        break;
+                            ind = i;
+                            break;
+                        }
+                    }
+
+                    if ( ind != -1 ) {
+                        name = name.Substring( ind + 1 );
+                    }
+
+                    if ( name.Contains( "/" ) && name.Length > 35 ) {
+                        var index = name.LastIndexOf( '/' );
+                        name = name.Substring( index + 1 );
                     }
                 }
-
-                if ( ind != -1 ) {
-                    name = name.Substring( ind + 1 );
-                }
-
-                if ( name.Contains( "/" ) && name.Length > 35 ) {
-                    var index = name.LastIndexOf( '/' );
-                    name = name.Substring( index + 1 );
-                }
+            } catch ( IndexOutOfRangeException ) {
+                name = "";
+                // This is for the internal queue start
             }
         }
 
@@ -156,10 +157,6 @@ namespace TNRD.Automatron {
 
         }
 
-        private void ToggleExecuteEveryLoop() {
-            ExecuteEveryLoop = !ExecuteEveryLoop;
-        }
-
         private void RemoveIncomingLines() {
             if ( LinesIn.Count > 0 ) {
                 for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
@@ -209,8 +206,6 @@ namespace TNRD.Automatron {
 
             if ( Input.ButtonReleased( EMouseButton.Right ) && topRect.Contains( Input.MousePosition ) ) {
                 var gm = GenericMenuBuilder.CreateMenu();
-                gm.AddItem( "Execute Every Loop", ExecuteEveryLoop, ToggleExecuteEveryLoop );
-                gm.AddSeparator();
                 gm.AddItem( "Remove Incoming Lines", false, RemoveIncomingLines );
                 gm.AddItem( "Remove Outgoing Lines", false, RemoveOutgoingLines );
                 gm.ShowAsContext();
@@ -239,7 +234,7 @@ namespace TNRD.Automatron {
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     if ( lArrow.Contains( Input.MousePosition ) ) {
                         var line = AutomationLine.HookLineIn( this );
-                        if (LinesIn.Contains(line)) {
+                        if ( LinesIn.Contains( line ) ) {
                             LinesIn.Remove( line );
                         }
 
@@ -366,7 +361,7 @@ namespace TNRD.Automatron {
             foreach ( var field in fields ) {
                 if ( field.LineIn != null ) {
                     var parent = field.LineIn.Left.Parent;
-                    if ( ( ExecuteEveryLoop || ( !parent.HasRun && !IsInLoop ) ) && !automations.Contains( parent ) ) {
+                    if ( !parent.HasRun && !( parent is LoopableAutomation ) && !automations.Contains( parent ) ) {
                         parent.GetAutomations( ref automations, true );
                     }
                 }
@@ -383,7 +378,6 @@ namespace TNRD.Automatron {
 
         public virtual void Reset() {
             HasRun = false;
-            IsInLoop = false;
             Progress = 0;
             ErrorType = ErrorType.None;
 
@@ -394,35 +388,51 @@ namespace TNRD.Automatron {
             }
         }
 
+        public virtual void ResetLoop() {
+            HasRun = false;
+
+            foreach ( var field in fields ) {
+                if ( field.LineIn != null ) {
+                    var parent = field.LineIn.Left.Parent;
+                    if ( !( parent is LoopableAutomation ) && parent.HasRun ) {
+                        parent.ResetLoop();
+                    }
+                }
+            }
+
+            if ( LineOut != null && !(LineOut.Right is LoopableAutomation) && LineOut.Right.HasRun ) {
+                LineOut.Right.ResetLoop();
+            }
+        }
+
         public void PrepareForExecute() {
             foreach ( var item in fields ) {
                 if ( item.LineIn != null ) {
                     var value = item.LineIn.Left.GetValue();
                     try {
                         var type = value.GetType();
+                        var myType = item.GetFieldType();
 
-                        if ( type.IsArray ) {
-                            var myType = item.GetFieldType();
-                            if ( myType.GetInterfaces().Contains( typeof( IList ) ) ) {
+                        if ( type.IsArray() ) {
+                            if ( !myType.IsArray() && myType.IsList() ) {
                                 var list = Converter.ArrayToList( (Array)value );
                                 value = list;
                             }
-                        } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
-                            var myType = item.GetFieldType();
-                            if ( myType.IsArray ) {
+                        } else if ( type.IsList() ) {
+                            if ( !myType.IsList() && myType.IsArray() ) {
                                 var array = Converter.ListToArray( (IList)value );
                                 value = array;
                             }
                         }
 
                         item.SetValue( value );
-                    } catch ( System.ArgumentException ex ) {
+                    } catch ( ArgumentException ex ) {
                         item.LineIn.Color = new Color( 0.72f, 0.72f, 0.047f, 1 );
                         ErrorType = ErrorType.Arugment;
                         Globals.LastAutomation = this;
                         Globals.LastError = ex;
                         Globals.IsError = true;
-                    } catch ( System.Exception ex ) {
+                    } catch ( Exception ex ) {
                         item.LineIn.Color = new Color( 0.36f, 0.0235f, 0.0235f, 1 );
                         ErrorType = ErrorType.Generic;
                         Globals.LastAutomation = this;

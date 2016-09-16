@@ -13,7 +13,7 @@ namespace TNRD.Automatron {
         [MenuItem( "Window/Automatron" )]
         private static void Init() {
             var wnd = CreateEditor( "Automatron" );
-            wnd.AssetPath = AutomatronSettings.AssetPath;
+            wnd.AssetPath = Path.Combine( AutomatronSettings.AutomatronFolder, "Assets" );
             wnd.minSize = new Vector2( 960, 540 );
             wnd.Show( true );
         }

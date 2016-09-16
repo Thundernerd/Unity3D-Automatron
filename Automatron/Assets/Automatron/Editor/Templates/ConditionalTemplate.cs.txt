@@ -1,0 +1,20 @@
+﻿#if UNITY_EDITOR
+using System;
+using System.Collections;
+using TNRD.Automatron;
+using TNRD.Automatron.Automations;
+using UnityEngine;
+using UnityEditor;
+
+[Automation( "_classname_" )]
+public class _classname_Automation : ConditionalAutomation {
+
+    public override IEnumerator Execute() {
+        throw new NotImplementedException();
+    }
+
+    public override bool GetConditionalResult() {
+        throw new NotImplementedException();
+    }
+}
+#endif

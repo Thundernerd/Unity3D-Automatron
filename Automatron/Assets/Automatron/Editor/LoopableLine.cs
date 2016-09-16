@@ -1,103 +1,58 @@
 ﻿using UnityEngine;
 using TNRD.Automatron.Editor.Serialization;
 using TNRD.Automatron.Editor;
+using TNRD.Automatron.Automations;
+using UnityEditor;
 
 namespace TNRD.Automatron {
 
-    public class AutomationLine : BezierLine {
+    public class LoopableLine : AutomationLine {
 
-        public static AutomationLine HookLineIn( Automation auto ) {
+        public static LoopableLine HookLineOut2( LoopableAutomation auto ) {
             if ( Globals.TempFieldLine != null ) {
                 Globals.TempFieldLine.Remove();
                 Globals.TempFieldLine = null;
             }
 
             if ( Globals.TempAutomationLine == null ) {
-                var f = new AutomationLine();
-                f.Right = auto;
-                Globals.TempAutomationLine = f;
-                return f;
-            } else {
-                if ( Globals.TempAutomationLine is ConditionalLine || Globals.TempAutomationLine is LoopableLine ) {
-                    if ( Globals.TempAutomationLine.Right == null && Globals.TempAutomationLine.Left != auto ) {
-                        AutomationLine line = null;
-                        if ( Globals.TempAutomationLine is ConditionalLine )
-                            line = new ConditionalLine( ( (ConditionalLine)Globals.TempAutomationLine ).Left, auto );
-                        else
-                            line = new LoopableLine( ( (LoopableLine)Globals.TempAutomationLine ).Left, auto );
-
-                        Globals.TempAutomationLine.Remove();
-                        Globals.TempAutomationLine = null;
-                        return line;
-                    }
-                }
-
-                if ( Globals.TempAutomationLine.Right == null && Globals.TempAutomationLine.Left != auto ) {
-                    var line = new AutomationLine( Globals.TempAutomationLine.Left, auto );
-                    Globals.TempAutomationLine.Remove();
-                    Globals.TempAutomationLine = null;
-                    return line;
-                } else {
-                    Globals.TempAutomationLine.Remove();
-                    Globals.TempAutomationLine = null;
-                    return HookLineIn( auto );
-                }
-            }
-        }
-
-        public static AutomationLine HookLineOut( Automation auto ) {
-            if ( Globals.TempFieldLine != null ) {
-                Globals.TempFieldLine.Remove();
-                Globals.TempFieldLine = null;
-            }
-
-            if ( Globals.TempAutomationLine == null ) {
-                var f = new AutomationLine();
+                var f = new LoopableLine();
                 f.Left = auto;
                 Globals.TempAutomationLine = f;
                 return f;
             } else {
-                if ( Globals.TempAutomationLine is ConditionalLine ) {
-                    Globals.TempAutomationLine.Remove();
-                    Globals.TempAutomationLine = null;
-                    return HookLineOut( auto );
-                }
-
                 if ( Globals.TempAutomationLine.Left == null && Globals.TempAutomationLine.Right != auto ) {
-                    var line = new AutomationLine( auto, Globals.TempAutomationLine.Right );
+                    var line = new LoopableLine( auto, Globals.TempAutomationLine.Right );
                     Globals.TempAutomationLine.Remove();
                     Globals.TempAutomationLine = null;
                     return line;
                 } else {
                     Globals.TempAutomationLine.Remove();
                     Globals.TempAutomationLine = null;
-                    return HookLineOut( auto );
+                    return HookLineOut2( auto );
                 }
             }
         }
 
         [IgnoreSerialization]
-        public Automation Left;
-        [IgnoreSerialization]
-        public Automation Right;
+        new public LoopableAutomation Left;
 
         [RequireSerialization]
         private string idLeft;
         [RequireSerialization]
         private string idRight;
 
-        private Vector2 p1 = new Vector2( 50, 0 );
+        private Vector2 p1 = new Vector2( 0, 50 );
         private Vector2 p2 = new Vector2( -50, 0 );
 
         private bool doMouseCheck = false;
 
-        public AutomationLine() { }
+        public LoopableLine() { }
 
-        public AutomationLine( Automation left, Automation right ) {
+        public LoopableLine( LoopableAutomation left, Automation right ) {
             Left = left;
             Right = right;
 
-            left.LineOut = this;
+            left.LineOut2 = this;
             Right.LinesIn.Add( this );
         }
 
@@ -115,10 +70,11 @@ namespace TNRD.Automatron {
                 return;
             }
 
+
             var automations = Window.GetControls<Automation>();
             foreach ( var item in automations ) {
                 if ( Left == null && item.ID == idLeft ) {
-                    Left = item;
+                    Left = (LoopableAutomation)item;
                     continue;
                 }
 
@@ -137,7 +93,7 @@ namespace TNRD.Automatron {
                 return;
             }
 
-            Left.LineOut = this;
+            Left.LineOut2 = this;
             Right.LinesIn.Add( this );
 
             SortingOrder = ESortingOrder.Line;
@@ -153,7 +109,7 @@ namespace TNRD.Automatron {
         }
 
         protected override void OnDestroy() {
-            if ( Left != null && Left.LineOut == this ) {
+            if ( Left != null && Left.LineOut2 == this ) {
                 Left.LineOut = null;
             }
 
@@ -179,8 +135,8 @@ namespace TNRD.Automatron {
             } else {
                 var r = Left.Rectangle;
                 Start = r.position;
-                Start.x += r.width + 12;
-                Start.y += 8;
+                Start.x += r.width / 2;
+                Start.y += r.height + 15;
             }
 
             if ( Right == null ) {
@@ -203,7 +159,14 @@ namespace TNRD.Automatron {
                 P2 = End + p2;
             }
 
-            base.OnGUI();
+            // Base ONGUI
+            Handles.BeginGUI();
+            var temp = Handles.color;
+            Handles.color = Color;
+            Handles.DrawAAPolyLine( GetBezierPoints( Start, End, P1, P2 ) );
+            Handles.color = temp;
+            Handles.EndGUI();
+            // Base ONGUI
 
             if ( doMouseCheck ) {
                 if ( Left == null || Right == null ) {

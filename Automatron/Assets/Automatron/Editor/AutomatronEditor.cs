@@ -92,7 +92,7 @@ namespace TNRD.Automatron {
                     // this library doesn't exist (yet)
                     continue;
                 }
-                
+
             }
             return list;
         }
@@ -101,7 +101,7 @@ namespace TNRD.Automatron {
         public string Name;
         public string Path;
 
-        private QueueStart entryPoint;
+        private InternalQueueStart entryPoint;
         [RequireSerialization]
         public string EntryId;
 
@@ -120,8 +120,8 @@ namespace TNRD.Automatron {
             Name = name;
             Path = path;
 
-            entryPoint = new QueueStart() {
-                IsInitial = true, Position = WindowRect.center
+            entryPoint = new InternalQueueStart() {
+                Position = WindowRect.center
             };
             AddControl( entryPoint );
 
@@ -161,7 +161,7 @@ namespace TNRD.Automatron {
                 }
 
                 if ( item.ID == a.EntryID ) {
-                    entryPoint = (QueueStart)instance;
+                    entryPoint = (InternalQueueStart)instance;
                     EntryId = entryPoint.ID;
                 }
             }
@@ -190,6 +190,9 @@ namespace TNRD.Automatron {
                             break;
                         case ELineType.ConditionalLine:
                             line = new ConditionalLine( (ConditionalAutomation)left, right );
+                            break;
+                        case ELineType.LoopableLine:
+                            line = new LoopableLine( (LoopableAutomation)left, right );
                             break;
                     }
 
@@ -233,7 +236,7 @@ namespace TNRD.Automatron {
         }
 
         protected override void OnAfterSerialized() {
-            var entries = GetControls<QueueStart>();
+            var entries = GetControls<InternalQueueStart>();
             foreach ( var item in entries ) {
                 if ( item.ID == EntryId ) {
                     entryPoint = item;
@@ -275,6 +278,37 @@ namespace TNRD.Automatron {
 
                 } );
                 gm.AddSeparator();
+                gm.AddItem( "Create Automation", false, () => {
+                    ShowPopup( new InputBox(
+                        "Create Automation",
+                        "Please insert the name for your automation",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                AutomationTemplator.CreateAutomation( input );
+                            }
+                        } ) );
+                } );
+                gm.AddItem( "Create Conditional", false, () => {
+                    ShowPopup( new InputBox(
+                        "Create Conditional Automation",
+                        "Please insert the name for your automation",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                AutomationTemplator.CreateConditionalAutomation( input );
+                            }
+                        } ) );
+                } );
+                gm.AddItem( "Create Loopable Loopable", false, () => {
+                    ShowPopup( new InputBox(
+                        "Create Automation",
+                        "Please insert the name for your automation",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                AutomationTemplator.CreateLoopableAutomation( input );
+                            }
+                        } ) );
+                } );
+                gm.AddSeparator();
                 gm.AddItem( "Generator", false, () => {
                     Generation.Generator.CreateMe();
                 } );
@@ -308,7 +342,7 @@ namespace TNRD.Automatron {
             }
 
             if ( GUILayout.Button( trashContent, EditorStyles.toolbarButton ) ) {
-                ShowPopup( new MessageBox( "Watch Out!", "You're about to empty this Automatron...\nAre you sure you want to do this?", EMessageBoxButtons.YesNo, ( EDialogResult result ) => {
+                ShowPopup( new MessageBox( "Caution!", "You're about to empty this Automatron...\nAre you sure you want to do this?", EMessageBoxButtons.YesNo, ( EDialogResult result ) => {
                     if ( result == EDialogResult.Yes ) {
                         var controls = GetControls<ExtendedControl>();
                         for ( int i = controls.Count - 1; i >= 0; i-- ) {
@@ -397,22 +431,22 @@ namespace TNRD.Automatron {
             foreach ( var item in entries ) {
                 var automations = item.GetNextAutomations();
                 var loops = new List<LoopableAutomation>();
-                LoopEnd lEnd = null;
 
                 while ( true ) {
                     if ( automations == null || automations.Count == 0 ) break;
 
                     foreach ( var auto in automations ) {
                         if ( auto is LoopableAutomation ) {
-                            var lAuto = (LoopableAutomation)auto;
-                            if ( !loops.Contains( lAuto ) ) {
-                                loops.Add( lAuto );
+                            var l = (LoopableAutomation)auto;
+                            if ( !loops.Contains( l ) ) {
+                                loops.Add( l );
                             }
-                        } else if ( auto is LoopEnd ) {
-                            lEnd = (LoopEnd)auto;
+
+                            if ( !l.IsDone() ) {
+                                l.ResetLoop();
+                            }
                         }
 
-                        auto.IsInLoop = loops.Count > 0;
                         auto.PrepareForExecute();
                         if ( Globals.IsError ) break;
 
@@ -436,29 +470,27 @@ namespace TNRD.Automatron {
                         }
 
                         if ( Globals.IsError ) break;
-                        if ( !( auto is LoopableAutomation ) && !( auto is LoopEnd ) ) {
+                        if ( !( auto is LoopableAutomation ) ) {
                             auto.Progress = 1;
-                            auto.HasRun = true;
                         }
+
+                        auto.HasRun = true;
                     }
 
                     if ( Globals.IsError ) break;
 
-                    if ( lEnd != null ) {
-                        var lastLoop = loops[loops.Count - 1];
-                        var done = lastLoop.IsDone();
+                    automations = automations[automations.Count - 1].GetNextAutomations();
 
-                        lEnd.Progress = lastLoop.Progress;
-                        if ( done ) {
-                            automations = lEnd.GetNextAutomations();
-                            loops.RemoveAt( loops.Count - 1 );
-                            lEnd = null;
+                    if ( automations.Count == 0 && loops.Count > 0 ) {
+                        var l = loops[loops.Count - 1];
+                        l.MoveNext();
+                        if ( l.IsDone() ) {
+                            l.Progress = 1;
+                            automations = l.GetNextAutomations();
+                            loops.Remove( l );
                         } else {
-                            automations = lastLoop.GetNextAutomations();
-                            automations.Insert( 0, lastLoop );
+                            l.GetAutomations( ref automations, false );
                         }
-                    } else {
-                        automations = automations[automations.Count - 1].GetNextAutomations();
                     }
                 }
 
