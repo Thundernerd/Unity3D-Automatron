@@ -420,6 +420,7 @@ namespace TNRD.Automatron.Editor.Core {
 
                 foreach ( var item in windows ) {
                     AddWindowGrouped( item );
+                    item.CleanControls();
                 }
 
                 foreach ( var item in windows ) {

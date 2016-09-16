@@ -448,5 +448,13 @@ namespace TNRD.Automatron.Editor.Core {
         public void SortControls() {
             controls = controls.OrderBy( c => c.SortingOrder ).ToList();
         }
+
+        public void CleanControls() {
+            controls = controls.Where( c => c != null ).ToList();
+            controlsGrouped.Clear();
+            foreach ( var item in controls ) {
+                AddControlGrouped( item );
+            }
+        }
     }
 }
