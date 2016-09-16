@@ -204,7 +204,7 @@ namespace TNRD.Automatron {
             var topRect = new Rect( rect.x, rect.y, rect.width, 16 );
             GUI.Label( topRect, name, headerStyle );
 
-            if ( Input.ButtonReleased( EMouseButton.Right ) && topRect.Contains( Input.MousePosition ) ) {
+            if ( !Globals.IsError && Input.ButtonReleased( EMouseButton.Right ) && topRect.Contains( Input.MousePosition ) ) {
                 var gm = GenericMenuBuilder.CreateMenu();
                 gm.AddItem( "Remove Incoming Lines", false, RemoveIncomingLines );
                 gm.AddItem( "Remove Outgoing Lines", false, RemoveOutgoingLines );
@@ -231,26 +231,28 @@ namespace TNRD.Automatron {
             if ( showInArrow ) {
                 GUI.DrawTexture( lArrow, Assets["arrowleft"] );
 
-                if ( Input.ButtonReleased( EMouseButton.Left ) ) {
-                    if ( lArrow.Contains( Input.MousePosition ) ) {
-                        var line = AutomationLine.HookLineIn( this );
-                        if ( LinesIn.Contains( line ) ) {
-                            LinesIn.Remove( line );
-                        }
-
-                        LinesIn.Add( line );
-                        Window.AddControl( line );
-                        Input.Use();
-                    }
-                } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
-                    if ( lArrow.Contains( Input.MousePosition ) ) {
-                        if ( LinesIn.Count > 0 ) {
-                            for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
-                                LinesIn[i].Remove();
+                if ( !Globals.IsExecuting ) {
+                    if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                        if ( lArrow.Contains( Input.MousePosition ) ) {
+                            var line = AutomationLine.HookLineIn( this );
+                            if ( LinesIn.Contains( line ) ) {
+                                LinesIn.Remove( line );
                             }
-                        }
 
-                        Input.Use();
+                            LinesIn.Add( line );
+                            Window.AddControl( line );
+                            Input.Use();
+                        }
+                    } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
+                        if ( lArrow.Contains( Input.MousePosition ) ) {
+                            if ( LinesIn.Count > 0 ) {
+                                for ( int i = LinesIn.Count - 1; i >= 0; i-- ) {
+                                    LinesIn[i].Remove();
+                                }
+                            }
+
+                            Input.Use();
+                        }
                     }
                 }
             }
@@ -258,62 +260,66 @@ namespace TNRD.Automatron {
             if ( showOutArrow ) {
                 GUI.DrawTexture( rArrow, Assets["arrowright"] );
 
+                if ( !Globals.IsExecuting ) {
+                    if ( Input.ButtonReleased( EMouseButton.Left ) ) {
+                        if ( rArrow.Contains( Input.MousePosition ) ) {
+                            if ( LineOut != null ) {
+                                LineOut.Remove();
+                                LineOut = null;
+                            }
+
+                            LineOut = AutomationLine.HookLineOut( this );
+                            Window.AddControl( LineOut );
+                            Input.Use();
+                        }
+                    } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
+                        if ( rArrow.Contains( Input.MousePosition ) ) {
+                            if ( LineOut != null ) {
+                                LineOut.Remove();
+                                LineOut = null;
+                            }
+
+                            Input.Use();
+                        }
+                    }
+                }
+            }
+
+            if ( !Globals.IsExecuting ) {
+                if ( Input.ButtonPressed( EMouseButton.Left ) ) {
+                    dragger = null;
+
+                    switch ( SortingOrder ) {
+                        case ESortingOrder.Automation:
+                            if ( rect.Contains( Input.MousePosition ) ) {
+                                SortingOrder = ESortingOrder.AutomationSelected;
+                            }
+                            break;
+                        case ESortingOrder.AutomationSelected:
+                            if ( !rect.Contains( Input.MousePosition ) ) {
+                                SortingOrder = ESortingOrder.Automation;
+                            }
+                            break;
+                    }
+                }
+
+                if ( Input.ButtonDown( EMouseButton.Left ) ) {
+                    if ( dragger == null ) {
+                        var dragRect = new Rect( rect.x, rect.y, rect.width - 16, 16 );
+                        if ( dragRect.Contains( Input.MousePosition ) ) {
+                            dragger = this;
+                            GUIUtility.keyboardControl = 0;
+                        }
+                    }
+                }
+
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
-                    if ( rArrow.Contains( Input.MousePosition ) ) {
-                        if ( LineOut != null ) {
-                            LineOut.Remove();
-                            LineOut = null;
-                        }
-
-                        LineOut = AutomationLine.HookLineOut( this );
-                        Window.AddControl( LineOut );
-                        Input.Use();
-                    }
-                } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
-                    if ( rArrow.Contains( Input.MousePosition ) ) {
-                        if ( LineOut != null ) {
-                            LineOut.Remove();
-                            LineOut = null;
-                        }
-
-                        Input.Use();
-                    }
+                    dragger = null;
                 }
-            }
 
-            if ( Input.ButtonPressed( EMouseButton.Left ) ) {
-                dragger = null;
-
-                switch ( SortingOrder ) {
-                    case ESortingOrder.Automation:
-                        if ( rect.Contains( Input.MousePosition ) ) {
-                            SortingOrder = ESortingOrder.AutomationSelected;
-                        }
-                        break;
-                    case ESortingOrder.AutomationSelected:
-                        if ( !rect.Contains( Input.MousePosition ) ) {
-                            SortingOrder = ESortingOrder.Automation;
-                        }
-                        break;
+                if ( dragger == this ) {
+                    Position += Input.DragDelta;
                 }
-            }
-
-            if ( Input.ButtonDown( EMouseButton.Left ) ) {
-                if ( dragger == null ) {
-                    var dragRect = new Rect( rect.x, rect.y, rect.width - 16, 16 );
-                    if ( dragRect.Contains( Input.MousePosition ) ) {
-                        dragger = this;
-                        GUIUtility.keyboardControl = 0;
-                    }
-                }
-            }
-
-            if ( Input.ButtonReleased( EMouseButton.Left ) ) {
-                dragger = null;
-            }
-
-            if ( dragger == this ) {
-                Position += Input.DragDelta;
             }
 
             var fieldRect = new Rect( rect.x, rect.y + 18, rect.width, rect.height );
