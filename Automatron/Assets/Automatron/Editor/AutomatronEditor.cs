@@ -334,6 +334,7 @@ namespace TNRD.Automatron {
                 }
             }
 
+            EditorGUI.BeginDisabledGroup( Globals.IsExecuting );
             if ( GUILayout.Button( resetContent, EditorStyles.toolbarButton ) ) {
                 var list = GetControls<Automation>();
                 foreach ( var item in list ) {
@@ -358,6 +359,7 @@ namespace TNRD.Automatron {
                     }
                 } ) );
             }
+            EditorGUI.EndDisabledGroup();
 
             GUILayout.FlexibleSpace();
             EditorGUILayout.EndHorizontal();
