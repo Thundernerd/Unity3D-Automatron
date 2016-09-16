@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System;
+using TNRD.Automatron.Editor.Serialization;
 
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
@@ -7,6 +8,7 @@ namespace TNRD.Automatron.Automations {
     [Automation( "Loop/Array" )]
     class LoopArray : LoopableAutomation {
 
+        [IgnoreSerialization]
         public Array Array;
         [ReadOnly]
         public object Value;
@@ -20,22 +22,33 @@ namespace TNRD.Automatron.Automations {
         }
 
         public override IEnumerator Execute() {
+            if ( Array.Length == 0 ) {
+                Progress = 1;
+                yield break;
+            }
+
             if ( index < Array.Length ) {
                 Value = Array.GetValue( index );
             }
 
-            index++;
+            Progress = (float)index / Array.Length;
+
             yield break;
         }
 
+        public override void MoveNext() {
+            index++;
+        }
+
         public override bool IsDone() {
-            return index == Array.Length;
+            return index >= Array.Length;
         }
     }
 
     [Automation( "Loop/List" )]
     class LoopList : LoopableAutomation {
 
+        [IgnoreSerialization]
         public IList Array;
         [ReadOnly]
         public object Value;
@@ -53,18 +66,24 @@ namespace TNRD.Automatron.Automations {
                 Value = Array[index];
             }
 
-            index++;
+            Progress = (float)index / Array.Count;
+
             yield break;
         }
 
+        public override void MoveNext() {
+            index++;
+        }
+
         public override bool IsDone() {
-            return index == Array.Count;
+            return index >= Array.Count;
         }
     }
 
     [Automation( "Loop/Count" )]
     class LoopCount : LoopableAutomation {
 
+        [IgnoreSerialization]
         public int Times;
         [ReadOnly]
         public int Result;
@@ -79,9 +98,12 @@ namespace TNRD.Automatron.Automations {
 
         public override IEnumerator Execute() {
             Result = index;
-            index++;
             Progress = (float)index / Times;
             yield break;
+        }
+
+        public override void MoveNext() {
+            index++;
         }
 
         public override bool IsDone() {
