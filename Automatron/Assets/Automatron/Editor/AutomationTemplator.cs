@@ -14,10 +14,18 @@ namespace TNRD.Automatron {
         private static readonly string loopableTemplate;
 
         static AutomationTemplator() {
+#if AUTOMATRON_LIB
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            var names = assembly.GetManifestResourceNames();
+            foreach ( var item in names ) {
+                Debug.Log( item );
+            }
+#else
             var assets = AssetDatabase.FindAssets( "Template.cs" ).Select( a => AssetDatabase.GUIDToAssetPath( a ) );
             automationTemplate = ReadAsset( assets.Where( a => a.EndsWith( "AutomationTemplate.cs.txt" ) ).FirstOrDefault() );
             conditionalTemplate = ReadAsset( assets.Where( a => a.EndsWith( "ConditionalTemplate.cs.txt" ) ).FirstOrDefault() );
             loopableTemplate = ReadAsset( assets.Where( a => a.EndsWith( "LoopableTemplate.cs.txt" ) ).FirstOrDefault() );
+#endif
         }
 
         private static string ReadAsset( string path ) {
