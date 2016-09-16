@@ -377,8 +377,6 @@ namespace TNRD.Automatron {
             if ( AutomatronSettings.AutoSave ) {
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     Save();
-                } else if ( Input.ButtonReleased( EMouseButton.Middle ) ) {
-                    Save();
                 }
             }
 
