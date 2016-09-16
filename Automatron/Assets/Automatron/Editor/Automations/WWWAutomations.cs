@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String s;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String s;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

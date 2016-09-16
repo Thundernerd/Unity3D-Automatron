@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Component Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Transform Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Component Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Component Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -65,6 +68,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -80,6 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Component Instance;
 		public System.String type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -97,6 +102,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type t;
 		public System.Boolean includeInactive;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -114,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type t;
 		public System.Boolean includeInactive;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component[] Result;
 
 		public override IEnumerator Execute() {
@@ -130,6 +137,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -147,6 +155,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type t;
 		public System.Boolean includeInactive;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component[] Result;
 
 		public override IEnumerator Execute() {
@@ -163,6 +172,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component[] Result;
 
 		public override IEnumerator Execute() {
@@ -178,6 +188,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Component Instance;
 		public System.String tag;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera camera;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Plane[] Result;
 
 		public override IEnumerator Execute() {
@@ -23,6 +24,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Plane[] planes;
 		public UnityEngine.Bounds bounds;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LineRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

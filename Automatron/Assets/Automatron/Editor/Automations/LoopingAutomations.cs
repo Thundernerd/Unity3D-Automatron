@@ -11,6 +11,7 @@ namespace TNRD.Automatron.Automations {
         [IgnoreSerialization]
         public Array Array;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public object Value;
 
         private int index = 0;
@@ -51,6 +52,7 @@ namespace TNRD.Automatron.Automations {
         [IgnoreSerialization]
         public IList Array;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public object Value;
 
         private int index = 0;
@@ -86,6 +88,7 @@ namespace TNRD.Automatron.Automations {
         [IgnoreSerialization]
         public int Times;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public int Result;
 
         private int index = 0;

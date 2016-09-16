@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsselectedBuildTargetGroupGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.BuildTargetGroup Result;
 
 		public override IEnumerator Execute() {
@@ -32,6 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsselectedStandaloneTargetGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.BuildTarget Result;
 
 		public override IEnumerator Execute() {
@@ -57,6 +59,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingspsmBuildSubtargetGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.PSMBuildSubtarget Result;
 
 		public override IEnumerator Execute() {
@@ -82,6 +85,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingspsp2BuildSubtargetGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.PSP2BuildSubtarget Result;
 
 		public override IEnumerator Execute() {
@@ -107,6 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsps4BuildSubtargetGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.PS4BuildSubtarget Result;
 
 		public override IEnumerator Execute() {
@@ -132,6 +137,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingssceBuildSubtargetGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SCEBuildSubtarget Result;
 
 		public override IEnumerator Execute() {
@@ -157,6 +163,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsexplicitNullChecksGet6 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -185,6 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsexplicitDivideByZeroChecksGet7 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -213,6 +221,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsneedSubmissionMaterialsGet8 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -241,6 +250,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingscompressWithPsArcGet9 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -269,6 +279,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsforceInstallationGet10 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -297,6 +308,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsenableHeadlessModeGet11 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -325,6 +337,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsbuildScriptsOnlyGet12 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -353,6 +366,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsxboxBuildSubtargetGet13 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.XboxBuildSubtarget Result;
 
 		public override IEnumerator Execute() {
@@ -378,6 +392,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswiiUBuildDebugLevelGet14 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.WiiUBuildDebugLevel Result;
 
 		public override IEnumerator Execute() {
@@ -403,6 +418,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswiiuBuildOutputGet15 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.WiiUBuildOutput Result;
 
 		public override IEnumerator Execute() {
@@ -428,6 +444,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswiiUEnableNetAPIGet16 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -456,6 +473,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswiiUBootModeGet17 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -481,6 +499,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsxboxRunMethodGet18 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.XboxRunMethod Result;
 
 		public override IEnumerator Execute() {
@@ -506,6 +525,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsstreamingInstallLaunchRangeGet19 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -531,6 +551,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsxboxOneDeployMethodGet20 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.XboxOneDeployMethod Result;
 
 		public override IEnumerator Execute() {
@@ -556,6 +577,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsxboxOneUsernameGet21 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -581,6 +603,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsxboxOneNetworkSharePathGet22 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -606,6 +629,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsxboxOneAdditionalDebugPortsGet23 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -631,6 +655,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsandroidBuildSubtargetGet24 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.MobileTextureSubtarget Result;
 
 		public override IEnumerator Execute() {
@@ -656,6 +681,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswsaSDKGet25 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.WSASDK Result;
 
 		public override IEnumerator Execute() {
@@ -681,6 +707,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswsaUWPBuildTypeGet26 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.WSAUWPBuildType Result;
 
 		public override IEnumerator Execute() {
@@ -706,6 +733,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswsaBuildAndRunDeployTargetGet27 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.WSABuildAndRunDeployTarget Result;
 
 		public override IEnumerator Execute() {
@@ -731,6 +759,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswsaGenerateReferenceProjectsGet28 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -759,6 +788,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingstizenBuildSubtargetGet29 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.MobileTextureSubtarget Result;
 
 		public override IEnumerator Execute() {
@@ -784,6 +814,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswebPlayerStreamedGet30 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -812,6 +843,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswebPlayerOfflineDeploymentGet31 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -840,6 +872,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsactiveBuildTargetGet32 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.BuildTarget Result;
 
 		public override IEnumerator Execute() {
@@ -853,6 +886,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsactiveScriptCompilationDefinesGet33 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -866,6 +900,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsdevelopmentGet34 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -894,6 +929,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingswebGLUsePreBuiltUnityEngineGet35 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -922,6 +958,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsconnectProfilerGet36 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -950,6 +987,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsallowDebuggingGet37 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -978,6 +1016,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsexportAsGoogleAndroidProjectGet38 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1006,6 +1045,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingssymlinkLibrariesGet39 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1034,6 +1074,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsn3dsCreateCIAFileGet40 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1062,6 +1103,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsinstallInBuildFolderGet41 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1090,6 +1132,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorUserBuildSettingsforceOptimizeScriptCompilationGet42 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1132,6 +1175,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.WSABuildType config;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1149,6 +1193,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTarget target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1166,6 +1211,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTarget target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -1208,6 +1254,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String platformName;
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

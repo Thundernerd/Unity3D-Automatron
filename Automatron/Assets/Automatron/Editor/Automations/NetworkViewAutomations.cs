@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NetworkView Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NetworkView Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.NetworkStateSynchronization Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NetworkView Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.NetworkViewID Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NetworkView Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NetworkView Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -133,6 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NetworkView Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.NetworkPlayer Result;
 
 		public override IEnumerator Execute() {
@@ -149,6 +155,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.NetworkPlayer player;
 		public System.Boolean relevancy;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -166,6 +173,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NetworkViewID viewID;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.NetworkView Result;
 
 		public override IEnumerator Execute() {

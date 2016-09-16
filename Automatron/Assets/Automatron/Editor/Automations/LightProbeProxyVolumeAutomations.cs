@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -49,6 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +79,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightProbeProxyVolume.BoundingBoxMode Result;
 
 		public override IEnumerator Execute() {
@@ -103,6 +107,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightProbeProxyVolume.ResolutionMode Result;
 
 		public override IEnumerator Execute() {
@@ -130,6 +135,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightProbeProxyVolume.ProbePositionMode Result;
 
 		public override IEnumerator Execute() {
@@ -157,6 +163,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightProbeProxyVolume.RefreshMode Result;
 
 		public override IEnumerator Execute() {
@@ -184,6 +191,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -211,6 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -238,6 +247,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -265,6 +275,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LightProbeProxyVolume Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -291,6 +302,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightProbeProxyVolumeisFeatureSupportedGet11 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

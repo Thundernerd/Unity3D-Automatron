@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object source;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object targetObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object targetPrefab;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.PropertyModification[] Result;
 
 		public override IEnumerator Execute() {
@@ -63,6 +66,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object targetObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -113,6 +117,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -127,6 +132,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -143,6 +149,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject go;
 		public UnityEditor.ReplacePrefabOptions options;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -159,6 +166,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Object targetPrefab;
 		public UnityEditor.ReplacePrefabOptions options;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -174,6 +182,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject go;
 		public UnityEngine.GameObject sourcePrefab;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -188,6 +197,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -202,6 +212,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -216,6 +227,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject go;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -233,6 +245,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -250,6 +263,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object source;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -267,6 +281,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject go;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -284,6 +299,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.PrefabType Result;
 
 		public override IEnumerator Execute() {
@@ -298,6 +314,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject source;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Array Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Array Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -39,6 +41,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Array Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Object Result;
 
 		public override IEnumerator Execute() {
@@ -53,6 +56,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Array Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -70,6 +74,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Array Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -88,6 +93,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array Instance;
 		public System.Int32 dimension;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -103,6 +109,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array Instance;
 		public System.Int32 dimension;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int64 Result;
 
 		public override IEnumerator Execute() {
@@ -118,6 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array Instance;
 		public System.Int32 dimension;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -133,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array Instance;
 		public System.Int32 dimension;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -148,6 +157,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array Instance;
 		public System.Int32 index;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Object Result;
 
 		public override IEnumerator Execute() {
@@ -178,6 +188,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type elementType;
 		public System.Int32 length;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Array Result;
 
 		public override IEnumerator Execute() {
@@ -193,6 +204,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array array;
 		public System.Object value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -207,6 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Array Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Object Result;
 
 		public override IEnumerator Execute() {
@@ -236,6 +249,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array array;
 		public System.Object value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -251,6 +265,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Array array;
 		public System.Object value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {

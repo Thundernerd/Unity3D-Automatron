@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject gameObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationClip[] Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +37,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject targetObject;
 		public UnityEngine.GameObject root;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.EditorCurveBinding[] Result;
 
 		public override IEnumerator Execute() {
@@ -52,6 +54,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.EditorCurveBinding binding;
 		public System.Single data;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -70,6 +73,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject root;
 		public UnityEditor.EditorCurveBinding binding;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Type Result;
 
 		public override IEnumerator Execute() {
@@ -86,6 +90,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.EditorCurveBinding binding;
 		public UnityEngine.Object targetObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -104,6 +109,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject root;
 		public UnityEditor.EditorCurveBinding binding;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -120,6 +126,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject gameObject;
 		public UnityEditor.EditorCurveBinding binding;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Type Result;
 
 		public override IEnumerator Execute() {
@@ -134,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AnimationClip clip;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.EditorCurveBinding[] Result;
 
 		public override IEnumerator Execute() {
@@ -148,6 +156,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AnimationClip clip;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.EditorCurveBinding[] Result;
 
 		public override IEnumerator Execute() {
@@ -163,6 +172,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.AnimationClip clip;
 		public UnityEditor.EditorCurveBinding binding;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.ObjectReferenceKeyframe[] Result;
 
 		public override IEnumerator Execute() {
@@ -178,6 +188,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.AnimationClip clip;
 		public UnityEditor.EditorCurveBinding binding;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationCurve Result;
 
 		public override IEnumerator Execute() {
@@ -262,6 +273,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AnimationClip clip;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationEvent[] Result;
 
 		public override IEnumerator Execute() {
@@ -290,6 +302,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Transform targetTransform;
 		public UnityEngine.Transform root;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -304,6 +317,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AnimationClip clip;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.AnimationClipSettings Result;
 
 		public override IEnumerator Execute() {
@@ -345,6 +359,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AnimationCurve curve;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

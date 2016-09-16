@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Vector2kEpsilonGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -21,6 +22,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Vector2 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -48,6 +50,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Vector2 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -75,6 +78,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Vector2 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +93,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Vector2 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -103,6 +108,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Vector2 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +122,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Vector2zeroGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -129,6 +136,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Vector2oneGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -142,6 +150,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Vector2upGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -155,6 +164,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Vector2downGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -168,6 +178,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Vector2leftGet8 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -181,6 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Vector2rightGet9 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -197,6 +209,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 b;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -213,6 +226,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 b;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -229,6 +243,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 target;
 		public System.Single maxDistanceDelta;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -269,6 +284,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 Instance;
 		public System.Object other;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -287,6 +303,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 inDirection;
 		public UnityEngine.Vector2 inNormal;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -302,6 +319,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 lhs;
 		public UnityEngine.Vector2 rhs;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -317,6 +335,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 from;
 		public UnityEngine.Vector2 to;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -332,6 +351,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 a;
 		public UnityEngine.Vector2 b;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -347,6 +367,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 vector;
 		public System.Single maxLength;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -361,6 +382,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Vector2 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -376,6 +398,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 lhs;
 		public UnityEngine.Vector2 rhs;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -391,6 +414,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 lhs;
 		public UnityEngine.Vector2 rhs;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -410,6 +434,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single maxSpeed;
 		public System.Single deltaTime;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {

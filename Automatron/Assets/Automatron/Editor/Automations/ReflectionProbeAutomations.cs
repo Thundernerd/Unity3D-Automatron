@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ReflectionProbeType Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -65,6 +67,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -92,6 +95,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -119,6 +123,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -146,6 +151,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -173,6 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -200,6 +207,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -227,6 +235,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -254,6 +263,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ReflectionProbeClearFlags Result;
 
 		public override IEnumerator Execute() {
@@ -281,6 +291,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -308,6 +319,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -335,6 +347,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -362,6 +375,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -392,6 +406,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -406,6 +421,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ReflectionProbeMode Result;
 
 		public override IEnumerator Execute() {
@@ -433,6 +449,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -460,6 +477,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ReflectionProbeRefreshMode Result;
 
 		public override IEnumerator Execute() {
@@ -487,6 +505,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ReflectionProbeTimeSlicingMode Result;
 
 		public override IEnumerator Execute() {
@@ -514,6 +533,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture Result;
 
 		public override IEnumerator Execute() {
@@ -541,6 +561,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture Result;
 
 		public override IEnumerator Execute() {
@@ -568,6 +589,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ReflectionProbe Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture Result;
 
 		public override IEnumerator Execute() {
@@ -581,6 +603,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ReflectionProbeminBakedCubemapResolutionGet22 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -594,6 +617,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ReflectionProbemaxBakedCubemapResolutionGet23 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -609,6 +633,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.ReflectionProbe Instance;
 		public UnityEngine.RenderTexture targetTexture;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -624,6 +649,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.ReflectionProbe Instance;
 		public System.Int32 renderId;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -644,6 +670,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single blend;
 		public UnityEngine.RenderTexture target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

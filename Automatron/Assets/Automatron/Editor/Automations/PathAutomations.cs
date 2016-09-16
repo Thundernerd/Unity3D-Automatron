@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathAltDirectorySeparatorCharGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Char Result;
 
 		public override IEnumerator Execute() {
@@ -20,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathDirectorySeparatorCharGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Char Result;
 
 		public override IEnumerator Execute() {
@@ -33,6 +35,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathPathSeparatorGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Char Result;
 
 		public override IEnumerator Execute() {
@@ -46,6 +49,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathVolumeSeparatorCharGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Char Result;
 
 		public override IEnumerator Execute() {
@@ -61,6 +65,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String path;
 		public System.String extension;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +81,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String path1;
 		public System.String path2;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -90,6 +96,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -104,6 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -118,6 +126,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -132,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -146,6 +156,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -160,6 +171,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -173,6 +185,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathGetTempFileName8 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -186,6 +199,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathGetTempPath9 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -200,6 +214,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -217,6 +232,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -233,6 +249,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathGetInvalidFileNameChars12 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Char[] Result;
 
 		public override IEnumerator Execute() {
@@ -246,6 +263,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathGetInvalidPathChars13 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Char[] Result;
 
 		public override IEnumerator Execute() {
@@ -259,6 +277,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PathGetRandomFileName14 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

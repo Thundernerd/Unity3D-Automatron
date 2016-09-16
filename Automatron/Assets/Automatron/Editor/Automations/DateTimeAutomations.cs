@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class DateTimeMaxValueGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -20,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class DateTimeMinValueGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -34,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -48,6 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +66,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +81,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DayOfWeek Result;
 
 		public override IEnumerator Execute() {
@@ -90,6 +96,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -104,6 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.TimeSpan Result;
 
 		public override IEnumerator Execute() {
@@ -118,6 +126,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -132,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -146,6 +156,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -160,6 +171,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -173,6 +185,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class DateTimeNowGet10 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -187,6 +200,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int64 Result;
 
 		public override IEnumerator Execute() {
@@ -200,6 +214,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class DateTimeTodayGet12 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -213,6 +228,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class DateTimeUtcNowGet13 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -227,6 +243,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -241,6 +258,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTimeKind Result;
 
 		public override IEnumerator Execute() {
@@ -256,6 +274,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.TimeSpan value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -271,6 +290,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Double value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -286,6 +306,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Int64 value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -301,6 +322,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Double value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -316,6 +338,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Double value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -331,6 +354,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Double value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -346,6 +370,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Int32 months;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -361,6 +386,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Double value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -376,6 +402,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.Int32 value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -390,6 +417,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -404,6 +432,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Int32 year;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -421,6 +450,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String s;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -436,6 +466,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String s;
 		public System.DateTime result;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -454,6 +485,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.DateTime Instance;
 		public System.DateTime value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.TimeSpan Result;
 
 		public override IEnumerator Execute() {
@@ -468,6 +500,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int64 Result;
 
 		public override IEnumerator Execute() {
@@ -482,6 +515,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -496,6 +530,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -510,6 +545,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Double Result;
 
 		public override IEnumerator Execute() {
@@ -524,6 +560,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -538,6 +575,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -552,6 +590,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -566,6 +605,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -580,6 +620,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.DateTime Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {

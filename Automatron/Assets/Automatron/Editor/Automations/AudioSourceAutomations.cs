@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AudioClip Result;
 
 		public override IEnumerator Execute() {
@@ -143,6 +148,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Audio.AudioMixerGroup Result;
 
 		public override IEnumerator Execute() {
@@ -170,6 +176,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -187,6 +194,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -204,6 +212,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -234,6 +243,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -264,6 +274,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -294,6 +305,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -324,6 +336,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AudioVelocityUpdateMode Result;
 
 		public override IEnumerator Execute() {
@@ -351,6 +364,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -378,6 +392,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -405,6 +420,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -435,6 +451,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -462,6 +479,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -492,6 +510,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -522,6 +541,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -552,6 +572,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -579,6 +600,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -606,6 +628,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -633,6 +656,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -663,6 +687,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -690,6 +715,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -717,6 +743,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioSource Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AudioRolloffMode Result;
 
 		public override IEnumerator Execute() {
@@ -887,6 +914,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.AudioSource Instance;
 		public UnityEngine.AudioSourceCurveType type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationCurve Result;
 
 		public override IEnumerator Execute() {
@@ -932,6 +960,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 index;
 		public System.Single value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -951,6 +980,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 index;
 		public System.Single value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class MathfPIGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -20,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class MathfInfinityGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -33,6 +35,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class MathfNegativeInfinityGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -46,6 +49,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class MathfDeg2RadGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -59,6 +63,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class MathfRad2DegGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -72,6 +77,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class MathfEpsilonGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -86,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -100,6 +107,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -114,6 +122,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -128,6 +137,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -142,6 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -156,6 +167,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -171,6 +183,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single y;
 		public System.Single x;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -185,6 +198,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -199,6 +213,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -213,6 +228,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Int32 value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -228,6 +244,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single a;
 		public System.Single b;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -243,6 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 a;
 		public System.Int32 b;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -258,6 +276,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single a;
 		public System.Single b;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -273,6 +292,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 a;
 		public System.Int32 b;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -288,6 +308,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single f;
 		public System.Single p;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -302,6 +323,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single power;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -317,6 +339,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single f;
 		public System.Single p;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -331,6 +354,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -345,6 +369,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -359,6 +384,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -373,6 +399,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -387,6 +414,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -401,6 +429,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -415,6 +444,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -429,6 +459,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -443,6 +474,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single f;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -459,6 +491,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single min;
 		public System.Single max;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -475,6 +508,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 min;
 		public System.Int32 max;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -489,6 +523,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -505,6 +540,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single b;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -521,6 +557,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single b;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -537,6 +574,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single b;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -553,6 +591,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single target;
 		public System.Single maxDelta;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -569,6 +608,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single target;
 		public System.Single maxDelta;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -585,6 +625,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single to;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -601,6 +642,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single absmax;
 		public System.Single gamma;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -616,6 +658,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single a;
 		public System.Single b;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -638,6 +681,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single maxSpeed;
 		public System.Single deltaTime;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -657,6 +701,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single maxSpeed;
 		public System.Single deltaTime;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -672,6 +717,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single t;
 		public System.Single length;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -687,6 +733,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single t;
 		public System.Single length;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -703,6 +750,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single b;
 		public System.Single value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -717,6 +765,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Int32 value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -731,6 +780,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -745,6 +795,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -759,6 +810,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Int32 value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -776,6 +828,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Int32 value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -791,6 +844,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single current;
 		public System.Single target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -806,6 +860,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single x;
 		public System.Single y;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -820,6 +875,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Single val;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.UInt16 Result;
 
 		public override IEnumerator Execute() {
@@ -834,6 +890,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.UInt16 val;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {

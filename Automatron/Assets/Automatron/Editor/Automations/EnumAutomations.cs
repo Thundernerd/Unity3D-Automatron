@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( object ) )]
         public System.Type enumType;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Array Result;
 
 		public override IEnumerator Execute() {
@@ -24,6 +25,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( object ) )]
         public System.Type enumType;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -40,6 +42,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type enumType;
 		public System.Object value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -56,6 +59,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type enumType;
 		public System.Object value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -74,6 +78,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( object ) )]
         public System.Type enumType;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Type Result;
 
 		public override IEnumerator Execute() {
@@ -90,6 +95,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type enumType;
 		public System.String value;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Object Result;
 
 		public override IEnumerator Execute() {
@@ -104,6 +110,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Enum Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

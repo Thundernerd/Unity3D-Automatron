@@ -89,6 +89,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -186,6 +187,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class UndoGetCurrentGroup14 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -199,6 +201,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class UndoGetCurrentGroupName15 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

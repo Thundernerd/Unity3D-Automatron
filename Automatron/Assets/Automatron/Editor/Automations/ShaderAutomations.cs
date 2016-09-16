@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Shader Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -24,6 +25,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ShaderglobalShaderHardwareTierGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ShaderHardwareTier Result;
 
 		public override IEnumerator Execute() {
@@ -50,6 +52,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Shader Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +79,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ShaderglobalMaximumLODGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -102,6 +106,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Shader Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +121,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Shader Result;
 
 		public override IEnumerator Execute() {
@@ -154,6 +160,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String keyword;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -301,6 +308,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {

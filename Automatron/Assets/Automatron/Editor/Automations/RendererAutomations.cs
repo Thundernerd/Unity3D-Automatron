@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -25,6 +26,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -39,6 +41,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -53,6 +56,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -83,6 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ShadowCastingMode Result;
 
 		public override IEnumerator Execute() {
@@ -110,6 +115,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -140,6 +146,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material Result;
 
 		public override IEnumerator Execute() {
@@ -167,6 +174,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material Result;
 
 		public override IEnumerator Execute() {
@@ -194,6 +202,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material[] Result;
 
 		public override IEnumerator Execute() {
@@ -221,6 +230,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material[] Result;
 
 		public override IEnumerator Execute() {
@@ -248,6 +258,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -262,6 +273,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -289,6 +301,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -316,6 +329,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector4 Result;
 
 		public override IEnumerator Execute() {
@@ -343,6 +357,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -373,6 +388,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector4 Result;
 
 		public override IEnumerator Execute() {
@@ -400,6 +416,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -417,6 +434,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.LightProbeUsage Result;
 
 		public override IEnumerator Execute() {
@@ -444,6 +462,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -471,6 +490,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Transform Result;
 
 		public override IEnumerator Execute() {
@@ -498,6 +518,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.ReflectionProbeUsage Result;
 
 		public override IEnumerator Execute() {
@@ -525,6 +546,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -552,6 +574,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -579,6 +602,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Renderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {

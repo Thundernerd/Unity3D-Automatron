@@ -10,6 +10,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector3 screenPosition;
 		public UnityEngine.Camera camera;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -28,6 +29,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GUIElement Instance;
 		public UnityEngine.Camera camera;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {

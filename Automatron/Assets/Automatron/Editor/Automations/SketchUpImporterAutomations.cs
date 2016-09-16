@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SketchUpImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Double Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SketchUpImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Double Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SketchUpImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Double Result;
 
 		public override IEnumerator Execute() {
@@ -50,6 +53,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SketchUpImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SketchUpImportCamera Result;
 
 		public override IEnumerator Execute() {

@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Sprite sprite;
 		public System.Boolean getAtlasData;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -24,6 +25,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Sprite sprite;
 		public System.Boolean getAtlasData;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2[] Result;
 
 		public override IEnumerator Execute() {

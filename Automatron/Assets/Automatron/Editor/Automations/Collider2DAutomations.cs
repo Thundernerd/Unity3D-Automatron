@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -65,6 +67,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -95,6 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -122,6 +126,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rigidbody2D Result;
 
 		public override IEnumerator Execute() {
@@ -136,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -150,6 +156,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -164,6 +171,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.PhysicsMaterial2D Result;
 
 		public override IEnumerator Execute() {
@@ -192,6 +200,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Collider2D Instance;
 		public UnityEngine.Collider2D collider;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -210,6 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Collider2D Instance;
 		public System.Int32 layerMask;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -228,6 +238,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Collider2D Instance;
 		public UnityEngine.Vector2 point;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -251,6 +262,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single minDepth;
 		public System.Single maxDepth;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -269,6 +281,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single distance;
 		public System.Boolean ignoreSiblingColliders;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {

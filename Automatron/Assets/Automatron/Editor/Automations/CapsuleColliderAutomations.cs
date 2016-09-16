@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CapsuleCollider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CapsuleCollider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CapsuleCollider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CapsuleCollider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {

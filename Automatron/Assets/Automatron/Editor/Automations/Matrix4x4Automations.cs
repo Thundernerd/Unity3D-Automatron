@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -143,6 +148,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -170,6 +176,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -197,6 +204,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -224,6 +232,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -251,6 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -278,6 +288,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -305,6 +316,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -332,6 +344,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -359,6 +372,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -386,6 +400,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -413,6 +428,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -440,6 +456,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -454,6 +471,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -468,6 +486,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -485,6 +504,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -498,6 +518,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Matrix4x4zeroGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -511,6 +532,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Matrix4x4identityGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -526,6 +548,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Matrix4x4 Instance;
 		public System.Object other;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -543,6 +566,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 m;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -557,6 +581,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 m;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -571,6 +596,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 m;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -586,6 +612,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Matrix4x4 Instance;
 		public System.Int32 i;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector4 Result;
 
 		public override IEnumerator Execute() {
@@ -601,6 +628,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Matrix4x4 Instance;
 		public System.Int32 i;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector4 Result;
 
 		public override IEnumerator Execute() {
@@ -644,6 +672,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Matrix4x4 Instance;
 		public UnityEngine.Vector3 v;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -659,6 +688,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Matrix4x4 Instance;
 		public UnityEngine.Vector3 v;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -674,6 +704,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Matrix4x4 Instance;
 		public UnityEngine.Vector3 v;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -688,6 +719,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Vector3 v;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -719,6 +751,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Quaternion q;
 		public UnityEngine.Vector3 s;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -738,6 +771,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single zNear;
 		public System.Single zFar;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -755,6 +789,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single zNear;
 		public System.Single zFar;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {

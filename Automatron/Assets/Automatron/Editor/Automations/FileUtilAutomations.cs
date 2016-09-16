@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -63,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class FileUtilGetUniqueTempPathInProject4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -77,6 +79,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

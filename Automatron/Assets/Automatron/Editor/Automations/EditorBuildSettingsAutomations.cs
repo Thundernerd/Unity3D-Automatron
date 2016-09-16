@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorBuildSettingsscenesGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.EditorBuildSettingsScene[] Result;
 
 		public override IEnumerator Execute() {

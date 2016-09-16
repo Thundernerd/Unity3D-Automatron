@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingscompanyNameGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -32,6 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsproductNameGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -57,6 +59,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsshowUnitySplashScreenGet2 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -85,6 +88,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingssplashScreenStyleGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SplashScreenStyle Result;
 
 		public override IEnumerator Execute() {
@@ -110,6 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingscloudProjectIdGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -123,6 +128,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsproductGUIDGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Guid Result;
 
 		public override IEnumerator Execute() {
@@ -136,6 +142,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingscolorSpaceGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ColorSpace Result;
 
 		public override IEnumerator Execute() {
@@ -161,6 +168,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdefaultScreenWidthGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -186,6 +194,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdefaultScreenHeightGet8 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -211,6 +220,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdefaultWebScreenWidthGet9 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -236,6 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdefaultWebScreenHeightGet10 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -261,6 +272,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdisplayResolutionDialogGet11 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.ResolutionDialogSetting Result;
 
 		public override IEnumerator Execute() {
@@ -286,6 +298,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdefaultIsFullScreenGet12 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -314,6 +327,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdefaultIsNativeResolutionGet13 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -342,6 +356,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsrunInBackgroundGet14 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -370,6 +385,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingscaptureSingleScreenGet15 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -398,6 +414,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsusePlayerLogGet16 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -426,6 +443,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsresizableWindowGet17 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -454,6 +472,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsbakeCollisionMeshesGet18 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -482,6 +501,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsuseMacAppStoreValidationGet19 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -510,6 +530,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsmacFullscreenModeGet20 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.MacFullscreenMode Result;
 
 		public override IEnumerator Execute() {
@@ -535,6 +556,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsd3d9FullscreenModeGet21 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.D3D9FullscreenMode Result;
 
 		public override IEnumerator Execute() {
@@ -560,6 +582,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsd3d11FullscreenModeGet22 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.D3D11FullscreenMode Result;
 
 		public override IEnumerator Execute() {
@@ -585,6 +608,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsvirtualRealitySupportedGet23 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -613,6 +637,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingssinglePassStereoRenderingGet24 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -641,6 +666,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsprotectGraphicsMemoryGet25 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -669,6 +695,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsvisibleInBackgroundGet26 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -697,6 +724,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsallowFullscreenSwitchGet27 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -725,6 +753,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsforceSingleInstanceGet28 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -753,6 +782,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsresolutionDialogBannerGet29 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -778,6 +808,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsvirtualRealitySplashScreenGet30 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -803,6 +834,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsiPhoneBundleIdentifierGet31 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -828,6 +860,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingskeystorePassGet32 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -853,6 +886,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingskeyaliasPassGet33 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -878,6 +912,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxTitleIdGet34 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -903,6 +938,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxImageXexFilePathGet35 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -916,6 +952,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxSpaFilePathGet36 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -929,6 +966,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxGenerateSpaGet37 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -945,6 +983,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxEnableGuestGet38 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -961,6 +1000,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxDeployKinectResourcesGet39 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -977,6 +1017,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxDeployKinectHeadOrientationGet40 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1005,6 +1046,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxDeployKinectHeadPositionGet41 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1033,6 +1075,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxSplashScreenGet42 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -1046,6 +1089,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxAdditionalTitleMemorySizeGet43 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -1071,6 +1115,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxEnableKinectGet44 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1087,6 +1132,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxEnableKinectAutoTrackingGet45 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1103,6 +1149,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxEnableSpeechGet46 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1119,6 +1166,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxSpeechDBGet47 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.UInt32 Result;
 
 		public override IEnumerator Execute() {
@@ -1132,6 +1180,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsgpuSkinningGet48 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1160,6 +1209,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsgraphicsJobsGet49 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1188,6 +1238,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxPIXTextureCaptureGet50 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1204,6 +1255,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxEnableAvatarGet51 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1220,6 +1272,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsxboxOneResolutionGet52 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -1233,6 +1286,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsenableInternalProfilerGet53 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1261,6 +1315,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsactionOnDotNetUnhandledExceptionGet54 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.ActionOnDotNetUnhandledException Result;
 
 		public override IEnumerator Execute() {
@@ -1286,6 +1341,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingslogObjCUncaughtExceptionsGet55 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1314,6 +1370,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsenableCrashReportAPIGet56 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1342,6 +1399,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingslocationUsageDescriptionGet57 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -1367,6 +1425,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsbundleIdentifierGet58 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -1392,6 +1451,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsbundleVersionGet59 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -1417,6 +1477,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsstatusBarHiddenGet60 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1445,6 +1506,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsstrippingLevelGet61 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.StrippingLevel Result;
 
 		public override IEnumerator Execute() {
@@ -1470,6 +1532,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsstripEngineCodeGet62 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1498,6 +1561,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsdefaultInterfaceOrientationGet63 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.UIOrientation Result;
 
 		public override IEnumerator Execute() {
@@ -1523,6 +1587,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsallowedAutorotateToPortraitGet64 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1551,6 +1616,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsallowedAutorotateToPortraitUpsideDownGet65 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1579,6 +1645,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsallowedAutorotateToLandscapeRightGet66 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1607,6 +1674,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsallowedAutorotateToLandscapeLeftGet67 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1635,6 +1703,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsuseAnimatedAutorotationGet68 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1663,6 +1732,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsuse32BitDisplayBufferGet69 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1691,6 +1761,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsapiCompatibilityLevelGet70 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.ApiCompatibilityLevel Result;
 
 		public override IEnumerator Execute() {
@@ -1716,6 +1787,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsstripUnusedMeshComponentsGet71 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1744,6 +1816,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsadvancedLicenseGet72 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1760,6 +1833,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsaotOptionsGet73 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -1785,6 +1859,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsaccelerometerFrequencyGet74 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -1810,6 +1885,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsMTRenderingGet75 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1838,6 +1914,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsmobileMTRenderingGet76 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1866,6 +1943,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsrenderingPathGet77 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RenderingPath Result;
 
 		public override IEnumerator Execute() {
@@ -1891,6 +1969,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PlayerSettingsmobileRenderingPathGet78 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RenderingPath Result;
 
 		public override IEnumerator Execute() {
@@ -1932,6 +2011,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String name;
 		public UnityEditor.BuildTargetGroup target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -1948,6 +2028,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 value;
 		public UnityEditor.BuildTargetGroup target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1980,6 +2061,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String name;
 		public UnityEditor.BuildTargetGroup target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1999,6 +2081,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Boolean value;
 		public UnityEditor.BuildTargetGroup target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -2031,6 +2114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String name;
 		public UnityEditor.BuildTargetGroup target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -2047,6 +2131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String value;
 		public UnityEditor.BuildTargetGroup target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -2064,6 +2149,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.AspectRatio aspectRatio;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -2094,6 +2180,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTargetGroup platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D[] Result;
 
 		public override IEnumerator Execute() {
@@ -2121,6 +2208,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTargetGroup platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32[] Result;
 
 		public override IEnumerator Execute() {
@@ -2135,6 +2223,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTarget platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.GraphicsDeviceType[] Result;
 
 		public override IEnumerator Execute() {
@@ -2162,6 +2251,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTarget platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -2192,6 +2282,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTargetGroup targetGroup;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -2219,6 +2310,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LogType logType;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.StackTraceLogType Result;
 
 		public override IEnumerator Execute() {

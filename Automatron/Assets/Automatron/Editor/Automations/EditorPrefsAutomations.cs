@@ -22,6 +22,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String key;
 		public System.Int32 defaultValue;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -50,6 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String key;
 		public System.Single defaultValue;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -78,6 +80,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String key;
 		public System.String defaultValue;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -106,6 +109,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String key;
 		public System.Boolean defaultValue;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -123,6 +127,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String key;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

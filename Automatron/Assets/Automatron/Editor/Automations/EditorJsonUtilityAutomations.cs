@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Object obj;
 		public System.Boolean prettyPrint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

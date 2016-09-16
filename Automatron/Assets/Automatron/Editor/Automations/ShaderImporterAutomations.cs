@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.ShaderImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Shader Result;
 
 		public override IEnumerator Execute() {
@@ -37,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.ShaderImporter Instance;
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture Result;
 
 		public override IEnumerator Execute() {

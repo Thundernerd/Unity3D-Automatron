@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AudioReverbPreset Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -143,6 +148,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -170,6 +176,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -197,6 +204,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -224,6 +232,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -251,6 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -278,6 +288,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -305,6 +316,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -332,6 +344,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -359,6 +372,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -386,6 +400,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -413,6 +428,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -440,6 +456,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioReverbZone Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -115,6 +119,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorredGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -128,6 +133,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorgreenGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -141,6 +147,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorblueGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -154,6 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorwhiteGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -167,6 +175,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorblackGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -180,6 +189,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColoryellowGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -193,6 +203,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorcyanGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -206,6 +217,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColormagentaGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -219,6 +231,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorgrayGet8 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -232,6 +245,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorgreyGet9 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -245,6 +259,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ColorclearGet10 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -259,6 +274,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -273,6 +289,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -287,6 +304,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -301,6 +319,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -316,6 +335,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Color Instance;
 		public System.Object other;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -335,6 +355,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Color b;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -351,6 +372,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Color b;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -383,6 +405,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single V;
 		public System.Boolean hdr;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationClip Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -65,6 +67,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.WrapMode Result;
 
 		public override IEnumerator Execute() {
@@ -92,6 +95,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -109,6 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -139,6 +144,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationCullingType Result;
 
 		public override IEnumerator Execute() {
@@ -166,6 +172,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -256,6 +263,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Animation Instance;
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -274,6 +282,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Animation Instance;
 		public UnityEngine.PlayMode mode;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -293,6 +302,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String animation;
 		public UnityEngine.PlayMode mode;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -344,6 +354,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.QueueMode queue;
 		public UnityEngine.PlayMode mode;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationState Result;
 
 		public override IEnumerator Execute() {
@@ -361,6 +372,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.QueueMode queue;
 		public UnityEngine.PlayMode mode;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationState Result;
 
 		public override IEnumerator Execute() {
@@ -415,6 +427,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Animation Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -443,6 +456,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Animation Instance;
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationClip Result;
 
 		public override IEnumerator Execute() {

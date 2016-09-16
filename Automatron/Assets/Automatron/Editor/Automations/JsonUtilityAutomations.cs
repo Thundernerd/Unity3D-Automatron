@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Object obj;
 		public System.Boolean prettyPrint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -25,6 +26,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( System.Object ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Object Result;
 
 		public override IEnumerator Execute() {

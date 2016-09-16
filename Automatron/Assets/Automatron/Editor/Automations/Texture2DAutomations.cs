@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Texture2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Texture2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.TextureFormat Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +37,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Texture2DwhiteTextureGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -48,6 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class Texture2DblackTextureGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +66,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Texture2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -97,6 +102,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Boolean linear;
 		public System.IntPtr nativeTex;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -141,6 +147,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 x;
 		public System.Int32 y;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -157,6 +164,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single u;
 		public System.Single v;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -209,6 +217,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Byte[] data;
 		public System.Boolean markNonReadable;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -239,6 +248,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Texture2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Byte[] Result;
 
 		public override IEnumerator Execute() {
@@ -258,6 +268,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 blockHeight;
 		public System.Int32 miplevel;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color[] Result;
 
 		public override IEnumerator Execute() {
@@ -273,6 +284,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Texture2D Instance;
 		public System.Int32 miplevel;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color32[] Result;
 
 		public override IEnumerator Execute() {
@@ -305,6 +317,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.TextureFormat format;
 		public System.Boolean hasMipMap;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -339,6 +352,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 maximumAtlasSize;
 		public System.Boolean makeNoLongerReadable;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect[] Result;
 
 		public override IEnumerator Execute() {
@@ -369,6 +383,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Texture2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Byte[] Result;
 
 		public override IEnumerator Execute() {
@@ -384,6 +399,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Texture2D Instance;
 		public System.Int32 quality;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Byte[] Result;
 
 		public override IEnumerator Execute() {

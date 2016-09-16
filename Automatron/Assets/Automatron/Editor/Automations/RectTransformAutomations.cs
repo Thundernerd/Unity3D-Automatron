@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -49,6 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +79,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -103,6 +107,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -130,6 +135,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -157,6 +163,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -184,6 +191,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -211,6 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.RectTransform Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {

@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class AudioListenervolumeGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -32,6 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class AudioListenerpauseGet1 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -61,6 +63,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.AudioListener Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AudioVelocityUpdateMode Result;
 
 		public override IEnumerator Execute() {

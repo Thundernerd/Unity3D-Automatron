@@ -21,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class MonoImporterGetAllRuntimeMonoScripts1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.MonoScript[] Result;
 
 		public override IEnumerator Execute() {
@@ -48,6 +49,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.MonoScript script;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.MonoImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.MonoScript Result;
 
 		public override IEnumerator Execute() {
@@ -77,6 +80,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.MonoImporter Instance;
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {

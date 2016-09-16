@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -26,6 +27,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String parentFolder;
 		public System.String newFolderName;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -40,6 +42,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -57,6 +60,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -74,6 +78,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -91,6 +96,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -108,6 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -145,6 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String oldPath;
 		public System.String newPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -160,6 +168,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String oldPath;
 		public System.String newPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -175,6 +184,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String pathName;
 		public System.String newName;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -189,6 +199,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -206,6 +217,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -237,6 +249,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String path;
 		public System.String newPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -254,6 +267,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -271,6 +285,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -285,6 +300,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -328,6 +344,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object assetObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -342,6 +359,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object assetObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -356,6 +374,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -370,6 +389,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -386,6 +406,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Object ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -400,6 +421,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String assetPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -414,6 +436,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String assetPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object[] Result;
 
 		public override IEnumerator Execute() {
@@ -428,6 +451,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String assetPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object[] Result;
 
 		public override IEnumerator Execute() {
@@ -441,6 +465,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class AssetDatabaseGetAllAssetPaths29 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -467,6 +492,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -484,6 +510,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -498,6 +525,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String guid;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -512,6 +540,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Hash128 Result;
 
 		public override IEnumerator Execute() {
@@ -537,6 +566,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture Result;
 
 		public override IEnumerator Execute() {
@@ -564,6 +594,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -589,6 +620,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class AssetDatabaseGetAllAssetBundleNames41 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -602,6 +634,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class AssetDatabaseGetUnusedAssetBundleNames42 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -617,6 +650,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String assetBundleName;
 		public System.Boolean forceRemove;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -645,6 +679,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String assetBundleName;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -660,6 +695,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String assetBundleName;
 		public System.String assetName;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -675,6 +711,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String[] pathNames;
 		public System.Boolean recursive;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -716,6 +753,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object assetObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -733,6 +771,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Object assetObject;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -752,6 +791,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type type;
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -767,6 +807,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String filter;
 		public System.String[] searchInFolders;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {

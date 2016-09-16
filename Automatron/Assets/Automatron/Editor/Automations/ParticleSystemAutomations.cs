@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -52,6 +54,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -69,6 +72,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -86,6 +90,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +121,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -146,6 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -173,6 +180,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -187,6 +195,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -214,6 +223,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -228,6 +238,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -255,6 +266,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -282,6 +294,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -309,6 +322,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -336,6 +350,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -363,6 +378,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -390,6 +406,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -417,6 +434,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -444,6 +462,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystemSimulationSpace Result;
 
 		public override IEnumerator Execute() {
@@ -471,6 +490,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystemScalingMode Result;
 
 		public override IEnumerator Execute() {
@@ -498,6 +518,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.UInt32 Result;
 
 		public override IEnumerator Execute() {
@@ -525,6 +546,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.EmissionModule Result;
 
 		public override IEnumerator Execute() {
@@ -539,6 +561,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.ShapeModule Result;
 
 		public override IEnumerator Execute() {
@@ -553,6 +576,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.VelocityOverLifetimeModule Result;
 
 		public override IEnumerator Execute() {
@@ -567,6 +591,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.LimitVelocityOverLifetimeModule Result;
 
 		public override IEnumerator Execute() {
@@ -581,6 +606,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.InheritVelocityModule Result;
 
 		public override IEnumerator Execute() {
@@ -595,6 +621,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.ForceOverLifetimeModule Result;
 
 		public override IEnumerator Execute() {
@@ -609,6 +636,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.ColorOverLifetimeModule Result;
 
 		public override IEnumerator Execute() {
@@ -623,6 +651,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.ColorBySpeedModule Result;
 
 		public override IEnumerator Execute() {
@@ -637,6 +666,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.SizeOverLifetimeModule Result;
 
 		public override IEnumerator Execute() {
@@ -651,6 +681,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.SizeBySpeedModule Result;
 
 		public override IEnumerator Execute() {
@@ -665,6 +696,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.RotationOverLifetimeModule Result;
 
 		public override IEnumerator Execute() {
@@ -679,6 +711,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.RotationBySpeedModule Result;
 
 		public override IEnumerator Execute() {
@@ -693,6 +726,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.ExternalForcesModule Result;
 
 		public override IEnumerator Execute() {
@@ -707,6 +741,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.CollisionModule Result;
 
 		public override IEnumerator Execute() {
@@ -721,6 +756,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.TriggerModule Result;
 
 		public override IEnumerator Execute() {
@@ -735,6 +771,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.SubEmittersModule Result;
 
 		public override IEnumerator Execute() {
@@ -749,6 +786,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.ParticleSystem Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ParticleSystem.TextureSheetAnimationModule Result;
 
 		public override IEnumerator Execute() {
@@ -778,6 +816,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.ParticleSystem Instance;
 		public UnityEngine.ParticleSystem.Particle[] particles;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -861,6 +900,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.ParticleSystem Instance;
 		public System.Boolean withChildren;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

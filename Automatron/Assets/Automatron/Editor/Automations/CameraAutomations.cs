@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RenderingPath Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RenderingPath Result;
 
 		public override IEnumerator Execute() {
@@ -130,6 +135,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -160,6 +166,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -187,6 +194,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -217,6 +225,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.OpaqueSortMode Result;
 
 		public override IEnumerator Execute() {
@@ -244,6 +253,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.TransparencySortMode Result;
 
 		public override IEnumerator Execute() {
@@ -271,6 +281,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -298,6 +309,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -325,6 +337,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -352,6 +365,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -379,6 +393,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -406,6 +421,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -433,6 +449,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -460,6 +477,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RenderTexture Result;
 
 		public override IEnumerator Execute() {
@@ -487,6 +505,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -501,6 +520,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -515,6 +535,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -529,6 +550,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -556,6 +578,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -583,6 +606,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -610,6 +634,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -624,6 +649,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.CameraClearFlags Result;
 
 		public override IEnumerator Execute() {
@@ -651,6 +677,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -668,6 +695,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -695,6 +723,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -722,6 +751,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.CameraType Result;
 
 		public override IEnumerator Execute() {
@@ -749,6 +779,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -779,6 +810,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.StereoTargetEyeMask Result;
 
 		public override IEnumerator Execute() {
@@ -806,6 +838,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -832,6 +865,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class CameramainGet33 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Camera Result;
 
 		public override IEnumerator Execute() {
@@ -845,6 +879,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class CameracurrentGet34 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Camera Result;
 
 		public override IEnumerator Execute() {
@@ -858,6 +893,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class CameraallCamerasGet35 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Camera[] Result;
 
 		public override IEnumerator Execute() {
@@ -871,6 +907,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class CameraallCamerasCountGet36 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -885,6 +922,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -915,6 +953,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -942,6 +981,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single[] Result;
 
 		public override IEnumerator Execute() {
@@ -969,6 +1009,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -999,6 +1040,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.DepthTextureMode Result;
 
 		public override IEnumerator Execute() {
@@ -1026,6 +1068,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1056,6 +1099,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Camera Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -1147,6 +1191,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Camera.StereoscopicEye eye;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -1202,6 +1247,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Camera.StereoscopicEye eye;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -1243,6 +1289,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -1258,6 +1305,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -1273,6 +1321,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -1288,6 +1337,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -1303,6 +1353,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -1318,6 +1369,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -1333,6 +1385,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Ray Result;
 
 		public override IEnumerator Execute() {
@@ -1348,6 +1401,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Ray Result;
 
 		public override IEnumerator Execute() {
@@ -1451,6 +1505,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Cubemap cubemap;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1469,6 +1524,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.RenderTexture cubemap;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -1540,6 +1596,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Rendering.CameraEvent evt;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.CommandBuffer[] Result;
 
 		public override IEnumerator Execute() {
@@ -1555,6 +1612,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera Instance;
 		public UnityEngine.Vector4 clipPlane;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {

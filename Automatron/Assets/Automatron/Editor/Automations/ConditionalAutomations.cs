@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations {
         public object A;
         public object B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -34,6 +35,7 @@ namespace TNRD.Automatron.Automations {
         public IList List;
         public object Value;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -53,6 +55,7 @@ namespace TNRD.Automatron.Automations {
         public int A;
         public int B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -71,6 +74,7 @@ namespace TNRD.Automatron.Automations {
         public int A;
         public int B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -89,6 +93,7 @@ namespace TNRD.Automatron.Automations {
         public int A;
         public int B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -107,6 +112,7 @@ namespace TNRD.Automatron.Automations {
         public int A;
         public int B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -125,6 +131,7 @@ namespace TNRD.Automatron.Automations {
         public float A;
         public float B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -143,6 +150,7 @@ namespace TNRD.Automatron.Automations {
         public float A;
         public float B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -161,6 +169,7 @@ namespace TNRD.Automatron.Automations {
         public float A;
         public float B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {
@@ -179,6 +188,7 @@ namespace TNRD.Automatron.Automations {
         public float A;
         public float B;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public bool Result;
 
         public override IEnumerator Execute() {

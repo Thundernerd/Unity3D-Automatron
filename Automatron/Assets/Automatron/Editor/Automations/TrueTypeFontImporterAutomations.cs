@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.FontTextureCase Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -92,6 +95,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.AscentCalculationMode Result;
 
 		public override IEnumerator Execute() {
@@ -119,6 +123,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -146,6 +151,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Font[] Result;
 
 		public override IEnumerator Execute() {
@@ -173,6 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -200,6 +207,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -214,6 +222,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -241,6 +250,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -268,6 +278,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.TrueTypeFontImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.FontRenderingMode Result;
 
 		public override IEnumerator Execute() {
@@ -296,6 +307,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.TrueTypeFontImporter Instance;
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Font Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Transform Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -49,6 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -66,6 +69,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -83,6 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -113,6 +118,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -140,6 +146,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.SceneManagement.Scene Result;
 
 		public override IEnumerator Execute() {
@@ -154,6 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -171,6 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public UnityEngine.Vector3 rotation;
         public UnityEngine.Vector3 scale;
         [ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
         public UnityEngine.GameObject Result;
 
         public override IEnumerator Execute() {
@@ -188,6 +197,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.PrimitiveType type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -204,6 +214,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -219,6 +230,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject Instance;
 		public System.String type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -236,6 +248,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type type;
 		public System.Boolean includeInactive;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -252,6 +265,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -268,6 +282,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type type;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component[] Result;
 
 		public override IEnumerator Execute() {
@@ -285,6 +300,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type type;
 		public System.Boolean includeInactive;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component[] Result;
 
 		public override IEnumerator Execute() {
@@ -302,6 +318,7 @@ namespace TNRD.Automatron.Automations.Generated {
         public System.Type type;
 		public System.Boolean includeInactive;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component[] Result;
 
 		public override IEnumerator Execute() {
@@ -330,6 +347,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject Instance;
 		public System.String tag;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -347,6 +365,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String tag;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -361,6 +380,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String tag;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {
@@ -375,6 +395,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String tag;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject[] Result;
 
 		public override IEnumerator Execute() {
@@ -391,6 +412,7 @@ namespace TNRD.Automatron.Automations.Generated {
         [TypeLimit( typeof( UnityEngine.Component ) )]
         public System.Type componentType;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Component Result;
 
 		public override IEnumerator Execute() {
@@ -405,6 +427,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject Result;
 
 		public override IEnumerator Execute() {

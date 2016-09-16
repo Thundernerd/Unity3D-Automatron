@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -38,6 +39,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -55,6 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -82,6 +85,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -112,6 +116,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -139,6 +144,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -169,6 +175,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Transform Result;
 
 		public override IEnumerator Execute() {
@@ -196,6 +203,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.OffMeshLink Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Transform Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Quaternion q;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Quaternion q;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 m;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Matrix4x4 Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +65,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Matrix4x4 m;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +80,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Quaternion q;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -90,6 +95,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Quaternion q;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -108,6 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Quaternion a0;
 		public UnityEngine.Quaternion a1;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -124,6 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Quaternion q1;
 		public UnityEngine.Quaternion q2;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -140,6 +148,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single k1;
 		public System.Single k2;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -156,6 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Quaternion q;
 		public System.Single t;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -174,6 +184,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector3 v2;
 		public System.Boolean bidirectional;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Object Result;
 
 		public override IEnumerator Execute() {
@@ -193,6 +204,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single s;
 		public UnityEngine.Vector3 closestRay;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -211,6 +223,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single t;
 		public UnityEngine.Vector3 q;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -232,6 +245,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single t;
 		public UnityEngine.Vector3 q;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

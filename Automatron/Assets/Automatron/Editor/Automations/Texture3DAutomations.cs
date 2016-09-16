@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Texture3D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Texture3D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.TextureFormat Result;
 
 		public override IEnumerator Execute() {
@@ -37,6 +39,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Texture3D Instance;
 		public System.Int32 miplevel;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color[] Result;
 
 		public override IEnumerator Execute() {
@@ -52,6 +55,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Texture3D Instance;
 		public System.Int32 miplevel;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color32[] Result;
 
 		public override IEnumerator Execute() {

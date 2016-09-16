@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.AudioImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.AudioImporterSampleSettings Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.AudioImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -65,6 +67,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.AudioImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -95,6 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.AudioImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -126,6 +130,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.AudioImporter Instance;
 		public System.String platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -144,6 +149,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.AudioImporter Instance;
 		public System.String platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.AudioImporterSampleSettings Result;
 
 		public override IEnumerator Execute() {
@@ -160,6 +166,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String platform;
 		public UnityEditor.AudioImporterSampleSettings settings;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -178,6 +185,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.AudioImporter Instance;
 		public System.String platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class UInt16MaxValueGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.UInt16 Result;
 
 		public override IEnumerator Execute() {
@@ -20,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class UInt16MinValueGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.UInt16 Result;
 
 		public override IEnumerator Execute() {
@@ -34,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String s;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.UInt16 Result;
 
 		public override IEnumerator Execute() {
@@ -49,6 +52,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String s;
 		public System.UInt16 result;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

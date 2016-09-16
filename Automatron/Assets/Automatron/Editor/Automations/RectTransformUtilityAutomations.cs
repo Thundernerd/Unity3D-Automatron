@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.RectTransform rect;
 		public UnityEngine.Vector2 screenPoint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -28,6 +29,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Transform elementTransform;
 		public UnityEngine.Canvas canvas;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -43,6 +45,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.RectTransform rectTransform;
 		public UnityEngine.Canvas canvas;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -60,6 +63,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera cam;
 		public UnityEngine.Vector3 worldPoint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -80,6 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera cam;
 		public UnityEngine.Vector2 localPoint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -98,6 +103,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera cam;
 		public UnityEngine.Vector2 screenPos;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Ray Result;
 
 		public override IEnumerator Execute() {
@@ -113,6 +119,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Camera cam;
 		public UnityEngine.Vector3 worldPoint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -127,6 +134,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Transform trans;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {

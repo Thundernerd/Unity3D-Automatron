@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -53,6 +56,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -67,6 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -84,6 +89,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -98,6 +104,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -115,6 +122,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GameObject[] Result;
 
 		public override IEnumerator Execute() {

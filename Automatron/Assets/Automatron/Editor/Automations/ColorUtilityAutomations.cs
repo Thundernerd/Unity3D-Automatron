@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String htmlString;
 		public UnityEngine.Color color;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -26,6 +27,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color color;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -40,6 +42,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Color color;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

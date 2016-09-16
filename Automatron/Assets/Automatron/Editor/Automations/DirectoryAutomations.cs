@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.IO.DirectoryInfo Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -52,6 +54,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -66,6 +69,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -80,6 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -94,6 +99,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -108,6 +114,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -122,6 +129,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.DateTime Result;
 
 		public override IEnumerator Execute() {
@@ -135,6 +143,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class DirectoryGetCurrentDirectory9 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -151,6 +160,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String searchPattern;
 		public System.IO.SearchOption searchOption;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -165,6 +175,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -181,6 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String searchPattern;
 		public System.IO.SearchOption searchOption;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -196,6 +208,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String path;
 		public System.String searchPattern;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -210,6 +223,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.IO.DirectoryInfo Result;
 
 		public override IEnumerator Execute() {

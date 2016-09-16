@@ -34,6 +34,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Mesh mesh;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.ModelImporterMeshCompression Result;
 
 		public override IEnumerator Execute() {

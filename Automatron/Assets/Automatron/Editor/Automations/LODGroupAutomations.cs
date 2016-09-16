@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LODGroup Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LODGroup Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LODGroup Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +79,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LODGroup Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LODFadeMode Result;
 
 		public override IEnumerator Execute() {
@@ -103,6 +107,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LODGroup Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -133,6 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LODGroup Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -162,6 +168,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LODGroupcrossFadeAnimationDurationGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -200,6 +207,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.LODGroup Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LOD[] Result;
 
 		public override IEnumerator Execute() {

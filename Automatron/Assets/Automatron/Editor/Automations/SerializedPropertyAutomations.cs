@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SerializedObject Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -39,6 +41,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -53,6 +56,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -67,6 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -81,6 +86,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -95,6 +101,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -109,6 +116,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -123,6 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -140,6 +149,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -157,6 +167,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -187,6 +198,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -204,6 +216,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -221,6 +234,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -238,6 +252,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -268,6 +283,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SerializedPropertyType Result;
 
 		public override IEnumerator Execute() {
@@ -282,6 +298,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -309,6 +326,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int64 Result;
 
 		public override IEnumerator Execute() {
@@ -336,6 +354,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -366,6 +385,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -393,6 +413,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Double Result;
 
 		public override IEnumerator Execute() {
@@ -420,6 +441,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -447,6 +469,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -474,6 +497,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnimationCurve Result;
 
 		public override IEnumerator Execute() {
@@ -501,6 +525,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Object Result;
 
 		public override IEnumerator Execute() {
@@ -528,6 +553,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -555,6 +581,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -582,6 +609,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -596,6 +624,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -610,6 +639,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -637,6 +667,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -664,6 +695,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector4 Result;
 
 		public override IEnumerator Execute() {
@@ -691,6 +723,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -718,6 +751,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -745,6 +779,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -772,6 +807,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -789,6 +825,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -829,6 +866,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SerializedProperty x;
 		public UnityEditor.SerializedProperty y;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -847,6 +885,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SerializedProperty Instance;
 		public System.Boolean enterChildren;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -865,6 +904,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SerializedProperty Instance;
 		public System.Boolean enterChildren;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -894,6 +934,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -908,6 +949,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -922,6 +964,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SerializedProperty Result;
 
 		public override IEnumerator Execute() {
@@ -936,6 +979,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -953,6 +997,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -971,6 +1016,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SerializedProperty Instance;
 		public System.String relativePropertyPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SerializedProperty Result;
 
 		public override IEnumerator Execute() {
@@ -986,6 +1032,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SerializedProperty Instance;
 		public System.Boolean includeInvisible;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SerializedProperty Result;
 
 		public override IEnumerator Execute() {
@@ -1000,6 +1047,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SerializedProperty Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Collections.IEnumerator Result;
 
 		public override IEnumerator Execute() {
@@ -1015,6 +1063,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SerializedProperty Instance;
 		public System.Int32 index;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SerializedProperty Result;
 
 		public override IEnumerator Execute() {
@@ -1069,6 +1118,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 srcIndex;
 		public System.Int32 dstIndex;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

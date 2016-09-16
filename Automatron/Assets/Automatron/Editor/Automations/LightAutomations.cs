@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightType Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightShadows Result;
 
 		public override IEnumerator Execute() {
@@ -143,6 +148,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -170,6 +176,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightShadowResolution Result;
 
 		public override IEnumerator Execute() {
@@ -197,6 +204,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -224,6 +232,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -251,6 +260,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -278,6 +288,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -305,6 +316,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -332,6 +344,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -359,6 +372,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -386,6 +400,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture Result;
 
 		public override IEnumerator Execute() {
@@ -413,6 +428,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Flare Result;
 
 		public override IEnumerator Execute() {
@@ -440,6 +456,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.LightRenderMode Result;
 
 		public override IEnumerator Execute() {
@@ -467,6 +484,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -494,6 +512,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -511,6 +530,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -538,6 +558,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -565,6 +586,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Light Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -620,6 +642,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Light Instance;
 		public UnityEngine.Rendering.LightEvent evt;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.CommandBuffer[] Result;
 
 		public override IEnumerator Execute() {
@@ -635,6 +658,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.LightType type;
 		public System.Int32 layer;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Light[] Result;
 
 		public override IEnumerator Execute() {

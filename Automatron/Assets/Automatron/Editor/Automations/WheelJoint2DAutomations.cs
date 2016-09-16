@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.WheelJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.JointSuspension2D Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.WheelJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -65,6 +67,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.WheelJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.JointMotor2D Result;
 
 		public override IEnumerator Execute() {
@@ -92,6 +95,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.WheelJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -106,6 +110,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.WheelJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -121,6 +126,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.WheelJoint2D Instance;
 		public System.Single timeStep;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -62,6 +64,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -89,6 +92,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -116,6 +120,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -146,6 +151,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -173,6 +179,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -200,6 +207,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -214,6 +222,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -241,6 +250,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -268,6 +278,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -295,6 +306,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -322,6 +334,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -352,6 +365,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -382,6 +396,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RigidbodyConstraints2D Result;
 
 		public override IEnumerator Execute() {
@@ -409,6 +424,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -439,6 +455,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RigidbodyInterpolation2D Result;
 
 		public override IEnumerator Execute() {
@@ -466,6 +483,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RigidbodySleepMode2D Result;
 
 		public override IEnumerator Execute() {
@@ -493,6 +511,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.CollisionDetectionMode2D Result;
 
 		public override IEnumerator Execute() {
@@ -546,6 +565,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -563,6 +583,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Rigidbody2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -605,6 +626,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Collider2D collider;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -623,6 +645,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public System.Int32 layerMask;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -641,6 +664,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Vector2 point;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -661,6 +685,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.RaycastHit2D[] results;
 		public System.Single distance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -733,6 +758,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Vector2 point;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -748,6 +774,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Vector2 relativePoint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -763,6 +790,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Vector2 vector;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -778,6 +806,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Vector2 relativeVector;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -793,6 +822,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Vector2 point;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -808,6 +838,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Rigidbody2D Instance;
 		public UnityEngine.Vector2 relativePoint;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {

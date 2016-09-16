@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappinggiWorkflowModeGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.Lightmapping.GIWorkflowMode Result;
 
 		public override IEnumerator Execute() {
@@ -32,6 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingrealtimeGIGet1 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -60,6 +62,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingbakedGIGet2 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -88,6 +91,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingindirectOutputScaleGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -113,6 +117,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingbounceBoostGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -138,6 +143,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingisRunningGet5 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -154,6 +160,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingbuildProgressGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -167,6 +174,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappinglightingDataAssetGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.LightingDataAsset Result;
 
 		public override IEnumerator Execute() {
@@ -203,6 +211,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingBakeAsync1 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -219,6 +228,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingBake2 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -235,6 +245,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingBakeSelectedAsync3 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -251,6 +262,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingBakeSelected4 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -267,6 +279,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingBakeLightProbesOnlyAsync5 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -283,6 +296,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class LightmappingBakeLightProbesOnly6 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -348,6 +362,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.ReflectionProbe probe;
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

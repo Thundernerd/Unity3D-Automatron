@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -49,6 +51,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -76,6 +79,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -103,6 +107,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -117,6 +122,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -131,6 +137,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -145,6 +152,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -172,6 +180,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -189,6 +198,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.OffMeshLinkData Result;
 
 		public override IEnumerator Execute() {
@@ -203,6 +213,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.OffMeshLinkData Result;
 
 		public override IEnumerator Execute() {
@@ -217,6 +228,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -247,6 +259,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -277,6 +290,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -307,6 +321,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -324,6 +339,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -341,6 +357,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -358,6 +375,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.NavMeshPathStatus Result;
 
 		public override IEnumerator Execute() {
@@ -372,6 +390,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -386,6 +405,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.NavMeshPath Result;
 
 		public override IEnumerator Execute() {
@@ -400,6 +420,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -427,6 +448,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -454,6 +476,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -481,6 +504,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -508,6 +532,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -538,6 +563,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -568,6 +594,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -595,6 +622,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -622,6 +650,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ObstacleAvoidanceType Result;
 
 		public override IEnumerator Execute() {
@@ -649,6 +678,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -676,6 +706,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.NavMeshAgent Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -694,6 +725,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.NavMeshAgent Instance;
 		public UnityEngine.Vector3 target;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -737,6 +769,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.NavMeshAgent Instance;
 		public UnityEngine.Vector3 newPosition;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -804,6 +837,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.NavMeshAgent Instance;
 		public UnityEngine.NavMeshPath path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -822,6 +856,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.NavMeshAgent Instance;
 		public UnityEngine.NavMeshHit hit;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -841,6 +876,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector3 targetPosition;
 		public UnityEngine.NavMeshHit hit;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -860,6 +896,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector3 targetPosition;
 		public UnityEngine.NavMeshPath path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -880,6 +917,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single maxDistance;
 		public UnityEngine.NavMeshHit hit;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -912,6 +950,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.NavMeshAgent Instance;
 		public System.Int32 areaIndex;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {

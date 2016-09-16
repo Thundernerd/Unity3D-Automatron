@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ByteMinValueGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Byte Result;
 
 		public override IEnumerator Execute() {
@@ -20,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ByteMaxValueGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Byte Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +37,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Byte Instance;
 		public System.Object obj;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -52,6 +55,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String s;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Byte Result;
 
 		public override IEnumerator Execute() {
@@ -67,6 +71,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String s;
 		public System.Byte result;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

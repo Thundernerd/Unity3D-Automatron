@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.PluginImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -38,6 +39,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.PluginImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -68,6 +70,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.PluginImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -100,6 +103,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.PluginImporter Instance;
 		public UnityEditor.BuildTarget platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -134,6 +138,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.BuildTarget platform;
 		public System.String key;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -163,6 +168,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.PluginImporter Instance;
 		public System.String key;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -176,6 +182,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class PluginImporterGetAllImporters10 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.PluginImporter[] Result;
 
 		public override IEnumerator Execute() {
@@ -190,6 +197,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.BuildTarget platform;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.PluginImporter[] Result;
 
 		public override IEnumerator Execute() {

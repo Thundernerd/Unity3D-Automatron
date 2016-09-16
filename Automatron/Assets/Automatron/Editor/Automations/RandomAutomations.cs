@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandomstateGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Random.State Result;
 
 		public override IEnumerator Execute() {
@@ -32,6 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandomvalueGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -45,6 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandominsideUnitSphereGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -58,6 +61,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandominsideUnitCircleGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -71,6 +75,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandomonUnitSphereGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -84,6 +89,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandomrotationGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -97,6 +103,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandomrotationUniformGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Quaternion Result;
 
 		public override IEnumerator Execute() {
@@ -124,6 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single min;
 		public System.Single max;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -139,6 +147,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 min;
 		public System.Int32 max;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -152,6 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class RandomColorHSV3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -173,6 +183,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Single alphaMin;
 		public System.Single alphaMax;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {

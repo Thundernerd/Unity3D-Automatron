@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.RenderMode Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -52,6 +54,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Camera Result;
 
 		public override IEnumerator Execute() {
@@ -79,6 +82,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -93,6 +97,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -120,6 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -147,6 +153,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -177,6 +184,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -207,6 +215,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -234,6 +243,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -248,6 +258,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -278,6 +289,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -305,6 +317,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -332,6 +345,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -359,6 +373,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -386,6 +401,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -400,6 +416,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -427,6 +444,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Canvas Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Canvas Result;
 
 		public override IEnumerator Execute() {
@@ -440,6 +458,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class CanvasGetDefaultCanvasMaterial0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material Result;
 
 		public override IEnumerator Execute() {
@@ -453,6 +472,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class CanvasGetETC1SupportedCanvasMaterial1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material Result;
 
 		public override IEnumerator Execute() {

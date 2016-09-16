@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class ShaderUtilhardwareSupportsRectRenderTextureGet0 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -24,6 +25,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Shader s;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -39,6 +41,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Shader s;
 		public System.Int32 propertyIdx;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -54,6 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Shader s;
 		public System.Int32 propertyIdx;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -69,6 +73,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Shader s;
 		public System.Int32 propertyIdx;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.ShaderUtil.ShaderPropertyType Result;
 
 		public override IEnumerator Execute() {
@@ -85,6 +90,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 propertyIdx;
 		public System.Int32 defminmax;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -100,6 +106,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Shader s;
 		public System.Int32 propertyIdx;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rendering.TextureDimension Result;
 
 		public override IEnumerator Execute() {
@@ -115,6 +122,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Shader s;
 		public System.Int32 propertyIdx;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -132,6 +140,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String source;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Shader Result;
 
 		public override IEnumerator Execute() {

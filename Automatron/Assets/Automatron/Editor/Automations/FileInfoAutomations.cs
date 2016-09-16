@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.IO.FileInfo Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -25,6 +26,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.IO.FileInfo Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -39,6 +41,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.IO.FileInfo Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -69,6 +72,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.IO.FileInfo Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int64 Result;
 
 		public override IEnumerator Execute() {
@@ -83,6 +87,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.IO.FileInfo Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -97,6 +102,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.IO.FileInfo Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.IO.DirectoryInfo Result;
 
 		public override IEnumerator Execute() {
@@ -162,6 +168,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String destFileName;
 		public System.Boolean overwrite;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.IO.FileInfo Result;
 
 		public override IEnumerator Execute() {
@@ -178,6 +185,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String destinationFileName;
 		public System.String destinationBackupFileName;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.IO.FileInfo Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -50,6 +53,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -64,6 +68,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Texture2D Result;
 
 		public override IEnumerator Execute() {
@@ -78,6 +83,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rect Result;
 
 		public override IEnumerator Execute() {
@@ -92,6 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -106,6 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -123,6 +131,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.SpritePackingMode Result;
 
 		public override IEnumerator Execute() {
@@ -137,6 +146,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.SpritePackingRotation Result;
 
 		public override IEnumerator Execute() {
@@ -151,6 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -165,6 +176,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector4 Result;
 
 		public override IEnumerator Execute() {
@@ -179,6 +191,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2[] Result;
 
 		public override IEnumerator Execute() {
@@ -193,6 +206,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.UInt16[] Result;
 
 		public override IEnumerator Execute() {
@@ -207,6 +221,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Sprite Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2[] Result;
 
 		public override IEnumerator Execute() {
@@ -224,6 +239,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Vector2 pivot;
 		public System.Single pixelsPerUnit;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Sprite Result;
 
 		public override IEnumerator Execute() {

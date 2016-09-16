@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsunityRemoteDeviceGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -32,6 +33,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsunityRemoteCompressionGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -57,6 +59,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsunityRemoteResolutionGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -82,6 +85,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsunityRemoteJoystickSourceGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -107,6 +111,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsexternalVersionControlGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -132,6 +137,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsserializationModeGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SerializationMode Result;
 
 		public override IEnumerator Execute() {
@@ -157,6 +163,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingswebSecurityEmulationEnabledGet6 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -185,6 +192,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingswebSecurityEmulationHostUrlGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -210,6 +218,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsdefaultBehaviorModeGet8 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.EditorBehaviorMode Result;
 
 		public override IEnumerator Execute() {
@@ -235,6 +244,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsspritePackerModeGet9 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SpritePackerMode Result;
 
 		public override IEnumerator Execute() {
@@ -260,6 +270,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsspritePackerPaddingPowerGet10 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -285,6 +296,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsprojectGenerationUserExtensionsGet11 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -310,6 +322,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsprojectGenerationBuiltinExtensionsGet12 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -323,6 +336,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSettingsprojectGenerationRootNamespaceGet13 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

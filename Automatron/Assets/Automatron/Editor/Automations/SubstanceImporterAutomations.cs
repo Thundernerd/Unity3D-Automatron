@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SubstanceImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -22,6 +23,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SubstanceImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -36,6 +38,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEditor.SubstanceImporter Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ProceduralMaterial[] Result;
 
 		public override IEnumerator Execute() {
@@ -51,6 +54,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -66,6 +70,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SubstanceImporter Instance;
 		public System.String prototypeName;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -108,6 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.ProceduralMaterial material;
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -140,6 +146,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.ProceduralMaterial material;
 		public System.String textureName;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ProceduralOutputType Result;
 
 		public override IEnumerator Execute() {
@@ -175,6 +182,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.Int32 textureFormat;
 		public System.Int32 loadBehavior;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -211,6 +219,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -240,6 +249,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector2 Result;
 
 		public override IEnumerator Execute() {
@@ -269,6 +279,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -301,6 +312,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -330,6 +342,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SubstanceImporter Instance;
 		public UnityEngine.ProceduralMaterial material;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

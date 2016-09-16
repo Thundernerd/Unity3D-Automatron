@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSceneManagerloadedSceneCountGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -20,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSceneManagerpreventCrossSceneReferencesGet1 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -50,6 +52,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String scenePath;
 		public UnityEditor.SceneManagement.OpenSceneMode mode;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.SceneManagement.Scene Result;
 
 		public override IEnumerator Execute() {
@@ -65,6 +68,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEditor.SceneManagement.NewSceneSetup setup;
 		public UnityEditor.SceneManagement.NewSceneMode mode;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.SceneManagement.Scene Result;
 
 		public override IEnumerator Execute() {
@@ -80,6 +84,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.SceneManagement.Scene scene;
 		public System.Boolean removeScene;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -125,6 +130,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public System.String dstScenePath;
 		public System.Boolean saveAsCopy;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -141,6 +147,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSceneManagerSaveOpenScenes6 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -158,6 +165,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene[] scenes;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -174,6 +182,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSceneManagerSaveCurrentModifiedScenesIfUserWantsTo8 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -191,6 +200,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene[] scenes;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -208,6 +218,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene scene;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -235,6 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorSceneManagerGetSceneManagerSetup12 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.SceneManagement.SceneSetup[] Result;
 
 		public override IEnumerator Execute() {
@@ -261,6 +273,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.SceneManagement.Scene scene;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

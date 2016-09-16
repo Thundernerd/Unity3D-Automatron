@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsnamesGet0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -20,6 +21,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingspixelLightCountGet1 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -45,6 +47,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsshadowProjectionGet2 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ShadowProjection Result;
 
 		public override IEnumerator Execute() {
@@ -70,6 +73,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsshadowCascadesGet3 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -95,6 +99,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsshadowDistanceGet4 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -120,6 +125,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsshadowResolutionGet5 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ShadowResolution Result;
 
 		public override IEnumerator Execute() {
@@ -145,6 +151,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsshadowNearPlaneOffsetGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -170,6 +177,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsshadowCascade2SplitGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -195,6 +203,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsshadowCascade4SplitGet8 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -220,6 +229,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsmasterTextureLimitGet9 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -245,6 +255,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsanisotropicFilteringGet10 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.AnisotropicFiltering Result;
 
 		public override IEnumerator Execute() {
@@ -270,6 +281,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingslodBiasGet11 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -295,6 +307,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsmaximumLODLevelGet12 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -320,6 +333,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsparticleRaycastBudgetGet13 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -345,6 +359,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingssoftVegetationGet14 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -373,6 +388,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsrealtimeReflectionProbesGet15 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -401,6 +417,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsbillboardsFaceCameraPositionGet16 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -429,6 +446,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsmaxQueuedFramesGet17 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -454,6 +472,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsvSyncCountGet18 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -479,6 +498,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsantiAliasingGet19 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -504,6 +524,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsdesiredColorSpaceGet20 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ColorSpace Result;
 
 		public override IEnumerator Execute() {
@@ -517,6 +538,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsactiveColorSpaceGet21 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.ColorSpace Result;
 
 		public override IEnumerator Execute() {
@@ -530,6 +552,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsblendWeightsGet22 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.BlendWeights Result;
 
 		public override IEnumerator Execute() {
@@ -555,6 +578,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsasyncUploadTimeSliceGet23 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -580,6 +604,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsasyncUploadBufferSizeGet24 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -605,6 +630,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class QualitySettingsGetQualityLevel0 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject go;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEditor.StaticEditorFlags Result;
 
 		public override IEnumerator Execute() {
@@ -23,6 +24,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GameObject go;
 		public UnityEditor.StaticEditorFlags flags;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -53,6 +55,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.GameObject go;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -67,6 +70,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -93,6 +97,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class GameObjectUtilityGetNavMeshAreaNames6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {
@@ -108,6 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Transform parent;
 		public System.String name;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {

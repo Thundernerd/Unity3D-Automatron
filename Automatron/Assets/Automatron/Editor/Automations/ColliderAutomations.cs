@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -38,6 +39,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Rigidbody Result;
 
 		public override IEnumerator Execute() {
@@ -52,6 +54,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -82,6 +85,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -109,6 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.PhysicMaterial Result;
 
 		public override IEnumerator Execute() {
@@ -136,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.PhysicMaterial Result;
 
 		public override IEnumerator Execute() {
@@ -163,6 +169,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.Collider Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Bounds Result;
 
 		public override IEnumerator Execute() {
@@ -178,6 +185,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.Collider Instance;
 		public UnityEngine.Vector3 position;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Vector3 Result;
 
 		public override IEnumerator Execute() {
@@ -195,6 +203,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.RaycastHit hitInfo;
 		public System.Single maxDistance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {

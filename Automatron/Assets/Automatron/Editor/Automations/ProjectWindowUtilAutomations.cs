@@ -93,6 +93,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Int32 instanceID;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32[] Result;
 
 		public override IEnumerator Execute() {
@@ -107,6 +108,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.Int32 instanceID;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -124,6 +126,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String path;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -138,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String[] folders;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String[] Result;
 
 		public override IEnumerator Execute() {

@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -25,6 +26,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -55,6 +57,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -82,6 +85,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -109,6 +113,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -123,6 +128,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -153,6 +159,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Int32 Result;
 
 		public override IEnumerator Execute() {
@@ -167,6 +174,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -197,6 +205,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Color Result;
 
 		public override IEnumerator Execute() {
@@ -211,6 +220,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.CanvasRenderer Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -278,6 +288,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.CanvasRenderer Instance;
 		public System.Int32 index;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material Result;
 
 		public override IEnumerator Execute() {
@@ -307,6 +318,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.CanvasRenderer Instance;
 		public System.Int32 index;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.Material Result;
 
 		public override IEnumerator Execute() {

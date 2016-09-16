@@ -8,6 +8,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -38,6 +39,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -68,6 +70,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.JointMotor2D Result;
 
 		public override IEnumerator Execute() {
@@ -95,6 +98,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.JointAngleLimits2D Result;
 
 		public override IEnumerator Execute() {
@@ -122,6 +126,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.JointLimitState2D Result;
 
 		public override IEnumerator Execute() {
@@ -136,6 +141,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -150,6 +156,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -164,6 +171,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public UnityEngine.HingeJoint2D Instance;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {
@@ -179,6 +187,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.HingeJoint2D Instance;
 		public System.Single timeStep;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Single Result;
 
 		public override IEnumerator Execute() {

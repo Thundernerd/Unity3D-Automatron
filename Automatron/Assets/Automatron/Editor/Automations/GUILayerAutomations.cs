@@ -9,6 +9,7 @@ namespace TNRD.Automatron.Automations.Generated {
 		public UnityEngine.GUILayer Instance;
 		public UnityEngine.Vector3 screenPosition;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public UnityEngine.GUIElement Result;
 
 		public override IEnumerator Execute() {

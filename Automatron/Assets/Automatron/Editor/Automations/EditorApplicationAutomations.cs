@@ -7,6 +7,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationisPlayingGet0 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -35,6 +36,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationisPlayingOrWillChangePlaymodeGet1 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -51,6 +53,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationisPausedGet2 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -79,6 +82,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationisCompilingGet3 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -95,6 +99,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationisUpdatingGet4 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -111,6 +116,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationisRemoteConnectedGet5 : ConditionalAutomation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
@@ -127,6 +133,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationapplicationContentsPathGet6 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -140,6 +147,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationapplicationPathGet7 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.String Result;
 
 		public override IEnumerator Execute() {
@@ -153,6 +161,7 @@ namespace TNRD.Automatron.Automations.Generated {
 	class EditorApplicationtimeSinceStartupGet8 : Automation {
 
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Double Result;
 
 		public override IEnumerator Execute() {
@@ -237,6 +246,7 @@ namespace TNRD.Automatron.Automations.Generated {
 
 		public System.String menuItemPath;
 		[ReadOnly]
+		[Editor.Serialization.IgnoreSerialization]
 		public System.Boolean Result;
 
 		public override IEnumerator Execute() {
