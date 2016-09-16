@@ -376,6 +376,50 @@ namespace TNRD.Automatron {
             }
         }
 
+        public void ResetFields() {
+            foreach ( var item in fields ) {
+                var type = item.GetFieldType();
+                var tcode = Type.GetTypeCode( type );
+                object value = null;
+
+                switch ( tcode ) {
+                    case TypeCode.Empty:
+                    case TypeCode.Object:
+                        value = null;
+                        break;
+                    case TypeCode.Boolean:
+                    case TypeCode.Char:
+                    case TypeCode.SByte:
+                    case TypeCode.Byte:
+                    case TypeCode.Int16:
+                    case TypeCode.UInt16:
+                    case TypeCode.Int32:
+                    case TypeCode.UInt32:
+                    case TypeCode.Int64:
+                    case TypeCode.UInt64:
+                    case TypeCode.Single:
+                    case TypeCode.Double:
+                    case TypeCode.Decimal:
+                    case TypeCode.DateTime:
+                        value = Activator.CreateInstance( type );
+                        break;
+                    case TypeCode.String:
+                        value = "";
+                        break;
+                }
+
+                if ( value == null && !type.IsClass ) {
+                    value = Activator.CreateInstance( type );
+                }
+
+                try {
+                    item.SetValue( value );
+                } catch ( Exception ) {
+                    Debug.LogWarningFormat( "Unable to reset field \"{0}\" on \"{1}\"", item.Name, name );
+                }
+            }
+        }
+
         public virtual void Reset() {
             HasRun = false;
             Progress = 0;
@@ -400,7 +444,7 @@ namespace TNRD.Automatron {
                 }
             }
 
-            if ( LineOut != null && !(LineOut.Right is LoopableAutomation) && LineOut.Right.HasRun ) {
+            if ( LineOut != null && !( LineOut.Right is LoopableAutomation ) && LineOut.Right.HasRun ) {
                 LineOut.Right.ResetLoop();
             }
         }

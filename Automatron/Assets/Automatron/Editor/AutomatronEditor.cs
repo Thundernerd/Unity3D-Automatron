@@ -338,6 +338,7 @@ namespace TNRD.Automatron {
                 var list = GetControls<Automation>();
                 foreach ( var item in list ) {
                     item.Reset();
+                    item.ResetFields();
                 }
             }
 
