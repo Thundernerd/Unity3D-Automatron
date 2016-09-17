@@ -455,7 +455,7 @@ namespace TNRD.Automatron {
             }
         }
 
-        public void PrepareForExecute() {
+        public void GetDependencies() {
             foreach ( var item in fields ) {
                 if ( item.LineIn != null ) {
                     var value = item.LineIn.Left.GetValue();
@@ -493,6 +493,10 @@ namespace TNRD.Automatron {
             }
         }
 
+        public virtual void PreExecute() { }
+
         public abstract IEnumerator Execute();
+
+        public virtual void PostExecute() { }
     }
 }

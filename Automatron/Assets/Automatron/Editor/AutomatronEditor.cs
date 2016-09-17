@@ -441,19 +441,24 @@ namespace TNRD.Automatron {
                     if ( automations == null || automations.Count == 0 ) break;
 
                     foreach ( var auto in automations ) {
+                        auto.GetDependencies();
+                        if ( Globals.IsError ) break;
+
+                        yield return null;
+
                         if ( auto is LoopableAutomation ) {
                             var l = (LoopableAutomation)auto;
                             if ( !loops.Contains( l ) ) {
+                                auto.PreExecute();
                                 loops.Add( l );
                             }
 
                             if ( !l.IsDone() ) {
                                 l.ResetLoop();
                             }
+                        } else {
+                            auto.PreExecute();
                         }
-
-                        auto.PrepareForExecute();
-                        if ( Globals.IsError ) break;
 
                         var routine = auto.Execute();
                         while ( true ) {
@@ -476,6 +481,7 @@ namespace TNRD.Automatron {
 
                         if ( Globals.IsError ) break;
                         if ( !( auto is LoopableAutomation ) ) {
+                            auto.PostExecute();
                             auto.Progress = 1;
                         }
 
@@ -490,6 +496,7 @@ namespace TNRD.Automatron {
                         var l = loops[loops.Count - 1];
                         l.MoveNext();
                         if ( l.IsDone() ) {
+                            l.PostExecute();
                             l.Progress = 1;
                             automations = l.GetNextAutomations();
                             loops.Remove( l );
@@ -497,6 +504,8 @@ namespace TNRD.Automatron {
                             l.GetAutomations( ref automations, false );
                         }
                     }
+
+                    yield return null;
                 }
 
                 if ( Globals.IsError ) break;
