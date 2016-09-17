@@ -492,10 +492,11 @@ namespace TNRD.Automatron {
 
                     automations = automations[automations.Count - 1].GetNextAutomations();
 
-                    if ( automations.Count == 0 && loops.Count > 0 ) {
+                    while ( automations.Count == 0 && loops.Count > 0 ) {
                         var l = loops[loops.Count - 1];
                         l.MoveNext();
                         if ( l.IsDone() ) {
+
                             l.PostExecute();
                             l.Progress = 1;
                             automations = l.GetNextAutomations();
@@ -503,6 +504,8 @@ namespace TNRD.Automatron {
                         } else {
                             l.GetAutomations( ref automations, false );
                         }
+
+                        yield return null;
                     }
 
                     yield return null;
