@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace TNRD.Automatron.Drawers {
 
+    [CustomDrawer( typeof( Array ) )]
     public class ArrayDrawer : AutomationDrawer {
 
         private GUIStyle headerStyle;
@@ -28,6 +29,9 @@ namespace TNRD.Automatron.Drawers {
         private bool updateValue = false;
         private bool fold = false;
 
+        private bool knownType = false;
+        private bool triedBefore = false;
+
         private Array array;
 
         public override float GetFieldHeight() {
@@ -50,8 +54,13 @@ namespace TNRD.Automatron.Drawers {
         public override void Initialize() {
             CreateListStyles();
 
-            elementType = Type.GetElementType();
-            Utils.SetupTypeSwitch( elementType, ref drawElement );
+            if ( Type == typeof( Array ) ) {
+                elementType = typeof( object );
+            } else {
+                elementType = Type.GetElementType();
+            }
+
+            knownType = Utils.SetupTypeSwitch( elementType, ref drawElement );
 
             if ( elementType != null ) {
                 if ( elementType == typeof( Bounds ) || elementType == typeof( Rect ) ) {
@@ -152,6 +161,20 @@ namespace TNRD.Automatron.Drawers {
                 updateValue = true;
             }
 
+            if ( array.Length > 0 && !knownType && !triedBefore ) {
+                triedBefore = true;
+                for ( int i = 0; i < array.Length; i++ ) {
+                    var v = array.GetValue( i );
+                    if ( v != null ) {
+                        var t = v.GetType();
+                        if ( t != typeof( object ) ) {
+                            elementType = t;
+                            knownType = Utils.SetupTypeSwitch( elementType, ref drawElement );
+                        }
+                    }
+                }
+            }
+
             if ( headerLabelStyle == null || hiddenStyle == null ) {
                 CreateListStyles();
                 return;
@@ -243,8 +266,10 @@ namespace TNRD.Automatron.Drawers {
             }
 
             GUI.Box( footerRect, "", footerStyle );
+            EditorGUI.BeginDisabledGroup( !knownType );
             if ( GUI.Button( plusRect, plusButton, buttonStyle ) ) { AddElement(); }
             if ( GUI.Button( minusRect, minusButton, buttonStyle ) ) { RemoveElement(); }
+            EditorGUI.EndDisabledGroup();
 
             EditorGUI.EndDisabledGroup();
         }

@@ -233,7 +233,7 @@ namespace TNRD.Automatron.Editor.Serialization {
                         type = tValue.GetType();
                     }
 
-                    if ( type.IsArray ) {
+                    if ( type.IsArray() ) {
                         obj.Add( fname, SerializeList( tValue, type ) );
                     } else if ( type.IsEnum ) {
                         obj.Add( fname, SerializeEnum( tValue, type ) );
@@ -248,7 +248,7 @@ namespace TNRD.Automatron.Editor.Serialization {
                     } else if ( type.IsClass ) {
                         if ( type == typeof( string ) ) {
                             obj.Add( fname, SerializePrimitive( tValue, type ) );
-                        } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
+                        } else if ( type.IsList() ) {
                             obj.Add( fname, SerializeList( tValue, type ) );
                         } else {
                             obj.Add( fname, SerializeClass( tValue, type ) );
@@ -265,7 +265,7 @@ namespace TNRD.Automatron.Editor.Serialization {
                     var tValue = property.GetValue( value, null );
                     var pname = string.Format( "{0}|{1}", property.Name, i );
 
-                    if ( type.IsArray ) {
+                    if ( type.IsArray() ) {
                         obj.Add( pname, SerializeList( tValue, type ) );
                     } else if ( type.IsEnum ) {
                         obj.Add( pname, SerializeEnum( tValue, type ) );
@@ -280,7 +280,7 @@ namespace TNRD.Automatron.Editor.Serialization {
                     } else if ( type.IsClass ) {
                         if ( type == typeof( string ) ) {
                             obj.Add( pname, SerializePrimitive( tValue, type ) );
-                        } else if ( type.GetInterfaces().Contains( typeof( IList ) ) ) {
+                        } else if ( type.IsList() ) {
                             obj.Add( pname, SerializeList( tValue, type ) );
                         } else {
                             obj.Add( pname, SerializeClass( tValue, type ) );
@@ -322,8 +322,20 @@ namespace TNRD.Automatron.Editor.Serialization {
             var vCount = vList.Count;
             Type vType = null;
 
-            if ( valueType.IsArray ) {
+            if ( valueType.IsArray() ) {
                 vType = valueType.GetElementType();
+                if ( valueType == typeof( Array ) ) {
+                    for ( int i = 0; i < vList.Count; i++ ) {
+                        var item = vList[i];
+                        if ( item != null ) {
+                            vType = item.GetType();
+                            break;
+                        }
+                    }
+                }
+                if ( vType == null ) {
+                    vType = typeof( object );
+                }
             } else {
                 vType = valueType.GetGenericArguments()[0];
             }
@@ -331,7 +343,7 @@ namespace TNRD.Automatron.Editor.Serialization {
             Func<object, Type, SerializedBase> method = null;
             bool isClass = false;
 
-            if ( vType.IsArray ) {
+            if ( vType.IsArray() ) {
                 method = SerializeList;
             } else if ( vType.IsEnum ) {
                 method = SerializeEnum;
@@ -347,7 +359,7 @@ namespace TNRD.Automatron.Editor.Serialization {
             } else if ( vType.IsClass ) {
                 if ( vType == typeof( string ) ) {
                     method = SerializePrimitive;
-                } else if ( vType.GetInterfaces().Contains( typeof( IList ) ) ) {
+                } else if ( vType.IsList() ) {
                     method = SerializeList;
                 } else {
                     method = SerializeClass;

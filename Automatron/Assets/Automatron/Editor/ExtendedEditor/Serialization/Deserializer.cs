@@ -137,8 +137,8 @@ namespace TNRD.Automatron.Editor.Serialization {
             var type = Type.GetType( value.Type );
             IList instance = null;
 
-            if ( type.IsArray ) {
-                instance = Array.CreateInstance( type.GetElementType(), value.Values.Count );
+            if ( type.IsArray() ) {
+                instance = Array.CreateInstance( type.GetElementType() ?? typeof( object ), value.Values.Count );
 
                 for ( int i = 0; i < value.Values.Count; i++ ) {
                     var item = value.Values[i];

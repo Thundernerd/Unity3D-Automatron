@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Reflection;
 
 namespace TNRD.Automatron.Editor.Serialization {
 
-    public class SerializationHelper {
+    public static class SerializationHelper {
 
         public static PropertyInfo GetProperty( Type type, string name, BindingFlags flags ) {
             if ( type == null ) return null;
@@ -51,6 +52,14 @@ namespace TNRD.Automatron.Editor.Serialization {
                 .GroupBy( p => p.ToString() )
                 .Select( g => g.First() )
                 .ToArray();
+        }
+
+        public static bool IsList( this Type type ) {
+            return type.GetInterfaces().Contains( typeof( IList ) );
+        }
+
+        public static bool IsArray( this Type type ) {
+            return type.IsArray || type == typeof( Array );
         }
     }
 }
