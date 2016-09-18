@@ -149,6 +149,8 @@ namespace TNRD.Automatron.Drawers {
 
             if ( value != array ) {
                 array = (Array)value;
+                    fold = true;
+                }
             }
 
             if ( array == null ) {
