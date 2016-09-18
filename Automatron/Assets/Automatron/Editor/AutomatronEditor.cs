@@ -271,7 +271,7 @@ namespace TNRD.Automatron {
 
                 } );
                 gm.AddSeparator();
-                gm.AddItem( "Create Automation", false, () => {
+                gm.AddItem( "Create.../Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Automation",
                         "Please insert the name for your automation",
@@ -281,7 +281,7 @@ namespace TNRD.Automatron {
                             }
                         } ) );
                 } );
-                gm.AddItem( "Create Conditional", false, () => {
+                gm.AddItem( "Create.../Conditional Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Conditional Automation",
                         "Please insert the name for your automation",
@@ -291,7 +291,7 @@ namespace TNRD.Automatron {
                             }
                         } ) );
                 } );
-                gm.AddItem( "Create Loopable Loopable", false, () => {
+                gm.AddItem( "Create.../Loopable Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Automation",
                         "Please insert the name for your automation",
@@ -301,9 +301,13 @@ namespace TNRD.Automatron {
                             }
                         } ) );
                 } );
-                gm.AddSeparator();
-                gm.AddItem( "Generator", false, () => {
+                gm.AddSeparator("Create.../");
+                gm.AddItem( "Create.../Generator", false, () => {
                     Generation.Generator.CreateMe();
+                } );
+                gm.AddSeparator();
+                gm.AddItem( "Exit", false, () => {
+                    Editor.Close();
                 } );
                 gm.ShowAsContext();
             }
