@@ -398,6 +398,10 @@ namespace TNRD.Automatron {
             instance.Position = mpos - Globals.Camera;
 
             AddControl( instance );
+
+            if ( AutomatronSettings.FocusNewAutomation ) {
+                LookAtAutomationSmooth( instance );
+            }
         }
 
         private void ExecuteAutomations() {
@@ -458,6 +462,10 @@ namespace TNRD.Automatron {
                             l.ResetLoop();
                         } else {
                             auto.PreExecute();
+                        }
+
+                        if ( AutomatronSettings.FocusActiveAutomation ) {
+                            LookAtAutomationSmooth( auto );
                         }
 
                         var routine = auto.Execute();
