@@ -5,115 +5,111 @@ using TNRD.Automatron.Editor.Serialization;
 namespace TNRD.Automatron.Automations {
 #pragma warning disable 0649
 
-    [Automation( "Loop/Array" )]
-    class LoopArray : LoopableAutomation {
+    [Automation( "For Each" )]
+    class ForEachLoop : LoopableAutomation {
 
-        [IgnoreSerialization]
-        public Array Array;
-        [ReadOnly]
-		[Editor.Serialization.IgnoreSerialization]
+        public Array Collection;
         public object Value;
 
         private int index = 0;
 
-        public override void Reset() {
-            base.Reset();
-            Value = null;
+        public override void PreExecute() {
             index = 0;
         }
 
         public override IEnumerator Execute() {
-            if ( Array.Length == 0 ) {
+            if ( Collection.Length == 0 ) {
                 Progress = 1;
                 yield break;
             }
 
-            if ( index < Array.Length ) {
-                Value = Array.GetValue( index );
+            if ( index < Collection.Length ) {
+                Value = Collection.GetValue( index );
             }
 
-            Progress = (float)index / Array.Length;
+            Progress = (float)index / Collection.Length;
 
             yield break;
+        }
+
+        public override bool IsDone() {
+            return index == Collection.Length;
         }
 
         public override void MoveNext() {
             index++;
         }
-
-        public override bool IsDone() {
-            return index >= Array.Length;
-        }
     }
 
-    [Automation( "Loop/List" )]
-    class LoopList : LoopableAutomation {
+    [Automation( "For" )]
+    class ForLoop : LoopableAutomation {
 
-        [IgnoreSerialization]
-        public IList Array;
+        public int start = 0;
+        public int end = 1;
+        public int step = 1;
         [ReadOnly]
-		[Editor.Serialization.IgnoreSerialization]
-        public object Value;
+        public int current = 0;
 
-        private int index = 0;
-
-        public override void Reset() {
-            base.Reset();
-            Value = null;
-            index = 0;
+        public override void PreExecute() {
+            current = start;
         }
 
         public override IEnumerator Execute() {
-            if ( index < Array.Count ) {
-                Value = Array[index];
+            if ( step == 0 ) {
+                throw new Exception( "Step is 0 which would cause an infite loop" );
+            } else if ( end > start && step < 0 ) {
+                throw new Exception( "End is higher than start and your step is negative" );
+            } else if ( end < start && step > 0 ) {
+                throw new Exception( "End is lower than start and your step is positve" );
             }
 
-            Progress = (float)index / Array.Count;
-
+            Progress = (float)( current - start ) / ( end - start );
             yield break;
         }
 
-        public override void MoveNext() {
-            index++;
+        public override bool IsDone() {
+            return current == end;
         }
 
-        public override bool IsDone() {
-            return index >= Array.Count;
+        public override void MoveNext() {
+            current += step;
         }
     }
 
-    [Automation( "Loop/Count" )]
-    class LoopCount : LoopableAutomation {
+    [Automation( "For F" )]
+    class ForFLoop : LoopableAutomation {
 
-        [IgnoreSerialization]
-        public int Times;
+        public float start = 0;
+        public float end = 1;
+        public float step = 1;
         [ReadOnly]
-		[Editor.Serialization.IgnoreSerialization]
-        public int Result;
+        public float current = 0;
 
-        private int index = 0;
-
-        public override void Reset() {
-            base.Reset();
-            index = 0;
-            Result = 0;
+        public override void PreExecute() {
+            current = start;
         }
 
         public override IEnumerator Execute() {
-            Result = index;
-            Progress = (float)index / Times;
+            if ( step == 0 ) {
+                throw new Exception( "Step is 0 which would cause an infite loop" );
+            } else if ( end > start && step < 0 ) {
+                throw new Exception( "End is higher than start and your step is negative" );
+            } else if ( end < start && step > 0 ) {
+                throw new Exception( "End is lower than start and your step is positve" );
+            }
+
+            Progress = ( current - start ) / ( end - start );
             yield break;
         }
 
-        public override void MoveNext() {
-            index++;
+        public override bool IsDone() {
+            return current == end;
         }
 
-        public override bool IsDone() {
-            return index == Times;
+        public override void MoveNext() {
+            current += step;
         }
     }
-
 
 #pragma warning restore 0649
 }
