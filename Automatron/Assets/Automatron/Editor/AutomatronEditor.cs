@@ -451,11 +451,11 @@ namespace TNRD.Automatron {
                             if ( !loops.Contains( l ) ) {
                                 auto.PreExecute();
                                 loops.Add( l );
+                            } else {
+                                l.MoveNext();
                             }
 
-                            if ( !l.IsDone() ) {
-                                l.ResetLoop();
-                            }
+                            l.ResetLoop();
                         } else {
                             auto.PreExecute();
                         }
@@ -502,7 +502,6 @@ namespace TNRD.Automatron {
                     } else {
                         while ( automations.Count == 0 && loops.Count > 0 ) {
                             var l = loops[loops.Count - 1];
-                            l.MoveNext();
                             if ( l.IsDone() ) {
                                 l.PostExecute();
                                 l.Progress = 1;
@@ -527,6 +526,7 @@ namespace TNRD.Automatron {
                 LookAtAutomationSmooth( Globals.LastAutomation );
                 AddControl( new AutomationError( Globals.LastError ) );
             }
+
 
             Globals.IsExecuting = false;
 
