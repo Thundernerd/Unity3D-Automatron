@@ -250,14 +250,6 @@ namespace TNRD.Automatron {
             CreateIcons();
         }
 
-        private void CreateIcons() {
-            // Secretly reusing the foldOut
-            executeContent = new GUIContent( Assets["foldOut"], "Execute the automation sequence" );
-            stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
-            resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
-            trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
-        }
-
         protected override void OnGUI() {
             EditorGUILayout.BeginHorizontal( EditorStyles.toolbar );
             EditorGUI.BeginDisabledGroup( Globals.IsExecuting );
@@ -383,6 +375,14 @@ namespace TNRD.Automatron {
             Repaint();
         }
 
+        private void CreateIcons() {
+            // Secretly reusing the foldOut
+            executeContent = new GUIContent( Assets["foldOut"], "Execute the automation sequence" );
+            stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
+            resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
+            trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
+        }
+
         private void ShowAutomationPopup() {
             if ( Globals.IsExecuting ) return;
 
@@ -492,20 +492,28 @@ namespace TNRD.Automatron {
 
                     automations = automations[automations.Count - 1].GetNextAutomations();
 
-                    while ( automations.Count == 0 && loops.Count > 0 ) {
+                    if ( automations.Count > 0 && loops.Count > 0 ) {
                         var l = loops[loops.Count - 1];
-                        l.MoveNext();
                         if ( l.IsDone() ) {
-
                             l.PostExecute();
                             l.Progress = 1;
-                            automations = l.GetNextAutomations();
                             loops.Remove( l );
-                        } else {
-                            l.GetAutomations( ref automations, false );
                         }
+                    } else {
+                        while ( automations.Count == 0 && loops.Count > 0 ) {
+                            var l = loops[loops.Count - 1];
+                            l.MoveNext();
+                            if ( l.IsDone() ) {
+                                l.PostExecute();
+                                l.Progress = 1;
+                                automations = l.GetNextAutomations();
+                                loops.Remove( l );
+                            } else {
+                                l.GetAutomations( ref automations, false );
+                            }
 
-                        yield return null;
+                            yield return null;
+                        }
                     }
 
                     yield return null;
