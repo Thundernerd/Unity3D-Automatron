@@ -149,6 +149,7 @@ namespace TNRD.Automatron.Drawers {
 
             if ( value != array ) {
                 array = (Array)value;
+                if ( Globals.IsExecuting && array.Length > 3 ) {
                     fold = true;
                 }
             }
