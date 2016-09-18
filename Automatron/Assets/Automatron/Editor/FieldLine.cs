@@ -81,12 +81,18 @@ namespace TNRD.Automatron {
             Right.LineIn = this;
         }
 
+        protected override void OnFocus() {
+            Color = AutomatronSettings.FieldLineColor;
+        }
+
         protected override void OnInitialize() {
             if ( Left == null || Right == null ) {
                 SortingOrder = ESortingOrder.LineNoEnd;
             } else {
                 SortingOrder = ESortingOrder.Line;
             }
+
+            Color = AutomatronSettings.FieldLineColor;
         }
 
         protected override void OnAfterSerialize() {
@@ -121,6 +127,8 @@ namespace TNRD.Automatron {
             Right.LineIn = this;
 
             SortingOrder = ESortingOrder.Line;
+
+            Color = AutomatronSettings.FieldLineColor;
         }
 
         protected override void OnBeforeSerialize() {

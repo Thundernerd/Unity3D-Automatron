@@ -250,16 +250,9 @@ namespace TNRD.Automatron {
             CreateIcons();
         }
 
-        private void CreateIcons() {
-            // Secretly reusing the foldOut
-            executeContent = new GUIContent( Assets["foldOut"], "Execute the automation sequence" );
-            stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
-            resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
-            trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
-        }
-
         protected override void OnGUI() {
             EditorGUILayout.BeginHorizontal( EditorStyles.toolbar );
+            EditorGUI.BeginDisabledGroup( Globals.IsExecuting );
             if ( GUILayout.Button( "File", EditorStyles.toolbarDropDown ) ) {
                 var gm = GenericMenuBuilder.CreateMenu();
                 gm.AddItem( "New Automatron", false, () => {
@@ -278,7 +271,7 @@ namespace TNRD.Automatron {
 
                 } );
                 gm.AddSeparator();
-                gm.AddItem( "Create Automation", false, () => {
+                gm.AddItem( "Create.../Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Automation",
                         "Please insert the name for your automation",
@@ -288,7 +281,7 @@ namespace TNRD.Automatron {
                             }
                         } ) );
                 } );
-                gm.AddItem( "Create Conditional", false, () => {
+                gm.AddItem( "Create.../Conditional Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Conditional Automation",
                         "Please insert the name for your automation",
@@ -298,7 +291,7 @@ namespace TNRD.Automatron {
                             }
                         } ) );
                 } );
-                gm.AddItem( "Create Loopable Loopable", false, () => {
+                gm.AddItem( "Create.../Loopable Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Automation",
                         "Please insert the name for your automation",
@@ -308,9 +301,13 @@ namespace TNRD.Automatron {
                             }
                         } ) );
                 } );
-                gm.AddSeparator();
-                gm.AddItem( "Generator", false, () => {
+                gm.AddSeparator("Create.../");
+                gm.AddItem( "Create.../Generator", false, () => {
                     Generation.Generator.CreateMe();
+                } );
+                gm.AddSeparator();
+                gm.AddItem( "Exit", false, () => {
+                    Editor.Close();
                 } );
                 gm.ShowAsContext();
             }
@@ -318,6 +315,7 @@ namespace TNRD.Automatron {
             if ( GUILayout.Button( "Automations", EditorStyles.toolbarDropDown ) ) {
                 ShowAutomationPopup();
             }
+            EditorGUI.EndDisabledGroup();
 
             // Spacer
             GUILayout.Button( "", EditorStyles.toolbarButton );
@@ -334,10 +332,12 @@ namespace TNRD.Automatron {
                 }
             }
 
+            EditorGUI.BeginDisabledGroup( Globals.IsExecuting );
             if ( GUILayout.Button( resetContent, EditorStyles.toolbarButton ) ) {
                 var list = GetControls<Automation>();
                 foreach ( var item in list ) {
                     item.Reset();
+                    item.ResetFields();
                 }
             }
 
@@ -357,6 +357,7 @@ namespace TNRD.Automatron {
                     }
                 } ) );
             }
+            EditorGUI.EndDisabledGroup();
 
             GUILayout.FlexibleSpace();
             EditorGUILayout.EndHorizontal();
@@ -372,15 +373,23 @@ namespace TNRD.Automatron {
             if ( AutomatronSettings.AutoSave ) {
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     Save();
-                } else if ( Input.ButtonReleased( EMouseButton.Middle ) ) {
-                    Save();
                 }
             }
 
             Repaint();
         }
 
+        private void CreateIcons() {
+            // Secretly reusing the foldOut
+            executeContent = new GUIContent( Assets["foldOut"], "Execute the automation sequence" );
+            stopContent = new GUIContent( Assets["stop"], "Stop the active automation sequence" );
+            resetContent = new GUIContent( Assets["reset"], "Reset the values and progress of the automations" );
+            trashContent = new GUIContent( Assets["trash"], "Remove all the automations" );
+        }
+
         private void ShowAutomationPopup() {
+            if ( Globals.IsExecuting ) return;
+
             var items = new List<FancyPopup.TreeItem>();
             foreach ( var item in automations ) {
                 items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
@@ -393,6 +402,10 @@ namespace TNRD.Automatron {
             instance.Position = mpos - Globals.Camera;
 
             AddControl( instance );
+
+            if ( AutomatronSettings.FocusNewAutomation ) {
+                LookAtAutomationSmooth( instance );
+            }
         }
 
         private void ExecuteAutomations() {
@@ -436,19 +449,28 @@ namespace TNRD.Automatron {
                     if ( automations == null || automations.Count == 0 ) break;
 
                     foreach ( var auto in automations ) {
+                        auto.GetDependencies();
+                        if ( Globals.IsError ) break;
+
+                        yield return null;
+
                         if ( auto is LoopableAutomation ) {
                             var l = (LoopableAutomation)auto;
                             if ( !loops.Contains( l ) ) {
+                                auto.PreExecute();
                                 loops.Add( l );
+                            } else {
+                                l.MoveNext();
                             }
 
-                            if ( !l.IsDone() ) {
-                                l.ResetLoop();
-                            }
+                            l.ResetLoop();
+                        } else {
+                            auto.PreExecute();
                         }
 
-                        auto.PrepareForExecute();
-                        if ( Globals.IsError ) break;
+                        if ( AutomatronSettings.FocusActiveAutomation ) {
+                            LookAtAutomationSmooth( auto );
+                        }
 
                         var routine = auto.Execute();
                         while ( true ) {
@@ -471,6 +493,7 @@ namespace TNRD.Automatron {
 
                         if ( Globals.IsError ) break;
                         if ( !( auto is LoopableAutomation ) ) {
+                            auto.PostExecute();
                             auto.Progress = 1;
                         }
 
@@ -481,17 +504,30 @@ namespace TNRD.Automatron {
 
                     automations = automations[automations.Count - 1].GetNextAutomations();
 
-                    if ( automations.Count == 0 && loops.Count > 0 ) {
+                    if ( automations.Count > 0 && loops.Count > 0 ) {
                         var l = loops[loops.Count - 1];
-                        l.MoveNext();
                         if ( l.IsDone() ) {
+                            l.PostExecute();
                             l.Progress = 1;
-                            automations = l.GetNextAutomations();
                             loops.Remove( l );
-                        } else {
-                            l.GetAutomations( ref automations, false );
+                        }
+                    } else {
+                        while ( automations.Count == 0 && loops.Count > 0 ) {
+                            var l = loops[loops.Count - 1];
+                            if ( l.IsDone() ) {
+                                l.PostExecute();
+                                l.Progress = 1;
+                                automations = l.GetNextAutomations();
+                                loops.Remove( l );
+                            } else {
+                                l.GetAutomations( ref automations, false );
+                            }
+
+                            yield return null;
                         }
                     }
+
+                    yield return null;
                 }
 
                 if ( Globals.IsError ) break;
@@ -502,6 +538,7 @@ namespace TNRD.Automatron {
                 LookAtAutomationSmooth( Globals.LastAutomation );
                 AddControl( new AutomationError( Globals.LastError ) );
             }
+
 
             Globals.IsExecuting = false;
 

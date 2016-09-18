@@ -331,7 +331,14 @@ namespace TNRD.Automatron {
                 if ( createAutomatron ) {
                     createAutomatron = false;
 
-                    configs.Insert( 0, ( Path.Combine( automatronPath, automatronName ).Replace( "\\", "/" ) + ".acfg" ) );
+                    var p = Path.Combine( automatronPath, automatronName ).Replace( "\\", "/" ) + ".acfg";
+
+                    var i = -1;
+                    while ( ( i = configs.IndexOf( p ) ) != -1 ) {
+                        configs.RemoveAt( i );
+                    }
+
+                    configs.Insert( 0, p );
                     SaveRecents();
 
                     Remove();

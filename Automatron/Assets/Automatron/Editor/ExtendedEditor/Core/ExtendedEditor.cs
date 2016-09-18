@@ -57,6 +57,8 @@ namespace TNRD.Automatron.Editor.Core {
         public static float DeltaTime = 0;
         private float previousTime = 0;
 
+        private bool afterDeserialize = false;
+
         [RequireSerialization]
         private int windowIDs = 0;
 
@@ -403,13 +405,12 @@ namespace TNRD.Automatron.Editor.Core {
         }
 
         public void OnEnable() {
-            if ( EditorPrefs.HasKey( EditorName ) ) {
-
+            if ( afterDeserialize && EditorPrefs.HasKey( EditorName ) ) {
                 var b64 = EditorPrefs.GetString( EditorName );
                 EditorPrefs.DeleteKey( EditorName );
 
                 Input = new ExtendedInput();
-
+                
                 var sEditor = Deserializer.Deserialize<SerializableEditor>( b64 );
                 isInitialized = sEditor.IsInitialized;
                 isInitializedGUI = sEditor.IsInitializedGUI;
@@ -417,10 +418,10 @@ namespace TNRD.Automatron.Editor.Core {
                 windows = sEditor.Windows;
 
                 Assets.Path = sEditor.AssetPath;
-
+                
+                windowsGrouped.Clear();
                 foreach ( var item in windows ) {
                     AddWindowGrouped( item );
-                    item.CleanControls();
                 }
 
                 foreach ( var item in windows ) {
@@ -431,11 +432,14 @@ namespace TNRD.Automatron.Editor.Core {
                 foreach ( var item in windows ) {
                     item.SortControls();
                 }
+
             }
+
+            afterDeserialize = false;
         }
 
         public void OnAfterDeserialize() {
-
+            afterDeserialize = true;
         }
 
         private int GenerateID() {
