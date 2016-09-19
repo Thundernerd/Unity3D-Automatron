@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System.Collections;
 using UnityEditor;
 
@@ -45,3 +46,4 @@ namespace TNRD.Automatron {
         }
     }
 }
+#endif

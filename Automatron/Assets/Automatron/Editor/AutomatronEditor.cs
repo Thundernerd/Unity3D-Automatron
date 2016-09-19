@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
@@ -144,6 +145,8 @@ namespace TNRD.Automatron {
 
             foreach ( var item in a.Automations ) {
                 var type = Type.GetType( item.Type );
+                if ( type == null ) continue;
+
                 var pos = item.Position;
 
                 var instance = (Automation)Activator.CreateInstance( type );
@@ -266,15 +269,25 @@ namespace TNRD.Automatron {
                 gm.AddSeparator();
                 gm.AddItem( "Save Automatron", false, () => {
                     AutomatronSerializer.Save( this );
+                    ShowNotification( "Automatron saved" );
                 } );
-                gm.AddItem( "Save Automatron As..", false, () => {
-
+                gm.AddItem( "Save Automatron As...", false, () => {
+                    ShowPopup( new InputBox(
+                        "Save Automatron As...",
+                        "Please insert a new name for the Automatron",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                Name = input;
+                                Save();
+                                ShowNotification( string.Format( "Automatron saved as '{0}'", input ) );
+                            }
+                        } ) );
                 } );
                 gm.AddSeparator();
                 gm.AddItem( "Create.../Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Automation",
-                        "Please insert the name for your automation",
+                        "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
                                 AutomationTemplator.CreateAutomation( input );
@@ -284,7 +297,7 @@ namespace TNRD.Automatron {
                 gm.AddItem( "Create.../Conditional Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Conditional Automation",
-                        "Please insert the name for your automation",
+                        "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
                                 AutomationTemplator.CreateConditionalAutomation( input );
@@ -293,15 +306,15 @@ namespace TNRD.Automatron {
                 } );
                 gm.AddItem( "Create.../Loopable Automation", false, () => {
                     ShowPopup( new InputBox(
-                        "Create Automation",
-                        "Please insert the name for your automation",
+                        "Create Loopable Automation",
+                        "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
                                 AutomationTemplator.CreateLoopableAutomation( input );
                             }
                         } ) );
                 } );
-                gm.AddSeparator("Create.../");
+                gm.AddSeparator( "Create.../" );
                 gm.AddItem( "Create.../Generator", false, () => {
                     Generation.Generator.CreateMe();
                 } );
@@ -360,7 +373,16 @@ namespace TNRD.Automatron {
             EditorGUI.EndDisabledGroup();
 
             GUILayout.FlexibleSpace();
+
+            if ( GUILayout.Button( "Help", EditorStyles.toolbarButton ) ) {
+                Application.OpenURL( "http://tnrd.net/automatron" );
+            }
+
             EditorGUILayout.EndHorizontal();
+
+            if ( Input.KeyReleased( KeyCode.F1 ) ) {
+                Application.OpenURL( "http://tnrd.net/automatron" );
+            }
 
             if ( Input.ButtonReleased( EMouseButton.Right ) ) {
                 ShowAutomationPopup();
@@ -537,8 +559,9 @@ namespace TNRD.Automatron {
             if ( Globals.IsError ) {
                 LookAtAutomationSmooth( Globals.LastAutomation );
                 AddControl( new AutomationError( Globals.LastError ) );
+            } else {
+                ShowNotification( "Automatron executed" );
             }
-
 
             Globals.IsExecuting = false;
 
@@ -594,3 +617,4 @@ namespace TNRD.Automatron {
         }
     }
 }
+#endif

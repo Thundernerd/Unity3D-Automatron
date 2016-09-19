@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Text.RegularExpressions;
@@ -33,3 +34,4 @@ namespace TNRD.Automatron.Drawers {
         }
     }
 }
+#endif

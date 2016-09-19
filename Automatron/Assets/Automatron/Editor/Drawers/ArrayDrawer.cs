@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System;
 using UnityEditor;
 using UnityEngine;
@@ -149,6 +150,9 @@ namespace TNRD.Automatron.Drawers {
 
             if ( value != array ) {
                 array = (Array)value;
+                if ( Globals.IsExecuting && array.Length > 3 ) {
+                    fold = true;
+                }
             }
 
             if ( array == null ) {
@@ -299,3 +303,4 @@ namespace TNRD.Automatron.Drawers {
         }
     }
 }
+#endif

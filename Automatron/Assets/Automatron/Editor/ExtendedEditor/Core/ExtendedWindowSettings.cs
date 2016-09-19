@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System;
 
 namespace TNRD.Automatron.Editor.Core {
@@ -13,3 +14,4 @@ namespace TNRD.Automatron.Editor.Core {
         public bool Resizable = false;
     }
 }
+#endif

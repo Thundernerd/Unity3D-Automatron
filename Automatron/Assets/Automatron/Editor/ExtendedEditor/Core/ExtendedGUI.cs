@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -61,10 +62,34 @@ namespace TNRD.Automatron.Editor.Core {
                     var texture = new Texture2D( 1, 1 );
                     texture.hideFlags = HideFlags.HideAndDontSave;
                     texture.LoadImage( bytes );
-                    boxStyle.normal.background = boxStyle.onNormal.background = texture;                    
+                    boxStyle.normal.background = boxStyle.onNormal.background = texture;
                 }
 
                 return boxStyle;
+            }
+        }
+
+        private static GUIStyle notificationBackgroundStyle;
+        public static GUIStyle NotificationBackgroundStyle {
+            get {
+                if ( notificationBackgroundStyle == null ) {
+                    notificationBackgroundStyle = new GUIStyle( "NotificationBackground" );
+                }
+
+                return notificationBackgroundStyle;
+            }
+        }
+
+        private static GUIStyle notificationTextStyle;
+        public static GUIStyle NotificationTextStyle {
+            get {
+                if ( notificationTextStyle == null ) {
+                    notificationTextStyle = new GUIStyle( "NotificationText" );
+                    notificationTextStyle.padding = new RectOffset( 20, 20, 20, 20 );
+                    notificationTextStyle.fontSize = 17;
+                }
+
+                return notificationTextStyle;
             }
         }
 
@@ -102,3 +127,4 @@ namespace TNRD.Automatron.Editor.Core {
 
     }
 }
+#endif

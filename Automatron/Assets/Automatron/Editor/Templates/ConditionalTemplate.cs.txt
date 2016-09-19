@@ -6,7 +6,7 @@ using TNRD.Automatron.Automations;
 using UnityEngine;
 using UnityEditor;
 
-[Automation( "_classname_" )]
+[Automation( "_header_" )]
 public class _classname_Automation : ConditionalAutomation {
 
     public override IEnumerator Execute() {

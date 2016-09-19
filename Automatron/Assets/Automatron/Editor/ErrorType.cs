@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿namespace TNRD.Automatron {
 
     public enum ErrorType {
@@ -6,3 +7,5 @@
         Arugment
     }
 }
+
+#endif

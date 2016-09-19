@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System;
 using System.Collections;
 using UnityEditor;
@@ -274,3 +275,4 @@ namespace TNRD.Automatron.Drawers {
         }
     }
 }
+#endif

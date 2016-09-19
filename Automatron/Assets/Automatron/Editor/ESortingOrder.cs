@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿namespace TNRD.Automatron {
 
     public class ESortingOrder {
@@ -8,3 +9,4 @@
         public const int LineNoEnd = 400;
     }
 }
+#endif

@@ -6,7 +6,7 @@ using TNRD.Automatron.Automations;
 using UnityEngine;
 using UnityEditor;
 
-[Automation( "_classname_" )]
+[Automation( "_header" )]
 public class _classname_Automation : LoopableAutomation {
 
     private int index = 0;
@@ -24,5 +24,10 @@ public class _classname_Automation : LoopableAutomation {
         // return index == ?
         throw new NotImplementedException();
     }
+
+	public override void MoveNext() {
+		// index++
+		throw new NotImplementedException();
+	}
 }
 #endif
