@@ -301,7 +301,7 @@ namespace TNRD.Automatron {
                             }
                         } ) );
                 } );
-                gm.AddSeparator("Create.../");
+                gm.AddSeparator( "Create.../" );
                 gm.AddItem( "Create.../Generator", false, () => {
                     Generation.Generator.CreateMe();
                 } );
@@ -360,7 +360,16 @@ namespace TNRD.Automatron {
             EditorGUI.EndDisabledGroup();
 
             GUILayout.FlexibleSpace();
+
+            if ( GUILayout.Button( "Help", EditorStyles.toolbarButton ) ) {
+                Application.OpenURL( "http://tnrd.net/automatron" );
+            }
+
             EditorGUILayout.EndHorizontal();
+
+            if ( Input.KeyReleased( KeyCode.F1 ) ) {
+                Application.OpenURL( "http://tnrd.net/automatron" );
+            }
 
             if ( Input.ButtonReleased( EMouseButton.Right ) ) {
                 ShowAutomationPopup();
