@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System;
 
 namespace TNRD.Automatron {
@@ -15,3 +16,4 @@ namespace TNRD.Automatron {
         }
     }
 }
+#endif

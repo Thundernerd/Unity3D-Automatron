@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System;
 using TNRD.Automatron.Editor.Core;
 using UnityEditor;
@@ -122,3 +123,4 @@ namespace TNRD.Automatron.Editor.Windows {
         }
     }
 }
+#endif

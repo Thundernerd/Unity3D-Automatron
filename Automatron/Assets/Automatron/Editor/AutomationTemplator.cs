@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿#if AUTOMATRON_LIB
 using Automatron.Properties;
 #endif
@@ -60,3 +61,4 @@ namespace TNRD.Automatron {
         }
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿// TinyTween.cs
 //
 // Copyright (c) 2013 Nick Gravelyn
@@ -512,3 +513,4 @@ namespace TNRD.Automatron.TinyTween {
         }
     }
 }
+#endif

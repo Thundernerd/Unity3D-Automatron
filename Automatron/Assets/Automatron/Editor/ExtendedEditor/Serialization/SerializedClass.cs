@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System.Collections.Generic;
 
 namespace TNRD.Automatron.Editor.Serialization {
@@ -21,3 +22,4 @@ namespace TNRD.Automatron.Editor.Serialization {
         }
     }
 }
+#endif
