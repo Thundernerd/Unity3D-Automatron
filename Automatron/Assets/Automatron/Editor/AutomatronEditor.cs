@@ -268,6 +268,7 @@ namespace TNRD.Automatron {
                 gm.AddSeparator();
                 gm.AddItem( "Save Automatron", false, () => {
                     AutomatronSerializer.Save( this );
+                    ShowNotification( "Automatron saved" );
                 } );
                 gm.AddItem( "Save Automatron As...", false, () => {
                     ShowPopup( new InputBox(
@@ -277,6 +278,7 @@ namespace TNRD.Automatron {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
                                 Name = input;
                                 Save();
+                                ShowNotification( string.Format( "Automatron saved as '{0}'", input ) );
                             }
                         } ) );
                 } );
@@ -556,8 +558,9 @@ namespace TNRD.Automatron {
             if ( Globals.IsError ) {
                 LookAtAutomationSmooth( Globals.LastAutomation );
                 AddControl( new AutomationError( Globals.LastError ) );
+            } else {
+                ShowNotification( "Automatron executed" );
             }
-
 
             Globals.IsExecuting = false;
 
