@@ -293,7 +293,7 @@ namespace TNRD.Automatron {
                 } );
                 gm.AddItem( "Create.../Loopable Automation", false, () => {
                     ShowPopup( new InputBox(
-                        "Create Automation",
+                        "Create Loopable Automation",
                         "Please insert the name for your automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
