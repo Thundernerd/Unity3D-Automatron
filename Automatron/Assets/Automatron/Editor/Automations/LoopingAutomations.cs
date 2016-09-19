@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 ﻿using System.Collections;
 using System;
 using TNRD.Automatron.Editor.Serialization;
@@ -113,3 +114,5 @@ namespace TNRD.Automatron.Automations {
 
 #pragma warning restore 0649
 }
+
+#endif
