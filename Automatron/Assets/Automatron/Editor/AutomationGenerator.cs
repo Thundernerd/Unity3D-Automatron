@@ -41,6 +41,7 @@ namespace TNRD.Automatron.Generation {
 
         public static void Init( List<WizardData> datas ) {
             var wiz = DisplayWizard<GeneratorWizard>( "Select Members", "Generate", "Cancel" );
+            wiz.minSize = new Vector2( 720, 480 );
             wiz.datas = datas;
             wiz.Folds();
         }
