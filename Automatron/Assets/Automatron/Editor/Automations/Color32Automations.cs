@@ -150,6 +150,16 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
+    [Automation( "Color 32/Create" )]
+    class Color32Create2 : Automation {
+
+        public UnityEngine.Color32 Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

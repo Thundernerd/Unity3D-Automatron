@@ -533,6 +533,16 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
+    [Automation( "String/Create" )]
+    class StringCreate32 : Automation {
+
+        public string Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

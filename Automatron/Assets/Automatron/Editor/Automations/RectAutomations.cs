@@ -474,6 +474,16 @@ namespace TNRD.Automatron.Automations.Generated {
 	}
 
 
+    [Automation( "Rect/Create" )]
+    class RectCreate6 : Automation {
+
+        public UnityEngine.Rect Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 #pragma warning restore 0649
 }
 

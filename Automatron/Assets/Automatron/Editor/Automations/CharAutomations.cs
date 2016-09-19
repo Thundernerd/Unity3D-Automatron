@@ -446,6 +446,15 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
+    [Automation( "Char/Create" )]
+    class CharCreate24 : Automation {
+
+        public char Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
 
 #pragma warning restore 0649
 }

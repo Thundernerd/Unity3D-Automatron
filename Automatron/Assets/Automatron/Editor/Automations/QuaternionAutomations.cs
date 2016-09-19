@@ -410,6 +410,16 @@ namespace TNRD.Automatron.Automations.Generated {
 	}
 
 
+    [Automation( "Quaternion/Create" )]
+    class QuaternionCreate15 : Automation {
+
+        public UnityEngine.Quaternion Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 #pragma warning restore 0649
 }
 

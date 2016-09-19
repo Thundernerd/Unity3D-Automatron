@@ -630,6 +630,16 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
+    [Automation( "Vector 3/Create" )]
+    class Vector3Create24 : Automation {
+
+        public UnityEngine.Vector3 Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

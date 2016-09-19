@@ -66,6 +66,16 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
+    [Automation( "Short/Create" )]
+    class ShortCreate2 : Automation {
+
+        public short Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

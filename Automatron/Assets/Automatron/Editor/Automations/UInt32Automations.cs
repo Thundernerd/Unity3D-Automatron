@@ -66,6 +66,16 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
+    [Automation( "Unsigned Int/Create" )]
+    class UnsignedIntCreate2 : Automation {
+
+        public uint Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

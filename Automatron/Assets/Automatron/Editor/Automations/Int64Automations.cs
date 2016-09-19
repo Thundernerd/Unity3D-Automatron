@@ -66,6 +66,16 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
+    [Automation( "Long/Create" )]
+    class LongCreate2 : Automation {
+
+        public long Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

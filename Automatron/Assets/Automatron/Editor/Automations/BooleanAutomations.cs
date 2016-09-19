@@ -88,6 +88,16 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
+    [Automation( "Bool/Create" )]
+    class BoolCreate3 : Automation {
+
+        public bool Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

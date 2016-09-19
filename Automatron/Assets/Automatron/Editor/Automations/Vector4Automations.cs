@@ -408,6 +408,16 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
+    [Automation( "Vector 4/Create" )]
+    class Vector4Create15 : Automation {
+
+        public UnityEngine.Vector4 Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

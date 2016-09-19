@@ -293,6 +293,16 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
+    [Automation( "Bounds/Create" )]
+    class BoundsCreate9 : Automation {
+
+        public UnityEngine.Bounds Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

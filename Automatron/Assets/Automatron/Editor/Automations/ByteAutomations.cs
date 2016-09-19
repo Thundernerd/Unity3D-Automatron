@@ -84,7 +84,16 @@ namespace TNRD.Automatron.Automations.Generated {
 			return Result;
 		}
 	}
+    
+    [Automation( "Byte/Create" )]
+    class ByteCreate3 : Automation {
 
+        public byte Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
 
 #pragma warning restore 0649
 }

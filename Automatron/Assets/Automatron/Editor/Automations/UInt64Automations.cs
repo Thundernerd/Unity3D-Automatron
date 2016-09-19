@@ -66,6 +66,16 @@ namespace TNRD.Automatron.Automations.Generated {
 		}
 	}
 
+    [Automation( "Unsigned Long/Create" )]
+    class UnsignedLongCreate : Automation {
+
+        public ulong Value;
+
+        public override IEnumerator Execute() {
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }
