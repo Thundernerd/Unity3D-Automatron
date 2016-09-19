@@ -144,6 +144,8 @@ namespace TNRD.Automatron {
 
             foreach ( var item in a.Automations ) {
                 var type = Type.GetType( item.Type );
+                if ( type == null ) continue;
+
                 var pos = item.Position;
 
                 var instance = (Automation)Activator.CreateInstance( type );
@@ -267,14 +269,22 @@ namespace TNRD.Automatron {
                 gm.AddItem( "Save Automatron", false, () => {
                     AutomatronSerializer.Save( this );
                 } );
-                gm.AddItem( "Save Automatron As..", false, () => {
-
+                gm.AddItem( "Save Automatron As...", false, () => {
+                    ShowPopup( new InputBox(
+                        "Save Automatron As...",
+                        "Please insert a new name for the Automatron",
+                        ( EDialogResult result, string input ) => {
+                            if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
+                                Name = input;
+                                Save();
+                            }
+                        } ) );
                 } );
                 gm.AddSeparator();
                 gm.AddItem( "Create.../Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Automation",
-                        "Please insert the name for your automation",
+                        "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
                                 AutomationTemplator.CreateAutomation( input );
@@ -284,7 +294,7 @@ namespace TNRD.Automatron {
                 gm.AddItem( "Create.../Conditional Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Conditional Automation",
-                        "Please insert the name for your automation",
+                        "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
                                 AutomationTemplator.CreateConditionalAutomation( input );
@@ -294,7 +304,7 @@ namespace TNRD.Automatron {
                 gm.AddItem( "Create.../Loopable Automation", false, () => {
                     ShowPopup( new InputBox(
                         "Create Loopable Automation",
-                        "Please insert the name for your automation",
+                        "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
                                 AutomationTemplator.CreateLoopableAutomation( input );
