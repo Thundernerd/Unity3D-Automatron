@@ -6,7 +6,7 @@ using TNRD.Automatron.Automations;
 using UnityEngine;
 using UnityEditor;
 
-[Automation( "_header" )]
+[Automation( "_header_" )]
 public class _classname_Automation : LoopableAutomation {
 
     private int index = 0;

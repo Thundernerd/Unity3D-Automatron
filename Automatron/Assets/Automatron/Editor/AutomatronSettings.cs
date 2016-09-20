@@ -124,7 +124,7 @@ namespace TNRD.Automatron {
         }
 
         public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD.Automatron.ConfigFolder." + projectName, "Config Folder", "Assets/Automatron/Configs/" );
-        public static EditorPrefsString AutomatronFolder = new EditorPrefsString( "TNRD.Automatron.AutomatronFolder." + projectName, "Automatron Folder", "Assets/Automatron/Editor/" );
+        public static EditorPrefsString AutomationFolder = new EditorPrefsString( "TNRD.Automatron.AutomationFolder." + projectName, "Automatron Folder", "Assets/Automatron/Editor/Automations/" );
         public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave." + projectName, "Auto Save", true );
         public static EditorPrefsColor AutomationLineColor = new EditorPrefsColor( "TNRD.Automatron.AutomationLineColor" + projectName, "Automation Line Color", Color.white );
         public static EditorPrefsColor FieldLineColor = new EditorPrefsColor( "TNRD.Automatron.FieldLineColor" + projectName, "Field Line Color", Color.white );
@@ -133,8 +133,8 @@ namespace TNRD.Automatron {
 
         [PreferenceItem( "Automatron" )]
         public static void PreferencesGUI() {
+            AutomationFolder.Draw();
             ConfigFolder.Draw();
-            AutomatronFolder.Draw();
             AutoSave.Draw();
 
             EditorGUILayout.Space();

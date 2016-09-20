@@ -49,6 +49,7 @@ namespace TNRD.Automatron.Editor.Core {
         }
 
         public void Initialize( string path ) {
+#if !IS_LIBRARY
             if ( !string.IsNullOrEmpty( path ) ) {
                 Path = path;
             } else {
@@ -61,6 +62,7 @@ namespace TNRD.Automatron.Editor.Core {
                     Path = Path.Replace( fname, "Assets/" );
                 }
             }
+#endif
         }
 
         private string GetExtension( EAssetType type ) {
@@ -79,7 +81,7 @@ namespace TNRD.Automatron.Editor.Core {
             if ( EditorGUIUtility.isProSkin ) {
                 return resources.Where( r => r.EndsWith( "pro." + key + GetExtension( type ) ) ).FirstOrDefault();
             } else {
-                return resources.Where( r => r.EndsWith( key + GetExtension( type ) ) ).FirstOrDefault();
+                return resources.Where( r => !r.Contains( "pro." ) && r.EndsWith( key + GetExtension( type ) ) ).FirstOrDefault();
             }
 #else
             if ( EditorGUIUtility.isProSkin ) {
@@ -115,7 +117,7 @@ namespace TNRD.Automatron.Editor.Core {
             using ( var ms = new MemoryStream() ) {
                 var buffer = new byte[4096];
                 var count = 0;
-                while ( (count = stream.Read(buffer, 0, buffer.Length)) != 0 ) {
+                while ( ( count = stream.Read( buffer, 0, buffer.Length ) ) != 0 ) {
                     ms.Write( buffer, 0, count );
                 }
                 bytes = ms.ToArray();
