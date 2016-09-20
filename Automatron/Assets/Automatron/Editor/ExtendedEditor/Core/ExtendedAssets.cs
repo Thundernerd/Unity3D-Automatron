@@ -1,8 +1,10 @@
 #if UNITY_EDITOR
 using System.Collections.Generic;
 using System.IO;
+#if IS_LIBRARY
 using System.Linq;
 using System.Reflection;
+#endif
 using TNRD.Automatron.Editor.Serialization;
 using UnityEditor;
 using UnityEngine;

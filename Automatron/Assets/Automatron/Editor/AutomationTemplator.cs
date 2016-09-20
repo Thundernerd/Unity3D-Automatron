@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-﻿#if AUTOMATRON_LIB
+#if AUTOMATRON_LIB
 using Automatron.Properties;
 #endif
 using System;
@@ -8,46 +8,29 @@ using System.Linq;
 using UnityEditor;
 
 namespace TNRD.Automatron {
-
-    [InitializeOnLoad]
+    
     public class AutomationTemplator {
 
-        private static readonly string automationTemplate;
-        private static readonly string conditionalTemplate;
-        private static readonly string loopableTemplate;
+        private AutomatronEditor editor;
 
-        static AutomationTemplator() {
-#if AUTOMATRON_LIB
-            automationTemplate = Resources.AutomationTemplate;
-            conditionalTemplate = Resources.ConditionalTemplate;
-            loopableTemplate = Resources.LoopableTemplate;
-#else
-            var assets = AssetDatabase.FindAssets( "Template.cs" ).Select( a => AssetDatabase.GUIDToAssetPath( a ) );
-            automationTemplate = ReadAsset( assets.Where( a => a.EndsWith( "AutomationTemplate.cs.txt" ) ).FirstOrDefault() );
-            conditionalTemplate = ReadAsset( assets.Where( a => a.EndsWith( "ConditionalTemplate.cs.txt" ) ).FirstOrDefault() );
-            loopableTemplate = ReadAsset( assets.Where( a => a.EndsWith( "LoopableTemplate.cs.txt" ) ).FirstOrDefault() );
-#endif
+        public AutomationTemplator() { }
+        public AutomationTemplator( AutomatronEditor editor ) {
+            this.editor = editor;
         }
 
-        private static string ReadAsset( string path ) {
-            if ( string.IsNullOrEmpty( path ) ) return "";
-            var asset = AssetDatabase.LoadAssetAtPath<UnityEngine.TextAsset>( path );
-            return asset.text;
+        public void CreateAutomation( string name ) {
+            WriteIt( editor.Assets.Text( "AutomationTemplate.cs" ), name );
         }
 
-        public static void CreateAutomation( string name ) {
-            WriteIt( automationTemplate, name );
+        public void CreateConditionalAutomation( string name ) {
+            WriteIt( editor.Assets.Text( "ConditionalTemplate.cs" ), name );
         }
 
-        public static void CreateConditionalAutomation( string name ) {
-            WriteIt( conditionalTemplate, name );
+        public void CreateLoopableAutomation( string name ) {
+            WriteIt( editor.Assets.Text( "LoopableTemplate.cs" ), name );
         }
 
-        public static void CreateLoopableAutomation( string name ) {
-            WriteIt( loopableTemplate, name );
-        }
-
-        private static void WriteIt( string contents, string name ) {
+        private void WriteIt( string contents, string name ) {
             var cname = new string( name.Where( c => char.IsLetter( c ) || char.IsDigit( c ) ).ToArray() );
             var temp = contents.Replace( "_header_", name );
             temp = temp.Replace( "_classname_", cname );
