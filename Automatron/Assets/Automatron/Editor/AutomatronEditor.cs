@@ -1,18 +1,18 @@
 #if UNITY_EDITOR
-﻿using UnityEngine;
-using UnityEditor;
-using System.Collections.Generic;
-using TNRD.Automatron.Editor.Core;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using TNRD.Automatron.Automations;
 using TNRD.Automatron.Drawers;
 using TNRD.Automatron.Editor;
-using TNRD.Automatron.Editor.Utilities;
-using TNRD.Automatron.Automations;
+using TNRD.Automatron.Editor.Core;
 using TNRD.Automatron.Editor.Serialization;
-using System.Collections;
+using TNRD.Automatron.Editor.Utilities;
 using TNRD.Automatron.Editor.Windows;
-using System.Reflection;
+using UnityEditor;
+using UnityEngine;
 
 namespace TNRD.Automatron {
 
@@ -113,6 +113,9 @@ namespace TNRD.Automatron {
 
         private EditorCoroutine executionRoutine = null;
         private EditorCoroutine lookAtRoutine = null;
+
+        [IgnoreSerialization]
+        private AutomationTemplator templator;
 
         [RequireSerialization]
         private Vector2 camera;
@@ -226,6 +229,8 @@ namespace TNRD.Automatron {
             Globals.LastError = null;
             Globals.TempAutomationLine = null;
             Globals.TempFieldLine = null;
+
+            templator = new AutomationTemplator( this );
         }
 
         protected override void OnBeforeSerialize() {
@@ -251,6 +256,7 @@ namespace TNRD.Automatron {
             Globals.Camera = camera;
 
             CreateIcons();
+            templator = new AutomationTemplator( this );
         }
 
         protected override void OnGUI() {
@@ -290,7 +296,7 @@ namespace TNRD.Automatron {
                         "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
-                                AutomationTemplator.CreateAutomation( input );
+                                templator.CreateAutomation( input );
                             }
                         } ) );
                 } );
@@ -300,7 +306,7 @@ namespace TNRD.Automatron {
                         "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
-                                AutomationTemplator.CreateConditionalAutomation( input );
+                                templator.CreateConditionalAutomation( input );
                             }
                         } ) );
                 } );
@@ -310,7 +316,7 @@ namespace TNRD.Automatron {
                         "Please insert the name for your Automation",
                         ( EDialogResult result, string input ) => {
                             if ( result == EDialogResult.OK && !string.IsNullOrEmpty( input ) ) {
-                                AutomationTemplator.CreateLoopableAutomation( input );
+                                templator.CreateLoopableAutomation( input );
                             }
                         } ) );
                 } );
