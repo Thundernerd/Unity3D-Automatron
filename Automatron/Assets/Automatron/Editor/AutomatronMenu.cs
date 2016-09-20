@@ -101,7 +101,7 @@ namespace TNRD.Automatron {
         }
 
         private void CreateStyles() {
-            headerStyle = new GUIStyle( EditorStyles.whiteLabel );
+            headerStyle = new GUIStyle( EditorStyles.label );
             headerStyle.alignment = TextAnchor.UpperCenter;
             headerStyle.fontSize = 64;
 

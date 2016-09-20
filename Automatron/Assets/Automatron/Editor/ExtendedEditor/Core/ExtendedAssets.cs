@@ -1,7 +1,8 @@
 #if UNITY_EDITOR
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using TNRD.Automatron.Editor.Serialization;
+using UnityEditor;
 using UnityEngine;
 
 namespace TNRD.Automatron.Editor.Core {
@@ -42,20 +43,34 @@ namespace TNRD.Automatron.Editor.Core {
             }
         }
 
+        private string GetPath( string key ) {
+            if ( EditorGUIUtility.isProSkin ) {
+                var pp = System.IO.Path.Combine( System.IO.Path.Combine( Path, "pro" ), key + ".png" );
+                if ( File.Exists( pp ) ) {
+                    return pp;
+                }
+            }
+
+            var fp = System.IO.Path.Combine( Path, key + ".png" );
+            if ( File.Exists( fp ) )
+                return fp;
+            else
+                return "";
+        }
+
         public Texture2D Load( string key ) {
             if ( textures.ContainsKey( key ) ) {
                 return textures[key];
             }
 
-            var fpath = System.IO.Path.Combine( Path, key + ".png" );
-            if ( !File.Exists( fpath ) ) {
+            var path = GetPath( key );
+            if ( string.IsNullOrEmpty( path ) )
                 return null;
-            }
 
             var tex = new Texture2D( 1, 1 );
             tex.hideFlags = HideFlags.HideAndDontSave;
 
-            var bytes = File.ReadAllBytes( fpath );
+            var bytes = File.ReadAllBytes( path );
             tex.LoadImage( bytes );
 
             textures.Add( key, tex );

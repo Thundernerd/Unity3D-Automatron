@@ -69,7 +69,7 @@ namespace TNRD.Automatron {
         }
 
         private class Styles {
-            public GUIStyle header = new GUIStyle( EditorGUIUtility.GetBuiltinSkin( EditorSkin.Scene ).FindStyle( "In BigTitle" ) );
+            public GUIStyle header = new GUIStyle( EditorGUIUtility.GetBuiltinSkin( EditorGUIUtility.isProSkin ? EditorSkin.Scene : EditorSkin.Inspector ).FindStyle( "In BigTitle" ) );
             public GUIStyle componentButton = new GUIStyle( (GUIStyle)"PR Label" );
             public GUIStyle background = (GUIStyle)"grey_border";
             public GUIStyle previewBackground = (GUIStyle)"PopupCurveSwatchBackground";
