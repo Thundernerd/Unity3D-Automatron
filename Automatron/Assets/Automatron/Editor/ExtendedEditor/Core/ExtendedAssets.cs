@@ -149,6 +149,37 @@ namespace TNRD.Automatron.Editor.Core {
 #endif
         }
 
+        public byte[] Blob( string key, string ext ) {
+#if IS_LIBRARY
+            var separator = ".";
+#else
+            var separator = "/";
+#endif
+
+            var path = "";
+
+            if ( EditorGUIUtility.isProSkin ) {
+                path = resources.Where( r => r.EndsWith( string.Format( "pro{0}{1}{2}", separator, key, ext ) ) ).FirstOrDefault();
+            }
+
+            if ( string.IsNullOrEmpty( path ) ) {
+                path = resources.Where( r => !r.Contains( "pro" + separator ) && r.EndsWith( key + ext ) ).FirstOrDefault();
+            }
+
+            if ( string.IsNullOrEmpty( path ) )
+                return null;
+
+#if IS_LIBRARY
+            var stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream( path );
+            var bytes = new byte[stream.Length];
+            stream.Read( bytes, 0, (int)stream.Length );
+            return bytes;
+#else
+            var bytes = File.ReadAllBytes( path );
+            return bytes;
+#endif
+        }
+
         public Texture2D B64( string key, string b64 ) {
             if ( textures.ContainsKey( key ) ) {
                 return textures[key];
