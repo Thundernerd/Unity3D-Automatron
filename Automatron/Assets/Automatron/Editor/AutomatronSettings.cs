@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
 namespace TNRD.Automatron {
@@ -126,10 +126,11 @@ namespace TNRD.Automatron {
         public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD.Automatron.ConfigFolder." + projectName, "Config Folder", "Assets/Automatron/Configs/" );
         public static EditorPrefsString AutomationFolder = new EditorPrefsString( "TNRD.Automatron.AutomationFolder." + projectName, "Automations Folder", "Assets/Automatron/Editor/Automations/" );
         public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave." + projectName, "Auto Save", true );
-        public static EditorPrefsColor AutomationLineColor = new EditorPrefsColor( "TNRD.Automatron.AutomationLineColor" + projectName, "Automation Line Color", Color.white );
-        public static EditorPrefsColor FieldLineColor = new EditorPrefsColor( "TNRD.Automatron.FieldLineColor" + projectName, "Field Line Color", Color.white );
-        public static EditorPrefsBool FocusNewAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusNewAutomation" + projectName, "Focus New Automation", true );
-        public static EditorPrefsBool FocusActiveAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusActiveAutomation" + projectName, "Focus Active Automation", true );
+        public static EditorPrefsBool FirstRun = new EditorPrefsBool( "TNRD.Automatron.FirstRun." + projectName, "Auto Save", true );
+        public static EditorPrefsColor AutomationLineColor = new EditorPrefsColor( "TNRD.Automatron.AutomationLineColor." + projectName, "Automation Line Color", Color.white );
+        public static EditorPrefsColor FieldLineColor = new EditorPrefsColor( "TNRD.Automatron.FieldLineColor." + projectName, "Field Line Color", Color.white );
+        public static EditorPrefsBool FocusNewAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusNewAutomation." + projectName, "Focus New Automation", true );
+        public static EditorPrefsBool FocusActiveAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusActiveAutomation." + projectName, "Focus Active Automation", true );
 
         [PreferenceItem( "Automatron" )]
         public static void PreferencesGUI() {

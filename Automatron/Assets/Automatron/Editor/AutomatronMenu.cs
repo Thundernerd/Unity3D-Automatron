@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using TNRD.Automatron.Editor;
@@ -303,6 +303,23 @@ namespace TNRD.Automatron {
                 CreateGUI();
             }
 
+            if ( Event.current.type == EventType.Repaint && AutomatronSettings.FirstRun && configs.Count == 0 ) {
+                AutomatronSettings.FirstRun.Value = false;
+                var v = EditorUtility.DisplayDialog( "", "It seems that this is your first time you here.\nDo you want to add some example projects?", "Yes", "No" );
+                if ( v ) {
+                    if ( !Directory.Exists( AutomatronSettings.ConfigFolder ) ) {
+                        Directory.CreateDirectory( AutomatronSettings.ConfigFolder );
+                    }
+
+                    AddExample( "ForEach Example" );
+                    AddExample( "For Example" );
+                    AddExample( "Conditional Example" );
+                    AddExample( "Simple Example" );
+
+                    SaveRecents();
+                }
+            }
+
             switch ( Event.current.type ) {
                 case EventType.DragUpdated:
                 case EventType.DragPerform: {
@@ -387,6 +404,54 @@ namespace TNRD.Automatron {
             }
 
             Repaint();
+        }
+
+        private string GetPath( string key ) {
+#if IS_LIBRARY
+            if ( EditorGUIUtility.isProSkin ) {
+                return resources.Where( r => r.EndsWith( "pro." + key + ".acfg" ) ).FirstOrDefault();
+            } else {
+                return resources.Where( r => !r.Contains( "pro." ) && r.EndsWith( key + ".acfg" ) ).FirstOrDefault();
+            }
+#else
+            if ( EditorGUIUtility.isProSkin ) {
+                var pp = Path.Combine( Path.Combine( Assets.Path, "pro" ), key + ".acfg" );
+                if ( File.Exists( pp ) ) {
+                    return pp;
+                }
+            }
+
+            var fp = Path.Combine( Assets.Path, key + ".acfg" );
+            if ( File.Exists( fp ) )
+                return fp;
+            else
+                return "";
+#endif
+        }
+
+        private  byte[] GetExample( string key ) {
+            var path = GetPath( key );
+            if ( string.IsNullOrEmpty( path ) )
+                return null;
+
+#if IS_LIBRARY
+            var stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream( path );
+            var data = new byte[stream.Length];
+            stream.Read( data, 0, (int)stream.Length );
+            return data;
+#else
+            var data = File.ReadAllBytes( path );
+            return data;
+#endif
+        }
+
+        private void AddExample(string key) {
+            var buffer = GetExample( key );
+            if ( buffer == null ) return;
+
+            var p = Path.Combine( AutomatronSettings.ConfigFolder, key + ".acfg" ).Replace( "\\", "/" );
+            File.WriteAllBytes( p, buffer );
+            configs.Insert( 0, p );
         }
     }
 }
