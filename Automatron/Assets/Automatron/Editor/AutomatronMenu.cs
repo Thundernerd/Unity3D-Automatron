@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using TNRD.Automatron.Editor;
 using TNRD.Automatron.Editor.Core;
 using UnityEditor;
@@ -36,6 +37,9 @@ namespace TNRD.Automatron {
         private bool addAutomatrons = false;
         private List<string> automatrons;
         private string automatron = "";
+
+        private string invalidChars;
+        private bool isInvalid = true;
 
         private int target = 0;
         private float anim = 0;
@@ -122,6 +126,12 @@ namespace TNRD.Automatron {
 
             noneStyle = new GUIStyle( labelStyle );
             noneStyle.fontStyle = FontStyle.Italic;
+
+#if UNITY_EDITOR_WIN
+            invalidChars = "[" + Regex.Escape( new string( new[] { '\\', '/', ':', '*', '?', '"', '<', '>', '|' } ) ) + "]";
+#else
+            invalidChars = "[" + Regex.Escape( new string( Path.GetInvalidPathChars() ) ) + "]";
+#endif
         }
 
         protected override void OnUpdate() {
@@ -226,9 +236,12 @@ namespace TNRD.Automatron {
 
             var cbr = new Rect( area.width - 119, 7.5f, 50, 20 );
             var isHover = cbr.Contains( Input.MousePosition );
-            if ( Event.current.type == EventType.Repaint )
+            if ( Event.current.type == EventType.Repaint ) {
+                EditorGUI.BeginDisabledGroup( isInvalid );
                 buttonStyle.Draw( cbr, "Create", isHover, isHover, false, false );
-            if ( isHover ) {
+                EditorGUI.EndDisabledGroup();
+            }
+            if ( !isInvalid && isHover ) {
                 EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Link );
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     if ( !string.IsNullOrEmpty( automatronName ) ) {
@@ -262,11 +275,21 @@ namespace TNRD.Automatron {
                 }
             }
 
-            var path = Path.Combine( automatronPath, automatronName + ".acfg" );
-            if ( File.Exists( path ) ) {
-                EditorGUILayout.LabelField( string.Format( "'{0}' already exists. Proceeding will overwrite it", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
+            isInvalid = false;
+            if ( Regex.IsMatch( automatronName, invalidChars ) ) {
+                isInvalid = true;
+                EditorGUILayout.LabelField( string.Format( "'{0}' contains invalid characters", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
             } else {
-                GUILayout.Space( 22 );
+                try {
+                    var path = Path.Combine( automatronPath, automatronName + ".acfg" );
+                    if ( File.Exists( path ) ) {
+                        EditorGUILayout.LabelField( string.Format( "'{0}' already exists. Proceeding will overwrite it", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
+                    } else {
+                        GUILayout.Space( 22 );
+                    }
+                } catch ( System.Exception ) {
+                    EditorGUILayout.LabelField( string.Format( "'{0}' contains invalid characters", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
+                }
             }
 
             EditorGUILayout.LabelField( "Path", labelStyle, GUILayout.Height( 28 ) );
@@ -349,16 +372,20 @@ namespace TNRD.Automatron {
             if ( Event.current.type == EventType.Repaint ) {
                 if ( createAutomatron ) {
                     createAutomatron = false;
+                    try {
+                        var p = Path.Combine( automatronPath, automatronName ).Replace( "\\", "/" ) + ".acfg";
 
-                    var p = Path.Combine( automatronPath, automatronName ).Replace( "\\", "/" ) + ".acfg";
+                        var i = -1;
+                        while ( ( i = configs.IndexOf( p ) ) != -1 ) {
+                            configs.RemoveAt( i );
+                        }
 
-                    var i = -1;
-                    while ( ( i = configs.IndexOf( p ) ) != -1 ) {
-                        configs.RemoveAt( i );
+                        configs.Insert( 0, p );
+                        SaveRecents();
+                    } catch ( System.Exception ) {
+                        EditorUtility.DisplayDialog( "Oops", "Something went wrong trying to make this Automatron!", "OK" );
+                        return;
                     }
-
-                    configs.Insert( 0, p );
-                    SaveRecents();
 
                     Remove();
                     var wnd = new AutomatronEditor();
@@ -410,6 +437,7 @@ namespace TNRD.Automatron {
 
         private string GetPath( string key ) {
 #if IS_LIBRARY
+            var resources = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames();
             if ( EditorGUIUtility.isProSkin ) {
                 return resources.Where( r => r.EndsWith( "pro." + key + ".acfg" ) ).FirstOrDefault();
             } else {
@@ -431,7 +459,7 @@ namespace TNRD.Automatron {
 #endif
         }
 
-        private  byte[] GetExample( string key ) {
+        private byte[] GetExample( string key ) {
             var path = GetPath( key );
             if ( string.IsNullOrEmpty( path ) )
                 return null;
@@ -447,7 +475,7 @@ namespace TNRD.Automatron {
 #endif
         }
 
-        private void AddExample(string key) {
+        private void AddExample( string key ) {
             var buffer = GetExample( key );
             if ( buffer == null ) return;
 

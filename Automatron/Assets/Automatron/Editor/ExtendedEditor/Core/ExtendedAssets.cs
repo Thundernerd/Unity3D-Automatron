@@ -1,8 +1,8 @@
 #if UNITY_EDITOR
 using System.Collections.Generic;
 using System.IO;
-#if IS_LIBRARY
 using System.Linq;
+#if IS_LIBRARY
 using System.Reflection;
 #endif
 using TNRD.Automatron.Editor.Serialization;
@@ -23,9 +23,7 @@ namespace TNRD.Automatron.Editor.Core {
         [IgnoreSerialization]
         private Dictionary<string, string> texts;
 
-#if IS_LIBRARY
         private string[] resources;
-#endif
 
         public string Path;
 
@@ -42,14 +40,12 @@ namespace TNRD.Automatron.Editor.Core {
         public ExtendedAssets() {
             textures = new Dictionary<string, Texture2D>();
             texts = new Dictionary<string, string>();
-
-#if IS_LIBRARY
-            resources = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-#endif
         }
 
         public void Initialize( string path ) {
-#if !IS_LIBRARY
+#if IS_LIBRARY
+            resources = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+#else
             if ( !string.IsNullOrEmpty( path ) ) {
                 Path = path;
             } else {
@@ -62,6 +58,11 @@ namespace TNRD.Automatron.Editor.Core {
                     Path = Path.Replace( fname, "Assets/" );
                 }
             }
+
+            resources = Directory.GetFiles( Path, "*", SearchOption.AllDirectories )
+                .Where( f => !f.EndsWith( ".meta" ) )
+                .Select( f => f.Replace( "\\", "/" ) )
+                .ToArray();
 #endif
         }
 
@@ -78,25 +79,19 @@ namespace TNRD.Automatron.Editor.Core {
 
         private string GetPath( string key, EAssetType type ) {
 #if IS_LIBRARY
-            if ( EditorGUIUtility.isProSkin ) {
-                return resources.Where( r => r.EndsWith( "pro." + key + GetExtension( type ) ) ).FirstOrDefault();
-            } else {
-                return resources.Where( r => !r.Contains( "pro." ) && r.EndsWith( key + GetExtension( type ) ) ).FirstOrDefault();
-            }
+            var separator = ".";
 #else
+            var separator = "/";
+#endif
+
             if ( EditorGUIUtility.isProSkin ) {
-                var pp = System.IO.Path.Combine( System.IO.Path.Combine( Path, "pro" ), key +  GetExtension( type ) );
-                if ( File.Exists( pp ) ) {
-                    return pp;
+                var v = resources.Where( r => r.EndsWith( string.Format( "pro{0}{1}{2}", separator, key, GetExtension( type ) ) ) ).FirstOrDefault();
+                if ( v != null ) {
+                    return v;
                 }
             }
 
-            var fp = System.IO.Path.Combine( Path, key + GetExtension( type ) );
-            if ( File.Exists( fp ) )
-                return fp;
-            else
-                return "";
-#endif
+            return resources.Where( r => !r.Contains( "pro" + separator ) && r.EndsWith( key + GetExtension( type ) ) ).FirstOrDefault();
         }
 
         public Texture2D Texture( string key ) {
