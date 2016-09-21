@@ -326,19 +326,6 @@ namespace TNRD.Automatron {
                 CreateGUI();
             }
 
-            if ( Input.KeyReleased( KeyCode.Space ) ) {
-                if ( !Directory.Exists( AutomatronSettings.ConfigFolder ) ) {
-                    Directory.CreateDirectory( AutomatronSettings.ConfigFolder );
-                }
-
-                AddExample( "ForEach Example" );
-                AddExample( "For Example" );
-                AddExample( "Conditional Example" );
-                AddExample( "Simple Example" );
-
-                SaveRecents();
-            }
-
             if ( Event.current.type == EventType.Repaint && AutomatronSettings.FirstRun ) {
                 AutomatronSettings.FirstRun.Value = false;
                 if ( configs.Count == 0 ) {
