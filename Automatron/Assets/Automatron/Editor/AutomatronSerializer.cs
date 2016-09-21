@@ -50,9 +50,9 @@ namespace TNRD.Automatron {
                 return null;
             }
 
-            var b64 = File.ReadAllText( path );
+            var buffer = File.ReadAllBytes( path );
             try {
-                var automatron = Deserializer.Deserialize<SerializableAutomatron>( b64 );
+                var automatron = Deserializer.Deserialize<SerializableAutomatron>( buffer );
                 return automatron;
             } catch ( System.Exception ) {
                 return null;
@@ -118,7 +118,7 @@ namespace TNRD.Automatron {
                 automatron.Lines.Add( line );
             }
 
-            var b64 = Serializer.SerializeToB64( automatron );
+            var buffer = Serializer.SerializeToBytes( automatron );
 
             var path = editor.Path;
             if ( !Directory.Exists( path ) ) {
@@ -126,7 +126,7 @@ namespace TNRD.Automatron {
             }
 
             var fpath = Path.Combine( path, automatron.Name + ".acfg" );
-            File.WriteAllText( fpath, b64 );
+            File.WriteAllBytes( fpath, buffer );
         }
     }
 }
