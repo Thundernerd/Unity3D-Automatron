@@ -418,7 +418,7 @@ namespace TNRD.Automatron.Editor.Core {
                 windowIDs = sEditor.WindowIDs;
                 windows = sEditor.Windows;
 
-                Assets.Path = sEditor.AssetPath;
+                Assets.Initialize( sEditor.AssetPath );
                 
                 windowsGrouped.Clear();
                 foreach ( var item in windows ) {

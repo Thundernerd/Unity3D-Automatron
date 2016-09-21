@@ -435,48 +435,8 @@ namespace TNRD.Automatron {
             Repaint();
         }
 
-        private string GetPath( string key ) {
-#if IS_LIBRARY
-            var resources = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames();
-            if ( EditorGUIUtility.isProSkin ) {
-                return resources.Where( r => r.EndsWith( "pro." + key + ".acfg" ) ).FirstOrDefault();
-            } else {
-                return resources.Where( r => !r.Contains( "pro." ) && r.EndsWith( key + ".acfg" ) ).FirstOrDefault();
-            }
-#else
-            if ( EditorGUIUtility.isProSkin ) {
-                var pp = Path.Combine( Path.Combine( Assets.Path, "pro" ), key + ".acfg" );
-                if ( File.Exists( pp ) ) {
-                    return pp;
-                }
-            }
-
-            var fp = Path.Combine( Assets.Path, key + ".acfg" );
-            if ( File.Exists( fp ) )
-                return fp;
-            else
-                return "";
-#endif
-        }
-
-        private byte[] GetExample( string key ) {
-            var path = GetPath( key );
-            if ( string.IsNullOrEmpty( path ) )
-                return null;
-
-#if IS_LIBRARY
-            var stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream( path );
-            var data = new byte[stream.Length];
-            stream.Read( data, 0, (int)stream.Length );
-            return data;
-#else
-            var data = File.ReadAllBytes( path );
-            return data;
-#endif
-        }
-
         private void AddExample( string key ) {
-            var buffer = GetExample( key );
+            var buffer = Assets.Blob( key, ".acfg" );
             if ( buffer == null ) return;
 
             var p = Path.Combine( AutomatronSettings.ConfigFolder, key + ".acfg" ).Replace( "\\", "/" );
