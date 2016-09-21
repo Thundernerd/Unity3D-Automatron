@@ -303,20 +303,22 @@ namespace TNRD.Automatron {
                 CreateGUI();
             }
 
-            if ( Event.current.type == EventType.Repaint && AutomatronSettings.FirstRun && configs.Count == 0 ) {
+            if ( Event.current.type == EventType.Repaint && AutomatronSettings.FirstRun ) {
                 AutomatronSettings.FirstRun.Value = false;
-                var v = EditorUtility.DisplayDialog( "", "It seems that this is your first time you here.\nDo you want to add some example projects?", "Yes", "No" );
-                if ( v ) {
-                    if ( !Directory.Exists( AutomatronSettings.ConfigFolder ) ) {
-                        Directory.CreateDirectory( AutomatronSettings.ConfigFolder );
+                if ( configs.Count == 0 ) {
+                    var v = EditorUtility.DisplayDialog( "", "It seems that this is your first time you here.\nDo you want to add some example projects?", "Yes", "No" );
+                    if ( v ) {
+                        if ( !Directory.Exists( AutomatronSettings.ConfigFolder ) ) {
+                            Directory.CreateDirectory( AutomatronSettings.ConfigFolder );
+                        }
+
+                        AddExample( "ForEach Example" );
+                        AddExample( "For Example" );
+                        AddExample( "Conditional Example" );
+                        AddExample( "Simple Example" );
+
+                        SaveRecents();
                     }
-
-                    AddExample( "ForEach Example" );
-                    AddExample( "For Example" );
-                    AddExample( "Conditional Example" );
-                    AddExample( "Simple Example" );
-
-                    SaveRecents();
                 }
             }
 
