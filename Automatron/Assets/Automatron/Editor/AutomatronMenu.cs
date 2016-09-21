@@ -410,6 +410,7 @@ namespace TNRD.Automatron {
 
         private string GetPath( string key ) {
 #if IS_LIBRARY
+            var resources = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames();
             if ( EditorGUIUtility.isProSkin ) {
                 return resources.Where( r => r.EndsWith( "pro." + key + ".acfg" ) ).FirstOrDefault();
             } else {
