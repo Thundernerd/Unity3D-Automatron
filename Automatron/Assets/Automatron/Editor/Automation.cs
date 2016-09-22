@@ -488,6 +488,8 @@ namespace TNRD.Automatron {
                             }
                         } else if ( IsNumeric( type, myType ) ) {
                             value = Convert.ChangeType( value, myType );
+                        } else if ( value != null && myType == typeof( string ) ) {
+                            value = value.ToString();
                         }
 
                         item.SetValue( value );
