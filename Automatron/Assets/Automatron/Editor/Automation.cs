@@ -486,6 +486,8 @@ namespace TNRD.Automatron {
                                 var array = Converter.ListToArray( (IList)value );
                                 value = array;
                             }
+                        } else if ( IsNumeric( type, myType ) ) {
+                            value = Convert.ChangeType( value, myType );
                         }
 
                         item.SetValue( value );
@@ -504,6 +506,42 @@ namespace TNRD.Automatron {
                     }
                 }
             }
+        }
+
+        private bool IsNumeric( Type a, Type b ) {
+            var at = Type.GetTypeCode( a );
+            var bt = Type.GetTypeCode( b );
+
+            var ar = false;
+            var br = false;
+
+            switch ( at ) {
+                case TypeCode.Int16:
+                case TypeCode.UInt16:
+                case TypeCode.Int32:
+                case TypeCode.UInt32:
+                case TypeCode.Int64:
+                case TypeCode.UInt64:
+                case TypeCode.Single:
+                case TypeCode.Double:
+                    ar = true;
+                    break;
+            }
+
+            switch ( bt ) {
+                case TypeCode.Int16:
+                case TypeCode.UInt16:
+                case TypeCode.Int32:
+                case TypeCode.UInt32:
+                case TypeCode.Int64:
+                case TypeCode.UInt64:
+                case TypeCode.Single:
+                case TypeCode.Double:
+                    br = true;
+                    break;
+            }
+
+            return ar && br && at != bt;
         }
 
         public virtual void PreExecute() { }
