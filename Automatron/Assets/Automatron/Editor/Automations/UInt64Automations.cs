@@ -76,6 +76,130 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "Unsigned Long/Add" )]
+    class UInt64Add : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a + b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Subtract" )]
+    class UInt64Subtract : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a - b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Divide" )]
+    class UInt64Divide : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a / b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Multiply" )]
+    class UInt64Multiply : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a * b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Modulo" )]
+    class UInt64Modulo : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a % b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Logical AND" )]
+    class UInt64LogicalAND : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a & b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Logical OR" )]
+    class UInt64LogicalOR : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a | b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Logical XOR" )]
+    class UInt64LogicalXOR : Automation {
+
+        public ulong a;
+        public ulong b;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = a ^ b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Long/Bitwise Negate" )]
+    class UInt64BitNegate : Automation {
+
+        public ulong a;
+        [ReadOnly]
+        public ulong result;
+
+        public override IEnumerator Execute() {
+            result = ~a;
+            yield break;
+        }
+    }
 
 #pragma warning restore 0649
 }

@@ -543,6 +543,34 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "String/Append" )]
+    class StringAppend33 : Automation {
+
+        public string input;
+        public string value;
+        [ReadOnly]
+        public string Result;
+
+        public override IEnumerator Execute() {
+            Result = input + value;
+            yield break;
+        }
+    }
+
+    [Automation( "String/Prepend" )]
+    class StringPrepend34 : Automation {
+
+        public string input;
+        public string value;
+        [ReadOnly]
+        public string Result;
+
+        public override IEnumerator Execute() {
+            Result = value + input;
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

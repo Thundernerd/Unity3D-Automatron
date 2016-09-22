@@ -219,6 +219,89 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "Double/Add" )]
+    class DoubleAdd : Automation {
+
+        public double a;
+        public double b;
+        [ReadOnly]
+        public double result;
+
+        public override IEnumerator Execute() {
+            result = a + b;
+            yield break;
+        }
+    }
+
+    [Automation( "Double/Subtract" )]
+    class DoubleSubtract : Automation {
+
+        public double a;
+        public double b;
+        [ReadOnly]
+        public double result;
+
+        public override IEnumerator Execute() {
+            result = a - b;
+            yield break;
+        }
+    }
+
+    [Automation( "Double/Divide" )]
+    class DoubleDivide : Automation {
+
+        public double a;
+        public double b;
+        [ReadOnly]
+        public double result;
+
+        public override IEnumerator Execute() {
+            result = a / b;
+            yield break;
+        }
+    }
+
+    [Automation( "Double/Multiply" )]
+    class DoubleMultiply : Automation {
+
+        public double a;
+        public double b;
+        [ReadOnly]
+        public double result;
+
+        public override IEnumerator Execute() {
+            result = a * b;
+            yield break;
+        }
+    }
+
+    [Automation( "Double/Modulo" )]
+    class DoubleModulo : Automation {
+
+        public double a;
+        public double b;
+        [ReadOnly]
+        public double result;
+
+        public override IEnumerator Execute() {
+            result = a % b;
+            yield break;
+        }
+    }
+
+    [Automation( "Double/Negate" )]
+    class DoubleNegate : Automation {
+
+        public double a;
+        [ReadOnly]
+        public double result;
+
+        public override IEnumerator Execute() {
+            result = -a;
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

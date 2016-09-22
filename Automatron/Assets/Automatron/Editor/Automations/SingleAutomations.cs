@@ -204,6 +204,89 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "Float/Add" )]
+    class SingleAdd : Automation {
+
+        public float a;
+        public float b;
+        [ReadOnly]
+        public float result;
+
+        public override IEnumerator Execute() {
+            result = a + b;
+            yield break;
+        }
+    }
+
+    [Automation( "Float/Subtract" )]
+    class SingleSubtract : Automation {
+
+        public float a;
+        public float b;
+        [ReadOnly]
+        public float result;
+
+        public override IEnumerator Execute() {
+            result = a - b;
+            yield break;
+        }
+    }
+
+    [Automation( "Float/Divide" )]
+    class SingleDivide : Automation {
+
+        public float a;
+        public float b;
+        [ReadOnly]
+        public float result;
+
+        public override IEnumerator Execute() {
+            result = a / b;
+            yield break;
+        }
+    }
+
+    [Automation( "Float/Multiply" )]
+    class SingleMultiply : Automation {
+
+        public float a;
+        public float b;
+        [ReadOnly]
+        public float result;
+
+        public override IEnumerator Execute() {
+            result = a * b;
+            yield break;
+        }
+    }
+
+    [Automation( "Float/Modulo" )]
+    class SingleModulo : Automation {
+
+        public float a;
+        public float b;
+        [ReadOnly]
+        public float result;
+
+        public override IEnumerator Execute() {
+            result = a % b;
+            yield break;
+        }
+    }
+
+    [Automation( "Float/Negate" )]
+    class SingleNegate : Automation {
+
+        public float a;
+        [ReadOnly]
+        public float result;
+
+        public override IEnumerator Execute() {
+            result = -a;
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

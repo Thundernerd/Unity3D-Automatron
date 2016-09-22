@@ -76,6 +76,144 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "Long/Add" )]
+    class Int64Add : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a + b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Subtract" )]
+    class Int64Subtract : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a - b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Divide" )]
+    class Int64Divide : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a / b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Multiply" )]
+    class Int64Multiply : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a * b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Modulo" )]
+    class Int64Modulo : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a % b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Logical AND" )]
+    class Int64LogicalAND : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a & b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Logical OR" )]
+    class Int64LogicalOR : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a | b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Logical XOR" )]
+    class Int64LogicalXOR : Automation {
+
+        public long a;
+        public long b;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = a ^ b;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Negate" )]
+    class Int64Negate : Automation {
+
+        public long a;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = -a;
+            yield break;
+        }
+    }
+
+    [Automation( "Long/Bitwise Negate" )]
+    class Int64BitNegate : Automation {
+
+        public long a;
+        [ReadOnly]
+        public long result;
+
+        public override IEnumerator Execute() {
+            result = ~a;
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

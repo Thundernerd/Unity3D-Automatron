@@ -76,6 +76,172 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "Unsigned Short/Add" )]
+    class UInt16Add : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a + b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Subtract" )]
+    class UInt16Subtract : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a - b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Divide" )]
+    class UInt16Divide : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a / b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Multiply" )]
+    class UInt16Multiply : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a * b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Modulo" )]
+    class UInt16Modulo : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a % b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Logical AND" )]
+    class UInt16LogicalAND : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a & b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Logical OR" )]
+    class UInt16LogicalOR : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a | b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Logical XOR" )]
+    class UInt16LogicalXOR : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a ^ b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Negate" )]
+    class UInt16Negate : Automation {
+
+        public ushort a;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = -a;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Bitwise Negate" )]
+    class UInt16BitNegate : Automation {
+
+        public ushort a;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = ~a;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Shift Left" )]
+    class UInt16ShiftLeft : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a << b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Short/Shift Right" )]
+    class UInt16ShiftRight : Automation {
+
+        public ushort a;
+        public ushort b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a >> b;
+            yield break;
+        }
+    }
+
 #pragma warning restore 0649
 }
 

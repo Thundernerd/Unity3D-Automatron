@@ -76,6 +76,131 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "Unsigned Int/Add" )]
+    class UInt32Add : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a + b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Subtract" )]
+    class UInt32Subtract : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a - b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Divide" )]
+    class UInt32Divide : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a / b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Multiply" )]
+    class UInt32Multiply : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a * b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Modulo" )]
+    class UInt32Modulo : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a % b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Logical AND" )]
+    class UInt32LogicalAND : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a & b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Logical OR" )]
+    class UInt32LogicalOR : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a | b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Logical XOR" )]
+    class UInt32LogicalXOR : Automation {
+
+        public uint a;
+        public uint b;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = a ^ b;
+            yield break;
+        }
+    }
+
+    [Automation( "Unsigned Int/Bitwise Negate" )]
+    class UInt32BitNegate : Automation {
+
+        public uint a;
+        [ReadOnly]
+        public uint result;
+
+        public override IEnumerator Execute() {
+            result = ~a;
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }

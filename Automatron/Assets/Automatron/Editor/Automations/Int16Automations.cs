@@ -76,6 +76,172 @@ namespace TNRD.Automatron.Automations.Generated {
         }
     }
 
+    [Automation( "Short/Add" )]
+    class Int16Add : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a + b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Subtract" )]
+    class Int16Subtract : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a - b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Divide" )]
+    class Int16Divide : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a / b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Multiply" )]
+    class Int16Multiply : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a * b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Modulo" )]
+    class Int16Modulo : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a % b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Logical AND" )]
+    class Int16LogicalAND : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a & b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Logical OR" )]
+    class Int16LogicalOR : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a | b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Logical XOR" )]
+    class Int16LogicalXOR : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a ^ b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Negate" )]
+    class Int16Negate : Automation {
+
+        public short a;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = -a;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Bitwise Negate" )]
+    class Int16BitNegate : Automation {
+
+        public short a;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = ~a;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Shift Left" )]
+    class Int16ShiftLeft : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a << b;
+            yield break;
+        }
+    }
+
+    [Automation( "Short/Shift Right" )]
+    class Int16ShiftRight : Automation {
+
+        public short a;
+        public short b;
+        [ReadOnly]
+        public int result;
+
+        public override IEnumerator Execute() {
+            result = a >> b;
+            yield break;
+        }
+    }
+
 
 #pragma warning restore 0649
 }
