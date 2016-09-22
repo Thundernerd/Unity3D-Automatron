@@ -338,6 +338,7 @@ namespace TNRD.Automatron {
                         AddExample( "ForEach Example" );
                         AddExample( "For Example" );
                         AddExample( "Conditional Example" );
+                        AddExample( "Advanced Example" );
                         AddExample( "Simple Example" );
 
                         SaveRecents();

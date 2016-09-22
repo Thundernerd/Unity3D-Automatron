@@ -215,6 +215,15 @@ namespace TNRD.Automatron {
                     GetControlID();
                 }
             }
+
+            if ( entryPoint == null ) {
+                entryPoint = new InternalQueueStart() {
+                    Position = WindowRect.center
+                };
+                AddControl( entryPoint );
+
+                EntryId = entryPoint.ID;
+            }
         }
 
         protected override void OnInitialize() {
