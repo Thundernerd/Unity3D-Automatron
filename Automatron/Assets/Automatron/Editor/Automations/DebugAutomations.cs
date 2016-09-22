@@ -62,7 +62,19 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Debug/Log Format" )]
+    [Automation( "Debug/Log Message" )]
+    class DebugLogMessage : Automation {
+
+        public string message;
+
+        public override IEnumerator Execute() {
+            UnityEngine.Debug.Log( message );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Debug/Log Format" )]
 	class DebugLogFormat1 : Automation {
 
 		public System.String format;
@@ -87,7 +99,19 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Debug/Log Error Format" )]
+    [Automation( "Debug/Log Error Message" )]
+    class DebugLogErrorMessage : Automation {
+
+        public string message;
+
+        public override IEnumerator Execute() {
+            UnityEngine.Debug.LogError( message );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Debug/Log Error Format" )]
 	class DebugLogErrorFormat3 : Automation {
 
 		public System.String format;
@@ -124,7 +148,19 @@ namespace TNRD.Automatron.Automations.Generated {
 
 	}
 
-	[Automation( "Debug/Log Warning Format" )]
+    [Automation( "Debug/Log Warning Message" )]
+    class DebugLogWarningMessage : Automation {
+
+        public string message;
+
+        public override IEnumerator Execute() {
+            UnityEngine.Debug.LogWarning( message );
+            yield break;
+        }
+
+    }
+
+    [Automation( "Debug/Log Warning Format" )]
 	class DebugLogWarningFormat6 : Automation {
 
 		public System.String format;
