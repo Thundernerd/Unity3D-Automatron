@@ -584,12 +584,12 @@ namespace TNRD.Automatron {
             AddControl( instance );
         }
 
-        private void LookAtAutomation( Automation auto ) {
+        public void LookAtAutomation( Automation auto ) {
             var rect = auto.Rectangle;
             Globals.Camera -= rect.position - new Vector2( Size.x / 2, Size.y / 2 ) + ( rect.size / 2 );
         }
 
-        private void LookAtAutomationSmooth( Automation auto ) {
+        public void LookAtAutomationSmooth( Automation auto ) {
             if ( lookAtRoutine != null ) {
                 lookAtRoutine.Stop();
                 lookAtRoutine = null;
@@ -607,9 +607,11 @@ namespace TNRD.Automatron {
             tween.Start( Globals.Camera, dest, 1, TinyTween.ScaleFuncs.CubicEaseOut );
 
             while ( timer < 1 ) {
-                tween.Update( timer );
-                Globals.Camera = tween.CurrentValue;
                 timer += ExtendedEditor.DeltaTime;
+                tween.Update( timer );
+                if ( tween.CurrentValue == dest )
+                    break;
+                Globals.Camera = tween.CurrentValue;
                 yield return null;
             }
 
