@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using TNRD.Automatron.Automations;
 using TNRD.Automatron.Drawers;
 using TNRD.Automatron.Editor;
 using TNRD.Automatron.Editor.Core;

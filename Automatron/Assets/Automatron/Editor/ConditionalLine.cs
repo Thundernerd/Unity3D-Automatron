@@ -1,8 +1,7 @@
 #if UNITY_EDITOR
-﻿using UnityEngine;
+using UnityEngine;
 using TNRD.Automatron.Editor.Serialization;
 using TNRD.Automatron.Editor;
-using TNRD.Automatron.Automations;
 using UnityEditor;
 
 namespace TNRD.Automatron {

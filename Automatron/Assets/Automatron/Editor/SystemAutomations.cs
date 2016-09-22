@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace TNRD.Automatron.Automations {
+namespace TNRD.Automatron {
 
     public abstract class ConditionalAutomation : Automation {
 

@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using TNRD.Automatron.Automations;
 using TNRD.Automatron.Editor;
 using TNRD.Automatron.Editor.Core;
 using TNRD.Automatron.Editor.Serialization;

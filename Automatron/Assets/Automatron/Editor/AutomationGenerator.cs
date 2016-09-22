@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -253,9 +253,10 @@ namespace TNRD.Automatron.Generation {
                 }
 
                 var builder = new StringBuilder();
+                builder.AppendLine( "#if UNITY_EDITOR" );
                 builder.AppendLine( "using System.Collections;" );
+                builder.AppendLine( "using TNRD.Automatron" );
                 builder.AppendLine();
-                builder.AppendLine( "namespace TNRD.Automatron.Automations.Generated {" );
                 builder.AppendLine( "#pragma warning disable 0649" );
                 builder.AppendLine();
 
@@ -265,9 +266,12 @@ namespace TNRD.Automatron.Generation {
 
                 builder.AppendLine();
                 builder.AppendLine( "#pragma warning restore 0649" );
-                builder.AppendLine( "}" );
+                builder.AppendLine( "#endif" );
 
-                var path = string.Format( "{0}/Automatron/Editor/Automations/{1}Automations.cs", Application.dataPath, type.Name );
+                if ( !Directory.Exists( AutomatronSettings.AutomationFolder ) )
+                    Directory.CreateDirectory( AutomatronSettings.AutomationFolder );
+
+                var path = Path.Combine( AutomatronSettings.AutomationFolder, type.Name + "Automations.cs" );
                 Debug.LogFormat( "Writing {0}", type.Name );
                 File.WriteAllText( path, builder.ToString() );
                 amountDone++;
@@ -315,7 +319,7 @@ namespace TNRD.Automatron.Generation {
                 }
 
                 if ( m.ReturnType != typeof( void ) ) {
-                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );                    
+                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
                 }
 
