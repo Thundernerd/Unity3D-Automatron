@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -52,6 +52,8 @@ namespace TNRD.Automatron {
 
         [IgnoreSerialization]
         public bool HasRun = false;
+
+        private double previousTicks = 0;
 
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
@@ -204,6 +206,16 @@ namespace TNRD.Automatron {
             }
             var topRect = new Rect( rect.x, rect.y, rect.width, 16 );
             GUI.Label( topRect, name, headerStyle );
+
+            if ( Input.ButtonReleased( EMouseButton.Left ) && topRect.Contains( Input.MousePosition ) ) {
+                var n = DateTime.Now.Ticks;
+                var t = n - previousTicks;
+                if ( t <= 5000000 ) {
+                    ( Window as AutomatronEditor ).LookAtAutomationSmooth( this );
+                    n = 0;
+                }
+                previousTicks = n;
+            }
 
             if ( !Globals.IsError && Input.ButtonReleased( EMouseButton.Right ) && topRect.Contains( Input.MousePosition ) ) {
                 var gm = GenericMenuBuilder.CreateMenu();
