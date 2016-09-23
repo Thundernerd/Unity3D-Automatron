@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -222,8 +222,6 @@ namespace TNRD.Automatron.Editor.Serialization {
                             .OrderBy( p => p.Name ).ToList();
 
             try {
-
-
                 for ( int i = 0; i < fields.Count; i++ ) {
                     var field = fields[i];
                     var type = field.FieldType;
@@ -234,7 +232,14 @@ namespace TNRD.Automatron.Editor.Serialization {
                         type = tValue.GetType();
                     }
 
-                    if ( type.IsArray() ) {
+                    if ( type.ToString() == "System.MonoType" && tValue != null ) {
+                        var t = (Type)tValue;
+                        var v = "";
+                        try {
+                            v = t.AssemblyQualifiedName;
+                        } catch ( Exception ) { }
+                        obj.Add( fname, SerializeClass( new FakeType( v ), typeof( FakeType ) ) );
+                    } else if ( type.IsArray() ) {
                         obj.Add( fname, SerializeList( tValue, type ) );
                     } else if ( type.IsEnum ) {
                         obj.Add( fname, SerializeEnum( tValue, type ) );
@@ -266,7 +271,18 @@ namespace TNRD.Automatron.Editor.Serialization {
                     var tValue = property.GetValue( value, null );
                     var pname = string.Format( "{0}|{1}", property.Name, i );
 
-                    if ( type.IsArray() ) {
+                    if ( type == typeof( object ) && tValue != null ) {
+                        type = tValue.GetType();
+                    }
+
+                    if ( type.ToString() == "System.MonoType" && tValue != null ) {
+                        var t = (Type)tValue;
+                        var v = "";
+                        try {
+                            v = t.AssemblyQualifiedName;
+                        } catch ( Exception ) { }
+                        obj.Add( pname, SerializeClass( new FakeType( v ), typeof( FakeType ) ) );
+                    } else if ( type.IsArray() ) {
                         obj.Add( pname, SerializeList( tValue, type ) );
                     } else if ( type.IsEnum ) {
                         obj.Add( pname, SerializeEnum( tValue, type ) );

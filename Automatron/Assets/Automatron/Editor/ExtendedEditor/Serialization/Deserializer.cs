@@ -1,5 +1,5 @@
 #if UNITY_EDITOR
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,8 +66,6 @@ namespace TNRD.Automatron.Editor.Serialization {
                 return null;
             }
 
-            deserializedObjects.Add( value.ID, instance );
-
             var fields = SerializationHelper.GetFields( type, BindingFlags.Instance | BindingFlags.FlattenHierarchy | BindingFlags.Public | BindingFlags.NonPublic )
                             .Where( f =>
                             ( f.IsPublic && f.GetCustomAttributes( typeof( IgnoreSerializationAttribute ), false ).Length == 0 ) ||
@@ -84,22 +82,7 @@ namespace TNRD.Automatron.Editor.Serialization {
                 object tValue = null;
 
                 var s = item.Value;
-                switch ( s.Mode ) {
-                    case ESerializableMode.Primitive:
-                        tValue = ReadPrimitive( (SerializedPrimitive)item.Value );
-                        break;
-                    case ESerializableMode.Enum:
-                        tValue = ReadEnum( (SerializedEnum)item.Value );
-                        break;
-                    case ESerializableMode.List:
-                        tValue = ReadList( (SerializedList)item.Value );
-                        break;
-                    case ESerializableMode.Class:
-                        tValue = ReadClass( (SerializedClass)item.Value );
-                        break;
-                    default:
-                        break;
-                }
+                tValue = Read( item.Value );
 
                 var field = fields.Where( f => f.Name == name ).FirstOrDefault();
                 if ( field != null ) {
@@ -127,6 +110,15 @@ namespace TNRD.Automatron.Editor.Serialization {
                 }
             }
 
+            if ( instance is FakeType ) {
+                var ft = (FakeType)instance;
+                var v = ft.GetValue();
+                deserializedObjects.Add( value.ID, v );
+                instance = v;
+            } else {
+                deserializedObjects.Add( value.ID, instance );
+            }
+
             return instance;
         }
 
@@ -143,45 +135,13 @@ namespace TNRD.Automatron.Editor.Serialization {
 
                 for ( int i = 0; i < value.Values.Count; i++ ) {
                     var item = value.Values[i];
-                    var mode = item.Mode;
-                    switch ( mode ) {
-                        case ESerializableMode.Primitive:
-                            instance[i] = ReadPrimitive( (SerializedPrimitive)item );
-                            break;
-                        case ESerializableMode.Enum:
-                            instance[i] = ReadEnum( (SerializedEnum)item );
-                            break;
-                        case ESerializableMode.List:
-                            instance[i] = ReadList( (SerializedList)item );
-                            break;
-                        case ESerializableMode.Class:
-                            instance[i] = ReadClass( (SerializedClass)item );
-                            break;
-                        default:
-                            break;
-                    }
+                    instance[i] = Read( item );
                 }
             } else {
                 instance = (IList)Activator.CreateInstance( type );
 
                 foreach ( var item in value.Values ) {
-                    var mode = item.Mode;
-                    switch ( mode ) {
-                        case ESerializableMode.Primitive:
-                            instance.Add( ReadPrimitive( (SerializedPrimitive)item ) );
-                            break;
-                        case ESerializableMode.Enum:
-                            instance.Add( ReadEnum( (SerializedEnum)item ) );
-                            break;
-                        case ESerializableMode.List:
-                            instance.Add( ReadList( (SerializedList)item ) );
-                            break;
-                        case ESerializableMode.Class:
-                            instance.Add( ReadClass( (SerializedClass)item ) );
-                            break;
-                        default:
-                            break;
-                    }
+                    instance.Add( Read( item ) );
                 }
             }
 
@@ -190,6 +150,21 @@ namespace TNRD.Automatron.Editor.Serialization {
 
         private object ReadPrimitive( SerializedPrimitive value ) {
             return value.Value;
+        }
+
+        private object Read( SerializedBase item ) {
+            switch ( item.Mode ) {
+                case ESerializableMode.Primitive:
+                    return ReadPrimitive( (SerializedPrimitive)item );
+                case ESerializableMode.Enum:
+                    return ReadEnum( (SerializedEnum)item );
+                case ESerializableMode.List:
+                    return ReadList( (SerializedList)item );
+                case ESerializableMode.Class:
+                    return ReadClass( (SerializedClass)item );
+                default:
+                    return null;
+            }
         }
         #endregion
 

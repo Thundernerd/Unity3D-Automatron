@@ -37,6 +37,9 @@ namespace TNRD.Automatron.Drawers {
             base.OnGUI( rect, name, ref value );
             EditorGUI.BeginDisabledGroup( IsReadOnly );
             EditorGUI.HandlePrefixLabel( rect, GetControlRect(), new GUIContent( name ) );
+            if ( value != null && value != types[index] ) {
+                index = types.IndexOf( (Type)value );
+            }
             index = EditorGUI.Popup( GetControlRect(), index, displayedOptions );
             value = types[index];
             EditorGUI.EndDisabledGroup();
