@@ -232,7 +232,7 @@ namespace TNRD.Automatron.Editor.Serialization {
                         type = tValue.GetType();
                     }
 
-                    if ( type.ToString() == "System.MonoType" && tValue != null ) {
+                    if ( ( type.ToString() == "System.MonoType" && tValue != null ) || type == typeof( Type ) ) {
                         var t = (Type)tValue;
                         var v = "";
                         try {
