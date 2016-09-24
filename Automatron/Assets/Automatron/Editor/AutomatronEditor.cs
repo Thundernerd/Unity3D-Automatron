@@ -119,6 +119,10 @@ namespace TNRD.Automatron {
         [RequireSerialization]
         private Vector2 camera;
 
+        private bool isPanning = false;
+        private bool spacePan = false;
+        private bool mousePan = false;
+
         public void NewAutomatron( string path, string name ) {
             Name = name;
             Path = path;
@@ -398,17 +402,39 @@ namespace TNRD.Automatron {
                 Application.OpenURL( "http://tnrd.net/automatron" );
             }
 
-            if ( Input.ButtonReleased( EMouseButton.Right ) ) {
-                ShowAutomationPopup();
+            if (Event.current.keyCode == KeyCode.Space) {
+                if (Event.current.type == EventType.KeyDown ) {
+                    spacePan = true;
+                    Event.current.Use();
+                } else if (Event.current.type == EventType.KeyUp) {
+                    spacePan = false;
+                    Event.current.Use();
+                }
             }
 
-            if ( Input.ButtonDown( EMouseButton.Middle ) ) {
+            if ( Input.ButtonPressed( EMouseButton.Middle ) ) {
+                mousePan = true;
+            } else if ( Input.ButtonDown( EMouseButton.Middle ) ) {
                 Globals.Camera += Input.DragDelta;
+            } else if ( Input.ButtonReleased( EMouseButton.Middle ) || Input.ButtonUp( EMouseButton.Middle ) ) {
+                mousePan = false;
+            }
+
+            if ( spacePan || mousePan ) {
+                EditorGUIUtility.AddCursorRect( new Rect( 0, 0, Size.x, Size.y ), MouseCursor.Pan );
+
+                if ( !mousePan && ( Input.ButtonDown( EMouseButton.Left ) || Input.ButtonDown( EMouseButton.Right ) ) ) {
+                    Globals.Camera += Input.DragDelta;
+                }
+            } else if ( Input.ButtonReleased( EMouseButton.Right ) ) {
+                ShowAutomationPopup();
+                Input.Use();
             }
 
             if ( AutomatronSettings.AutoSave ) {
                 if ( Input.ButtonReleased( EMouseButton.Left ) ) {
                     Save();
+                    Input.Use();
                 }
             }
 
