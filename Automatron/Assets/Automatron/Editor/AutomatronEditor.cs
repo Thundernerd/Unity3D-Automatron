@@ -118,8 +118,7 @@ namespace TNRD.Automatron {
 
         [RequireSerialization]
         private Vector2 camera;
-
-        private bool isPanning = false;
+        
         private bool spacePan = false;
         private bool mousePan = false;
 
