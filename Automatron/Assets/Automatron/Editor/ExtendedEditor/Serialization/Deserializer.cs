@@ -79,7 +79,7 @@ namespace TNRD.Automatron.Editor.Serialization {
 
             foreach ( var item in value.Values ) {
                 var name = item.Key.Substring( 0, item.Key.IndexOf( '|' ) );
-                object tValue = Read(item.Value);
+                object tValue = Read( item.Value );
 
                 var field = fields.Where( f => f.Name == name ).FirstOrDefault();
                 if ( field != null ) {
