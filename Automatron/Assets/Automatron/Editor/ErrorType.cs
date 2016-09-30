@@ -3,7 +3,9 @@
 
     public enum ErrorType {
         None = 0,
-        Generic,
+        Execute,
+        PreExecute,
+        PostExecute,
         Arugment
     }
 }

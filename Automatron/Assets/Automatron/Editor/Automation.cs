@@ -195,14 +195,26 @@ namespace TNRD.Automatron {
             if ( Progress > 0 && ErrorType == ErrorType.None ) {
                 GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width * Progress, 15 ), Assets["progressBar"] );
             }
+
+            Texture2D errorTex = null;
             switch ( ErrorType ) {
-                case ErrorType.Generic:
-                    GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width, 15 ), Assets["genericException"] );
+                case ErrorType.Execute:
+                    errorTex = Assets["genericException"];
                     break;
                 case ErrorType.Arugment:
-                    GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width, 15 ), Assets["argumentException"] );
+                    errorTex = Assets["argumentException"];
+                    break;
+                case ErrorType.PreExecute:
+                    errorTex = Assets["genericException"];
+                    break;
+                case ErrorType.PostExecute:
+                    errorTex = Assets["genericException"];
                     break;
             }
+            if ( errorTex ) {
+                GUI.DrawTexture( new Rect( rect.x, rect.y, rect.width, 15 ), errorTex );
+            }
+
             var topRect = new Rect( rect.x, rect.y, rect.width, 16 );
             GUI.Label( topRect, name, headerStyle );
 
@@ -500,7 +512,7 @@ namespace TNRD.Automatron {
                         Globals.IsError = true;
                     } catch ( Exception ex ) {
                         item.LineIn.Color = new Color( 0.36f, 0.0235f, 0.0235f, 1 );
-                        ErrorType = ErrorType.Generic;
+                        ErrorType = ErrorType.Execute;
                         Globals.LastAutomation = this;
                         Globals.LastError = ex;
                         Globals.IsError = true;

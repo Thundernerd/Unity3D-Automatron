@@ -118,7 +118,7 @@ namespace TNRD.Automatron {
 
         [RequireSerialization]
         private Vector2 camera;
-        
+
         private bool spacePan = false;
         private bool mousePan = false;
 
@@ -140,7 +140,6 @@ namespace TNRD.Automatron {
         public void LoadAutomatron( string path ) {
             var a = AutomatronSerializer.Load( path );
             if ( a == null ) {
-
                 return;
             }
 
@@ -149,7 +148,10 @@ namespace TNRD.Automatron {
             Path = a.Path;
 
             foreach ( var item in a.Automations ) {
-                var type = Type.GetType( item.Type );
+                var type = Globals.Types.Where( t => t.FullName == item.Type ).FirstOrDefault();
+                if ( type == null ) {
+                    type = Type.GetType( item.Type );
+                }
                 if ( type == null ) continue;
 
                 var pos = item.Position;
@@ -401,11 +403,11 @@ namespace TNRD.Automatron {
                 Application.OpenURL( "http://tnrd.net/automatron" );
             }
 
-            if (Event.current.keyCode == KeyCode.Space) {
-                if (Event.current.type == EventType.KeyDown ) {
+            if ( Event.current.keyCode == KeyCode.Space ) {
+                if ( Event.current.type == EventType.KeyDown ) {
                     spacePan = true;
                     Event.current.Use();
-                } else if (Event.current.type == EventType.KeyUp) {
+                } else if ( Event.current.type == EventType.KeyUp ) {
                     spacePan = false;
                     Event.current.Use();
                 }
@@ -518,7 +520,13 @@ namespace TNRD.Automatron {
                         if ( auto is LoopableAutomation ) {
                             var l = (LoopableAutomation)auto;
                             if ( !loops.Contains( l ) ) {
-                                auto.PreExecute();
+                                try {
+                                    auto.PreExecute();
+                                } catch ( Exception ex ) {
+                                    SetErrorInfo( ex, auto, ErrorType.PreExecute );
+                                    break;
+                                }
+
                                 loops.Add( l );
                             } else {
                                 l.MoveNext();
@@ -526,14 +534,27 @@ namespace TNRD.Automatron {
 
                             l.ResetLoop();
                         } else {
-                            auto.PreExecute();
+                            try {
+                                auto.PreExecute();
+                            } catch ( Exception ex ) {
+                                SetErrorInfo( ex, auto, ErrorType.PreExecute );
+                                break;
+                            }
                         }
 
                         if ( AutomatronSettings.FocusActiveAutomation ) {
                             LookAtAutomationSmooth( auto );
                         }
 
-                        var routine = auto.Execute();
+                        IEnumerator routine = null;
+
+                        try {
+                            routine = auto.Execute();
+                        } catch ( Exception ex ) {
+                            SetErrorInfo( ex, auto, ErrorType.Execute );
+                            break;
+                        }
+
                         while ( true ) {
                             var moveNext = false;
 
@@ -543,7 +564,7 @@ namespace TNRD.Automatron {
                                 Globals.LastError = ex;
                                 Globals.LastAutomation = auto;
                                 Globals.IsError = true;
-                                auto.ErrorType = ErrorType.Generic;
+                                auto.ErrorType = ErrorType.Execute;
                                 break;
                             }
 
@@ -554,7 +575,13 @@ namespace TNRD.Automatron {
 
                         if ( Globals.IsError ) break;
                         if ( !( auto is LoopableAutomation ) ) {
-                            auto.PostExecute();
+                            try {
+                                auto.PostExecute();
+                            } catch ( Exception ex ) {
+                                SetErrorInfo( ex, auto, ErrorType.PostExecute );
+                                break;
+                            }
+
                             auto.Progress = 1;
                         }
 
@@ -568,7 +595,12 @@ namespace TNRD.Automatron {
                     if ( automations.Count > 0 && loops.Count > 0 ) {
                         var l = loops[loops.Count - 1];
                         if ( l.IsDone() ) {
-                            l.PostExecute();
+                            try {
+                                l.PostExecute();
+                            } catch ( Exception ex ) {
+                                SetErrorInfo( ex, l, ErrorType.PostExecute );
+                                break;
+                            }
                             l.Progress = 1;
                             loops.Remove( l );
                         }
@@ -576,7 +608,12 @@ namespace TNRD.Automatron {
                         while ( automations.Count == 0 && loops.Count > 0 ) {
                             var l = loops[loops.Count - 1];
                             if ( l.IsDone() ) {
-                                l.PostExecute();
+                                try {
+                                    l.PostExecute();
+                                } catch ( Exception ex ) {
+                                    SetErrorInfo( ex, l, ErrorType.PostExecute );
+                                    break;
+                                }
                                 l.Progress = 1;
                                 automations = l.GetNextAutomations();
                                 loops.Remove( l );
@@ -605,6 +642,13 @@ namespace TNRD.Automatron {
             Globals.IsExecuting = false;
 
             yield break;
+        }
+
+        private void SetErrorInfo( Exception ex, Automation auto, ErrorType type ) {
+            Globals.LastError = ex;
+            Globals.LastAutomation = auto;
+            Globals.IsError = true;
+            auto.ErrorType = type;
         }
 
         private void CreateAutomation( object data ) {
