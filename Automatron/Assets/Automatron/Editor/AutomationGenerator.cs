@@ -255,7 +255,8 @@ namespace TNRD.Automatron.Generation {
                 var builder = new StringBuilder();
                 builder.AppendLine( "#if UNITY_EDITOR" );
                 builder.AppendLine( "using System.Collections;" );
-                builder.AppendLine( "using TNRD.Automatron" );
+                builder.AppendLine( "using TNRD.Automatron;" );
+                builder.AppendLine( "using TNRD.Automatron.Editor.Serialization;" );
                 builder.AppendLine();
                 builder.AppendLine( "#pragma warning disable 0649" );
                 builder.AppendLine();
@@ -294,9 +295,9 @@ namespace TNRD.Automatron.Generation {
                     ObjectNames.NicifyVariableName( type.Name ),
                     ObjectNames.NicifyVariableName( m.Name ) ) );
                 if ( isConditional ) {
-                    builder.AppendLine( string.Format( "\tclass {2}{0}{1} : ConditionalAutomation ", m.Name, i, type.Name ) + "{" );
+                    builder.AppendLine( string.Format( "\tpublic class {2}{0}{1} : ConditionalAutomation ", m.Name, i, type.Name ) + "{" );
                 } else {
-                    builder.AppendLine( string.Format( "\tclass {2}{0}{1} : Automation ", m.Name, i, type.Name ) + "{" );
+                    builder.AppendLine( string.Format( "\tpublic class {2}{0}{1} : Automation ", m.Name, i, type.Name ) + "{" );
                 }
                 builder.AppendLine();
 
@@ -319,7 +320,7 @@ namespace TNRD.Automatron.Generation {
                 }
 
                 if ( m.ReturnType != typeof( void ) ) {
-                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );
+                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[IgnoreSerialization]" );
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
                 }
 
@@ -384,9 +385,9 @@ namespace TNRD.Automatron.Generation {
                         ObjectNames.NicifyVariableName( type.Name ),
                         ObjectNames.NicifyVariableName( p.Name ) ) );
                     if ( isBool ) {
-                        builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : ConditionalAutomation ", p.Name, i, type.Name ) + "{" );
+                        builder.AppendLine( string.Format( "\tpublic class {2}{0}Get{1} : ConditionalAutomation ", p.Name, i, type.Name ) + "{" );
                     } else {
-                        builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", p.Name, i, type.Name ) + "{" );
+                        builder.AppendLine( string.Format( "\tpublic class {2}{0}Get{1} : Automation ", p.Name, i, type.Name ) + "{" );
                     }
                     builder.AppendLine();
 
@@ -394,7 +395,7 @@ namespace TNRD.Automatron.Generation {
                         builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
                     }
 
-                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );
+                    builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[IgnoreSerialization]" );
                     builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( p.PropertyType ) ) );
 
                     builder.AppendLine();
@@ -431,7 +432,7 @@ namespace TNRD.Automatron.Generation {
                 builder.AppendLine( string.Format( "\t[Automation( \"{0}/Set {1}\" )]",
                     ObjectNames.NicifyVariableName( type.Name ),
                     ObjectNames.NicifyVariableName( p.Name ) ) );
-                builder.AppendLine( string.Format( "\tclass {2}{0}Set{1} : Automation ", p.Name, i, type.Name ) + "{" );
+                builder.AppendLine( string.Format( "\tpublic class {2}{0}Set{1} : Automation ", p.Name, i, type.Name ) + "{" );
                 builder.AppendLine();
 
                 if ( !isStatic ) {
@@ -468,9 +469,9 @@ namespace TNRD.Automatron.Generation {
                     ObjectNames.NicifyVariableName( type.Name ),
                     ObjectNames.NicifyVariableName( f.Name ) ) );
                 if ( isBool ) {
-                    builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : ConditionalAutomation ", f.Name, i, type.Name ) + "{" );
+                    builder.AppendLine( string.Format( "\tpublic class {2}{0}Get{1} : ConditionalAutomation ", f.Name, i, type.Name ) + "{" );
                 } else {
-                    builder.AppendLine( string.Format( "\tclass {2}{0}Get{1} : Automation ", f.Name, i, type.Name ) + "{" );
+                    builder.AppendLine( string.Format( "\tpublic class {2}{0}Get{1} : Automation ", f.Name, i, type.Name ) + "{" );
                 }
                 builder.AppendLine();
 
@@ -478,7 +479,7 @@ namespace TNRD.Automatron.Generation {
                     builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
                 }
 
-                builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[Editor.Serialization.IgnoreSerialization]" );
+                builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[IgnoreSerialization]" );
                 builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( f.FieldType ) ) );
 
                 builder.AppendLine();
