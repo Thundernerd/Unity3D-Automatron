@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using UnityEditor;
 
 namespace TNRD.Automatron.Editor.Serialization {
 
@@ -194,11 +195,14 @@ namespace TNRD.Automatron.Editor.Serialization {
                 return new SerializedClass( GetNextID(), valueType.AssemblyQualifiedName ) { IsNull = true };
             }
 
-            if ( valueType == typeof( UnityEngine.Texture2D )
-                || valueType == typeof( UnityEngine.GUIStyle )
-                || valueType == typeof( UnityEngine.GUISkin )
-                || valueType == typeof( UnityEngine.GameObject ) ) {
-                return new SerializedClass( GetNextID(), valueType.AssemblyQualifiedName ) { IsNull = true };
+            if ( value is UnityEngine.Object ) {
+                var result = false;
+                var fa = new FakeAsset( (UnityEngine.Object)value, out result );
+                if ( result ) {
+                    return SerializeClass( fa, typeof( FakeAsset ) );
+                } else {
+                    return new SerializedClass( GetNextID(), valueType.AssemblyQualifiedName ) { IsNull = true };
+                }
             }
 
             var obj = new SerializedClass( GetNextID(), valueType.AssemblyQualifiedName );

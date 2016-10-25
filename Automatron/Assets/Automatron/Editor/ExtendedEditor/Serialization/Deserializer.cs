@@ -112,6 +112,11 @@ namespace TNRD.Automatron.Editor.Serialization {
                 var v = ft.GetValue();
                 deserializedObjects.Add( value.ID, v );
                 instance = v;
+            } else if ( instance is FakeAsset ) {
+                var fa = (FakeAsset)instance;
+                var v = fa.GetValue();
+                deserializedObjects.Add( value.ID, v );
+                instance = v;
             } else {
                 deserializedObjects.Add( value.ID, instance );
             }
