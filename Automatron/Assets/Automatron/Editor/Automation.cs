@@ -484,6 +484,11 @@ namespace TNRD.Automatron {
                 if ( item.LineIn != null ) {
                     var value = item.LineIn.Left.GetValue();
                     try {
+                        if ( value == null ) {
+                            item.SetValue( value );
+                            continue;
+                        }
+
                         var type = value.GetType();
                         var myType = item.GetFieldType();
 
