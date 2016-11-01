@@ -338,6 +338,10 @@ namespace TNRD.Automatron {
                     Generation.Generator.CreateMe();
                 } );
                 gm.AddSeparator();
+                gm.AddItem( "Settings", false, () => {
+                    PreferencesWindow.Show( "Automatron" );
+                } );
+                gm.AddSeparator();
                 gm.AddItem( "Exit", false, () => {
                     Editor.Close();
                 } );
