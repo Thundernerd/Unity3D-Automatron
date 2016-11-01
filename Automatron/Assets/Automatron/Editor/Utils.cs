@@ -114,7 +114,7 @@ namespace TNRD.Automatron {
             var p = Path.Combine( directory, string.Format( "{0}.{1}", filename, extension ) );
             while ( File.Exists( p ) ) {
                 c++;
-                p = Path.Combine( AutomatronSettings.AutomationFolder, string.Format( "{0} ({1}).{2}", filename, c, extension ) );
+                p = Path.Combine( directory, string.Format( "{0} ({1}).{2}", filename, c, extension ) );
             }
             return p;
         }
