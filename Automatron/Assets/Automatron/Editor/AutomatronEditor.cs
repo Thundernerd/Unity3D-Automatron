@@ -393,14 +393,19 @@ namespace TNRD.Automatron {
 
             GUILayout.FlexibleSpace();
 
-            if ( GUILayout.Button( "Help", EditorStyles.toolbarButton ) ) {
-                Application.OpenURL( "http://tnrd.net/automatron" );
+            if ( GUILayout.Button( "Help", EditorStyles.toolbarDropDown ) ) {
+                GenericMenuBuilder.CreateMenu()
+                    .AddItem( "Documentation", false, OpenDocumentation )
+                    .AddItem( "Reference", false, OpenReference )
+                    .ShowAsContext();
             }
 
             EditorGUILayout.EndHorizontal();
 
             if ( Input.KeyReleased( KeyCode.F1 ) ) {
-                Application.OpenURL( "http://tnrd.net/automatron" );
+                OpenDocumentation();
+            } else if ( Input.KeyReleased( KeyCode.F2 ) ) {
+                OpenReference();
             }
 
             if ( Event.current.keyCode == KeyCode.Space ) {
@@ -440,6 +445,14 @@ namespace TNRD.Automatron {
             }
 
             Repaint();
+        }
+
+        private void OpenDocumentation() {
+            Application.OpenURL( "http://tnrd.net/automatron" );
+        }
+
+        private void OpenReference() {
+            Application.OpenURL( "http://tnrd.net/automatron/reference" );
         }
 
         private void CreateIcons() {
