@@ -493,6 +493,8 @@ namespace TNRD.Automatron {
         }
 
         private IEnumerator ExecuteAutomationsAsync() {
+            AutomatronLogger.Start( Name );
+
             var autos = GetControls<Automation>();
             foreach ( var item in autos ) {
                 item.Reset();
@@ -529,6 +531,8 @@ namespace TNRD.Automatron {
                     if ( automations == null || automations.Count == 0 ) break;
 
                     foreach ( var auto in automations ) {
+                        AutomatronLogger.Log( string.Format( "Start {0}", auto.Name ) );
+
                         auto.GetDependencies();
                         if ( Globals.IsError ) break;
 
@@ -600,6 +604,7 @@ namespace TNRD.Automatron {
                         }
 
                         auto.HasRun = true;
+                        AutomatronLogger.Log( string.Format( "End {0}", auto.Name ) );
                     }
 
                     if ( Globals.IsError ) break;
@@ -655,6 +660,10 @@ namespace TNRD.Automatron {
 
             Globals.IsExecuting = false;
 
+            if ( AutomatronSettings.AutoLog ) {
+                AutomatronLogger.Save();
+            }
+
             yield break;
         }
 
@@ -663,6 +672,8 @@ namespace TNRD.Automatron {
             Globals.LastAutomation = auto;
             Globals.IsError = true;
             auto.ErrorType = type;
+
+            AutomatronLogger.Log( string.Format( "{0} caused an exception: {1}\n{2}", auto.Name, ex.Message, ex ) );
         }
 
         private void CreateAutomation( object data ) {

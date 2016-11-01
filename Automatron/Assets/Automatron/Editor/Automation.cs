@@ -54,6 +54,10 @@ namespace TNRD.Automatron {
 
         private double previousTicks = 0;
 
+        public string Name {
+            get { return name; }
+        }
+
         protected override void OnInitialize() {
             Size = new Vector2( 250, 300 );
 
