@@ -39,21 +39,10 @@ namespace TNRD.Automatron {
                 Directory.CreateDirectory( AutomatronSettings.AutomationFolder );
             }
 
-            var path = GetPath( cname );
+            var path = Utils.GetUniqueFilePath( AutomatronSettings.AutomationFolder, cname, "cs" );
 
             File.WriteAllText( path, temp );
             AssetDatabase.Refresh();
-        }
-
-        private string GetPath( string name ) {
-            var c = 0;
-            var p = Path.Combine( AutomatronSettings.AutomationFolder, string.Format( "{0}.cs", name ) );
-            while ( File.Exists( p ) ) {
-                c++;
-                p = Path.Combine( AutomatronSettings.AutomationFolder, string.Format( "{0} ({1}).cs", name, c ) );
-            }
-
-            return p;
         }
     }
 }

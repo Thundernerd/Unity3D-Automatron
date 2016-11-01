@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
-﻿using System;
+using System;
 using System.Collections;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -103,8 +104,19 @@ namespace TNRD.Automatron {
             return type.GetInterfaces().Contains( typeof( IList ) );
         }
 
-        public static bool IsArray(this Type type) {
+        public static bool IsArray( this Type type ) {
             return type.IsArray || type == typeof( Array );
+        }
+
+        public static string GetUniqueFilePath( string directory, string filename, string extension ) {
+            extension = extension.Trim().TrimStart( '.' );
+            var c = 0;
+            var p = Path.Combine( directory, string.Format( "{0}.{1}", filename, extension ) );
+            while ( File.Exists( p ) ) {
+                c++;
+                p = Path.Combine( AutomatronSettings.AutomationFolder, string.Format( "{0} ({1}).{2}", filename, c, extension ) );
+            }
+            return p;
         }
     }
 }
