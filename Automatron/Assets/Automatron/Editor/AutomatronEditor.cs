@@ -578,10 +578,7 @@ namespace TNRD.Automatron {
                             try {
                                 moveNext = routine.MoveNext();
                             } catch ( Exception ex ) {
-                                Globals.LastError = ex;
-                                Globals.LastAutomation = auto;
-                                Globals.IsError = true;
-                                auto.ErrorType = ErrorType.Execute;
+                                SetErrorInfo( ex, auto, ErrorType.Execute );
                                 break;
                             }
 
