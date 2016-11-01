@@ -125,8 +125,10 @@ namespace TNRD.Automatron {
 
         public static EditorPrefsString ConfigFolder = new EditorPrefsString( "TNRD.Automatron.ConfigFolder." + projectName, "Config Folder", "Assets/Automatron/Configs/" );
         public static EditorPrefsString AutomationFolder = new EditorPrefsString( "TNRD.Automatron.AutomationFolder." + projectName, "Automations Folder", "Assets/Automatron/Editor/Automations/" );
-        public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave." + projectName, "Auto Save", true );
-        public static EditorPrefsBool FirstRun = new EditorPrefsBool( "TNRD.Automatron.FirstRun." + projectName, "Auto Save", true );
+        public static EditorPrefsString LogFolder = new EditorPrefsString( "TNRD.Automatron.LogFolder." + projectName, "Log Folder", "Assets/Automatron/Logs/" );
+        public static EditorPrefsBool AutoSave = new EditorPrefsBool( "TNRD.Automatron.AutoSave." + projectName, "Auto Save Automatron", true );
+        public static EditorPrefsBool AutoLog = new EditorPrefsBool( "TNRD.Automatron.AutoLog." + projectName, "Auto Save Logs", true );
+        public static EditorPrefsBool FirstRun = new EditorPrefsBool( "TNRD.Automatron.FirstRun." + projectName, "Is First Run", true );
         public static EditorPrefsColor AutomationLineColor = new EditorPrefsColor( "TNRD.Automatron.AutomationLineColor." + projectName, "Automation Line Color", Color.white );
         public static EditorPrefsColor FieldLineColor = new EditorPrefsColor( "TNRD.Automatron.FieldLineColor." + projectName, "Field Line Color", Color.white );
         public static EditorPrefsBool FocusNewAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusNewAutomation." + projectName, "Focus New Automation", true );
@@ -136,7 +138,10 @@ namespace TNRD.Automatron {
         public static void PreferencesGUI() {
             AutomationFolder.Draw();
             ConfigFolder.Draw();
+            LogFolder.Draw();
+
             AutoSave.Draw();
+            AutoLog.Draw();
 
             EditorGUILayout.Space();
             EditorGUILayout.LabelField( "Look & Feel", EditorStyles.boldLabel );
