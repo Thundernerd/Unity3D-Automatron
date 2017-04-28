@@ -1,13 +1,11 @@
 #if UNITY_EDITOR
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using TNRD.Automatron.Editor.Serialization;
 using UnityEditor;
 using UnityEngine;
 
-namespace TNRD.Automatron {
+namespace TNRD.Automatron
+{
 
     public abstract class ConditionalAutomation : Automation {
 
