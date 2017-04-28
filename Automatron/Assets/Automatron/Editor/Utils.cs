@@ -1,14 +1,17 @@
 #if UNITY_EDITOR
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace TNRD.Automatron {
+namespace TNRD.Automatron
+{
 
-    public static class Utils {
+    public static class Utils
+    {
 
         public delegate void DrawElementAction( ref object value, Rect r );
         public static bool SetupTypeSwitch( Type elementType, ref DrawElementAction drawElement ) {
@@ -100,12 +103,90 @@ namespace TNRD.Automatron {
             return true;
         }
 
+        public static bool IsDictionary( this Type type ) {
+            return type.IsGenericType && type.GetGenericTypeDefinition() == typeof( Dictionary<,> );
+        }
+
         public static bool IsList( this Type type ) {
             return type.GetInterfaces().Contains( typeof( IList ) );
         }
 
         public static bool IsArray( this Type type ) {
             return type.IsArray || type == typeof( Array );
+        }
+
+        public static bool IsIEnumerable( this Type type ) {
+            return type.FullName.StartsWith( "System.Collections.Generic.IEnumerable" );
+        }
+
+        public static bool IsIList( this Type type ) {
+            return type.FullName.StartsWith( "System.Collections.Generic.IList" );
+        }
+
+        public static Type GetGenericType( this Type type, int index = 0 ) {
+            var elementType = type.GetElementType();
+            if ( elementType != null )
+                return elementType;
+
+            var genericArguments = type.GetGenericArguments();
+            if ( genericArguments != null && genericArguments.Length > 0 )
+                return genericArguments[index];
+
+            var interfaces = type.GetInterfaces();
+            foreach ( var i in interfaces ) {
+                if ( i == typeof( IEnumerable ) ) {
+                    genericArguments = i.GetGenericArguments();
+                    if ( genericArguments != null && genericArguments.Length > 0 )
+                        return genericArguments[index];
+
+                    elementType = i.GetElementType();
+                    if ( elementType != null )
+                        return elementType;
+                }
+            }
+
+            return null;
+        }
+
+        public static string GetTypeName( Type type, bool fullName = true ) {
+            if ( type == null ) return "null";
+            if ( type.IsDictionary() ) {
+                var kt = type.GetGenericArguments()[0];
+                var vt = type.GetGenericArguments()[1];
+                return string.Format( "System.Collections.Generic.Dictionary<{0},{1}>", GetTypeName( kt, fullName ), GetTypeName( vt, fullName ) );
+            } else if ( type.IsArray() ) {
+                var elementType = type.GetElementType();
+                return string.Format( "{0}[]", GetTypeName( elementType, fullName ) );
+            } else if ( type.IsList() ) {
+                try {
+                    var elementType = type.GetElementType();
+                    if ( elementType == null ) {
+                        elementType = type.GetGenericArguments()[0];
+                    }
+                    return string.Format( "System.Collections.Generic.List<{0}>", GetTypeName( elementType, fullName ) );
+                } catch ( Exception ) {
+                    return "unknown";
+                }
+            } else if ( type.IsIEnumerable() ) {
+                try {
+                    var elementType = type.GetGenericType();
+                    return string.Format( "System.Collections.Generic.IEnumerable<{0}>", GetTypeName( elementType, fullName ) );
+                } catch ( Exception ) {
+                    return "System.Collections.Generic.IEnumerable<?>";
+                }
+            } else if ( type.IsIList() ) {
+                try {
+                    var elementType = type.GetGenericType();
+                    return string.Format( "System.Collections.Generic.IList<{0}>", GetTypeName( elementType, fullName ) );
+                } catch ( Exception ) {
+                    return "System.Collections.Generic.IList<?>";
+                }
+            }
+
+            if ( fullName )
+                return type.FullName.Trim( '&' ).Replace( "+", "." );
+            else
+                return type.Name.Trim( '&' ).Replace( "+", "." );
         }
 
         public static string GetUniqueFilePath( string directory, string filename, string extension ) {

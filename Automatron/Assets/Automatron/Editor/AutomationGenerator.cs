@@ -66,6 +66,34 @@ namespace TNRD.Automatron.Generation
         }
 
         protected override bool DrawWizardGUI() {
+            if ( GUILayout.Button( "Generate All" ) ) {
+                foreach ( var item in datas ) {
+                    {
+                        var keys = item.Fields.Keys;
+                        for ( int i = keys.Count() - 1; i >= 0; i-- ) {
+                            var key = keys.ElementAt( i );
+                            item.Fields[key] = true;
+                        }
+                    }
+                    {
+                        var keys = item.Properties.Keys;
+                        for ( int i = keys.Count() - 1; i >= 0; i-- ) {
+                            var key = keys.ElementAt( i );
+                            item.Properties[key] = true;
+                        }
+                    }
+                    {
+                        var keys = item.Methods.Keys;
+                        for ( int i = keys.Count() - 1; i >= 0; i-- ) {
+                            var key = keys.ElementAt( i );
+                            item.Methods[key] = true;
+                        }
+                    }
+                }
+                OnWizardCreate();
+                Close();
+            }
+
             EditorGUILayout.Space();
             EditorGUILayout.Space();
 
@@ -116,7 +144,7 @@ namespace TNRD.Automatron.Generation
                 foreach ( var item in data.Fields ) {
                     var k = item.Key;
                     var v = item.Value;
-                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", k.IsStatic ? "Static" : "Instance", GetTypeName( k.FieldType ), k.Name ), v );
+                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", k.IsStatic ? "Static" : "Instance", Utils.GetTypeName( k.FieldType, false ), k.Name ), v );
                     fields[k] = v;
                 }
                 data.Fields = fields;
@@ -143,7 +171,7 @@ namespace TNRD.Automatron.Generation
                     var v = item.Value;
                     var s = false;
                     try { k.GetValue( null, null ); s = true; } catch ( Exception ) { }
-                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", s ? "Static" : "Instance", GetTypeName( k.PropertyType ), k.Name ), v );
+                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", s ? "Static" : "Instance", Utils.GetTypeName( k.PropertyType, false ), k.Name ), v );
                     props[k] = v;
                 }
                 data.Properties = props;
@@ -167,11 +195,11 @@ namespace TNRD.Automatron.Generation
                 foreach ( var item in data.Methods ) {
                     var k = item.Key;
                     var v = item.Value;
-                    var n = string.Format( "[{0}]\t{1} {2}(", k.IsStatic ? "Static" : "Instance", GetTypeName( k.ReturnType ), k.Name );
+                    var n = string.Format( "[{0}]\t{1} {2}(", k.IsStatic ? "Static" : "Instance", Utils.GetTypeName( k.ReturnType, false ), k.Name );
                     var ps = k.GetParameters();
                     for ( int i = 0; i < ps.Length; i++ ) {
                         var p = ps[i];
-                        n += string.Format( "{0} {1}", GetTypeName( p.ParameterType ), p.Name );
+                        n += string.Format( "{0} {1}", Utils.GetTypeName( p.ParameterType, false ), p.Name );
                         if ( i < ps.Length - 1 ) n += ",";
                     }
                     n += ")";
@@ -195,16 +223,8 @@ namespace TNRD.Automatron.Generation
             return true;
         }
 
-        private string GetTypeName( Type t ) {
-            if ( t == null ) return "null";
-            if ( t.IsArray() ) {
-                var elementType = t.GetElementType();
-                return string.Format( "{0}[]", elementType.Name );
-            } else if ( t.IsList() ) {
-                var elementType = t.GetGenericArguments();
-                return string.Format( "List<{0}>", elementType[0].Name );
-            }
-            return t.Name.Trim( '&' ).Replace( "+", "." );
+        private void OnWizardOtherButton() {
+            Close();
         }
 
         void OnWizardCreate() {
@@ -243,9 +263,9 @@ namespace TNRD.Automatron.Generation
                 for ( int i = methods.Count - 1; i >= 0; i-- ) {
                     try {
                         var p = methods[i].GetParameters();
-                        GetTypeName( methods[i].ReturnType );
+                        Utils.GetTypeName( methods[i].ReturnType );
                         foreach ( var item in p ) {
-                            GetTypeName( item.ParameterType );
+                            Utils.GetTypeName( item.ParameterType );
                         }
                     } catch ( Exception ) {
                         methods.RemoveAt( i );
@@ -307,9 +327,16 @@ namespace TNRD.Automatron.Generation
                 var m = methods[i];
                 var isConditional = m.ReturnType == typeof( bool );
 
-                builder.AppendLine( string.Format( "\t[Automation( \"{0}/{1}\" )]",
+                if ( m.GetParameters().Length == 0 ) {
+                    builder.AppendLine( string.Format( "\t[Automation( \"{0}/{1}()\" )]",
                     ObjectNames.NicifyVariableName( type.Name ),
                     ObjectNames.NicifyVariableName( m.Name ) ) );
+                } else {
+                    builder.AppendLine( string.Format( "\t[Automation( \"{0}/{1}({2})\" )]",
+                    ObjectNames.NicifyVariableName( type.Name ),
+                    ObjectNames.NicifyVariableName( m.Name ),
+                    m.GetParameters().Select( p => Utils.GetTypeName( p.ParameterType, false ) ).Aggregate( ( a1, a2 ) => a1 + "," + a2 ) ) );
+                }
                 if ( isConditional ) {
                     builder.AppendLine( string.Format( "\tpublic class {2}{0}{1} : ConditionalAutomation ", m.Name, i, type.Name ) + "{" );
                 } else {
@@ -318,7 +345,7 @@ namespace TNRD.Automatron.Generation
                 builder.AppendLine();
 
                 if ( !m.IsStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", Utils.GetTypeName( type ) ) );
                 }
 
                 var parameters = m.GetParameters();
@@ -329,15 +356,19 @@ namespace TNRD.Automatron.Generation
                     var attrs = item.ParameterType.GetCustomAttributes( typeof( DefaultValueAttribute ), false );
                     if ( attrs.Length == 1 ) {
                         var val = (attrs[0] as DefaultValueAttribute).Value;
-                        builder.AppendLine( string.Format( "\t\tpublic {0} {1} = {2};", GetTypeName( item.ParameterType ), item.Name, ToString( val ) ) );
+                        if ( val != null && val.GetType().IsEnum ) {
+                            builder.AppendLine( string.Format( "\t\tpublic {0} {1} = {2}.{3};", Utils.GetTypeName( item.ParameterType ), item.Name, Utils.GetTypeName( item.ParameterType ), ToString( val ) ) );
+                        } else {
+                            builder.AppendLine( string.Format( "\t\tpublic {0} {1} = {2};", Utils.GetTypeName( item.ParameterType ), item.Name, ToString( val ) ) );
+                        }
                     } else {
-                        builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
+                        builder.AppendLine( string.Format( "\t\tpublic {0} {1};", Utils.GetTypeName( item.ParameterType ), item.Name ) );
                     }
                 }
 
                 if ( m.ReturnType != typeof( void ) ) {
                     builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[IgnoreSerialization]" );
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( m.ReturnType ) ) );
+                    builder.AppendLine( string.Format( "\t\tpublic {0} Result;", Utils.GetTypeName( m.ReturnType ) ) );
                 }
 
                 builder.AppendLine();
@@ -349,7 +380,7 @@ namespace TNRD.Automatron.Generation
                     builder.Append( "\t\t\t" );
                 }
                 if ( m.IsStatic ) {
-                    builder.AppendFormat( "{0}.{1}(", GetTypeName( type ), m.Name );
+                    builder.AppendFormat( "{0}.{1}(", Utils.GetTypeName( type ), m.Name );
                 } else {
                     builder.AppendFormat( "Instance.{0}(", m.Name );
                 }
@@ -408,18 +439,18 @@ namespace TNRD.Automatron.Generation
                     builder.AppendLine();
 
                     if ( !isStatic ) {
-                        builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+                        builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", Utils.GetTypeName( type ) ) );
                     }
 
                     builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[IgnoreSerialization]" );
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( p.PropertyType ) ) );
+                    builder.AppendLine( string.Format( "\t\tpublic {0} Result;", Utils.GetTypeName( p.PropertyType ) ) );
 
                     builder.AppendLine();
 
                     builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                     builder.Append( "\t\t\tResult = " );
                     if ( isStatic ) {
-                        builder.AppendFormat( "{0}.{1}", GetTypeName( type ), p.Name );
+                        builder.AppendFormat( "{0}.{1}", Utils.GetTypeName( type ), p.Name );
                     } else {
                         builder.AppendFormat( "Instance.{0}", p.Name );
                     }
@@ -452,16 +483,16 @@ namespace TNRD.Automatron.Generation
                 builder.AppendLine();
 
                 if ( !isStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", Utils.GetTypeName( type ) ) );
                 }
 
-                builder.AppendLine( string.Format( "\t\tpublic {0} Value;", GetTypeName( p.PropertyType ) ) );
+                builder.AppendLine( string.Format( "\t\tpublic {0} Value;", Utils.GetTypeName( p.PropertyType ) ) );
 
                 builder.AppendLine();
 
                 builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                 if ( isStatic ) {
-                    builder.AppendFormat( "\t\t\t{0}.{1}", GetTypeName( type ), p.Name );
+                    builder.AppendFormat( "\t\t\t{0}.{1}", Utils.GetTypeName( type ), p.Name );
                 } else {
                     builder.AppendFormat( "\t\t\tInstance.{0}", p.Name );
                 }
@@ -492,18 +523,18 @@ namespace TNRD.Automatron.Generation
                 builder.AppendLine();
 
                 if ( !f.IsStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", Utils.GetTypeName( type ) ) );
                 }
 
                 builder.AppendLine( "\t\t[ReadOnly]\r\n\t\t[IgnoreSerialization]" );
-                builder.AppendLine( string.Format( "\t\tpublic {0} Result;", GetTypeName( f.FieldType ) ) );
+                builder.AppendLine( string.Format( "\t\tpublic {0} Result;", Utils.GetTypeName( f.FieldType ) ) );
 
                 builder.AppendLine();
 
                 builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                 builder.Append( "\t\t\tResult = " );
                 if ( f.IsStatic ) {
-                    builder.AppendFormat( "{0}.{1}", GetTypeName( type ), f.Name );
+                    builder.AppendFormat( "{0}.{1}", Utils.GetTypeName( type ), f.Name );
                 } else {
                     builder.AppendFormat( "Instance.{0}", f.Name );
                 }
@@ -533,16 +564,16 @@ namespace TNRD.Automatron.Generation
                 builder.AppendLine();
 
                 if ( !f.IsStatic ) {
-                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", GetTypeName( type ) ) );
+                    builder.AppendLine( string.Format( "\t\tpublic {0} Instance;", Utils.GetTypeName( type ) ) );
                 }
 
-                builder.AppendLine( string.Format( "\t\tpublic {0} Value;", GetTypeName( f.FieldType ) ) );
+                builder.AppendLine( string.Format( "\t\tpublic {0} Value;", Utils.GetTypeName( f.FieldType ) ) );
 
                 builder.AppendLine();
 
                 builder.AppendLine( "\t\tpublic override IEnumerator Execute() {" );
                 if ( f.IsStatic ) {
-                    builder.AppendFormat( "\t\t\t{0}.{1}", GetTypeName( type ), f.Name );
+                    builder.AppendFormat( "\t\t\t{0}.{1}", Utils.GetTypeName( type ), f.Name );
                 } else {
                     builder.AppendFormat( "\t\t\tInstance.{0}", f.Name );
                 }
@@ -555,21 +586,6 @@ namespace TNRD.Automatron.Generation
                 builder.AppendLine( "\t}" );
                 builder.AppendLine();
             }
-        }
-
-        private static string GetTypeName( Type t ) {
-            if ( t == null ) return "null";
-            if ( t.IsArray() ) {
-                var elementType = t.GetElementType();
-                return string.Format( "{0}[]", elementType.FullName );
-            } else if ( t.IsList() ) {
-                var elementType = t.GetElementType();
-                if ( elementType == null ) {
-                    elementType = t.GetGenericArguments()[0];
-                }
-                return string.Format( "System.Collections.Generic.List<{0}>", elementType.FullName );
-            }
-            return t.FullName.Trim( '&' ).Replace( "+", "." );
         }
 
         private static string ToString( object value ) {
@@ -601,7 +617,14 @@ namespace TNRD.Automatron.Generation
                 var v = (Rect)value;
                 return string.Format( "new Rect({0},{1})", ToString( v.position ), ToString( v.size ) );
             } else if ( value.GetType().IsEnum ) {
-                return ((int)Enum.GetValues( value.GetType() ).GetValue( 0 )).ToString();
+                var enumValues = Enum.GetValues( value.GetType() );
+                if ( enumValues.Length == 0 ) {
+                    Debug.Log( "We have nothing" );
+                    return "";
+                } else {
+                    return enumValues.GetValue( 0 ).ToString();
+                }
+                //return ((int)Enum.GetValues( value.GetType() ).GetValue( 0 )).ToString();
             }
 
             return "undefined";
@@ -661,14 +684,15 @@ namespace TNRD.Automatron.Generation
                         continue;
                     if ( item.ContainsGenericParameters )
                         continue;
-
+                    if ( item.IsEnum )
+                        continue;
                     if ( item.GetMembers( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public ).Length == 0 )
                         continue;
 
                     Types.Add( item );
 
                     count++;
-                    if ( count > 6 ) {
+                    if ( count > 10 ) {
                         count = 0;
                         yield return null;
                     }
@@ -761,7 +785,7 @@ namespace TNRD.Automatron.Generation
                 if ( baseType != null && !item.IsSubclassOf( baseType ) )
                     continue;
 
-                if ( !item.Name.Contains( label ) )
+                if ( !item.Name.ToLower().Contains( label.ToLower() ) )
                     continue;
 
                 filteredTypes.Add( item );
@@ -879,12 +903,53 @@ namespace TNRD.Automatron.Generation
                 var types = typeStates.Where( t => t.Value )
                     .Select( t => t.Key ).Select( t => new WizardData() {
                         Type = t,
-                        Name = GetTypeName( t ),
+                        Name = Utils.GetTypeName( t ),
                         Fields = new Dictionary<FieldInfo, bool>().AddRange( GetFields( t ).Select( f => new KeyValuePair<FieldInfo, bool>( f, false ) ) ),
                         Properties = new Dictionary<PropertyInfo, bool>().AddRange( GetProperties( t ).Select( p => new KeyValuePair<PropertyInfo, bool>( p, false ) ) ),
                         Methods = new Dictionary<MethodInfo, bool>().AddRange( GetMethods( t ).Select( m => new KeyValuePair<MethodInfo, bool>( m, false ) ) ),
                     } ).ToList();
                 GeneratorWizard.Init( types );
+            }
+            if ( GUILayout.Button( "Generate All" ) ) {
+                var types = typeStates.Where( t => t.Value )
+                    .Select( t => t.Key ).Select( t => new WizardData() {
+                        Type = t,
+                        Name = Utils.GetTypeName( t ),
+                        Fields = new Dictionary<FieldInfo, bool>().AddRange( GetFields( t ).Select( f => new KeyValuePair<FieldInfo, bool>( f, false ) ) ),
+                        Properties = new Dictionary<PropertyInfo, bool>().AddRange( GetProperties( t ).Select( p => new KeyValuePair<PropertyInfo, bool>( p, false ) ) ),
+                        Methods = new Dictionary<MethodInfo, bool>().AddRange( GetMethods( t ).Select( m => new KeyValuePair<MethodInfo, bool>( m, false ) ) ),
+                    } ).ToList();
+
+                foreach ( var item in types ) {
+                    {
+                        var keys = item.Fields.Keys;
+                        for ( int i = keys.Count() - 1; i >= 0; i-- ) {
+                            var key = keys.ElementAt( i );
+                            item.Fields[key] = true;
+                        }
+                    }
+                    {
+                        var keys = item.Properties.Keys;
+                        for ( int i = keys.Count() - 1; i >= 0; i-- ) {
+                            var key = keys.ElementAt( i );
+                            item.Properties[key] = true;
+                        }
+                    }
+                    {
+                        var keys = item.Methods.Keys;
+                        for ( int i = keys.Count() - 1; i >= 0; i-- ) {
+                            var key = keys.ElementAt( i );
+                            item.Methods[key] = true;
+                        }
+                    }
+                }
+
+                Generate( types.Select( d => new GenerationData() {
+                    Type = d.Type,
+                    Fields = d.Fields.Where( f => f.Value ).Select( f => f.Key ).ToList(),
+                    Properties = d.Properties.Where( p => p.Value ).Select( f => f.Key ).ToList(),
+                    Methods = d.Methods.Where( m => m.Value ).Select( f => f.Key ).ToList(),
+                } ).ToList() );
             }
 
             EditorGUI.EndDisabledGroup();
@@ -912,7 +977,8 @@ namespace TNRD.Automatron.Generation
             var flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public;
 
             return type.GetFields( flags )
-                    .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 ).ToList();
+                    .Where( f => f.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
+                    .Where( f => !f.IsLiteral ).ToList();
         }
         #endregion
     }
