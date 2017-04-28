@@ -216,19 +216,5 @@ namespace TNRD.Automatron {
             showCloseButton = false;
         }
     }
-
-    [Automation( "Automatron" )]
-    class AutomatronAutomation : Automation {
-
-        public AutomatronConfig Config = new AutomatronConfig();
-
-        public override void PreExecute() {
-            var automatron = AutomatronSerializer.Load( Config.Path );
-        }
-
-        public override IEnumerator Execute() {
-            yield break;
-        }
-    }
 }
 #endif
