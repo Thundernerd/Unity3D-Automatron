@@ -1,11 +1,11 @@
 #if UNITY_EDITOR
-﻿using System.Collections;
+using System.Collections;
 using UnityEditor;
 
-namespace TNRD.Automatron {
-
-    public class EditorCoroutine {
-
+namespace TNRD.Automatron
+{
+    public class EditorCoroutine
+    {
         public static EditorCoroutine Start( IEnumerator routine ) {
             var coroutine = new EditorCoroutine( routine );
             coroutine.Start();
@@ -27,16 +27,22 @@ namespace TNRD.Automatron {
 
         readonly IEnumerator routine;
 
+        public bool IsRunning {
+            get; private set;
+        }
+
         private EditorCoroutine( IEnumerator routine ) {
             this.routine = routine;
         }
 
         private void Start() {
             EditorApplication.update += Update;
+            IsRunning = true;
         }
 
         public void Stop() {
             EditorApplication.update -= Update;
+            IsRunning = false;
         }
 
         private void Update() {

@@ -7,14 +7,15 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Text.RegularExpressions;
 using TNRD.Automatron.Editor.Core;
 using UnityEditor;
 using UnityEngine;
 
-namespace TNRD.Automatron.Generation {
+namespace TNRD.Automatron.Generation
+{
 
-    public class WizardData {
+    public class WizardData
+    {
         public Type Type;
         public string Name;
         public Dictionary<FieldInfo, bool> Fields;
@@ -22,14 +23,16 @@ namespace TNRD.Automatron.Generation {
         public Dictionary<MethodInfo, bool> Methods;
     }
 
-    public class GenerationData {
+    public class GenerationData
+    {
         public Type Type;
         public List<MethodInfo> Methods;
         public List<PropertyInfo> Properties;
         public List<FieldInfo> Fields;
     }
 
-    public static class DictExt {
+    public static class DictExt
+    {
         public static Dictionary<T, T2> AddRange<T, T2>( this Dictionary<T, T2> dict, IEnumerable<KeyValuePair<T, T2>> values ) {
             foreach ( var item in values ) {
                 dict.Add( item.Key, item.Value );
@@ -38,8 +41,8 @@ namespace TNRD.Automatron.Generation {
         }
     }
 
-    public class GeneratorWizard : ScriptableWizard {
-
+    public class GeneratorWizard : ScriptableWizard
+    {
         public static void Init( List<WizardData> datas ) {
             var wiz = DisplayWizard<GeneratorWizard>( "Select Members", "Generate", "Cancel" );
             wiz.minSize = new Vector2( 720, 480 );
@@ -113,7 +116,7 @@ namespace TNRD.Automatron.Generation {
                 foreach ( var item in data.Fields ) {
                     var k = item.Key;
                     var v = item.Value;
-                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", k.IsStatic ? "Static" : "Instance", k.FieldType.Name, k.Name ), v );
+                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", k.IsStatic ? "Static" : "Instance", GetTypeName( k.FieldType ), k.Name ), v );
                     fields[k] = v;
                 }
                 data.Fields = fields;
@@ -140,7 +143,7 @@ namespace TNRD.Automatron.Generation {
                     var v = item.Value;
                     var s = false;
                     try { k.GetValue( null, null ); s = true; } catch ( Exception ) { }
-                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", s ? "Static" : "Instance", k.PropertyType.Name, k.Name ), v );
+                    v = EditorGUILayout.ToggleLeft( string.Format( "[{0}]\t{1} {2}", s ? "Static" : "Instance", GetTypeName( k.PropertyType ), k.Name ), v );
                     props[k] = v;
                 }
                 data.Properties = props;
@@ -164,11 +167,11 @@ namespace TNRD.Automatron.Generation {
                 foreach ( var item in data.Methods ) {
                     var k = item.Key;
                     var v = item.Value;
-                    var n = string.Format( "[{0}]\t{1} {2}(", k.IsStatic ? "Static" : "Instance", k.ReturnType.Name, k.Name );
+                    var n = string.Format( "[{0}]\t{1} {2}(", k.IsStatic ? "Static" : "Instance", GetTypeName( k.ReturnType ), k.Name );
                     var ps = k.GetParameters();
                     for ( int i = 0; i < ps.Length; i++ ) {
                         var p = ps[i];
-                        n += string.Format( "{0} {1}", p.ParameterType.Name, p.Name );
+                        n += string.Format( "{0} {1}", GetTypeName( p.ParameterType ), p.Name );
                         if ( i < ps.Length - 1 ) n += ",";
                     }
                     n += ")";
@@ -192,6 +195,18 @@ namespace TNRD.Automatron.Generation {
             return true;
         }
 
+        private string GetTypeName( Type t ) {
+            if ( t == null ) return "null";
+            if ( t.IsArray() ) {
+                var elementType = t.GetElementType();
+                return string.Format( "{0}[]", elementType.Name );
+            } else if ( t.IsList() ) {
+                var elementType = t.GetGenericArguments();
+                return string.Format( "List<{0}>", elementType[0].Name );
+            }
+            return t.Name.Trim( '&' ).Replace( "+", "." );
+        }
+
         void OnWizardCreate() {
             Generator.Generate( datas.Select( d => new GenerationData() {
                 Type = d.Type,
@@ -202,15 +217,16 @@ namespace TNRD.Automatron.Generation {
         }
     }
 
-    public class Generator : EditorWindow {
-
+    public class Generator : EditorWindow
+    {
         public static void CreateMe() {
             var inst = GetWindow<Generator>( "Generator" );
-            inst.minSize = new Vector2( 300, 500 );
+            inst.minSize = new Vector2( 400, 700 );
             inst.maxSize = new Vector2( 700, 1000 );
             inst.Show();
         }
 
+        #region Generation
         public static void Generate( List<GenerationData> dataTypes ) {
             EditorCoroutine.Start( GenerateAsync( dataTypes ) );
         }
@@ -279,7 +295,7 @@ namespace TNRD.Automatron.Generation {
                 yield return null;
             }
 
-            Debug.Log( "Done" );
+            Debug.Log( "Finished generating" );
 
             AssetDatabase.Refresh();
 
@@ -312,7 +328,7 @@ namespace TNRD.Automatron.Generation {
                     }
                     var attrs = item.ParameterType.GetCustomAttributes( typeof( DefaultValueAttribute ), false );
                     if ( attrs.Length == 1 ) {
-                        var val = ( attrs[0] as DefaultValueAttribute ).Value;
+                        var val = (attrs[0] as DefaultValueAttribute).Value;
                         builder.AppendLine( string.Format( "\t\tpublic {0} {1} = {2};", GetTypeName( item.ParameterType ), item.Name, ToString( val ) ) );
                     } else {
                         builder.AppendLine( string.Format( "\t\tpublic {0} {1};", GetTypeName( item.ParameterType ), item.Name ) );
@@ -543,6 +559,16 @@ namespace TNRD.Automatron.Generation {
 
         private static string GetTypeName( Type t ) {
             if ( t == null ) return "null";
+            if ( t.IsArray() ) {
+                var elementType = t.GetElementType();
+                return string.Format( "{0}[]", elementType.FullName );
+            } else if ( t.IsList() ) {
+                var elementType = t.GetElementType();
+                if ( elementType == null ) {
+                    elementType = t.GetGenericArguments()[0];
+                }
+                return string.Format( "System.Collections.Generic.List<{0}>", elementType.FullName );
+            }
             return t.FullName.Trim( '&' ).Replace( "+", "." );
         }
 
@@ -551,7 +577,7 @@ namespace TNRD.Automatron.Generation {
             if ( !value.GetType().IsValueType ) return "null";
 
             if ( value is bool ) {
-                return ( (bool)value ) ? "true" : "false";
+                return ((bool)value) ? "true" : "false";
             } else if ( value is float ) {
                 return value.ToString() + "f";
             } else if ( value is double ) {
@@ -575,175 +601,192 @@ namespace TNRD.Automatron.Generation {
                 var v = (Rect)value;
                 return string.Format( "new Rect({0},{1})", ToString( v.position ), ToString( v.size ) );
             } else if ( value.GetType().IsEnum ) {
-                return ( (int)Enum.GetValues( value.GetType() ).GetValue( 0 ) ).ToString();
+                return ((int)Enum.GetValues( value.GetType() ).GetValue( 0 )).ToString();
             }
 
             return "undefined";
         }
+        #endregion
 
+        #region GUI
         private object initializer = null;
         private bool isBusy = false;
 
-        private Dictionary<Type, bool> typesEnabled = new Dictionary<Type, bool>();
-        private string[] typeNames = new string[0];
+        private Dictionary<Type, bool> typeStates = new Dictionary<Type, bool>();
+        private Vector2 typeScroll = new Vector2();
+        private Vector2 libraryScroll = Vector2.zero;
+
+        private List<AssemblyInfo> infos = new List<AssemblyInfo>();
         private List<Type> allTypes = new List<Type>();
-        private List<Type> selectedTypes = new List<Type>();
         private List<Type> filteredTypes = new List<Type>();
 
-        private bool includeAssemblyCSharp = true;
-        private bool includeAssemblyCSharpEditor = true;
-        private bool includeMSCorlib = false;
-        private bool includeUnityEditor = false;
-        private bool includeUnityEngine = false;
+        [SerializeField]
+        private string typeFilter = "";
+        private int page = 0;
 
-        private bool useBaseType = false;
-        private int baseTypeIndex = 0;
-        private Type baseType { get { return allTypes[baseTypeIndex]; } }
+        [Serializable]
+        private class AssemblyInfo
+        {
+            public Assembly Assembly;
+            public string FullName;
+            public string Name;
+            public bool State;
+            public List<Type> Types;
+            public List<bool> States;
 
-        private string searchQuery = "";
+            public AssemblyInfo() { }
 
-        private Vector2 scrollPosition = new Vector2();
-
-        private void LoadTypes() {
-            EditorCoroutine.Start( LoadTypesAsync() );
-        }
-
-        private void SelectTypes() {
-            EditorCoroutine.Start( SelectTypesAsync() );
-        }
-
-        private void FilterTypes() {
-            EditorCoroutine.Start( FilterTypesAsync() );
-        }
-
-        private IEnumerator LoadTypesAsync() {
-            isBusy = true;
-            Repaint();
-            yield return null;
-            var types = new List<Type>();
-            yield return null;
-            types.AddRange( LoadTypesFromAssembly( "Assembly-CSharp" ) );
-            yield return null;
-            types.AddRange( LoadTypesFromAssembly( "Assembly-CSharp-Editor" ) );
-            yield return null;
-            types.AddRange( LoadTypesFromAssembly( "mscorlib" ) );
-            yield return null;
-            types.AddRange( LoadTypesFromAssembly( "UnityEditor" ) );
-            yield return null;
-            types.AddRange( LoadTypesFromAssembly( "UnityEngine" ) );
-            yield return null;
-            types = types.OrderBy( t => t.Name ).ToList();
-            yield return null;
-            allTypes = types;
-            yield return null;
-            typesEnabled.Clear();
-            typesEnabled.AddRange( types.Select( t => new KeyValuePair<Type, bool>( t, false ) ) );
-            yield return null;
-            isBusy = false;
-            Repaint();
-            yield break;
-        }
-        private IEnumerator LoadNamesAsync() {
-            isBusy = true;
-            Repaint();
-            yield return null;
-            var names = allTypes
-                .Select( t => string.Format( "{0}/{1}/{2}",
-                    t.Assembly.GetName().Name.Replace( ".", "/" ),
-                    t.Name[0],
-                    t.Name ) );
-            yield return null;
-            typeNames = names.ToArray();
-            yield return null;
-            isBusy = true;
-            Repaint();
-            yield break;
-        }
-        private IEnumerator SelectTypesAsync() {
-            isBusy = true;
-            Repaint();
-            yield return null;
-            var types = new List<Type>();
-            yield return null;
-            if ( includeAssemblyCSharp ) {
-                types.AddRange( LoadTypesFromAssembly( "Assembly-CSharp" ) );
+            public AssemblyInfo( Assembly assembly ) {
+                Assembly = assembly;
+                FullName = assembly.FullName;
+                Name = assembly.GetName().Name;
+                State = false;
+                States = new List<bool>();
+                Types = new List<Type>();
             }
-            yield return null;
-            if ( includeAssemblyCSharpEditor ) {
-                types.AddRange( LoadTypesFromAssembly( "Assembly-CSharp-Editor" ) );
+
+            public IEnumerator LoadTypes() {
+                var types = Assembly.GetTypes();
+
+                int count = 0;
+
+                foreach ( var item in types ) {
+                    if ( item.Name.StartsWith( "<" ) || item.Name.StartsWith( "$" ) )
+                        continue;
+                    if ( !item.IsPublic )
+                        continue;
+                    if ( item.IsSpecialName )
+                        continue;
+                    if ( item.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length > 0 )
+                        continue;
+                    if ( item.ContainsGenericParameters )
+                        continue;
+
+                    if ( item.GetMembers( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public ).Length == 0 )
+                        continue;
+
+                    Types.Add( item );
+
+                    count++;
+                    if ( count > 6 ) {
+                        count = 0;
+                        yield return null;
+                    }
+                }
+
+                yield break;
             }
-            yield return null;
-            if ( includeMSCorlib ) {
-                types.AddRange( LoadTypesFromAssembly( "mscorlib" ) );
-            }
-            yield return null;
-            if ( includeUnityEditor ) {
-                types.AddRange( LoadTypesFromAssembly( "UnityEditor" ) );
-            }
-            yield return null;
-            if ( includeUnityEngine ) {
-                types.AddRange( LoadTypesFromAssembly( "UnityEngine" ) );
-            }
-            yield return null;
-            types = types.OrderBy( t => GetTypeName( t ) ).ToList();
-            yield return null;
-            selectedTypes = types;
-            yield return null;
-            isBusy = false;
-            Repaint();
-            yield break;
         }
-        private IEnumerator FilterTypesAsync() {
+
+        private IEnumerator LoadTypes() {
             isBusy = true;
-            yield return null;
-            var list = new List<Type>( selectedTypes );
-            yield return null;
-            if ( useBaseType ) {
-                list = list.Where( t => t == baseType || t.IsSubclassOf( baseType ) ).ToList();
+            var routines = new List<EditorCoroutine>();
+            foreach ( var item in infos ) {
+                routines.Add( EditorCoroutine.Start( item.LoadTypes() ) );
+            }
+
+            while ( true ) {
+                var anyRunning = false;
+                foreach ( var item in routines ) {
+                    if ( item.IsRunning ) {
+                        anyRunning = true;
+                        break;
+                    }
+                }
+                if ( !anyRunning )
+                    break;
+
                 yield return null;
             }
-            try {
-                list = list.Where( t => Regex.IsMatch( t.Name, searchQuery ) ).ToList();
-            } catch ( Exception ) { }
-            yield return null;
-            filteredTypes = list;
-            yield return null;
+
             isBusy = false;
+            Repaint();
             yield break;
         }
 
-        private List<Type> LoadTypesFromAssembly( string assemblyName ) {
-            var types = new List<Type>();
+        private IEnumerator SelectTypes() {
+            isBusy = true;
 
-            try {
-                var assembly = Assembly.Load( assemblyName );
+            allTypes.Clear();
+            int count = 0;
+            foreach ( var info in infos ) {
+                if ( !info.State )
+                    continue;
 
-                types = assembly.GetTypes()
-                    .Where( t => !t.Name.StartsWith( "<" ) && !t.Name.StartsWith( "$" ) )
-                    .Where( t => t.IsPublic )
-                    .Where( t =>
-                        ( t.GetMethods( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
-                            .Where( m => !m.Name.StartsWith( "get_" ) && !m.Name.StartsWith( "set_" ) && !m.Name.StartsWith( "op_" ) && !m.Name.StartsWith( "add_" ) && !m.Name.StartsWith( "remove_" ) )
-                            .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
-                            .Where( m => m.GetGenericArguments().Length == 0 ).Count() > 0 )
-                            ||
-                        ( t.GetProperties( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
-                            .Where( p => p.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 )
-                            .Where( p => p.CanRead ).Count() > 0 )
-                            ||
-                        ( t.GetFields( BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public )
-                            .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 ).Count() > 0 )
-                    ).ToList();
-            } catch ( FileNotFoundException ) {
-                // this library doesn't exist (yet)
+                foreach ( var item in info.Types ) {
+                    allTypes.Add( item );
+
+                    count++;
+                    if ( count == 10 ) {
+                        count = 0;
+                        yield return null;
+                    }
+                }
+
+                yield return null;
             }
 
-            return types;
+            isBusy = false;
+            Repaint();
+            yield break;
+        }
+
+        private IEnumerator FilterTypes() {
+            isBusy = true;
+            page = 0;
+            if ( string.IsNullOrEmpty( typeFilter ) ) {
+                filteredTypes = new List<Type>( allTypes );
+            }
+
+            var type = "";
+            var label = "";
+            if ( typeFilter.StartsWith( "t:" ) ) {
+                var end = typeFilter.IndexOf( ' ' );
+                end = end == -1 ? typeFilter.Length : end;
+                type = typeFilter.Substring( 0, end ).Replace( "t:", "" ).Trim();
+                label = typeFilter.Remove( 0, end ).Trim();
+            } else {
+                label = typeFilter;
+            }
+
+            Type baseType = null;
+
+            if ( !string.IsNullOrEmpty( type ) ) {
+                baseType = Type.GetType( type );
+            }
+
+            filteredTypes.Clear();
+            int count = 0;
+            foreach ( var item in allTypes ) {
+                if ( baseType != null && !item.IsSubclassOf( baseType ) )
+                    continue;
+
+                if ( !item.Name.Contains( label ) )
+                    continue;
+
+                filteredTypes.Add( item );
+
+                count++;
+                if ( count > 20 ) {
+                    count = 0;
+                    yield return null;
+                }
+            }
+
+            isBusy = false;
+            Repaint();
+            yield break;
         }
 
         void OnGUI() {
             if ( initializer == null ) {
-                EditorCoroutine.StartMultiple( LoadTypesAsync(), LoadNamesAsync(), SelectTypesAsync(), FilterTypesAsync() );
+                var assmblies = AppDomain.CurrentDomain.GetAssemblies().Where( a => a.FullName.StartsWith( "Unity" ) || a.FullName.StartsWith( "Assembly-CSharp" ) );
+                assmblies = assmblies.OrderBy( a => a.FullName );
+                infos.Clear();
+                foreach ( var item in assmblies ) {
+                    infos.Add( new AssemblyInfo( item ) );
+                }
+                EditorCoroutine.StartMultiple( LoadTypes(), SelectTypes(), FilterTypes() );
                 initializer = new object();
             }
 
@@ -754,56 +797,86 @@ namespace TNRD.Automatron.Generation {
 
             EditorGUI.indentLevel++;
             EditorGUI.BeginChangeCheck();
-            EditorGUIUtility.labelWidth += 30;
-            includeAssemblyCSharp = EditorGUILayout.Toggle( "Assembly-CSharp", includeAssemblyCSharp );
-            includeAssemblyCSharpEditor = EditorGUILayout.Toggle( "Assembly-CSharp-Editor", includeAssemblyCSharpEditor );
-            includeMSCorlib = EditorGUILayout.Toggle( "mscorlib", includeMSCorlib );
-            includeUnityEditor = EditorGUILayout.Toggle( "UnityEditor", includeUnityEditor );
-            includeUnityEngine = EditorGUILayout.Toggle( "UnityEngine", includeUnityEngine );
-            EditorGUIUtility.labelWidth -= 30;
+            var w = position.size.x - 200;
+            EditorGUIUtility.labelWidth += w;
+            libraryScroll = EditorGUILayout.BeginScrollView( libraryScroll, GUILayout.Height( 200 ) );
+            foreach ( var item in infos ) {
+                item.State = EditorGUILayout.Toggle( item.Name, item.State );
+            }
+            EditorGUILayout.EndScrollView();
+            EditorGUIUtility.labelWidth -= w;
             if ( EditorGUI.EndChangeCheck() ) {
-                EditorCoroutine.StartMultiple( SelectTypesAsync(), FilterTypesAsync() );
+                EditorCoroutine.StartMultiple( SelectTypes(), FilterTypes() );
             }
             EditorGUI.indentLevel--;
 
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField( "Base Type", EditorStyles.boldLabel );
+            EditorGUILayout.LabelField( "Filter", EditorStyles.boldLabel );
             EditorGUI.indentLevel++;
             EditorGUI.BeginChangeCheck();
-            EditorGUIUtility.labelWidth += 30;
-            useBaseType = EditorGUILayout.Toggle( "Enable", useBaseType );
-            EditorGUIUtility.labelWidth -= 30;
-            baseTypeIndex = EditorGUILayout.Popup( baseTypeIndex, typeNames );
+            EditorGUILayout.LabelField( "Prefix with t: for a base type" );
+            EditorGUILayout.LabelField( "Example: t:Component" );
+            EditorGUILayout.LabelField( "Combined example: t:Component Collider" );
+            typeFilter = EditorGUILayout.DelayedTextField( typeFilter );
             if ( EditorGUI.EndChangeCheck() ) {
-                FilterTypes();
+                EditorCoroutine.Start( FilterTypes() );
             }
             EditorGUI.indentLevel--;
-
-            EditorGUILayout.Space();
-            EditorGUILayout.LabelField( "Search", EditorStyles.boldLabel );
-            EditorGUI.BeginChangeCheck();
-            EditorGUI.indentLevel++;
-            searchQuery = EditorGUILayout.TextField( searchQuery );
-            EditorGUI.indentLevel--;
-            if ( EditorGUI.EndChangeCheck() ) {
-                FilterTypes();
-            }
 
             EditorGUILayout.Space();
             EditorGUILayout.LabelField( "Types", EditorStyles.boldLabel );
 
-            scrollPosition = EditorGUILayout.BeginScrollView( scrollPosition );
+            int pageOffset = page * 100;
+            var rect = EditorGUILayout.GetControlRect();
+            EditorGUI.BeginDisabledGroup( page == 0 );
+            if ( GUI.Button( new Rect( rect.x, rect.y, rect.width / 2, rect.height ), "<" ) ) {
+                if ( page > 0 ) {
+                    page--;
+                    typeScroll = Vector2.zero;
+                }
+            }
+            EditorGUI.EndDisabledGroup();
+            EditorGUI.BeginDisabledGroup( pageOffset + 100 >= filteredTypes.Count );
+            if ( GUI.Button( new Rect( rect.x + (rect.width / 2), rect.y, rect.width / 2, rect.height ), ">" ) ) {
+                page++;
+                typeScroll = Vector2.zero;
+            }
+            EditorGUI.EndDisabledGroup();
+            if ( GUILayout.Button( "Toggle Page" ) ) {
+                for ( int i = pageOffset; i < pageOffset + 100; i++ ) {
+                    if ( i < filteredTypes.Count ) {
+                        var t = filteredTypes[i];
+
+                        if ( !typeStates.ContainsKey( t ) ) {
+                            typeStates.Add( t, false );
+                        }
+
+                        typeStates[t] = !typeStates[t];
+                    } else {
+                        break;
+                    }
+                }
+            }
+            typeScroll = EditorGUILayout.BeginScrollView( typeScroll );
             EditorGUI.indentLevel++;
-            foreach ( var item in filteredTypes ) {
-                var value = typesEnabled[item];
-                value = EditorGUILayout.ToggleLeft( GetTypeName( item ), value );
-                typesEnabled[item] = value;
+            for ( int i = pageOffset; i < pageOffset + 100; i++ ) {
+                if ( i < filteredTypes.Count ) {
+                    var t = filteredTypes[i];
+
+                    if ( !typeStates.ContainsKey( t ) ) {
+                        typeStates.Add( t, false );
+                    }
+
+                    typeStates[t] = EditorGUILayout.ToggleLeft( string.Format( "{0} ({1})", t.Name, t.Assembly.GetName().Name ), typeStates[t] );
+                } else {
+                    break;
+                }
             }
             EditorGUI.indentLevel--;
             EditorGUILayout.EndScrollView();
 
             if ( GUILayout.Button( "Generate" ) ) {
-                var types = typesEnabled.Where( t => t.Value )
+                var types = typeStates.Where( t => t.Value )
                     .Select( t => t.Key ).Select( t => new WizardData() {
                         Type = t,
                         Name = GetTypeName( t ),
@@ -841,6 +914,7 @@ namespace TNRD.Automatron.Generation {
             return type.GetFields( flags )
                     .Where( m => m.GetCustomAttributes( typeof( ObsoleteAttribute ), false ).Length == 0 ).ToList();
         }
+        #endregion
     }
 }
 #endif

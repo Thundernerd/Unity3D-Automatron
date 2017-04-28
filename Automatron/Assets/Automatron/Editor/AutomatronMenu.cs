@@ -8,10 +8,10 @@ using TNRD.Automatron.Editor.Core;
 using UnityEditor;
 using UnityEngine;
 
-namespace TNRD.Automatron {
-
-    public class AutomatronMenu : ExtendedWindow {
-
+namespace TNRD.Automatron
+{
+    public class AutomatronMenu : ExtendedWindow
+    {
         [MenuItem( "Window/Automatron" )]
         private static void Init() {
             var wnd = CreateEditor( "Automatron" );
@@ -149,7 +149,7 @@ namespace TNRD.Automatron {
         }
 
         private void ListGUI() {
-            var area = new Rect( 50 + ( Size.x * anim ), 125, Size.x - 100, Size.y - 200 );
+            var area = new Rect( 50 + (Size.x * anim), 125, Size.x - 100, Size.y - 200 );
             GUILayout.BeginArea( area );
 
             GUILayout.BeginArea( new Rect( area.width - 125, 35, 125, 16 ) );
@@ -227,7 +227,7 @@ namespace TNRD.Automatron {
         }
 
         private void CreateGUI() {
-            var area = new Rect( 54 - ( ( 1 - anim ) * Size.x ), 125, Size.x - 100, Size.y - 200 );
+            var area = new Rect( 54 - ((1 - anim) * Size.x), 125, Size.x - 100, Size.y - 200 );
             GUILayout.BeginArea( area );
 
             GUILayout.BeginArea( new Rect( area.width - 129, 35, 125, 16 ) );
@@ -269,7 +269,7 @@ namespace TNRD.Automatron {
             var nId = GUIUtility.GetControlID( FocusType.Passive ) + 1;
             automatronName = EditorGUILayout.TextField( automatronName, textboxStyle, GUILayout.Height( 24 ), GUILayout.Width( area.width / 2 ) );
 
-            if ( GUIUtility.keyboardControl == nId && anim == 1 ) {
+            if ( GUIUtility.keyboardControl == nId && anim == 1 && !isInvalid ) {
                 if ( Input.KeyReleased( KeyCode.KeypadEnter ) || Input.KeyReleased( KeyCode.Return ) ) {
                     createAutomatron = true;
                 }
@@ -279,6 +279,9 @@ namespace TNRD.Automatron {
             if ( Regex.IsMatch( automatronName, invalidChars ) ) {
                 isInvalid = true;
                 EditorGUILayout.LabelField( string.Format( "'{0}' contains invalid characters", automatronName ), subLabelStyle, GUILayout.Height( 20 ) );
+            } else if ( string.IsNullOrEmpty( automatronName ) ) {
+                isInvalid = true;
+                EditorGUILayout.LabelField( "Name cannot be empty", subLabelStyle, GUILayout.Height( 20 ) );
             } else {
                 try {
                     var path = Path.Combine( automatronPath, automatronName + ".acfg" );
@@ -377,7 +380,7 @@ namespace TNRD.Automatron {
                         var p = Path.Combine( automatronPath, automatronName ).Replace( "\\", "/" ) + ".acfg";
 
                         var i = -1;
-                        while ( ( i = configs.IndexOf( p ) ) != -1 ) {
+                        while ( (i = configs.IndexOf( p )) != -1 ) {
                             configs.RemoveAt( i );
                         }
 
