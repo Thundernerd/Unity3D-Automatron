@@ -40,11 +40,33 @@ namespace TNRD.Automatron {
             public GUIContent content2;
 
             public ExecuteElement( int level, string name, TreeItem item ) {
+                var tooltip = name;
+                if ( name.Contains( "(" ) && name.Contains( ")" ) ) {
+                    var ind = name.IndexOf( '(' );
+                    tooltip = name.Remove( 0, ind );
+                    tooltip = tooltip.Trim( '(', ')' );
+                    if ( !string.IsNullOrEmpty( tooltip ) ) {
+                        name = name.Substring( 0, ind ) + "(...)";
+                    } else {
+                        name = name.Substring( 0, ind ) + "()";
+                    }
+                }
+                if ( tooltip.Contains( "." ) ) {
+                    var splits = tooltip.Split( ',' );
+                    for ( int i = 0; i < splits.Length; i++ ) {
+                        var split = splits[i];
+                        if (split.Contains(".")) {
+                            splits[i] = split.Remove( 0, split.LastIndexOf( '.' ) + 1 );
+                        }
+                    }
+                    tooltip = splits.Aggregate( ( i, j ) => i + "," + j );
+                }
+
                 this.level = level;
-                this.content = new GUIContent( "    " + name );
-                this.content2 = new GUIContent( "    " + GetClearName( item.name ) );
+                this.content = new GUIContent( "    " + name, tooltip );
+                this.content2 = new GUIContent( "    " + GetClearName( item.name ), tooltip );
                 this.item = item;
-            }
+            }            
 
             private string GetClearName( string name ) {
                 var count = 0;
@@ -53,6 +75,16 @@ namespace TNRD.Automatron {
                         count++;
                 }
                 if ( count <= 1 ) {
+                    if ( name.Contains( "(" ) && name.Contains( ")" ) ) {
+                        var ind = name.IndexOf( '(' );
+                        var tooltip = name.Remove( 0, ind );
+                        tooltip = tooltip.Trim( '(', ')' );
+                        if ( !string.IsNullOrEmpty( tooltip ) ) {
+                            name = name.Substring( 0, ind ) + "(...)";
+                        } else {
+                            name = name.Substring( 0, ind ) + "()";
+                        }
+                    }
                     return name;
                 }
                 var foundFirst = false;
@@ -64,6 +96,18 @@ namespace TNRD.Automatron {
                     }
                     n = n.Insert( 0, name[i].ToString() );
                 }
+
+                if ( n.Contains( "(" ) && n.Contains( ")" ) ) {
+                    var ind = n.IndexOf( '(' );
+                    var tooltip = n.Remove( 0, ind );
+                    tooltip = tooltip.Trim( '(', ')' );
+                    if ( !string.IsNullOrEmpty( tooltip ) ) {
+                        n = n.Substring( 0, ind ) + "(...)";
+                    } else {
+                        n = n.Substring( 0, ind ) + "()";
+                    }
+                }
+
                 return n;
             }
         }
@@ -78,6 +122,7 @@ namespace TNRD.Automatron {
             public GUIStyle rightArrow = (GUIStyle)"AC RightArrow";
             public GUIStyle leftArrow = (GUIStyle)"AC LeftArrow";
             public GUIStyle groupButton;
+            public GUIStyle tooltip = new GUIStyle( EditorGUIUtility.GetBuiltinSkin( EditorGUIUtility.isProSkin ? EditorSkin.Scene : EditorSkin.Inspector ).FindStyle( "In BigTitle" ) );
 
             public Styles() {
                 this.header.font = EditorStyles.boldLabel.font;
@@ -92,6 +137,8 @@ namespace TNRD.Automatron {
                 this.previewHeader.padding.right += 3;
                 this.previewHeader.padding.top += 3;
                 this.previewHeader.padding.bottom += 2;
+                
+                this.tooltip.alignment = TextAnchor.MiddleLeft;
             }
         }
 
@@ -269,7 +316,7 @@ namespace TNRD.Automatron {
             treePaths = items.Select( t => "Automations/" + t.name ).ToArray();
             wantsMouseMove = true;
             CreateTree();
-            ShowAsDropDown( rect, new Vector2( 230, 320 ) );
+            ShowAsDropDown( rect, new Vector2( 300, 400 ) );
             Focus();
 
             searchField = typeof( EditorGUI ).GetMethod( "SearchField", BindingFlags.Static | BindingFlags.NonPublic );
@@ -475,6 +522,8 @@ namespace TNRD.Automatron {
                 var rect2 = GUILayoutUtility.GetRect( 16, 20, GUILayout.ExpandWidth( true ) );
                 if ( ( Event.current.type == EventType.MouseMove || Event.current.type == EventType.MouseDown ) && ( parent.selectedIndex != index && rect2.Contains( Event.current.mousePosition ) ) ) {
                     parent.selectedIndex = index;
+                    currentSelectedIndex = index;
+                    tooltip = e.content.tooltip;
                     Repaint();
                 }
                 var flag = false;
@@ -542,6 +591,15 @@ namespace TNRD.Automatron {
             ListGUI( activeTree, anim, GetElementRelative( 0 ), GetElementRelative( -1 ) );
             if ( anim < 1 )
                 ListGUI( activeTree, anim + 1, GetElementRelative( -1 ), GetElementRelative( -2 ) );
+            if ( tooltipTimer > 0.5f && !string.IsNullOrEmpty( tooltip ) ) {
+                var pos = Event.current.mousePosition;
+                if ( pos.y > 55 ) {
+                    var size = styles.tooltip.CalcSize( new GUIContent( tooltip ) );
+                    var tooltipRect = new Rect( pos, size );
+                    GUI.Box( tooltipRect, GUIContent.none, styles.background );
+                    GUI.Label( tooltipRect, tooltip, styles.tooltip );
+                }
+            }
             if ( !isAnimating || Event.current.type != EventType.Repaint )
                 return;
             var ticks = DateTime.Now.Ticks;
@@ -554,6 +612,30 @@ namespace TNRD.Automatron {
                 stack.RemoveAt( stack.Count - 1 );
             }
             Repaint();
+        }
+
+        private int previousSelectedIndex = 0;
+        private int currentSelectedIndex = 0;
+        private string tooltip = "";
+        private bool countForTooltip = false;
+        private bool didRepaint = false;
+        private float tooltipTimer = 0;
+
+        private void Update() {
+            if ( currentSelectedIndex != previousSelectedIndex ) {
+                countForTooltip = true;
+                tooltipTimer = 0;
+                didRepaint = false;
+            }
+            if ( countForTooltip ) {
+                tooltipTimer += Editor.Core.ExtendedEditor.DeltaTime;
+                if ( tooltipTimer > 0.5f && !didRepaint ) {
+                    countForTooltip = false;
+                    Repaint();
+                    didRepaint = true;
+                }
+            }
+            previousSelectedIndex = currentSelectedIndex;
         }
 
         private void RebuildSearch() {

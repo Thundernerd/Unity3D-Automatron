@@ -109,6 +109,9 @@ namespace TNRD.Automatron {
                 name = "";
                 // This is for the internal queue start
             }
+            if ( name.Contains( "(" ) && name.Contains( ")" ) ) {
+                name = name.Substring( 0, name.IndexOf( "(" ) ).Trim( '(', ')', ' ' ) + "()";
+            }
         }
 
         protected override void OnDestroy() {
