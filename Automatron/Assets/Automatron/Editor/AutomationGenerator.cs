@@ -805,7 +805,7 @@ namespace TNRD.Automatron.Generation
         void OnGUI() {
             if ( initializer == null ) {
                 var assmblies = AppDomain.CurrentDomain.GetAssemblies().Where( a => a.FullName.StartsWith( "Unity" ) || a.FullName.StartsWith( "Assembly-CSharp" ) );
-                assmblies = assmblies.OrderBy( a => a.FullName );
+                assmblies = assmblies.Concat( new[] { typeof( string ).Assembly } ).OrderBy( a => a.FullName );
                 infos.Clear();
                 foreach ( var item in assmblies ) {
                     infos.Add( new AssemblyInfo( item ) );
