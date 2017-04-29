@@ -595,8 +595,10 @@ namespace TNRD.Automatron {
                 var pos = Event.current.mousePosition;
                 if ( pos.y > 55 ) {
                     var size = styles.tooltip.CalcSize( new GUIContent( tooltip ) );
+                    pos.y -= size.y;
                     var tooltipRect = new Rect( pos, size );
                     GUI.Box( tooltipRect, GUIContent.none, styles.background );
+                    GUI.Box( new Rect( tooltipRect.x - 1, tooltipRect.y - 1, tooltipRect.width + 2, tooltipRect.height + 2 ), GUIContent.none, styles.background );
                     GUI.Label( tooltipRect, tooltip, styles.tooltip );
                 }
             }
