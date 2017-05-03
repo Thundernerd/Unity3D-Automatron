@@ -277,6 +277,7 @@ namespace TNRD.Automatron
 
         private Searcher searcher;
         private SearchState searchState = SearchState.Done;
+        private int searchLimit = 250;
         private bool shouldRepaint = false;
 
         private MethodInfo searchField;
@@ -344,6 +345,7 @@ namespace TNRD.Automatron
 
             searchField = typeof( EditorGUI ).GetMethod( "SearchField", BindingFlags.Static | BindingFlags.NonPublic );
             searcher = new Searcher( this );
+            searchLimit = AutomatronSettings.PopupSearchLimit;
             searcher.OnSearchFinished += Searcher_OnSearchFinished;
         }
 
@@ -635,7 +637,15 @@ namespace TNRD.Automatron
             }
 
             if ( searchState == SearchState.Searching ) {
-                GUILayout.Label( "SEARCHING" );
+                var pos1 = position;
+                pos1.x = position.width * (1 - anim) + 1f;
+                pos1.y = 30;
+                pos1.height -= 30;
+                pos1.width -= 2;
+                GUILayout.BeginArea( pos1 );
+                rect = GUILayoutUtility.GetRect( 10, 25 );
+                GUI.Label( rect, "Searching", styles.header );
+                GUILayout.EndArea();
             } else {
                 ListGUI( activeTree, anim, GetElementRelative( 0 ), GetElementRelative( -1 ) );
                 if ( anim < 1 )
@@ -759,8 +769,6 @@ namespace TNRD.Automatron
             private void ThreadedSearch( object data ) {
                 var search = (string)data;
 
-                Thread.Sleep( 1000 );
-
                 var strArrays = search.ToLower().Split( new char[] { ' ' } );
                 var elements = new List<Element>();
                 var elements1 = new List<Element>();
@@ -809,6 +817,10 @@ namespace TNRD.Automatron
                         stopped = true;
                         return;
                     }
+
+                    var c = elements.Count + elements1.Count + gElements.Count + gElements2.Count;
+                    if ( c > popup.searchLimit )
+                        break;
                 }
                 elements.Sort();
                 elements1.Sort();

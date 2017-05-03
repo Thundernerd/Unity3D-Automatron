@@ -133,6 +133,7 @@ namespace TNRD.Automatron {
         public static EditorPrefsColor FieldLineColor = new EditorPrefsColor( "TNRD.Automatron.FieldLineColor." + projectName, "Field Line Color", Color.white );
         public static EditorPrefsBool FocusNewAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusNewAutomation." + projectName, "Focus New Automation", true );
         public static EditorPrefsBool FocusActiveAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusActiveAutomation." + projectName, "Focus Active Automation", true );
+        public static EditorPrefsInt PopupSearchLimit = new EditorPrefsInt( "TNRD.Automatron.PopupSearchLimit." + projectName, "Popup Search Limit", 250 );
 
         [PreferenceItem( "Automatron" )]
         public static void PreferencesGUI() {
@@ -150,6 +151,10 @@ namespace TNRD.Automatron {
             FieldLineColor.Draw();
             FocusActiveAutomation.Draw();
             FocusNewAutomation.Draw();
+
+            EditorGUILayout.Space();
+            PopupSearchLimit.Draw();
+            EditorGUILayout.LabelField( "Recommended to not go above 1000", EditorStyles.miniLabel );
 
             GUILayout.FlexibleSpace();
             EditorGUILayout.LabelField( "Version 1.0", EditorStyles.centeredGreyMiniLabel );
