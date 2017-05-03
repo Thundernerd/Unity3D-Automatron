@@ -1,17 +1,21 @@
 #if UNITY_EDITOR
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using UnityEditor;
 using UnityEngine;
 
-namespace TNRD.Automatron {
+namespace TNRD.Automatron
+{
 
-    public class FancyPopup : EditorWindow {
+    public class FancyPopup : EditorWindow
+    {
 
         #region Custom types
-        private class Element : IComparable {
+        private class Element : IComparable
+        {
             public int level;
             public GUIContent content;
 
@@ -20,11 +24,12 @@ namespace TNRD.Automatron {
             }
 
             public int CompareTo( object obj ) {
-                return name.CompareTo( ( obj as Element ).name );
+                return name.CompareTo( (obj as Element).name );
             }
         }
 
-        private class GroupElement : Element {
+        private class GroupElement : Element
+        {
             public Vector2 scroll;
             public int selectedIndex;
 
@@ -34,7 +39,8 @@ namespace TNRD.Automatron {
             }
         }
 
-        private class ExecuteElement : Element {
+        private class ExecuteElement : Element
+        {
 
             public TreeItem item;
             public GUIContent content2;
@@ -55,7 +61,7 @@ namespace TNRD.Automatron {
                     var splits = tooltip.Split( ',' );
                     for ( int i = 0; i < splits.Length; i++ ) {
                         var split = splits[i];
-                        if (split.Contains(".")) {
+                        if ( split.Contains( "." ) ) {
                             splits[i] = split.Remove( 0, split.LastIndexOf( '.' ) + 1 );
                         }
                     }
@@ -66,7 +72,7 @@ namespace TNRD.Automatron {
                 this.content = new GUIContent( "    " + name, tooltip );
                 this.content2 = new GUIContent( "    " + GetClearName( item.name ), tooltip );
                 this.item = item;
-            }            
+            }
 
             private string GetClearName( string name ) {
                 var count = 0;
@@ -112,7 +118,8 @@ namespace TNRD.Automatron {
             }
         }
 
-        private class Styles {
+        private class Styles
+        {
             public GUIStyle header = new GUIStyle( EditorGUIUtility.GetBuiltinSkin( EditorGUIUtility.isProSkin ? EditorSkin.Scene : EditorSkin.Inspector ).FindStyle( "In BigTitle" ) );
             public GUIStyle componentButton = new GUIStyle( (GUIStyle)"PR Label" );
             public GUIStyle background = (GUIStyle)"grey_border";
@@ -137,12 +144,13 @@ namespace TNRD.Automatron {
                 this.previewHeader.padding.right += 3;
                 this.previewHeader.padding.top += 3;
                 this.previewHeader.padding.bottom += 2;
-                
+
                 this.tooltip.alignment = TextAnchor.MiddleLeft;
             }
         }
 
-        public class TreeItem {
+        public class TreeItem
+        {
             public string name;
 
             private object data;
@@ -173,7 +181,8 @@ namespace TNRD.Automatron {
             }
         }
 
-        public class TreeItem<T> : TreeItem {
+        public class TreeItem<T> : TreeItem
+        {
             public T value;
             public Action<T> callback;
 
@@ -187,7 +196,8 @@ namespace TNRD.Automatron {
             }
         }
 
-        public class TreeItem<T, T2> : TreeItem {
+        public class TreeItem<T, T2> : TreeItem
+        {
             public T value;
             public T2 value2;
             public Action<T, T2> callback;
@@ -203,7 +213,8 @@ namespace TNRD.Automatron {
             }
         }
 
-        public class TreeItem<T, T2, T3> : TreeItem {
+        public class TreeItem<T, T2, T3> : TreeItem
+        {
             public T value;
             public T2 value2;
             public T3 value3;
@@ -221,7 +232,8 @@ namespace TNRD.Automatron {
             }
         }
 
-        public class TreeItem<T, T2, T3, T4> : TreeItem {
+        public class TreeItem<T, T2, T3, T4> : TreeItem
+        {
             public T value;
             public T2 value2;
             public T3 value3;
@@ -358,7 +370,7 @@ namespace TNRD.Automatron {
                         break;
                     var children = GetChildren( activeTree, mTree );
                     var element = children.FirstOrDefault( c => c.name == stack[num].name );
-                    if ( element == null || !( element is GroupElement ) ) {
+                    if ( element == null || !(element is GroupElement) ) {
                         while ( stack.Count > num ) {
                             stack.RemoveAt( num );
                         }
@@ -461,7 +473,7 @@ namespace TNRD.Automatron {
                     evt.Use();
                 }
 
-                if ( evt.keyCode == KeyCode.LeftArrow || ( evt.keyCode == KeyCode.Backspace && !hasSearch ) ) {
+                if ( evt.keyCode == KeyCode.LeftArrow || (evt.keyCode == KeyCode.Backspace && !hasSearch) ) {
                     GoToParent();
                     evt.Use();
                 }
@@ -478,7 +490,7 @@ namespace TNRD.Automatron {
 
         private void ListGUI( Element[] tree, float anim, GroupElement parent, GroupElement grandParent ) {
             var pos1 = position;
-            pos1.x = position.width * ( 1 - anim ) + 1f;
+            pos1.x = position.width * (1 - anim) + 1f;
             pos1.y = 30;
             pos1.height -= 30;
             pos1.width -= 2;
@@ -520,7 +532,7 @@ namespace TNRD.Automatron {
             for ( int index = 0; index < children.Count; index++ ) {
                 var e = children[index];
                 var rect2 = GUILayoutUtility.GetRect( 16, 20, GUILayout.ExpandWidth( true ) );
-                if ( ( Event.current.type == EventType.MouseMove || Event.current.type == EventType.MouseDown ) && ( parent.selectedIndex != index && rect2.Contains( Event.current.mousePosition ) ) ) {
+                if ( (Event.current.type == EventType.MouseMove || Event.current.type == EventType.MouseDown) && (parent.selectedIndex != index && rect2.Contains( Event.current.mousePosition )) ) {
                     parent.selectedIndex = index;
                     currentSelectedIndex = index;
                     tooltip = e.content.tooltip;
@@ -534,7 +546,7 @@ namespace TNRD.Automatron {
                 if ( Event.current.type == EventType.Repaint ) {
                     var isExecuteElement = e is ExecuteElement;
                     if ( isExecuteElement ) {
-                        styles.componentButton.Draw( rect2, hasDouble ? ( e as ExecuteElement ).content2 : e.content, false, false, flag, flag );
+                        styles.componentButton.Draw( rect2, hasDouble ? (e as ExecuteElement).content2 : e.content, false, false, flag, flag );
                     } else {
                         styles.groupButton.Draw( rect2, e.content, false, false, flag, flag );
                         var position = new Rect( rect2.x + rect2.width - 13, rect2.y + 4, 13, 13 );
