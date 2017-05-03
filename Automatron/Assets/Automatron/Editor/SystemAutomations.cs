@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace TNRD.Automatron
 {
-
     public abstract class ConditionalAutomation : Automation {
 
         public ConditionalLine LineOut2 { get; set; }
