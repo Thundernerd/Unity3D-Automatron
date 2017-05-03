@@ -269,6 +269,16 @@ namespace TNRD.Automatron
         }
         #endregion
 
+        private enum SearchState
+        {
+            Searching,
+            Done,
+        }
+
+        private Searcher searcher;
+        private SearchState searchState = SearchState.Done;
+        private bool shouldRepaint = false;
+
         private MethodInfo searchField;
         private string[] treePaths;
         private TreeItem[] treeItems;
@@ -281,6 +291,7 @@ namespace TNRD.Automatron
 
         private Element[] tree;
         private Element[] searchResultTree;
+        private Element[] fakeSearchResultTree;
 
         private long lastTime;
         private bool scrollToSelected;
@@ -332,6 +343,16 @@ namespace TNRD.Automatron
             Focus();
 
             searchField = typeof( EditorGUI ).GetMethod( "SearchField", BindingFlags.Static | BindingFlags.NonPublic );
+            searcher = new Searcher( this );
+            searcher.OnSearchFinished += Searcher_OnSearchFinished;
+        }
+
+        private void Searcher_OnSearchFinished( object sender, Searcher.SearchEventArgs e ) {
+            if ( search == e.Query ) {
+                fakeSearchResultTree = e.Tree;
+            }
+            searchState = SearchState.Done;
+            shouldRepaint = true;
         }
 
         private void InitializeGUI() {
@@ -581,6 +602,19 @@ namespace TNRD.Automatron
                 initializedGUI = true;
             }
 
+            if ( fakeSearchResultTree != null && Event.current.type == EventType.Layout ) {
+                searchResultTree = fakeSearchResultTree;
+                fakeSearchResultTree = null;
+
+                stack.Clear();
+                stack.Add( searchResultTree[0] as GroupElement );
+                if ( GetChildren( activeTree, activeParent ).Count < 1 ) {
+                    activeParent.selectedIndex = -1;
+                } else {
+                    activeParent.selectedIndex = 0;
+                }
+            }
+
             GUI.Label( new Rect( 0, 0, position.width, position.height ), GUIContent.none, styles.background );
             if ( dirtyList )
                 CreateTree();
@@ -600,32 +634,36 @@ namespace TNRD.Automatron
                 }
             }
 
-            ListGUI( activeTree, anim, GetElementRelative( 0 ), GetElementRelative( -1 ) );
-            if ( anim < 1 )
-                ListGUI( activeTree, anim + 1, GetElementRelative( -1 ), GetElementRelative( -2 ) );
-            if ( tooltipTimer > 0.5f && !string.IsNullOrEmpty( tooltip ) ) {
-                var pos = Event.current.mousePosition;
-                if ( pos.y > 55 ) {
-                    var size = styles.tooltip.CalcSize( new GUIContent( tooltip ) );
-                    pos.y -= size.y;
-                    var tooltipRect = new Rect( pos, size );
-                    GUI.Box( tooltipRect, GUIContent.none, styles.background );
-                    GUI.Box( new Rect( tooltipRect.x - 1, tooltipRect.y - 1, tooltipRect.width + 2, tooltipRect.height + 2 ), GUIContent.none, styles.background );
-                    GUI.Label( tooltipRect, tooltip, styles.tooltip );
+            if ( searchState == SearchState.Searching ) {
+                GUILayout.Label( "SEARCHING" );
+            } else {
+                ListGUI( activeTree, anim, GetElementRelative( 0 ), GetElementRelative( -1 ) );
+                if ( anim < 1 )
+                    ListGUI( activeTree, anim + 1, GetElementRelative( -1 ), GetElementRelative( -2 ) );
+                if ( tooltipTimer > 0.5f && !string.IsNullOrEmpty( tooltip ) ) {
+                    var pos = Event.current.mousePosition;
+                    if ( pos.y > 55 ) {
+                        var size = styles.tooltip.CalcSize( new GUIContent( tooltip ) );
+                        pos.y -= size.y;
+                        var tooltipRect = new Rect( pos, size );
+                        GUI.Box( tooltipRect, GUIContent.none, styles.background );
+                        GUI.Box( new Rect( tooltipRect.x - 1, tooltipRect.y - 1, tooltipRect.width + 2, tooltipRect.height + 2 ), GUIContent.none, styles.background );
+                        GUI.Label( tooltipRect, tooltip, styles.tooltip );
+                    }
                 }
+                if ( !isAnimating || Event.current.type != EventType.Repaint )
+                    return;
+                var ticks = DateTime.Now.Ticks;
+                var num = (ticks - lastTime) / 1E+07f;
+                lastTime = ticks;
+                anim = Mathf.MoveTowards( anim, animTarget, num * 4 );
+                if ( animTarget == 0 && anim == 0 ) {
+                    anim = 1;
+                    animTarget = 1;
+                    stack.RemoveAt( stack.Count - 1 );
+                }
+                Repaint();
             }
-            if ( !isAnimating || Event.current.type != EventType.Repaint )
-                return;
-            var ticks = DateTime.Now.Ticks;
-            var num = ( ticks - lastTime ) / 1E+07f;
-            lastTime = ticks;
-            anim = Mathf.MoveTowards( anim, animTarget, num * 4 );
-            if ( animTarget == 0 && anim == 0 ) {
-                anim = 1;
-                animTarget = 1;
-                stack.RemoveAt( stack.Count - 1 );
-            }
-            Repaint();
         }
 
         private int previousSelectedIndex = 0;
@@ -650,6 +688,11 @@ namespace TNRD.Automatron
                 }
             }
             previousSelectedIndex = currentSelectedIndex;
+
+            if ( shouldRepaint ) {
+                shouldRepaint = false;
+                Repaint();
+            }
         }
 
         private void RebuildSearch() {
@@ -663,70 +706,144 @@ namespace TNRD.Automatron
                 lastTime = DateTime.Now.Ticks;
                 return;
             }
-            var strArrays = search.ToLower().Split( new char[] { ' ' } );
-            var elements = new List<Element>();
-            var elements1 = new List<Element>();
-            var gElements = new List<Element>();
-            var gElements2 = new List<Element>();
-            var mTree = tree;
-            for ( int i = 0; i < mTree.Length; i++ ) {
-                var element = mTree[i];
-                var isExecute = element is ExecuteElement;
-
-                var str = element.name.ToLower().Replace( " ", string.Empty );
-                var flag = true;
-                var flag1 = false;
-                var num = 0;
-                while ( num < strArrays.Length ) {
-                    var str1 = strArrays[num];
-                    if ( !str.Contains( str1 ) ) {
-                        flag = false;
-                        break;
-                    } else {
-                        if ( num == 0 && str.StartsWith( str1 ) ) {
-                            flag1 = true;
-                        }
-                        num++;
-                    }
-                }
-                if ( flag ) {
-                    if ( !flag1 ) {
-                        if ( isExecute )
-                            elements1.Add( element );
-                        else
-                            gElements2.Add( element );
-                    } else {
-                        if ( isExecute )
-                            elements.Add( element );
-                        else
-                            gElements.Add( element );
-                    }
-                }
-            }
-            elements.Sort();
-            elements1.Sort();
-            gElements.Sort();
-            gElements2.Sort();
-            var elements2 = new List<Element>() {
-            new GroupElement(0,"Search")
-        };
-            elements2.AddRange( gElements );
-            elements2.AddRange( gElements2 );
-            elements2.AddRange( elements );
-            elements2.AddRange( elements1 );
-            elements2.Add( tree[mTree.Length - 1] );
-            searchResultTree = elements2.ToArray();
-            stack.Clear();
-            stack.Add( searchResultTree[0] as GroupElement );
-            if ( this.GetChildren( activeTree, activeParent ).Count < 1 ) {
-                activeParent.selectedIndex = -1;
-            } else {
-                activeParent.selectedIndex = 0;
-            }
+            searchState = SearchState.Searching;
+            searcher.Search( search );
         }
 
         private string SearchField( Rect rect, string value ) {
             return (string)searchField.Invoke( null, new object[] { rect, value } );
+        }
+
+        private class Searcher
+        {
+            public class SearchEventArgs : EventArgs
+            {
+                public readonly string Query;
+                public readonly Element[] Tree;
+
+                public SearchEventArgs( string query, Element[] tree ) {
+                    Query = query;
+                    Tree = tree;
+                }
+            }
+
+            private Thread thread;
+            private FancyPopup popup;
+            private bool shouldStop = false;
+            private bool stopped = true;
+
+            public event EventHandler<SearchEventArgs> OnSearchFinished;
+
+            public Searcher( FancyPopup popup ) {
+                this.popup = popup;
+            }
+
+            public void Search( string value ) {
+                if ( thread != null ) {
+                    if ( thread.IsAlive ) {
+                        stopped = false;
+                        shouldStop = true;
+                    }
+                }
+
+                while ( !stopped ) {
+                    // We wait
+                }
+
+                shouldStop = false;
+
+                thread = new Thread( new ParameterizedThreadStart( ThreadedSearch ) );
+                thread.Start( value );
+            }
+
+            private void ThreadedSearch( object data ) {
+                var search = (string)data;
+
+                Thread.Sleep( 1000 );
+
+                var strArrays = search.ToLower().Split( new char[] { ' ' } );
+                var elements = new List<Element>();
+                var elements1 = new List<Element>();
+                var gElements = new List<Element>();
+                var gElements2 = new List<Element>();
+                var mTree = popup.tree;
+                for ( int i = 0; i < mTree.Length; i++ ) {
+                    var element = mTree[i];
+                    var isExecute = element is ExecuteElement;
+
+                    var str = element.name.ToLower().Replace( " ", string.Empty );
+                    var flag = true;
+                    var flag1 = false;
+                    var num = 0;
+                    while ( num < strArrays.Length ) {
+                        var str1 = strArrays[num];
+                        if ( !str.Contains( str1 ) ) {
+                            flag = false;
+                            break;
+                        } else {
+                            if ( num == 0 && str.StartsWith( str1 ) ) {
+                                flag1 = true;
+                            }
+                            num++;
+                        }
+                        if ( shouldStop ) {
+                            stopped = true;
+                            return;
+                        }
+                    }
+                    if ( flag ) {
+                        if ( !flag1 ) {
+                            if ( isExecute )
+                                elements1.Add( element );
+                            else
+                                gElements2.Add( element );
+                        } else {
+                            if ( isExecute )
+                                elements.Add( element );
+                            else
+                                gElements.Add( element );
+                        }
+                    }
+
+                    if ( shouldStop ) {
+                        stopped = true;
+                        return;
+                    }
+                }
+                elements.Sort();
+                elements1.Sort();
+                gElements.Sort();
+                gElements2.Sort();
+                var elements2 = new List<Element>() {
+                    new GroupElement(0,"Search")
+                };
+                elements2.AddRange( gElements );
+                elements2.AddRange( gElements2 );
+                elements2.AddRange( elements );
+                elements2.AddRange( elements1 );
+                elements2.Add( popup.tree[mTree.Length - 1] );
+                var searchResultTree = elements2.ToArray();
+
+                if ( shouldStop ) {
+                    stopped = true;
+                    return;
+                }
+
+                stopped = true;
+                if ( OnSearchFinished != null ) {
+                    OnSearchFinished( this, new SearchEventArgs( search, searchResultTree ) );
+                }
+
+                popup.stack.Clear();
+                popup.stack.Add( searchResultTree[0] as GroupElement );
+                if ( popup.GetChildren( popup.activeTree, popup.activeParent ).Count < 1 ) {
+                    popup.activeParent.selectedIndex = -1;
+                } else {
+                    popup.activeParent.selectedIndex = 0;
+                }
+
+                //stopped = true;
+            }
         }
     }
 
