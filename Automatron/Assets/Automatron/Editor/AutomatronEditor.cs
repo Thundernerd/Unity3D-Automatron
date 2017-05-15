@@ -470,11 +470,11 @@ namespace TNRD.Automatron {
         private void ShowAutomationPopup() {
             if ( Globals.IsExecuting ) return;
 
-            var items = new List<FancyPopup.TreeItem>();
+            var items = new List<AutomationPopup.TreeItem>();
             foreach ( var item in automations ) {
-                items.Add( new FancyPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
+                items.Add( new AutomationPopup.TreeItem<Vector2, Type>( item.Key, Input.MousePosition, item.Value, CreateAutomation ) );
             }
-            FancyPopup.ShowAsContext( items.ToArray() );
+            AutomationPopup.ShowAsContext( items.ToArray() );
         }
 
         private void CreateAutomation( Vector2 mpos, Type type ) {

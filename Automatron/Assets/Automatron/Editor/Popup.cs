@@ -10,7 +10,7 @@ using UnityEngine;
 namespace TNRD.Automatron
 {
 
-    public class FancyPopup : EditorWindow
+    public class AutomationPopup : EditorWindow
     {
 
         #region Custom types
@@ -258,13 +258,13 @@ namespace TNRD.Automatron
         public static void ShowAsContext( TreeItem[] items ) {
             var rect = new Rect( GUIUtility.GUIToScreenPoint( Event.current.mousePosition ), Vector2.zero );
             Event.current.Use();
-            var popup = CreateInstance<FancyPopup>();
+            var popup = CreateInstance<AutomationPopup>();
             popup.Init( rect, items );
         }
         public static void ShowAsContext( Rect rect, TreeItem[] items ) {
             rect = new Rect( GUIUtility.GUIToScreenPoint( rect.position ), rect.size );
             Event.current.Use();
-            var popup = CreateInstance<FancyPopup>();
+            var popup = CreateInstance<AutomationPopup>();
             popup.Init( rect, items );
         }
         #endregion
@@ -335,6 +335,11 @@ namespace TNRD.Automatron
         private bool initializedGUI = false;
 
         private void Init( Rect rect, TreeItem[] items ) {
+            if ( items == null || items.Length == 0 ) {
+                Debug.LogErrorFormat( "There are no automations to add to the popup. This is likely due to a version mismatch. This version of Automatron is built for Unity {0}", AutomatronSettings.UNITY_VERSION );
+                Close();
+                return;
+            }
             position = rect;
             treeItems = items;
             treePaths = items.Select( t => "Automations/" + t.name ).ToArray();
@@ -738,13 +743,13 @@ namespace TNRD.Automatron
             }
 
             private Thread thread;
-            private FancyPopup popup;
+            private AutomationPopup popup;
             private bool shouldStop = false;
             private bool stopped = true;
 
             public event EventHandler<SearchEventArgs> OnSearchFinished;
 
-            public Searcher( FancyPopup popup ) {
+            public Searcher( AutomationPopup popup ) {
                 this.popup = popup;
             }
 
