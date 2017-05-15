@@ -57,8 +57,39 @@ namespace TNRD.Automatron
             LoadRecents();
         }
 
+        private void CompareVersions() {
+            var currentVersion = Application.unityVersion;
+            var buildVersion = AutomatronSettings.UNITY_VERSION;
+
+            if ( currentVersion == buildVersion )
+                return;
+
+            var key = string.Format( "TNRD.Automatron.VersionCheck.{0}", currentVersion );
+            if ( EditorPrefs.HasKey( key ) )
+                return;
+
+            for ( int i = 0; i < currentVersion.Length; i++ ) {
+                if ( i >= buildVersion.Length ) {
+                    break;
+                }
+
+                if ( currentVersion[i] != buildVersion[i] ) {
+                    var result = EditorUtility.DisplayDialog( "Version Mismatch",
+                        string.Format( "This version of Automatron has been built for Unity {0} and might not work properly with this version", buildVersion ), "OK", "Never Show Again" );
+
+                    if ( !result ) {
+                        EditorPrefs.SetBool( key, true );
+                    }
+
+                    break;
+                }
+            }
+        }
+
         protected override void OnInitializeGUI() {
             CreateStyles();
+
+            CompareVersions();
         }
 
         protected override void OnAfterSerialized() {

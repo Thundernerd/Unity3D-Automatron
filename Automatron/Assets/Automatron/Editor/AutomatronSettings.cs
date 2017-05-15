@@ -135,6 +135,8 @@ namespace TNRD.Automatron {
         public static EditorPrefsBool FocusActiveAutomation = new EditorPrefsBool( "TNRD.Automatron.FocusActiveAutomation." + projectName, "Focus Active Automation", true );
         public static EditorPrefsInt PopupSearchLimit = new EditorPrefsInt( "TNRD.Automatron.PopupSearchLimit." + projectName, "Popup Search Limit", 250 );
 
+        public const string UNITY_VERSION = "5.6.0f3";
+
         [PreferenceItem( "Automatron" )]
         public static void PreferencesGUI() {
             AutomationFolder.Draw();
